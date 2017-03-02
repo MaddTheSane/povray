@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11201"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MaterialTemplate">
+            <connections>
+                <outlet property="mFinishGreenLed" destination="184" id="188"/>
+                <outlet property="mInteriorGreenLed" destination="185" id="189"/>
+                <outlet property="mNormalGreenLed" destination="183" id="187"/>
+                <outlet property="mPigmentGreenLed" destination="182" id="186"/>
+                <outlet property="mTableView" destination="80" id="113"/>
+                <outlet property="mWindow" destination="5" id="98"/>
+                <outlet property="mateiralPreviewView" destination="36" id="165"/>
+                <outlet property="materialBackgroundPopUp" destination="58" id="159"/>
+                <outlet property="materialDontWrapInMaterial" destination="190" id="191"/>
+                <outlet property="materialDrawLayer" destination="70" id="161"/>
+                <outlet property="materialDrawMaterial" destination="71" id="162"/>
+                <outlet property="materialFillEdit" destination="43" id="156"/>
+                <outlet property="materialFillOn" destination="49" id="157"/>
+                <outlet property="materialFinishOn" destination="129" id="138"/>
+                <outlet property="materialFinishViewHolder" destination="28" id="88"/>
+                <outlet property="materialHEdit" destination="41" id="155"/>
+                <outlet property="materialHorizontalSlider" destination="35" id="164"/>
+                <outlet property="materialInteriorOn" destination="130" id="136"/>
+                <outlet property="materialInteriorViewHolder" destination="29" id="89"/>
+                <outlet property="materialMainTabView" destination="17" id="90"/>
+                <outlet property="materialNormalOn" destination="128" id="137"/>
+                <outlet property="materialNormalViewHolder" destination="27" id="87"/>
+                <outlet property="materialObjectPopUp" destination="52" id="158"/>
+                <outlet property="materialPigmentOn" destination="127" id="135"/>
+                <outlet property="materialPigmentViewHolder" destination="26" id="86"/>
+                <outlet property="materialPreviewTabView" destination="30" id="91"/>
+                <outlet property="materialReflectPopUp" destination="64" id="160"/>
+                <outlet property="materialTransformationsEditButton" destination="74" id="124"/>
+                <outlet property="materialTransformationsOn" destination="73" id="92"/>
+                <outlet property="materialVEdit" destination="39" id="154"/>
+                <outlet property="materialVerticalSlider" destination="38" id="163"/>
+                <outlet property="templateCancelButton" destination="8" id="180"/>
+                <outlet property="templateOkButton" destination="7" id="181"/>
+                <outlet property="templateOpenButton" destination="10" id="178"/>
+                <outlet property="templateResetButton" destination="9" id="177"/>
+                <outlet property="templateSaveButton" destination="11" id="179"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="MaterialPanel" customClass="NSPanel">
+            <windowStyleMask key="styleMask" titled="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
+            <rect key="contentRect" x="104" y="187" width="811" height="498"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+            <value key="minSize" type="size" width="94" height="7"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="811" height="498"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" id="8">
+                        <rect key="frame" x="667" y="12" width="71" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="195">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancelButton:" target="-2" id="102"/>
+                            <outlet property="nextKeyView" destination="7" id="15"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="9">
+                        <rect key="frame" x="397" y="12" width="112" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Reset to default" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="196">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="resetButton:" target="-2" id="99"/>
+                            <outlet property="nextKeyView" destination="8" id="14"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="7">
+                        <rect key="frame" x="744" y="13" width="64" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="194">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="okButton:" target="-2" id="103"/>
+                            <outlet property="nextKeyView" destination="9" id="13"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="10">
+                        <rect key="frame" x="530" y="12" width="72" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="197">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="openButton:" target="-2" id="100"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" id="11">
+                        <rect key="frame" x="600" y="12" width="69" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="198">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="saveButton:" target="-2" id="101"/>
+                        </connections>
+                    </button>
+                    <tabView id="17">
+                        <rect key="frame" x="0.0" y="42" width="530" height="450"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="system"/>
+                        <tabViewItems>
+                            <tabViewItem label="Pigment" identifier="1" id="18">
+                                <view key="view" id="19">
+                                    <rect key="frame" x="10" y="33" width="510" height="404"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <customView id="26">
+                                            <rect key="frame" x="5" y="4" width="500" height="396"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </customView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Normal" identifier="2" id="20">
+                                <view key="view" id="21">
+                                    <rect key="frame" x="10" y="33" width="510" height="404"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <customView id="27">
+                                            <rect key="frame" x="5" y="4" width="500" height="396"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </customView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Finish" identifier="" id="22">
+                                <view key="view" id="23">
+                                    <rect key="frame" x="10" y="33" width="510" height="404"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <customView id="28">
+                                            <rect key="frame" x="5" y="4" width="500" height="396"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </customView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Interior" identifier="" id="24">
+                                <view key="view" id="25">
+                                    <rect key="frame" x="10" y="33" width="510" height="404"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <customView id="29">
+                                            <rect key="frame" x="5" y="4" width="500" height="396"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </customView>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                    </tabView>
+                    <tabView controlSize="small" id="30">
+                        <rect key="frame" x="528" y="76" width="281" height="405"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <tabViewItems>
+                            <tabViewItem label="Preview" identifier="1" id="31">
+                                <view key="view" id="32">
+                                    <rect key="frame" x="10" y="29" width="261" height="363"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <slider verticalHuggingPriority="750" tag="22" id="35">
+                                            <rect key="frame" x="32" y="306" width="220" height="25"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <sliderCell key="cell" continuous="YES" alignment="left" tag="22" minValue="-100" maxValue="100" doubleValue="100" tickMarkPosition="below" numberOfTickMarks="30" sliderType="linear" id="199">
+                                                <font key="font" size="12" name="Helvetica"/>
+                                            </sliderCell>
+                                            <connections>
+                                                <action selector="materialTarget:" target="-2" id="170"/>
+                                            </connections>
+                                        </slider>
+                                        <customView id="36" customClass="materialPreview">
+                                            <rect key="frame" x="30" y="82" width="220" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </customView>
+                                        <slider horizontalHuggingPriority="750" tag="23" id="38">
+                                            <rect key="frame" x="4" y="82" width="25" height="220"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <sliderCell key="cell" continuous="YES" alignment="left" tag="23" minValue="-100" maxValue="100" doubleValue="100" tickMarkPosition="right" numberOfTickMarks="30" sliderType="linear" id="200">
+                                                <font key="font" size="12" name="Helvetica"/>
+                                            </sliderCell>
+                                            <connections>
+                                                <action selector="materialTarget:" target="-2" id="171"/>
+                                            </connections>
+                                        </slider>
+                                        <textField verticalHuggingPriority="750" tag="24" id="39">
+                                            <rect key="frame" x="33" y="337" width="34" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="24" drawsBackground="YES" id="201">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="materialTarget:" target="-2" id="166"/>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="40">
+                                            <rect key="frame" x="17" y="339" width="15" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="V:" id="202">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" tag="25" id="41">
+                                            <rect key="frame" x="122" y="338" width="34" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="25" drawsBackground="YES" id="203">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="materialTarget:" target="-2" id="167"/>
+                                            </connections>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="42">
+                                            <rect key="frame" x="106" y="340" width="15" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="H:" id="204">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" tag="27" id="43">
+                                            <rect key="frame" x="213" y="337" width="34" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="27" drawsBackground="YES" id="205">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                            <connections>
+                                                <action selector="setModified:" target="-2" id="169"/>
+                                            </connections>
+                                        </textField>
+                                        <button tag="26" id="49">
+                                            <rect key="frame" x="172" y="337" width="42" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Fill" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="26" inset="2" id="206">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="materialTarget:" target="-2" id="168"/>
+                                            </connections>
+                                        </button>
+                                        <textField verticalHuggingPriority="750" id="50">
+                                            <rect key="frame" x="248" y="339" width="12" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="%" id="207">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" tag="18" id="52">
+                                            <rect key="frame" x="72" y="53" width="181" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <popUpButtonCell key="cell" type="push" title="Diffrence box/sphere 1/1" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="144" id="208">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <menu key="menu" title="OtherViews" id="53">
+                                                    <items>
+                                                        <menuItem title="Box (-0.5, 0.5)" id="54"/>
+                                                        <menuItem title="Union (box/sphere)" id="56"/>
+                                                        <menuItem title="Diffrence box/sphere 1/1" state="on" id="144"/>
+                                                        <menuItem title="Sphere (0.0, 0.5)" id="145"/>
+                                                        <menuItem title="Box (0.0, 1.0)" id="146"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <action selector="materialTarget:" target="-2" id="172"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <textField verticalHuggingPriority="750" id="57">
+                                            <rect key="frame" x="30" y="58" width="43" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Object:" id="209">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <textField verticalHuggingPriority="750" id="63">
+                                            <rect key="frame" x="2" y="31" width="71" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Background:" id="211">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" tag="20" id="64">
+                                            <rect key="frame" x="72" y="3" width="181" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <popUpButtonCell key="cell" type="push" title="Sky_sphere white" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="151" id="212">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <menu key="menu" title="OtherViews" id="65">
+                                                    <items>
+                                                        <menuItem title="Nothing reflected" id="67"/>
+                                                        <menuItem title="Sky_sphere clouds" id="68"/>
+                                                        <menuItem title="Sky_sphere white" state="on" id="151"/>
+                                                        <menuItem title="Square grid white" id="152"/>
+                                                        <menuItem title="Square grid black" id="153"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <action selector="materialTarget:" target="-2" id="174"/>
+                                            </connections>
+                                        </popUpButton>
+                                        <textField verticalHuggingPriority="750" id="69">
+                                            <rect key="frame" x="29" y="8" width="44" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Reflect:" id="213">
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                        <popUpButton verticalHuggingPriority="750" tag="19" id="58">
+                                            <rect key="frame" x="72" y="28" width="181" height="22"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <popUpButtonCell key="cell" type="push" title="No Background (Black)" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="60" id="210">
+                                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                                <menu key="menu" title="OtherViews" id="59">
+                                                    <items>
+                                                        <menuItem title="No Background (Black)" state="on" id="60"/>
+                                                        <menuItem title="White Background" id="62"/>
+                                                        <menuItem title="Sky_sphere clouds" id="147"/>
+                                                        <menuItem title="Square grid black" id="148"/>
+                                                        <menuItem title="Square grid white" id="149"/>
+                                                        <menuItem title="Checker B&amp;W" id="150"/>
+                                                    </items>
+                                                </menu>
+                                            </popUpButtonCell>
+                                            <connections>
+                                                <action selector="materialTarget:" target="-2" id="173"/>
+                                            </connections>
+                                        </popUpButton>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                            <tabViewItem label="Layers" identifier="2" id="33">
+                                <view key="view" id="34">
+                                    <rect key="frame" x="10" y="25" width="261" height="367"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="79">
+                                            <rect key="frame" x="9" y="106" width="244" height="254"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <clipView key="contentView" id="Zhr-tc-h0R">
+                                                <rect key="frame" x="1" y="0.0" width="242" height="253"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" columnResizing="NO" multipleSelection="NO" emptySelection="NO" autosaveColumns="NO" headerView="229" id="80">
+                                                        <rect key="frame" x="0.0" y="0.0" width="242" height="230"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <size key="intercellSpacing" width="3" height="2"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        <tableViewGridLines key="gridStyleMask" vertical="YES" horizontal="YES"/>
+                                                        <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                                        <tableColumns>
+                                                            <tableColumn identifier="Active" editable="NO" width="40" minWidth="40" maxWidth="1000" id="82">
+                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="On">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </tableHeaderCell>
+                                                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="center" id="227">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </tableColumn>
+                                                            <tableColumn identifier="layerName" width="165.39599609375" minWidth="74.39599609375" maxWidth="1000" id="81">
+                                                                <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Layer Name">
+                                                                    <font key="font" metaFont="smallSystem"/>
+                                                                    <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" white="0.33333299" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </tableHeaderCell>
+                                                                <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" id="226">
+                                                                    <font key="font" metaFont="system"/>
+                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                </textFieldCell>
+                                                            </tableColumn>
+                                                        </tableColumns>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="-2" id="111"/>
+                                                            <outlet property="delegate" destination="-2" id="112"/>
+                                                        </connections>
+                                                    </tableView>
+                                                </subviews>
+                                            </clipView>
+                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="228">
+                                                <rect key="frame" x="-100" y="-100" width="211" height="15"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="230">
+                                                <rect key="frame" x="-30" y="17" width="15" height="302"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </scroller>
+                                            <tableHeaderView key="headerView" id="229">
+                                                <rect key="frame" x="0.0" y="0.0" width="242" height="23"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                            </tableHeaderView>
+                                        </scrollView>
+                                        <button id="83">
+                                            <rect key="frame" x="193" y="7" width="62" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            <buttonCell key="cell" type="bevel" title="Trash" bezelStyle="regularSquare" image="trashLine" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="214">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="trashButton:" target="-2" id="110"/>
+                                            </connections>
+                                        </button>
+                                        <button id="84">
+                                            <rect key="frame" x="100" y="7" width="62" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            <buttonCell key="cell" type="bevel" title="Insert" bezelStyle="regularSquare" image="insertLine" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="215">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="insertButton:" target="-2" id="109"/>
+                                            </connections>
+                                        </button>
+                                        <button id="85">
+                                            <rect key="frame" x="7" y="7" width="62" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            <buttonCell key="cell" type="bevel" title="Add" bezelStyle="regularSquare" image="addLine" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="216">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="addButton:" target="-2" id="108"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="12" id="127">
+                                            <rect key="frame" x="6" y="77" width="66" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Pigment" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="12" inset="2" id="217">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="materialButtons:" target="-2" id="131"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="13" id="128">
+                                            <rect key="frame" x="80" y="77" width="61" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Normal" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="13" inset="2" id="218">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="materialButtons:" target="-2" id="132"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="14" id="129">
+                                            <rect key="frame" x="80" y="49" width="54" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Finish" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="14" inset="2" id="219">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="materialButtons:" target="-2" id="134"/>
+                                            </connections>
+                                        </button>
+                                        <button tag="15" id="130">
+                                            <rect key="frame" x="6" y="49" width="62" height="16"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <buttonCell key="cell" type="check" title="Interior" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="15" inset="2" id="220">
+                                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                                <font key="font" metaFont="smallSystem"/>
+                                            </buttonCell>
+                                            <connections>
+                                                <action selector="materialButtons:" target="-2" id="133"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </view>
+                            </tabViewItem>
+                        </tabViewItems>
+                        <connections>
+                            <outlet property="delegate" destination="-2" id="104"/>
+                        </connections>
+                    </tabView>
+                    <button verticalHuggingPriority="750" tag="16" id="70">
+                        <rect key="frame" x="530" y="45" width="139" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Draw Layer" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" tag="16" inset="2" id="221">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="materialButtons:" target="-2" id="119"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" tag="17" id="71">
+                        <rect key="frame" x="667" y="45" width="141" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                        <buttonCell key="cell" type="push" title="Draw Material" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" tag="17" inset="2" id="222">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="materialButtons:" target="-2" id="120"/>
+                        </connections>
+                    </button>
+                    <button tag="1" id="73">
+                        <rect key="frame" x="17" y="18" width="111" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="check" title="Transformations" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="1" inset="2" id="223">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="materialTarget:" target="-2" id="126"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" tag="2" id="74">
+                        <rect key="frame" x="123" y="11" width="57" height="28"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="push" title="Edit..." bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" tag="2" inset="2" id="224">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="materialButtons:" target="-2" id="125"/>
+                        </connections>
+                    </button>
+                    <customView id="182" customClass="greenLed">
+                        <rect key="frame" x="157" y="487" width="20" height="5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </customView>
+                    <customView id="183" customClass="greenLed">
+                        <rect key="frame" x="228" y="487" width="20" height="5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </customView>
+                    <customView id="184" customClass="greenLed">
+                        <rect key="frame" x="289" y="487" width="20" height="5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </customView>
+                    <customView id="185" customClass="greenLed">
+                        <rect key="frame" x="352" y="487" width="20" height="5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </customView>
+                    <button id="190">
+                        <rect key="frame" x="185" y="18" width="161" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <buttonCell key="cell" type="check" title="don't wrap in material {...}" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="225">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="setModified:" target="-2" id="192"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="initialFirstResponder" destination="7" id="16"/>
+            </connections>
+        </window>
+    </objects>
+    <resources>
+        <image name="addLine" width="56" height="26"/>
+        <image name="insertLine" width="56" height="26"/>
+        <image name="trashLine" width="56" height="26"/>
+    </resources>
+</document>

@@ -1,0 +1,233 @@
+//******************************************************************************
+///
+/// @file <File Name>
+///
+/// @todo   What's in here?
+///
+/// @copyright
+/// @parblock
+///
+/// Unofficial Macintosh GUI port of POV-Ray 3.7
+/// Copyright 2002-2016 Yvo Smellenbergh
+///
+/// This port of POV-Ray is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU Affero General Public License as
+/// published by the Free Software Foundation, either version 3 of the
+/// License, or (at your option) any later version.
+///
+/// This port of POV-Ray is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU Affero General Public License for more details.
+///
+/// You should have received a copy of the GNU Affero General Public License
+/// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+///
+/// ----------------------------------------------------------------------------
+///
+/// This unofficial port of POV-Ray is based on the Persistence of Vision Ray
+/// Tracer ('POV-Ray') version 3.7, Copyright 1991-2016 Persistence of Vision
+/// Raytracer Pty. Ltd.
+///
+/// ----------------------------------------------------------------------------
+///
+/// POV-Ray is based on the popular DKB raytracer version 2.12.
+/// DKBTrace was originally written by David K. Buck.
+/// DKBTrace Ver 2.0-2.12 were written by David K. Buck & Aaron A. Collins.
+///
+/// @endparblock
+///
+//******************************************************************************
+
+#include <new>
+#include <map>
+#include <stdio.h>
+#include <string.h>
+#include <limits.h>
+#include <vector>
+#include <stack>
+#include <sys/types.h>
+
+#ifndef MATH_H_INCLUDED
+	#include <math.h>
+#endif
+#include <cctype>
+#include <stdexcept>
+#include <queue>
+#include <cassert>
+#include <algorithm>
+
+#include <boost/bind.hpp>
+#include <boost/format.hpp>
+#include <boost/function.hpp>
+#include <boost/functional/hash/hash.hpp>
+#include <boost/scoped_array.hpp>
+#include <boost/scoped_ptr.hpp>
+#include <boost/thread.hpp>
+#include <boost/thread/condition.hpp>
+#include <boost/tr1/memory.hpp>
+#include <boost/unordered_map.hpp>
+#include <boost/shared_ptr.hpp>
+
+
+#include "backend/frame.h"
+
+#include "base/configbase.h"
+#include "base/colour.h"
+#include "base/fileinputoutput.h"
+#include "base/fileutil.h"
+#include "base/mathutil.h"
+#include "base/platformbase.h"
+#include "base/pov_err.h"
+#include "base/stringutilities.h"
+#include "base/textstreambuffer.h"
+#include "base/timer.h"
+#include "base/types.h"
+#include "base/path.h"
+
+#include "base/animation/animation.h"
+#include "base/animation/moov.h"
+
+#include "base/font/crystal.h"
+#include "base/font/cyrvetic.h"
+#include "base/font/povlogo.h"
+#include "base/font/timrom.h"
+
+#include "base/image/bmp.h"
+#include "base/image/colourspace.h"
+#include "base/image/gif.h"
+#include "base/image/hdr.h"
+#include "base/image/iff.h"
+#include "base/image/image.h"
+#include "base/image/jpeg_pov.h"
+#include "base/image/metadata.h"
+#include "base/image/openexr.h"
+#include "base/image/png_pov.h"
+#include "base/image/ppm.h"
+#include "base/image/targa.h"
+#include "base/image/tiff_pov.h"
+
+#include "backend/configbackend.h"
+#include "backend/bounding/boundingtask.h"
+#include "backend/povray.h"
+#include "backend/precomp.h"
+#include "backend/control/benchmark.h"
+#include "backend/control/messagefactory.h"
+#include "backend/control/renderbackend.h"
+#include "backend/control/scene.h"
+
+#include "backend/render/radiositytask.h"
+#include "backend/render/rendertask.h"
+#include "backend/render/tracetask.h"
+
+#include "backend/scene/backendscenedata.h"
+#include "backend/scene/view.h"
+#include "backend/scene/viewthreaddata.h"
+
+#include "backend/support/task.h"
+#include "backend/support/taskqueue.h"
+
+
+#include "core/bounding/bsptree.h"
+#include "core/bounding/boundingbox.h"
+#include "core/bounding/boundingcylinder.h"
+#include "core/bounding/boundingsphere.h"
+#include "core/colour/spectral.h"
+#include "core/configcore.h"
+#include "core/coretypes.h"
+#include "core/lighting/lightgroup.h"
+#include "core/lighting/lightsource.h"
+#include "core/lighting/photons.h"
+#include "core/lighting/radiosity.h"
+#include "core/lighting/subsurface.h"
+
+#include "core/material/blendmap.h"
+#include "core/material/interior.h"
+#include "core/material/media.h"
+#include "core/material/normal.h"
+#include "core/material/pattern.h"
+#include "core/material/pigment.h"
+#include "core/material/texture.h"
+#include "core/material/warp.h"
+
+#include "core/math/chi2.h"
+#include "core/math/hypercomplex.h"
+#include "core/math/jitter.h"
+#include "core/math/matrix.h"
+#include "core/math/polynomialsolver.h"
+#include "core/math/quaternion.h"
+#include "core/math/randomsequence.h"
+#include "core/math/spline.h"
+#include "core/math/vector.h"
+
+#include "core/render/ray.h"
+#include "core/render/trace.h"
+#include "core/render/tracepixel.h"
+#include "core/scene/atmosphere.h"
+#include "core/scene/camera.h"
+#include "core/scene/object.h"
+#include "core/scene/scenedata.h"
+#include "core/scene/tracethreaddata.h"
+
+#include "core/shape/bezier.h"
+#include "core/shape/blob.h"
+#include "core/shape/box.h"
+#include "core/shape/cone.h"
+#include "core/shape/csg.h"
+#include "core/shape/disc.h"
+#include "core/shape/fractal.h"
+#include "core/shape/heightfield.h"
+#include "core/shape/isosurface.h"
+#include "core/shape/lathe.h"
+#include "core/shape/mesh.h"
+#include "core/shape/ovus.h"
+#include "core/shape/parametric.h"
+#include "core/shape/plane.h"
+#include "core/shape/polygon.h"
+#include "core/shape/polynomial.h"
+#include "core/shape/prism.h"
+#include "core/shape/quadric.h"
+#include "core/shape/sor.h"
+#include "core/shape/sphere.h"
+#include "core/shape/spheresweep.h"
+#include "core/shape/superellipsoid.h"
+#include "core/shape/torus.h"
+#include "core/shape/triangle.h"
+#include "core/shape/truetype.h"
+
+#include "core/support/imageutil.h"
+#include "core/support/octree.h"
+#include "core/support/simplevector.h"
+#include "core/support/statisticids.h"
+#include "core/support/statistics.h"
+
+#include "frontend/animationprocessing.h"
+#include "frontend/configfrontend.h"
+#include "frontend/console.h"
+#include "frontend/defaultplatformbase.h"
+#include "frontend/display.h"
+#include "frontend/filemessagehandler.h"
+#include "frontend/imagemessagehandler.h"
+#include "frontend/parsermessagehandler.h"
+#include "frontend/precomp.h"
+#include "frontend/processoptions.h"
+#include "frontend/processrenderoptions.h"
+#include "frontend/renderfrontend.h"
+#include "frontend/rendermessagehandler.h"
+#include "frontend/shelloutprocessing.h"
+#include "frontend/simplefrontend.h"
+
+#include "parser/configparser.h"
+#include "parser/fncode.h"
+#include "parser/parser.h"
+#include "parser/precomp.h"
+#include "parser/reservedwords.h"
+
+#include "pov_mem.h"
+
+#include "povms/configpovms.h"
+#include "povms/povms.h"
+#include "povms/povmscpp.h"
+#include "povms/povmsid.h"
+#include "povms/povmsutil.h"
+#include "povms/precomp.h"

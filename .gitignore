@@ -221,6 +221,13 @@ $RECYCLE.BIN/
 # Files created by make in various subdirectories
 .dirstamp
 
+# =============================
+# POV-Ray Xcode build artefacts
+# =============================
+
+xcuserdata/
+project.xcworkspace/
+
 # =====================
 # POV-Ray Miscellaneous
 # =====================

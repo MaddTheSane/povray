@@ -1,0 +1,20 @@
+/* 
+  previewWindowLocalized.strings
+  PovRay 3.7 RC8 x4
+
+  Created by yvo on 18/08/13.
+
+*/
+	"PvtbStopLabel" = "Stop";
+	"PvtbStopPaletteLabel" = "Stop";
+	"PvtbStopTooltip" = "Stop the current rendering";
+
+	"PvtbPauseLabel" = "Pause";
+	"PvtbContinueLabel" = "Continue";
+	"PvtbPauseContinuePaletteLabel" =  "Pause/Continue";
+	"PvtbContinueTooltip" = "Continue rendering (after pause)";
+	"PvtbPauseTooltip" = "Pause rendering.\nThe time-out is 3 seconds. If the renderer is not able to pause in that time, the render continues.";
+
+	"PvtbCutLabel" = "Select";
+	"PvtbCutPaletteLabel" = "Select a section";
+	"PvtbCutTooltip" = "Select an area for the next rendering.\nRow and column values are written to the rendering preferences \"Partial Image Size\"\n";
