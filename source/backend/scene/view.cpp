@@ -682,7 +682,7 @@ void View::StartRender(POVMS_Object& renderOptions)
 
 	if(renderControlThread == NULL)
 #ifndef USE_OFFICIAL_BOOST
-		renderControlThread = new thread(boost::bind(&View::RenderControlThread, this), 1024 * 64);
+		renderControlThread = new boost::thread(boost::bind(&View::RenderControlThread, this), 1024 * 64);
 #else
 		renderControlThread = new boost::thread(boost::bind(&View::RenderControlThread, this));
 #endif

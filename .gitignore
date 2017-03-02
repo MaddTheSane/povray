@@ -185,3 +185,6 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 
+# Xcode metadata
+xcuserdata/
+project.xcworkspace/

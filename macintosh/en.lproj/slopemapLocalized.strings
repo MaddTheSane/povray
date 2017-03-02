@@ -1,0 +1,11 @@
+
+"SlopeButton" = "Hide or show the slope-handles at each control point.";
+"PointButton" = "Hide or show the controlpoints used to draw the slope curve.\nThe points have coordinates (location, height).";
+"CurveButton" = "Hide or show the curve that will be used to calculate the surface normal.";
+"RasterButton" = "Hide or show the background grid (grid_size is 0.1 unit)";
+
+"mTableView" = "Enter the x value of a control point (\"location\" on the x-axis).\nEnter the y value of a control point (\"height\"  on the y-axis).\nSpecify the slope at a control point.\n0 gives no slope (horizontal).\n1 gives a slope of 45° upwards.\nNegative values specify a downward slope.\nTry to keep values between +3 and -3.";
+"mAddButton" = "Add an entry line at the end of the list.";
+"mInsertButton" = "Insert an entry line just before the selected line.";
+"mTrashButton" = "Remove the selected line.";
+
