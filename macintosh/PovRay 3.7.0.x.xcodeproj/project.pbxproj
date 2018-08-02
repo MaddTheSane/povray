@@ -2842,9 +2842,13 @@
 			isa = PBXGroup;
 			children = (
 				826CB5D31D034CC3000A7A98 /* config */,
+				82B477A61D046FEA0054B17E /* frontEndPlatformBase */,
+				826CB7681D034CC4000A7A98 /* messageWindow */,
+				821D6A8B1D45350C00568A07 /* preferencesPanel */,
+				826CB77A1D034CC4000A7A98 /* previewWindow */,
+				826CB7851D034CC4000A7A98 /* sceneDocument */,
 				826CB5CF1D034CC3000A7A98 /* appPreferencesController.h */,
 				826CB5D01D034CC3000A7A98 /* appPreferencesController.mm */,
-				82B477A61D046FEA0054B17E /* frontEndPlatformBase */,
 				826CB5D21D034CC3000A7A98 /* batchMap.mm */,
 				826CB5D11D034CC3000A7A98 /* batchMap.h */,
 				826CB71E1D034CC4000A7A98 /* customColorwell.h */,
@@ -2854,18 +2858,14 @@
 				826CB7651D034CC4000A7A98 /* main.mm */,
 				826CB7661D034CC4000A7A98 /* menuFromDirectory.h */,
 				826CB7671D034CC4000A7A98 /* menuFromDirectory.mm */,
-				826CB7681D034CC4000A7A98 /* messageWindow */,
 				826CB76B1D034CC4000A7A98 /* mutableTabString.h */,
 				826CB76C1D034CC4000A7A98 /* mutableTabString.mm */,
 				826CB7701D034CC4000A7A98 /* povrayApplication.h */,
 				826CB7711D034CC4000A7A98 /* povrayApplication.mm */,
-				821D6A8B1D45350C00568A07 /* preferencesPanel */,
-				826CB77A1D034CC4000A7A98 /* previewWindow */,
 				826CB7811D034CC4000A7A98 /* renderDispatcher.h */,
 				826CB7821D034CC4000A7A98 /* renderDispatcher.mm */,
 				826CB7831D034CC4000A7A98 /* rendererGUIBridge.h */,
 				826CB7841D034CC4000A7A98 /* rendererGUIBridge.mm */,
-				826CB7851D034CC4000A7A98 /* sceneDocument */,
 				826CB7D51D034CC4000A7A98 /* toolTipAutomator.h */,
 				826CB7D61D034CC4000A7A98 /* toolTipAutomator.mm */,
 			);
@@ -2891,8 +2891,7 @@
 				826CB7691D034CC4000A7A98 /* messageViewController.h */,
 				826CB76A1D034CC4000A7A98 /* messageViewController.mm */,
 			);
-			name = messageWindow;
-			path = MessageWindow;
+			path = messageWindow;
 			sourceTree = "<group>";
 		};
 		826CB7721D034CC4000A7A98 /* precompiledHeaders */ = {
@@ -2903,8 +2902,7 @@
 				826CB7751D034CC4000A7A98 /* povrayUnofficial_Prefix.pch */,
 				826CB7761D034CC4000A7A98 /* povrayBackendPrefix.pch */,
 			);
-			name = precompiledHeaders;
-			path = PrecompiledHeaders;
+			path = precompiledHeaders;
 			sourceTree = "<group>";
 		};
 		826CB77A1D034CC4000A7A98 /* previewWindow */ = {
@@ -2920,8 +2918,7 @@
 				823B2A0B1D16E677007AA0CB /* macintoshDisplay.h */,
 				823625BC1D16909B0009612E /* materialPreview.h */,
 			);
-			name = previewWindow;
-			path = PreviewWindow;
+			path = previewWindow;
 			sourceTree = "<group>";
 		};
 		826CB7851D034CC4000A7A98 /* sceneDocument */ = {
@@ -2943,8 +2940,7 @@
 				826CB7931D034CC4000A7A98 /* sceneTextview.mm */,
 				826CB7941D034CC4000A7A98 /* templates */,
 			);
-			name = sceneDocument;
-			path = SceneDocument;
+			path = sceneDocument;
 			sourceTree = "<group>";
 		};
 		826CB7941D034CC4000A7A98 /* templates */ = {
@@ -3007,8 +3003,7 @@
 				826CB7D31D034CC4000A7A98 /* transformationsTemplate.h */,
 				826CB7D41D034CC4000A7A98 /* transformationsTemplate.mm */,
 			);
-			name = templates;
-			path = Templates;
+			path = templates;
 			sourceTree = "<group>";
 		};
 		826CB9D21D034D23000A7A98 /* Icons */ = {
@@ -3152,9 +3147,8 @@
 				82B477B11D04712B0054B17E /* mapPreview.h */,
 				82B477B21D04712B0054B17E /* mapPreview.mm */,
 			);
-			name = baseClasses;
-			path = sceneDocument/templates/baseClasses;
-			sourceTree = SOURCE_ROOT;
+			path = baseClasses;
+			sourceTree = "<group>";
 		};
 		82B9A1510C904CD5002D62D9 /* libraries */ = {
 			isa = PBXGroup;
