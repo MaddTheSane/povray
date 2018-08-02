@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55B88C2D21137FDF00AA468A /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B88C2C21137FDF00AA468A /* libz.1.tbd */; };
 		8222236D1D4535F90062FCA5 /* preferencesPanelController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8222236C1D4535F90062FCA5 /* preferencesPanelController.mm */; };
 		822223701D45360D0062FCA5 /* backgroundTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8222236F1D45360D0062FCA5 /* backgroundTemplate.mm */; };
 		823625BD1D16909B0009612E /* macintoshDisplay.mm in Sources */ = {isa = PBXBuildFile; fileRef = 823625BB1D16909B0009612E /* macintoshDisplay.mm */; };
-		824EAFB90D55B24700076368 /* libzlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821CDDD30C90179A00CC0BDA /* libzlib.a */; };
 		824EAFBA0D55B25500076368 /* libpng.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821CDDD80C9017A600CC0BDA /* libpng.a */; };
 		824EAFBB0D55B25500076368 /* libtiff.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821CDDDD0C9017BA00CC0BDA /* libtiff.a */; };
 		824EAFBC0D55B25500076368 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 821CDDE20C9017C500CC0BDA /* libjpeg.a */; };
@@ -785,16 +785,6 @@
 		826CBDBF1D0351F7000A7A98 /* jquant1.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBD921D0351F7000A7A98 /* jquant1.c */; };
 		826CBDC01D0351F7000A7A98 /* jquant2.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBD931D0351F7000A7A98 /* jquant2.c */; };
 		826CBDC11D0351F7000A7A98 /* jutils.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBD941D0351F7000A7A98 /* jutils.c */; };
-		826CBDCC1D03521D000A7A98 /* adler32.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDC21D03521D000A7A98 /* adler32.c */; };
-		826CBDCD1D03521D000A7A98 /* compress.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDC31D03521D000A7A98 /* compress.c */; };
-		826CBDCE1D03521D000A7A98 /* crc32.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDC41D03521D000A7A98 /* crc32.c */; };
-		826CBDCF1D03521D000A7A98 /* deflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDC51D03521D000A7A98 /* deflate.c */; };
-		826CBDD01D03521D000A7A98 /* inffast.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDC61D03521D000A7A98 /* inffast.c */; };
-		826CBDD11D03521D000A7A98 /* inflate.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDC71D03521D000A7A98 /* inflate.c */; };
-		826CBDD21D03521D000A7A98 /* inftrees.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDC81D03521D000A7A98 /* inftrees.c */; };
-		826CBDD31D03521D000A7A98 /* trees.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDC91D03521D000A7A98 /* trees.c */; };
-		826CBDD41D03521D000A7A98 /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDCA1D03521D000A7A98 /* uncompr.c */; };
-		826CBDD51D03521D000A7A98 /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDCB1D03521D000A7A98 /* zutil.c */; };
 		826CBDE41D035252000A7A98 /* png.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDD61D035252000A7A98 /* png.c */; };
 		826CBDE51D035252000A7A98 /* pngerror.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDD71D035252000A7A98 /* pngerror.c */; };
 		826CBDE61D035252000A7A98 /* pngget.c in Sources */ = {isa = PBXBuildFile; fileRef = 826CBDD81D035252000A7A98 /* pngget.c */; };
@@ -889,13 +879,6 @@
 			remoteGlobalIDString = 825D610611031C3A00E0FF88;
 			remoteInfo = ilmbase;
 		};
-		82B9A21F0C904F38002D62D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 821CDDD20C90179A00CC0BDA;
-			remoteInfo = zlib;
-		};
 		82B9A2210C904F44002D62D9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
@@ -931,6 +914,7 @@
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		55B88C2C21137FDF00AA468A /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		8207D2E01D04648000A42189 /* eLut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eLut.h; sourceTree = "<group>"; };
 		8207D2E11D04648000A42189 /* IlmBaseConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IlmBaseConfig.h; sourceTree = "<group>"; };
 		8207D2E21D04648000A42189 /* jconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
@@ -946,7 +930,6 @@
 		8207D2ED1D04648000A42189 /* tiffconf_x86_64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tiffconf_x86_64.h; sourceTree = "<group>"; };
 		8207D2EE1D04648000A42189 /* toFloat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = toFloat.h; sourceTree = "<group>"; };
 		8207D2EF1D04648000A42189 /* zconf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zconf.h; sourceTree = "<group>"; };
-		821CDDD30C90179A00CC0BDA /* libzlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libzlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		821CDDD80C9017A600CC0BDA /* libpng.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpng.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		821CDDDD0C9017BA00CC0BDA /* libtiff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtiff.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		821CDDE20C9017C500CC0BDA /* libjpeg.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libjpeg.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1797,16 +1780,6 @@
 		826CBD921D0351F7000A7A98 /* jquant1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jquant1.c; sourceTree = "<group>"; };
 		826CBD931D0351F7000A7A98 /* jquant2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jquant2.c; sourceTree = "<group>"; };
 		826CBD941D0351F7000A7A98 /* jutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jutils.c; sourceTree = "<group>"; };
-		826CBDC21D03521D000A7A98 /* adler32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = adler32.c; sourceTree = "<group>"; };
-		826CBDC31D03521D000A7A98 /* compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compress.c; sourceTree = "<group>"; };
-		826CBDC41D03521D000A7A98 /* crc32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = crc32.c; sourceTree = "<group>"; };
-		826CBDC51D03521D000A7A98 /* deflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflate.c; sourceTree = "<group>"; };
-		826CBDC61D03521D000A7A98 /* inffast.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inffast.c; sourceTree = "<group>"; };
-		826CBDC71D03521D000A7A98 /* inflate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inflate.c; sourceTree = "<group>"; };
-		826CBDC81D03521D000A7A98 /* inftrees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = inftrees.c; sourceTree = "<group>"; };
-		826CBDC91D03521D000A7A98 /* trees.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = trees.c; sourceTree = "<group>"; };
-		826CBDCA1D03521D000A7A98 /* uncompr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = uncompr.c; sourceTree = "<group>"; };
-		826CBDCB1D03521D000A7A98 /* zutil.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zutil.c; sourceTree = "<group>"; };
 		826CBDD61D035252000A7A98 /* png.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = png.c; sourceTree = "<group>"; };
 		826CBDD71D035252000A7A98 /* pngerror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pngerror.c; sourceTree = "<group>"; };
 		826CBDD81D035252000A7A98 /* pngget.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pngget.c; sourceTree = "<group>"; };
@@ -1888,13 +1861,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		821CDDD10C90179A00CC0BDA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		821CDDD60C9017A600CC0BDA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1944,7 +1910,7 @@
 				824EAFBA0D55B25500076368 /* libpng.a in Frameworks */,
 				824EAFBB0D55B25500076368 /* libtiff.a in Frameworks */,
 				824EAFBC0D55B25500076368 /* libjpeg.a in Frameworks */,
-				824EAFB90D55B24700076368 /* libzlib.a in Frameworks */,
+				55B88C2D21137FDF00AA468A /* libz.1.tbd in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				82CCB14C0ED3370F00EBCCF1 /* libpovray_backend.a in Frameworks */,
 				826CBA3E11035E82002B4FD0 /* libilmbase.a in Frameworks */,
@@ -1960,7 +1926,6 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* POVRay 3.7.0.x.app */,
-				821CDDD30C90179A00CC0BDA /* libzlib.a */,
 				821CDDD80C9017A600CC0BDA /* libpng.a */,
 				821CDDDD0C9017BA00CC0BDA /* libtiff.a */,
 				821CDDE20C9017C500CC0BDA /* libjpeg.a */,
@@ -1993,6 +1958,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				55B88C2C21137FDF00AA468A /* libz.1.tbd */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
@@ -3196,28 +3162,10 @@
 				825D5FF41103181000E0FF88 /* openexr */,
 				82B9A1550C904CEA002D62D9 /* tiff */,
 				82B9A1540C904CE4002D62D9 /* jpeg */,
-				82B9A1520C904CDB002D62D9 /* zlib */,
 				82B9A1530C904CE0002D62D9 /* png */,
 			);
 			name = libraries;
 			path = ../libraries;
-			sourceTree = "<group>";
-		};
-		82B9A1520C904CDB002D62D9 /* zlib */ = {
-			isa = PBXGroup;
-			children = (
-				826CBDC21D03521D000A7A98 /* adler32.c */,
-				826CBDC31D03521D000A7A98 /* compress.c */,
-				826CBDC41D03521D000A7A98 /* crc32.c */,
-				826CBDC51D03521D000A7A98 /* deflate.c */,
-				826CBDC61D03521D000A7A98 /* inffast.c */,
-				826CBDC71D03521D000A7A98 /* inflate.c */,
-				826CBDC81D03521D000A7A98 /* inftrees.c */,
-				826CBDC91D03521D000A7A98 /* trees.c */,
-				826CBDCA1D03521D000A7A98 /* uncompr.c */,
-				826CBDCB1D03521D000A7A98 /* zutil.c */,
-			);
-			path = zlib;
 			sourceTree = "<group>";
 		};
 		82B9A1530C904CE0002D62D9 /* png */ = {
@@ -3398,13 +3346,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		821CDDCF0C90179A00CC0BDA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		821CDDD40C9017A600CC0BDA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -3762,23 +3703,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		821CDDD20C90179A00CC0BDA /* libzlib */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 821CDDE30C9017E300CC0BDA /* Build configuration list for PBXNativeTarget "libzlib" */;
-			buildPhases = (
-				821CDDCF0C90179A00CC0BDA /* Headers */,
-				821CDDD00C90179A00CC0BDA /* Sources */,
-				821CDDD10C90179A00CC0BDA /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = libzlib;
-			productName = zlib;
-			productReference = 821CDDD30C90179A00CC0BDA /* libzlib.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 		821CDDD70C9017A600CC0BDA /* libpng */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 821CDDE60C9017E300CC0BDA /* Build configuration list for PBXNativeTarget "libpng" */;
@@ -3892,7 +3816,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				82B9A2200C904F38002D62D9 /* PBXTargetDependency */,
 				82B9A2220C904F44002D62D9 /* PBXTargetDependency */,
 				82B9A2240C904F46002D62D9 /* PBXTargetDependency */,
 				82B9A2260C904F49002D62D9 /* PBXTargetDependency */,
@@ -3944,7 +3867,6 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* PovRay37 vfe */,
-				821CDDD20C90179A00CC0BDA /* libzlib */,
 				821CDDD70C9017A600CC0BDA /* libpng */,
 				821CDDDC0C9017BA00CC0BDA /* libtiff */,
 				821CDDE10C9017C500CC0BDA /* libjpeg */,
@@ -4082,23 +4004,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		821CDDD00C90179A00CC0BDA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				826CBDD41D03521D000A7A98 /* uncompr.c in Sources */,
-				826CBDD51D03521D000A7A98 /* zutil.c in Sources */,
-				826CBDD01D03521D000A7A98 /* inffast.c in Sources */,
-				826CBDCE1D03521D000A7A98 /* crc32.c in Sources */,
-				826CBDCD1D03521D000A7A98 /* compress.c in Sources */,
-				826CBDCF1D03521D000A7A98 /* deflate.c in Sources */,
-				826CBDD21D03521D000A7A98 /* inftrees.c in Sources */,
-				826CBDCC1D03521D000A7A98 /* adler32.c in Sources */,
-				826CBDD11D03521D000A7A98 /* inflate.c in Sources */,
-				826CBDD31D03521D000A7A98 /* trees.c in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		821CDDD50C9017A600CC0BDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4579,11 +4484,6 @@
 			target = 825D610611031C3A00E0FF88 /* libilmbase */;
 			targetProxy = 826CBA3C11035E76002B4FD0 /* PBXContainerItemProxy */;
 		};
-		82B9A2200C904F38002D62D9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 821CDDD20C90179A00CC0BDA /* libzlib */;
-			targetProxy = 82B9A21F0C904F38002D62D9 /* PBXContainerItemProxy */;
-		};
 		82B9A2220C904F44002D62D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 821CDDD70C9017A600CC0BDA /* libpng */;
@@ -5014,14 +4914,13 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = openexr;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\" \"$(SRCROOT)/config/libraries_config/libz\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\"";
 			};
 			name = Debug;
 		};
 		825D610A11031C3B00E0FF88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5037,7 +4936,7 @@
 		826B4C080F63C1440030525E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -5080,7 +4979,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/zlib\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/**";
 				WARNING_CFLAGS = "-Wno-write-strings";
 			};
 			name = Debug;
@@ -5099,25 +4998,19 @@
 					REENTRANT,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
+					"\"$(SRCROOT)/../libraries/png\"",
+					"\"$(SRCROOT)/../libraries/boost\"",
+					"\"$(SRCROOT)/../source\"/**",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = org.povray.unofficial37;
 				PRODUCT_NAME = "POVRay 3.7.0.x";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		826B4C0A0F63C1440030525E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_INPUT_FILETYPE = automatic;
-				LINK_WITH_STANDARD_LIBRARIES = NO;
-				MACH_O_TYPE = staticlib;
-				PRODUCT_NAME = zlib;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/zlib\" \"$(SRCROOT)/config/libraries_config\"";
 			};
 			name = Debug;
 		};
@@ -5175,14 +5068,14 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = povray_backend;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/zlib\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/** \"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config/libpng\" \"$(SRCROOT)/config/libraries_config\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/** \"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config/libpng\" \"$(SRCROOT)/config/libraries_config\"";
 			};
 			name = Debug;
 		};
 		82A1002E15F51A650023C5F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -5225,7 +5118,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/zlib\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/**";
 				WARNING_CFLAGS = "-Wno-write-strings";
 			};
 			name = Release;
@@ -5245,25 +5138,19 @@
 					REENTRANT,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
+					"\"$(SRCROOT)/../libraries/png\"",
+					"\"$(SRCROOT)/../libraries/boost\"",
+					"\"$(SRCROOT)/../source\"/**",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = org.povray.unofficial37;
 				PRODUCT_NAME = "POVRay 3.7.0.x";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		82A1003015F51A650023C5F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_INPUT_FILETYPE = automatic;
-				LINK_WITH_STANDARD_LIBRARIES = NO;
-				MACH_O_TYPE = staticlib;
-				PRODUCT_NAME = zlib;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/zlib\" \"$(SRCROOT)/config/libraries_config\"";
 			};
 			name = Release;
 		};
@@ -5321,7 +5208,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = povray_backend;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/zlib\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/** \"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config/libpng\" \"$(SRCROOT)/config/libraries_config\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/** \"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config/libpng\" \"$(SRCROOT)/config/libraries_config\"";
 			};
 			name = Release;
 		};
@@ -5337,14 +5224,13 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = openexr;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\" \"$(SRCROOT)/config/libraries_config/libz\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\"";
 			};
 			name = Release;
 		};
 		82A1003615F51A650023C5F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -5360,15 +5246,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		821CDDE30C9017E300CC0BDA /* Build configuration list for PBXNativeTarget "libzlib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				826B4C0A0F63C1440030525E /* Debug */,
-				82A1003015F51A650023C5F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		821CDDE60C9017E300CC0BDA /* Build configuration list for PBXNativeTarget "libpng" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
