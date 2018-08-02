@@ -12,10 +12,10 @@
 				<string>pov</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>MPDocumentIcon.icns</string>
+			<string>MPDocumentIcon</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
-				<string>public.plain-text</string>
+				<string>org.povray.pov</string>
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>SceneFile</string>
@@ -37,7 +37,7 @@
 				<string>inc</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>MPIncludeIcon.icns</string>
+			<string>MPIncludeIcon</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>public.plain-text</string>
@@ -64,7 +64,7 @@
 				<string>mpTpl</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>MPTemplateIcon.icns</string>
+			<string>MPTemplateIcon</string>
 			<key>CFBundleTypeName</key>
 			<string>Template</string>
 			<key>CFBundleTypeRole</key>
@@ -80,7 +80,7 @@
 				<string>ini</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string>MPIniIcon.icns</string>
+			<string>MPIniIcon</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>public.plain-text</string>
@@ -130,5 +130,31 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>PovRayApplication</string>
+	<key>UTExportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.source-code</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>POV-Ray source</string>
+			<key>UTTypeIconFile</key>
+			<string>MPDocumentIcon</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.povray.pov</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>pov</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>model/x-pov</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

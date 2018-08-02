@@ -41,10 +41,6 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
-		#if MAC_OS_X_VERSION_MIN_REQUIRED == MAC_OS_X_VERSION_10_4
-			typedef int NSInteger;
-			typedef unsigned int NSUInteger;
-		#endif
 #endif
 
  
