@@ -1,0 +1,99 @@
+//******************************************************************************
+///
+/// @file <File Name>
+///
+/// @todo   What's in here?
+///
+/// @copyright
+/// @parblock
+///
+/// Unofficial Macintosh GUI port of POV-Ray 3.x.x
+/// Copyright 2002-2017 Yvo Smellenbergh
+///
+/// This port of POV-Ray is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU Affero General Public License as
+/// published by the Free Software Foundation, either version 3 of the
+/// License, or (at your option) any later version.
+///
+/// This port of POV-Ray is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU Affero General Public License for more details.
+///
+/// You should have received a copy of the GNU Affero General Public License
+/// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+///
+/// ----------------------------------------------------------------------------
+///
+/// This unofficial port of POV-Ray is based on the Persistence of Vision Ray
+/// Tracer ('POV-Ray') version 3.x.x, Copyright 1991-2017 Persistence of Vision
+/// Raytracer Pty. Ltd.
+/// ----------------------------------------------------------------------------
+///
+/// POV-Ray is based on the popular DKB raytracer version 2.12.
+/// DKBTrace was originally written by David K. Buck.
+/// DKBTrace Ver 2.0-2.12 were written by David K. Buck & Aaron A. Collins.
+///
+/// @endparblock
+///
+//******************************************************************************
+
+#include <new>
+#include <map>
+#include <stdio.h>
+#include <string.h>
+#include <limits.h>
+#include <vector>
+#include <stack>
+#include <sys/types.h>
+
+#ifndef MATH_H_INCLUDED
+	#include <math.h>
+#endif
+#include <cctype>
+#include <stdexcept>
+#include <queue>
+#include <cassert>
+#include <algorithm>
+#include "base/configbase.h"
+#include "base/types.h"
+#include "base/fileinputoutput.h"
+#include "backend/configbackend.h"
+#include "backend/support/simplevector.h"
+#include "backend/control/messagefactory.h"
+#include "backend/colour/spectral.h"
+
+#include "pov_mem.h"
+
+#include "frontend/configfrontend.h"
+#include "frontend/imageprocessing.h"
+
+
+
+#include <boost/shared_ptr.hpp>
+#include <boost/scoped_ptr.hpp>
+
+
+#include "base/image/image.h"
+#include "base/image/pgm.h"
+#include "base/image/ppm.h"
+#include "base/path.h"
+#include "base/platformbase.h"
+#include "base/pointer.h"
+#include "base/pov_err.h"
+#include "base/povdebug.h"
+#include "base/povms.h"
+#include "base/povmscpp.h"
+#include "base/povmsgid.h"
+#include "base/processoptions.h"
+#include "base/stringutilities.h"
+#include "base/textstream.h"
+#include "base/textstreambuffer.h"
+
+#include "base/timer.h"
+
+
+#include "backend/povray.h"
+#include "frontend/renderfrontend.h"
+#include "frontend/imageprocessing.h"
+
