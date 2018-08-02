@@ -121,7 +121,7 @@
 	<key>CFBundleSignature</key>
 	<string>NPOV</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>3.7.0.7.3</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.graphics-design</string>
 	<key>NSAppSleepDisabled</key>
