@@ -250,8 +250,19 @@ namespace boost
     bool thread::start_thread_noexcept()
     {
         thread_info->self=thread_info;
-        int const res = pthread_create(&thread_info->thread_handle, 0, &thread_proxy, thread_info.get());
-        if (res != 0)
+#ifdef USE_BOOST_STACK_HACK
+	#warning "Modified stack size used"
+			pthread_attr_t mThreadAttr;
+			pthread_attr_init(&mThreadAttr);
+			pthread_attr_setstacksize(&mThreadAttr, POV_THREAD_STACK_SIZE);
+			int const res = pthread_create(&thread_info->thread_handle, &mThreadAttr, &thread_proxy, thread_info.get());
+		#warning "end changed stack size for thread"
+		#warning "uncommend this linechanged stack size for thread"
+#else
+	#warning "standard stack size is used"
+	int const res = pthread_create(&thread_info->thread_handle, 0, &thread_proxy, thread_info.get());
+#endif
+			if (res != 0)
         {
             thread_info->self.reset();
             return false;

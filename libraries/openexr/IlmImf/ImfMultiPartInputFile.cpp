@@ -53,10 +53,10 @@
 #include "ImfVersion.h"
 
 #include <OpenEXRConfig.h>
-#include <IlmThread.h>
-#include <IlmThreadMutex.h>
+#include "IlmThread.h"
+#include "IlmThreadMutex.h"
 
-#include <Iex.h>
+#include "Iex.h"
 #include <map>
 #include <set>
 

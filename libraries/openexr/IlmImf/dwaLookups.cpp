@@ -48,9 +48,9 @@
 #include <unistd.h>
 #endif
 
-#include <half.h>
-#include <IlmThread.h>
-#include <IlmThreadSemaphore.h>
+#include "half.h"
+#include "IlmThread.h"
+#include "IlmThreadSemaphore.h"
 #include <ImfIO.h>
 #include <ImfXdr.h>
 #include "ImfNamespace.h"
