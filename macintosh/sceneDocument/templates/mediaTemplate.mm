@@ -390,7 +390,7 @@
 //---------------------------------------------------------------------
 -(IBAction) mediaTarget:(id)sender
 {
-	int theTag;
+	eMediaTags theTag;
 	if ( sender==self)
 		theTag=cMediaAbsorptionGroupOn;
 	else

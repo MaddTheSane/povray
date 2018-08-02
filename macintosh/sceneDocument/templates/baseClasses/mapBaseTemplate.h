@@ -51,7 +51,7 @@
     IBOutlet NSButton 		*mTrashButton;
 }
 
--(void) selectTableRow:(int)index;
+-(void) selectTableRow:(NSInteger)index;
 -(void) setMap:(id)map;
 -(void) setButtons;
 - (IBAction)addButton:(id)sender;

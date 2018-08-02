@@ -48,7 +48,7 @@
 #define setMediaDensityEditPattern setTemplatePrefs:0 withObject
 #define setMediaDensityEditMap setTemplatePrefs:1 withObject
 	
-enum eMediaTags{
+typedef NS_ENUM(NSInteger, eMediaTags) {
 	cMediaAbsorptionGroupOn			=10 ,
 	cMediaEmissionGroupOn				=20 ,
 	cMediaDensityGroupOn				=40 ,
@@ -69,7 +69,7 @@ enum eMediaTags{
 	cMediaSamplingRatioOn				=180 
 };
 
-enum eMediaScatteringTypes {
+typedef NS_ENUM(NSInteger, eMediaScatteringTypes) {
 	cIsotropic 				=0,
 	cMieHazy 				=1,
 	cMieMurky				=2,
@@ -77,7 +77,7 @@ enum eMediaScatteringTypes {
 	cHenyeyGreenstein	=4
 };
 
-enum eMediaSamplingMethod {
+typedef NS_ENUM(NSInteger, eMediaSamplingMethod) {
 	cMethod1 				=0,
 	cMethod2 				=1,
 	cMethod3				=2

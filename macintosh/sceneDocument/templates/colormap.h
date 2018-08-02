@@ -40,7 +40,7 @@
 #import <Cocoa/Cocoa.h>
 #import "mapBase.h"
 
-enum eColormapButtonsTags {
+typedef NS_ENUM(NSInteger, eColormapButtonsTags) {
 	cFilterButton			= 10,
 	cTransmitButton		=20,
 	cGrayColorButton	=30
@@ -52,37 +52,37 @@ enum {
 	cColormapTransmitIndex=3
 	};
 
-@interface colormap : MapBase <NSCoding> 
+@interface colormap : MapBase <NSCoding>
 {
-	int 				mUseGrayColorOn;
-	int 				mFilterOn;
-	int 				mTransmitOn;
+	NSControlStateValue	mUseGrayColorOn;
+	NSControlStateValue	mFilterOn;
+	NSControlStateValue	mTransmitOn;
 	
 }
-+(id) standardMapWithView:(id)view;
-+(id) rainbowMapWithView:(id)view;
-+(id) blackAndWhiteMapWithView:(id)view;
++(instancetype) standardMapWithView:(id)view;
++(instancetype) rainbowMapWithView:(id)view;
++(instancetype) blackAndWhiteMapWithView:(id)view;
 
 -(void) makeDefaultMap;
 -(void) makeRainbowMap;
 -(void) makeBlackAndWhiteMap;
 
--(void)replaceEntryAtIndex:(unsigned int) index withObject:(NSColor *) color;
+-(void)replaceEntryAtIndex:(NSUInteger) index withObject:(NSColor *) color;
 -(void) addEntry;
--(void) insertEntryAtIndex:(int)index;
+-(void) insertEntryAtIndex:(NSInteger)index;
 
 
--(void) setButtonState:(int) state forButton:(int)button;
--(int) buttonState:(int)button;
+-(void) setButtonState:(NSControlStateValue) state forButton:(eColormapButtonsTags)button;
+-(NSControlStateValue) buttonState:(eColormapButtonsTags)button;
 
 
--(NSString *) redAtIndex:(unsigned int) index;
--(NSString *) greenAtIndex:(unsigned int) index;
--(NSString *) blueAtIndex:(unsigned int) index;
+-(NSString *) redAtIndex:(NSUInteger) index;
+-(NSString *) greenAtIndex:(NSUInteger) index;
+-(NSString *) blueAtIndex:(NSUInteger) index;
 
--(void) setRed:(NSString *)red atIndex:(unsigned int) index;
--(void) setGreen:(NSString *)green atIndex:(unsigned int) index;
--(void) setBlue:(NSString *)blue atIndex:(unsigned int) index;
+-(void) setRed:(NSString *)red atIndex:(NSUInteger) index;
+-(void) setGreen:(NSString *)green atIndex:(NSUInteger) index;
+-(void) setBlue:(NSString *)blue atIndex:(NSUInteger) index;
 
 @end
 
@@ -90,7 +90,6 @@ enum {
 {
 	BOOL mUseGrayScale;
 }
--(BOOL) isGrayScale;
--(void) setIsGrayScale:(BOOL) is;
+@property BOOL isGrayScale;
 
 @end

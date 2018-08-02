@@ -39,7 +39,7 @@
 //******************************************************************************
 #import <Cocoa/Cocoa.h>
 
-#define dNoRowSelected -1
+#define dNoRowSelected -1l
 
 @interface mapPreview : NSView
 {

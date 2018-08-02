@@ -51,40 +51,39 @@ enum eSlopeButtonTags {
 @interface MapBase : NSObject <NSCoding> 
 {
 	NSMutableArray *mMapArray;
-	id						mPreview;		//pointer
+	id						mPreview __unsafe_unretained;		//pointer
 	id						mTemplate;	//slopemapTemplate, colormapTempalte,...
-	int						mSelectedRow;
+	NSInteger			mSelectedRow;
 }
 -(void)  reloadData;
 
 -(void) mapBaseSetTemplate:(id) owner;
--(void) selectTableRow:(int)index;
--(id) init;
--(void) dealloc;
+-(void) selectTableRow:(NSInteger)index;
+-(instancetype) init;
 -(void) setViewDirty;
--(id) preview;
--(void) setPreview:(id) view;
--(void) removeEntryAtIndex:(int)index reload:(bool)forceReload;
--(NSUInteger) count;
+@property (nonatomic, assign) id preview;
+-(void) removeEntryAtIndex:(NSInteger)index reload:(BOOL)forceReload;
+@property (readonly) NSUInteger count;
 -(void) setArray:(NSMutableArray*) array;
 -(id) array;
--(void) setSelectedRow:(NSInteger) row;
--(NSUInteger) selectedRow;
--(int) firstSelectedRow;
+@property (nonatomic) NSInteger selectedRow;
+-(NSInteger) firstSelectedRow;
 - (void)selectRow:(NSUInteger)rowIndex byExtendingSelection:(BOOL)flag;
 
 -(NSTableView *) tableView;
--(NSData *) archivedObjectAtIndex:(int)index;
--(void ) insertArchivedObject:(NSData *)data atIndex:(int) index;
+-(NSData *) archivedObjectAtIndex:(NSInteger)index;
+-(void ) insertArchivedObject:(NSData *)data atIndex:(NSInteger) index;
 
 //data
 -(id) objectAtRow:(NSUInteger)row atColumn:( NSUInteger) column;
 -(int) intAtRow:(NSUInteger)row atColumn:( NSUInteger) column;
+-(NSInteger) integerAtRow:(NSUInteger)row atColumn:( NSUInteger) column;
 -(float) floatAtRow:(NSUInteger)row atColumn:( NSUInteger) column;
 -(id) stringFromFloatWithFormat:(NSString*)format atRow:(NSUInteger)row atColumn:( NSUInteger) column;
 
 -(void) setObject:(id) objc atRow:(NSUInteger) row atColumn:(NSUInteger) column;
 -(void) setInt:(int)val atRow:(NSUInteger)row atColumn:(NSUInteger) column;
+-(void) setInteger:(NSInteger)val atRow:(NSUInteger)row atColumn:(NSUInteger) column;
 -(void) setFloat:(float)val atRow:(NSUInteger) row atColumn:(NSUInteger) column;
 
 

@@ -48,7 +48,7 @@
 //---------------------------------------------------------------------
 // insertEntryAtIndex
 //---------------------------------------------------------------------
--(void) insertEntryAtIndex:(int)index file:(NSString*)file
+-(void) insertEntryAtIndex:(NSInteger)index file:(NSString*)file
 {
 	if ( [self entryExists:file]==YES)
 		return;
@@ -56,10 +56,10 @@
 		index=0;
 
 	NSMutableArray *newArray=[NSMutableArray arrayWithObjects:
-		[NSNumber numberWithInt:NSOnState],
+		@(NSOnState),
 		[[PreferencesPanelController sharedInstance] getDictWithCurrentSettings:NO],
 		[NSString stringWithString:file],
-		[NSNumber numberWithInt:cQueue],
+		@(cQueue),
 		@"",
 	nil];
 	
@@ -83,10 +83,10 @@
 //---------------------------------------------------------------------
 -(BOOL) entryExists:(NSString *)file
 {
-	int cn=[self count];
+	NSInteger cn=[self count];
 	if (cn)
 	{
-		for (int x=0; x<cn; x++)
+		for (NSInteger x=0; x<cn; x++)
 			if ( [[self objectAtRow:x atColumn:cNameIndex] isEqualToString:file])
 				return YES;
 	}
@@ -109,18 +109,20 @@
 	if( [theEvent clickCount]==2)
 	{
 		NSPoint mouseLoc = [self convertPoint:[theEvent locationInWindow] fromView:nil];
-		int column=[self columnAtPoint:mouseLoc];
+		NSInteger column=[self columnAtPoint:mouseLoc];
 		NSTableColumn *clm=[[self tableColumns]objectAtIndex:column];
 		if ( clm && [[clm identifier] isEqualToString:@"name"])
 		{
-			int row=[self rowAtPoint:mouseLoc];
+			NSInteger row=[self rowAtPoint:mouseLoc];
 			if( row != -1)
 			{
 				NSString *file=[[[renderDispatcher sharedInstance]batchMap] objectAtRow:row atColumn:cNameIndex];
 				if ( file != nil)
 				{
 					NSDocumentController *ctrl=[NSDocumentController sharedDocumentController];
-					[ctrl openDocumentWithContentsOfURL:[NSURL fileURLWithPath:file] display:YES error:nil];
+					[ctrl openDocumentWithContentsOfURL:[NSURL fileURLWithPath:file] display:YES completionHandler:^(NSDocument * _Nullable document, BOOL documentWasAlreadyOpen, NSError * _Nullable error) {
+						//do nothing
+					}];
 				}
 			}
 			else
