@@ -95,7 +95,7 @@ enum {
 	 cCameraUserDefinedPigment						=1
 	};
 
-enum eCameraButtons {
+typedef NS_ENUM(NSInteger, eCameraButtons) {
 	cCameraNormalEditButton														=90,
 	cCameraUserDefinedDirectionEditPigmentButton			=10,
 	cCameraUserDefinedDirectionFunctionInsertButtonX	=20,

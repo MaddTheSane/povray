@@ -48,7 +48,7 @@
 #import "materialEditorMap.h"
 #import "materialPreview.h"
 
-enum eMaterialButtons {
+typedef NS_ENUM(NSInteger, eMaterialButtons) {
 	cMaterialPigmentTab		=0,
 	cMaterialNormalTab		=1,
 	cMaterialFinishTab		=2,

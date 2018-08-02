@@ -556,7 +556,7 @@ static BOOL mSkySphereWritten;
 				id dictName=[dict objectForKey:@"dictionaryTypeDefaults"];
 				NSString *templateName=@"";
 				NSMutableDictionary *defaultDict=nil;
-				int currentTab=[materialMainTabView indexOfTabViewItem:[materialMainTabView selectedTabViewItem]];
+				NSInteger currentTab=[materialMainTabView indexOfTabViewItem:[materialMainTabView selectedTabViewItem]];
 				switch (currentTab)
 				{
 					case cMaterialPigmentTab:
@@ -622,10 +622,10 @@ static BOOL mSkySphereWritten;
 				else
 				{
 					NSRunAlertPanel(NSLocalizedStringFromTable(@"WrongTemplateSettings", @"applicationLocalized", @"Wrong preferences file"),
-					LocalizedSettingsfileToBeUsed,
+					@"%@",
 					NSLocalizedStringFromTable(@"Ok", @"applicationLocalized", @"Cancel"),
 													nil, 
-													nil);
+													nil, LocalizedSettingsfileToBeUsed);
 				}
 				[[NSNotificationCenter defaultCenter] postNotificationName:@"NSTableViewSelectionDidChangeNotification" object:mTableView];
 			}

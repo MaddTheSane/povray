@@ -545,7 +545,7 @@
 //---------------------------------------------------------------------
 -(IBAction) cameraTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cCameraTypePopup;
 	else
@@ -632,7 +632,7 @@
 		case cCameraAspectRatioAutoOn:
 			if ( [cameraAspectRatioGroupOn state]==NSOnState)
 			{
-				int tpy=[cameraTypePopup indexOfSelectedItem];
+				NSInteger tpy=[cameraTypePopup indexOfSelectedItem];
 				if ( tpy == cCameraTypeOrthoGraphic)
 				{
 					SetSubViewsOfNSBoxToState(cameraAspectRatioAutoView, NSOnState);
@@ -743,7 +743,7 @@
 {
 	id 	prefs=nil;
 
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	switch( tag)
 	{
 		case cCameraNormalEditButton:

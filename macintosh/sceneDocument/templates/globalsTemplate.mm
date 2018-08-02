@@ -684,10 +684,10 @@
 				{
 					NSString *CurrentPanelString=@"global ";
 				NSRunAlertPanel( NSLocalizedStringFromTable(@"WrongTemplateSettings", @"applicationLocalized", @"Wrong preferences file"),
-													[NSString stringWithFormat:NSLocalizedStringFromTable(@"SelectCorrectFile", @"applicationLocalized", @"Only %@ settings files can be used!"), CurrentPanelString],
+													NSLocalizedStringFromTable(@"SelectCorrectFile", @"applicationLocalized", @"Only %@ settings files can be used!"),
 													NSLocalizedStringFromTable(@"Ok", @"applicationLocalized", @"Cancel"),
 													nil, 
-													nil);
+													nil, CurrentPanelString);
 
 
 				}

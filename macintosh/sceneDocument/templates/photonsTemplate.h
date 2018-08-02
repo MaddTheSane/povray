@@ -42,7 +42,7 @@
 #import "baseTemplate.h"
 
 	
-enum ePhotonsTags{
+typedef NS_ENUM(NSInteger, ePhotonsTags) {
 	cPhotonsTargetOn			=10,
 	cPhotonsRefractionOn		=20,
 	cPhotonsReflectionOn		=30,

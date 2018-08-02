@@ -357,7 +357,7 @@
 {
 	id 	prefs=nil;
 
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	switch( tag)
 	{
 		case cMediaDensityEditPatternButton:

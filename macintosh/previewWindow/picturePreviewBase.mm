@@ -148,7 +148,7 @@ extern BOOL gDontErasePreveiw;
 	// check if NSWindowDidChangeBackingPropertiesNotification is
 	// available and if so add us as an observer for this notificatione
 	// not available on 10.7.2 or earlier
-	BOOL isNSWindowDidChangeBackingPropertiesNotificationAvailable = (&NSWindowDidChangeBackingPropertiesNotification != NULL);
+	BOOL isNSWindowDidChangeBackingPropertiesNotificationAvailable = YES;
 	if (isNSWindowDidChangeBackingPropertiesNotificationAvailable)
 	 {
 		 [[NSNotificationCenter defaultCenter]

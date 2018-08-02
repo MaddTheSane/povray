@@ -44,9 +44,9 @@
 // this must be the last file included
 #import "syspovdebug.h"
 
-static BOOL BracesBackward(NSTextView *textView, unichar teken,  NSString *str, SInt32 TextSize,  SInt32 &pos);
-static BOOL BracesForward(NSTextView *textView, unichar teken, NSString *str, SInt32 TextSize,  SInt32 &pos);
-static BOOL CheckBraces(NSTextView *textView,SInt32 offset, NSString *str, SInt32 TextSize);
+static BOOL BracesBackward(NSTextView *textView, unichar teken,  NSString *str, NSInteger TextSize,  NSInteger &pos);
+static BOOL BracesForward(NSTextView *textView, unichar teken, NSString *str, NSInteger TextSize,  NSInteger &pos);
+static BOOL CheckBraces(NSTextView *textView,NSInteger offset, NSString *str, NSInteger TextSize);
 
 @implementation sceneTextView
 
@@ -243,10 +243,10 @@ static BOOL CheckBraces(NSTextView *textView,SInt32 offset, NSString *str, SInt3
 }
 
 @end
-BOOL CheckBraces(NSTextView *textView,SInt32 offset, NSString *str, SInt32 TextSize)
+BOOL CheckBraces(NSTextView *textView,NSInteger offset, NSString *str, NSInteger TextSize)
 {
 	BOOL returnvalue=NO;
-	SInt32 pos=offset;
+	NSInteger pos=offset;
 	if ( pos >=TextSize)
 		return NO;
 		
@@ -288,7 +288,7 @@ BOOL CheckBraces(NSTextView *textView,SInt32 offset, NSString *str, SInt32 TextS
 	}
 	return returnvalue;
 }
-BOOL BracesForward( NSTextView *textView,unichar teken, NSString *str, SInt32 TextSize,  SInt32 &pos)
+BOOL BracesForward( NSTextView *textView,unichar teken, NSString *str, NSInteger TextSize,  NSInteger &pos)
 {
 	NSString *rangeMode;
 	Boolean returnvalue=NO;
@@ -341,7 +341,7 @@ BOOL BracesForward( NSTextView *textView,unichar teken, NSString *str, SInt32 Te
 	}
 	return returnvalue;
 }
-BOOL BracesBackward( NSTextView *textView, unichar teken,  NSString *str, SInt32 TextSize,  SInt32 &pos)
+BOOL BracesBackward( NSTextView *textView, unichar teken,  NSString *str, NSInteger TextSize,  NSInteger &pos)
 {
 	NSString *rangeMode;
 	Boolean returnvalue=NO;

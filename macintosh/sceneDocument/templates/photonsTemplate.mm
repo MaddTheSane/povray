@@ -186,7 +186,7 @@
 //---------------------------------------------------------------------
 -(IBAction) photonsTarget:(id)sender
 {
-	int theTag;
+	ePhotonsTags theTag;
 	if ( sender==self)
 		theTag=cPhotonsTargetOn;
 	else

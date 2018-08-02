@@ -1007,7 +1007,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	static bool inside=false;
 	if ( inside==false)
 	{
-		int tag=[[aNotification object]tag];
+		preferencesTag tag=[[aNotification object]tag];
 		switch (tag)
 		{
 			case cImageXTag:	//image with
@@ -1487,7 +1487,7 @@ static PreferencesPanelController* _preferencesPanelController;
 		// as of version 3.7 we add a key: languageVersion_xx which contains an integer
 		// for version. 10 or 1.0, 20 for 2.0,...
 		// we keep the old system for compatibility reasons with 3.6
-		int version=[languageVersion indexOfSelectedItem];
+		NSInteger version=[languageVersion indexOfSelectedItem];
 		switch (version)
 		{
 			case cLanguageVersion1X: version=10; break;
@@ -1499,21 +1499,21 @@ static PreferencesPanelController* _preferencesPanelController;
 			case cLanguageVersion37X: version=37; break;
 			default: version=37;
 		}
-		[dict setObject:[NSNumber numberWithInt:version] forKey:@"languageVersion_xx"];
+		[dict setObject:@(version) forKey:@"languageVersion_xx"];
 		if ( version <37)
-			[dict setObject:[NSNumber numberWithInt:[languageVersion indexOfSelectedItem]] forKey:@"languageVersion"];
+			[dict setObject:@([languageVersion indexOfSelectedItem]) forKey:@"languageVersion"];
 		else
 			[dict setObject:[NSNumber numberWithInt:cLanguageVersion36X] forKey:@"languageVersion"];
 		
 		[dict setObject:[sceneFile stringValue] forKey:@"sceneFile"];
 		[dict setObject:[imageFile stringValue] forKey:@"imageFile"];
-		[dict setObject:[NSNumber numberWithInt:[useIniInputFile state]] forKey:@"useIniInputFile"];
+		[dict setObject:@([useIniInputFile state]) forKey:@"useIniInputFile"];
 		[dict setObject:[iniInputFile stringValue] forKey:@"iniInputFile"];
 
 
-		[dict setObject:[NSNumber numberWithInt:[mRadiosityLoadSaveGroupOn state]] forKey:@"mRadiosityLoadSaveGroupOn"];
-		[dict setObject:[NSNumber numberWithInt:[mRadiosityLoadOn state]] forKey:@"mRadiosityLoadOn"];
-		[dict setObject:[NSNumber numberWithInt:[mRadiositySaveOn state]] forKey:@"mRadiositySaveOn"];
+		[dict setObject:@([mRadiosityLoadSaveGroupOn state]) forKey:@"mRadiosityLoadSaveGroupOn"];
+		[dict setObject:@([mRadiosityLoadOn state]) forKey:@"mRadiosityLoadOn"];
+		[dict setObject:@([mRadiositySaveOn state]) forKey:@"mRadiositySaveOn"];
 		[dict setObject:[mRadiosityFileNameEdit stringValue] forKey:@"mRadiosityFileNameEdit"];
 
 
@@ -1588,11 +1588,11 @@ static PreferencesPanelController* _preferencesPanelController;
 		[dict setObject:[NSNumber numberWithInt:[warningToScreen state]] forKey:@"warningToScreen"];
 		
 		//bounding
-		[dict setObject:[NSNumber numberWithInt:[autoBoundingOnOff state]]forKey:@"autoBoundingOnOff"];
-		[dict setObject:[NSNumber numberWithInt:[boundingObjects indexOfSelectedItem]] forKey:@"boundingObjects"];
-		[dict setObject:[NSNumber numberWithInt:[ignoreBoundedBy state]] forKey:@"ignoreBoundedBy"];
-		[dict setObject:[NSNumber numberWithInt:[splitUnions state]] forKey:@"splitUnions"];
-		[dict setObject:[NSNumber numberWithInt:[BSPBoundingMethodOnOff state]]forKey:@"BSPBoundingMethodOnOff"];
+		[dict setObject:@([autoBoundingOnOff state])forKey:@"autoBoundingOnOff"];
+		[dict setObject:@([boundingObjects indexOfSelectedItem]) forKey:@"boundingObjects"];
+		[dict setObject:@([ignoreBoundedBy state]) forKey:@"ignoreBoundedBy"];
+		[dict setObject:@([splitUnions state]) forKey:@"splitUnions"];
+		[dict setObject:@([BSPBoundingMethodOnOff state])forKey:@"BSPBoundingMethodOnOff"];
 		[dict setObject:[BSP_MaxDepth stringValue] forKey:@"BSP_MaxDepth"];
 		[dict setObject:[BSP_BaseAccessCost stringValue] forKey:@"BSP_BaseAccessCost"];
 		[dict setObject:[BSP_ChildAccessCost stringValue] forKey:@"BSP_ChildAccessCost"];
@@ -1601,10 +1601,10 @@ static PreferencesPanelController* _preferencesPanelController;
 		
 	
 		//animation (clock)
-		[dict setObject:[NSNumber numberWithInt:[animationOnOff state]] forKey:@"animationOnOff"];
-		[dict setObject:[NSNumber numberWithInt:[turnCyclicAnimationOn state]] forKey:@"turnCyclicAnimationOn"];
-		[dict setObject:[NSNumber numberWithInt:[frameStepOn state]] forKey:@"frameStepOn"];
-		[dict setObject:[NSNumber numberWithInt:[fieldRendering indexOfSelectedItem]] forKey:@"fieldRendering"];
+		[dict setObject:@([animationOnOff state]) forKey:@"animationOnOff"];
+		[dict setObject:@([turnCyclicAnimationOn state]) forKey:@"turnCyclicAnimationOn"];
+		[dict setObject:@([frameStepOn state]) forKey:@"frameStepOn"];
+		[dict setObject:@([fieldRendering indexOfSelectedItem]) forKey:@"fieldRendering"];
 		[dict setObject:[clockInitial stringValue] forKey:@"clockInitial"];
 		[dict setObject:[clockEnd stringValue] forKey:@"clockEnd"];
 		[dict setObject:[initialFrame stringValue]forKey:@"initialFrame"];
@@ -1616,7 +1616,7 @@ static PreferencesPanelController* _preferencesPanelController;
 		
 		//misc
 		[dict setObject:[redirectAllOutputImagesPath stringValue] forKey:@"redirectAllOutputImagesPath"];
-		[dict setObject:[NSNumber numberWithInt:[redirectAllOutputImagesOnOff state]] forKey:@"redirectAllOutputImagesOnOff"];
+		[dict setObject:@([redirectAllOutputImagesOnOff state]) forKey:@"redirectAllOutputImagesOnOff"];
 		
 		// before a render, force the current setting to be written to disc
 		// if a crash occurs, the settings are stored for the next launch
@@ -1702,7 +1702,7 @@ static PreferencesPanelController* _preferencesPanelController;
 			[settingsPanelTableView noteNumberOfRowsChanged];
 		}
 		NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-		[defaults setObject:[NSNumber numberWithInt:[[settingsPanelSortMatrix selectedCell] tag]] forKey: @"sortBySize"];
+		[defaults setObject:@([[settingsPanelSortMatrix selectedCell] tag]) forKey: @"sortBySize"];
 	}
 	[self updateDefaults];
 	[mBackupSettingsArray release];	// no need for it anymore
@@ -1716,10 +1716,10 @@ static PreferencesPanelController* _preferencesPanelController;
 //---------------------------------------------------------------------
 - (IBAction) settingsPanelRename: (id)sender
 {
-	int row=[settingsPanelTableView selectedRow];
+	NSInteger row=[settingsPanelTableView selectedRow];
 	if ( row != -1)
 	{
-		int index=[mSettingsArray count];
+		NSInteger index=[mSettingsArray count];
 		if (  row <=index)
 		{
 			NSMutableDictionary *dict=[mSettingsArray objectAtIndex:row];
@@ -1775,10 +1775,10 @@ static PreferencesPanelController* _preferencesPanelController;
 //---------------------------------------------------------------------
 - (IBAction) settingsPanelDelete:(id)sender
 {
-	int row=[settingsPanelTableView selectedRow];
+	NSInteger row=[settingsPanelTableView selectedRow];
 	if ( row != -1)
 	{
-		int index=[mSettingsArray count];
+		NSInteger index=[mSettingsArray count];
 		if (  row <=index)
 		{
 			[mSettingsArray removeObjectAtIndex:row];

@@ -45,8 +45,6 @@
  #define dLastValuesInPanel @"lastValuesInPanel"
 
 @interface greenLed : NSView
-{
-}
 @end
 
 enum {
@@ -144,7 +142,7 @@ enum {
 //*******************************************************************************
 //Tags for the controls on the preferences panels
 //*******************************************************************************
-enum preferencesTag {
+typedef NS_ENUM(NSInteger, preferencesTag) {
 //Buttons buttom of panel
 	cEditSceneFile                  =1,
 	cStartRender                    =2,
