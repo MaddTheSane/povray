@@ -59,15 +59,15 @@
 
 picturePreview				*gPicturePreview=nil;
 materialPreview				*gMaterialPreview=nil;
-int										numericBlockPoint;
+NSInteger							numericBlockPoint;
 static volatile int		insertMenuIsBeingWatched=notWatching;
 static MainController	*_mainController;
 
 
-int rememberOpenWindowsOn;
-int globalAutoSyntaxColoring;	// Automatically refresh syntax coloring when text is changed?
-int maintainIndentation;	// Keep new lines indented at same depth as their predecessor?
-int	autoIndentBraces;	// Keep new lines indented at same depth as their predecessor?
+BOOL rememberOpenWindowsOn;
+BOOL globalAutoSyntaxColoring;	// Automatically refresh syntax coloring when text is changed?
+BOOL maintainIndentation;	// Keep new lines indented at same depth as their predecessor?
+NSControlStateValue	autoIndentBraces;	// Keep new lines indented at same depth as their predecessor?
 int	tabDistance;
 
 // renderer control
@@ -194,7 +194,7 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 
 	[[NSRunLoop currentRunLoop] addTimer:mGoToSleepTimer forMode:NSModalPanelRunLoopMode];
 
-	int choice = 0;
+	NSInteger choice = 0;
 	choice = [mGoToSleepAlert runModal];
 	[mGoToSleepTimer invalidate];
 	if ( choice == NSAlertFirstButtonReturn ) // sleep

@@ -43,12 +43,12 @@
 
 #import "standardMethods.h"
 
-enum appPrefsEnum {
+typedef NS_ENUM(NSInteger, appPrefsEnum) {
 	cMaintainIndentaion	=1,
 	cAutoIndentBraces		=2,
 	};
 
-enum  textStyles {
+typedef NS_ENUM(NSInteger, textStyles) {
 	cBlackStyle		=1,
 	cKeywordStyle,
 	cPreprocessorStyle,
@@ -58,7 +58,7 @@ enum  textStyles {
 	cMacroStyle,
 	cDeclareStyle
 };
-enum windowInFront {
+typedef NS_ENUM(NSInteger, windowInFront) {
 		AllwaysInFront = 1,
 		OnlyfirstFrameInFront=2
 };
@@ -133,7 +133,7 @@ enum windowInFront {
 
 }
 + (appPreferencesController*) sharedInstance;
--(NSDictionary*) style:(NSUInteger)type;
+-(NSDictionary*) style:(textStyles)type;
 -(float) scaleFactor;
 -(void) setIncludePathArray:(id) pathsArray;
 -(IBAction)selectInsertMenuMainDirectoryButton:(id)sender;
@@ -142,8 +142,7 @@ enum windowInFront {
 -(void) selectionIncludePathTableViewChanged:(NSNotification *) notification;
 -(void)controlTextDidChange:(NSNotification *)aNotification;
 -(void) deactivateColorWells;
--(void) setModified:(BOOL)flag;
--(BOOL) isModified;
+@property (getter=isModified) BOOL modified;
 -(void) buildSyntaxStyles;
 -(void) buildDefaultParagraphStyle;
 -(IBAction)displayGammaButton:(id)sender;

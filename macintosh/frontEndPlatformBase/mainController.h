@@ -81,14 +81,14 @@ enum menuTags {
 
 extern picturePreview		*gPicturePreview;
 extern materialPreview	*gMaterialPreview;
-extern int							numericBlockPoint;
+extern NSInteger				numericBlockPoint;
 
 
-extern int				rememberOpenWindowsOn;
+extern BOOL				rememberOpenWindowsOn;
 
-extern int				globalAutoSyntaxColoring;	// Automatically refresh syntax coloring when text is changed?
-extern int				maintainIndentation;	// Keep new lines indented at same depth as their predecessor?
-extern int				autoIndentBraces;	// Keep new lines indented at same depth as their predecessor?
+extern BOOL				globalAutoSyntaxColoring;	// Automatically refresh syntax coloring when text is changed?
+extern BOOL				maintainIndentation;	// Keep new lines indented at same depth as their predecessor?
+extern NSControlStateValue	autoIndentBraces;	// Keep new lines indented at same depth as their predecessor?
 extern int				tabDistance;
 // Attribute constants added along with styles to program text:
 #define commentAndStringAttributeName				@"cn"  //@"MegaPOV_Styntax_Coloring_Attribute"

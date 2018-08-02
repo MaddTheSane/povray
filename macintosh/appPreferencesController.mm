@@ -76,7 +76,7 @@ static appPreferencesController	*_appPreferencesController;
 	 [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:255.0/255.0 	green:94.0/255.0 		blue:10.0/255.0	alpha:1.0]], @"declareColor",
 	 [NSArchiver archivedDataWithRootObject:[NSFont userFontOfSize:11.0]], @"sceneDocumentFont",
 	 @"1.8",															@"mOutletDisplayGammaEdit",
-	 [NSNumber numberWithInt:NSOnState],	@"globalAutoSyntaxColoring",
+	 @YES,	@"globalAutoSyntaxColoring",
 	 [NSNumber numberWithInt:NSOnState],	@"maintainIndentation",
 	 [NSNumber numberWithInt:NSOnState],	@"autoIndentBraces",
 	 [NSNumber numberWithInt:NSOffState],	@"rememberOpenWindowsOn",
@@ -85,9 +85,9 @@ static appPreferencesController	*_appPreferencesController;
 	 [NSNumber numberWithInt:1],					@"indexOfAppPrefsSelectedTabViewItem",
 	 @"",																	@"mInsertMenuMainDirectoryEdit",
 	 [NSNumber numberWithFloat:100.0],		@"mInsertMenuImageScaleSlider",
-	 [NSNumber numberWithInt:10],					@"NSRecentDocumentsLimit",
-	 [NSNumber numberWithInt:NSOffState],	@"AlwaysPutPreviewwindowInFrontButton",
-	 [NSNumber numberWithInt:NSOffState],	@"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton",
+	 @10,					@"NSRecentDocumentsLimit",
+	 @NO,	@"AlwaysPutPreviewwindowInFrontButton",
+	 @NO,	@"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton",
 	 nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:initialDefaults];
 }
@@ -239,7 +239,7 @@ static appPreferencesController	*_appPreferencesController;
 	[mMacroColor retain];
 
 	// auto syntax coloring
-	globalAutoSyntaxColoring=[[defaults objectForKey:@"globalAutoSyntaxColoring"]intValue];
+	globalAutoSyntaxColoring=[[defaults objectForKey:@"globalAutoSyntaxColoring"]boolValue];
 
 	// display gamma
 	mDisplayGammaString=[defaults objectForKey:@"mOutletDisplayGammaEdit"];
@@ -253,7 +253,7 @@ static appPreferencesController	*_appPreferencesController;
 	// preview window to front
 	mAlwaysPutPreviewwindowInFrontOn=[[defaults objectForKey:@"mAlwaysPutPreviewwindowInFrontButton"]intValue];
 	mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationOn=[[defaults objectForKey:@"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton"]intValue];
-	[mAlwaysPutPreviewwindowInFrontButton setIntValue:mAlwaysPutPreviewwindowInFrontOn];
+	[mAlwaysPutPreviewwindowInFrontButton setIntegerValue:mAlwaysPutPreviewwindowInFrontOn];
 	[mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton setState:mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationOn];
 	enableObjectsAccordingToObject( mAlwaysPutPreviewwindowInFrontButton, mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton,nil);
 
@@ -522,7 +522,7 @@ static appPreferencesController	*_appPreferencesController;
 	[mDeclaresColorWell setColor:mDeclareColor];
 	[mMacroColorWell setColor:mMacroColor];
 	[mSelectedFont setFont:mSceneDocumentFont];
-	[mSyntaxColorOn setState:globalAutoSyntaxColoring];
+	[mSyntaxColorOn setState:globalAutoSyntaxColoring ? NSOnState : NSOffState];
 	[mOutletDisplayGammaEdit setStringValue:mDisplayGammaString];
 	[mDisplayGammaButton setState:mDisplayGammaOn];
 	[mAlwaysPutPreviewwindowInFrontButton setState:mAlwaysPutPreviewwindowInFrontOn];
@@ -546,7 +546,7 @@ static appPreferencesController	*_appPreferencesController;
 //---------------------------------------------------------------------
 // style:(NSUInteger)type
 //---------------------------------------------------------------------
--(NSDictionary*) style:(NSUInteger)type
+-(NSDictionary*) style:(textStyles)type
 {
 	switch(type)
 	{
@@ -700,7 +700,7 @@ static appPreferencesController	*_appPreferencesController;
 	[mMacroColor release];
 	mMacroColor=[[mMacroColorWell color]copy];
 
-	globalAutoSyntaxColoring=[mSyntaxColorOn state];
+	globalAutoSyntaxColoring=[mSyntaxColorOn state] == NSOnState;
 	[mDisplayGammaString release];
 	mDisplayGammaString=[[mOutletDisplayGammaEdit stringValue]copy];
 	mDisplayGammaOn=[mDisplayGammaButton state];
@@ -724,7 +724,7 @@ static appPreferencesController	*_appPreferencesController;
 	[defaults setObject:[NSArchiver archivedDataWithRootObject:mMacroColor]forKey: @"macroKleur"];
 	[defaults setObject:[NSArchiver archivedDataWithRootObject:mDeclareColor]forKey: @"declareColor"];
 	[defaults setObject:[NSArchiver archivedDataWithRootObject:mSceneDocumentFont]forKey: @"sceneDocumentFont"];
-	[defaults setObject:[NSNumber numberWithInt:globalAutoSyntaxColoring] forKey: @"globalAutoSyntaxColoring"];
+	[defaults setObject:@(globalAutoSyntaxColoring) forKey: @"globalAutoSyntaxColoring"];
 	[defaults setObject:mDisplayGammaString forKey: @"mOutletDisplayGammaEdit"];
 	[defaults setObject:[NSNumber numberWithInt:mDisplayGammaOn] forKey: @"displayGammaOn"];
 	[defaults setObject:[NSNumber numberWithInt:mAlwaysPutPreviewwindowInFrontOn] forKey: @"AlwaysPutPreviewwindowInFrontButton"];
