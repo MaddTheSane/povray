@@ -68,7 +68,7 @@
 //---------------------------------------------------------------------
 // displayTemplate:owner:caller:dict
 //---------------------------------------------------------------------
-+(void) displayTemplateNumber:(int) tagNumber fileowner:(BaseTemplate*&) fileOwner caller:(id)caller dictionary:(NSMutableDictionary*) dict
++(void) displayTemplateNumber:(NSInteger) tagNumber fileowner:(BaseTemplate*&) fileOwner caller:(id)caller dictionary:(NSMutableDictionary*) dict
 {
 	NSString *bundleName=nil;
 	switch (tagNumber)
@@ -265,7 +265,7 @@
 //---------------------------------------------------------------------
 // templateSheetDidEnd
 //---------------------------------------------------------------------
--(void) templateSheetDidEnd: (NSWindow*)sheet returnCode: (int)returnCode contextInfo: (void*)contextInfo
+-(void) templateSheetDidEnd: (NSWindow*)sheet returnCode: (NSModalResponse)returnCode contextInfo: (void*)contextInfo
 {
 	if ( returnCode ==NSOKButton)
 	{
@@ -289,10 +289,10 @@
 //---------------------------------------------------------------------
 // findTabsCurrentLine
 //---------------------------------------------------------------------
--(int) findTabsCurrentLine
+-(NSInteger) findTabsCurrentLine
 {
 	
-	int tabs=0;
+	NSInteger tabs=0;
 	NSUInteger firstCharacter,lastCharacter;
 	NSString *str=[mSceneTextView string];
 	if ( [str length]==0)
@@ -310,7 +310,7 @@
 	}
 	
 	[str getLineStart:&firstCharacter end:NULL contentsEnd:&lastCharacter forRange:selection];
-	for (int x=firstCharacter; x<lastCharacter; x++)
+	for (NSInteger x=firstCharacter; x<lastCharacter; x++)
 	{
 		if ( [str characterAtIndex:x]=='\t')
 			tabs++;

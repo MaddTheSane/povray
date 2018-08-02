@@ -90,7 +90,7 @@
 //	Note that the array of subviews for NSBox is only one NSView
 //	The subviews of that view are the 'real' subviews of an NSBox
 //----------------------------------------------------------------------
-void SetSubViewsOfNSBoxToState( NSBox *group, NSInteger newState)
+void SetSubViewsOfNSBoxToState( NSBox *group, NSControlStateValue newState)
 {
 
 	NSArray *subviewArray=[[[group subviews]objectAtIndex:0] subviews] ;
@@ -124,7 +124,7 @@ void SetSubViewsOfNSBoxToState( NSBox *group, NSInteger newState)
 		}	
 	}
 }
-void SetSubViewsOfNSTabViewToState( NSTabView *tabv, NSInteger newState)
+void SetSubViewsOfNSTabViewToState( NSTabView *tabv, NSControlStateValue newState)
 {
 
 	NSArray *tabviewItems=[tabv tabViewItems];
@@ -166,7 +166,7 @@ void SetSubViewsOfNSTabViewToState( NSTabView *tabv, NSInteger newState)
 }
 
 
-void SetSubViewsOfNSViewToState( NSView *view, NSInteger newState)
+void SetSubViewsOfNSViewToState( NSView *view, NSControlStateValue newState)
 {
 
 	NSArray *subviewArray=[view subviews] ;
@@ -386,35 +386,11 @@ NSMutableArray * scanForValuesInString(NSString *stringToScan)
 		mReturnValue=0;
 		return self;
 	}
-	-(NSMutableDictionary*) dict
-	{
-		return mDict;
-	}
-
-	-(NSInteger) width
-	{
-		return mWidth;
-	}
-	
-	-(NSInteger)height
-	{
-		return mHeight;
-	}
-
-	-(NSInteger) ref
-	{
-		return mRef;
-	}
-	
-	-(BOOL) returnValue
-	{
-		return mReturnValue;
-	}
-
-	-(void) setReturnValue: (BOOL) returnValue
-	{
-		mReturnValue=returnValue;
-	}
+@synthesize dict=mDict;
+@synthesize width=mWidth;
+@synthesize height=mHeight;
+@synthesize ref=mRef;
+@synthesize returnValue=mReturnValue;
 	-(void) dealloc
 	{
 		if ( mDict != nil)

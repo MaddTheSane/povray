@@ -42,10 +42,10 @@
 
 #import <Cocoa/Cocoa.h>
 #define FloatFormat @"%.5f"
-void SetSubViewsOfNSTabViewToState( NSTabView *tabv, NSInteger newState);
-void SetSubViewsOfNSViewToState( NSView *view, NSInteger newState);
+void SetSubViewsOfNSTabViewToState( NSTabView *tabv, NSControlStateValue newState);
+void SetSubViewsOfNSViewToState( NSView *view, NSControlStateValue newState);
 
-void SetSubViewsOfNSBoxToState( NSBox *group, NSInteger newState);
+void SetSubViewsOfNSBoxToState( NSBox *group, NSControlStateValue newState);
 void SetTabViewToNSPopupButton( NSPopUpButton *button, NSTabView* tabView);
 void enableObjectsAccordingToObject( id referenceObject, ...);
 void disableItemsFromIndex(NSPopUpButton *popup, NSInteger index);
@@ -68,13 +68,12 @@ NSMutableArray * scanForValuesInString(NSString *stringToScan);
  	NSInteger mRef;
  	BOOL mReturnValue;
 } 
-	- (id) initWithObjectsAndKeys:(id) firstObject, ...;
-	-(id) initWithWidth: (NSInteger)width andHeight: (NSInteger)height andRef: (NSInteger)ref;
-	-(id) initWithRef: (NSInteger)ref;
-	-(NSMutableDictionary*) dict;
-	-(NSInteger) width;
-	-(NSInteger)height;
-	-(NSInteger) ref;
-	-(BOOL)returnValue;
-	-(void)setReturnValue: (BOOL) returnValue;
-@end 
+	- (instancetype) initWithObjectsAndKeys:(id) firstObject, ...;
+	-(instancetype) initWithWidth: (NSInteger)width andHeight: (NSInteger)height andRef: (NSInteger)ref;
+	-(instancetype) initWithRef: (NSInteger)ref;
+@property (readonly, retain) NSMutableDictionary *dict;
+@property (readonly) NSInteger width;
+@property (readonly) NSInteger height;
+@property (readonly) NSInteger ref;
+@property BOOL returnValue;
+@end

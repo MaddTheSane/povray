@@ -1153,7 +1153,7 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 			normalImageMapPatternButton,				@"normalImageMapPatternButton",
 			normalImageMapPigmentButton,				@"normalImageMapPigmentButton",
 			normalImageMapFunctionButton,				@"normalImageMapFunctionButton",
-			//functionù
+			//function
 			normalFunctionEditButton,						@"normalFunctionEditButton",
 		nil]
 		];
