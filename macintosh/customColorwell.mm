@@ -82,7 +82,7 @@
 //---------------------------------------------------------------------
 +(id) withColor:(id) color andFilter:(BOOL)filter
 {
-	id well=[[[MPColorWell alloc] init]autorelease];
+	id well=[[[self alloc] init]autorelease];
 	if ( well)
 	{
 		[well setHasFilterTransmit:YES];
@@ -155,18 +155,44 @@
 	return ret;
 }
 
+- (BOOL)isEqual:(id)object
+{
+	return [self equals:object];
+}
+
+#define FilterOnStateKey @"filterOnState"
+#define FilterKey @"filter"
+#define TransmitOnStateKey @"transmitOnState"
+#define TransmitKey @"transmit"
+#define HasFilterTransmitKey @"hasFilterTransmitKey"
+#define GrayOnKey @"grayOn"
+
 //---------------------------------------------------------------------
 // encodeWithCoder:encoder
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
 	[super encodeWithCoder:encoder];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mFilterOnState];
-	[encoder encodeValueOfObjCType:@encode(float) at:&mFilter];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mTransmitOnState];
-	[encoder encodeValueOfObjCType:@encode(float) at:&mTransmit];
-	[encoder encodeValueOfObjCType:@encode(BOOL) at:&mHasFilterTransmit];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mGrayOn];
+	if (encoder.allowsKeyedCoding) {
+		[encoder encodeInteger:mFilterOnState forKey:FilterOnStateKey];
+		[encoder encodeDouble:mFilter forKey:FilterKey];
+		[encoder encodeInteger:mTransmitOnState forKey:TransmitOnStateKey];
+		[encoder encodeDouble:mTransmit forKey:TransmitKey];
+		[encoder encodeBool:mHasFilterTransmit forKey:HasFilterTransmitKey];
+		[encoder encodeInteger:mGrayOn forKey:GrayOnKey];
+	} else {
+		int tmpInt = (int)mFilterOnState;
+		float tmpFloat = mFilter;
+		[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+		[encoder encodeValueOfObjCType:@encode(float) at:&tmpFloat];
+		tmpInt = (int)mTransmitOnState;
+		[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+		tmpFloat = mTransmit;
+		[encoder encodeValueOfObjCType:@encode(float) at:&tmpFloat];
+		[encoder encodeValueOfObjCType:@encode(BOOL) at:&mHasFilterTransmit];
+		tmpInt = (int)mGrayOn;
+		[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+	}
 }
 
 //---------------------------------------------------------------------
@@ -174,21 +200,31 @@
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
-	self=[super initWithCoder:decoder];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mFilterOnState];
-	[decoder decodeValueOfObjCType:@encode(float) at:&mFilter];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mTransmitOnState];
-	[decoder decodeValueOfObjCType:@encode(float) at:&mTransmit];
-	[decoder decodeValueOfObjCType:@encode(BOOL) at:&mHasFilterTransmit];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mGrayOn];
+	if (self=[super initWithCoder:decoder]) {
+		if (decoder.allowsKeyedCoding) {
+			mFilterOnState = [decoder decodeIntegerForKey:FilterOnStateKey];
+			mFilter = [decoder decodeDoubleForKey:FilterKey];
+			mTransmitOnState = [decoder decodeIntegerForKey:TransmitOnStateKey];
+			mTransmit = [decoder decodeDoubleForKey:TransmitKey];
+			mHasFilterTransmit = [decoder decodeBoolForKey:HasFilterTransmitKey];
+			mGrayOn = [decoder decodeIntegerForKey:GrayOnKey];
+		} else {
+			[decoder decodeValueOfObjCType:@encode(int) at:&mFilterOnState];
+			[decoder decodeValueOfObjCType:@encode(float) at:&mFilter];
+			[decoder decodeValueOfObjCType:@encode(int) at:&mTransmitOnState];
+			[decoder decodeValueOfObjCType:@encode(float) at:&mTransmit];
+			[decoder decodeValueOfObjCType:@encode(BOOL) at:&mHasFilterTransmit];
+			[decoder decodeValueOfObjCType:@encode(int) at:&mGrayOn];
+		}
+	}
 	return self;
 }
 //---------------------------------------------------------------------
 // withColor
 //---------------------------------------------------------------------
-+(id) withColor:(id) color andFilter:(BOOL)filter
++(id) withColor:(NSColor*) color andFilter:(BOOL)filter
 {
-	id well=[[[MPColorWell alloc] init]autorelease];
+	id well=[[[self alloc] init]autorelease];
 	if ( well)
 	{
 		[well setHasFilterTransmit:filter];
@@ -201,13 +237,12 @@
 //---------------------------------------------------------------------
 // clearFilterTransmit
 //---------------------------------------------------------------------
--(id) clearFilterTransmit
+-(void) clearFilterTransmit
 {
 	mFilter=0.0;
 	mTransmit=0.0;
 	mTransmitOnState=NSOffState;
 	mFilterOnState=NSOffState;
-	return self;
 }
 
 //---------------------------------------------------------------------
@@ -215,7 +250,7 @@
 //---------------------------------------------------------------------
 +(id) whiteColorAndFilter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor whiteColor] andFilter:filter];
+	return [self withColor:[NSColor whiteColor] andFilter:filter];
 }
 
 //---------------------------------------------------------------------
@@ -223,7 +258,7 @@
 //---------------------------------------------------------------------
 +(id) blackColorAndFilter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor blackColor] andFilter:filter];
+	return [self withColor:[NSColor blackColor] andFilter:filter];
 }
 
 //---------------------------------------------------------------------
@@ -231,7 +266,7 @@
 //---------------------------------------------------------------------
 +(id) redColorAndFilter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor redColor] andFilter:filter];
+	return [self withColor:[NSColor redColor] andFilter:filter];
 }
 
 //---------------------------------------------------------------------
@@ -239,7 +274,7 @@
 //---------------------------------------------------------------------
 +(id) blueColorAndFilter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor blueColor] andFilter:filter];
+	return [self withColor:[NSColor blueColor] andFilter:filter];
 }
 
 
@@ -248,7 +283,7 @@
 //---------------------------------------------------------------------
 +(id) cyanColorAndFilter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor cyanColor] andFilter:filter];
+	return [self withColor:[NSColor cyanColor] andFilter:filter];
 }
 
 //---------------------------------------------------------------------
@@ -256,7 +291,7 @@
 //---------------------------------------------------------------------
 +(id) magentaColorAndFilter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor magentaColor] andFilter:filter];
+	return [self withColor:[NSColor magentaColor] andFilter:filter];
 }
 
 //---------------------------------------------------------------------
@@ -264,7 +299,7 @@
 //---------------------------------------------------------------------
 +(id) yellowColorAndFilter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor yellowColor] andFilter:filter];
+	return [self withColor:[NSColor yellowColor] andFilter:filter];
 }
 
 
@@ -275,7 +310,7 @@
 //---------------------------------------------------------------------
 +(id) greenColorAndFilter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor greenColor] andFilter:filter];
+	return [self withColor:[NSColor greenColor] andFilter:filter];
 }
 
 //---------------------------------------------------------------------
@@ -283,7 +318,7 @@
 //---------------------------------------------------------------------
 +(id) grayColorAndFilter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor grayColor] andFilter:filter];
+	return [self withColor:[NSColor grayColor] andFilter:filter];
 }
 
 //---------------------------------------------------------------------
@@ -291,32 +326,21 @@
 //---------------------------------------------------------------------
 +(id) lightGrayColorAndFilter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor lightGrayColor] andFilter:filter];
+	return [self withColor:[NSColor lightGrayColor] andFilter:filter];
 }
 
 //---------------------------------------------------------------------
 // colorWithCalibratedRed
 //---------------------------------------------------------------------
-+ (id)colorWithCalibratedRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha filter:(BOOL)filter
++ (id)colorWithCalibratedRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha filter:(BOOL)filter
 {
-	return [MPColorWell withColor:[NSColor colorWithCalibratedRed:red	green:green	blue:blue	alpha:alpha]andFilter:filter];
+	return [self withColor:[NSColor colorWithCalibratedRed:red	green:green	blue:blue	alpha:alpha]andFilter:filter];
 }
 
 //---------------------------------------------------------------------
 // hasFilterTransmit
 //---------------------------------------------------------------------
--(BOOL) hasFilterTransmit
-{
-	return mHasFilterTransmit;
-}
-
-//---------------------------------------------------------------------
-// setHasFilterTransmit
-//---------------------------------------------------------------------
--(void) setHasFilterTransmit:(BOOL)filter
-{
-	mHasFilterTransmit=filter;
-}
+@synthesize hasFilterTransmit=mHasFilterTransmit;
 
 //---------------------------------------------------------------------
 // mouseDown
@@ -336,53 +360,33 @@
 //---------------------------------------------------------------------
 // filterOn
 //---------------------------------------------------------------------
--(int) filterOn
-{
-	return mFilterOnState;
-}
+@synthesize filterOn=mFilterOnState;
 
 //---------------------------------------------------------------------
 // filter
 //---------------------------------------------------------------------
--(float) filter
-{
-	return mFilter;
-}
+@synthesize filter=mFilter;
 
 //---------------------------------------------------------------------
 // transmitOn
 //---------------------------------------------------------------------
--(int) transmitOn
-{
-	return mTransmitOnState;
-}
+@synthesize transmitOn=mTransmitOnState;
 
 
 //---------------------------------------------------------------------
 // mTransmit
 //---------------------------------------------------------------------
--(float) transmit
-{
-	return mTransmit;
-}
+@synthesize transmit=mTransmit;
 
 //---------------------------------------------------------------------
 // grayOn
 //---------------------------------------------------------------------
--(int) grayOn
-{
-	return mGrayOn;
-}
-
--(void) setGrayOn:(int)gray
-{
-	mGrayOn=gray;
-}
+@synthesize grayOn=mGrayOn;
 
 //---------------------------------------------------------------------
 // setFilter:toState
 //---------------------------------------------------------------------
--(void) setFilter:(float)filter toState:(int)filterOn andTransmit:(float)transmit toState:(int)transmitOn
+-(void) setFilter:(CGFloat)filter toState:(NSControlStateValue)filterOn andTransmit:(CGFloat)transmit toState:(NSControlStateValue)transmitOn
 {
 	mFilter=filter;
 	mFilterOnState=filterOn;

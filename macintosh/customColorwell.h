@@ -44,40 +44,38 @@
 
 @interface MPColorWell: NSColorWell <NSCoding>
 {
-	float mFilter;
-	float mTransmit;
-	int mFilterOnState;
-	int mTransmitOnState;
+	CGFloat mFilter;
+	CGFloat mTransmit;
+	NSControlStateValue mFilterOnState;
+	NSControlStateValue mTransmitOnState;
 	BOOL mHasFilterTransmit;
-	int mGrayOn;
+	NSControlStateValue mGrayOn;
 }
 -(BOOL) equals:(id)com;
-+(id) withColor:(id) color andFilter:(BOOL)filter;
-+(id) whiteColorAndFilter:(BOOL)filter;
-+(id) blackColorAndFilter:(BOOL)filter;
-+(id) redColorAndFilter:(BOOL)filter;
-+(id) blueColorAndFilter:(BOOL)filter;
-+(id) cyanColorAndFilter:(BOOL)filter;
-+(id) magentaColorAndFilter:(BOOL)filter;
-+(id) yellowColorAndFilter:(BOOL)filter;
-+(id) greenColorAndFilter:(BOOL)filter;
-+(id) grayColorAndFilter:(BOOL)filter;
-+(id) lightGrayColorAndFilter:(BOOL)filter;
-+ (id)colorWithCalibratedRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha filter:(BOOL)filter;
--(id) clearFilterTransmit;
++(instancetype) withColor:(NSColor*) color andFilter:(BOOL)filter;
++(instancetype) whiteColorAndFilter:(BOOL)filter;
++(instancetype) blackColorAndFilter:(BOOL)filter;
++(instancetype) redColorAndFilter:(BOOL)filter;
++(instancetype) blueColorAndFilter:(BOOL)filter;
++(instancetype) cyanColorAndFilter:(BOOL)filter;
++(instancetype) magentaColorAndFilter:(BOOL)filter;
++(instancetype) yellowColorAndFilter:(BOOL)filter;
++(instancetype) greenColorAndFilter:(BOOL)filter;
++(instancetype) grayColorAndFilter:(BOOL)filter;
++(instancetype) lightGrayColorAndFilter:(BOOL)filter;
++ (instancetype)colorWithCalibratedRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha filter:(BOOL)filter;
+-(void) clearFilterTransmit;
 
 
--(void) setHasFilterTransmit:(BOOL)filter;
--(BOOL) hasFilterTransmit;
+@property BOOL hasFilterTransmit;
 
--(float) filter;
--(float) transmit;
--(int) transmitOn;
--(int) filterOn;
--(int) grayOn;
+@property (readonly) CGFloat filter;
+@property (readonly) CGFloat transmit;
+@property (readonly) NSControlStateValue transmitOn;
+@property (readonly) NSControlStateValue filterOn;
+@property NSControlStateValue grayOn;
 
--(void) setFilter:(float)filter toState:(int)filterOn andTransmit:(float)transmit toState:(int)transmitOn ;
--(void) setGrayOn:(int)gray;
+-(void) setFilter:(CGFloat)filter toState:(NSControlStateValue)filterOn andTransmit:(CGFloat)transmit toState:(NSControlStateValue)transmitOn ;
 
 
 @end
@@ -86,9 +84,8 @@
 @interface MPFTColorWell: MPColorWell <NSCoding>
 {
 }
-+(id) withColor:(id) color andFilter:(BOOL)filter;
--(BOOL) hasFilterTransmit;
--(void) setHasFilterTransmit:(BOOL)filter;
++(instancetype) withColor:(NSColor*) color andFilter:(BOOL)filter;
+@property BOOL hasFilterTransmit;
 
 @end
 
