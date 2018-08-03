@@ -1075,7 +1075,7 @@ NS_ENDHANDLER
 //---------------------------------------------------------------------
 // selectLine
 //---------------------------------------------------------------------
--(void) selectLine:(unsigned )lineNumber
+-(void) selectLine:(NSUInteger )lineNumber
 {
 	NSString *str = [[mSceneTextView textStorage] string];
 	if ( str)

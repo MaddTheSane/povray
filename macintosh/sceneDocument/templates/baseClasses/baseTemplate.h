@@ -243,9 +243,9 @@ enum eImageMap {
 -(void) enableDisableItemInSuperview:(NSControl*) controlItem forString:searchString andState:(int)newState;
 
 // methods for sublclasses
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds;
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds;
 //+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param;
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType;
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType;
 
 -(void)	acceptsPreferences:(NSDictionary*)dict forKey:(NSString*)key;
 
@@ -258,7 +258,7 @@ enum eImageMap {
 
 @interface  BaseTemplate (callTemplates)
 - (void) callTemplate:(int)templateNumber withDictionary:(NSMutableDictionary*) dict andKeyName:(NSString*) key;
--(void) colorPickerSheetDidEnd: (NSWindow*)sheet returnCode: (int)returnCode contextInfo: (void*)contextInfo;
+-(void) colorPickerSheetDidEnd: (NSWindow*)sheet returnCode: (NSModalResponse)returnCode contextInfo: (void*)contextInfo;
 -(IBAction) displayColorPicker:(id)sender;
 -(void) setTemplatePrefs:(int)number withObject:(id)objc;
 @end

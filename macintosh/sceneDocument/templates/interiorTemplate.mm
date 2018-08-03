@@ -62,7 +62,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 
 	if ( dict== nil)
@@ -83,7 +83,7 @@
 	[ds addTab];
 
 //interior type 
-	if ( [[dict objectForKey:@"interiorIorIndexEdit"] floatValue] != 1.0 || [[dict objectForKey:@"interiorDispersionGroupOn"]intValue]==NSOnState)
+	if ( [[dict objectForKey:@"interiorIorIndexEdit"] doubleValue] != 1.0 || [[dict objectForKey:@"interiorDispersionGroupOn"]intValue]==NSOnState)
 		[ds appendTabAndFormat:@"ior %@\n",[dict objectForKey:@"interiorIorIndexEdit"]];
 
 	if (  [[dict objectForKey:@"interiorCausticsOn"]intValue]==NSOnState)
@@ -138,7 +138,7 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:cIorIndexWater],			@"interiorIorIndexPopUp",

@@ -366,7 +366,7 @@ extern	NSRange mEffectiveRecoloredRange;	// this contains the range recolored.
 -(sceneTextView*) getSceneTextView;
 
 -(NSWindow*) window;
--(void) selectLine:(unsigned )lineNumber;
+-(void) selectLine:(NSUInteger)lineNumber;
 
 -(NSMutableAttributedString*) mutableAttibutedStringFromFile;
 -(void) setMutableAttributedStringFromFile: (NSMutableAttributedString *)str;

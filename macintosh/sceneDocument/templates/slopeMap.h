@@ -54,15 +54,15 @@ enum eSlopemapIndex {
 	int 				mCurveOn;
 }
 
-+(id) standardMapWithView:(id)view;
++(instancetype) standardMapWithView:(id)view;
 
 -(void) makeDefaultMap;
 
 -(void) addEntry;
--(void) insertEntryAtIndex:(int)index;
+-(void) insertEntryAtIndex:(NSInteger)index;
 
--(void) setButtonState:(int) state forButton:(int)button;
--(int) buttonState:(int)button;
+-(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button;
+-(NSControlStateValue) buttonState:(NSInteger)button;
 
 @end
 

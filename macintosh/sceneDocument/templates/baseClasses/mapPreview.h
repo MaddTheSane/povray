@@ -40,14 +40,14 @@
 #import <Cocoa/Cocoa.h>
 
 #define dNoRowSelected -1l
+@class MapBase;
 
 @interface mapPreview : NSView
 {
-	id mMap;
+	__kindof MapBase *mMap;
 }
 
--(void) setMap:(id)map;
--(id) map;
+@property (retain) __kindof MapBase *map;
 @end
 
 @interface colormapPreview : mapPreview
@@ -61,7 +61,7 @@
 	NSRect mFrame;
 	NSRect mRasterFrame;
 	NSRect mDrawFrame;
-	float xToCenter, yToCenter;
+	CGFloat xToCenter, yToCenter;
 	float mRasterStep;
 	NSRect *mPointList;	
 	NSRect *mSlopePointList;	

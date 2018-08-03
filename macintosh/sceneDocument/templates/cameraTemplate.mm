@@ -50,7 +50,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 	if ( dict== nil)
@@ -305,7 +305,7 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:cCameraPredefinedTab],					@"cameraTabView",

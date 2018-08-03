@@ -51,7 +51,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 
 	if ( dict== nil)
@@ -68,27 +68,27 @@
 
 	[dict retain];
 
-	if ( [[dict objectForKey:@"mediaDontWrapInMedia"]intValue]==NSOffState)
+	if ( [[dict objectForKey:@"mediaDontWrapInMedia"]integerValue]==NSOffState)
 	{
 		[ds copyTabAndText:@"media {\n"];
 		[ds addTab];
 	}
 	
-	if ( [[dict objectForKey:@"mediaAbsorptionGroupOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"mediaAbsorptionGroupOn"] integerValue]==NSOnState)
 	{
 		[ds copyTabText];
 		[ds addRGBColor:dict forKey:@"mediaAbsorptionGroupColorWell" andTitle:@"absorption " comma:NO newLine:YES];
 	}
 	
 	//Emission light
-	if ( [[dict objectForKey:@"mediaEmissionGroupOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"mediaEmissionGroupOn"] integerValue]==NSOnState)
 	{
 		[ds copyTabText];
 		[ds addRGBColor:dict forKey:@"mediaEmissionGroupColorWell" andTitle:@"emission " comma:NO newLine:YES];
 	}
 
 	//scattering
-	if ( [[dict objectForKey:@"mediaScatteringGroupOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"mediaScatteringGroupOn"] integerValue]==NSOnState)
 	{
 		[ds copyTabAndText:@"scattering {\n"];
 		[ds addTab];
@@ -102,23 +102,23 @@
 		}
 		[ds copyTabText];
 		[ds addRGBColor:dict forKey:@"mediaScatteringColorWell" andTitle:@"" comma:NO newLine:YES];
-		switch ( [[dict objectForKey:@"mediaScatteringTypePopUp"] intValue] )
+		switch ( [[dict objectForKey:@"mediaScatteringTypePopUp"] integerValue] )
 		{
 			case cHenyeyGreenstein: 	
 				[ds appendTabAndFormat:@"eccentricity %@\n", [dict objectForKey:@"mediaScatteringEccentricityEdit"]];
 				break;
 		}
 		//extinction
-		if ( [[dict objectForKey:@"mediaScatteringExtinctionOn"] intValue]==NSOnState)
+		if ( [[dict objectForKey:@"mediaScatteringExtinctionOn"] integerValue]==NSOnState)
 			[ds appendTabAndFormat:@"extinction %@\n", [dict objectForKey:@"mediaScatteringExtinctionEdit"]];
 		[ds removeTab];
 		[ds copyTabAndText:@"}\n"];
 	}	
 
 		//density
-	if ( [[dict objectForKey:@"mediaDensityGroupOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"mediaDensityGroupOn"] integerValue]==NSOnState)
 	{
-		if ( [[dict objectForKey:@"mediaDensityMatrix"] intValue]==cFirstCell)
+		if ( [[dict objectForKey:@"mediaDensityMatrix"] integerValue]==cFirstCell)
 		{
 			[ds copyTabAndText:@"density {\n"];
 			[ds addTab];
@@ -126,13 +126,13 @@
 			[ds removeTab];
 			[ds copyTabAndText:@"}\n"];
 		}	
-		else if ( [[dict objectForKey:@"mediaDensityMatrix"] intValue]==cSecondCell)
+		else if ( [[dict objectForKey:@"mediaDensityMatrix"] integerValue]==cSecondCell)
 		{
 			[BodymapTemplate createDescriptionWithDictionary:[dict objectForKey:@"mediaDensityEditMap"] andTabs:[ds currentTabs]extraParam:menuTagTemplateDensitymap mutableTabString:ds];
 		}
 	}
 
-	switch ( [[dict objectForKey:@"mediaSamplingMethodPopUp"] intValue] )
+	switch ( [[dict objectForKey:@"mediaSamplingMethodPopUp"] integerValue] )
 	{
 		case cMethod1:
 			break;	//1 is default, by not writing it, it stays compatible with the official Povray
@@ -142,38 +142,38 @@
 		
 	if ([[dict objectForKey:@"mediaSamplingMethodPopUp"] intValue] == cMethod2 || [[dict objectForKey:@"mediaSamplingMethodPopUp"] intValue] ==cMethod3)
 	{
-		if ( [[dict objectForKey:@"mediaSamplingJitterOn"] intValue]==NSOnState)
+		if ( [[dict objectForKey:@"mediaSamplingJitterOn"] integerValue]==NSOnState)
 			[ds appendTabAndFormat:@"jitter %@\n",[dict objectForKey:@"mediaSamplingJitterEdit"]];
 	}	
-	if ([[dict objectForKey:@"mediaSamplingMethodPopUp"] intValue] ==cMethod3)
+	if ([[dict objectForKey:@"mediaSamplingMethodPopUp"] integerValue] ==cMethod3)
 	{
-		if ( [[dict objectForKey:@"mediaSamplingAaDepthOn"] intValue]==NSOnState)
+		if ( [[dict objectForKey:@"mediaSamplingAaDepthOn"] integerValue]==NSOnState)
 			[ds appendTabAndFormat:@"aa_level %@\n",[dict objectForKey:@"mediaSamplingAaDepthEdit"]];
-		if ( [[dict objectForKey:@"mediaSamplingAaThresholdOn"] intValue]==NSOnState)
+		if ( [[dict objectForKey:@"mediaSamplingAaThresholdOn"] integerValue]==NSOnState)
 			[ds appendTabAndFormat:@"aa_threshold %@\n",[dict objectForKey:@"mediaSamplingAaThresholdEdit"]];
 	}	
 
-	if ( [[dict objectForKey:@"mediaSamplingIntervalsOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"mediaSamplingIntervalsOn"] integerValue]==NSOnState)
 		[ds appendTabAndFormat:@"intervals %@\n",[dict objectForKey:@"mediaSamplingIntervalsEdit"]];
 
 
-	if ( [[dict objectForKey:@"mediaSamplingSamplesOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"mediaSamplingSamplesOn"] integerValue]==NSOnState)
 		[ds appendTabAndFormat:@"samples %@,%@\n",[dict objectForKey:@"mediaSamplingSamplesMinEdit"],[dict objectForKey:@"mediaSamplingSamplesMaxEdit"]];
 
 
-	if ( [[dict objectForKey:@"mediaSamplingConfidenceOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"mediaSamplingConfidenceOn"] integerValue]==NSOnState)
 		[ds appendTabAndFormat:@"confidence %@\n",[dict objectForKey:@"mediaSamplingConfidenceEdit"]];
 
-	if ( [[dict objectForKey:@"mediaSamplingVarianceOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"mediaSamplingVarianceOn"] integerValue]==NSOnState)
 		[ds appendTabAndFormat:@"variance %@\n",[dict objectForKey:@"mediaSamplingVarianceEdit"]];
 
-	if ( [[dict objectForKey:@"mediaSamplingRatioOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"mediaSamplingRatioOn"] integerValue]==NSOnState)
 		[ds appendTabAndFormat:@"ratio %@\n",[dict objectForKey:@"mediaSamplingRatioEdit"]];
 
-	if ( [[dict objectForKey:@"mediaIgnorePhotonsOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"mediaIgnorePhotonsOn"] integerValue]==NSOnState)
 		[ds copyTabAndText:@"collect off\n"];
 
-	if ( [[dict objectForKey:@"mediaDontWrapInMedia"]intValue]==NSOffState)
+	if ( [[dict objectForKey:@"mediaDontWrapInMedia"]integerValue]==NSOffState)
 	{
 		[ds removeTab];
 		[ds copyTabAndText:@"}\n"];
@@ -204,7 +204,7 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:NSOffState],									@"mediaDontWrapInMedia",

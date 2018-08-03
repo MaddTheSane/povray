@@ -83,15 +83,15 @@
 //---------------------------------------------------------------------
 // insertEntryAtIndex
 //---------------------------------------------------------------------
--(void) insertEntryAtIndex:(int)index
+-(void) insertEntryAtIndex:(NSInteger)index
 {
-	float locationTop;
-	float locationEnd;
+	CGFloat locationTop;
+	CGFloat locationEnd;
 
 	if ( index <0)
 		return;
 		
-	int entries=[self count];
+	NSInteger entries=[self count];
 	if ( index+1 > entries)
 		index--;
 		
@@ -136,7 +136,7 @@
 //---------------------------------------------------------------------
 // setButtonState:forButton
 //---------------------------------------------------------------------
--(void) setButtonState:(int) state forButton:(int)button
+-(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button
 {
 	switch ( button)
 	{
@@ -151,7 +151,7 @@
 //---------------------------------------------------------------------
 // buttonState
 //---------------------------------------------------------------------
--(int) buttonState:(int)button
+-(NSControlStateValue) buttonState:(NSInteger)button
 {
 	switch ( button)
 	{

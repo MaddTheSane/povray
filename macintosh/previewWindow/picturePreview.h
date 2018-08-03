@@ -85,7 +85,7 @@
 	NSToolbarItem *mPauseToolbarItem;
 }
 -(void) resetCutButton;
--(void) showWindow:(id) sender shouldBecomeFront: (bool) makeFront;
+-(void) showWindow:(id) sender shouldBecomeFront: (BOOL) makeFront;
 
 -(IBAction) stopButton:(id) sender;
 -(IBAction) pauseButton:(id) sender;

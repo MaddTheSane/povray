@@ -535,7 +535,7 @@
 {
 	id 	prefs=nil;
 
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	switch( tag)
 	{
 	//skysphere
@@ -601,7 +601,7 @@
 //---------------------------------------------------------------------
 -(IBAction) backgroundTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cBackgroundFogTypePopUp;
 	else

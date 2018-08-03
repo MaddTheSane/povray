@@ -305,7 +305,7 @@
 		8258AFDF1D0492C100770E0D /* statspov.h in Headers */ = {isa = PBXBuildFile; fileRef = 8258AEBE1D0492C100770E0D /* statspov.h */; };
 		826CB7D81D034CC4000A7A98 /* appPreferencesController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB5D01D034CC3000A7A98 /* appPreferencesController.mm */; };
 		826CB7D91D034CC4000A7A98 /* batchMap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB5D21D034CC3000A7A98 /* batchMap.mm */; };
-		826CB8B41D034CC4000A7A98 /* customColorwell.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB71F1D034CC4000A7A98 /* customColorwell.mm */; };
+		826CB8B41D034CC4000A7A98 /* customColorwell.m in Sources */ = {isa = PBXBuildFile; fileRef = 826CB71F1D034CC4000A7A98 /* customColorwell.m */; };
 		826CB8B51D034CC4000A7A98 /* standardMethods.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7211D034CC4000A7A98 /* standardMethods.mm */; };
 		826CB8F81D034CC4000A7A98 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7651D034CC4000A7A98 /* main.mm */; };
 		826CB8F91D034CC4000A7A98 /* menuFromDirectory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7671D034CC4000A7A98 /* menuFromDirectory.mm */; };
@@ -6017,7 +6017,7 @@
 		826CB5D81D034CC3000A7A98 /* syspovconfigfrontend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = syspovconfigfrontend.h; sourceTree = "<group>"; };
 		826CB5DC1D034CC3000A7A98 /* SystemEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemEvents.h; sourceTree = "<group>"; };
 		826CB71E1D034CC4000A7A98 /* customColorwell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customColorwell.h; sourceTree = "<group>"; };
-		826CB71F1D034CC4000A7A98 /* customColorwell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = customColorwell.mm; sourceTree = "<group>"; };
+		826CB71F1D034CC4000A7A98 /* customColorwell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customColorwell.m; sourceTree = "<group>"; };
 		826CB7201D034CC4000A7A98 /* standardMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = standardMethods.h; sourceTree = "<group>"; };
 		826CB7211D034CC4000A7A98 /* standardMethods.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = standardMethods.mm; sourceTree = "<group>"; };
 		826CB7651D034CC4000A7A98 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
@@ -15198,7 +15198,7 @@
 				826CB5D21D034CC3000A7A98 /* batchMap.mm */,
 				826CB5D11D034CC3000A7A98 /* batchMap.h */,
 				826CB71E1D034CC4000A7A98 /* customColorwell.h */,
-				826CB71F1D034CC4000A7A98 /* customColorwell.mm */,
+				826CB71F1D034CC4000A7A98 /* customColorwell.m */,
 				826CB7201D034CC4000A7A98 /* standardMethods.h */,
 				826CB7211D034CC4000A7A98 /* standardMethods.mm */,
 				826CB7651D034CC4000A7A98 /* main.mm */,
@@ -16666,7 +16666,7 @@
 				826CB9281D034CC4000A7A98 /* slopemapPreview.mm in Sources */,
 				826CB9171D034CC4000A7A98 /* functionTemplate.mm in Sources */,
 				826CB9241D034CC4000A7A98 /* objectTemplate.mm in Sources */,
-				826CB8B41D034CC4000A7A98 /* customColorwell.mm in Sources */,
+				826CB8B41D034CC4000A7A98 /* customColorwell.m in Sources */,
 				826CB9191D034CC4000A7A98 /* headerIncludeTemplate.mm in Sources */,
 				82B477A91D046FEA0054B17E /* mainController.mm in Sources */,
 				826CB9131D034CC4000A7A98 /* colormapPreview.mm in Sources */,
@@ -17226,6 +17226,7 @@
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = precompiledHeaders/povrayUnofficial_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -17376,6 +17377,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
+				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = precompiledHeaders/povrayUnofficial_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (

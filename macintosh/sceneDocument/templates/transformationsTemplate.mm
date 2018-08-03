@@ -1155,8 +1155,8 @@ enum eTransformationPanelNumbers {
 //---------------------------------------------------------------------
 -(void) performTarget:(id) sender withObjects:(NSDictionary*) objects
 {
-	int theTag;
-	int idx;
+	NSInteger theTag;
+	NSInteger idx;
 	if ( sender==self)
 		theTag=cTypePopUp;
 	else

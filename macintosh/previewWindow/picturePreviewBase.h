@@ -91,14 +91,13 @@
 -(void) vfeSessionStoppedRendering:(NSNotification *) notification;
 -(void) windowDidChangeBackingPropertiesNotification:(NSNotification *) notification;
 
--(void) DrawPixelBlock: (unsigned int) x ypos:(unsigned int) y xpos2:(unsigned int)x2 ypos2:(unsigned int) y2 RGBA8Color: (const pov_frontend::Display::RGBA8*) colour;
--(void) DrawPixel: (unsigned int) x ypos:(unsigned int) y RGBA8Color:( const pov_frontend::Display::RGBA8&) colour;
--(void) DrawRectangleFrame:  (unsigned int) x ypos:(unsigned int) y xpos2:(unsigned int)x2 ypos2:(unsigned int) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour;
+-(void) DrawPixelBlock: (NSUInteger) x ypos:(NSUInteger) y xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color: (const pov_frontend::Display::RGBA8*) colour;
+-(void) DrawPixel: (NSUInteger) x ypos:(NSUInteger) y RGBA8Color:( const pov_frontend::Display::RGBA8&) colour;
+-(void) DrawRectangleFrame:  (NSUInteger) x ypos:(NSUInteger) y xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour;
 
--(void) DrawFilledRectangle: (unsigned int) x ypos:(unsigned int) y xpos2:(unsigned int)x2 ypos2:(unsigned int) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour;
+-(void) DrawFilledRectangle: (NSUInteger) x ypos:(NSUInteger) y xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour;
 
--(void) setInputFileName:(NSString *)fileName;
--(NSString*) inputFileName;
+@property (copy) NSString *inputFileName;
 -(void) displayInit: (remoteObject*)remoteobject;
 -(void) remoteMac_Parse_Error: (remoteObject*)remoteobject;
 -(NSScreen*) screenHoldingLargestPartOfRect:(NSRect) rect;

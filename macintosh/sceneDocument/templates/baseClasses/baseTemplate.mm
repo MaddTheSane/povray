@@ -97,7 +97,7 @@ static const char *templateTypeNameArray[]={
 // from a given dictionary, build a mutabletabstring containing the 
 // template in pov language
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 	return nil;

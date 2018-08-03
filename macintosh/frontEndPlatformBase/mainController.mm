@@ -41,7 +41,7 @@
 #import	<sys/stat.h>
 #import	<sys/fcntl.h>
 #import	<unistd.h>
-#import<pthread.h>
+#import <pthread.h>
 #import "mainController.h"
 #import "appPreferencesController.h"
 #import "rendererGUIBridge.h"

@@ -47,7 +47,7 @@
 // this must be the last file included
 #import "syspovdebug.h"
 
-#define makeFloat float alpha=( 255.0 - (float) a ) / 255.0;
+#define makeFloat CGFloat alpha=( 255.0 - (CGFloat) a ) / 255.0;
 
 @implementation picturePreview
 
@@ -408,7 +408,7 @@
 //---------------------------------------------------------------------
 // displayDrawPixelBlock*/
 //---------------------------------------------------------------------
--(void) DrawPixelBlock: (unsigned int) x ypos:(unsigned int) y xpos2:(unsigned int)x2 ypos2:(unsigned int) y2 RGBA8Color:( const pov_frontend::Display::RGBA8*) colour
+-(void) DrawPixelBlock: (NSUInteger) x ypos:(NSUInteger) y xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color:( const pov_frontend::Display::RGBA8*) colour
 {
 	if (mOnlyDisplayPart)
 	{
@@ -423,7 +423,7 @@
 //---------------------------------------------------------------------
 // DrawPixel*/
 //---------------------------------------------------------------------
--(void) DrawPixel: (unsigned int) x ypos:(unsigned int) y RGBA8Color:( const pov_frontend::Display::RGBA8 &) colour
+-(void) DrawPixel: (NSUInteger) x ypos:(NSUInteger) y RGBA8Color:( const pov_frontend::Display::RGBA8 &) colour
 {
 	if (mOnlyDisplayPart)
 	{
@@ -437,7 +437,7 @@
 //---------------------------------------------------------------------
 // DrawRectangleFrame
 //---------------------------------------------------------------------
--(void) DrawRectangleFrame: (unsigned int) x1 ypos:(unsigned int) y1 xpos2:(unsigned int)x2 ypos2:(unsigned int) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour
+-(void) DrawRectangleFrame: (NSUInteger) x1 ypos:(NSUInteger) y1 xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour
 {
 	if (mOnlyDisplayPart)
 	{
@@ -452,7 +452,7 @@
 //---------------------------------------------------------------------
 // DrawFilledRectangle
 //---------------------------------------------------------------------
--(void) DrawFilledRectangle: (unsigned int) x1 ypos:(unsigned int) y1 xpos2:(unsigned int)x2 ypos2:(unsigned int) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour
+-(void) DrawFilledRectangle: (NSUInteger) x1 ypos:(NSUInteger) y1 xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour
 {
 	if (mOnlyDisplayPart)
 	{
@@ -484,7 +484,7 @@
 //---------------------------------------------------------------------
 // showWindow
 //---------------------------------------------------------------------
--(void) showWindow:(id) sender shouldBecomeFront: (bool) makeFront
+-(void) showWindow:(id) sender shouldBecomeFront: (BOOL) makeFront
 {
 	if ( [[self window]isVisible]==NO)
 	{
@@ -533,29 +533,16 @@
 	//set new max size
 	NSSize displaySize=[mImage size];
 	NSSize frameSize;
-	if ([NSScrollView respondsToSelector:@selector(frameSizeForContentSize:horizontalScrollerClass:verticalScrollerClass:borderType:controlSize:scrollerStyle:)])
-	{
-
-    Class horizScrollerClass = [[scrollView horizontalScroller] class];
-    Class vertScrollerClass = [[scrollView verticalScroller] class];
-    
-    frameSize = [NSScrollView frameSizeForContentSize:displaySize
-									horizontalScrollerClass:horizScrollerClass
-									verticalScrollerClass:vertScrollerClass
-									borderType:[scrollView borderType]
-									controlSize:[[scrollView verticalScroller]controlSize]
-									scrollerStyle:[scrollView scrollerStyle]
-								 ];
-
-	}
-	else
-	{
-	 frameSize= [NSScrollView frameSizeForContentSize: displaySize
-								hasHorizontalScroller:YES
-								hasVerticalScroller:YES
-								borderType:[[self enclosingScrollView] borderType]
-							];
-							}
+	Class horizScrollerClass = [[scrollView horizontalScroller] class];
+	Class vertScrollerClass = [[scrollView verticalScroller] class];
+	
+	frameSize = [NSScrollView frameSizeForContentSize:displaySize
+								horizontalScrollerClass:horizScrollerClass
+								verticalScrollerClass:vertScrollerClass
+								borderType:[scrollView borderType]
+								controlSize:[[scrollView verticalScroller]controlSize]
+								scrollerStyle:[scrollView scrollerStyle]
+							 ];
 
 	[win setContentMaxSize: frameSize];
 

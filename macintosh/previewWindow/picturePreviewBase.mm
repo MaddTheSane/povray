@@ -57,17 +57,18 @@ extern BOOL gDontErasePreveiw;
 //---------------------------------------------------------------------
 -(void) remoteMac_Parse_Error: (remoteObject*)remoteobject
 {
+	[remoteobject retain];
 	//@autoreleasepool is set in fucntion Mac_Parse_Error() in renderGUIBridge.mm
 	NSString *file=[[remoteobject dict]objectForKey:@"fileName"];
 	if ( file == nil)
 		return;
-	SceneDocument *document=[[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:file] display:YES error:nil];
-	if ( document)
-	{
-			int n=[[[remoteobject dict]objectForKey:@"lineNo"] intValue];
-			[document selectLine:(unsigned)n];
-	}
-		
+	[[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:file] display:YES completionHandler:^(NSDocument * _Nullable document, BOOL documentWasAlreadyOpen, NSError * _Nullable error) {
+		if (document) {
+			NSInteger n=[[[remoteobject dict] objectForKey:@"lineNo"] integerValue];
+			[(SceneDocument*)document selectLine:n];
+			[remoteobject release];
+		}
+	}];
 }
 
 //---------------------------------------------------------------------
@@ -467,23 +468,9 @@ extern BOOL gDontErasePreveiw;
 
 
 //---------------------------------------------------------------------
-// setInputFileName
-//---------------------------------------------------------------------
--(void) setInputFileName:(NSString *)fileName
-{
-	[mInputFileName release];
-	mInputFileName=fileName;
-	[mInputFileName retain];
-}
-
-
-//---------------------------------------------------------------------
 // inputFileName
 //---------------------------------------------------------------------
--(NSString*) inputFileName
-{
-	return mInputFileName;
-}
+@synthesize inputFileName=mInputFileName;
 
 //---------------------------------------------------------------------
 // screenHoldingLargestPartOfRect
@@ -583,7 +570,7 @@ extern BOOL gDontErasePreveiw;
 //---------------------------------------------------------------------
 // displayDrawPixelBlock*/
 //---------------------------------------------------------------------
--(void) DrawPixelBlock: (unsigned int) x ypos:(unsigned int) y xpos2:(unsigned int)x2 ypos2:(unsigned int) y2 RGBA8Color:( const pov_frontend::Display::RGBA8*) colour
+-(void) DrawPixelBlock: (NSUInteger) x ypos:(NSUInteger) y xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color:( const pov_frontend::Display::RGBA8*) colour
 {
 
 	//@autoreleasepool is set in macintoshDisplay::DrawPixelBlock
@@ -597,10 +584,10 @@ extern BOOL gDontErasePreveiw;
 			unsigned char *bitmapDataPointer=[mImageCache bitmapData];
 			NSInteger rowBytes=[mImageCache bytesPerRow];
 			unsigned char *ptr2;
-			for(unsigned int ypos = y, i = 0; ypos <= y2; ypos++)
+			for(NSUInteger ypos = y, i = 0; ypos <= y2; ypos++)
 			{
 				ptr2 = bitmapDataPointer + (rowBytes*ypos);
-				for(unsigned int xpos =x; xpos <= x2; xpos++, i++)
+				for(NSUInteger xpos =x; xpos <= x2; xpos++, i++)
 				{
 					ptr2[(4*xpos)]=colour[i].red;
 					ptr2[4*xpos+1]=colour[i].green;
@@ -627,7 +614,7 @@ extern BOOL gDontErasePreveiw;
 //---------------------------------------------------------------------
 // DrawPixel*/
 //---------------------------------------------------------------------
--(void) DrawPixel: (unsigned int) x ypos:(unsigned int) y RGBA8Color:( const pov_frontend::Display::RGBA8 &) colour
+-(void) DrawPixel: (NSUInteger) x ypos:(NSUInteger) y RGBA8Color:( const pov_frontend::Display::RGBA8 &) colour
 {
 	//@autoreleasepool is set in macintoshDisplay::DrawPixel
 
@@ -636,18 +623,18 @@ extern BOOL gDontErasePreveiw;
 		{
 			pthread_mutex_lock(&mMinMaxLock);
 
-			colourArray[0]=(NSUInteger)((float)colour.red * (float)colour.alpha / 255.0f);
-			colourArray[1]=(NSUInteger)((float)colour.green * (float)colour.alpha / 255.0f);
-			colourArray[2]=(NSUInteger)((float)colour.blue * (float)colour.alpha / 255.0f);
+			colourArray[0]=(NSUInteger)((CGFloat)colour.red * (CGFloat)colour.alpha / 255.0f);
+			colourArray[1]=(NSUInteger)((CGFloat)colour.green * (CGFloat)colour.alpha / 255.0f);
+			colourArray[2]=(NSUInteger)((CGFloat)colour.blue * (CGFloat)colour.alpha / 255.0f);
 			colourArray[3]=(NSUInteger)colour.alpha;
 			[mImageCache setPixel:colourArray atX:x y:y];
 #if defined (debugPreview ) &&  defined (debugPreviewTrackUpdateregion)
 			NSLog(@"DrawPixel in : pthread: %ld yMin: %f xMin: %f yMax: %f xMax:%f\n", pthread_self(), yMin, xMin, yMax, xMax);
 #endif
-			xMin=fmin(xMin,(double)x);
-			yMin=fmin(yMin,(double)y);
-			xMax=fmax(xMax,(double)(x+1));
-			yMax=fmax(yMax,(double)(y+1));
+			xMin=fmin(xMin,(CGFloat)x);
+			yMin=fmin(yMin,(CGFloat)y);
+			xMax=fmax(xMax,(CGFloat)(x+1));
+			yMax=fmax(yMax,(CGFloat)(y+1));
 #if defined (debugPreview ) &&  defined (debugPreviewTrackUpdateregion)
 			NSLog(@"DrawPixel uit: pthread: %ld yMin: %f xMin: %f yMax: %f xMax:%f\n", pthread_self(), yMin, xMin, yMax, xMax);
 #endif
@@ -660,7 +647,7 @@ extern BOOL gDontErasePreveiw;
 //---------------------------------------------------------------------
 // DrawRectangleFrame
 //---------------------------------------------------------------------
--(void) DrawRectangleFrame: (unsigned int) x1 ypos:(unsigned int) y1 xpos2:(unsigned int)x2 ypos2:(unsigned int) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour
+-(void) DrawRectangleFrame: (NSUInteger) x1 ypos:(NSUInteger) y1 xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour
 {
 	//@autoreleasepool is set in macintoshDisplay::DrawRectangleFrame
 
@@ -669,17 +656,17 @@ extern BOOL gDontErasePreveiw;
 		{
 			pthread_mutex_lock(&mMinMaxLock);
 
-			colourArray[0]=(NSUInteger)((float)colour.red * (float)colour.alpha / 255.0f);
-			colourArray[1]=(NSUInteger)((float)colour.green * (float)colour.alpha / 255.0f);
-			colourArray[2]=(NSUInteger)((float)colour.blue * (float)colour.alpha / 255.0f);
+			colourArray[0]=(NSUInteger)((CGFloat)colour.red * (CGFloat)colour.alpha / 255.0f);
+			colourArray[1]=(NSUInteger)((CGFloat)colour.green * (CGFloat)colour.alpha / 255.0f);
+			colourArray[2]=(NSUInteger)((CGFloat)colour.blue * (CGFloat)colour.alpha / 255.0f);
 			colourArray[3]=(NSUInteger)colour.alpha;
 
-			for(unsigned int ypos = y1; ypos <= y2; ypos++)
+			for(NSUInteger ypos = y1; ypos <= y2; ypos++)
 			{
 				[mImageCache setPixel:colourArray atX:x1 y:ypos];
 				[mImageCache setPixel:colourArray atX:x2 y:ypos];
 			}
-			for(unsigned int xpos =x1; xpos <= x2; xpos++)
+			for(NSUInteger xpos =x1; xpos <= x2; xpos++)
 			{
 				[mImageCache setPixel:colourArray atX:xpos y:y1];
 				[mImageCache setPixel:colourArray atX:xpos y:y2];
@@ -687,10 +674,10 @@ extern BOOL gDontErasePreveiw;
 #if defined (debugPreview ) &&  defined (debugPreviewTrackUpdateregion)
 			NSLog(@"DrawRectangleFrame in : pthread: %ld yMin: %f xMin: %f yMax: %f xMax:%f\n", pthread_self(), yMin, xMin, yMax, xMax);
 #endif
-			xMin=fmin(xMin,(double)x1);
-			yMin=fmin(yMin,(double)y1);
-			xMax=fmax(xMax,(double)x2);
-			yMax=fmax(yMax,(double)y2);
+			xMin=fmin(xMin,(CGFloat)x1);
+			yMin=fmin(yMin,(CGFloat)y1);
+			xMax=fmax(xMax,(CGFloat)x2);
+			yMax=fmax(yMax,(CGFloat)y2);
 #if defined (debugPreview ) &&  defined (debugPreviewTrackUpdateregion)
 			NSLog(@"DrawRectangleFrame uit: pthread: %ld yMin: %f xMin: %f yMax: %f xMax:%f\n", pthread_self(), yMin, xMin, yMax, xMax);
 #endif
@@ -703,7 +690,7 @@ extern BOOL gDontErasePreveiw;
 //---------------------------------------------------------------------
 // DrawFilledRectangle
 //---------------------------------------------------------------------
--(void) DrawFilledRectangle: (unsigned int) x1 ypos:(unsigned int) y1 xpos2:(unsigned int)x2 ypos2:(unsigned int) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour
+-(void) DrawFilledRectangle: (NSUInteger) x1 ypos:(NSUInteger) y1 xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour
 {
 	//@autoreleasepool is set in macintoshDisplay::DrawFilledRectangle
 
@@ -722,7 +709,7 @@ extern BOOL gDontErasePreveiw;
 			bitmapDataPointer+= x1 * 4l;
 			ptr2=bitmapDataPointer;
 
-			for(int cx=x1; cx <= x2; cx++)
+			for(NSInteger cx=x1; cx <= x2; cx++)
 			{
 				*ptr2++=colour.red;			*ptr2++=colour.green;			*ptr2++=colour.blue;			*ptr2++=colour.alpha;
 				copys++;
@@ -732,7 +719,7 @@ extern BOOL gDontErasePreveiw;
 			ptr2=bitmapDataPointer;
 			//second line
 			ptr2+=rowBytes;
-			for(int cy=y1+1; cy<=y2; cy++)
+			for(NSInteger cy=y1+1; cy<=y2; cy++)
 			{
 				memcpy( ptr2,bitmapDataPointer,(long)copys*4l);
 				ptr2+=rowBytes;
@@ -741,10 +728,10 @@ extern BOOL gDontErasePreveiw;
 			NSLog(@"DrawFilledRectangle in: pthread: %ld yMin: %f xMin: %f yMax: %f xMax:%f\n", pthread_self(), yMin, xMin, yMax, xMax);
 #endif
 
-			xMin=fmin(xMin,(double)x1);
-			yMin=fmin(yMin,(double)y1);
-			xMax=fmax(xMax,(double)x2);
-			yMax=fmax(yMax,(double)y2);
+			xMin=fmin(xMin,(CGFloat)x1);
+			yMin=fmin(yMin,(CGFloat)y1);
+			xMax=fmax(xMax,(CGFloat)x2);
+			yMax=fmax(yMax,(CGFloat)y2);
 #if defined (debugPreview ) &&  defined (debugPreviewTrackUpdateregion)
 			NSLog(@"DrawFilledRectangle uit: pthread: %ld yMin: %f xMin: %f yMax: %f xMax:%f\n", pthread_self(), yMin, xMin, yMax, xMax);
 #endif

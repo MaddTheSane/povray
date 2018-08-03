@@ -44,17 +44,19 @@
 #endif
 
  
-#import "configbase.h"
-#import "syspovconfigbase.h"
-#import "syspovconfig.h"
-#import "syspovconfigfrontend.h"
-	#import <algorithm>
-	#import <stdarg.h>
-	#import <stdio.h>
-	#import <string.h>
-	#import <cmath>
-	#import "vfeconf.h"
-	#import "vfe.h"
+#ifdef __cplusplus
+#include "configbase.h"
+#include "syspovconfigbase.h"
+#include "syspovconfig.h"
+#include "syspovconfigfrontend.h"
+	#include <algorithm>
+	#include <stdarg.h>
+	#include <stdio.h>
+	#include <string.h>
+	#include <cmath>
+	#include "vfeconf.h"
+	#include "vfe.h"
+
 
 #include <queue>
 #include <cassert>
@@ -75,6 +77,7 @@
 #include "vfepovms.h"
 
 
+#ifdef __OBJC__
 #import "mainController.h"
 #import "sceneDocument.h"
 #import "sceneTextview.h"
@@ -99,5 +102,6 @@
 #import "mapBase.h"
 #import "mapBaseTEmplate.h"
 #import "mapPreview.h"
-
+#endif
+#endif
 
