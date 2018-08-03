@@ -89,9 +89,9 @@
 // menuFromDirectory: withExtensions: forMainMenuItem
 //---------------------------------------------------------------------
 +(menuFromDirectory*) fromDirectory:(NSString*)path withExtensions:(NSArray*)extensionsArray forMainMenuItem:(NSMenuItem*)mainMenuItem 
-											scaleFactor:(float)scale action:(SEL) selector
+											scaleFactor:(CGFloat)scale action:(SEL) selector
 {
-	menuFromDirectory *nw=[[[menuFromDirectory alloc]initWithPath:path andExtensions:extensionsArray ]autorelease];
+	menuFromDirectory *nw=[[[self alloc]initWithPath:path andExtensions:extensionsArray ]autorelease];
 	if ( nw != nil)
 	{
 		[nw setMainMenuItem:mainMenuItem];
@@ -132,10 +132,10 @@
 -(id) directoryItemForNSMenuItem:(NSMenuItem*)menuItem
 {
 	NSMutableArray *ar=[self itemsArray];
-	int num=[ar count];
+	NSInteger num=[ar count];
 	if ( num)
 	{
-		for (int x=0; x<num; x++)
+		for (NSInteger x=0; x<num; x++)
 		{
 			id obj=[ar objectAtIndex:x];
 			if ( [obj menuItem] == menuItem && [obj subDir]==nil)	//menu ok but not a subdir
@@ -161,10 +161,10 @@
 -(void) directories:(NSMutableArray*)dirAr
 {
 	NSMutableArray *ar=[self itemsArray];
-	int num=[ar count];
+	NSInteger num=[ar count];
 	if ( num)
 	{
-		for (int x=0; x<num; x++)
+		for (NSInteger x=0; x<num; x++)
 		{
 			id obj=[ar objectAtIndex:x];
 			if ( [obj subDir] )	// subdir, scan this one
@@ -186,7 +186,7 @@
 	BOOL isDir;
 	NSFileManager *fm=[NSFileManager defaultManager];
 	NSMenuItem *newMenuItem=nil;
-	int items=[contents count];
+	NSInteger items=[contents count];
 	
 	if ( items==0) 
 		return;
@@ -196,7 +196,7 @@
 		[self setMenu:m]; 
 	}
 		
-	for (int x=0; x<items; x++)
+	for (NSInteger x=0; x<items; x++)
 	{
 		NSString *file=[contents objectAtIndex:x];
 		NSString *path=[self path];
@@ -304,7 +304,7 @@
 				[[self menu] insertItem:[objectToAdd menuItem] atIndex:0];
 				return;
 			}
-			for (int x=firstDirectory; x<=lastDirectory; x++)
+			for (NSInteger x=firstDirectory; x<=lastDirectory; x++)
 			{
 				nameOfObjectInArray=[[itemsArray objectAtIndex:x]fileName];
 				NSRange compRange=NSMakeRange(0, MAX([nameOfObjectInArray length], [nameOfObjectToAdd length]));
@@ -326,7 +326,7 @@
 				[[self menu] addItem:[objectToAdd menuItem]];
 				return;
 			}
-			for (int x=firstFile; x<lastFile; x++)
+			for (NSInteger x=firstFile; x<lastFile; x++)
 			{
 				NSRange compRange=NSMakeRange(0, MAX([nameOfObjectInArray length], [nameOfObjectToAdd length]));
 				nameOfObjectInArray=[[itemsArray objectAtIndex:x]fileName];
@@ -403,7 +403,7 @@
 //---------------------------------------------------------------------
 -(NSString *) itemNameFromFilename:(NSString *)file
 {
-	int length=[file length];
+	NSInteger length=[file length];
 	if ( length < 6)
 		return file;
 	if ( [file characterAtIndex:3] != '-' || [file characterAtIndex:4]!= ' ')
@@ -451,7 +451,7 @@
 //---------------------------------------------------------------------
 // setScaleFactor: float
 //---------------------------------------------------------------------
--(void) setScaleFactor:(float) factor
+-(void) setScaleFactor:(CGFloat) factor
 {	
 	mScaleFactor=factor;
 	if ( mScaleFactor < 10.0)
@@ -464,84 +464,37 @@
 //---------------------------------------------------------------------
 // scaleFactor: 
 //---------------------------------------------------------------------
--(float) scaleFactor{	return mScaleFactor;}
-
-//---------------------------------------------------------------------
-// setPath: path
-//---------------------------------------------------------------------
--(void) setPath:(NSString*)path
-{
-	[mPath release];
-	mPath=path;
-	[mPath retain];
-}
-
-//---------------------------------------------------------------------
-// setAction: action
-//---------------------------------------------------------------------
--(void) setAction:(SEL)selector{	mAction=selector;}
-
-//---------------------------------------------------------------------
-// setExtensions: extensions
-//---------------------------------------------------------------------
--(void) setExtensions:(NSArray*)extensions{	[mExtensions release];		mExtensions=extensions;		[mExtensions retain];}
-
-//---------------------------------------------------------------------
-// setMainMenuItem: mainMenuItem
-//---------------------------------------------------------------------
--(void) setMainMenuItem:(NSMenuItem*)mainMenuItem
-{
-	[mMainMenuItem release];		mMainMenuItem=mainMenuItem;		[mMainMenuItem retain];
-}
-
-//---------------------------------------------------------------------
-// setMenu: menu
-//---------------------------------------------------------------------
--(void) setMenu:(NSMenu*)menu{	[mMenu release];		mMenu=menu;		[mMenu retain];}
-
-//---------------------------------------------------------------------
-// setItemsArray: itemsArray
-//---------------------------------------------------------------------
--(void) setItemsArray:(NSMutableArray*)itemsArray
-{
-	[mItemsArray release];		mItemsArray=itemsArray;		[mItemsArray retain];
-}
+@synthesize scaleFactor=mScaleFactor;
 
 //---------------------------------------------------------------------
 // action
 //---------------------------------------------------------------------
--(SEL) action{	return mAction;}
+@synthesize action=mAction;
 
 //---------------------------------------------------------------------
 // itemsArray
 //---------------------------------------------------------------------
--(NSMutableArray*) itemsArray{	return mItemsArray;}
+@synthesize itemsArray=mItemsArray;
 
 //---------------------------------------------------------------------
 // path
 //---------------------------------------------------------------------
--(NSString*) path{	return mPath;}
+@synthesize path=mPath;
 
 //---------------------------------------------------------------------
 // extensions
 //---------------------------------------------------------------------
--(NSArray*) extensions{	return mExtensions;}
+@synthesize extensions=mExtensions;
 
 //---------------------------------------------------------------------
 // mainMenuItem
 //---------------------------------------------------------------------
--(NSMenuItem*) mainMenuItem
-{
-	return mMainMenuItem;
-}
+@synthesize mainMenuItem=mMainMenuItem;
 
 //---------------------------------------------------------------------
 // menu
 //---------------------------------------------------------------------
--(NSMenu*) menu
-{
-	return mMenu;
-}
+@synthesize menu=mMenu;
 
 
 
@@ -582,102 +535,24 @@
 }
 
 //---------------------------------------------------------------------
-// setSubDir: subdir
-//---------------------------------------------------------------------
--(void) setSubDir:(menuFromDirectory*)subdir
-{
-	[mSubDir release];		
-	mSubDir=subdir;		
-	[mSubDir retain];
-}
-
-//---------------------------------------------------------------------
 // subDir
 //---------------------------------------------------------------------
--(menuFromDirectory*) subDir
-{
-	return mSubDir;
-}
+@synthesize subDir=mSubDir;
 
 //---------------------------------------------------------------------
-// setItemName: newName
+// action
 //---------------------------------------------------------------------
--(void) setMenuName:(NSString*)newName
-{
-	[mItemName release];		
-	mItemName=newName;		
-	[mItemName retain];
-}
-
-//---------------------------------------------------------------------
-// setMenuItem: newName
-//---------------------------------------------------------------------
--(void) setMenuItem:(NSMenuItem*)newItem
-{
-	[mMenuItem release];		
-	mMenuItem=newItem;		
-	[mMenuItem retain];
-}
-
-//---------------------------------------------------------------------
-// setFullFileName: newFileName
-//---------------------------------------------------------------------
--(void) setPath:(NSString*)newPath
-{
-	[mPath release];		
-	mPath=newPath;		
-	[mPath retain];
-}
-
-
-//---------------------------------------------------------------------
-// setFullFileName: newFileName
-//---------------------------------------------------------------------
--(void) setFileName:(NSString*)newFileName
-{
-	[mFileName release];		
-	mFileName=newFileName;		
-	[mFileName retain];
-}
-//---------------------------------------------------------------------
-// setKindOfFile: flag
-//---------------------------------------------------------------------
--(void) setKindOfFile:(NSUInteger)kind
-{
-	mKindOfFile=kind;	
-}
-//---------------------------------------------------------------------
-// setIsSeparator: flag
-//---------------------------------------------------------------------
--(void) setIsSeparator:(BOOL)flag;
-{
-	mIsSeparator=flag;
-}
-
-//---------------------------------------------------------------------
-// setAction: action
-//---------------------------------------------------------------------
--(void) setAction:(SEL)selector
-{
-	mAction=selector;
-}
+@synthesize action=mAction;
 
 //---------------------------------------------------------------------
 // menuName
 //---------------------------------------------------------------------
--(NSString*) menuName
-{
-	return mItemName;
-}
-
+@synthesize menuName=mItemName;
 
 //---------------------------------------------------------------------
 // menuItem
 //---------------------------------------------------------------------
--(NSMenuItem*) menuItem
-{
-	return mMenuItem;
-}
+@synthesize menuItem=mMenuItem;
 
 //---------------------------------------------------------------------
 // fullFileName
@@ -690,33 +565,20 @@
 //---------------------------------------------------------------------
 // fileName
 //---------------------------------------------------------------------
--(NSString*) fileName
-{
-	return mFileName;
-}
+@synthesize fileName=mFileName;
 
 //---------------------------------------------------------------------
 // path
 //---------------------------------------------------------------------
--(NSString*) path
-{
-	return mPath;
-	}
-
+@synthesize path=mPath;
 
 //---------------------------------------------------------------------
 // kindOfFile
 //---------------------------------------------------------------------
--(NSUInteger) kindOfFile
-{
-	return mKindOfFile;
-}
+@synthesize kindOfFile=mKindOfFile;
 
 //---------------------------------------------------------------------
 // isSeparator
 //---------------------------------------------------------------------
--(BOOL) isSeparator
-{
-	return mIsSeparator;
-}
+@synthesize isSeparator=mIsSeparator;
 @end

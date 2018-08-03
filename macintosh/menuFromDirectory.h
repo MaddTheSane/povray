@@ -39,14 +39,14 @@
 //******************************************************************************
 
 #import <Cocoa/Cocoa.h>
-enum {
+enum entryType {
 	kDirectory=0,
 	kFile= 1,
 	kSeparator= 2,
 	
-	kNotDefined=-1
+	kNotDefined=-1l
 	
-	}entryType;
+	};
 
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 //+++++++++++++++++++++++++++++++++++++++++++++++++
@@ -61,37 +61,30 @@ enum {
 	NSMutableArray 	*mItemsArray;
 	NSMenu					*mMenu;
 	SEL 						mAction;
-	float						mScaleFactor;
+	CGFloat					mScaleFactor;
 
 }
 
-+(menuFromDirectory*) fromDirectory:(NSString*)path withExtensions:(NSArray*)extensionsArray 
++(instancetype) fromDirectory:(NSString*)path withExtensions:(NSArray<NSString*>*)extensionsArray
 											forMainMenuItem:(NSMenuItem*)mainMenuItem  
-											scaleFactor:(float)scale	action:(SEL)selector;
-- (id)initWithPath:(NSString*) path andExtensions:(NSArray*) extensions;
+											scaleFactor:(CGFloat)scale	action:(SEL)selector;
+- (instancetype)initWithPath:(NSString*) path andExtensions:(NSArray<NSString*>*) extensions;
 -(BOOL) isFileValid: (NSString *)file extensionResult:(NSString**)foundExtension;
 -(id) directoryItemForNSMenuItem:(NSMenuItem*)menuItem;
 -(void) directories:(NSMutableArray*)dirAr;
--(float) scaleFactor;
--(void) setScaleFactor:(float)factor;
+@property (nonatomic) CGFloat scaleFactor;
 -(NSString *) itemNameFromFilename:(NSString *)file;
 -(void) addObject:(id)objectToAdd;
 -(NSInteger) indexOfFirstDirectory:(NSInteger&) first andLastDirectory:(NSInteger&)last;
 -(NSInteger) indexOfFirstFile:(NSInteger&) first andLastFile:(NSInteger&)last;
--(void) setAction:(SEL)selector;
--(void) setPath:(NSString*)path;
--(void) setExtensions:(NSArray*)extensions;
--(void) setItemsArray:(NSMutableArray*)itemsArray;
--(void) setMainMenuItem:(NSMenuItem*)mainMenuItem;
--(void) setMenu:(NSMenu*)menu;
--(NSMenu*)menu;
--(NSString*) path;
--(NSArray*) extensions;
--(NSMenuItem*)	 mainMenuItem;
--(NSMutableArray*) itemsArray; 
--(void) validateContents:(NSArray*)contents;
+@property SEL action;
+@property (copy) NSString *path;
+@property (copy) NSArray<NSString*> *extensions;
+@property (retain) NSMutableArray *itemsArray;
+@property (retain) NSMenuItem *mainMenuItem;
+@property (retain) NSMenu *menu;
+-(void) validateContents:(NSArray<NSString*>*)contents;
 -(void) addMenuToMainMenu:(NSMenuItem*) mainMenuItem;
--(SEL) action;
 
 -(void) build;
 @end
@@ -115,21 +108,14 @@ enum {
 
  	menuFromDirectory *mSubDir;	//if not a directory, nil
 }
--(void) setSubDir:(menuFromDirectory*)subdir;
 
--(menuFromDirectory*)subDir;
--(void) setAction:(SEL)selector;
--(void) setMenuName:(NSString*)newName;
--(void) setMenuItem:(NSMenuItem*)newItem;
--(void) setFileName:(NSString*)newFileName;
--(void) setPath:(NSString*)newPath;
--(void) setKindOfFile:(NSUInteger) kind;
--(void) setIsSeparator:(BOOL)flag;
--(NSString*) menuName;
--(NSString*) fullFileName;
--(NSString*) fileName;
--(NSString*)	path;
--(NSMenuItem*) menuItem;
--(NSUInteger) kindOfFile;
--(BOOL) isSeparator;
+@property (retain/*, nullable*/) menuFromDirectory *subDir;
+@property SEL action;
+@property (copy) NSString *menuName;
+@property (readonly, copy) NSString *fullFileName;
+@property (copy) NSString *fileName;
+@property (copy) NSString *path;
+@property (retain) NSMenuItem *menuItem;
+@property NSUInteger kindOfFile;
+@property BOOL isSeparator;
 @end
