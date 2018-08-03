@@ -4663,16 +4663,26 @@
 		825D5FED1103170E00E0FF88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = precompiledHeaders/openexr.pch;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
+					"\"$(SRCROOT)/../libraries/png\"",
+					"\"$(SRCROOT)/../libraries/boost\"",
+					"\"$(SRCROOT)/../libraries/ilmbase/half\"",
+					"\"$(SRCROOT)/../libraries/ilmbase/Iex\"",
+					"\"$(SRCROOT)/../source\"/**",
+					"\"$(SRCROOT)/../libraries/openexr/config\"",
+					"\"$(SRCROOT)/config/libraries_config/libpng\"",
+					"\"$(SRCROOT)/config/libraries_config\"",
+				);
 				INSTALL_PATH = /usr/local/lib;
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = openexr;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\"";
 			};
 			name = Debug;
 		};
@@ -4815,7 +4825,6 @@
 		826B4C0E0F63C1440030525E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -4823,11 +4832,21 @@
 				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = precompiledHeaders/PovRayBackendPrefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
+					"\"$(SRCROOT)/../libraries/png\"",
+					"\"$(SRCROOT)/../libraries/boost\"",
+					"\"$(SRCROOT)/../source\"/**",
+					"\"$(SRCROOT)/../libraries/openexr/config\"",
+					"\"$(SRCROOT)/../libraries/openexr/IlmImf\"",
+					"\"$(SRCROOT)/config/libraries_config/libpng\"",
+					"\"$(SRCROOT)/config/libraries_config\"",
+				);
 				INSTALL_PATH = /usr/local/lib;
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = povray_backend;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/** \"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config/libpng\" \"$(SRCROOT)/config/libraries_config\"";
 			};
 			name = Debug;
 		};
@@ -4956,7 +4975,6 @@
 		82A1003415F51A650023C5F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
@@ -4964,27 +4982,47 @@
 				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = precompiledHeaders/PovRayBackendPrefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
+					"\"$(SRCROOT)/../libraries/png\"",
+					"\"$(SRCROOT)/../libraries/boost\"",
+					"\"$(SRCROOT)/../source\"/**",
+					"\"$(SRCROOT)/../libraries/openexr/config\"",
+					"\"$(SRCROOT)/../libraries/openexr/IlmImf\"",
+					"\"$(SRCROOT)/config/libraries_config/libpng\"",
+					"\"$(SRCROOT)/config/libraries_config\"",
+				);
 				INSTALL_PATH = /usr/local/lib;
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = povray_backend;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/** \"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config/libpng\" \"$(SRCROOT)/config/libraries_config\"";
 			};
 			name = Release;
 		};
 		82A1003515F51A650023C5F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = precompiledHeaders/openexr.pch;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
+					"\"$(SRCROOT)/../libraries/png\"",
+					"\"$(SRCROOT)/../libraries/boost\"",
+					"\"$(SRCROOT)/../libraries/ilmbase/half\"",
+					"\"$(SRCROOT)/../libraries/ilmbase/Iex\"",
+					"\"$(SRCROOT)/../source\"/**",
+					"\"$(SRCROOT)/../libraries/openexr/config\"",
+					"\"$(SRCROOT)/config/libraries_config/libpng\"",
+					"\"$(SRCROOT)/config/libraries_config\"",
+				);
 				INSTALL_PATH = /usr/local/lib;
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = openexr;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\"";
 			};
 			name = Release;
 		};
