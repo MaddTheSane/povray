@@ -41,22 +41,20 @@
 
 @interface MutableTabString: NSObject
 {
-	int mTabCount;
+	NSInteger mTabCount;
 	NSMutableString *mTabString;
 	NSMutableString *mString;
 	BOOL mCallerIsSceneDocument;	// YES is the object asking to write is a scenedocument
 	BOOL mFirstTimeWritten;			// have we written something already?
 }
--(id) initWithTabs:(int)tabs andCallerType:(BOOL) callerIsSceneDocument;
+-(instancetype) initWithTabs:(NSInteger)tabs andCallerType:(BOOL) callerIsSceneDocument;
 -(void) removeTab;
 -(void) addTab;
--(int) currentTabs;
+@property (readonly) NSInteger currentTabs;
 
--(NSMutableString *) string;
--(void) setString: (NSMutableString*) str;
--(NSMutableString *) tabString;
--(void) setTabString: (NSMutableString*)tabStr;
--(unsigned int) length;
+@property (retain) NSMutableString *string;
+@property (retain) NSMutableString *tabString;
+@property (readonly) NSUInteger length;
 
 -(void) copyTabAndText:(NSString*)string;
 -(void) copyText:(NSString *) string;
@@ -64,10 +62,10 @@
 -(void) addXYZVector:(NSDictionary*)dict popup:(NSString*)popup xKey:(NSString*)x yKey:(NSString*)y zKey:(NSString*)z;
 -(void) addScaleVector:(NSDictionary*)dict popup:(NSString*)popup xKey:(NSString*)x yKey:(NSString*)y zKey:(NSString*)z;
 -(void) addRGBColor:(NSDictionary*)dict forKey:(NSString*)key andTitle:(NSString*) title comma:(BOOL)cm newLine:(BOOL)nl;
-- (void)appendFormat:(NSString *)format, ...;
--(void) appendTabAndFormat:(NSString*)format,...;
-
--(void) dealloc;
+-(void)appendFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
+-(void)appendFormat:(NSString *)format arguments:(va_list)args NS_FORMAT_FUNCTION(1,0);
+-(void) appendTabAndFormat:(NSString*)format,... NS_FORMAT_FUNCTION(1,2);
+-(void)appendTabAndFormat:(NSString *)format arguments:(va_list)args NS_FORMAT_FUNCTION(1,0);
 
 @end
 

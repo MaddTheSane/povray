@@ -284,7 +284,7 @@
 {
 	id 	prefs=nil;
 
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	switch( tag)
 	{
 		case cInteriorEditMedia:
@@ -301,7 +301,7 @@
 //---------------------------------------------------------------------
 -(IBAction) interiorTarget:(id)sender
 {
-	int theTag;
+	eInteriorTags theTag;
 	if ( sender==self)
 		theTag=cInteriorDispersionGroupOn;
 	else

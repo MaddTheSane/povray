@@ -187,7 +187,7 @@
 //---------------------------------------------------------------------
 -(IBAction) colorPickerTraget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cFilterOn;
 	else

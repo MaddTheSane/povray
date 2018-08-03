@@ -391,14 +391,14 @@
 //---------------------------------------------------------------------
 // insertEntryAtIndex
 //---------------------------------------------------------------------
--(void) insertEntryAtIndex:(int)index
+-(void) insertEntryAtIndex:(NSInteger)index
 {
 //	int outRows=[self count];
-	int selectedRow=[self firstSelectedRow];	//
+	NSInteger selectedRow=[self firstSelectedRow];	//
 	NSMutableArray *newArray;
-	int SelectedSegment,firstSelectedSegmentPoint;
-	float newX;
-	float newY;
+	NSInteger SelectedSegment,firstSelectedSegmentPoint;
+	CGFloat newX;
+	CGFloat newY;
 
 	if ( selectedRow!=dNoRowSelected)
 	{
@@ -415,7 +415,7 @@
 					newY=([self floatAtRow:selectedRow atColumn:cObjectmapYIndex]+[self floatAtRow:selectedRow-1 atColumn:cObjectmapYIndex])/2.0;
 				}
 				newArray=[NSMutableArray arrayWithObjects:
-															[NSNumber numberWithFloat:newX],[NSNumber numberWithFloat:newY],
+															@(newX),@(newY),
 														nil];
 				[mMapArray insertObject:newArray atIndex:selectedRow];
 			 	[ [self tableView] reloadData];
@@ -428,7 +428,7 @@
 				for (int x=1; x<=4; x++)
 				{
 					newArray=[NSMutableArray arrayWithObjects:
-											[NSNumber numberWithFloat:0.0],[NSNumber numberWithFloat:1.0],
+											@0.0,@1.0,
 											nil];
 					[mMapArray insertObject:newArray atIndex:firstSelectedSegmentPoint];
 				}
@@ -601,7 +601,7 @@
 //---------------------------------------------------------------------
 // setButtonState:forButton
 //---------------------------------------------------------------------
--(void) setButtonState:(int) state forButton:(int)button
+-(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button
 {
 	switch ( button)
 	{
@@ -617,7 +617,7 @@
 //---------------------------------------------------------------------
 // buttonState
 //---------------------------------------------------------------------
--(int) buttonState:(int)button
+-(NSControlStateValue) buttonState:(NSInteger)button
 {
 	switch ( button)
 	{

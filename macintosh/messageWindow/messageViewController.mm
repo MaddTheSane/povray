@@ -117,16 +117,16 @@ static MessageViewController* _messageViewController;
 	{
 		if ( [number boolValue] == YES)
 		{
-			[mSceneStart addObject:[NSNumber numberWithInt:[mTextStorage length]]];
-			int count=[mSceneStart count];
+			[mSceneStart addObject:@([mTextStorage length])];
+			NSInteger count=[mSceneStart count];
 			if ( count >10 && [mTextStorage length] >=51200)
 			{
-				int removedBytes=[[mSceneStart objectAtIndex:0]intValue];
+				NSInteger removedBytes=[[mSceneStart objectAtIndex:0]integerValue];
 				[mSceneStart removeObjectAtIndex:0];
-				for ( int x=0; x<[mSceneStart count]; x++)
+				for ( NSInteger x=0; x<[mSceneStart count]; x++)
 				{
 					int oldValue=[[mSceneStart objectAtIndex:x]intValue];
-					[mSceneStart replaceObjectAtIndex:x withObject:[NSNumber numberWithInt:oldValue-removedBytes]];
+					[mSceneStart replaceObjectAtIndex:x withObject:[NSNumber numberWithInteger:oldValue-removedBytes]];
 				}
 				NSRange newRange=NSMakeRange(0, removedBytes);
 				[mTextStorage replaceCharactersInRange:newRange withString:@""];

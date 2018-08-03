@@ -45,7 +45,7 @@
 #define setInteriorEditMedia setTemplatePrefs:0 withObject
 
 	
-enum eInteriorTags{
+typedef NS_ENUM(NSInteger, eInteriorTags) {
 	cInteriorIorIndexPopUp									=10,
 	cInteriorDispersionGroupOn								=20,
 	cInteriorDispersionSamplesOn							=30,
@@ -56,7 +56,7 @@ enum eInteriorTags{
 	cInteriorCausticsOn												=80
 };
 
-enum eInteriorIorIndex {
+typedef NS_ENUM(NSInteger, eInteriorIorIndex) {
 	cIorIndexNone 				=0,
 	cIorIndexAcrylic				=2,
 	cIorIndexAir,

@@ -209,7 +209,7 @@ typedef NS_ENUM(NSInteger, preferencesTag) {
 };
 
 
-@interface PreferencesPanelController : NSObject
+@interface PreferencesPanelController : NSObject <NSTabViewDelegate>
 {
 	IBOutlet id				mMiscGreenLed;
 	IBOutlet id				mClockGreenLed;
@@ -225,7 +225,7 @@ typedef NS_ENUM(NSInteger, preferencesTag) {
 	IBOutlet NSButton			*settingsPanelRename;
 	IBOutlet NSTextField	*settingsPanelTextField;
 	IBOutlet NSTableView	*settingsPanelTableView;
-	int 									mSettingsPanelMode;
+	NSInteger 						mSettingsPanelMode;
 	IBOutlet NSTextField	*settingsPanelX;
 	IBOutlet NSTextField	*settingsPanelY;
 	IBOutlet NSTextField	*settingsPanelAntiAliasing;
@@ -392,15 +392,14 @@ typedef NS_ENUM(NSInteger, preferencesTag) {
 -(void) setButtonStateSettingsPanel: (NSMutableDictionary*) dictToUse;
 -(void) selectionSettingsPanelTableViewChanged:(NSNotification *) notification;
 -(void) saveCurrentSettingsInDefaultSettings: (NSNotification *)ntf;
--(void) processSettingsPanel:(int) saveEdit;
+-(void) processSettingsPanel:(NSInteger) saveEdit;
 
 - (void) selectInclude: (id) sender forField:(NSTextField*)textfield;
 - (NSMutableDictionary*) setttingsDictionaryWithName: (NSString*)dictionaryToSearchFor;
 - (BOOL) putDictionaryInPanel: (NSMutableDictionary*)dictToUse allowFileChange:(BOOL)fileChange;
 -(void) setPanelTitle;
-- (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem;
 -(NSMutableDictionary*) getDictWithCurrentSettings:(BOOL) writeToDefaults;
- - (int) putDictionaryInSettingsArray: (NSMutableDictionary*)dictionaryToAdd;
+ - (NSInteger) putDictionaryInSettingsArray: (NSMutableDictionary*)dictionaryToAdd;
 - (void) updateStartEndRatio;
 - (void) updateStartEndValues;
 -(void) newSelectionInPreviewwindowSet:(NSNotification *) notification;

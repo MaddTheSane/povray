@@ -40,7 +40,7 @@
 #import <Cocoa/Cocoa.h>
 #import "mapBase.h"
 
-enum eObjectmapIndex {
+typedef NS_ENUM (NSInteger, eObjectmapIndex) {
 	cObjectmapXIndex		=0,
 	cObjectmapYIndex		=1,
 	
@@ -75,6 +75,7 @@ enum eObjectmapIndex {
 }
 
 +(id) standardMap:(int) type withView:(id)view;
+@property int templateType;
 -(void) setTemplateType:(int)type;
 -(int) templateType;
 
@@ -86,10 +87,10 @@ enum eObjectmapIndex {
 -(void)	buildPrismmap:(int)numberOfPoints;
 
 -(void) addEntry;
--(void) insertEntryAtIndex:(int)index;
+-(void) insertEntryAtIndex:(NSInteger)index;
 
--(void) setButtonState:(int) state forButton:(int)button;
--(int) buttonState:(int)button;
+-(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button;
+-(NSControlStateValue) buttonState:(NSInteger)button;
 
 @end
 

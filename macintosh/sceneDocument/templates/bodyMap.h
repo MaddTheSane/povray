@@ -51,14 +51,14 @@
 -(void) makeTextureMap;
 
 -(void) addEntry;
--(void) insertEntryAtIndex:(int)index;
+-(void) insertEntryAtIndex:(NSInteger)index;
 
--(NSString *) locationAtIndex:(unsigned int) index;
--(float ) locationValueAtIndex:(unsigned int) index;
--(id) identifierAtIndex:(unsigned int) index;
+-(NSString *) locationAtIndex:(NSUInteger) index;
+-(float ) locationValueAtIndex:(NSUInteger) index;
+-(id) identifierAtIndex:(NSUInteger) index;
 
--(void) setLocation:(NSString *)location atIndex:(unsigned int) index;
--(void) setIdentifier:(NSString *)identifier atIndex:(unsigned int) index;
+-(void) setLocation:(NSString *)location atIndex:(NSUInteger) index;
+-(void) setIdentifier:(NSString *)identifier atIndex:(NSUInteger) index;
 
 @end
 

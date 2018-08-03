@@ -183,10 +183,10 @@ static BOOL mSkySphereWritten;
 			[ds addTab];
 			[ds copyTabAndText:@"material {\n"];
 			[ds addTab];
-			for (int x=beginLayer; x<=endLayer; x++)
+			for (NSInteger x=beginLayer; x<=endLayer; x++)
 				[MaterialTemplate addLayer:ds atIndex:x fromMap:cmap];
 			[ds removeTab];
-			if ( [[dict objectForKey:@"materialTransformationsOn"]intValue]==NSOnState)
+			if ( [[dict objectForKey:@"materialTransformationsOn"]integerValue]==NSOnState)
 			{
 				[TransformationsTemplate createDescriptionWithDictionary:[dict objectForKey:@"materialTransformations"]
 						andTabs:[ds currentTabs] extraParam:0 mutableTabString:ds];
@@ -203,9 +203,9 @@ static BOOL mSkySphereWritten;
 			[ds copyTabAndText:@"sphere {	0.0, 0.35}\n"];
 			[ds copyTabAndText:@"material {\n"]; [ds addTab];
 			[ds addTab];
-			for (int x=beginLayer; x<=endLayer; x++)
+			for (NSInteger x=beginLayer; x<=endLayer; x++)
 				[MaterialTemplate addLayer:ds atIndex:x fromMap:cmap];
-			if ( [[dict objectForKey:@"materialTransformationsOn"]intValue]==NSOnState)
+			if ( [[dict objectForKey:@"materialTransformationsOn"]integerValue]==NSOnState)
 			{
 				[TransformationsTemplate createDescriptionWithDictionary:[dict objectForKey:@"materialTransformations"]
 						andTabs:[ds currentTabs] extraParam:0 mutableTabString:ds];
@@ -223,9 +223,9 @@ static BOOL mSkySphereWritten;
 			[ds copyTabAndText:@"sphere {	<0.0, 0.0, 0.0>, 0.35}\n"];
 			[ds copyTabAndText:@"material {\n"];
 			[ds addTab];
-			for (int x=beginLayer; x<=endLayer; x++)
+			for (NSInteger x=beginLayer; x<=endLayer; x++)
 				[MaterialTemplate addLayer:ds atIndex:x fromMap:cmap];
-			if ( [[dict objectForKey:@"materialTransformationsOn"]intValue]==NSOnState)
+			if ( [[dict objectForKey:@"materialTransformationsOn"]integerValue]==NSOnState)
 			{
 				[TransformationsTemplate createDescriptionWithDictionary:[dict objectForKey:@"materialTransformations"]
 						andTabs:[ds currentTabs] extraParam:0 mutableTabString:ds];
@@ -241,9 +241,9 @@ static BOOL mSkySphereWritten;
 			[ds addTab];
 			[ds copyTabAndText:@"material {\n"]; 
 			[ds addTab];
-			for (int x=beginLayer; x<=endLayer; x++)
+			for (NSInteger x=beginLayer; x<=endLayer; x++)
 				[MaterialTemplate addLayer:ds atIndex:x fromMap:cmap];
-			if ( [[dict objectForKey:@"materialTransformationsOn"]intValue]==NSOnState)
+			if ( [[dict objectForKey:@"materialTransformationsOn"]integerValue]==NSOnState)
 			{
 				[TransformationsTemplate createDescriptionWithDictionary:[dict objectForKey:@"materialTransformations"]
 						andTabs:[ds currentTabs] extraParam:0 mutableTabString:ds];
@@ -259,9 +259,9 @@ static BOOL mSkySphereWritten;
 			[ds addTab];
 			[ds copyTabAndText:@"material {\n"];
 			[ds addTab];
-			for (int x=beginLayer; x<=endLayer; x++)
+			for (NSInteger x=beginLayer; x<=endLayer; x++)
 				[MaterialTemplate addLayer:ds atIndex:x fromMap:cmap];
-			if ( [[dict objectForKey:@"materialTransformationsOn"]intValue]==NSOnState)
+			if ( [[dict objectForKey:@"materialTransformationsOn"]integerValue]==NSOnState)
 			{
 				[TransformationsTemplate createDescriptionWithDictionary:[dict objectForKey:@"materialTransformations"]
 						andTabs:[ds currentTabs] extraParam:0 mutableTabString:ds];
@@ -646,7 +646,7 @@ static BOOL mSkySphereWritten;
 	[[self getWindow]makeFirstResponder: [self getWindow]];
 	id trimmedPrefs=nil;
 	NSString *PanelTitle=nil;
-	int currentTab=[materialMainTabView indexOfTabViewItem:[materialMainTabView selectedTabViewItem]];
+	NSInteger currentTab=[materialMainTabView indexOfTabViewItem:[materialMainTabView selectedTabViewItem]];
 	switch (currentTab)
 	{
 		case cMaterialPigmentTab:	
@@ -779,7 +779,7 @@ static BOOL mSkySphereWritten;
 //---------------------------------------------------------------------
 -(IBAction) materialTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cMaterialTransformationsOn;
 	else
@@ -838,7 +838,7 @@ static BOOL mSkySphereWritten;
 {
 	id 	prefs=nil;
 
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	
 	switch( tag)
 	{
@@ -856,19 +856,19 @@ static BOOL mSkySphereWritten;
 			[self callTemplate:menuTagTemplateTransformations withDictionary:prefs andKeyName:@"materialTransformations"];
 			break;
 		case cPigmentOn:
-			[mMap setInt:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapPigmentOnIndex];
+			[mMap setInteger:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapPigmentOnIndex];
 			[self updateGreenLeds];
 			break;
 		case cNormalOn:
-			[mMap setInt:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapNormalOnIndex];
+			[mMap setInteger:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapNormalOnIndex];
 			[self updateGreenLeds];
 			break;
 		case cFinishOn:
-			[mMap setInt:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapFinishOnIndex];
+			[mMap setInteger:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapFinishOnIndex];
 			[self updateGreenLeds];
 			break;
 		case cInteriorOn:
-			[mMap setInt:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapInteriorOnIndex];
+			[mMap setInteger:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapInteriorOnIndex];
 			[self updateGreenLeds];
 			break;
 	}
