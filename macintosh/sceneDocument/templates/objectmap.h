@@ -66,12 +66,12 @@ typedef NS_ENUM (NSInteger, eObjectmapIndex) {
 
 @interface objectmap : MapBase <NSCoding> 
 {
-	int mSlopeOn;
-	int mPointOn;
-	int mRasterOn;
-	int mCurveOn;
-	int mSplineTypePopUp;
-	int mTemplateType;
+	NSControlStateValue mSlopeOn;
+	NSControlStateValue mPointOn;
+	NSControlStateValue mRasterOn;
+	NSControlStateValue mCurveOn;
+	NSControlStateValue mSplineTypePopUp;
+	NSControlStateValue mTemplateType;
 }
 
 +(id) standardMap:(int) type withView:(id)view;

@@ -98,7 +98,7 @@ enum {
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 	NSString *buttonString;
@@ -175,54 +175,54 @@ enum {
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		@"Persistence of Vision Ray Tracer Scene Description File",	@"headerIncludeComment1",	
-		[NSNumber numberWithInt:NSOnState],								@"headerIncludeComment1On",
+		@(NSOnState),								@"headerIncludeComment1On",
 		@"File: .pov",																		@"headerIncludeComment2",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeComment2On",
+		@(NSOffState),								@"headerIncludeComment2On",
 		@"Date:",																			@"headerIncludeComment3",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeComment3On",
+		@(NSOffState),								@"headerIncludeComment3On",
 		@"Author:",																		@"headerIncludeComment4",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeComment4On",
+		@(NSOffState),								@"headerIncludeComment4On",
 		@"",																					@"headerIncludeComment5",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeComment5On",
+		@(NSOffState),								@"headerIncludeComment5On",
 		@"",																					@"headerIncludeComment6",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeComment6On",
+		@(NSOffState),								@"headerIncludeComment6On",
 		@"",																					@"headerIncludeComment7",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeComment7On",
+		@(NSOffState),								@"headerIncludeComment7On",
 
 		@"colors.inc",																		@"headerIncludeInclude1",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude1On",
+		@(NSOffState),								@"headerIncludeInclude1On",
 		@"textures.inc",																	@"headerIncludeInclude2",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude2On",
+		@(NSOffState),								@"headerIncludeInclude2On",
 		@"glass.inc",																		@"headerIncludeInclude3",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude3On",
+		@(NSOffState),								@"headerIncludeInclude3On",
 		@"metals.inc",																	@"headerIncludeInclude4",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude4On",
+		@(NSOffState),								@"headerIncludeInclude4On",
 		@"stones.inc",																		@"headerIncludeInclude5",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude5On",
+		@(NSOffState),								@"headerIncludeInclude5On",
 		@"stones1.inc",																	@"headerIncludeInclude6",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude6On",
+		@(NSOffState),								@"headerIncludeInclude6On",
 		@"stones2.inc",																	@"headerIncludeInclude7",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude7On",
+		@(NSOffState),								@"headerIncludeInclude7On",
 		@"golds.inc",																		@"headerIncludeInclude8",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude8On",
+		@(NSOffState),								@"headerIncludeInclude8On",
 		@"finish.inc",																		@"headerIncludeInclude9",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude9On",
+		@(NSOffState),								@"headerIncludeInclude9On",
 		@"shapesq.inc",																	@"headerIncludeInclude10",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude10On",
+		@(NSOffState),								@"headerIncludeInclude10On",
 		@"skies.inc",																		@"headerIncludeInclude11",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude11On",
+		@(NSOffState),								@"headerIncludeInclude11On",
 		@"woods.inc",																		@"headerIncludeInclude12",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeInclude12On",
+		@(NSOffState),								@"headerIncludeInclude12On",
 
 		@"#version unofficial MegaPov 1.2;",									@"headerIncludeVersion1",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeVersion1On",
+		@(NSOffState),								@"headerIncludeVersion1On",
 		@"#default { texture { pigment { color rgb < 1, 0, 0 > } finish { ambient 0.4 } } }",
 																								@"headerIncludeVersion2",	
-		[NSNumber numberWithInt:NSOffState],								@"headerIncludeVersion2On",
+		@(NSOffState),								@"headerIncludeVersion2On",
 
 
 	nil];
@@ -350,7 +350,7 @@ enum {
 //---------------------------------------------------------------------
 - (IBAction)switchedOn:(id)sender
 {
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	if ( tag >=cHeaderIncludeComment1On && tag <=cHeaderIncludeComment7On)
 		[self setCommentState];
 	else if ( tag >=cHeaderIncludeInclude1On && tag <=cHeaderIncludeInclude12On)

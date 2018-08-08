@@ -110,13 +110,13 @@ static PreferencesPanelController* _preferencesPanelController;
 	[NSNumber numberWithInt:37],									@"languageVersion_xx",
 	@"" ,																					@"sceneFile",
 	@"" ,																					@"imageFile",
-	[NSNumber numberWithInt:NSOffState],					@"useIniInputFile",
+	@(NSOffState),					@"useIniInputFile",
 	@"" ,																					@"iniInputFile",
 	@"" ,																					@"include1",
 	@"" ,																					@"include2",
-	[NSNumber numberWithInt:NSOffState],					@"mRadiosityLoadSaveGroupOn",
-	[NSNumber numberWithInt:NSOffState],					@"mRadiosityLoadOn",
-	[NSNumber numberWithInt:NSOffState],					@"mRadiositySaveOn",
+	@(NSOffState),					@"mRadiosityLoadSaveGroupOn",
+	@(NSOffState),					@"mRadiosityLoadOn",
+	@(NSOffState),					@"mRadiositySaveOn",
 	@"" ,																					@"mRadiosityFileNameEdit",
 
 	//image & quality ***********************************************************************************
@@ -126,33 +126,33 @@ static PreferencesPanelController* _preferencesPanelController;
 	@"1" ,											@"ySubsetStart",
 	@"320" ,										@"xSubsetEnd",
 	@"240" ,										@"ySubsetEnd",
-	[NSNumber numberWithInt:NSOnState] ,            @"ratioOnOff",
+	@(NSOnState) ,            @"ratioOnOff",
 	[NSNumber numberWithInt:cRatio4_3] ,            @"ratioPresets",
 	@"4" ,											@"ratioX",
 	@"3" ,											@"ratioY",
 
 	//output options ***********************************************************************************
 	[NSNumber numberWithInt:cImageTypeDontSave],	@"imageType",
-	[NSNumber numberWithInt:NSOffState],					@"addAlphaChannel",
+	@(NSOffState),					@"addAlphaChannel",
 	[NSNumber numberWithInt:cBitDepth16],					@"bitDepth",
-	[NSNumber numberWithInt:NSOffState],					@"dontDisplay",
-	[NSNumber numberWithInt:NSOffState],					@"dontErasePreview",
-	[NSNumber numberWithInt:NSOffState],					@"onlyDisplayPart",
-	[NSNumber numberWithInt:NSOffState],					@"continueRendering",
-	[NSNumber numberWithInt:NSOffState],					@"writeIniFile",
+	@(NSOffState),					@"dontDisplay",
+	@(NSOffState),					@"dontErasePreview",
+	@(NSOffState),					@"onlyDisplayPart",
+	@(NSOffState),					@"continueRendering",
+	@(NSOffState),					@"writeIniFile",
 	//file gamma
-	[NSNumber numberWithInt:NSOffState],					@"fileGammaOn",
+	@(NSOffState),					@"fileGammaOn",
 	@"sRGB" ,																			@"fileGammaEdit",
-	[NSNumber numberWithInt:NSOffState],					@"grayScaleOutputOn",
+	@(NSOffState),					@"grayScaleOutputOn",
 
 	//Quality ***********************************************************************************
 	[NSNumber numberWithInt:9] ,									@"quality",
 	//dithering
-	[NSNumber numberWithInt:NSOffState],					@"ditheringOn",
+	@(NSOffState),					@"ditheringOn",
 	[NSNumber numberWithInt:cDitheringFloydSteinberg],	@"ditheringMethod",
 
 	//anti-aliasing
-	[NSNumber numberWithInt:NSOnState],			@"samplingOn",
+	@(NSOnState),			@"samplingOn",
 	[NSNumber numberWithInt:1] ,						@"sampleMethod",
 	@"0.3",																	@"sampleThreshold",
 	@"3",																		@"sampleRecursion",
@@ -162,7 +162,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	//Bounding & Preview ***********************************************************************************
 	//Render pattern ****************************************************************************************
 	@"1" ,                                    @"renderBlockStep",
-	[NSNumber numberWithInt:NSOffState],			@"renderBlockStepOn",
+	@(NSOffState),			@"renderBlockStepOn",
 	[NSNumber numberWithInt:cRenderPattern0], @"renderPattern",
 	//Threads ****************************************************************************************
 	[NSNumber numberWithInt:cAutomatic],          @"Work_Threads",
@@ -174,24 +174,24 @@ static PreferencesPanelController* _preferencesPanelController;
 	[NSNumber numberWithInt:cWarningLevel10],       @"mWarningLevelPopup",
 
 	//text streams ***********************************************************************************
-	[NSNumber numberWithInt:NSOnState],					@"redirectTextStreamsOnOff",
-	[NSNumber numberWithInt:NSOffState],				@"debugToFile",
-	[NSNumber numberWithInt:NSOnState],					@"debugToScreen",
-	[NSNumber numberWithInt:NSOffState],				@"fatalToFile",
-	[NSNumber numberWithInt:NSOnState],					@"fatalToScreen",
-	[NSNumber numberWithInt:NSOffState],				@"renderToFile",
-	[NSNumber numberWithInt:NSOnState],					@"renderToScreen",
-	[NSNumber numberWithInt:NSOffState],				@"statisticsToFile",
-	[NSNumber numberWithInt:NSOnState],					@"statisticsToScreen",
-	[NSNumber numberWithInt:NSOffState],				@"warningToFile",
-	[NSNumber numberWithInt:NSOnState],					@"warningToScreen",
+	@(NSOnState),					@"redirectTextStreamsOnOff",
+	@(NSOffState),				@"debugToFile",
+	@(NSOnState),					@"debugToScreen",
+	@(NSOffState),				@"fatalToFile",
+	@(NSOnState),					@"fatalToScreen",
+	@(NSOffState),				@"renderToFile",
+	@(NSOnState),					@"renderToScreen",
+	@(NSOffState),				@"statisticsToFile",
+	@(NSOnState),					@"statisticsToScreen",
+	@(NSOffState),				@"warningToFile",
+	@(NSOnState),					@"warningToScreen",
 	//auto bounding ***********************************************************************************
-	[NSNumber numberWithInt:NSOnState],					@"autoBoundingOnOff",
+	@(NSOnState),					@"autoBoundingOnOff",
 	[NSNumber numberWithInt:cBoudingObjects3],	@"boundingObjects",
-	[NSNumber numberWithInt:NSOnState],					@"ignoreBoundedBy",
-	[NSNumber numberWithInt:NSOnState],					@"splitUnions",
+	@(NSOnState),					@"ignoreBoundedBy",
+	@(NSOnState),					@"splitUnions",
 	//new for 3.7 ***********************************************************************************
-	[NSNumber numberWithInt:NSOffState],				@"BSPBoundingMethodOnOff",
+	@(NSOffState),				@"BSPBoundingMethodOnOff",
 	@"128",																			@"BSP_MaxDepth",
 	@"1.0",																			@"BSP_BaseAccessCost",
 	@"1.5",																			@"BSP_ChildAccessCost",
@@ -200,9 +200,9 @@ static PreferencesPanelController* _preferencesPanelController;
 	// end new for 3.7 ***********************************************************************************
 
 	//animation (clock) ***********************************************************************************
-	[NSNumber numberWithInt:NSOffState],					@"animationOnOff",
-	[NSNumber numberWithInt:NSOffState],					@"turnCyclicAnimationOn",
-	[NSNumber numberWithInt:NSOffState],					@"frameStepOn",
+	@(NSOffState),					@"animationOnOff",
+	@(NSOffState),					@"turnCyclicAnimationOn",
+	@(NSOffState),					@"frameStepOn",
 	[NSNumber numberWithInt:cFieldRenderingOff],		@"fieldRendering",
 	@"0.0",																	@"clockInitial",
 	@"1.0",																	@"clockEnd",
@@ -508,7 +508,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	NSArray *appArray=[defaults arrayForKey:@"mainPrefsArray"];
 	mSettingsArray=[[NSMutableArray alloc] initWithArray:appArray];
 	// work threads
-	[mNumberCoresFound setIntValue:[[MainController sharedInstance]getNumberOfCpus]];
+	[mNumberCoresFound setIntegerValue:[[MainController sharedInstance]getNumberOfCpus]];
 	
 	
 	[self buildPreferencesPopup];
@@ -1159,7 +1159,9 @@ static PreferencesPanelController* _preferencesPanelController;
 			{
 				NSDocumentController *ctrl=[NSDocumentController sharedDocumentController];
 				//next line available from 10,7
-			[ctrl openDocumentWithContentsOfURL:sceneUrl display:YES error:nil ];
+				[ctrl openDocumentWithContentsOfURL:sceneUrl display:YES completionHandler:^(NSDocument * _Nullable document, BOOL documentWasAlreadyOpen, NSError * _Nullable error) {
+					//does nothing
+				} ];
 			}
 			break;
 		case cStartRender:

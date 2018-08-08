@@ -158,7 +158,7 @@ extern volatile bool	gUserWantsToPauseRenderer;
 
 - (IBAction) batchMenu:(id)sender;
 - (void) applicationDidFinishLaunching:(NSNotification *)notification;
-- (int)	getNumberOfCpus;
+- (NSInteger)	getNumberOfCpus;
 
 
 @end 

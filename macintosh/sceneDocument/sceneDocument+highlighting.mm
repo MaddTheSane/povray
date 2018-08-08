@@ -515,7 +515,7 @@ shakeMessage(@"recoloring");
 -(void) applySyntaxHighlightingOnlyComment:(NSMutableAttributedString *) ms forRange:(NSRange) r blackSet:(BOOL) blackIsSet
 {
 	mEffectiveRecoloredRange.location=NSNotFound;
-	unsigned lastPosition=[ms length];	// last character in the string (not range)
+	NSUInteger lastPosition=[ms length];	// last character in the string (not range)
 	if ( lastPosition==0)	//no characters, don't do anything
 		return;
 	lastPosition--;	// for index
@@ -803,8 +803,8 @@ shakeMessage(@"recoloring");
 					if ( scannerLocation + 1 >= storageLength)
 						return;
 					NSUInteger beginOfLine, endOfLine;
-					int beginQuote=-1;
-					int endQuote=-1;
+					NSInteger beginQuote=-1;
+					NSInteger endQuote=-1;
 //					int currentLocation=[scanner scanLocation];
 					[storageString getLineStart:&beginOfLine end:NULL contentsEnd:&endOfLine forRange:NSMakeRange(scannerLocation,1)];
 
@@ -972,7 +972,7 @@ shakeMessage(@"recoloring");
 //---------------------------------------------------------------------
 // addMacro
 //---------------------------------------------------------------------
--(void)addMacro:(NSString*) macroName atLocation:(unsigned) macroLocation
+-(void)addMacro:(NSString*) macroName atLocation:(NSUInteger) macroLocation
 {
 	const char* utf8=[macroName UTF8String];
 	if ( utf8==nil)
@@ -1028,7 +1028,7 @@ shakeMessage(@"recoloring");
 //---------------------------------------------------------------------
 // addDeclare
 //---------------------------------------------------------------------
--(void)addDeclare:(NSString*) declareName atLocation:(unsigned) declareLocation isLocal:(BOOL) isLocal
+-(void)addDeclare:(NSString*) declareName atLocation:(NSUInteger) declareLocation isLocal:(BOOL) isLocal
 {
 	const char* utf8=[declareName UTF8String];
 	if ( utf8==nil)
@@ -1084,7 +1084,7 @@ shakeMessage(@"recoloring");
 //---------------------------------------------------------------------
 // addInclude
 //---------------------------------------------------------------------
--(void)addInclude:(NSString*) includeName atLocation:(unsigned) includeLocation
+-(void)addInclude:(NSString*) includeName atLocation:(NSUInteger) includeLocation
 {
 	if ( mIncludeList==NULL)
 	{

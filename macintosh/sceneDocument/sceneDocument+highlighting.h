@@ -58,9 +58,9 @@ enum recoloringType {
 	-(void) applySyntaxHighlightingOnlyComment:(NSMutableAttributedString *) ms forRange:(NSRange) r blackSet:(BOOL) blackIsSet;
 	-(void) applySyntaxHighlightingOnlyKeywords:(NSMutableAttributedString *) ms forRange :(NSRange) r blackSet:(BOOL) blackIsSet;
 
-	-(void) addMacro:(NSString*) macroName atLocation:(unsigned) macroLocation;
-	-(void) addDeclare:(NSString*) declareName atLocation:(unsigned) declareLocation isLocal:(BOOL) isLocal;
-	-(void) addInclude:(NSString*) macroName atLocation:(unsigned) macroLocation;
+	-(void) addMacro:(NSString*) macroName atLocation:(NSUInteger) macroLocation;
+	-(void) addDeclare:(NSString*) declareName atLocation:(NSUInteger) declareLocation isLocal:(BOOL) isLocal;
+	-(void) addInclude:(NSString*) macroName atLocation:(NSUInteger) macroLocation;
 	-(void) buildMacro:(NSMutableAttributedString*) ms;
 	-(void) buildDeclare:(NSMutableAttributedString*) ms;
 	-(void) buildInclude:(NSMutableAttributedString*) ms;

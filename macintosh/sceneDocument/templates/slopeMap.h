@@ -48,10 +48,10 @@ enum eSlopemapIndex {
 
 @interface slopemap : MapBase <NSCoding> 
 {
-	int 				mSlopeOn;
-	int 				mPointOn;
-	int 				mRasterOn;
-	int 				mCurveOn;
+	NSControlStateValue 				mSlopeOn;
+	NSControlStateValue 				mPointOn;
+	NSControlStateValue 				mRasterOn;
+	NSControlStateValue 				mCurveOn;
 }
 
 +(instancetype) standardMapWithView:(id)view;

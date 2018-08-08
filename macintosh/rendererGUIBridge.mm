@@ -61,8 +61,8 @@ namespace vfe
 			[[MessageViewController sharedInstance] performSelectorOnMainThread:@selector(windowFront) withObject:nil waitUntilDone:YES];
 
 			remoteObject *rm=[[remoteObject alloc]initWithObjectsAndKeys:
-												[NSString stringWithUTF8String:fileName], @"fileName",
-												[NSNumber numberWithInt:lineNo], @"lineNo",	nil];
+												@(fileName), @"fileName",
+												@(lineNo), @"lineNo",	nil];
 			[activeRenderPreview performSelectorOnMainThread:@selector(remoteMac_Parse_Error:)withObject: rm waitUntilDone:YES];
 			[rm release];
 		}

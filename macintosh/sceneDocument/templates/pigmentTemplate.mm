@@ -75,7 +75,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 	BOOL writeTransformationsBeforeClosing=YES;
 	BOOL writeQuickColorBeforeClosing=YES;
@@ -636,7 +636,7 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 	//customized color map is in a dictionary because
@@ -647,14 +647,14 @@
 		[NSArchiver archivedDataWithRootObject:[colormap rainbowMapWithView:nil]],										@"rainbowColorMap",
 		[NSArchiver archivedDataWithRootObject:[colormap blackAndWhiteMapWithView:nil]],							@"blackAndWhiteColorMap",
 		[NSNumber numberWithInt:0],															@"pigmentColorMapTabView",
-		[NSNumber numberWithInt:NSOffState],										@"pigmentDontWrapInPigment",
+		@(NSOffState),										@"pigmentDontWrapInPigment",
 		[NSNumber numberWithInt:cPigmentFullColorTab],					@"pigmentMainTabView",
-		[NSNumber numberWithInt:NSOffState],										@"pigmentTransformationsOn",
-		[NSNumber numberWithInt:NSOffState],										@"pigmentQuickColorOn",
+		@(NSOffState),										@"pigmentTransformationsOn",
+		@(NSOffState),										@"pigmentQuickColorOn",
 		[NSArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentQuickColorColorWell",
 		//full color
 		[NSArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]], 	@"pigmentFullColorColorWell",
-		[NSNumber numberWithInt:NSOffState],									@"pigmentFullColorAddCommentOn",
+		@(NSOffState),									@"pigmentFullColorAddCommentOn",
 		@"",																									@"pigmentFullColorCommentTextField",
 		//color pattern
 		[NSNumber numberWithInt:cPigmentPatternBrick],				@"pigmentColorPatternSelectPopUpButton",
@@ -691,25 +691,25 @@
 				@"1.0",																					@"pigmentColorPatternAgateTurbEdit",
 				//aoi*******************************************************************************************************
 				//crackle******************************************************************************************************
-				[NSNumber numberWithInt:NSOnState],							@"pigmentColorPatternCrackleType1On",
+				@(NSOnState),							@"pigmentColorPatternCrackleType1On",
 				[NSNumber numberWithInt:cForm],									@"pigmentColorPatternCrackleType1PopUp",
 				@"-1.0",																				@"pigmentColorPatternCrackleType1MatrixX",
 				@"1.1",																					@"pigmentColorPatternCrackleType1MatrixY",
 				@"0",																						@"pigmentColorPatternCrackleType1MatrixZ",
 				@"2",																						@"pigmentColorPatternCrackleType1Edit",
-				[NSNumber numberWithInt:NSOffState],						@"pigmentColorPatternCrackleType2On",
+				@(NSOffState),						@"pigmentColorPatternCrackleType2On",
 				[NSNumber numberWithInt:cMetric],								@"pigmentColorPatternCrackleType2PopUp",
 				@"-1.0",																				@"pigmentColorPatternCrackleType2MatrixX",
 				@"1.1",																					@"pigmentColorPatternCrackleType2MatrixY",
 				@"0",																						@"pigmentColorPatternCrackleType2MatrixZ",
 				@"2",																						@"pigmentColorPatternCrackleType2Edit",
-				[NSNumber numberWithInt:NSOffState],						@"pigmentColorPatternCrackleType3On",
+				@(NSOffState),						@"pigmentColorPatternCrackleType3On",
 				[NSNumber numberWithInt:cOffset],								@"pigmentColorPatternCrackleType3PopUp",
 				@"-1.0",																				@"pigmentColorPatternCrackleType3MatrixX",
 				@"1.1",																					@"pigmentColorPatternCrackleType3MatrixY",
 				@"0",																						@"pigmentColorPatternCrackleType3MatrixZ",
 				@"2",																						@"pigmentColorPatternCrackleType3Edit",
-				[NSNumber numberWithInt:NSOffState],						@"pigmentColorPatternCrackleType4On",
+				@(NSOffState),						@"pigmentColorPatternCrackleType4On",
 				[NSNumber numberWithInt:cSolid],								@"pigmentColorPatternCrackleType4PopUp",
 				@"-1.0",																				@"pigmentColorPatternCrackleType4MatrixX",
 				@"1.1",																					@"pigmentColorPatternCrackleType4MatrixY",
@@ -722,13 +722,13 @@
 				[NSNumber numberWithInt:cJulia],								@"pigmentColorPatternFractalsTypePopUp",
 				@"0.35",																				@"pigmentColorPatternFractalsTypeXEdit",
 				@"0.28",																				@"pigmentColorPatternFractalsTypeYEdit",
-				[NSNumber numberWithInt:NSOnState],							@"pigmentColorPatternFractalsExponentOn",
+				@(NSOnState),							@"pigmentColorPatternFractalsExponentOn",
 				@"2",																						@"pigmentColorPatternFractalsExponentEdit",
 				@"25",																					@"pigmentColorPatternFractalsMaxIterationsEdit",
-				[NSNumber numberWithInt:NSOffState],						@"pigmentColorPatternFractalsInteriorTypeOn",
+				@(NSOffState),						@"pigmentColorPatternFractalsInteriorTypeOn",
 				[NSNumber numberWithInt:cType0],								@"pigmentColorPatternFractalsInteriorTypePopUp",
 				@"1",																						@"pigmentColorPatternFractalsInteriorTypeFactorEdit",
-				[NSNumber numberWithInt:NSOffState],						@"pigmentColorPatternFractalsExteriorTypeOn",
+				@(NSOffState),						@"pigmentColorPatternFractalsExteriorTypeOn",
 				[NSNumber numberWithInt:cType0],								@"pigmentColorPatternFractalsExteriorTypePopUp",
 				@"1",																						@"pigmentColorPatternFractalsExteriorTypeFactorEdit",
 				//gradient*******************************************************************************************************
@@ -742,7 +742,7 @@
 				@"x+y+z",																				@"pigmentColorPatternImagePatternFunctionFunctionEdit",
 				@"300",																					@"pigmentColorPatternImagePatternFunctionImageWidth",
 				@"300",																					@"pigmentColorPatternImagePatternFunctionImageHeight",
-				[NSNumber numberWithInt:NSOffState],						@"pigmentColorPatternImageMapProjectionOnceOn",
+				@(NSOffState),						@"pigmentColorPatternImageMapProjectionOnceOn",
 				[NSNumber numberWithInt:cProjectionPlanar],			@"pigmentColorPatternImageMapProjectionPopUp",
 				[NSNumber numberWithInt:cInterpolationNone],		@"pigmentColorPatternImageMapInterpolationPopUp",
 				[NSNumber numberWithInt:cUseDefault],						@"pigmentColorPatternImageMapUsePopUp",
@@ -763,15 +763,15 @@
 				@"1.0",																					@"pigmentColorPatternSlopeDirectionMatrixX",
 				@"1.0",																					@"pigmentColorPatternSlopeDirectionMatrixY",
 				@"1.0",																					@"pigmentColorPatternSlopeDirectionMatrixZ",
-				[NSNumber numberWithInt:NSOffState],						@"pigmentColorPatternSlopeSlopeOn",
+				@(NSOffState),						@"pigmentColorPatternSlopeSlopeOn",
 				@"0.0",																					@"pigmentColorPatternSlopeSlopeLowEdit",	
 				@"1.0",																					@"pigmentColorPatternSlopeSlopeHighEdit",	
-				[NSNumber numberWithInt:NSOffState],						@"pigmentColorPatternSlopeAltitudeOn",
+				@(NSOffState),						@"pigmentColorPatternSlopeAltitudeOn",
 				[NSNumber numberWithInt:cXYZVectorPopupY],			@"pigmentColorPatternSlopeAltitudeXYZPopUp",
 				@"1.0",																					@"pigmentColorPatternSlopeAltitudeMatrixX",
 				@"1.0",																					@"pigmentColorPatternSlopeAltitudeMatrixY",
 				@"1.0",																					@"pigmentColorPatternSlopeAltitudeMatrixZ",
-				[NSNumber numberWithInt:NSOffState],						@"pigmentColorPatternSlopeOffsetOn",
+				@(NSOffState),						@"pigmentColorPatternSlopeOffsetOn",
 				@"0.0",																					@"pigmentColorPatternSlopeOffsetLowEdit",	
 				@"1.0",																					@"pigmentColorPatternSlopeOffsetHighEdit",	
 				//spiral*******************************************************************************************************
@@ -785,12 +785,12 @@
 		@"x+y+z",																							@"pigmentImageMapFunctionEdit",
 		@"300",																								@"pigmentImageMapFunctionImageWidth",
 		@"300",																								@"pigmentImageMapFunctionImageHeight",
-		[NSNumber numberWithInt:NSOffState],									@"pigmentImageMapProjectionOnceOn",
+		@(NSOffState),									@"pigmentImageMapProjectionOnceOn",
 		[NSNumber numberWithInt:cProjectionPlanar],						@"pigmentImageMapProjectionPopUp",
 		[NSNumber numberWithInt:cInterpolationNone],					@"pigmentImageMapInterpolationPopUp",
-		[NSNumber numberWithInt:NSOffState],									@"pigmentImageMapFilerAllOn",
+		@(NSOffState),									@"pigmentImageMapFilerAllOn",
 		@"1.0",																								@"pigmentImageMapFilterAllEdit",
-		[NSNumber numberWithInt:NSOffState],									@"pigmentImageMapTransmitAllOn",
+		@(NSOffState),									@"pigmentImageMapTransmitAllOn",
 		@"1.0",																								@"pigmentImageMapTransmitAllEdit",
 	//pigment function
 		@"x+y+z",																							@"pigmentFunctionEdit",
@@ -1213,7 +1213,7 @@
 //---------------------------------------------------------------------
 -(IBAction) pigmentColorPatternSelectPopUpButton:(id)sender
 {
-	int selectedItem=[sender indexOfSelectedItem];
+	NSInteger selectedItem=[sender indexOfSelectedItem];
 	[pigmentColorPatternTabView selectTabViewItemAtIndex:[sender indexOfSelectedItem]];
 
 	if ( selectedItem >=cPigmentPatternAgate && selectedItem<=cPigmentPatternWrinkles)
@@ -1245,7 +1245,7 @@
 //---------------------------------------------------------------------
 -(IBAction) pigmentTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cPigmentTransformationsOn;
 	else
@@ -1657,7 +1657,7 @@
 {
 	id 	prefs=nil;
 
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	switch( tag)
 	{
 	

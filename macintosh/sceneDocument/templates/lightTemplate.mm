@@ -58,7 +58,7 @@ enum {
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -225,7 +225,7 @@ enum {
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 
@@ -235,13 +235,13 @@ enum {
 		[NSArchiver archivedDataWithRootObject:[MPColorWell whiteColorAndFilter:NO]], 	@"lightColor",
 		@"1.0",																					@"lightColorFactorEdit",
 
-		[NSNumber numberWithInt:NSOffState],									@"lightLooksLikeOn",
-		[NSNumber numberWithInt:NSOffState],									@"lightShadowlessOn",
-		[NSNumber numberWithInt:NSOffState],									@"lightFadeDistanceOn",
+		@(NSOffState),									@"lightLooksLikeOn",
+		@(NSOffState),									@"lightShadowlessOn",
+		@(NSOffState),									@"lightFadeDistanceOn",
 		@"1.0",																					@"lightFadeDistanceEdit",
 		[NSNumber numberWithInt:cFadePowerLinear],							@"lightFadePowerPopup",
 
-		[NSNumber numberWithInt:NSOffState],									@"lightProjectedTroughOn",
+		@(NSOffState),									@"lightProjectedTroughOn",
 		@"MyObject",																			@"lightProjectedTroughObjectEdit",
 		
 		@"0.0",																					@"lightDirectionalLightPointAtMatrixX",
@@ -252,10 +252,10 @@ enum {
 		@"10",																					@"lightDirectionalLightTightnessEdit",
 		@"30",																					@"lightDirectionalLightFallOfAngleEdit",
 
-		[NSNumber numberWithInt:NSOffState],									@"lightDirectionalLightGroupOn",
+		@(NSOffState),									@"lightDirectionalLightGroupOn",
 
 //area
-		[NSNumber numberWithInt:NSOffState],									@"lightAreaLightGroupOn",
+		@(NSOffState),									@"lightAreaLightGroupOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXandYandZ],			@"lightAreaLightAxis1Popup",
 		@"0.0",																					@"lightAreaLightAxis1MatrixX",
 		@"5.0",																					@"lightAreaLightAxis1MatrixY",
@@ -268,26 +268,26 @@ enum {
 		@"0.0",																					@"lightAreaLightAxis2MatrixZ",
 		@"5",																						@"lightAreaLightAxis2SizeEdit",
 		
-		[NSNumber numberWithInt:NSOffState],									@"lightAreaLightAdaptiveOn",
+		@(NSOffState),									@"lightAreaLightAdaptiveOn",
 		@"1",																						@"lightAreaLightAdaptiveEdit",
-		[NSNumber numberWithInt:NSOffState],									@"lightAreaLightAreaIllumination",
+		@(NSOffState),									@"lightAreaLightAreaIllumination",
 //		@"1",																						@"lightAreaLightMaxTraceEdit",
-		[NSNumber numberWithInt:NSOffState],									@"lightAreaLightJitterOn",
-		[NSNumber numberWithInt:NSOffState],									@"lightAreaLightCircularOn",
-		[NSNumber numberWithInt:NSOffState],									@"lightAreaLightOrientOn",
+		@(NSOffState),									@"lightAreaLightJitterOn",
+		@(NSOffState),									@"lightAreaLightCircularOn",
+		@(NSOffState),									@"lightAreaLightOrientOn",
 
-		[NSNumber numberWithInt:NSOffState],									@"lightMediaAttenuationOn",
-		[NSNumber numberWithInt:NSOffState],									@"lightMediaInteractionOn",
+		@(NSOffState),									@"lightMediaAttenuationOn",
+		@(NSOffState),									@"lightMediaInteractionOn",
 
 //photons
-		[NSNumber numberWithInt:NSOffState],									@"lightPhotonsGroupOn",
-		[NSNumber numberWithInt:NSOffState],									@"lightPhotonsReflectionOn",
+		@(NSOffState),									@"lightPhotonsGroupOn",
+		@(NSOffState),									@"lightPhotonsReflectionOn",
 		[NSNumber numberWithInt:cFirstCell],										@"lightPhotonsReflectionMatrix",
-		[NSNumber numberWithInt:NSOffState],									@"lightPhotonsRefractionOn",
+		@(NSOffState),									@"lightPhotonsRefractionOn",
 		[NSNumber numberWithInt:cFirstCell],										@"lightPhotonsRefractionMatrix",
-		[NSNumber numberWithInt:NSOffState],									@"lightPhotonsAreaLightOn",
+		@(NSOffState),									@"lightPhotonsAreaLightOn",
 
-		[NSNumber numberWithInt:NSOffState],									@"lightParallelLightOn",
+		@(NSOffState),									@"lightParallelLightOn",
 		@"0.0",																					@"lightParallelLightPointAtMatrixX",
 		@"0.0",																					@"lightParallelLightPointAtMatrixY",
 		@"0.0",																					@"lightParallelLightPointAtMatrixZ",

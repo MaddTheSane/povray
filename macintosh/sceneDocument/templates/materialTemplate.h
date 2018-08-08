@@ -159,7 +159,7 @@ enum eMaterialPreview {
 
 }
 -(void) renderState:(NSNotification *) notification;
-+(void) addLayer:(MutableTabString*) ds atIndex:(int)index fromMap:(id)cmap;
++(void) addLayer:(MutableTabString*) ds atIndex:(NSInteger)index fromMap:(id)cmap;
 +(void) addBackgroundToString:(MutableTabString *)ds withDict:(NSDictionary *)dict;
 +(void) addSkySphereToString:(MutableTabString *)ds withDict:(NSDictionary *)dict;
 +(void) addReflectionToString:(MutableTabString *)ds withDict:(NSDictionary *)dict;

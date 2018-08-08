@@ -327,120 +327,120 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:cGlobalsTab],					@"globalsTabView",
-		[NSNumber numberWithInt:NSOffState],					@"globalsDontWrapInGlobalSettings",
+		@(NSOffState),					@"globalsDontWrapInGlobalSettings",
 //globals
 
 		[NSArchiver archivedDataWithRootObject:[MPColorWell lightGrayColorAndFilter:NO]], 	@"globalsGlobalsAmbientLightColor",
 		[NSArchiver archivedDataWithRootObject:[MPColorWell redColorAndFilter:NO]], 		@"globalsGlobalsIridWavelengthColor",
 	
-		[NSNumber numberWithInt:NSOnState],				@"globalsGlobalsAmbientLightOn",
-		[NSNumber numberWithInt:NSOnState],				@"globalsGlobalsIridWavelengthOn",
+		@(NSOnState),				@"globalsGlobalsAmbientLightOn",
+		@(NSOnState),				@"globalsGlobalsIridWavelengthOn",
 	
-		[NSNumber numberWithInt:NSOffState],			@"globalsGlobalsAssumedGammaOn",
+		@(NSOffState),			@"globalsGlobalsAssumedGammaOn",
 		@"1.0",																		@"globalsGlobalsAssumedGammaEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsGlobalsAdcBailoutOn",
+		@(NSOffState),			@"globalsGlobalsAdcBailoutOn",
 		@"1/255",																	@"globalsGlobalsAdcBailoutEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsGlobalsMaxTraceLevelOn",
+		@(NSOffState),			@"globalsGlobalsMaxTraceLevelOn",
 		@"5",																			@"globalsGlobalsMaxTraceLevelEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsGlobalsNumberOfWavesOn",
+		@(NSOffState),			@"globalsGlobalsNumberOfWavesOn",
 		@"10",																		@"globalsGlobalsNumberOfWavesEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsGlobalsMaxIntersectionsOn",
+		@(NSOffState),			@"globalsGlobalsMaxIntersectionsOn",
 		@"64",																		@"globalsGlobalsMaxIntersectionsEdit",
 
-		[NSNumber numberWithInt:NSOffState],							@"globalsGlobalsCharsetOn",
+		@(NSOffState),							@"globalsGlobalsCharsetOn",
 		[NSNumber numberWithInt:cGlobalsCharSetSys],			@"globalsGlobalsCharsetPopUp",
-		[NSNumber numberWithInt:NSOffState],							@"globalsGlobalsNoiseGeneratorOn",
+		@(NSOffState),							@"globalsGlobalsNoiseGeneratorOn",
 		[NSNumber numberWithInt:cGlobalsNoiseGenerator1],	@"globalsGlobalsNoiseGeneratorPopUp",
-		[NSNumber numberWithInt:NSOffState],							@"globalsGlobalsmmPerUnitOn",
+		@(NSOffState),							@"globalsGlobalsmmPerUnitOn",
 		@"10",																						@"globalsGlobalsmmPerUnitEdit",
 //subsurface
-		[NSNumber numberWithInt:NSOffState],			@"globalsSubsurfaceGroupOn",
-		[NSNumber numberWithInt:NSOffState],			@"globalsSubsurfaceSamplesOn",
+		@(NSOffState),			@"globalsSubsurfaceGroupOn",
+		@(NSOffState),			@"globalsSubsurfaceSamplesOn",
 		@"50",																		@"globalsSubsurfaceSamplesEditA",
 		@"50",																		@"globalsSubsurfaceSamplesEditB",
-		[NSNumber numberWithInt:NSOffState],			@"globalsSubSurfaceRadiosityOn",
+		@(NSOffState),			@"globalsSubSurfaceRadiosityOn",
 		[NSNumber numberWithInt:cFirstCell], 			@"globalsSubSurfaceRadiosityMatrix",
 
 //radiosity
-		[NSNumber numberWithInt:NSOffState],			@"globalsRadiosityOn",
+		@(NSOffState),			@"globalsRadiosityOn",
 	
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityPretraceStartOn",
+		@(NSOnState),				@"globalsRadiosityPretraceStartOn",
 		@"0.008",																	@"globalsRadiosityPretraceStartEdit",
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityPretraceEndOn",
+		@(NSOnState),				@"globalsRadiosityPretraceEndOn",
 		@"0.02",																	@"globalsRadiosityPretraceEndEdit",
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityBrightnessOn",
+		@(NSOnState),				@"globalsRadiosityBrightnessOn",
 		@"1",																			@"globalsRadiosityBrightnessEdit",
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityCountOn",
+		@(NSOnState),				@"globalsRadiosityCountOn",
 		@"80",																		@"globalsRadiosityCountEdit",
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityCountDirectionsOn",
+		@(NSOnState),				@"globalsRadiosityCountDirectionsOn",
 		@"1",																		@"globalsRadiosityCountDirectionsEdit",
 
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityNearestCountOn",
+		@(NSOnState),				@"globalsRadiosityNearestCountOn",
 		@"5",																			@"globalsRadiosityNearestCountEdit",
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityNearestCountPretraceOn",
+		@(NSOnState),				@"globalsRadiosityNearestCountPretraceOn",
 		@"1",																			@"globalsRadiosityNearestCountPretraceEdit",
 
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityRecursionLimitOn",
+		@(NSOnState),				@"globalsRadiosityRecursionLimitOn",
 		@"2",																			@"globalsRadiosityRecursionLimitEdit",
 
-		[NSNumber numberWithInt:NSOffState],			@"globalsRadiosityAlwaysSampleOn",
+		@(NSOffState),			@"globalsRadiosityAlwaysSampleOn",
 
 	
-		[NSNumber numberWithInt:NSOffState],			@"globalsRadiosityMaxSampleOn",
+		@(NSOffState),			@"globalsRadiosityMaxSampleOn",
 		@"2",																			@"globalsRadiosityMaxSampleEdit",
 
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityErrorBoundOn",
+		@(NSOnState),				@"globalsRadiosityErrorBoundOn",
 		@"1",																			@"globalsRadiosityErrorBoundEdit",
 
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityGrayThresholdOn",
+		@(NSOnState),				@"globalsRadiosityGrayThresholdOn",
 		@"0.0",																		@"globalsRadiosityGrayThresholdEdit",
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityLowErrorFactorOn",
+		@(NSOnState),				@"globalsRadiosityLowErrorFactorOn",
 		@"0.5",																		@"globalsRadiosityLowErrorFactorEdit",
-		[NSNumber numberWithInt:NSOnState],				@"globalsRadiosityMinimumReuseOn",
+		@(NSOnState),				@"globalsRadiosityMinimumReuseOn",
 		@"0.015",																	@"globalsRadiosityMinimumReuseEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsRadiosityAdcBailoutOn",
+		@(NSOffState),			@"globalsRadiosityAdcBailoutOn",
 		@"0.01/2",																@"globalsRadiosityAdcBailoutEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsRadiosityNormalOn",
-		[NSNumber numberWithInt:NSOffState],			@"globalsRadiositySubsurfaceOn",
-		[NSNumber numberWithInt:NSOffState],			@"globalsRadiosityMediaOn",
+		@(NSOffState),			@"globalsRadiosityNormalOn",
+		@(NSOffState),			@"globalsRadiositySubsurfaceOn",
+		@(NSOffState),			@"globalsRadiosityMediaOn",
 
 //photons
-		[NSNumber numberWithInt:NSOffState],			@"globalsPhotonsOn",
+		@(NSOffState),			@"globalsPhotonsOn",
 
 		[NSNumber numberWithInt:cFirstCell], 			@"globalsPhotonsSpacingMatrix",
 		@"0.005",																	@"globalsPhotonsSpacingEdit",
 		@"5000",																	@"globalsPhotonsSpacingCountEdit",
 
-		[NSNumber numberWithInt:NSOffState],			@"globalsPhotonsGatherMinOn",
+		@(NSOffState),			@"globalsPhotonsGatherMinOn",
 		@"20",																		@"globalsPhotonsGatherMinEdit",
 		@"100",																		@"globalsPhotonsGatherMaxEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsPhotonsMediaOn",
+		@(NSOffState),			@"globalsPhotonsMediaOn",
 		@"5",																			@"globalsPhotonsMediaEdit",
-		[NSNumber numberWithInt:NSOnState],				@"globalsPhotonsMediaFactorOn",
+		@(NSOnState),				@"globalsPhotonsMediaFactorOn",
 		@"0.5",																		@"globalsPhotonsMediaFactorEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsPhotonsExpandThresholdOn",
+		@(NSOffState),			@"globalsPhotonsExpandThresholdOn",
 		@"0.2",																		@"globalsPhotonsExpandThresholdEdit",
 		@"40",																		@"globalsPhotonsExpandThresholdMinEdit",
 
-		[NSNumber numberWithInt:NSOffState],			@"globalsPhotonsJitterOn",
+		@(NSOffState),			@"globalsPhotonsJitterOn",
 		@"0.4",																		@"globalsPhotonsJitterEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsPhotonsMaxTraceLevelOn",
+		@(NSOffState),			@"globalsPhotonsMaxTraceLevelOn",
 		@"6",																			@"globalsPhotonsMaxTraceLevelEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsPhotonsRadiusOn",
+		@(NSOffState),			@"globalsPhotonsRadiusOn",
 		@"0.1",																		@"globalsPhotonsRadiusEdit",
 																		
-		[NSNumber numberWithInt:NSOffState],			@"globalsPhotonsPhotonsFileOn",
-		[NSNumber numberWithInt:NSOffState], 			@"globalsPhotonsPhotonsFileMatrixLoad",
-		[NSNumber numberWithInt:NSOnState], 			@"globalsPhotonsPhotonsFileMatrixSave",
+		@(NSOffState),			@"globalsPhotonsPhotonsFileOn",
+		@(NSOffState), 			@"globalsPhotonsPhotonsFileMatrixLoad",
+		@(NSOnState), 			@"globalsPhotonsPhotonsFileMatrixSave",
 		@"Enter FileName",								  			@"globalsPhotonsPhotonsFileEdit",
 																  		
-		[NSNumber numberWithInt:NSOffState],			@"globalsPhotonsAdcBailoutOn",
+		@(NSOffState),			@"globalsPhotonsAdcBailoutOn",
 		@"1/255",																	@"globalsPhotonsAdcBailoutEdit",
-		[NSNumber numberWithInt:NSOffState],			@"globalsPhotonsAutoStopOn",
+		@(NSOffState),			@"globalsPhotonsAutoStopOn",
 		@"0.50",																	@"globalsPhotonsAutoStopEdit",
 
 																			
@@ -844,7 +844,7 @@
 //---------------------------------------------------------------------
 -(IBAction) globalsGlobalsTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cGlobalsGlobalsAmbientLightOn;
 	else
@@ -890,7 +890,7 @@
 //---------------------------------------------------------------------
 -(IBAction) globalsSubsurfaceTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cGlobalsSubsurfaceSamplespOn;
 	else
@@ -915,7 +915,7 @@
 //---------------------------------------------------------------------
 -(IBAction) globalsRadiosityTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	BOOL onState;
 	if ( sender==self)
 		theTag=cGlobalsRadiosityPretraceStartOn;
@@ -987,8 +987,8 @@
 //---------------------------------------------------------------------
 -(IBAction) globalsPhotonsTarget:(id)sender
 {
-	int theTag;
-	int nTag;
+	NSInteger theTag;
+	NSInteger nTag;
 	if ( sender==self)
 		theTag=cGlobalsPhotonsSpacingMatrix;
 	else

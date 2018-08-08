@@ -122,7 +122,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -530,7 +530,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 					case cCubicSpline: 			[ds copyTabAndText:@"cubic_spline\n"];			break;
 					case cBezierSpline: 		[ds copyTabAndText:@"bezier_spline\n"];			break;
 				}			
-				[ds appendTabAndFormat:@"%d,\n",[oMap count]];
+			[ds appendTabAndFormat:@"%lu,\n",(unsigned long)[oMap count]];
 
 				for ( int row=0; row <[oMap count]-1; row++)
 				{
@@ -711,7 +711,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 
 				oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
 
-				[ds appendTabAndFormat:@"%d\n",[oMap count]];
+			[ds appendTabAndFormat:@"%lu\n",(unsigned long)[oMap count]];
 
 				for ( int row=0; row <[oMap count]-1; row++)
 				{
@@ -751,7 +751,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				if ( [[dict objectForKey:@"objectPrismBevelPrismGroupOn"]intValue]==NSOnState && [[dict objectForKey:@"objectPrismSweepTypePopUp"]intValue]==cPrismLinearSweep)
 				{
 					[ds copyTabAndText:@"//*************** START BEVELED PRISM ***************\n"];
-					[ds appendTabAndFormat:@"#declare PrismPoints = array [%d] \n",[oMap count]];
+					[ds appendTabAndFormat:@"#declare PrismPoints = array [%lu] \n",(unsigned long)[oMap count]];
 					[ds copyTabAndText:@"{\n"];
 					[ds addTab];
 					for ( int row=0; row <[oMap count]-1; row++)
@@ -901,7 +901,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 					[ds appendTabAndFormat:@"%@,\t//Base height\n",[dict objectForKey:@"objectPrismBaseHeightEdit"]];
 					[ds appendTabAndFormat:@"%@,\t//Top height\n",[dict objectForKey:@"objectPrismTopHeightEdit"]];
 
-					[ds appendTabAndFormat:@"%d\n",[oMap count]];
+					[ds appendTabAndFormat:@"%lu\n",(unsigned long)[oMap count]];
 				
 					for ( int row=0; row <[oMap count]-1; row++)
 					{
@@ -966,7 +966,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 					oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
 					[ds copyTabAndText:@"sor {\n"];
 					[ds addTab];
-					[ds appendTabAndFormat:@"%d\n",[oMap count]];
+			[ds appendTabAndFormat:@"%lu\n",(unsigned long)[oMap count]];
 					for ( int row=0; row <[oMap count]-1; row++)
 					{
 						[ds appendTabAndFormat:@"<%@, %@>,\n",[oMap stringFromFloatWithFormat:FloatFormat atRow:row atColumn:cObjectmapXIndex],
@@ -1282,27 +1282,27 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:cObjectBicubicPatch],						@"objectTypePopUp",
 		
-		[NSNumber numberWithInt:NSOffState],		@"objectMaterialGroupOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectTransformationGroupOn",
-		[NSNumber numberWithInt:NSOnState],			@"objectIgnoreMaterialOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectPhotonsGroupOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectUvMappingOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectDoubleIlluminateOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectHollowOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectNoImageOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectNoReflectionOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectNoShadowOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectNoRadiosityOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectRadiosityImportanceOn",
+		@(NSOffState),		@"objectMaterialGroupOn",
+		@(NSOffState),		@"objectTransformationGroupOn",
+		@(NSOnState),			@"objectIgnoreMaterialOn",
+		@(NSOffState),		@"objectPhotonsGroupOn",
+		@(NSOffState),		@"objectUvMappingOn",
+		@(NSOffState),		@"objectDoubleIlluminateOn",
+		@(NSOffState),		@"objectHollowOn",
+		@(NSOffState),		@"objectNoImageOn",
+		@(NSOffState),		@"objectNoReflectionOn",
+		@(NSOffState),		@"objectNoShadowOn",
+		@(NSOffState),		@"objectNoRadiosityOn",
+		@(NSOffState),		@"objectRadiosityImportanceOn",
 		@"1.0",																	@"objectRadiosityImportanceEdit",
 
 		//bicubic patch
-		[NSNumber numberWithInt:0],							@"objectBicubicPatchTypePopUp",
+		@0,							@"objectBicubicPatchTypePopUp",
 		@"0.0",																	@"objectBicubicPatchFlatnessEdit",
 		@"3",																		@"objectBicubicPatchUStepsEdit",
 		@"3",																		@"objectBicubicPatchVStepsEdit",
@@ -1315,16 +1315,16 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"0.5",																	@"objectBicubicPatchCorner2MatrixY",
 		@"0.5",																	@"objectBicubicPatchCorner2MatrixZ",
 		//blob
-		[NSNumber numberWithInt:NSOffState],		@"objectBlobSphericalOn",
+		@(NSOffState),		@"objectBlobSphericalOn",
 		@"2",																		@"objectBlobSphericalNumberOfComponentsEdit",
 		@"0.5",																	@"objectBlobSphericalRadiusEdit",
 		@"2",																		@"objectBlobSphericalStrengthEdit",
-		[NSNumber numberWithInt:NSOnState],			@"objectBlobSphericalTextureOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectBlobCylindricalOn",
+		@(NSOnState),			@"objectBlobSphericalTextureOn",
+		@(NSOffState),		@"objectBlobCylindricalOn",
 		@"2",																		@"objectBlobCylindricalNumberOfComponentsEdit",
 		@"0.5",																	@"objectBlobCylindricalRadiusEdit",
 		@"2",																		@"objectBlobCylindricalStrengthEdit",
-		[NSNumber numberWithInt:NSOffState],		@"objectBlobCylindricalTextureOn",
+		@(NSOffState),		@"objectBlobCylindricalTextureOn",
 		@"0.0",																	@"objectBlobCylindricalEnd1MatrixX",
 		@"-0.5",																@"objectBlobCylindricalEnd1MatrixY",
 		@"0.0",																	@"objectBlobCylindricalEnd1MatrixZ",
@@ -1332,7 +1332,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"0.5",																	@"objectBlobCylindricalEnd2MatrixY",
 		@"0.0",																	@"objectBlobCylindricalEnd2MatrixZ",
 		@"1",																		@"objectBlobThresholdEdit",
-		[NSNumber numberWithInt:NSOffState],		@"objectBlobSturm",
+		@(NSOffState),		@"objectBlobSturm",
 //box		
 		@"-0.5",																@"objectBoxCorner1MatrixX",
 		@"-0.5",																@"objectBoxCorner1MatrixY",
@@ -1341,7 +1341,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"0.5",																	@"objectBoxCorner2MatrixY",
 		@"0.5",																	@"objectBoxCorner2MatrixZ",
 //cone		
-		[NSNumber numberWithInt:NSOffState],		@"objectConeOpenOn",
+		@(NSOffState),		@"objectConeOpenOn",
 		@"0.0",																	@"objectConeBaseMatrixX",
 		@"-0.5",																@"objectConeBaseMatrixY",
 		@"0.0",																	@"objectConeBaseMatrixZ",
@@ -1351,7 +1351,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"0.5",																	@"objectConeBaseRadiusEdit",
 		@"0.0",																	@"objectConeCapRadiusEdit",
 //cylinder		
-		[NSNumber numberWithInt:NSOffState],		@"objectCylinderOpenOn",
+		@(NSOffState),		@"objectCylinderOpenOn",
 		@"0.0",																	@"objectCylinderBaseMatrixX",
 		@"-0.5",																@"objectCylinderBaseMatrixY",
 		@"0.0",																	@"objectCylinderBaseMatrixZ",
@@ -1368,7 +1368,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"1.0",																	@"objectDiscNormalMatrixY",
 		@"0.0",																	@"objectDiscNormalMatrixZ",
 		@"0.5",																	@"objectDiscRadiusEdit",
-		[NSNumber numberWithInt:NSOffState],		@"objectDiscHoleRadiusOn",
+		@(NSOffState),		@"objectDiscHoleRadiusOn",
 		@"0.2",																	@"objectDiscHoleRadiusEdit",
 //height field
 		[NSNumber numberWithInt:cGif],					@"objectHeightFieldFileTypePopUp",
@@ -1376,30 +1376,30 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"x+y+z",																@"objectHeightFieldFunctionEdit",
 		@"300",																	@"objectHeightFieldFunctionImageWidth",
 		@"300",																	@"objectHeightFieldFunctionImageHeight",
-		[NSNumber numberWithInt:NSOffState],		@"objectHeightFieldWaterLevelOn",
+		@(NSOffState),		@"objectHeightFieldWaterLevelOn",
 		@"0.0",																	@"objectHeightFieldWaterLevelEdit",
-		[NSNumber numberWithInt:NSOffState],		@"objectHeightFieldSmoothOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectHeightFieldHierarchyOn",
+		@(NSOffState),		@"objectHeightFieldSmoothOn",
+		@(NSOffState),		@"objectHeightFieldHierarchyOn",
 //isosurface
 		@"x+y+z",																@"objectIsoFunctionEdit",
-		[NSNumber numberWithInt:NSOffState],		@"objectIsoMaxGradientGroupOn",
+		@(NSOffState),		@"objectIsoMaxGradientGroupOn",
 		[NSNumber numberWithInt:cFirstCell],		@"objectIsoMaxGradientMatrix",
 		@"5.0",																	@"objectIsoMaxGradientEdit",
 		@"0.0",																	@"objectIsoEvaluateEditX",
 		@"0.0",																	@"objectIsoEvaluateEditY",
 		@"0.0",																	@"objectIsoEvaluateEditZ",
-		[NSNumber numberWithInt:NSOffState],		@"objectIsoMessageOn",
+		@(NSOffState),		@"objectIsoMessageOn",
 		[NSNumber numberWithInt:cSecondCell],		@"objectIsoMessageMatrix",
 
-		[NSNumber numberWithInt:NSOnState],			@"objectIsoThresholdOn",
+		@(NSOnState),			@"objectIsoThresholdOn",
 		@"0.0",																	@"objectIsoThresholdEdit",
-		[NSNumber numberWithInt:NSOnState],			@"objectIsoAccuracyOn",
+		@(NSOnState),			@"objectIsoAccuracyOn",
 		@"0.001",																@"objectIsoAccuracyEdit",
-		[NSNumber numberWithInt:NSOffState],		@"objectIsoMaxTraceOn",
+		@(NSOffState),		@"objectIsoMaxTraceOn",
 		[NSNumber numberWithInt:cSecondCell],		@"objectIsoMaxTraceMatrix",
 		@"0",																		@"objectIsoMaxTraceEdit",
 		[NSNumber numberWithInt:cBoxContainer],	@"objectIsoContainerObjectPopUp",
-		[NSNumber numberWithInt:NSOffState],		@"objectIsoShowContainerObjectOn",
+		@(NSOffState),		@"objectIsoShowContainerObjectOn",
 		@"0.0",																	@"objectIsoContainerBoxCorner1MatrixX",
 		@"0.0",																	@"objectIsoContainerBoxCorner1MatrixY",
 		@"0.0",																	@"objectIsoContainerBoxCorner1MatrixZ",
@@ -1410,7 +1410,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"0.0",																	@"objectIsoContainerSphereCenterMatrixY",
 		@"0.0",																	@"objectIsoContainerSphereCenterMatrixZ",
 		@"0.0",																	@"objectIsoContainerSphereRadiusEdit",
-		[NSNumber numberWithInt:NSOffState],		@"objectIsoOpenOn",
+		@(NSOffState),													@"objectIsoOpenOn",
 //fractal
 		@"1.0",																	@"objectFractal4DjuliaParameterMatrixX",
 		@"0.0",																	@"objectFractal4DjuliaParameterMatrixY",
@@ -1420,14 +1420,14 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		[NSNumber numberWithInt:cSqrt],					@"objectFractalFunctionPopUp",
 		@"5",																		@"objectFractalMaxIterationEdit",
 		@"15",																	@"objectFractalPrecisionEdit",
-		[NSNumber numberWithInt:NSOffState],		@"objectFractalSliceOn",
+		@(NSOffState),		@"objectFractalSliceOn",
 		@"0.0",																	@"objectFractal4DNormalMatrixX",
 		@"0.0",																	@"objectFractal4DNormalMatrixY",
 		@"0.0",																	@"objectFractal4DNormalMatrixZ",
 		@"1.0",																	@"objectFractal4DNormalMatrix4",
 		@"0.0",																	@"objectFractalDistanceEdit",
 //lathe																			
-		[NSNumber numberWithInt:NSOffState],		@"objectLatheSturmOn",
+		@(NSOffState),		@"objectLatheSturmOn",
 //Parametric
 		@"x+y+z",																@"objectParametricFunctionXEdit",
 		@"x+y+z",																@"objectParametricFunctionYEdit",
@@ -1436,17 +1436,17 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"0.0",																	@"objectParametricBounderiesUMatrixY",
 		@"0.0",																	@"objectParametricBounderiesVMatrixX",
 		@"0.0",																	@"objectParametricBounderiesVMatrixY",
-		[NSNumber numberWithInt:NSOnState],			@"objectParametricMaxGradientOn",
+		@(NSOnState),			@"objectParametricMaxGradientOn",
 		@"5.0",																	@"objectParametricMaxGradientEdit",
-		[NSNumber numberWithInt:NSOnState],			@"objectParametricAccuracyOn",
+		@(NSOnState),			@"objectParametricAccuracyOn",
 		@"0.0",																	@"objectParametricAccuracyEdit",
-		[NSNumber numberWithInt:NSOnState],			@"objectParametricPrecomputeDepthsOn",
+		@(NSOnState),			@"objectParametricPrecomputeDepthsOn",
 		@"0.0",																	@"objectParametricPrecomputeDepthsEdit",
-		[NSNumber numberWithInt:NSOffState],		@"objectParametricOfVariablesXOn",
-		[NSNumber numberWithInt:NSOffState],		@"objectParametricOfVariablesYOn",
-		[NSNumber numberWithInt:NSOnState],			@"objectParametricOfVariablesZOn",
+		@(NSOffState),		@"objectParametricOfVariablesXOn",
+		@(NSOffState),		@"objectParametricOfVariablesYOn",
+		@(NSOnState),			@"objectParametricOfVariablesZOn",
 		[NSNumber numberWithInt:cBoxContainer],	@"objectParametricContainerObjectPopUp",
-		[NSNumber numberWithInt:NSOffState],		@"objectParametricShowContainerObjectOn",
+		@(NSOffState),		@"objectParametricShowContainerObjectOn",
 		@"0.0",																	@"objectParametricContainerBoxCorner1MatrixX",
 		@"0.0",																	@"objectParametricContainerBoxCorner1MatrixY",
 		@"0.0",																	@"objectParametricContainerBoxCorner1MatrixZ",
@@ -1465,22 +1465,22 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"0.0",																	@"objectPlaneDistanceEdit",
 //poly
 		[NSNumber numberWithInt:cCubicPoly],		@"objectPolyPolyTypePopUp",
-		[NSNumber numberWithInt:NSOffState],		@"objectPolySturmOn",
+		@(NSOffState),		@"objectPolySturmOn",
 
 //prism
 		[NSNumber numberWithInt:cPrismLinearSweep],		@"objectPrismSweepTypePopUp",
-		[NSNumber numberWithInt:NSOffState],					@"objectPrismKeepDimensionsOn",
+		@(NSOffState),					@"objectPrismKeepDimensionsOn",
 		[NSNumber numberWithInt:cPrismBase],					@"objectPrismKeepDimensionsPopUp",
 		@"1.0",																				@"objectPrismTopHeightEdit",
 		@"0.0",																				@"objectPrismBaseHeightEdit",
-		[NSNumber numberWithInt:NSOffState],					@"objectPrismBevelPrismGroupOn",
+		@(NSOffState),					@"objectPrismBevelPrismGroupOn",
 		@"10",																				@"objectPrismBevelPrismFractionHeightEdit",
 		@"45",																				@"objectPrismBevelPrismFractionAngleEdit",
-		[NSNumber numberWithInt:NSOffState],					@"objectPrismOpenOn",
-		[NSNumber numberWithInt:NSOnState],						@"objectPrismSturmOn",
+		@(NSOffState),					@"objectPrismOpenOn",
+		@(NSOnState),						@"objectPrismSturmOn",
 //sor
-		[NSNumber numberWithInt:NSOffState],					@"objectSorOpenOn",
-		[NSNumber numberWithInt:NSOnState],						@"objectSorSturmOn",
+		@(NSOffState),					@"objectSorOpenOn",
+		@(NSOnState),						@"objectSorSturmOn",
 //sphere
 		@"0.0",																				@"objectSphereCenterMatrixX",
 		@"0.0",																				@"objectSphereCenterMatrixY",
@@ -1489,7 +1489,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 //sphereSweep
 		@"4",																					@"objectSpheresweepEntriesEdit",
 		[NSNumber numberWithInt:cSpheresweepLinearSpline],	@"objectSpheresweepSplineTypePopUp",
-		[NSNumber numberWithInt:NSOnState],						@"objectSpheresweepToleranceOn",
+		@(NSOnState),						@"objectSpheresweepToleranceOn",
 		@"1.0e-6",																		@"objectSpheresweepToleranceEdit",
 //Superellipsoid
 		@"0.5",																			@"objectSuperellipsoidEastWestEdit",
@@ -1509,7 +1509,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 //torus
 		@"0.33",																		@"objectTorusMajorRadiusEdit",
 		@"0.083",																		@"objectTorusMinorRadiusEdit",
-		[NSNumber numberWithInt:NSOnState],					@"objectTorusSturmOn",
+		@(NSOnState),					@"objectTorusSturmOn",
 //triangle
 		@"0.0",																		@"objectTriangleCorner1MatrixX",
 		@"0.0",																		@"objectTriangleCorner1MatrixY",
@@ -1529,10 +1529,10 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"0.0",																		@"objectTriangleNormal3MatrixX",
 		@"0.0",																		@"objectTriangleNormal3MatrixY",
 		@"-0.5",																	@"objectTriangleNormal3MatrixZ",
-		[NSNumber numberWithInt:NSOffState],			@"objectTriangleSmoothTriangleOn",
-		[NSNumber numberWithInt:NSOnState],				@"objectTriangleWriteMeshTriangleOn",
+		@(NSOffState),			@"objectTriangleSmoothTriangleOn",
+		@(NSOnState),				@"objectTriangleWriteMeshTriangleOn",
 		@"2",																			@"objectTriangleWriteMeshEntriesEdit",
-		[NSNumber numberWithInt:NSOnState],				@"objectTriangleInsideVectorOn",
+		@(NSOnState),				@"objectTriangleInsideVectorOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXisYisZ],	@"objectTriangleInsideXYZVectorPopUp",
 		@"0.0",																		@"objectTriangleInsideXYZVectorMatrixX",
 		@"0.0",																		@"objectTriangleInsideXYZVectorMatrixY",
@@ -1999,7 +1999,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 -(IBAction) objectTarget:(id)sender
 {
 	BOOL on=YES;
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cObjectMaterialGroupOn;
 	else
@@ -2424,7 +2424,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 //---------------------------------------------------------------------
 -(IBAction) objectTypePopUp:(id)sender
 {
-	int item=[objectTypePopUp indexOfSelectedItem];
+	NSInteger item=[objectTypePopUp indexOfSelectedItem];
 	[objectTabView selectTabViewItemAtIndex:item];
 	BOOL showUv=YES;
 	BOOL showHollow=YES;
@@ -2513,7 +2513,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 			return nil;
 
 		if ( [identifier isEqualToString:@"nr"])
-			return [NSNumber numberWithInt:rowIndex+1];
+			return [NSNumber numberWithInteger:rowIndex+1];
 		else if ( [identifier isEqualToString:@"value"])
 			return [NSString stringWithFormat:FloatFormat,[[mPolyArray objectAtIndex:rowIndex]floatValue]];
 		else if ( [identifier isEqualToString:@"description"])

@@ -104,7 +104,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 // ---------------------------------------------------------------------------
 -(IBAction) backgroundPicturePopup:(id)sender
 {
-	int res;
+	NSModalResponse res;
 	NSOpenPanel *openPanel;
 	switch([mBackgroundPicturePopup indexOfSelectedItem])
 	{
@@ -113,7 +113,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 			[openPanel setAllowsMultipleSelection:NO];
 			[openPanel setCanChooseDirectories:NO];
 			[openPanel setCanChooseFiles:YES];
-			[openPanel setAllowedFileTypes:[NSImage imageFileTypes]];
+			[openPanel setAllowedFileTypes:[NSImage imageTypes]];
 			res=[openPanel runModal];
 			if ( NSOKButton==res)
 				[self loadNewBackgroundImage:[[openPanel URL] path]];
@@ -143,9 +143,9 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 		return;
 
 
-	int BitsSample=[rep bitsPerSample];	
-	int BytesPerRow=[rep bytesPerRow];
-	int SamplePixel=[rep samplesPerPixel];
+	NSInteger BitsSample=[rep bitsPerSample];
+	NSInteger BytesPerRow=[rep bytesPerRow];
+	NSInteger SamplePixel=[rep samplesPerPixel];
 	NSSize imgSize=NSMakeSize([rep pixelsWide],[rep pixelsHigh]) ;
 
 	if ( BitsSample == 8 && (SamplePixel == 3 || SamplePixel == 4))
@@ -180,9 +180,9 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 	if ( rep == nil)
 		return;
 		
-	int BitsSample=[rep bitsPerSample];	
-	int BytesPerRow=[rep bytesPerRow];
-	int SamplePixel=[rep samplesPerPixel];
+	NSInteger BitsSample=[rep bitsPerSample];
+	NSInteger BytesPerRow=[rep bytesPerRow];
+	NSInteger SamplePixel=[rep samplesPerPixel];
 	NSSize imgSize=NSMakeSize([rep pixelsWide],[rep pixelsHigh]) ;
 	if ( BitsSample == 8 && (SamplePixel == 3 || SamplePixel == 4))
 	{
@@ -219,9 +219,9 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 	if ( rep == nil)
 		return;
 		
-	int BitsSample=[rep bitsPerSample];	
-	int BytesPerRow=[rep bytesPerRow];
-	int SamplePixel=[rep samplesPerPixel];
+	NSInteger BitsSample=[rep bitsPerSample];
+	NSInteger BytesPerRow=[rep bytesPerRow];
+	NSInteger SamplePixel=[rep samplesPerPixel];
 	NSSize imgSize=NSMakeSize([rep pixelsWide],[rep pixelsHigh]) ;
 	if ( BitsSample == 8 && (SamplePixel == 3 || SamplePixel == 4))
 	{
@@ -263,7 +263,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 	if (repArray==nil)
 		return nil;
 
-	int repCount=[repArray count];
+	NSInteger repCount=[repArray count];
 	if ( repCount==0)
 		return nil ;
 		
@@ -1325,7 +1325,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 			{
 				double U=0.0;
 				double c[4][2];
-				for (int y=x,t=0; y<=x+3; y++,t++)
+				for (NSInteger y=x,t=0; y<=x+3; y++,t++)
 				{
 					NSRect tempRect=NSInsetRect(mPointList[y],5,5);
 					c[t][0]=tempRect.origin.x;

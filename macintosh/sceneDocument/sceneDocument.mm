@@ -500,7 +500,9 @@
 					fileFound=[defaultFileManager fileExistsAtPath:tempString];
 					if ( fileFound==YES)
 					{
-						[[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:tempString] display:YES error:nil];
+						[[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:tempString] display:YES completionHandler:^(NSDocument * _Nullable document, BOOL documentWasAlreadyOpen, NSError * _Nullable error) {
+							//do nothing
+						}];
 
 						return;
 					}

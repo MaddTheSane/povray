@@ -75,11 +75,11 @@
 {
 	return [NSMutableArray arrayWithObjects:
 				@"default layer",																	//layer name
-				[NSNumber numberWithInt:NSOnState],								//layer on?
-				[NSNumber numberWithInt:NSOnState],								//pigmentOn,
-				[NSNumber numberWithInt:NSOnState],								//normalOn,
-				[NSNumber numberWithInt:NSOnState],								//finishOn,
-				[NSNumber numberWithInt:NSOnState],								//interiorOn,
+				@(NSOnState),								//layer on?
+				@(NSOnState),								//pigmentOn,
+				@(NSOnState),								//normalOn,
+				@(NSOnState),								//finishOn,
+				@(NSOnState),								//interiorOn,
 				[PigmentTemplate createDefaults:menuTagTemplatePigment],		//pigment
 				[NormalTemplate createDefaults:menuTagTemplateNormal],		//normal
 				[FinishTemplate createDefaults:menuTagTemplateFinish],				//finish

@@ -56,7 +56,7 @@ enum {
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -142,7 +142,7 @@ enum {
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSArchiver archivedDataWithRootObject:[bodymap defaultMap]],	@"bodymap",
@@ -151,7 +151,7 @@ enum {
 		@"x+y+z",																				@"materialmapFunctionEdit",
 		@"300",																					@"materialmapFunctionImageWidth",
 		@"300",																					@"materialmapFunctionImageHeight",
-		[NSNumber numberWithInt:NSOffState],						@"materialmapProjectionOnceOn",
+		@(NSOffState),						@"materialmapProjectionOnceOn",
 		[NSNumber numberWithInt:cProjectionPlanar],			@"materialmapProjectionPopUp",
 		[NSNumber numberWithInt:cInterpolationNone],		@"materialmapInterpolationPopUp",
 	nil];
@@ -246,7 +246,7 @@ enum {
 //---------------------------------------------------------------------
 -(IBAction) materialmapTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cMaterialmapProjectionPopUp;
 	else
@@ -334,7 +334,7 @@ enum {
 {
 	id 	prefs=nil;
 
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	switch( tag)
 	{
 
@@ -372,7 +372,7 @@ enum {
 {
 	id identifier=[tableColumn identifier];
 	if ( [identifier isEqualToString:@"Location"])
-		return [NSNumber numberWithInt:rowIndex];
+		return [NSNumber numberWithInteger:rowIndex];
 	else if ( [identifier isEqualToString:@"identifier"])
 		return [mMap identifierAtIndex:rowIndex];
 	return nil;

@@ -58,7 +58,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 
 	if ( dict== nil)
@@ -203,41 +203,41 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-		[NSNumber numberWithInt:NSOffState],						@"finishDontWrapInFinish",
-		[NSNumber numberWithInt:NSOnState],							@"finishDiffuseOn",
+		@(NSOffState),						@"finishDontWrapInFinish",
+		@(NSOnState),							@"finishDiffuseOn",
 		@"0.6",																					@"finishDiffuseEdit",
-		[NSNumber numberWithInt:NSOnState],							@"finishBacksideOn",
+		@(NSOnState),							@"finishBacksideOn",
 		@"0.6",																					@"finishBacksideEdit",
-		[NSNumber numberWithInt:NSOnState],							@"finishBrillianceOn",
+		@(NSOnState),							@"finishBrillianceOn",
 		@"1.0",																					@"finishBrillianceEdit",
-		[NSNumber numberWithInt:NSOffState],						@"finishCrandOn",
+		@(NSOffState),						@"finishCrandOn",
 		@"0.0",																					@"finishCrandEdit",
 
-		[NSNumber numberWithInt:NSOffState],						@"finishAmbientColorGroupOn",
+		@(NSOffState),						@"finishAmbientColorGroupOn",
 		[NSArchiver archivedDataWithRootObject:[MPColorWell grayColorAndFilter:NO]],	@"finishAmbientColorColorWell",
 
-		[NSNumber numberWithInt:NSOffState],						@"finishAmbientColorGroupOn",
+		@(NSOffState),						@"finishAmbientColorGroupOn",
 		[NSArchiver archivedDataWithRootObject:[MPColorWell grayColorAndFilter:NO]],	@"finishAmbientColorColorWell",
 
 
-		[NSNumber numberWithInt:NSOffState],						@"finishSubsurfaceLightTransportColorGroupOn",
+		@(NSOffState),						@"finishSubsurfaceLightTransportColorGroupOn",
 		[NSArchiver archivedDataWithRootObject:[MPColorWell grayColorAndFilter:NO]],	@"finishSubsurfaceLightTransportColorColorWell",
 
-		[NSNumber numberWithInt:NSOffState],						@"finishPhongOn",
+		@(NSOffState),						@"finishPhongOn",
 		@"1.0",																					@"finishPhongEdit",
-		[NSNumber numberWithInt:NSOffState],						@"finishPhongSizeOn",
+		@(NSOffState),						@"finishPhongSizeOn",
 		@"350",																					@"finishPhongSizeEdit",
-		[NSNumber numberWithInt:NSOffState],						@"finishSpecularOn",
+		@(NSOffState),						@"finishSpecularOn",
 		@"1.0",																					@"finishSpecularEdit",
-		[NSNumber numberWithInt:NSOffState],						@"finishRoghnessOn",
+		@(NSOffState),						@"finishRoghnessOn",
 		@"0.0005",																			@"finishRoghnessEdit",
-		[NSNumber numberWithInt:NSOffState],						@"finishMetallicOn",
+		@(NSOffState),						@"finishMetallicOn",
 		@"1.0",																					@"finishMetallicEdit",
 
-		[NSNumber numberWithInt:NSOffState],								@"finishIridescenceGroupOn",
+		@(NSOffState),								@"finishIridescenceGroupOn",
 		@"0.0",																							@"finishIridescenceAmountEdit",
 		@"0.0",																							@"finishIridescenceThicknessEdit",
 		[NSNumber numberWithInt:cXYZVectorPopupXandYandZ],	@"finishIridescenceTurbulencePopUp",
@@ -245,18 +245,18 @@
 		@"1.0",																							@"finishIridescenceTurbulenceMatrixY",
 		@"0.0",																							@"finishIridescenceTurbulenceMatrixZ",
 		
-		[NSNumber numberWithInt:NSOffState],	 							@"finishReflectionLightGroupOn",
-		[NSNumber numberWithInt:NSOffState],	 							@"finishReflectionVariableGroupOn",
+		@(NSOffState),	 							@"finishReflectionLightGroupOn",
+		@(NSOffState),	 							@"finishReflectionVariableGroupOn",
 		[NSArchiver archivedDataWithRootObject:[MPColorWell blackColorAndFilter:NO]],	@"finishReflectionVariableMinColorColorWell",
-		[NSNumber numberWithInt:NSOffState], 								@"finishReflectionVariableFresnelOn",
-		[NSNumber numberWithInt:NSOffState], 								@"finishReflectionVariableFalloffOn",
+		@(NSOffState), 								@"finishReflectionVariableFresnelOn",
+		@(NSOffState), 								@"finishReflectionVariableFalloffOn",
 		@"1.0",																							@"finishReflectionVariableFalloffEdit",
 		[NSArchiver archivedDataWithRootObject:[MPColorWell blackColorAndFilter:NO]],	@"finishReflectionMaxColorColorWell",
-		[NSNumber numberWithInt:NSOffState], 								@"finishReflectionExponentOn",
+		@(NSOffState), 								@"finishReflectionExponentOn",
 		@"1.0",																							@"finishReflectionExponentEdit",
-		[NSNumber numberWithInt:NSOffState],	 							@"finishReflectionMetallicOn",
+		@(NSOffState),	 							@"finishReflectionMetallicOn",
 		@"1.0",																							@"finishReflectionMetallicEdit",
-		[NSNumber numberWithInt:NSOffState],								@"finishConserveEnergyOn",
+		@(NSOffState),								@"finishConserveEnergyOn",
 	nil];
 
 	return initialDefaults;

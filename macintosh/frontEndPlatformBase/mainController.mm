@@ -362,7 +362,7 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 		return YES;
 	}
 
-	int theTag=[aMenuItem tag];
+	NSInteger theTag=[aMenuItem tag];
 	switch (theTag)
 	{
 		case eTag_ShowMenu:
@@ -592,7 +592,7 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 
 	if ( gIsRendering ==YES)
 	{
-		int res=NSRunAlertPanel( NSLocalizedStringFromTable(@"RenderInProgress", @"applicationLocalized", @"Rendering in progress..."),
+		NSInteger res=NSRunAlertPanel( NSLocalizedStringFromTable(@"RenderInProgress", @"applicationLocalized", @"Rendering in progress..."),
 														NSLocalizedStringFromTable(@"ReallyQuit", @"applicationLocalized", @"A file is being rendered. Do you really want to quit?"),
 														NSLocalizedStringFromTable(@"Cancel", @"applicationLocalized", @"Cancel"),
 														NSLocalizedStringFromTable(@"Quit", @"applicationLocalized", @"Quit"),
@@ -717,7 +717,7 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 	}
 	[pool release];
 
-	/*ev_count	=*/kevent( kq, ev_change, foldersToWatch, ev_receive, [dirAr count], NULL );
+	/*ev_count	=*/kevent( kq, ev_change, foldersToWatch, ev_receive, (int)[dirAr count], NULL );
 
 Bail:
 	//NSLog(@"bailing");
@@ -779,7 +779,7 @@ Bail:
 //---------------------------------------------------------------------
 // getNumberOfCpus
 //---------------------------------------------------------------------
--(int) getNumberOfCpus
+-(NSInteger) getNumberOfCpus
 {
 	return mNumberOfCpus;
 }

@@ -50,7 +50,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 
 	if ( dict== nil)
@@ -126,18 +126,18 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-		[NSNumber numberWithInt:NSOnState],			@"photonsTargetOn",
+		@(NSOnState),			@"photonsTargetOn",
 		@"1.0",															@"photonsSpacingEdit",
-		[NSNumber numberWithInt:NSOnState],			@"photonsRefractionOn",
+		@(NSOnState),			@"photonsRefractionOn",
 		[NSNumber numberWithInt:cFirstCell],				@"photonsRefractionMaxtrix",
-		[NSNumber numberWithInt:NSOnState],			@"photonsReflectionOn",
+		@(NSOnState),			@"photonsReflectionOn",
 		[NSNumber numberWithInt:cFirstCell],				@"photonsReflectionMaxtrix",
-		[NSNumber numberWithInt:NSOnState],			@"photonsCollectOn",
+		@(NSOnState),			@"photonsCollectOn",
 		[NSNumber numberWithInt:cFirstCell],				@"photonsCollectMaxtrix",
-		[NSNumber numberWithInt:NSOnState],			@"photonsPassThroughOn",
+		@(NSOnState),			@"photonsPassThroughOn",
 		nil
 	];
 

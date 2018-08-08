@@ -66,7 +66,7 @@ enum eTransformationPanelNumbers {
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -367,13 +367,13 @@ enum eTransformationPanelNumbers {
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 //Top
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-		[NSNumber numberWithInt:NSOnState],									@"topOn",
+		@(NSOnState),									@"topOn",
 		[NSNumber numberWithInt:cTransformationScale],					@"topTypePopUp",
 
 		[NSNumber numberWithInt:cXYZVectorPopupXandYandZ],			@"topScalePopUp",
@@ -400,43 +400,43 @@ enum eTransformationPanelNumbers {
 		@"0.0",																					@"topTurbulenceMatrixY",
 		@"0.0",																					@"topTurbulenceMatrixZ",
 
-		[NSNumber numberWithInt:NSOffState],									@"topTurbulenceOctavesOn",
+		@(NSOffState),									@"topTurbulenceOctavesOn",
 		@"0.0",																					@"topTurbulenceOctavesEdit",
-		[NSNumber numberWithInt:NSOffState],									@"topTurbulenceOmegaOn",
+		@(NSOffState),									@"topTurbulenceOmegaOn",
 		@"0.0",																					@"topTurbulenceOmegaEdit",
-		[NSNumber numberWithInt:NSOffState],									@"topTurbulenceLambdaOn",
+		@(NSOffState),									@"topTurbulenceLambdaOn",
 		@"0.0",																					@"topTurbulenceLambdaEdit",
-		[NSNumber numberWithInt:NSOffState],									@"topTurbulenceWarpOn",
+		@(NSOffState),									@"topTurbulenceWarpOn",
 
 		[NSNumber numberWithInt:cX],												@"topRepeatWarpRepeatPopUp",
 		@"0.0",																					@"topRepeatWarpRepeatWidthEdit",
-		[NSNumber numberWithInt:NSOffState],									@"topRepeatWarpOffsetOn",
+		@(NSOffState),									@"topRepeatWarpOffsetOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXisYisZ],				@"topRepeatWarpOffsetPopUp",
 		@"0.0",																					@"topRepeatWarpOffsetMatrixX",
 		@"0.0",																					@"topRepeatWarpOffsetMatrixY",
 		@"0.0",																					@"topRepeatWarpOffsetMatrixZ",
 
-		[NSNumber numberWithInt:NSOffState],									@"topRepeatWarpFlipX",
-		[NSNumber numberWithInt:NSOffState],									@"topRepeatWarpFlipY",
-		[NSNumber numberWithInt:NSOffState],									@"topRepeatWarpFlipZ",
+		@(NSOffState),									@"topRepeatWarpFlipX",
+		@(NSOffState),									@"topRepeatWarpFlipY",
+		@(NSOffState),									@"topRepeatWarpFlipZ",
 
 		[NSNumber numberWithInt:cXYZVectorPopupXisYisZ],				@"topBlackHoleCenterPopUp",
 		@"0.0",																					@"topBlackHoleCenterMatrixX",
 		@"0.0",																					@"topBlackHoleCenterMatrixY",
 		@"0.0",																					@"topBlackHoleCenterMatrixZ",
-		[NSNumber numberWithInt:NSOffState],									@"topBlackHoleInverseOn",
+		@(NSOffState),									@"topBlackHoleInverseOn",
 		@"0.0",																					@"topBlackHoleRadiusEdit",
-		[NSNumber numberWithInt:NSOffState],									@"topBlackHoleFalloffOn",
+		@(NSOffState),									@"topBlackHoleFalloffOn",
 		@"0.0",																					@"topBlackHoleFalloffEdit",
-		[NSNumber numberWithInt:NSOffState],									@"topBlackHoleStrengthOn",
+		@(NSOffState),									@"topBlackHoleStrengthOn",
 		@"0.0",																					@"topBlackHoleStrengthEdit",
-		[NSNumber numberWithInt:NSOnState],									@"topBlackHoleRepeatOn",
+		@(NSOnState),									@"topBlackHoleRepeatOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXisYisZ],				@"topBlackHoleRepeatPopUp",
 		@"0.0",																					@"topBlackHoleRepeatMatrixX",
 		@"0.0",																					@"topBlackHoleRepeatMatrixY",
 		@"0.0",																					@"topBlackHoleRepeatMatrixZ",
 
-		[NSNumber numberWithInt:NSOffState],									@"topBlackHoleTurbulenceOn",
+		@(NSOffState),									@"topBlackHoleTurbulenceOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXandYandZ],			@"topBlackHoleTurbulencePopUp",
 		@"0.0",																					@"topBlackHoleTurbulenceMatrixX",
 		@"0.0",																					@"topBlackHoleTurbulenceMatrixY",
@@ -456,12 +456,12 @@ enum eTransformationPanelNumbers {
 		@"0.0",																					@"topMatrixMatrix32",
 
 		[NSNumber numberWithInt:cSpherical],										@"topWarp3DTypePopUp",
-		[NSNumber numberWithInt:NSOffState],									@"topWarp3DDistExpOn",
+		@(NSOffState),									@"topWarp3DDistExpOn",
 		@"0.0",																					@"topWarp3DDistExpEdit",
 		@"0.0",																					@"topWarp3DDistanceEdit",
-		[NSNumber numberWithInt:NSOffState],									@"topWarp3DMajorRadiusOn",
+		@(NSOffState),									@"topWarp3DMajorRadiusOn",
 		@"0.33",																				@"topWarp3DMajorRadiusEdit",
-		[NSNumber numberWithInt:NSOffState],									@"topWarp3DOrientationOn",
+		@(NSOffState),									@"topWarp3DOrientationOn",
 		@"0.0",																					@"topWarp3DOrientationMatrixX",
 		@"1.0",																					@"topWarp3DOrientationMatrixY",
 		@"0.0",																					@"topWarp3DOrientationMatrixZ",
@@ -473,7 +473,7 @@ enum eTransformationPanelNumbers {
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 //Mid
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-		[NSNumber numberWithInt:NSOnState],									@"midOn",
+		@(NSOnState),									@"midOn",
 		[NSNumber numberWithInt:cTransformationScale],					@"midTypePopUp",
 
 		[NSNumber numberWithInt:cXYZVectorPopupXandYandZ],			@"midScalePopUp",
@@ -500,43 +500,43 @@ enum eTransformationPanelNumbers {
 		@"0.0",																					@"midTurbulenceMatrixY",
 		@"0.0",																					@"midTurbulenceMatrixZ",
 
-		[NSNumber numberWithInt:NSOffState],									@"midTurbulenceOctavesOn",
+		@(NSOffState),									@"midTurbulenceOctavesOn",
 		@"0.0",																					@"midTurbulenceOctavesEdit",
-		[NSNumber numberWithInt:NSOffState],									@"midTurbulenceOmegaOn",
+		@(NSOffState),									@"midTurbulenceOmegaOn",
 		@"0.0",																					@"midTurbulenceOmegaEdit",
-		[NSNumber numberWithInt:NSOffState],									@"midTurbulenceLambdaOn", 
+		@(NSOffState),									@"midTurbulenceLambdaOn", 
 		@"0.0",																					@"midTurbulenceLambdaEdit",
-		[NSNumber numberWithInt:NSOffState],									@"midTurbulenceWarpOn",
+		@(NSOffState),									@"midTurbulenceWarpOn",
 
 		[NSNumber numberWithInt:cX],												@"midRepeatWarpRepeatPopUp",
 		@"0.0",																					@"midRepeatWarpRepeatWidthEdit",
-		[NSNumber numberWithInt:NSOffState],									@"midRepeatWarpOffsetOn",
+		@(NSOffState),									@"midRepeatWarpOffsetOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXisYisZ],				@"midRepeatWarpOffsetPopUp",
 		@"0.0",																					@"midRepeatWarpOffsetMatrixX",
 		@"0.0",																					@"midRepeatWarpOffsetMatrixY",
 		@"0.0",																					@"midRepeatWarpOffsetMatrixZ",
 
-		[NSNumber numberWithInt:NSOffState],									@"midRepeatWarpFlipX",
-		[NSNumber numberWithInt:NSOffState],									@"midRepeatWarpFlipY",
-		[NSNumber numberWithInt:NSOffState],									@"midRepeatWarpFlipZ",
+		@(NSOffState),									@"midRepeatWarpFlipX",
+		@(NSOffState),									@"midRepeatWarpFlipY",
+		@(NSOffState),									@"midRepeatWarpFlipZ",
 
 		[NSNumber numberWithInt:cXYZVectorPopupXisYisZ],				@"midBlackHoleCenterPopUp",
 		@"0.0",																					@"midBlackHoleCenterMatrixX",
 		@"0.0",																					@"midBlackHoleCenterMatrixY",
 		@"0.0",																					@"midBlackHoleCenterMatrixZ",
-		[NSNumber numberWithInt:NSOffState],									@"midBlackHoleInverseOn",
+		@(NSOffState),									@"midBlackHoleInverseOn",
 		@"0.0",																					@"midBlackHoleRadiusEdit",
-		[NSNumber numberWithInt:NSOffState],									@"midBlackHoleFalloffOn",
+		@(NSOffState),									@"midBlackHoleFalloffOn",
 		@"0.0",																					@"midBlackHoleFalloffEdit",
-		[NSNumber numberWithInt:NSOffState],									@"midBlackHoleStrengthOn",
+		@(NSOffState),									@"midBlackHoleStrengthOn",
 		@"0.0",																					@"midBlackHoleStrengthEdit",
-		[NSNumber numberWithInt:NSOnState],									@"midBlackHoleRepeatOn",
+		@(NSOnState),									@"midBlackHoleRepeatOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXisYisZ],				@"midBlackHoleRepeatPopUp",
 		@"0.0",																					@"midBlackHoleRepeatMatrixX",
 		@"0.0",																					@"midBlackHoleRepeatMatrixY",
 		@"0.0",																					@"midBlackHoleRepeatMatrixZ",
 
-		[NSNumber numberWithInt:NSOffState],									@"midBlackHoleTurbulenceOn",
+		@(NSOffState),									@"midBlackHoleTurbulenceOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXandYandZ],			@"midBlackHoleTurbulencePopUp",
 		@"0.0",																					@"midBlackHoleTurbulenceMatrixX",
 		@"0.0",																					@"midBlackHoleTurbulenceMatrixY",
@@ -556,12 +556,12 @@ enum eTransformationPanelNumbers {
 		@"0.0",																					@"midMatrixMatrix32",
 
 		[NSNumber numberWithInt:cSpherical],										@"midWarp3DTypePopUp",
-		[NSNumber numberWithInt:NSOffState],									@"midWarp3DDistExpOn",
+		@(NSOffState),									@"midWarp3DDistExpOn",
 		@"0.0",																					@"midWarp3DDistExpEdit",
 		@"0.0",																					@"midWarp3DDistanceEdit",
-		[NSNumber numberWithInt:NSOffState],									@"midWarp3DMajorRadiusOn",
+		@(NSOffState),									@"midWarp3DMajorRadiusOn",
 		@"0.33",																				@"midWarp3DMajorRadiusEdit",
-		[NSNumber numberWithInt:NSOffState],									@"midWarp3DOrientationOn",
+		@(NSOffState),									@"midWarp3DOrientationOn",
 		@"0.0",																					@"midWarp3DOrientationMatrixX",
 		@"1.0",																					@"midWarp3DOrientationMatrixY",
 		@"0.0",																					@"midWarp3DOrientationMatrixZ",
@@ -573,7 +573,7 @@ enum eTransformationPanelNumbers {
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 //Bottom
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-		[NSNumber numberWithInt:NSOnState],									@"bottomOn",
+		@(NSOnState),									@"bottomOn",
 		[NSNumber numberWithInt:cTransformationScale],					@"bottomTypePopUp",
 
 		[NSNumber numberWithInt:cXYZVectorPopupXandYandZ],			@"bottomScalePopUp",
@@ -600,43 +600,43 @@ enum eTransformationPanelNumbers {
 		@"0.0",																					@"bottomTurbulenceMatrixY",
 		@"0.0",																					@"bottomTurbulenceMatrixZ",
 
-		[NSNumber numberWithInt:NSOffState],									@"bottomTurbulenceOctavesOn",
+		@(NSOffState),									@"bottomTurbulenceOctavesOn",
 		@"0.0",																					@"bottomTurbulenceOctavesEdit",
-		[NSNumber numberWithInt:NSOffState],									@"bottomTurbulenceOmegaOn",
+		@(NSOffState),									@"bottomTurbulenceOmegaOn",
 		@"0.0",																					@"bottomTurbulenceOmegaEdit",
-		[NSNumber numberWithInt:NSOffState],									@"bottomTurbulenceLambdaOn",
+		@(NSOffState),									@"bottomTurbulenceLambdaOn",
 		@"0.0",																					@"bottomTurbulenceLambdaEdit",
-		[NSNumber numberWithInt:NSOffState],									@"bottomTurbulenceWarpOn",
+		@(NSOffState),									@"bottomTurbulenceWarpOn",
 
 		[NSNumber numberWithInt:cX],												@"bottomRepeatWarpRepeatPopUp",
 		@"0.0",																					@"bottomRepeatWarpRepeatWidthEdit",
-		[NSNumber numberWithInt:NSOffState],									@"bottomRepeatWarpOffsetOn",
+		@(NSOffState),									@"bottomRepeatWarpOffsetOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXisYisZ],				@"bottomRepeatWarpOffsetPopUp",
 		@"0.0",																					@"bottomRepeatWarpOffsetMatrixX",
 		@"0.0",																					@"bottomRepeatWarpOffsetMatrixY",
 		@"0.0",																					@"bottomRepeatWarpOffsetMatrixZ",
 
-		[NSNumber numberWithInt:NSOffState],									@"bottomRepeatWarpFlipX",
-		[NSNumber numberWithInt:NSOffState],									@"bottomRepeatWarpFlipY",
-		[NSNumber numberWithInt:NSOffState],									@"bottomRepeatWarpFlipZ",
+		@(NSOffState),									@"bottomRepeatWarpFlipX",
+		@(NSOffState),									@"bottomRepeatWarpFlipY",
+		@(NSOffState),									@"bottomRepeatWarpFlipZ",
 
 		[NSNumber numberWithInt:cXYZVectorPopupXisYisZ],				@"bottomBlackHoleCenterPopUp",
 		@"0.0",																					@"bottomBlackHoleCenterMatrixX",
 		@"0.0",																					@"bottomBlackHoleCenterMatrixY",
 		@"0.0",																					@"bottomBlackHoleCenterMatrixZ",
-		[NSNumber numberWithInt:NSOffState],									@"bottomBlackHoleInverseOn",
+		@(NSOffState),									@"bottomBlackHoleInverseOn",
 		@"0.0",																					@"bottomBlackHoleRadiusEdit",
-		[NSNumber numberWithInt:NSOffState],									@"bottomBlackHoleFalloffOn",
+		@(NSOffState),									@"bottomBlackHoleFalloffOn",
 		@"0.0",																					@"bottomBlackHoleFalloffEdit",
-		[NSNumber numberWithInt:NSOffState],									@"bottomBlackHoleStrengthOn",
+		@(NSOffState),									@"bottomBlackHoleStrengthOn",
 		@"0.0",																					@"bottomBlackHoleStrengthEdit",
-		[NSNumber numberWithInt:NSOnState],									@"bottomBlackHoleRepeatOn",
+		@(NSOnState),									@"bottomBlackHoleRepeatOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXisYisZ],				@"bottomBlackHoleRepeatPopUp",
 		@"0.0",																					@"bottomBlackHoleRepeatMatrixX",
 		@"0.0",																					@"bottomBlackHoleRepeatMatrixY",
 		@"0.0",																					@"bottomBlackHoleRepeatMatrixZ",
 
-		[NSNumber numberWithInt:NSOffState],									@"bottomBlackHoleTurbulenceOn",
+		@(NSOffState),									@"bottomBlackHoleTurbulenceOn",
 		[NSNumber numberWithInt:cXYZVectorPopupXandYandZ],			@"bottomBlackHoleTurbulencePopUp",
 		@"0.0",																					@"bottomBlackHoleTurbulenceMatrixX",
 		@"0.0",																					@"bottomBlackHoleTurbulenceMatrixY",
@@ -656,12 +656,12 @@ enum eTransformationPanelNumbers {
 		@"0.0",																					@"bottomMatrixMatrix32",
 
 		[NSNumber numberWithInt:cSpherical],										@"bottomWarp3DTypePopUp",
-		[NSNumber numberWithInt:NSOffState],									@"bottomWarp3DDistExpOn",
+		@(NSOffState),									@"bottomWarp3DDistExpOn",
 		@"0.0",																					@"bottomWarp3DDistExpEdit",
 		@"0.0",																					@"bottomWarp3DDistanceEdit",
-		[NSNumber numberWithInt:NSOffState],									@"bottomWarp3DMajorRadiusOn",
+		@(NSOffState),									@"bottomWarp3DMajorRadiusOn",
 		@"0.33",																				@"bottomWarp3DMajorRadiusEdit",
-		[NSNumber numberWithInt:NSOffState],									@"bottomWarp3DOrientationOn",
+		@(NSOffState),									@"bottomWarp3DOrientationOn",
 		@"0.0",																					@"bottomWarp3DOrientationMatrixX",
 		@"1.0",																					@"bottomWarp3DOrientationMatrixY",
 		@"0.0",																					@"bottomWarp3DOrientationMatrixZ",

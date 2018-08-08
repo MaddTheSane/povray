@@ -77,9 +77,9 @@ static appPreferencesController	*_appPreferencesController;
 	 [NSArchiver archivedDataWithRootObject:[NSFont userFontOfSize:11.0]], @"sceneDocumentFont",
 	 @"1.8",															@"mOutletDisplayGammaEdit",
 	 @YES,	@"globalAutoSyntaxColoring",
-	 [NSNumber numberWithInt:NSOnState],	@"maintainIndentation",
-	 [NSNumber numberWithInt:NSOnState],	@"autoIndentBraces",
-	 [NSNumber numberWithInt:NSOffState],	@"rememberOpenWindowsOn",
+	 @(NSOnState),	@"maintainIndentation",
+	 @(NSOnState),	@"autoIndentBraces",
+	 @(NSOffState),	@"rememberOpenWindowsOn",
 	 [NSNumber numberWithInt:0],					@"numericBlockPoint",
 	 [NSNumber numberWithInt:2],					@"tabDistance",
 	 [NSNumber numberWithInt:1],					@"indexOfAppPrefsSelectedTabViewItem",
@@ -726,16 +726,16 @@ static appPreferencesController	*_appPreferencesController;
 	[defaults setObject:[NSArchiver archivedDataWithRootObject:mSceneDocumentFont]forKey: @"sceneDocumentFont"];
 	[defaults setObject:@(globalAutoSyntaxColoring) forKey: @"globalAutoSyntaxColoring"];
 	[defaults setObject:mDisplayGammaString forKey: @"mOutletDisplayGammaEdit"];
-	[defaults setObject:[NSNumber numberWithInt:mDisplayGammaOn] forKey: @"displayGammaOn"];
-	[defaults setObject:[NSNumber numberWithInt:mAlwaysPutPreviewwindowInFrontOn] forKey: @"AlwaysPutPreviewwindowInFrontButton"];
-	[defaults setObject:[NSNumber numberWithInt:mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationOn] forKey: @"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton"];
+	[defaults setObject:@(mDisplayGammaOn) forKey: @"displayGammaOn"];
+	[defaults setObject:@(mAlwaysPutPreviewwindowInFrontOn) forKey: @"AlwaysPutPreviewwindowInFrontButton"];
+	[defaults setObject:@(mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationOn) forKey: @"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton"];
 
 
-	[defaults setObject:[NSNumber numberWithInt:rememberOpenWindowsOn] forKey: @"rememberOpenWindowsOn"];
-	[defaults setObject:[NSNumber numberWithInt:maintainIndentation] forKey: @"maintainIndentation"];
-	[defaults setObject:[NSNumber numberWithInt:autoIndentBraces] forKey: @"autoIndentBraces"];
-	[defaults setObject:[NSNumber numberWithInt:tabDistance] forKey: @"tabDistance"];
-	[defaults setObject:[NSNumber numberWithInt:numericBlockPoint] forKey: @"numericBlockPoint"];
+	[defaults setObject:@(rememberOpenWindowsOn) forKey: @"rememberOpenWindowsOn"];
+	[defaults setObject:@(maintainIndentation) forKey: @"maintainIndentation"];
+	[defaults setObject:@(autoIndentBraces) forKey: @"autoIndentBraces"];
+	[defaults setObject:@(tabDistance) forKey: @"tabDistance"];
+	[defaults setObject:@(numericBlockPoint) forKey: @"numericBlockPoint"];
 	[defaults setObject:mIncludePathsArray forKey: @"includePaths"];
 	[defaults setObject:mInsertDirectory forKey: @"mInsertMenuMainDirectoryEdit"];
 	[defaults setObject:mInsertMenuImageScaleFloat forKey: @"mInsertMenuImageScaleSlider"];
@@ -748,7 +748,7 @@ static appPreferencesController	*_appPreferencesController;
 //---------------------------------------------------------------------
 -(IBAction) appPreferencesTarget: (id) sender
 {
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	switch( tag)
 	{
 		case cAppRenderBlockSizePopup:
@@ -1012,7 +1012,7 @@ static appPreferencesController	*_appPreferencesController;
 			if ([manager fileExistsAtPath:file isDirectory:&isDir] &&  isDir==YES)
 			{
 				BOOL pathExists= NO;		// path not alreay in table
-				int cn=[mIncludePathsArray count]; // if it already exists don't add it again
+				NSInteger cn=[mIncludePathsArray count]; // if it already exists don't add it again
 				if (cn)
 				{
 					for (int x=0; x<cn; x++)

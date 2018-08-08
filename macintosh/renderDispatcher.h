@@ -105,7 +105,7 @@ void *doRender (void * theObject);
 - (IBAction) batchTarget:(id)sender;
 -(void) batchRun:(BOOL) onlySelected;
 -(void)batchSetAllProcessingToCancelled;
--(void) batchSetDefaultSettingsForState:(int) newState atEntry:(int)entry;
+-(void) batchSetDefaultSettingsForState:(int) newState atEntry:(NSInteger)entry;
 -(void) batchRunNextEntry;
 - (BOOL)validateMenuItem:(NSMenuItem *)aMenuItem;
 -(IBAction)batchMenu:(id)sender;

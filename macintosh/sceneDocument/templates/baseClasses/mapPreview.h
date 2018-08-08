@@ -62,15 +62,15 @@
 	NSRect mRasterFrame;
 	NSRect mDrawFrame;
 	CGFloat xToCenter, yToCenter;
-	float mRasterStep;
+	CGFloat mRasterStep;
 	NSRect *mPointList;	
 	NSRect *mSlopePointList;	
 
-	int mSlopeOn;
-	int	mPointOn;
-	int	mCurveOn;
-	int mRasterOn;
-	int mSlopeFound;
+	NSControlStateValue mSlopeOn;
+	NSControlStateValue	mPointOn;
+	NSControlStateValue	mCurveOn;
+	NSControlStateValue mRasterOn;
+	NSControlStateValue mSlopeFound;
 }
 -(void)drawSelectedPoint;
 

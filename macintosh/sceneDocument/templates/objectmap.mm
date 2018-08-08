@@ -500,7 +500,7 @@
 											nil];
 				[mMapArray addObject:newArray];
 			}	
-			int firstSelectedSegmentPoint = ([self count]-3)-1;
+			NSInteger firstSelectedSegmentPoint = ([self count]-3)-1;
 			if (  [self templateType]==menuTagTemplateLathe)
 			{
 				//first point of segment == 0.0
@@ -539,10 +539,10 @@
 //---------------------------------------------------------------------
 -(void) removeEntryAtIndex:(int)index
 {
-	int outRows=[self count];
-	int selectedRow=[self firstSelectedRow];	//
+	NSInteger outRows=[self count];
+	NSInteger selectedRow=[self firstSelectedRow];	//
 
-	int SelectedSegment,firstSelectedSegmentPoint;
+	NSInteger SelectedSegment,firstSelectedSegmentPoint;
 
 	if ( selectedRow!=dNoRowSelected)
 	{

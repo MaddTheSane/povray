@@ -55,7 +55,7 @@ static BOOL mSkySphereWritten;
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 	mSkySphereWritten=NO;
 	if ( dict== nil)
@@ -109,7 +109,7 @@ static BOOL mSkySphereWritten;
 //---------------------------------------------------------------------
 // addLayer:fromMap
 //---------------------------------------------------------------------
-+(void) addLayer:(MutableTabString*) ds atIndex:(int)index fromMap:(id)cmap
++(void) addLayer:(MutableTabString*) ds atIndex:(NSInteger)index fromMap:(id)cmap
 {
 
 	if ( [cmap intAtRow:index atColumn:cMaterialmapOnOffIndex]==NSOnState)
@@ -324,19 +324,19 @@ static BOOL mSkySphereWritten;
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 		
 		
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSArchiver archivedDataWithRootObject:		[materialEditorMap standardMap]],		@"materialEditorMap",
-		[NSNumber numberWithInt:NSOffState],		@"materialMainTabView",
-		[NSNumber numberWithInt:NSOffState],		@"materialDontWrapInMaterial",
+		@(NSOffState),		@"materialMainTabView",
+		@(NSOffState),		@"materialDontWrapInMaterial",
 
-		[NSNumber numberWithInt:NSOffState],		@"materialTransformationsOn",
+		@(NSOffState),		@"materialTransformationsOn",
 		@"0.0",																	@"materialVEdit",
 		@"0.0",																	@"materialHEdit",
-		[NSNumber numberWithInt:NSOnState],			@"materialFillOn",
+		@(NSOnState),			@"materialFillOn",
 		@"25",																	@"materialFillEdit",
 		
 		[NSNumber numberWithInt:cObjectUnion],			@"materialObjectPopUp",
