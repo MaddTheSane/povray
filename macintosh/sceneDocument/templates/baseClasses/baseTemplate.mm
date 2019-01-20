@@ -497,7 +497,7 @@ static const char *templateTypeNameArray[]={
 		outlet=[mOutlets objectForKey:key];
 		if ( [outlet isMemberOfClass:[NSButton class]])
 		{
-			anObject=[NSNumber numberWithInt:[outlet state]];
+			anObject=[NSNumber numberWithInteger:[outlet state]];
 			[dict setObject:anObject forKey:key];
 		}
 		else if ( [outlet isMemberOfClass:[NSTextView class]])
@@ -517,7 +517,7 @@ static const char *templateTypeNameArray[]={
 		}
 		else if ( [outlet isMemberOfClass:[NSButtonCell class]])
 		{
-			anObject=[NSNumber numberWithInt:[outlet state]];
+			anObject=[NSNumber numberWithInteger:[outlet state]];
 			[dict setObject:anObject forKey:key];
 		}
 		//color***************************************************************************
@@ -543,17 +543,17 @@ static const char *templateTypeNameArray[]={
 
 		else if ( [outlet isMemberOfClass:[NSPopUpButton class]])
 		{
-			anObject=[NSNumber numberWithInt:[outlet indexOfSelectedItem]];
+			anObject=[NSNumber numberWithInteger:[outlet indexOfSelectedItem]];
 			[dict setObject:anObject forKey:key];
 		}
 		else if ( [outlet isMemberOfClass:[NSMatrix class]])
 		{
-			anObject=[NSNumber numberWithInt:[[outlet selectedCell]tag]];
+			anObject=[NSNumber numberWithInteger:[[outlet selectedCell]tag]];
 			[dict setObject:anObject forKey:key];
 		}
 		else if ( [outlet isMemberOfClass:[NSTabView class]])
 		{
-			anObject=	[NSNumber numberWithInt:[outlet indexOfTabViewItem:[outlet selectedTabViewItem]]];
+			anObject=	[NSNumber numberWithInteger:[outlet indexOfTabViewItem:[outlet selectedTabViewItem]]];
 			[dict setObject:anObject forKey:key];
 		}
 	}	
@@ -1002,7 +1002,7 @@ static const char *templateTypeNameArray[]={
 
 -(void) setSubViewsOfNSBoxReverse:( NSBox *) group toNSButton:(NSButton*)button
 {
-	int newState=[button state];
+	NSControlStateValue newState=[button state];
 	if ( newState==NSOnState)
 		newState=NSOffState;
 	else
@@ -1021,7 +1021,7 @@ static const char *templateTypeNameArray[]={
 //----------------------------------------------------------------------
 -(void) setTabView: (NSTabView *) tabView toIndexOfPopup:(NSPopUpButton* ) popup
 {
-	int item=[popup indexOfSelectedItem];
+	NSInteger item=[popup indexOfSelectedItem];
 	[tabView selectTabViewItemAtIndex:item];
 }
 

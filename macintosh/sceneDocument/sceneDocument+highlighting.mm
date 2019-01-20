@@ -515,7 +515,7 @@ shakeMessage(@"recoloring");
 -(void) applySyntaxHighlightingOnlyComment:(NSMutableAttributedString *) ms forRange:(NSRange) r blackSet:(BOOL) blackIsSet
 {
 	mEffectiveRecoloredRange.location=NSNotFound;
-	unsigned lastPosition=[ms length];	// last character in the string (not range)
+	NSUInteger lastPosition=[ms length];	// last character in the string (not range)
 	if ( lastPosition==0)	//no characters, don't do anything
 		return;
 	lastPosition--;	// for index

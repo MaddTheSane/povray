@@ -246,7 +246,7 @@ enum {
 //---------------------------------------------------------------------
 -(IBAction) materialmapTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cMaterialmapProjectionPopUp;
 	else
@@ -334,7 +334,7 @@ enum {
 {
 	id 	prefs=nil;
 
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	switch( tag)
 	{
 
@@ -372,7 +372,7 @@ enum {
 {
 	id identifier=[tableColumn identifier];
 	if ( [identifier isEqualToString:@"Location"])
-		return [NSNumber numberWithInt:rowIndex];
+		return [NSNumber numberWithInteger:rowIndex];
 	else if ( [identifier isEqualToString:@"identifier"])
 		return [mMap identifierAtIndex:rowIndex];
 	return nil;

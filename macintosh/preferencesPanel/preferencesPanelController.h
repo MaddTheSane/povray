@@ -400,7 +400,7 @@ typedef NS_ENUM(NSInteger, preferencesTag) {
 -(void) setPanelTitle;
 - (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem;
 -(NSMutableDictionary*) getDictWithCurrentSettings:(BOOL) writeToDefaults;
- - (int) putDictionaryInSettingsArray: (NSMutableDictionary*)dictionaryToAdd;
+ - (NSInteger) putDictionaryInSettingsArray: (NSMutableDictionary*)dictionaryToAdd;
 - (void) updateStartEndRatio;
 - (void) updateStartEndValues;
 -(void) newSelectionInPreviewwindowSet:(NSNotification *) notification;

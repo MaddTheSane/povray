@@ -567,7 +567,7 @@ static PreferencesPanelController* _preferencesPanelController;
 //---------------------------------------------------------------------
 - (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem
 {
-	[self setIndexOfSelectedTabViewItem:[NSNumber numberWithInt:[tabView indexOfTabViewItem:tabViewItem]]];
+	[self setIndexOfSelectedTabViewItem:@([tabView indexOfTabViewItem:tabViewItem])];
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
 	[defaults setObject:indexOfSelectedTabViewItem forKey:@"indexOfSelectedTabViewItem"];
 }
@@ -791,7 +791,7 @@ static PreferencesPanelController* _preferencesPanelController;
 //---------------------------------------------------------------------
 - (NSMutableDictionary*) setttingsDictionaryWithName: (NSString*)dictionaryToSearchFor
 {
-	int index=[mSettingsArray count];
+	NSInteger index=[mSettingsArray count];
 	NSMutableDictionary *dict;
 	// first see if it is in the defaults (could be factory settings)
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
@@ -816,7 +816,7 @@ static PreferencesPanelController* _preferencesPanelController;
 // putDictionaryInSettingsArray
 //
 //---------------------------------------------------------------------
-- (int) putDictionaryInSettingsArray: (NSMutableDictionary*)dictionaryToAdd
+- (NSInteger) putDictionaryInSettingsArray: (NSMutableDictionary*)dictionaryToAdd
 {
 	if  (dictionaryToAdd==nil)
 		return 0;
@@ -825,7 +825,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	if  (dictName == nil)	//no name, so we don't add it
 		return 0;
 	
-	int index=[mSettingsArray count];
+	NSInteger index=[mSettingsArray count];
 	
 	while (index >0)
 	{
@@ -1038,9 +1038,9 @@ static PreferencesPanelController* _preferencesPanelController;
 			case cYSubsetEnd:
 				inside = true;
 				if ( [xSubsetEnd integerValue] >[imageSizeX floatValue] ||[xSubsetEnd integerValue]<0)
-					[xSubsetEnd setIntValue:[imageSizeX integerValue]];
+					[xSubsetEnd setIntegerValue:[imageSizeX integerValue]];
 				if ( [ySubsetEnd integerValue] >[imageSizeY floatValue]||[ySubsetEnd integerValue]<0)
-					[ySubsetEnd setIntValue:[imageSizeY integerValue]];
+					[ySubsetEnd setIntegerValue:[imageSizeY integerValue]];
 				[self updateStartEndRatio];
 				[self sendNotificationSubsetDidChange];
 				inside= false;

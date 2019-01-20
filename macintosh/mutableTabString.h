@@ -52,11 +52,10 @@
 -(void) addTab;
 -(int) currentTabs;
 
--(NSMutableString *) string;
--(void) setString: (NSMutableString*) str;
--(NSMutableString *) tabString;
+@property (retain) NSMutableString *string;
+@property (retain) NSMutableString *tabString;
 -(void) setTabString: (NSMutableString*)tabStr;
--(unsigned int) length;
+-(NSUInteger) length;
 
 -(void) copyTabAndText:(NSString*)string;
 -(void) copyText:(NSString *) string;

@@ -66,45 +66,19 @@
 
 
 //---------------------------------------------------------------------
-// setString
-//---------------------------------------------------------------------
--(void) setString: (NSMutableString*)str
-{	
-	[mString release];
-	mString = str;
-	[mString retain];
-}
-
-//---------------------------------------------------------------------
-// setTabString
-//---------------------------------------------------------------------
--(void) setTabString: (NSMutableString*)tabStr
-{	
-	[mTabString release];
-	mTabString = tabStr;
-	[mTabString retain];
-}	
-
-//---------------------------------------------------------------------
 // tabString
 //---------------------------------------------------------------------
--(NSMutableString *) tabString
-{
-	return mTabString;
-}
+@synthesize tabString=mTabString;
 
 //---------------------------------------------------------------------
 // string
 //---------------------------------------------------------------------
--(NSMutableString *) string
-{
-	return mString;
-}
+@synthesize string=mString;
 
 //---------------------------------------------------------------------
 // length
 //---------------------------------------------------------------------
--(unsigned int) length
+-(NSUInteger) length
 {
 	return [mString length];
 }

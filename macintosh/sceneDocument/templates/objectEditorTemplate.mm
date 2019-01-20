@@ -486,7 +486,7 @@ enum {
 		}
 		else if (  [mMap buttonState:cSplineTypePopUp]==cBezierSpline)
 		{
-			int SelectedSegment=(rowIndex/4)+1;
+			NSInteger SelectedSegment=(rowIndex/4)+1;
 
 			if ( rowIndex == 0 )																//first point always start of segment
 				str=[NSString stringWithFormat:@"S %d",SelectedSegment];

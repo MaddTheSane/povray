@@ -656,7 +656,7 @@
 	{
 		if ( [[mSceneTextView textStorage]length]/(1024*1024) > 25l)
 		{
-			int res=NSRunAlertPanel( NSLocalizedStringFromTable(@"DocumentIsHuge", @"applicationLocalized", @"This is a large file\n"),
+			NSInteger res=NSRunAlertPanel( NSLocalizedStringFromTable(@"DocumentIsHuge", @"applicationLocalized", @"This is a large file\n"),
 														NSLocalizedStringFromTable(@"DocumentIsHuge2", @"applicationLocalized", @"Turning on syntax coloring will lock up the computer for a long time.\nDo you want to proceed anyway?"),
 														NSLocalizedStringFromTable(@"ColorOff", @"applicationLocalized", @"Color off"),
 														NSLocalizedStringFromTable(@"ColorOn", @"applicationLocalized", @"Color on"),
@@ -1408,7 +1408,7 @@ NS_ENDHANDLER
 				line ++;
 		}
 	}
-	[gotoEdit setIntValue:line];
+	[gotoEdit setIntegerValue:line];
 	[mSceneTextView setTypingAttributes:[[appPreferencesController sharedInstance] style: cBlackStyle ]];
 
 }
