@@ -1,0 +1,105 @@
+/* loading files*/
+	"DirectoryCanNotBeLoaded"="\nThis application can not open directories or bundles.";
+	"UnknowErrorLoadingFile"="\nAn unknown error has occured.";
+	"NoFileHandleForReading"="\nCould not create a handle to the file.\nFile can not be loaded.";
+	/*panel to choose to turn colored syntax off or skip loading huge files*/
+	"FileIsHuge"=" is larger than ";
+	"StillLoad"="It can take a long time to load the file.\nYou can choose to:\n- load with colored syntax off;\n- load with colored syntax (slows down loading at lot);\n- skip loading this file;\n";
+	"ColorOff" = "Color off";
+	"ColorOn" = "Color on";
+	"DontLoad" = "Skip";
+	/*when coloring a file from menu*/
+		"DocumentIsHuge"="This is a large file\n";
+		"DocumentIsHuge2"="Turning on syntax coloring will lock up the computer for a long time.\nDo you want to proceed anyway?";
+
+/* Render menu*/
+	"Continue" = "Continue";
+	"Pause" = "Pause";
+
+/* import export menu*/
+	"importMenuItem" = "Import";
+	"exportMenuItem" = "Export";
+
+	/*used when a wrong preferences file is selected for importing in global settings or material editor*/
+	"WrongTemplateSettings" = "Invalid preferences file.";
+	"SelectCorrectFile" = "Only %@ settings files can be used.";
+	"OnlyPigmetSettingsfile"= "Only pigment files can be used.";
+	"OnlyNormalSettingsFile"="Only normal files can be used.";
+	"OnlyFinisSettingsFile" = "Only finish files can be used.";
+	"OnlyInteriorSettingsFile"="Only interior files can be used.";
+
+	/* global settings menu extensions*/
+	"GlobalsTab" = "Global Settings";
+	"ToneMappingTab" = "Tone Mapping Settings";
+	"RadiosityTab" = "Radiosity Settings";
+	"PhotonsTab" = "Photon Settings";
+	"MotionblurTab" = "Motion Blur Settings";
+	
+	/*material editor menu extensions*/
+	"cMaterialPigmentTab" = "Pigment";
+	"cMaterialNormalTab" = "Normal";
+	"cMaterialFinishTab" = "Finish";
+	"cMaterialInteriorTab" = "Interior";
+/* Beta has expired*/
+		"BetaExpiredTitle" = "Pre-release version has expired.";
+	"BetaExpiredMessage" = "This unofficial version of POV-Ray for Macintosh has expired.\nBy now there should be a new version available for downloading.";
+	"BetaExpiredExtendMessage" = "This unofficial version of POV-Ray for Macintosh has expired.\nBy now there should be a new version available for downloading.\n\nIf however you wish to continue using this version you may do so by pressing the EXTEND button, which will re-enable the program for an additional week, at which time you will be asked this question again.";
+	"BetaExpiredQuit" = "Quit";
+	"BetaExpiredExtend" = "Extend";
+/* commonly used strings */
+/* mostly in alert panels */
+	"Cancel" = "Cancel";
+	"Quit" = "Quit";
+	"Ok" = "OK";
+/* alert panel when Quit is selected while rendering*/
+	"RenderInProgress" ="Render in Progress";
+	"ReallyQuit" = "Stop rendering and quit MegaPOV?"; 
+
+/* picture preview window*/
+
+	"stopButton" = "Stop the current rendering";
+	"pauseButton" = "Pause or resume rendering the current image.";
+	"cutButton" = "Select region for partial rendering of the image.";
+	
+/* templates general*/
+
+	"templateOkButton" = "Dismiss this dialog and enter changes. \nFor the editor, the template output\nwill be written at the insertion point";
+		
+	"templateCancelButton" = "Dismiss this dialog without making changes";
+
+	"templateResetButton" = "Restore all settings to their default values";
+	
+	"templateOpenButton" = "Open a previously saved template";
+	
+	"templateSaveButton" =  "Save the contents of this template.\n(Once saved, it can be loaded at any time.)";
+	
+/*scenedocument*/
+
+	"toolBarRenderButtonLabel" = "Render";
+	"toolBarRenderButtonPaletteLabel" = "Render document";
+	"toolBarRenderButtonTooltip" = "Move document to the render preferences dialog and render";
+
+	"toolBarPrepareButtonLabel" = "Set Up";
+	"toolBarPrepareButtonPaletteLabel" =  "Set up document";
+	"toolBarPrepareButtonTooltip" = "Move document to the render preferences dialog without rendering";
+
+	"toolBarShiftLButtonLabel" = "Shift L";
+	"toolBarShiftLButtonPaletteLabel" = "Shift selection left";
+	"toolBarShiftLButtonTooltip" = "Move the selection, or current line, to the left";
+
+	"toolBarShiftRButtonLabel" = "Shift R";
+	"toolBarShiftRButtonPaletteLabel" = "Shift selection right";
+	"toolBarShiftRButtonTooltip" = "Move the selection, or current line, to the right";
+
+	"toolBarAddCommentButtonLabel" = "Comment";
+	"toolBarAddCommentButtonPaletteLabel" = "Comment selection out";
+	"toolBarAddCommentButtonTooltip" = "Insert '//' for every line in the selection or the current line";
+
+	"toolBarRemoveCommentButtonLabel" = "Uncomment";
+	"toolBarRemoveCommentButtonPaletteLabel" = "Remove comment marks from selection";
+	"toolBarRemoveCommentButtonTooltip" = "Remove the first '//' from line(s)";
+
+	"toolBarBalanceBracesButtonLabel" = "Balance";
+	"toolBarBalanceBracesButtonPaletteLabel" = "Check if braces are balanced";
+	"toolBarBalanceBracesButtonTooltip" = "Balance Braces.  Place cursor before\nbrace to select a balanced block.";
+
