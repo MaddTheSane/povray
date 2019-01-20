@@ -61,7 +61,7 @@
 //---------------------------------------------------------------------
 // selectTableRow:index
 //---------------------------------------------------------------------
--(void) selectTableRow:(int)index
+-(void) selectTableRow:(NSInteger)index
 {
 	[mTemplate selectTableRow:index];
 }
@@ -85,10 +85,10 @@
 //---------------------------------------------------------------------
 // firstSelectedRow: 
 //---------------------------------------------------------------------
-- (int)firstSelectedRow
+- (NSInteger)firstSelectedRow
 {
-	int ret=dNoRowSelected;
-	for( int x=0; x<[self count]; x++)
+	NSInteger ret=dNoRowSelected;
+	for( NSInteger x=0; x<[self count]; x++)
 	{
 		if ([ [self tableView] isRowSelected:x])
 		{
@@ -137,10 +137,7 @@
 //---------------------------------------------------------------------
 // preview
 //---------------------------------------------------------------------
--(id) preview
-{
-	return mPreview;
-}
+@synthesize preview=mPreview;
 
 //---------------------------------------------------------------------
 // setPreview
@@ -154,7 +151,7 @@
 //---------------------------------------------------------------------
 // removeEntryAtIndex
 //---------------------------------------------------------------------
--(void) removeEntryAtIndex:(int)index reload:(bool)forceReload
+-(void) removeEntryAtIndex:(NSInteger)index reload:(BOOL)forceReload
 {
 	if (index <0)
 		return;
@@ -199,7 +196,7 @@
 //---------------------------------------------------------------------
 // archivedObjectAtIndex
 //---------------------------------------------------------------------
--(NSData *) archivedObjectAtIndex:(int)index
+-(NSData *) archivedObjectAtIndex:(NSInteger)index
 {
 	if (index > [self count])
 		return nil;
@@ -210,7 +207,7 @@
 //---------------------------------------------------------------------
 // insertArchivedObject
 //---------------------------------------------------------------------
--(void ) insertArchivedObject:(NSData *)data atIndex:(int) index
+-(void ) insertArchivedObject:(NSData *)data atIndex:(NSInteger) index
 {
 	id object=[NSUnarchiver unarchiveObjectWithData:data];
 	if ( object)
@@ -277,6 +274,15 @@
 }
 
 //---------------------------------------------------------------------
+// integerAtRow: atColumn
+//---------------------------------------------------------------------
+-(NSInteger) integerAtRow:(NSUInteger)row atColumn:( NSUInteger) column
+{
+	id obj=[self objectAtRow:row atColumn:column];
+	return [obj integerValue];
+}
+
+//---------------------------------------------------------------------
 // floatAtRow: atColumn
 //---------------------------------------------------------------------
 -(float) floatAtRow:(NSUInteger)row atColumn:( NSUInteger) column
@@ -310,7 +316,7 @@
 -(void) setFloat:(float)val atRow:(NSUInteger) row atColumn:(NSUInteger) column
 {
 	NSMutableArray *a=[mMapArray objectAtIndex:row];
-	[a replaceObjectAtIndex:column withObject:[NSNumber numberWithFloat:val]];
+	[a replaceObjectAtIndex:column withObject:@(val)];
 }
 //---------------------------------------------------------------------
 // setInt: atRow: atColumn
@@ -318,9 +324,17 @@
 -(void) setInt:(int)val atRow:(NSUInteger)row atColumn:(NSUInteger) column
 {
 	NSMutableArray *a=[mMapArray objectAtIndex:row];
-	[a replaceObjectAtIndex:column withObject:[NSNumber numberWithInt:val]];
+	[a replaceObjectAtIndex:column withObject:@(val)];
 }
 
+//---------------------------------------------------------------------
+// setInteger: atRow: atColumn
+//---------------------------------------------------------------------
+-(void) setInteger:(NSInteger)val atRow:(NSUInteger)row atColumn:(NSUInteger) column
+{
+	NSMutableArray *a=[mMapArray objectAtIndex:row];
+	[a replaceObjectAtIndex:column withObject:@(val)];
+}
 
 
 @end

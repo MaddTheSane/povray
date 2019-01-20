@@ -69,7 +69,7 @@
 //---------------------------------------------------------------------
 // selectTableRow:index
 //---------------------------------------------------------------------
--(void) selectTableRow:(int)index
+-(void) selectTableRow:(NSInteger)index
 {
 	[mTableView selectRowIndexes:[NSIndexSet indexSetWithIndex:index] 
 		byExtendingSelection:NO];

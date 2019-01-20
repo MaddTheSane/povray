@@ -44,7 +44,7 @@
 /*
  * SystemEvents.h
  */
- 
+
 #import <AppKit/AppKit.h>
 #import <ScriptingBridge/ScriptingBridge.h>
 

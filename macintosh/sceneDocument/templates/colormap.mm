@@ -43,14 +43,7 @@
 #import "syspovdebug.h"
 
 @implementation ColorCell
--(BOOL) isGrayScale
-{
-	return mUseGrayScale;
-}
--(void) setIsGrayScale:(BOOL) is
-{
-	mUseGrayScale=is;
-}
+@synthesize isGrayScale = mUseGrayScale;
 
 - (void) drawWithFrame: (NSRect) cellFrame inView: (NSView*) controlView 
 {
@@ -84,7 +77,7 @@
 //---------------------------------------------------------------------
 +(id) standardMapWithView:(id)view
 {
-	colormap *c=[[colormap alloc] init];
+	colormap *c=[[self alloc] init];
 	[c makeDefaultMap];
 	[c setPreview:view];
 	[c autorelease];
@@ -95,7 +88,7 @@
 //---------------------------------------------------------------------
 +(id) rainbowMapWithView:(id)view
 {
-	colormap *c=[[colormap alloc] init];
+	colormap *c=[[self alloc] init];
 	[c makeRainbowMap];
 	[c setPreview:view];
 	[c autorelease];
@@ -106,7 +99,7 @@
 //---------------------------------------------------------------------
 +(id) blackAndWhiteMapWithView:(id)view
 {
-	colormap *c=[[colormap alloc] init];
+	colormap *c=[[self alloc] init];
 	[c makeBlackAndWhiteMap];
 	[c setPreview:view];
 	[c autorelease];
@@ -229,7 +222,7 @@
 //---------------------------------------------------------------------
 // replaceEntryAtIndex:withObject
 //---------------------------------------------------------------------
--(void)replaceEntryAtIndex:(unsigned int) index withObject:(NSColor *) color
+-(void)replaceEntryAtIndex:(NSUInteger) index withObject:(NSColor *) color
 {
 	NSMutableArray *entry=[mMapArray objectAtIndex:index];
 	[entry replaceObjectAtIndex:cColormapColorIndex withObject:color];
@@ -241,7 +234,7 @@
 //---------------------------------------------------------------------
 // redAtIndex
 //---------------------------------------------------------------------
--(NSString *) redAtIndex:(unsigned int) index
+-(NSString *) redAtIndex:(NSUInteger) index
 {
 	NSColor *cl=[self objectAtRow: index atColumn:cColormapColorIndex];
 	return [NSString stringWithFormat:FloatFormat,[cl redComponent]];
@@ -250,7 +243,7 @@
 //---------------------------------------------------------------------
 // greenAtIndex
 //---------------------------------------------------------------------
--(NSString *) greenAtIndex:(unsigned int) index
+-(NSString *) greenAtIndex:(NSUInteger) index
 {
 	NSColor *cl=[self objectAtRow: index atColumn:cColormapColorIndex];
 	return [NSString stringWithFormat:FloatFormat,[cl greenComponent]];
@@ -259,7 +252,7 @@
 //---------------------------------------------------------------------
 // blueAtIndex
 //---------------------------------------------------------------------
--(NSString *) blueAtIndex:(unsigned int) index
+-(NSString *) blueAtIndex:(NSUInteger) index
 {
 	NSColor *cl=[self objectAtRow: index atColumn:cColormapColorIndex];
 	return [NSString stringWithFormat:FloatFormat,[cl blueComponent]];
@@ -268,14 +261,14 @@
 //---------------------------------------------------------------------
 // insertEntryAtIndex
 //---------------------------------------------------------------------
--(void) insertEntryAtIndex:(int)index
+-(void) insertEntryAtIndex:(NSInteger)index
 {
 	float locationTop,redTop, greenTop, blueTop, filterTop,transmitTop;
 	float locationEnd,redEnd, greenEnd, blueEnd, filterEnd,transmitEnd;
 	if ( index <0)
 		return;
 		
-	int entries=[self count];
+	NSInteger entries=[self count];
 	if ( index+1 > entries)
 		index--;
 		
@@ -333,7 +326,7 @@
 //---------------------------------------------------------------------
 // setRed:atIndex
 //---------------------------------------------------------------------
--(void) setRed:(NSString *)red atIndex:(unsigned int) index
+-(void) setRed:(NSString *)red atIndex:(NSUInteger) index
 {
 	NSMutableArray *entry=[mMapArray objectAtIndex:index];
 	NSColor *cl=[entry objectAtIndex:cColormapColorIndex];
@@ -345,7 +338,7 @@
 //---------------------------------------------------------------------
 // setGreen:atIndex
 //---------------------------------------------------------------------
--(void) setGreen:(NSString *)green atIndex:(unsigned int) index
+-(void) setGreen:(NSString *)green atIndex:(NSUInteger) index
 {
 	NSMutableArray *entry=[mMapArray objectAtIndex:index];
 	NSColor *cl=[entry objectAtIndex:cColormapColorIndex];
@@ -357,7 +350,7 @@
 //---------------------------------------------------------------------
 // setBlue:atIndex
 //---------------------------------------------------------------------
--(void) setBlue:(NSString *)blue atIndex:(unsigned int) index
+-(void) setBlue:(NSString *)blue atIndex:(NSUInteger) index
 {
 	NSMutableArray *entry=[mMapArray objectAtIndex:index];
 	NSColor *cl=[entry objectAtIndex:cColormapColorIndex];
@@ -369,7 +362,7 @@
 //---------------------------------------------------------------------
 // setButtonState:forButton
 //---------------------------------------------------------------------
--(void) setButtonState:(int) state forButton:(int)button
+-(void) setButtonState:(NSControlStateValue) state forButton:(eColormapButtonsTags)button
 {
 	switch ( button)
 	{
@@ -383,7 +376,7 @@
 //---------------------------------------------------------------------
 // buttonState
 //---------------------------------------------------------------------
--(int) buttonState:(int)button
+-(NSControlStateValue) buttonState:(eColormapButtonsTags)button
 {
 	switch ( button)
 	{
@@ -411,6 +404,7 @@
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
+	self = [super init]
 	[self setArray:[decoder decodeObject]];
 	[decoder decodeValueOfObjCType:@encode(int) at:&mUseGrayColorOn];
 	[decoder decodeValueOfObjCType:@encode(int) at:&mFilterOn];
