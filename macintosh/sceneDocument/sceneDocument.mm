@@ -851,7 +851,7 @@
 				NSString *hugeString=[NSString stringWithString:[absoluteURL lastPathComponent]];
 				hugeString=[hugeString stringByAppendingString:messageString];
 				hugeString =[hugeString stringByAppendingString:@"25Mb."];
-				int res=NSRunAlertPanel( hugeString,
+				NSInteger res=NSRunAlertPanel( hugeString,
 																NSLocalizedStringFromTable(@"StillLoad", @"applicationLocalized", @"Load with color off, color on or skip loading?"),
 																	NSLocalizedStringFromTable(@"DontLoad", @"applicationLocalized", @"Skip"),
 																NSLocalizedStringFromTable(@"ColorOn", @"applicationLocalized", @"Color on"),

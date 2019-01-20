@@ -155,18 +155,41 @@
 	return ret;
 }
 
+#define EncodedFilterOn @"POVFilterOn"
+#define EncodedFilterPercent @"POVFilterPercent"
+#define EncodedTransmitOn @"POVTransmitOn"
+#define EncodedTransmitPercent @"POVTransmitPercent"
+#define EncodedHasFilterTransmit @"POVHasFilterAndTransmit"
+#define EncodedGrayOn @"POVGrayOn"
+
 //---------------------------------------------------------------------
 // encodeWithCoder:encoder
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
 	[super encodeWithCoder:encoder];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mFilterOnState];
-	[encoder encodeValueOfObjCType:@encode(float) at:&mFilter];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mTransmitOnState];
-	[encoder encodeValueOfObjCType:@encode(float) at:&mTransmit];
+	if ([encoder allowsKeyedCoding]) {
+		[encoder encodeInteger:mFilterOnState forKey:EncodedFilterOn];
+		[encoder encodeDouble:mFilter forKey:EncodedFilterPercent];
+		[encoder encodeInteger:mTransmitOnState forKey:EncodedTransmitOn];
+		[encoder encodeDouble:mTransmit forKey:EncodedTransmitPercent];
+		[encoder encodeBool:mHasFilterTransmit forKey:EncodedHasFilterTransmit];
+		[encoder encodeInteger:mGrayOn forKey:EncodedGrayOn];
+	} else {
+		int tmpInt;
+		float tmpFloat;
+		tmpInt = (int)mFilterOnState;
+	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+		tmpFloat = mFilter;
+	[encoder encodeValueOfObjCType:@encode(float) at:&tmpFloat];
+		tmpInt = (int)mTransmitOnState;
+	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+		tmpFloat = mTransmit;
+	[encoder encodeValueOfObjCType:@encode(float) at:&tmpFloat];
 	[encoder encodeValueOfObjCType:@encode(BOOL) at:&mHasFilterTransmit];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mGrayOn];
+		tmpInt = (int)mGrayOn;
+	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+	}
 }
 
 //---------------------------------------------------------------------
@@ -175,12 +198,28 @@
 -(id)initWithCoder:(NSCoder*) decoder
 {
 	self=[super initWithCoder:decoder];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mFilterOnState];
-	[decoder decodeValueOfObjCType:@encode(float) at:&mFilter];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mTransmitOnState];
-	[decoder decodeValueOfObjCType:@encode(float) at:&mTransmit];
+	if ([decoder allowsKeyedCoding] && [decoder containsValueForKey:EncodedFilterOn]) {
+		mFilterOnState = [decoder decodeIntegerForKey:EncodedFilterOn];
+		mFilter = [decoder decodeDoubleForKey:EncodedFilterPercent];
+		mTransmitOnState = [decoder decodeIntegerForKey:EncodedTransmitOn];
+		mTransmit = [decoder decodeFloatForKey:EncodedTransmitPercent];
+		mHasFilterTransmit = [decoder decodeBoolForKey:EncodedHasFilterTransmit];
+		mGrayOn = [decoder decodeIntegerForKey:EncodedGrayOn];
+	} else {
+		int tmpInt;
+		float tmpFloat;
+	[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+		mFilterOnState=tmpInt;
+	[decoder decodeValueOfObjCType:@encode(float) at:&tmpFloat];
+		mFilter=tmpFloat;
+	[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+		mTransmitOnState=tmpInt;
+	[decoder decodeValueOfObjCType:@encode(float) at:&tmpFloat];
+		mTransmit=tmpFloat;
 	[decoder decodeValueOfObjCType:@encode(BOOL) at:&mHasFilterTransmit];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mGrayOn];
+	[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+		mGrayOn = tmpInt;
+	}
 	return self;
 }
 //---------------------------------------------------------------------
@@ -297,7 +336,7 @@
 //---------------------------------------------------------------------
 // colorWithCalibratedRed
 //---------------------------------------------------------------------
-+ (id)colorWithCalibratedRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha filter:(BOOL)filter
++ (id)colorWithCalibratedRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha filter:(BOOL)filter
 {
 	return [MPColorWell withColor:[NSColor colorWithCalibratedRed:red	green:green	blue:blue	alpha:alpha]andFilter:filter];
 }
@@ -305,18 +344,7 @@
 //---------------------------------------------------------------------
 // hasFilterTransmit
 //---------------------------------------------------------------------
--(BOOL) hasFilterTransmit
-{
-	return mHasFilterTransmit;
-}
-
-//---------------------------------------------------------------------
-// setHasFilterTransmit
-//---------------------------------------------------------------------
--(void) setHasFilterTransmit:(BOOL)filter
-{
-	mHasFilterTransmit=filter;
-}
+@synthesize hasFilterTransmit=mHasFilterTransmit;
 
 //---------------------------------------------------------------------
 // mouseDown
@@ -336,53 +364,33 @@
 //---------------------------------------------------------------------
 // filterOn
 //---------------------------------------------------------------------
--(int) filterOn
-{
-	return mFilterOnState;
-}
+@synthesize filterOn=mFilterOnState;
 
 //---------------------------------------------------------------------
 // filter
 //---------------------------------------------------------------------
--(float) filter
-{
-	return mFilter;
-}
+@synthesize filter=mFilter;
 
 //---------------------------------------------------------------------
 // transmitOn
 //---------------------------------------------------------------------
--(int) transmitOn
-{
-	return mTransmitOnState;
-}
+@synthesize transmitOn=mTransmitOnState;
 
 
 //---------------------------------------------------------------------
 // mTransmit
 //---------------------------------------------------------------------
--(float) transmit
-{
-	return mTransmit;
-}
+@synthesize transmit=mTransmit;
 
 //---------------------------------------------------------------------
 // grayOn
 //---------------------------------------------------------------------
--(int) grayOn
-{
-	return mGrayOn;
-}
-
--(void) setGrayOn:(int)gray
-{
-	mGrayOn=gray;
-}
+@synthesize grayOn=mGrayOn;
 
 //---------------------------------------------------------------------
 // setFilter:toState
 //---------------------------------------------------------------------
--(void) setFilter:(float)filter toState:(int)filterOn andTransmit:(float)transmit toState:(int)transmitOn
+-(void) setFilter:(CGFloat)filter toState:(NSControlStateValue)filterOn andTransmit:(CGFloat)transmit toState:(NSControlStateValue)transmitOn
 {
 	mFilter=filter;
 	mFilterOnState=filterOn;

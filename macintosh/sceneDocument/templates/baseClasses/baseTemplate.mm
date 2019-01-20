@@ -985,7 +985,7 @@ static const char *templateTypeNameArray[]={
 
 -(void) setSubViewsOfNSBox:( NSBox *) group toNSButton:(NSButton*)button
 {
-	int newState=[button state];
+	NSControlStateValue newState=[button state];
 	if ( [button isEnabled]==NO)	// enabled is also off and all other object should be disabled too
 		newState=NSOffState;
 

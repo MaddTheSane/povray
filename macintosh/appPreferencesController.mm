@@ -391,7 +391,7 @@ static appPreferencesController	*_appPreferencesController;
 //---------------------------------------------------------------------
 - (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem
 {
-	NSNumber *IndexOfSelectedTabViewItem=[NSNumber numberWithInt:[tabView indexOfTabViewItem:tabViewItem]];
+	NSNumber *IndexOfSelectedTabViewItem=@([tabView indexOfTabViewItem:tabViewItem]);
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
 	[defaults setObject:IndexOfSelectedTabViewItem forKey:@"indexOfAppPrefsSelectedTabViewItem"];
 }

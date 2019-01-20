@@ -140,13 +140,13 @@ enum {
 //---------------------------------------------------------------------
 -(void) insertEntryAtIndex:(int)index
 {
-	float locationTop;
-	float locationEnd;
+	CGFloat locationTop;
+	CGFloat locationEnd;
 
 	if ( index <0)
 		return;
 		
-	int entries=[self count];
+	NSInteger entries=[self count];
 	if ( index+1 > entries)
 		index--;
 		

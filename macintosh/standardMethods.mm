@@ -90,7 +90,7 @@
 //	Note that the array of subviews for NSBox is only one NSView
 //	The subviews of that view are the 'real' subviews of an NSBox
 //----------------------------------------------------------------------
-void SetSubViewsOfNSBoxToState( NSBox *group, NSInteger newState)
+void SetSubViewsOfNSBoxToState( NSBox *group, NSControlStateValue newState)
 {
 
 	NSArray *subviewArray=[[[group subviews]objectAtIndex:0] subviews] ;

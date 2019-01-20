@@ -83,15 +83,15 @@
 //---------------------------------------------------------------------
 // insertEntryAtIndex
 //---------------------------------------------------------------------
--(void) insertEntryAtIndex:(int)index
+-(void) insertEntryAtIndex:(NSInteger)index
 {
-	float locationTop;
-	float locationEnd;
+	CGFloat locationTop;
+	CGFloat locationEnd;
 
 	if ( index <0)
 		return;
 		
-	int entries=[self count];
+	NSInteger entries=[self count];
 	if ( index+1 > entries)
 		index--;
 		
@@ -136,7 +136,7 @@
 //---------------------------------------------------------------------
 // setButtonState:forButton
 //---------------------------------------------------------------------
--(void) setButtonState:(int) state forButton:(int)button
+-(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button
 {
 	switch ( button)
 	{
@@ -151,7 +151,7 @@
 //---------------------------------------------------------------------
 // buttonState
 //---------------------------------------------------------------------
--(int) buttonState:(int)button
+-(NSControlStateValue) buttonState:(NSInteger)button
 {
 	switch ( button)
 	{
@@ -164,16 +164,35 @@
 	}
 }
 
+#define EncodedMapArray @"POVMapArray"
+#define EncodedSlopeOn @"POVSlopeOn"
+#define EncodedPointOn @"POVPointOn"
+#define EncodedRasterOn @"POVRasterOn"
+#define EncodedCurveOn @"POVCurveOn"
+
 //---------------------------------------------------------------------
 // encodeWithCoder:encoder
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
+	if ([encoder allowsKeyedCoding]) {
+		[encoder encodeObject:mMapArray forKey:EncodedMapArray];
+		[encoder encodeInteger:mSlopeOn forKey:EncodedSlopeOn];
+		[encoder encodeInteger:mPointOn forKey:EncodedPointOn];
+		[encoder encodeInteger:mRasterOn forKey:EncodedRasterOn];
+		[encoder encodeInteger:mCurveOn forKey:EncodedCurveOn];
+	} else {
+	int tmpInt;
 	[encoder encodeObject:mMapArray];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mSlopeOn];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mPointOn];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mRasterOn];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mCurveOn];
+	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+	mSlopeOn = tmpInt;
+	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+	mPointOn = tmpInt;
+	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+	mRasterOn = tmpInt;
+	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+	mCurveOn = tmpInt;
+	}
 }
 
 //---------------------------------------------------------------------
@@ -181,12 +200,27 @@
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
-	[self setArray:[decoder decodeObject]];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mSlopeOn];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mPointOn];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mRasterOn];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mCurveOn];
-	[self setSelectedRow:dNoRowSelected];
+	if (self = [super init]) {
+		if ([decoder allowsKeyedCoding] && [decoder containsValueForKey:EncodedMapArray]) {
+			[self setArray:[decoder decodeObjectForKey:EncodedMapArray]];
+			mSlopeOn = [decoder decodeIntegerForKey:EncodedSlopeOn];
+			mPointOn = [decoder decodeIntegerForKey:EncodedPointOn];
+			mRasterOn = [decoder decodeIntegerForKey:EncodedRasterOn];
+			mCurveOn = [decoder decodeIntegerForKey:EncodedCurveOn];
+		} else {
+			int tmpInt;
+			[self setArray:[decoder decodeObject]];
+			tmpInt = (int)mSlopeOn;
+			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+			tmpInt = (int)mPointOn;
+			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+			tmpInt = (int)mRasterOn;
+			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+			tmpInt = (int)mCurveOn;
+			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+			[self setSelectedRow:dNoRowSelected];
+		}
+	}
 	return self;
 }
 

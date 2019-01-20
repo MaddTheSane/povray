@@ -66,15 +66,16 @@ enum eObjectmapIndex {
 
 @interface objectmap : MapBase <NSCoding> 
 {
-	int mSlopeOn;
-	int mPointOn;
-	int mRasterOn;
-	int mCurveOn;
-	int mSplineTypePopUp;
+	NSControlStateValue mSlopeOn;
+	NSControlStateValue mPointOn;
+	NSControlStateValue mRasterOn;
+	NSControlStateValue mCurveOn;
+	NSControlStateValue mSplineTypePopUp;
 	int mTemplateType;
 }
 
-+(id) standardMap:(int) type withView:(id)view;
++(instancetype) standardMap:(int) type withView:(id)view;
+@property (nonatomic) int templateType;
 -(void) setTemplateType:(int)type;
 -(int) templateType;
 
@@ -86,10 +87,10 @@ enum eObjectmapIndex {
 -(void)	buildPrismmap:(int)numberOfPoints;
 
 -(void) addEntry;
--(void) insertEntryAtIndex:(int)index;
+-(void) insertEntryAtIndex:(NSInteger)index;
 
--(void) setButtonState:(int) state forButton:(int)button;
--(int) buttonState:(int)button;
+-(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button;
+-(NSControlStateValue) buttonState:(NSInteger)button;
 
 @end
 

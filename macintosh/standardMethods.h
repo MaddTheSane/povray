@@ -45,7 +45,7 @@
 void SetSubViewsOfNSTabViewToState( NSTabView *tabv, NSInteger newState);
 void SetSubViewsOfNSViewToState( NSView *view, NSInteger newState);
 
-void SetSubViewsOfNSBoxToState( NSBox *group, NSInteger newState);
+void SetSubViewsOfNSBoxToState( NSBox *group, NSControlStateValue newState);
 void SetTabViewToNSPopupButton( NSPopUpButton *button, NSTabView* tabView);
 void enableObjectsAccordingToObject( id referenceObject, ...);
 void disableItemsFromIndex(NSPopUpButton *popup, NSInteger index);

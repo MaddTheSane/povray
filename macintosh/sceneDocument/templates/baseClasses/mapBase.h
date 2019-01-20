@@ -41,7 +41,7 @@
 #import "mapPreview.h"
 #import "standardMethods.h"
 
-enum eSlopeButtonTags {
+typedef NS_ENUM(NSInteger, eSlopeButtonTags) {
 	cSlopeButton	=10,
 	cPointButton	=20,
 	cCurveButton	=30,

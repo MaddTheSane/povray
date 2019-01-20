@@ -1149,7 +1149,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	NSURL *sceneUrl;
 	NSOpenPanel *openPanel;
 	NSMutableDictionary *currentSettings;
-	int theTag;
+	NSInteger theTag;
 	theTag=[sender tag];
 	switch( theTag)
 	{
@@ -1526,66 +1526,66 @@ static PreferencesPanelController* _preferencesPanelController;
 		[dict setObject:[ySubsetStart stringValue] forKey:@"ySubsetStart"];
 		[dict setObject:[xSubsetEnd stringValue] forKey:@"xSubsetEnd"];
 		[dict setObject:[ySubsetEnd stringValue] forKey:@"ySubsetEnd"];
-		[dict setObject:[NSNumber numberWithInt:[ratioOnOff state]] forKey:@"ratioOnOff"];
-		[dict setObject:[NSNumber numberWithInt:[ratioPresets indexOfSelectedItem]] forKey:@"ratioPresets"];
+		[dict setObject:@([ratioOnOff state]) forKey:@"ratioOnOff"];
+		[dict setObject:@([ratioPresets indexOfSelectedItem]) forKey:@"ratioPresets"];
 		[dict setObject:[ratioX stringValue] forKey:@"ratioX"];
 		[dict setObject:[ratioY stringValue] forKey:@"ratioY"];
 		
 		//output options
-		[dict setObject:[NSNumber numberWithInt:[imageType indexOfSelectedItem]] forKey:@"imageType"];
-		[dict setObject:[NSNumber numberWithInt:[addAlphaChannel state]] forKey:@"addAlphaChannel"];
-		[dict setObject:[NSNumber numberWithInt:[bitDepth indexOfSelectedItem]] forKey:@"bitDepth"];
-		[dict setObject:[NSNumber numberWithInt:[dontDisplay state]] forKey:@"dontDisplay"];
-		[dict setObject:[NSNumber numberWithInt:[dontErasePreview state]] forKey:@"dontErasePreview"];
-		[dict setObject:[NSNumber numberWithInt:[onlyDisplayPart state]] forKey:@"onlyDisplayPart"];
-		[dict setObject:[NSNumber numberWithInt:[continueRendering state]] forKey:@"continueRendering"];
-		[dict setObject:[NSNumber numberWithInt:[writeIniFile state]] forKey:@"writeIniFile"];
+		[dict setObject:@([imageType indexOfSelectedItem]) forKey:@"imageType"];
+		[dict setObject:@([addAlphaChannel state]) forKey:@"addAlphaChannel"];
+		[dict setObject:@([bitDepth indexOfSelectedItem]) forKey:@"bitDepth"];
+		[dict setObject:@([dontDisplay state]) forKey:@"dontDisplay"];
+		[dict setObject:@([dontErasePreview state]) forKey:@"dontErasePreview"];
+		[dict setObject:@([onlyDisplayPart state]) forKey:@"onlyDisplayPart"];
+		[dict setObject:@([continueRendering state]) forKey:@"continueRendering"];
+		[dict setObject:@([writeIniFile state]) forKey:@"writeIniFile"];
 		
-		[dict setObject:[NSNumber numberWithInt:[grayScaleOutputOn state]] forKey:@"grayScaleOutputOn"];
-		[dict setObject:[NSNumber numberWithInt:[fileGammaOn state]] forKey:@"fileGammaOn"];
+		[dict setObject:@([grayScaleOutputOn state]) forKey:@"grayScaleOutputOn"];
+		[dict setObject:@([fileGammaOn state]) forKey:@"fileGammaOn"];
 		[dict setObject:[fileGammaEdit stringValue] forKey:@"fileGammaEdit"];
 		
 		//quality
-		[dict setObject:[NSNumber numberWithInt:[quality indexOfSelectedItem]] forKey:@"quality"];
+		[dict setObject:@([quality indexOfSelectedItem]) forKey:@"quality"];
 		//dithering
-		[dict setObject:[NSNumber numberWithInt:[ditheringOn state]] forKey:@"ditheringOn"];
-		[dict setObject:[NSNumber numberWithInt:[highReproducibilityOn state]] forKey:@"highReproducibilityOn"];
-		[dict setObject:[NSNumber numberWithInt:[ditheringMethod indexOfSelectedItem]] forKey:@"ditheringMethod"];
+		[dict setObject:@([ditheringOn state]) forKey:@"ditheringOn"];
+		[dict setObject:@([highReproducibilityOn state]) forKey:@"highReproducibilityOn"];
+		[dict setObject:@([ditheringMethod indexOfSelectedItem]) forKey:@"ditheringMethod"];
 		
 		//anti-aliasing
-		[dict setObject:[NSNumber numberWithInt:[samplingOn state]] forKey:@"samplingOn"];
-		[dict setObject:[NSNumber numberWithInt:[sampleMethod indexOfSelectedItem]] forKey:@"sampleMethod"];
-		[dict setObject:[sampleThreshold stringValue] forKey:@"sampleThreshold"];
+		[dict setObject:@([samplingOn state]) forKey:@"samplingOn"];
+		[dict setObject:@([sampleMethod indexOfSelectedItem]) forKey:@"sampleMethod"];
+			[dict setObject:[sampleThreshold stringValue] forKey:@"sampleThreshold"];
 		[dict setObject:[mOutletSamplingGamma stringValue] forKey:@"mOutletSamplingGamma"];
 		[dict setObject:[sampleRecursion stringValue] forKey:@"sampleRecursion"];
 		[dict setObject:[sampleJitter stringValue] forKey:@"sampleJitter"];
 		
 		//bounding & Preview
 		//threads
-		[dict setObject:[NSNumber numberWithInt:[mNumberOfCpusPopupButton indexOfSelectedItem]] forKey:@"Work_Threads"];
-		[dict setObject:[NSNumber numberWithInt:[mRenderBlockSizePopupButton indexOfSelectedItem]] forKey:@"RenderBlockSize"];
+		[dict setObject:@([mNumberOfCpusPopupButton indexOfSelectedItem]) forKey:@"Work_Threads"];
+		[dict setObject:@([mRenderBlockSizePopupButton indexOfSelectedItem]) forKey:@"RenderBlockSize"];
 		//radiosity vain
-		[dict setObject:[NSNumber numberWithInt:[[mRadiosityVainMatrix selectedCell]tag]] forKey:@"mRadiosityVainMatrix"];
+		[dict setObject:@([[mRadiosityVainMatrix selectedCell]tag]) forKey:@"mRadiosityVainMatrix"];
 		//Warning level
-		[dict setObject:[NSNumber numberWithInt:[mWarningLevelPopup indexOfSelectedItem]] forKey:@"mWarningLevelPopup"];
+		[dict setObject:@([mWarningLevelPopup indexOfSelectedItem]) forKey:@"mWarningLevelPopup"];
 		
 		//Render pattern ****************************************************************************************
-		[dict setObject:[NSNumber numberWithInt:[renderPattern indexOfSelectedItem]] forKey:@"renderPattern"];
+		[dict setObject:@([renderPattern indexOfSelectedItem]) forKey:@"renderPattern"];
 		[dict setObject:[renderBlockStep stringValue] forKey:@"renderBlockStep"];
-		[dict setObject:[NSNumber numberWithInt:[renderBlockStepOn state]] forKey:@"renderBlockStepOn"];
+		[dict setObject:@([renderBlockStepOn state]) forKey:@"renderBlockStepOn"];
 		
 		//text streams
-		[dict setObject:[NSNumber numberWithInt:[redirectTextStreamsOnOff state]]forKey:@"redirectTextStreamsOnOff"];
-		[dict setObject:[NSNumber numberWithInt:[debugToFile state]] forKey:@"debugToFile"];
-		[dict setObject:[NSNumber numberWithInt:[debugToScreen state]] forKey:@"debugToScreen"];
-		[dict setObject:[NSNumber numberWithInt:[fatalToFile state]] forKey:@"fatalToFile"];
-		[dict setObject:[NSNumber numberWithInt:[fatalToScreen state]] forKey:@"fatalToScreen"];
-		[dict setObject:[NSNumber numberWithInt:[renderToFile state]] forKey:@"renderToFile"];
-		[dict setObject:[NSNumber numberWithInt:[renderToScreen state]] forKey:@"renderToScreen"];
-		[dict setObject:[NSNumber numberWithInt:[statisticsToFile state]] forKey:@"statisticsToFile"];
-		[dict setObject:[NSNumber numberWithInt:[statisticsToScreen state]] forKey:@"statisticsToScreen"];
-		[dict setObject:[NSNumber numberWithInt:[warningToFile state]] forKey:@"warningToFile"];
-		[dict setObject:[NSNumber numberWithInt:[warningToScreen state]] forKey:@"warningToScreen"];
+		[dict setObject:@([redirectTextStreamsOnOff state])forKey:@"redirectTextStreamsOnOff"];
+		[dict setObject:@([debugToFile state]) forKey:@"debugToFile"];
+		[dict setObject:@([debugToScreen state]) forKey:@"debugToScreen"];
+		[dict setObject:@([fatalToFile state]) forKey:@"fatalToFile"];
+		[dict setObject:@([fatalToScreen state]) forKey:@"fatalToScreen"];
+		[dict setObject:@([renderToFile state]) forKey:@"renderToFile"];
+		[dict setObject:@([renderToScreen state]) forKey:@"renderToScreen"];
+		[dict setObject:@([statisticsToFile state]) forKey:@"statisticsToFile"];
+		[dict setObject:@([statisticsToScreen state]) forKey:@"statisticsToScreen"];
+		[dict setObject:@([warningToFile state]) forKey:@"warningToFile"];
+		[dict setObject:@([warningToScreen state]) forKey:@"warningToScreen"];
 		
 		//bounding
 		[dict setObject:@([autoBoundingOnOff state])forKey:@"autoBoundingOnOff"];

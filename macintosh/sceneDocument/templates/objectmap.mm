@@ -66,20 +66,9 @@
 }
 
 //---------------------------------------------------------------------
-// setTemplateType
-//---------------------------------------------------------------------
--(void) setTemplateType:(int)type
-{
-	mTemplateType=type;
-}
-
-//---------------------------------------------------------------------
 // templateType
 //---------------------------------------------------------------------
--(int) templateType
-{
-	return mTemplateType;
-}
+@synthesize templateType=mTemplateType;
 
 //---------------------------------------------------------------------
 // makeMap: withPoint
@@ -391,14 +380,14 @@
 //---------------------------------------------------------------------
 // insertEntryAtIndex
 //---------------------------------------------------------------------
--(void) insertEntryAtIndex:(int)index
+-(void) insertEntryAtIndex:(NSInteger)index
 {
 //	int outRows=[self count];
-	int selectedRow=[self firstSelectedRow];	//
+	NSInteger selectedRow=[self firstSelectedRow];	//
 	NSMutableArray *newArray;
-	int SelectedSegment,firstSelectedSegmentPoint;
-	float newX;
-	float newY;
+	NSInteger SelectedSegment,firstSelectedSegmentPoint;
+	CGFloat newX;
+	CGFloat newY;
 
 	if ( selectedRow!=dNoRowSelected)
 	{
@@ -601,7 +590,7 @@
 //---------------------------------------------------------------------
 // setButtonState:forButton
 //---------------------------------------------------------------------
--(void) setButtonState:(int) state forButton:(int)button
+-(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button
 {
 	switch ( button)
 	{
@@ -617,7 +606,7 @@
 //---------------------------------------------------------------------
 // buttonState
 //---------------------------------------------------------------------
--(int) buttonState:(int)button
+-(NSControlStateValue) buttonState:(NSInteger)button
 {
 	switch ( button)
 	{

@@ -47,7 +47,7 @@
 @interface greenLed : NSView
 @end
 
-enum {
+NS_ENUM(NSInteger) {
 	cAppRenderBlockSizePopup    =50,
 	
 	cRenderBlockSize4           =0,
@@ -138,6 +138,9 @@ enum {
 	cSave                       =0,
 	cModify                     =1
 };
+#if 0
+}
+#endif
 
 //*******************************************************************************
 //Tags for the controls on the preferences panels

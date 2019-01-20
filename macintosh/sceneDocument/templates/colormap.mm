@@ -362,7 +362,7 @@
 //---------------------------------------------------------------------
 // setButtonState:forButton
 //---------------------------------------------------------------------
--(void) setButtonState:(NSControlStateValue) state forButton:(eColormapButtonsTags)button
+-(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button
 {
 	switch ( button)
 	{
@@ -376,7 +376,7 @@
 //---------------------------------------------------------------------
 // buttonState
 //---------------------------------------------------------------------
--(NSControlStateValue) buttonState:(eColormapButtonsTags)button
+-(NSControlStateValue) buttonState:(NSInteger)button
 {
 	switch ( button)
 	{
@@ -388,15 +388,31 @@
 	}
 }
 
+#define EncodedMapArray @"POVMapArray"
+#define EncodedUseGrayColorOn @"POVUseGrayColorOn"
+#define EncodedFilterOn @"POVFilterOn"
+#define EncodedTransmitOn @"POVTransmitOn"
+
 //---------------------------------------------------------------------
 // encodeWithCoder:encoder
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
+	if ([encoder allowsKeyedCoding]) {
+		[encoder encodeObject:mMapArray forKey:EncodedMapArray];
+		[encoder encodeInteger:mUseGrayColorOn forKey:EncodedUseGrayColorOn];
+		[encoder encodeInteger:mFilterOn forKey:EncodedFilterOn];
+		[encoder encodeInteger:mTransmitOn forKey:EncodedTransmitOn];
+	} else {
+		int tmpInt;
 	[encoder encodeObject:mMapArray];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mUseGrayColorOn];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mFilterOn];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mTransmitOn];
+		tmpInt = (int)mUseGrayColorOn;
+	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+		tmpInt = (int)mFilterOn;
+	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+		tmpInt = (int)mTransmitOn;
+	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
+	}
 }
 
 //---------------------------------------------------------------------
@@ -404,11 +420,23 @@
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
-	self = [super init];
-	[self setArray:[decoder decodeObject]];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mUseGrayColorOn];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mFilterOn];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mTransmitOn];
+	if (self = [super init]) {
+		if ([decoder allowsKeyedCoding] && [decoder containsValueForKey:EncodedMapArray]) {
+			[self setArray:[decoder decodeObjectForKey:EncodedMapArray]];
+			mUseGrayColorOn = [decoder decodeIntegerForKey:EncodedUseGrayColorOn];
+			mFilterOn = [decoder decodeIntegerForKey:EncodedFilterOn];
+			mTransmitOn = [decoder decodeIntegerForKey:EncodedTransmitOn];
+		} else {
+			int tmpInt;
+			[self setArray:[decoder decodeObject]];
+			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+			mUseGrayColorOn = tmpInt;
+			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+			mFilterOn = tmpInt;
+			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+			mTransmitOn = tmpInt;
+		}
+	}
 	return self;
 }
 

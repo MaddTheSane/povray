@@ -72,8 +72,8 @@ enum {
 -(void) insertEntryAtIndex:(NSInteger)index;
 
 
--(void) setButtonState:(NSControlStateValue) state forButton:(eColormapButtonsTags)button;
--(NSControlStateValue) buttonState:(eColormapButtonsTags)button;
+-(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button;
+-(NSControlStateValue) buttonState:(NSInteger)button;
 
 
 -(NSString *) redAtIndex:(NSUInteger) index;

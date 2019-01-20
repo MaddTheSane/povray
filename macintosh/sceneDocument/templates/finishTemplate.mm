@@ -348,7 +348,7 @@
 //---------------------------------------------------------------------
 -(IBAction) finishTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cFinishAmbientLightGroupOn;
 	else
