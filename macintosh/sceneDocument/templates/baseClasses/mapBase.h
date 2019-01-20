@@ -78,7 +78,7 @@ enum eSlopeButtonTags {
 //data
 -(id) objectAtRow:(NSUInteger)row atColumn:( NSUInteger) column;
 -(int) intAtRow:(NSUInteger)row atColumn:( NSUInteger) column;
--(NSInteger) integerAtRow:(NSUInteger)row atColumn:( NSUInteger) column
+-(NSInteger) integerAtRow:(NSUInteger)row atColumn:( NSUInteger) column;
 -(float) floatAtRow:(NSUInteger)row atColumn:( NSUInteger) column;
 -(id) stringFromFloatWithFormat:(NSString*)format atRow:(NSUInteger)row atColumn:( NSUInteger) column;
 

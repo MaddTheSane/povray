@@ -52,7 +52,7 @@ enum {
 	cColormapTransmitIndex=3
 	};
 
-@interface colormap : MapBase <NSCoding>
+@interface colormap : MapBase <NSCoding>
 {
 	NSControlStateValue	mUseGrayColorOn;
 	NSControlStateValue	mFilterOn;

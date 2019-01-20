@@ -404,7 +404,7 @@
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
-	self = [super init]
+	self = [super init];
 	[self setArray:[decoder decodeObject]];
 	[decoder decodeValueOfObjCType:@encode(int) at:&mUseGrayColorOn];
 	[decoder decodeValueOfObjCType:@encode(int) at:&mFilterOn];
