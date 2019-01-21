@@ -803,8 +803,8 @@ shakeMessage(@"recoloring");
 					if ( scannerLocation + 1 >= storageLength)
 						return;
 					NSUInteger beginOfLine, endOfLine;
-					int beginQuote=-1;
-					int endQuote=-1;
+					NSInteger beginQuote=-1;
+					NSInteger endQuote=-1;
 //					int currentLocation=[scanner scanLocation];
 					[storageString getLineStart:&beginOfLine end:NULL contentsEnd:&endOfLine forRange:NSMakeRange(scannerLocation,1)];
 

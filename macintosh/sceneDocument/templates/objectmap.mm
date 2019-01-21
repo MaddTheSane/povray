@@ -531,7 +531,7 @@
 	NSInteger outRows=[self count];
 	NSInteger selectedRow=[self firstSelectedRow];	//
 
-	int SelectedSegment,firstSelectedSegmentPoint;
+	NSInteger SelectedSegment,firstSelectedSegmentPoint;
 
 	if ( selectedRow!=dNoRowSelected)
 	{
