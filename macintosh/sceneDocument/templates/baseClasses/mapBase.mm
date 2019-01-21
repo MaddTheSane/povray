@@ -234,13 +234,19 @@
 	return mSelectedRow;
 }
 
+#define EncodedMapArray @"POVMapArray"
+
 //---------------------------------------------------------------------
 // encodeWithCoder:encoder
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
+	if (encoder.allowsKeyedCoding) {
+		[encoder encodeObject:mMapArray forKey:EncodedMapArray];
+	} else {
 	[encoder encodeObject:mMapArray];
 
+	}
 }
 
 //---------------------------------------------------------------------
@@ -248,7 +254,13 @@
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
+	if (self = [self init]) {
+		if (decoder.allowsKeyedCoding && [decoder containsValueForKey:EncodedMapArray]) {
+			[self setArray:[decoder decodeObjectForKey:EncodedMapArray]];
+		} else {
 	[self setArray:[decoder decodeObject]];
+		}
+	}
 
 	return self;
 }

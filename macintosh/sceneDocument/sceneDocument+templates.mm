@@ -68,7 +68,7 @@
 //---------------------------------------------------------------------
 // displayTemplate:owner:caller:dict
 //---------------------------------------------------------------------
-+(void) displayTemplateNumber:(int) tagNumber fileowner:(BaseTemplate*&) fileOwner caller:(id)caller dictionary:(NSMutableDictionary*) dict
++(void) displayTemplateNumber:(NSInteger) tagNumber fileowner:(BaseTemplate*&) fileOwner caller:(id)caller dictionary:(NSMutableDictionary*) dict
 {
 	NSString *bundleName=nil;
 	switch (tagNumber)
@@ -265,7 +265,7 @@
 //---------------------------------------------------------------------
 // templateSheetDidEnd
 //---------------------------------------------------------------------
--(void) templateSheetDidEnd: (NSWindow*)sheet returnCode: (int)returnCode contextInfo: (void*)contextInfo
+-(void) templateSheetDidEnd: (NSWindow*)sheet returnCode: (NSModalResponse)returnCode contextInfo: (void*)contextInfo
 {
 	if ( returnCode ==NSOKButton)
 	{

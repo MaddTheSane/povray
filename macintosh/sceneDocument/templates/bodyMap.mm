@@ -112,7 +112,7 @@ enum {
 //---------------------------------------------------------------------
 // locationAtIndex
 //---------------------------------------------------------------------
--(NSString *) locationAtIndex:(unsigned int) index
+-(NSString *) locationAtIndex:(NSUInteger) index
 {
 	NSMutableArray *entry=[mMapArray objectAtIndex:index];
 	return 	[NSString stringWithFormat:FloatFormat,[[entry objectAtIndex:cLocationIndex]floatValue]];
@@ -120,7 +120,7 @@ enum {
 //---------------------------------------------------------------------
 // locationValueAtIndex
 //---------------------------------------------------------------------
--(float ) locationValueAtIndex:(unsigned int) index
+-(float ) locationValueAtIndex:(NSUInteger) index
 {
 	return [[self locationAtIndex:index]floatValue];
 }
@@ -128,7 +128,7 @@ enum {
 //---------------------------------------------------------------------
 // identifierAtIndex
 //---------------------------------------------------------------------
--(id) identifierAtIndex:(unsigned int) index
+-(id) identifierAtIndex:(NSUInteger) index
 {
 	NSMutableArray *entry=[mMapArray objectAtIndex:index];
 	return 	[entry objectAtIndex:cIdentifierIndex];
@@ -138,7 +138,7 @@ enum {
 //---------------------------------------------------------------------
 // insertEntryAtIndex
 //---------------------------------------------------------------------
--(void) insertEntryAtIndex:(int)index
+-(void) insertEntryAtIndex:(NSInteger)index
 {
 	CGFloat locationTop;
 	CGFloat locationEnd;
@@ -184,7 +184,7 @@ enum {
 //---------------------------------------------------------------------
 // setLocation: atIndex
 //---------------------------------------------------------------------
--(void) setLocation:(NSString *)location atIndex:(unsigned int) index
+-(void) setLocation:(NSString *)location atIndex:(NSUInteger) index
 {
 	NSMutableArray *entry=[mMapArray objectAtIndex:index];
 	[entry replaceObjectAtIndex:cLocationIndex withObject:location];
@@ -193,18 +193,25 @@ enum {
 //---------------------------------------------------------------------
 // setLocation: atIndex
 //---------------------------------------------------------------------
--(void) setIdentifier:(NSString *)identifier atIndex:(unsigned int) index
+-(void) setIdentifier:(NSString *)identifier atIndex:(NSUInteger) index
 {
 	NSMutableArray *entry=[mMapArray objectAtIndex:index];
 	[entry replaceObjectAtIndex:cIdentifierIndex withObject:identifier];
 }
+
+#define EncodedBodyMap @"POVBodyMap"
 
 //---------------------------------------------------------------------
 // encodeWithCoder:encoder
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
+	[super encodeWithCoder:encoder];
+	if ([encoder allowsKeyedCoding]) {
+		[encoder encodeObject:mMapArray forKey:EncodedBodyMap];
+	} else {
 	[encoder encodeObject:mMapArray];
+	}
 }
 
 //---------------------------------------------------------------------
@@ -212,7 +219,13 @@ enum {
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
+	if (self = [super initWithCoder:decoder]) {
+		if ([decoder allowsKeyedCoding] && [decoder containsValueForKey:EncodedBodyMap]) {
+			[self setArray:[decoder decodeObjectForKey:EncodedBodyMap]];
+		} else {
 	[self setArray:[decoder decodeObject]];
+		}
+	}
 	return self;
 }
 

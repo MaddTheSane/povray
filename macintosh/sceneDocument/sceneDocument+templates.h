@@ -40,13 +40,13 @@
 #import  "sceneDocument.h"
 
 @interface  SceneDocument (templates)
-+(void) displayTemplateNumber:(int) tagNumber fileowner:(BaseTemplate*&) fileOwner caller:(id)caller dictionary:(NSMutableDictionary*) dict;
++(void) displayTemplateNumber:(NSInteger) tagNumber fileowner:(BaseTemplate*&) fileOwner caller:(id)caller dictionary:(NSMutableDictionary*) dict;
 //- (void) alertPanelDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo;
 //-(void) untitledFileIsSaved:(NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void*)contextInfo;
 
 //-(void)openTemplate:(id) sender;
 -(void) runTemplateSheet;
--(void) templateSheetDidEnd: (NSWindow*)sheet returnCode: (int)returnCode contextInfo: (void*)contextInfo;
+-(void) templateSheetDidEnd: (NSWindow*)sheet returnCode: (NSModalResponse)returnCode contextInfo: (void*)contextInfo;
 -(int) findTabsCurrentLine;
 
 @end
