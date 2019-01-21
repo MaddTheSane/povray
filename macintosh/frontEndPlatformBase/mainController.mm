@@ -64,9 +64,9 @@ static volatile int		insertMenuIsBeingWatched=notWatching;
 static MainController	*_mainController;
 
 
-BOOL rememberOpenWindowsOn;
-BOOL globalAutoSyntaxColoring;	// Automatically refresh syntax coloring when text is changed?
-BOOL maintainIndentation;	// Keep new lines indented at same depth as their predecessor?
+NSControlStateValue rememberOpenWindowsOn;
+NSControlStateValue globalAutoSyntaxColoring;	// Automatically refresh syntax coloring when text is changed?
+NSControlStateValue maintainIndentation;	// Keep new lines indented at same depth as their predecessor?
 NSControlStateValue	autoIndentBraces;	// Keep new lines indented at same depth as their predecessor?
 int	tabDistance;
 

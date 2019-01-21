@@ -1303,10 +1303,10 @@
 		826CBAFA1D034F0E000A7A98 /* greg_weekday.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = greg_weekday.cpp; sourceTree = "<group>"; };
 		826CBAFB1D034F0E000A7A98 /* gregorian_types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gregorian_types.cpp; sourceTree = "<group>"; };
 		826CBB011D034F1B000A7A98 /* posix_time_types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = posix_time_types.cpp; sourceTree = "<group>"; };
-		826CBB081D034F74000A7A98 /* half.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = half.cpp; path = ../libraries/ilmbase/Half/half.cpp; sourceTree = SOURCE_ROOT; };
-		826CBB091D034F74000A7A98 /* half.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = half.h; path = ../libraries/ilmbase/Half/half.h; sourceTree = SOURCE_ROOT; };
-		826CBB0A1D034F74000A7A98 /* halfFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = halfFunction.h; path = ../libraries/ilmbase/Half/halfFunction.h; sourceTree = SOURCE_ROOT; };
-		826CBB0B1D034F74000A7A98 /* halfLimits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = halfLimits.h; path = ../libraries/ilmbase/Half/halfLimits.h; sourceTree = SOURCE_ROOT; };
+		826CBB081D034F74000A7A98 /* half.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = half.cpp; sourceTree = "<group>"; };
+		826CBB091D034F74000A7A98 /* half.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = half.h; sourceTree = "<group>"; };
+		826CBB0A1D034F74000A7A98 /* halfFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = halfFunction.h; sourceTree = "<group>"; };
+		826CBB0B1D034F74000A7A98 /* halfLimits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = halfLimits.h; sourceTree = "<group>"; };
 		826CBB101D034F8D000A7A98 /* Iex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Iex.h; sourceTree = "<group>"; };
 		826CBB111D034F8D000A7A98 /* IexBaseExc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = IexBaseExc.cpp; sourceTree = "<group>"; };
 		826CBB121D034F8D000A7A98 /* IexBaseExc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IexBaseExc.h; sourceTree = "<group>"; };
@@ -1575,7 +1575,7 @@
 		826CBD201D0350D9000A7A98 /* tif_codec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tif_codec.c; sourceTree = "<group>"; };
 		826CBD211D0350D9000A7A98 /* tif_color.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tif_color.c; sourceTree = "<group>"; };
 		826CBD221D0350D9000A7A98 /* tif_compress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tif_compress.c; sourceTree = "<group>"; };
-		826CBD231D0350D9000A7A98 /* tif_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tif_config.h; path = ../libraries/tiff/libtiff/tif_config.h; sourceTree = SOURCE_ROOT; };
+		826CBD231D0350D9000A7A98 /* tif_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tif_config.h; path = config/libraries_config/tif_config.h; sourceTree = SOURCE_ROOT; };
 		826CBD241D0350D9000A7A98 /* tif_dir.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tif_dir.c; sourceTree = "<group>"; };
 		826CBD251D0350D9000A7A98 /* tif_dirinfo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tif_dirinfo.c; sourceTree = "<group>"; };
 		826CBD261D0350D9000A7A98 /* tif_dirread.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tif_dirread.c; sourceTree = "<group>"; };
@@ -3651,6 +3651,7 @@
 				LastUpgradeCheck = 0940;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
+						DevelopmentTeam = LU5HQV4DQN;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -4660,13 +4661,14 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = openexr;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\" \"$(SRCROOT)/config/libraries_config/libz\"";
 			};
 			name = Debug;
 		};
 		825D610A11031C3B00E0FF88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4783,7 +4785,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = tiff;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/zlib\" \"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/config/libraries_config\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/config/libraries_config\"";
 			};
 			name = Debug;
 		};
@@ -4924,7 +4926,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = tiff;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/zlib\" \"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/config/libraries_config\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/config/libraries_config\"";
 			};
 			name = Release;
 		};
@@ -4972,13 +4974,14 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = openexr;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\" \"$(SRCROOT)/config/libraries_config/libz\"";
 			};
 			name = Release;
 		};
 		82A1003615F51A650023C5F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

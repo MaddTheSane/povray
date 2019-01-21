@@ -84,10 +84,10 @@ extern materialPreview	*gMaterialPreview;
 extern NSInteger				numericBlockPoint;
 
 
-extern BOOL				rememberOpenWindowsOn;
+extern NSControlStateValue	rememberOpenWindowsOn;
 
-extern BOOL				globalAutoSyntaxColoring;	// Automatically refresh syntax coloring when text is changed?
-extern BOOL				maintainIndentation;	// Keep new lines indented at same depth as their predecessor?
+extern NSControlStateValue	globalAutoSyntaxColoring;	// Automatically refresh syntax coloring when text is changed?
+extern NSControlStateValue	maintainIndentation;	// Keep new lines indented at same depth as their predecessor?
 extern NSControlStateValue	autoIndentBraces;	// Keep new lines indented at same depth as their predecessor?
 extern int				tabDistance;
 // Attribute constants added along with styles to program text:

@@ -76,7 +76,7 @@ static appPreferencesController	*_appPreferencesController;
 	 [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:255.0/255.0 	green:94.0/255.0 		blue:10.0/255.0	alpha:1.0]], @"declareColor",
 	 [NSArchiver archivedDataWithRootObject:[NSFont userFontOfSize:11.0]], @"sceneDocumentFont",
 	 @"1.8",															@"mOutletDisplayGammaEdit",
-	 @YES,	@"globalAutoSyntaxColoring",
+	 [NSNumber numberWithInt:NSOnState],	@"globalAutoSyntaxColoring",
 	 [NSNumber numberWithInt:NSOnState],	@"maintainIndentation",
 	 [NSNumber numberWithInt:NSOnState],	@"autoIndentBraces",
 	 [NSNumber numberWithInt:NSOffState],	@"rememberOpenWindowsOn",
@@ -86,8 +86,8 @@ static appPreferencesController	*_appPreferencesController;
 	 @"",																	@"mInsertMenuMainDirectoryEdit",
 	 [NSNumber numberWithFloat:100.0],		@"mInsertMenuImageScaleSlider",
 	 @10,					@"NSRecentDocumentsLimit",
-	 @NO,	@"AlwaysPutPreviewwindowInFrontButton",
-	 @NO,	@"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton",
+	 [NSNumber numberWithInt:NSOffState],	@"AlwaysPutPreviewwindowInFrontButton",
+	 [NSNumber numberWithInt:NSOffState],	@"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton",
 	 nil];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:initialDefaults];
 }
@@ -239,7 +239,7 @@ static appPreferencesController	*_appPreferencesController;
 	[mMacroColor retain];
 
 	// auto syntax coloring
-	globalAutoSyntaxColoring=[[defaults objectForKey:@"globalAutoSyntaxColoring"]boolValue];
+	globalAutoSyntaxColoring=[[defaults objectForKey:@"globalAutoSyntaxColoring"]integerValue];
 
 	// display gamma
 	mDisplayGammaString=[defaults objectForKey:@"mOutletDisplayGammaEdit"];
@@ -522,7 +522,7 @@ static appPreferencesController	*_appPreferencesController;
 	[mDeclaresColorWell setColor:mDeclareColor];
 	[mMacroColorWell setColor:mMacroColor];
 	[mSelectedFont setFont:mSceneDocumentFont];
-	[mSyntaxColorOn setState:globalAutoSyntaxColoring ? NSOnState : NSOffState];
+	[mSyntaxColorOn setState:globalAutoSyntaxColoring];
 	[mOutletDisplayGammaEdit setStringValue:mDisplayGammaString];
 	[mDisplayGammaButton setState:mDisplayGammaOn];
 	[mAlwaysPutPreviewwindowInFrontButton setState:mAlwaysPutPreviewwindowInFrontOn];
@@ -700,7 +700,7 @@ static appPreferencesController	*_appPreferencesController;
 	[mMacroColor release];
 	mMacroColor=[[mMacroColorWell color]copy];
 
-	globalAutoSyntaxColoring=[mSyntaxColorOn state] == NSOnState;
+	globalAutoSyntaxColoring=[mSyntaxColorOn state];
 	[mDisplayGammaString release];
 	mDisplayGammaString=[[mOutletDisplayGammaEdit stringValue]copy];
 	mDisplayGammaOn=[mDisplayGammaButton state];

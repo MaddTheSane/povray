@@ -526,7 +526,7 @@
 //---------------------------------------------------------------------
 // removeEntryAtIndex
 //---------------------------------------------------------------------
--(void) removeEntryAtIndex:(int)index
+-(void) removeEntryAtIndex:(NSInteger)index
 {
 	NSInteger outRows=[self count];
 	NSInteger selectedRow=[self firstSelectedRow];	//

@@ -111,7 +111,6 @@ extern BOOL gDontErasePreveiw;
 	{
 		printf("fout!");
 	}
-
 	mBackingScaleFactor=1.0f;
 	mImagePixelsHeight=220;
 	mImagePixelsWidth=220;
@@ -157,7 +156,7 @@ extern BOOL gDontErasePreveiw;
 			 name:NSWindowDidChangeBackingPropertiesNotification
 			 object:nil];
 	 }
-	
+
 	mBackgroundImagePattern=[[NSImage imageNamed:@"background.png"]retain];
 	#if defined (debugPreview ) && defined (debugPreviewWatchBackingProperties)
 		NSLog(@"exit awakeFromNib\n");

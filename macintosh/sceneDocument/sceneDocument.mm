@@ -453,16 +453,15 @@
 	// open all files, even if it is an inc file
 			tempString=[[[self fileURL]path] stringByDeletingLastPathComponent];
 	//	extension=[[self fileName] pathExtension];
-//		if ( [extension compare:@"pov" options:NSCaseInsensitiveSearch range:NSMakeRange(0,3)] ==NSOrderedSame)
-		{
-			if ( ![tempString hasSuffix:@"/"])
+
+		if ( ![tempString hasSuffix:@"/"])
 				tempString=[tempString stringByAppendingString:@"/"];
 			tempString=[tempString stringByAppendingString:titleString];
 
 			fileFound=[defaultFileManager fileExistsAtPath:tempString];
 			if ( fileFound==YES)	
 				[[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:tempString] display:YES error:nil];
-		}
+		
 		
 		// now we start searching the library paths, starting with the two in the preference panel
 		if (fileFound==NO)	
@@ -1443,8 +1442,15 @@ NS_ENDHANDLER
 	
 	//only recolor if we changed characters,
 	// not if attributes are changed
-	if ( [textStorage editedMask] == NSTextStorageEditedAttributes)
-		return;
+/*	if (@available(macOS 10_11, *)) {
+		if ( ([textStorage editedMask] & NSTextStorageEditedAttributes))
+		{
+			return;
+		}
+			else
+	} else {
+		// Fallback on earlier versions
+	}*/
 	
 	NSRange tempRange;
  	NSUInteger beginOfNextLine, beginOfContentsEnd, beginOfPreviousLine;
