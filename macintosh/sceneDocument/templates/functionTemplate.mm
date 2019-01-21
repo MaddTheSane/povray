@@ -465,7 +465,7 @@
 //---------------------------------------------------------------------
 // findIndexForReference
 //---------------------------------------------------------------------
-+(SFunctionListPtr) functionForIndex:(int)reference
++(SFunctionListPtr) functionForIndex:(NSInteger)reference
 {
 	int x=0;
 	while (FunctionList[x].Kind != Endlist)
@@ -494,7 +494,7 @@
 //---------------------------------------------------------------------
 // buildCurrentFunctions
 //---------------------------------------------------------------------
--(void) buildCurrentFunctions:(int) type
+-(void) buildCurrentFunctions:(NSInteger) type
 {
 	if ( mCurrentFunctions != nil)
 		delete mCurrentFunctions;

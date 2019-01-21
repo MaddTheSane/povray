@@ -183,8 +183,8 @@ extern SFunctionList FunctionList[];
 	int mItems;
 }
 - (IBAction)functionTypesPopup:(id)sender;
--(void) buildCurrentFunctions:(int) type;
-+(SFunctionListPtr) functionForIndex:(int)reference;
+-(void) buildCurrentFunctions:(NSInteger) type;
++(SFunctionListPtr) functionForIndex:(NSInteger)reference;
 -(int) findCurrentIndexForReference:(int)reference;
 -(void) updateViews;
 
