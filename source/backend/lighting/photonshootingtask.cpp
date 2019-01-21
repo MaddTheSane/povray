@@ -249,7 +249,7 @@ void PhotonShootingTask::ShootPhotonsAtObject(LightTargetCombo& combo)
 						notComputed = true;
 					}
 
-					DBL dist_of_initial_from_center;
+					DBL dist_of_initial_from_center = 0;
 
 					if (combo.light->Parallel)
 					{
