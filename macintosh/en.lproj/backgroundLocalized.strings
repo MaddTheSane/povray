@@ -4,17 +4,17 @@
 "backgroundColorWell" = "Click to open the color picker and set the color to be used for the scene background.";
 	/*fog*/
 "backgroundFogGroundfogView" = "";
-"backgroundFogTypePopUp" = "Fog Type:\nConstant fog has a constant density everywhere.\nGround fog has a constant density below a given point on the \"up\" axis and thins out along that axis.";
-"backgroundFogUpOn" = "All calculations (actual heights) for ground fog evaluation are relative to this \"up\" vector.";
-"backgroundFogUpXYZPopUp" = "Choose the type of vector for the \"up\" axis.";
-"backgroundFogUpMatrix" = "Enter the x, y, z coordinates of the \"up\" vector.";
+"backgroundFogTypePopUp" = "Fog Type:\nConstant fog has a constant density everywhere.\nGround fog has a constant density below a given point on the “up” axis and thins out along that axis.";
+"backgroundFogUpOn" = "All calculations (actual heights) for ground fog evaluation are relative to this “up” vector.";
+"backgroundFogUpXYZPopUp" = "Choose the type of vector for the “up” axis.";
+"backgroundFogUpMatrix" = "Enter the x, y, z coordinates of the “up” vector.";
 "backgroundFogDistanceEdit" = "Sets the distance where the object's color is 64% of its own color and 36% the fog's color.";
-"backgroundFogOffsetOn" = "Specify a height on the \"up\" axis below which the fog has constant density.";
-"backgroundFogOffsetEdit" = "The height on the \"up\" axis below which the fog has constant density.";
-"backgroundFogAltitudeOn" = "Altitude determines how fog fades away along the \"up\" axis.\nAt fog_offset + fog_altitude the fog has a density of 25%.";
-"backgroundFogAltitudeEdit" = "Altitude determines how fog fades away along the \"up\" axis.\nAt fog_offset + fog_altitude the fog has a density of 25%.";
+"backgroundFogOffsetOn" = "Specify a height on the “up” axis below which the fog has constant density.";
+"backgroundFogOffsetEdit" = "The height on the “up” axis below which the fog has constant density.";
+"backgroundFogAltitudeOn" = "Altitude determines how fog fades away along the “up” axis.\nAt fog_offset + fog_altitude the fog has a density of 25%.";
+"backgroundFogAltitudeEdit" = "Altitude determines how fog fades away along the “up” axis.\nAt fog_offset + fog_altitude the fog has a density of 25%.";
 "backgroundFogColorColorWell" = "Open the color picker to set the fog color.";
-"backgroundFogTurbulenceOn" = "Enable fog turbulence:\nallows fog to be \"stirred up.\"";
+"backgroundFogTurbulenceOn" = "Enable fog turbulence:\nallows fog to be “stirred up.”";
 "backgroundFogTurbulenceXYZPopUp" = "Choose the type of vector for the\nfog turbulence.";
 "backgroundFogTurbulenceMatrix" = "These x, y, z coordinates specify the amount of turbulence in each direction.";
 "backgroundFogTurbulenceDepthOn" = "Scale fog turbulence along the direction of the viewing ray by the turb_depth value.\nTypical values are from 0.0 to 1.0 or more.";
@@ -39,9 +39,9 @@
 
 "backgroundRainbowJitterOn" = "Jitter adds random noise to the index, adding some irregularity to the rainbow. Not recommended for use in animations.";
 "backgroundRainbowJitterEdit" = "Amount of jitter.";
-"backgroundRainbowUpOn" = "The \"up\" keyword determines where the zero angle position is.";
+"backgroundRainbowUpOn" = "The “up” keyword determines where the zero angle position is.";
 "backgroundRainbowUpXYZPopUp" = "Choose the type of vector to use.";
-"backgroundRainbowUpMatrix" = "Enter the x, y, z coordinates for the \"up\" vector.";
+"backgroundRainbowUpMatrix" = "Enter the x, y, z coordinates for the “up” vector.";
 
 "backgroundRainbowArcAngleOn" = "The arc_angle keyword determines the size of the arc in degrees (0-360).\nA value smaller than 360 degrees results in an arc that abruptly vanishes.";
 "backgroundRainbowArcAngleEdit" = "The arc_angle keyword determines the size of the arc in degrees (0-360).\nA value smaller than 360 degrees results in an arc that abruptly vanishes.";
@@ -60,12 +60,12 @@
 "backgroundSkyspherePigment5On" = "If turned on, the fifth layer will be written";
 
 	/*glow*/
-"backgroundGlowTypePopUp" = "Choose a glow type\n0: A model, I(d) = 1/d^2\n1: B model, I(d) = 1/(d^2+1)\n2: exp() falloff\n3: Cosine falloff";
+"backgroundGlowTypePopUp" = "Choose a glow type\n0: A model, I(d) = 1/d²\n1: B model, I(d) = 1/(d²+1)\n2: exp() falloff\n3: Cosine falloff";
 "backgroundGlowLocationXYZPopUp" = "Choose the type of vector to use.";
 "backgroundGlowLocationMatrix" = "Enter the x, y, z components of the point";
 "backgroundGlowSizeEdit" = "This keyword adjusts the scale of the glow effect";
 "backgroundGlowRadiusEdit" = "Specifies a clipping radius confining the glow to a circular area";
 "backgroundGlowFadePowerEdit" = "Controls the falloff effect";
-"backgroundGlowTransformationsOn" = "If set, the \"transform {}\" statement with the current settings of the transform template is added to the glow statement";
+"backgroundGlowTransformationsOn" = "If set, the “transform {}” statement with the current settings of the transform template is added to the glow statement";
 "backgroundGlowTransformationsButton" = "Open the transform template to specify the transformations to be performed on the glow.\nAfter confirming (OK) it is added to the glow statement and you will be returned to this dialog.";
 "backgroundGlowColorWell" = "Open the color picker to set the glow color.";

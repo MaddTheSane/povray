@@ -1,5 +1,5 @@
 	/*main*/
-"materialDontWrapInMaterial" = "Write the body of the material statement without the \"material{}\" statement.\n(This allows you to replace one or more selected items of the material.)";
+"materialDontWrapInMaterial" = "Write the body of the material statement without the “material{}” statement.\n(This allows you to replace one or more selected items of the material.)";
 "materialTransformationsOn" = "Add the settings of the transform template to this texture item.";
 "materialTransformationsEditButton" = "Open the transform template.";
 "materialDrawLayer" = "Apply changes for the selected layer and refresh the preview.";

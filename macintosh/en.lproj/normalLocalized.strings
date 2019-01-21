@@ -1,4 +1,4 @@
-"normalDontWrapInNormal" = "Write the body of the normal statement without the \"normal {}\" statement.\nThis allows to replace one or more selected items of the normal with new ones";
+"normalDontWrapInNormal" = "Write the body of the normal statement without the “normal {}” statement.\nThis allows to replace one or more selected items of the normal with new ones";
 
 "normalTransformationsOn" =  "Add the settings of the transform template to this normal item.";
 "normalTransformationsEditButton" = "Open the transform template.";
@@ -10,7 +10,7 @@
 "normalAccuracyEdit" = "Normal uses a slope_map, whether specified or not. POV-Ray uses an accuracy distance of 0.02.\nSometimes, decreasing this value gives better accuracy.\nBy increasing this value sharp edges in the normal can be smoothed";
 "normalBumpSizeOn" = "The relative bump size can be scaled using the bump_size modifier.\nThis can be any number other than 0 but typical values are from about 0.1 to as high as 4.0 or 5.0";
 "normalBumpSizeEdit" = "The relative bump size can be scaled using the bump_size modifier.\nThis can be any number other than 0 but typical values are from about 0.1 to as high as 4.0 or 5.0";
-"normalNoBumpScaleOn" = "By scaling a normal, the apparent depth of the bumps will also scale, causing the slope to remain the same. Adding the keyword \"no_bump_scale\" disables this feature";
+"normalNoBumpScaleOn" = "By scaling a normal, the apparent depth of the bumps will also scale, causing the slope to remain the same. Adding the keyword “no_bump_scale” disables this feature";
 
 "normalNormalSlopeMapOn" = "Write a slope_map in your normal statement.\nTo verify or edit the parameters of this slope_map, click the edit button.";
 "normalNormalSlopeMapEditButton" = "Edit the slope_map.\nYou will be returned to this panel.";
@@ -177,7 +177,7 @@
 "normalPatternImagePatternPatternButton" = "Specify a pattern. This pattern is used to create a bitmap.\nAfter confirming (OK) you return to this dialog";
 "normalPatternImagePatternPigmentButton" = "Specify a pigment. This pigment is used to create a bitmap.\nAfter confirming (OK) you return to this dialog";
 "normalPatternImageMapProjectionPopUp" = "Specify how the image should be wrapped around the object";
-"normalPatternImageMapProjectionOnceOn" = "Normally image maps are tiled over every unit square of the x-y plane. Adding the \"once\" keyword eliminates all copies of the map except the one at (0,0) to (1,1)";
+"normalPatternImageMapProjectionOnceOn" = "Normally image maps are tiled over every unit square of the x-y plane. Adding the “once” keyword eliminates all copies of the map except the one at (0,0) to (1,1)";
 "normalPatternImageMapInterpolationPopUp" = "Interpolation can smooth the jagged look of a bitmap.\nNormalized distance is the slightly faster of the two.\nBilinear does a better job of picking the between colors";
 "normalPatternImageMapUsePopUp" = "Specify which values should be used";
 	 	

@@ -5,8 +5,8 @@
 "mediaAbsorptionGroupOn" = "Turn on absorption.\nThe absorption keyword specifies a color of light which is absorbed when looking through the media.";
 "mediaAbsorptionGroupColorWell" = "Turn on absorption.\nThe absorption keyword specifies a color of light which is absorbed when looking through the media.";
 
-"mediaEmissionGroupOn" = "Turn on emission.\nThe emission keyword specifies a color of light \"emitted\" from the particles. (The effect is similar to an object with a high ambient value.)";
-"mediaEmissionGroupColorWell" = "Turn on emission.\nThe emission keyword specifies a color of light \"emitted\" from the particles. (The effect is similar to an object with a high ambient value.)";
+"mediaEmissionGroupOn" = "Turn on emission.\nThe emission keyword specifies a color of light “emitted” from the particles. (The effect is similar to an object with a high ambient value.)";
+"mediaEmissionGroupColorWell" = "Turn on emission.\nThe emission keyword specifies a color of light “emitted” from the particles. (The effect is similar to an object with a high ambient value.)";
 
 "mediaDensityGroupOn" = "Vary the density of particles throughout the media.\nAny of POV-Ray's pattern functions can be used.";
 "mediaDensityMatrix" = "Choose between editing a density pattern or a density map.";
@@ -29,10 +29,10 @@
 
 "mediaSamplingJitterOn" = "Jitter will cause sample_method 2 to look similar to method 1.";
 "mediaSamplingJitterEdit" = "Jitter will cause sample_method 2 to look similar to method 1.";
-"mediaSamplingAaDepthOn" = "You can specify the anti-aliasing recursion depth using the \"aa_level\" keyword followed by an integer.\nDefault is 4.";
-"mediaSamplingAaDepthEdit" = "You can specify the anti-aliasing recursion depth using the \"aa_level\" keyword followed by an integer.\nDefault is 4.";
-"mediaSamplingAaThresholdOn" = "You can specify the anti-aliasing threshold by using the \"aa_threshold\" followed by a float.\nDefault is 0.1";
-"mediaSamplingAaThresholdEdit" = "You can specify the anti-aliasing threshold by using the \"aa_threshold\" followed by a float.\nDefault is 0.1";
+"mediaSamplingAaDepthOn" = "You can specify the anti-aliasing recursion depth using the “aa_level” keyword followed by an integer.\nDefault is 4.";
+"mediaSamplingAaDepthEdit" = "You can specify the anti-aliasing recursion depth using the “aa_level” keyword followed by an integer.\nDefault is 4.";
+"mediaSamplingAaThresholdOn" = "You can specify the anti-aliasing threshold by using the “aa_threshold” followed by a float.\nDefault is 0.1";
+"mediaSamplingAaThresholdEdit" = "You can specify the anti-aliasing threshold by using the “aa_threshold” followed by a float.\nDefault is 0.1";
 "mediaSamplingConfidenceOn" = "Specify the confidence that you are within the variance.\nDefault is 0.9.\nFor slower more accurate results, increase the confidence.";
 "mediaSamplingConfidenceEdit" = "Specify the confidence that you are within the variance.\nDefault is 0.9.\nFor slower more accurate results, increase the confidence.";
 "mediaSamplingVarianceOn" = "Specify the permitted variance allowed.\nDefault is 1/128.\nFor slower more accurate results decrease the variance.";

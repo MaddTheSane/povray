@@ -25,7 +25,7 @@
 "lightFadeDistanceEdit" = "Set the distance at which the full light intensity arrives";
 "lightFadePowerPopup" = "Choose the falloff rate of the light intensity";
 "lightLocationMatrix" = "Enter the x, y, z coordinates of the light source's location.";
-"lightLooksLikeOn" = "Write a \"looks_like\" statement into the scene file, specifying the shape of the light source. Later on you still have to write the object of your choice between the brackets.";
+"lightLooksLikeOn" = "Write a “looks_like” statement into the scene file, specifying the shape of the light source. Later on you still have to write the object of your choice between the brackets.";
 "lightMediaAttenuationOn" = "Turn the media attenuation on for this light source, so that the light will be influenced by fog or media atmosphere.";
 "lightMediaInteractionOn" = "By default a light source will interact with a media added to the scene. This option switches this behaviour off.";
 "lightParallelLightOn" = "A parallel light shoots rays from the closest point on a plane to the object intersection point.\nThe plane is determined by a perpendicular defined by the light location and the point_at vector.";
@@ -36,4 +36,4 @@
 "lightPhotonsRefractionOn" = "Control whether photons by this light_source are used for refraction caustics or not.";
 "lightProjectedTroughOn" = "If set, light from this light_source will ONLY go through the specified object. The masked light beam will then project on any object it hits.";
 "lightProjectedTroughObjectEdit" = "Enter the name of the #declared object where the light will go through.";
-"lightShadowlessOn" = "Adds the \"shadowless\" keyword to your light source, stopping it from casting shadows";
+"lightShadowlessOn" = "Adds the “shadowless” keyword to your light source, stopping it from casting shadows";

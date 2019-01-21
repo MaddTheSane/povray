@@ -1,4 +1,4 @@
-"finishDontWrapInFinish" = "Write the body of the finish to the scene file without the \"finish {}\" statement.\nThis allows to replace one or more selected items of the finish with new ones";
+"finishDontWrapInFinish" = "Write the body of the finish to the scene file without the “finish {}” statement.\nThis allows to replace one or more selected items of the finish with new ones";
 "finishDiffuseOn" = "Light reflects and is scattered in all directions by the roughness of the surface.\nDiffuse controls how much of the light coming directly from any light sources is reflected via diffuse reflection Default is 0.6";
 "finishDiffuseEdit" = "Light reflects and is scattered in all directions by the roughness of the surface.\nThe keyword diffuse controls how much of the light coming directly from any light sources is reflected via diffuse reflection. Default is 0.6";
 "finishBacksideOn" = "Light reflects and is scattered in all directions by the roughness of the surface.\nDiffuse controls how much of the light coming directly from any light sources is reflected via diffuse reflection Default is 0.6";
@@ -9,8 +9,8 @@
 "finishCrandEdit" = "Very rough surfaces exhibit a dark graininess in their apparent color. The crand keyword causes a minor random darkening in the diffuse reflection.\nTypical values range from 0.01 to 0.5 or higher.\nDefault is 0.0";
 "finishAmbientColorGroupOn" = "Ambient light simulates the light inside a shadowed area, coming off of other objects.\nDefault is 0.1. \nValues range from 0.0 to 1.0";
 "finishAmbientColorColorWell" = "Ambient light simulates the light inside a shadowed area, coming off of other objects.\nDefault is 0.1. \nValues range from 0.0 to 1.0";
-"finishEmissionColorGroupOn" = "syntax and effect are virtually identicall to \n\"ambient\", except that \"emission\" is\nunaffected by the global \"ambient_light\" parameter,\n which will now effectively be set to 0\nif radiosity is active (except in legacy scenes having #version set to < 3.70).";
-"finishEmissionColorColorWell" = "syntax and effect are virtually identicall to \n\"ambient\", except that \"emission\" is\nunaffected by the global \"ambient_light\" parameter,\n which will now effectively be set to 0\nif radiosity is active (except in legacy scenes having #version set to < 3.70).";
+"finishEmissionColorGroupOn" = "syntax and effect are virtually identicall to \n“ambient”, except that “emission” is\nunaffected by the global “ambient_light” parameter,\n which will now effectively be set to 0\nif radiosity is active (except in legacy scenes having #version set to < 3.70).";
+"finishEmissionColorColorWell" = "syntax and effect are virtually identicall to \n“ambient”, except that “emission” is\nunaffected by the global “ambient_light” parameter,\n which will now effectively be set to 0\nif radiosity is active (except in legacy scenes having #version set to < 3.70).";
 "finishSubsurfaceLightTransportColorGroupOn" = "fixme";
 "finishSubsurfaceLightTransportColorColorWell" = "fixme";
 "finishPhongOn" = "The phong keyword controls the amount of highlighting on the object. It causes bright shiny spots on the object that are the color of the light source being reflected.\nDefault is 0.0, giving no highlight.\nValues range from 0.0 to 1.0";
@@ -37,6 +37,6 @@
 "finishReflectionMaxColorColorWell" = "";
 "finishReflectionExponentOn" = "Turns on the reflection_exponent keyword to produce non-linear reflection intensities.";
 "finishReflectionExponentEdit" = "Default value of 1.0 produces a linear curve.\nLower values darken middle and low intensities and keeps high intensity reflections bright.";
-"finishReflectionMetallicOn" = "Multiplies the \"reflection\" color vector by the pigment color at each point where light is reflected to better model the reflectivity of metallic finishes.";
+"finishReflectionMetallicOn" = "Multiplies the “reflection” color vector by the pigment color at each point where light is reflected to better model the reflectivity of metallic finishes.";
 "finishReflectionMetallicEdit" = "Specify an optional float value, which is the amount of influence the reflect_metallic keyword has on the reflected color.";
 "finishConserveEnergyOn" = "When conserve_energy is enabled, POV will multiply the amount filtered and transmitted by what is left over from reflection (for example, if reflection is 80%, filter/transmit will be multiplied by 20%)";

@@ -1,4 +1,4 @@
-"objectEditorTableView" = "Enter the y value of a control point (\"height\"  on the y-axis)\nand the x value of a control point (\"location\" on the x-axis)";
+"objectEditorTableView" = "Enter the y value of a control point (“height”  on the y-axis)\nand the x value of a control point (“location” on the x-axis)";
 
 "drawPointsEdit" = "Enter the desired number of sides or segments of a 2D-curve";
 "objectEditorActionOnPoints" =  "Specify which points should be transformed.\nAll: moves, scales or rotates all points of the curve.\nSelected: only the selected points are moved, scaled or rotated";

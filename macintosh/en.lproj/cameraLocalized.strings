@@ -6,10 +6,10 @@
 "cameraTypePopup" = "Type of projection to be used with the camera";
 "cameraAspectRatioAutoOn" = "Set right and up vectors for deformation free image";
 "cameraAspectRatioGroupOn" ="Set height to width ratio";
-"cameraAspectRatioUpEdit" ="The length of this vector determines the height of the view window.\nTogether with the \"right\" vector it determines the height to width ratio (aspect ratio)";
+"cameraAspectRatioUpEdit" ="The length of this vector determines the height of the view window.\nTogether with the “right” vector it determines the height to width ratio (aspect ratio)";
 "cameraAspectRatioRightPopup" ="The right keyword defines the horizontal direction and width of the view window";
-"cameraAspectRatioUpPopup" ="The up keyword defines which direction is \"up\" in the view window";
-"cameraAspectRatioRightEdit" = "The length of this vector determines the width of the view window. The sign of the right vector determines the handedness of the coordinate system. Together with the \"up\" vector it determines the height to width ratio (aspect ratio)";
+"cameraAspectRatioUpPopup" ="The up keyword defines which direction is “up” in the view window";
+"cameraAspectRatioRightEdit" = "The length of this vector determines the width of the view window. The sign of the right vector determines the handedness of the coordinate system. Together with the “up” vector it determines the height to width ratio (aspect ratio)";
 "cameraAngleDirectionOn"="Set viewing angle\nAngle: specify the (horizontal) field of view (degrees)\n Direction: set the initial direction to point the camera. Controls also the (horizontal) field of view with some projection types\nSphere: set hor and vert field of views (degs)";
 "cameraAngleDirectionPopup" ="Set viewing angle\nAngle: specify the (horizontal) field of view (degrees)\n Direction: set the initial direction to point the camera. Controls also the (horizontal) field of view with some projection types\nSphere: set hor and vert field of views (degs)";
 /*"cameraAngleTabView",*/

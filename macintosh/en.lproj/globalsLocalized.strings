@@ -1,4 +1,4 @@
-"globalsDontWrapInGlobalSettings" ="Write the body of the global settings statement to the scene file without the \"global_settings{}\" statement.\n(This allows you to replace one or more selected items of the global_settings with new ones)";
+"globalsDontWrapInGlobalSettings" ="Write the body of the global settings statement to the scene file without the “global_settings{}” statement.\n(This allows you to replace one or more selected items of the global_settings with new ones)";
 
 /*globals*/
 "globalsGlobalsAmbientLightOn" = "All ambient light values in the finish statements are multiplied by this value";
@@ -15,8 +15,8 @@
 "globalsGlobalsMaxTraceLevelEdit" = "Enter the maximum number of recursive levels POV-Ray could use when tracing reflective and transparent surfaces.\nDefault is 5.\nSet ADC_bailout to 0 if the upper limit of max_trace_level should always be reached";
 "globalsGlobalsNumberOfWavesOn" = "Enter the number of generating centers for waves and ripples.\nDefault value is 10";
 "globalsGlobalsNumberOfWavesEdit" = "Enter the number of generating centers for waves and ripples.\nDefault value is 10";
-"globalsGlobalsMaxIntersectionsOn" = "When the displayed statistics report an \"I-Stack Overflow\", raise this value.\nDefault stack size is 64";
-"globalsGlobalsMaxIntersectionsEdit" = "When the displayed statistics report an \"I-Stack Overflow\", raise this value.\nDefault stack size is 64";
+"globalsGlobalsMaxIntersectionsOn" = "When the displayed statistics report an “I-Stack Overflow”, raise this value.\nDefault stack size is 64";
+"globalsGlobalsMaxIntersectionsEdit" = "When the displayed statistics report an “I-Stack Overflow”, raise this value.\nDefault stack size is 64";
 
 "globalsGlobalsCharsetOn" = "Specifies the encoding used for extended character sets.\nThis is only used for text objects";
 "globalsGlobalsCharsetPopUp" = "Choose one of the character sets.\nThis is only used for text objects";
