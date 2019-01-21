@@ -508,7 +508,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	NSArray *appArray=[defaults arrayForKey:@"mainPrefsArray"];
 	mSettingsArray=[[NSMutableArray alloc] initWithArray:appArray];
 	// work threads
-	[mNumberCoresFound setIntValue:[[MainController sharedInstance]getNumberOfCpus]];
+	[mNumberCoresFound setIntegerValue:[[MainController sharedInstance]getNumberOfCpus]];
 	
 	
 	[self buildPreferencesPopup];
