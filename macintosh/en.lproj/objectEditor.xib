@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -223,7 +222,7 @@ DQ
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="197">
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -353,13 +352,9 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="78">
+                    <box horizontalHuggingPriority="750" boxType="separator" id="78">
                         <rect key="frame" x="75" y="4" width="2" height="116"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <view key="contentView" id="gkW-c3-Pyp">
-                            <rect key="frame" x="1" y="1" width="0.0" height="114"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
                     <textField verticalHuggingPriority="750" id="80">
                         <rect key="frame" x="81" y="78" width="31" height="14"/>
@@ -381,30 +376,22 @@ DQ
                             <action selector="objectmapmapButtons:" target="-2" id="109"/>
                         </connections>
                     </button>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="83">
+                    <box horizontalHuggingPriority="750" boxType="separator" id="83">
                         <rect key="frame" x="134" y="4" width="2" height="116"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <view key="contentView" id="h5e-yJ-dpe">
-                            <rect key="frame" x="1" y="1" width="0.0" height="114"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
                     <textField verticalHuggingPriority="750" id="85">
                         <rect key="frame" x="84" y="51" width="40" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="204">
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="86">
-                        <rect key="frame" x="367" y="4" width="2" height="116"/>
+                    <box horizontalHuggingPriority="750" boxType="separator" id="86">
+                        <rect key="frame" x="366" y="4" width="4" height="116"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                        <view key="contentView" id="BFC-bS-nGV">
-                            <rect key="frame" x="1" y="1" width="0.0" height="114"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
                     <textField verticalHuggingPriority="750" id="88">
                         <rect key="frame" x="143" y="78" width="39" height="14"/>
@@ -431,7 +418,7 @@ DQ
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="207">
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -458,20 +445,16 @@ DQ
                             </column>
                         </cells>
                     </matrix>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="94">
+                    <box horizontalHuggingPriority="750" boxType="separator" id="94">
                         <rect key="frame" x="196" y="4" width="2" height="116"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <view key="contentView" id="6ej-PI-eD2">
-                            <rect key="frame" x="1" y="1" width="0.0" height="114"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
                     <textField verticalHuggingPriority="750" id="97">
                         <rect key="frame" x="229" y="51" width="40" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="208">
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -508,13 +491,9 @@ DQ
                             <action selector="objectmapmapButtons:" target="-2" id="111"/>
                         </connections>
                     </button>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="102">
+                    <box horizontalHuggingPriority="750" boxType="separator" id="102">
                         <rect key="frame" x="302" y="4" width="2" height="116"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <view key="contentView" id="z4Z-PS-W6R">
-                            <rect key="frame" x="1" y="1" width="0.0" height="114"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
                     <button tag="150" id="104">
                         <rect key="frame" x="238" y="23" width="20" height="20"/>

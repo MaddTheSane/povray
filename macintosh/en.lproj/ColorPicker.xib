@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -79,7 +78,7 @@ DQ
                                 <decimal key="maximum" value="NaN"/>
                             </numberFormatter>
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -109,7 +108,7 @@ DQ
                                 <decimal key="maximum" value="NaN"/>
                             </numberFormatter>
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -139,7 +138,7 @@ DQ
                                 <decimal key="maximum" value="NaN"/>
                             </numberFormatter>
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -168,45 +167,25 @@ DQ
                             <action selector="colorPickerTraget:" target="-2" id="82"/>
                         </connections>
                     </button>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="26">
+                    <box verticalHuggingPriority="750" boxType="separator" id="26">
                         <rect key="frame" x="177" y="98" width="44" height="2"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="c3l-c0-huI">
-                            <rect key="frame" x="1" y="1" width="42" height="0.0"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="28">
+                    <box verticalHuggingPriority="750" boxType="separator" id="28">
                         <rect key="frame" x="176" y="151" width="44" height="2"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="HuP-eu-xTo">
-                            <rect key="frame" x="1" y="1" width="42" height="0.0"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="30">
+                    <box horizontalHuggingPriority="750" boxType="separator" id="30">
                         <rect key="frame" x="176" y="98" width="2" height="10"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="Tc4-qM-OS0">
-                            <rect key="frame" x="1" y="1" width="0.0" height="8"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="32">
+                    <box horizontalHuggingPriority="750" boxType="separator" id="32">
                         <rect key="frame" x="176" y="142" width="2" height="10"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="CZi-vx-gZg">
-                            <rect key="frame" x="1" y="1" width="0.0" height="8"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="57">
+                    <box verticalHuggingPriority="750" boxType="separator" id="57">
                         <rect key="frame" x="196" y="125" width="24" height="2"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="5hR-lS-mI8">
-                            <rect key="frame" x="1" y="1" width="22" height="0.0"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
                     <customView id="63">
                         <rect key="frame" x="12" y="45" width="315" height="37"/>
@@ -235,7 +214,7 @@ DQ
                                         <decimal key="maximum" value="NaN"/>
                                     </numberFormatter>
                                     <font key="font" metaFont="smallSystem"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
@@ -265,7 +244,7 @@ DQ
                                         <decimal key="maximum" value="NaN"/>
                                     </numberFormatter>
                                     <font key="font" metaFont="smallSystem"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
