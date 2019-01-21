@@ -61,8 +61,8 @@
 	NSRect mFrame;
 	NSRect mRasterFrame;
 	NSRect mDrawFrame;
-	float xToCenter, yToCenter;
-	float mRasterStep;
+	CGFloat xToCenter, yToCenter;
+	CGFloat mRasterStep;
 	NSRect *mPointList;	
 	NSRect *mSlopePointList;	
 

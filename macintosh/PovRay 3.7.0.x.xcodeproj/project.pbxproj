@@ -866,14 +866,13 @@
 		8207D2EC1D04648000A42189 /* tiffconf_i386.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tiffconf_i386.h; sourceTree = "<group>"; };
 		8207D2ED1D04648000A42189 /* tiffconf_x86_64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tiffconf_x86_64.h; sourceTree = "<group>"; };
 		8207D2EE1D04648000A42189 /* toFloat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = toFloat.h; sourceTree = "<group>"; };
-		8207D2EF1D04648000A42189 /* zconf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zconf.h; sourceTree = "<group>"; };
 		821CDDD80C9017A600CC0BDA /* libpng.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpng.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		821CDDDD0C9017BA00CC0BDA /* libtiff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtiff.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		821CDDE20C9017C500CC0BDA /* libjpeg.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libjpeg.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8222236B1D4535F90062FCA5 /* preferencesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = preferencesPanelController.h; sourceTree = "<group>"; };
 		8222236C1D4535F90062FCA5 /* preferencesPanelController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = preferencesPanelController.mm; sourceTree = "<group>"; };
-		8222236E1D45360D0062FCA5 /* backgroundTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = backgroundTemplate.h; path = sceneDocument/templates/backgroundTemplate.h; sourceTree = SOURCE_ROOT; };
-		8222236F1D45360D0062FCA5 /* backgroundTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = backgroundTemplate.mm; path = sceneDocument/templates/backgroundTemplate.mm; sourceTree = SOURCE_ROOT; };
+		8222236E1D45360D0062FCA5 /* backgroundTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = backgroundTemplate.h; sourceTree = "<group>"; };
+		8222236F1D45360D0062FCA5 /* backgroundTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = backgroundTemplate.mm; sourceTree = "<group>"; };
 		823625BB1D16909B0009612E /* macintoshDisplay.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = macintoshDisplay.mm; path = previewWindow/macintoshDisplay.mm; sourceTree = SOURCE_ROOT; };
 		823625BC1D16909B0009612E /* materialPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = materialPreview.h; path = previewWindow/materialPreview.h; sourceTree = SOURCE_ROOT; };
 		823B2A0B1D16E677007AA0CB /* macintoshDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = macintoshDisplay.h; path = previewWindow/macintoshDisplay.h; sourceTree = SOURCE_ROOT; };
@@ -2076,7 +2075,6 @@
 				8207D2EC1D04648000A42189 /* tiffconf_i386.h */,
 				8207D2ED1D04648000A42189 /* tiffconf_x86_64.h */,
 				8207D2EE1D04648000A42189 /* toFloat.h */,
-				8207D2EF1D04648000A42189 /* zconf.h */,
 			);
 			path = libraries_config;
 			sourceTree = "<group>";
@@ -2763,8 +2761,7 @@
 				826CB7691D034CC4000A7A98 /* messageViewController.h */,
 				826CB76A1D034CC4000A7A98 /* messageViewController.mm */,
 			);
-			name = messageWindow;
-			path = MessageWindow;
+			path = messageWindow;
 			sourceTree = "<group>";
 		};
 		826CB7721D034CC4000A7A98 /* precompiledHeaders */ = {
@@ -2792,8 +2789,7 @@
 				823B2A0B1D16E677007AA0CB /* macintoshDisplay.h */,
 				823625BC1D16909B0009612E /* materialPreview.h */,
 			);
-			name = previewWindow;
-			path = PreviewWindow;
+			path = previewWindow;
 			sourceTree = "<group>";
 		};
 		826CB7851D034CC4000A7A98 /* sceneDocument */ = {
@@ -2815,8 +2811,7 @@
 				826CB7931D034CC4000A7A98 /* sceneTextview.mm */,
 				826CB7941D034CC4000A7A98 /* templates */,
 			);
-			name = sceneDocument;
-			path = SceneDocument;
+			path = sceneDocument;
 			sourceTree = "<group>";
 		};
 		826CB7941D034CC4000A7A98 /* templates */ = {
@@ -2879,8 +2874,7 @@
 				826CB7D31D034CC4000A7A98 /* transformationsTemplate.h */,
 				826CB7D41D034CC4000A7A98 /* transformationsTemplate.mm */,
 			);
-			name = templates;
-			path = Templates;
+			path = templates;
 			sourceTree = "<group>";
 		};
 		826CB9D21D034D23000A7A98 /* Icons */ = {
@@ -2960,9 +2954,8 @@
 				82B477B11D04712B0054B17E /* mapPreview.h */,
 				82B477B21D04712B0054B17E /* mapPreview.mm */,
 			);
-			name = baseClasses;
-			path = sceneDocument/templates/baseClasses;
-			sourceTree = SOURCE_ROOT;
+			path = baseClasses;
+			sourceTree = "<group>";
 		};
 		82B9A1510C904CD5002D62D9 /* libraries */ = {
 			isa = PBXGroup;

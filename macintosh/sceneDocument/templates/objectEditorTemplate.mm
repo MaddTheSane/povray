@@ -285,7 +285,7 @@ enum {
 //	See if a point can be les then zero
 // ---------------------------------------------------------------------------
 
--(void) setPointToMin:(float & ) theValue thePoint:(NSInteger&)thePoint
+-(void) setPointToMin:(CGFloat & ) theValue thePoint:(NSInteger&)thePoint
 {
 	if ( mTemplateType == menuTagTemplateLathe )
 	{
@@ -299,11 +299,11 @@ enum {
 //---------------------------------------------------------------------
 // applyArrows
 //---------------------------------------------------------------------
--(void) applyArrows:(int) tag
+-(void) applyArrows:(NSInteger) tag
 {
 	const char* t=[[objectEditorMoveEdit stringValue] UTF8String];
-	float value=atof(t);
-	float temp; 
+	CGFloat value=atof(t);
+	CGFloat temp; 
 	for( NSInteger ct=0; ct<[mMap count]; ct++)
 	{	
 		if ([ [objectEditorActionOnPoints selectedCell]tag]==cObjectAllPoints || [mTableView isRowSelected:ct])
@@ -343,11 +343,11 @@ enum {
 //---------------------------------------------------------------------
 // applyScaleRotate
 //---------------------------------------------------------------------
--(void) applyScaleRotate:(int)tag
+-(void) applyScaleRotate:(NSInteger)tag
 {
 	const char* t;
-	float value=0.0;
-	float temp;
+	CGFloat value=0.0;
+	CGFloat temp;
 	switch (tag)
 	{
 		case cObjectEditorApplyScale: 
@@ -381,8 +381,8 @@ enum {
 	}
 	else		//rotate
 	{
-		float radGr=3.1415927/180.0*value;
-		float tempx;
+		CGFloat radGr=M_PI/180.0*value;
+		CGFloat tempx;
 		for( NSInteger ct=0; ct<[mMap count]; ct++)
 		{	
 			if ([ [objectEditorActionOnPoints selectedCell]tag]==cObjectAllPoints || [mTableView isRowSelected:ct])

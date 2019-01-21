@@ -77,9 +77,9 @@
 	
 }
 -(IBAction) objectmapmapButtons:(id)sender;
--(void) applyArrows:(int) tag;
--(void) applyScaleRotate:(int)tag;
--(void) setPointToMin:(float & ) theValue thePoint:(NSInteger&)thePoint;
+-(void) applyArrows:(NSInteger) tag;
+-(void) applyScaleRotate:(NSInteger)tag;
+-(void) setPointToMin:(CGFloat & ) theValue thePoint:(NSInteger&)thePoint;
 
 @end
 

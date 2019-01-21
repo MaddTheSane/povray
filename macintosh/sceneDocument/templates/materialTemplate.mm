@@ -109,7 +109,7 @@ static BOOL mSkySphereWritten;
 //---------------------------------------------------------------------
 // addLayer:fromMap
 //---------------------------------------------------------------------
-+(void) addLayer:(MutableTabString*) ds atIndex:(int)index fromMap:(id)cmap
++(void) addLayer:(MutableTabString*) ds atIndex:(NSInteger)index fromMap:(id)cmap
 {
 
 	if ( [cmap intAtRow:index atColumn:cMaterialmapOnOffIndex]==NSOnState)
@@ -856,19 +856,19 @@ static BOOL mSkySphereWritten;
 			[self callTemplate:menuTagTemplateTransformations withDictionary:prefs andKeyName:@"materialTransformations"];
 			break;
 		case cPigmentOn:
-			[mMap setInt:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapPigmentOnIndex];
+			[mMap setInteger:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapPigmentOnIndex];
 			[self updateGreenLeds];
 			break;
 		case cNormalOn:
-			[mMap setInt:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapNormalOnIndex];
+			[mMap setInteger:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapNormalOnIndex];
 			[self updateGreenLeds];
 			break;
 		case cFinishOn:
-			[mMap setInt:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapFinishOnIndex];
+			[mMap setInteger:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapFinishOnIndex];
 			[self updateGreenLeds];
 			break;
 		case cInteriorOn:
-			[mMap setInt:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapInteriorOnIndex];
+			[mMap setInteger:[sender state] atRow:[mMap selectedRow] atColumn:cMaterialmapInteriorOnIndex];
 			[self updateGreenLeds];
 			break;
 	}

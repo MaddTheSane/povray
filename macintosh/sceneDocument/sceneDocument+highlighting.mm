@@ -972,7 +972,7 @@ shakeMessage(@"recoloring");
 //---------------------------------------------------------------------
 // addMacro
 //---------------------------------------------------------------------
--(void)addMacro:(NSString*) macroName atLocation:(unsigned) macroLocation
+-(void)addMacro:(NSString*) macroName atLocation:(NSUInteger) macroLocation
 {
 	const char* utf8=[macroName UTF8String];
 	if ( utf8==nil)
@@ -1028,7 +1028,7 @@ shakeMessage(@"recoloring");
 //---------------------------------------------------------------------
 // addDeclare
 //---------------------------------------------------------------------
--(void)addDeclare:(NSString*) declareName atLocation:(unsigned) declareLocation isLocal:(BOOL) isLocal
+-(void)addDeclare:(NSString*) declareName atLocation:(NSUInteger) declareLocation isLocal:(BOOL) isLocal
 {
 	const char* utf8=[declareName UTF8String];
 	if ( utf8==nil)
@@ -1084,7 +1084,7 @@ shakeMessage(@"recoloring");
 //---------------------------------------------------------------------
 // addInclude
 //---------------------------------------------------------------------
--(void)addInclude:(NSString*) includeName atLocation:(unsigned) includeLocation
+-(void)addInclude:(NSString*) includeName atLocation:(NSUInteger) includeLocation
 {
 	if ( mIncludeList==NULL)
 	{

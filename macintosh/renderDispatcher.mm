@@ -358,7 +358,7 @@ static renderDispatcher* _renderDispatcher;
 //---------------------------------------------------------------------
 // canEntryBeRemoved
 //---------------------------------------------------------------------
--(BOOL) canEntryBeRemoved:(int)entry
+-(BOOL) canEntryBeRemoved:(NSInteger)entry
 {
 	BOOL ret=YES;
 	if ( [mBatchMap intAtRow:entry atColumn:cStatusIndex]==cRendering)
@@ -403,7 +403,7 @@ static renderDispatcher* _renderDispatcher;
 //---------------------------------------------------------------------
 // batchSetDefaultSettingsForState:atEntry
 //---------------------------------------------------------------------
--(void) batchSetDefaultSettingsForState:(int) newState atEntry:(int)entry
+-(void) batchSetDefaultSettingsForState:(int) newState atEntry:(NSInteger)entry
 {
 	id obj=nil;
 	// if setting from panel is choosen,
@@ -1651,20 +1651,20 @@ static renderDispatcher* _renderDispatcher;
 	// worker threads:
 	if ( [settingsDict objectForKey:@"Work_Threads"] != nil)
 	{
-		int cpus=[[MainController sharedInstance]getNumberOfCpus];
+		NSInteger cpus=[[MainController sharedInstance]getNumberOfCpus];
 		if ( cpus != -1)	// we know how many cores there are
 		{
 			switch ([[settingsDict objectForKey:@"Work_Threads"]intValue])
 			{
 				case cAutomatic:
-					[self addCommand:"Work_Threads" withString:[NSString stringWithFormat:@"%d",cpus]]; break;
+					[self addCommand:"Work_Threads" withString:[NSString stringWithFormat:@"%ld",(long)cpus]]; break;
 				case cCpusMinus1:
 					if (cpus > 1)
-						[self addCommand:"Work_Threads" withString:[NSString stringWithFormat:@"%d",cpus-1]];
+						[self addCommand:"Work_Threads" withString:[NSString stringWithFormat:@"%ld",(long)(cpus-1)]];
 					else
-						[self addCommand:"Work_Threads" withString:[NSString stringWithFormat:@"%d",cpus]];
+						[self addCommand:"Work_Threads" withString:[NSString stringWithFormat:@"%ld",(long)cpus]];
 					break;
-				case cCpusPlus1: [self addCommand:"Work_Threads" withString:[NSString stringWithFormat:@"%d",cpus+1]]; break;
+				case cCpusPlus1: [self addCommand:"Work_Threads" withString:[NSString stringWithFormat:@"%ld",(long)(cpus+1)]]; break;
 				case cCpu1:[self addCommand:"Work_Threads" withString:@"1"]; break;
 				case cCpu2:[self addCommand:"Work_Threads" withString:@"2"]; break;
 				case cCpu3:[self addCommand:"Work_Threads" withString:@"3"]; break;

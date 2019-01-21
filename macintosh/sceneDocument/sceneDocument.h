@@ -123,7 +123,7 @@
 #define moveRightToolbarItemIdentifier						@"moveRightToolbarItemIdentifier"
 #define bracesToolbarItemIdentifier								@"bracesToolbarItemIdentifier"
 
-enum styleToBeUsed {
+typedef NS_ENUM(unsigned short, styleToBeUsed) {
 	useKeywordStyle=1,
 	usePreprocessorStyle=2,
 	useMacroStyle=3,
@@ -139,8 +139,8 @@ typedef struct {
 	char *wordAsCString;
 	NSString *wordAsNSString;
 	long wordLength;
-	unsigned short wordStyle;
-	unsigned location;
+	styleToBeUsed wordStyle;
+	NSUInteger location;
 	BOOL isLocal;
 	} keyWords;
  

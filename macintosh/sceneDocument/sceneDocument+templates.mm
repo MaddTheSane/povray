@@ -310,7 +310,7 @@
 	}
 	
 	[str getLineStart:&firstCharacter end:NULL contentsEnd:&lastCharacter forRange:selection];
-	for (int x=firstCharacter; x<lastCharacter; x++)
+	for (NSInteger x=firstCharacter; x<lastCharacter; x++)
 	{
 		if ( [str characterAtIndex:x]=='\t')
 			tabs++;

@@ -844,7 +844,7 @@
 //---------------------------------------------------------------------
 -(IBAction) globalsGlobalsTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cGlobalsGlobalsAmbientLightOn;
 	else
@@ -890,7 +890,7 @@
 //---------------------------------------------------------------------
 -(IBAction) globalsSubsurfaceTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cGlobalsSubsurfaceSamplespOn;
 	else
@@ -915,7 +915,7 @@
 //---------------------------------------------------------------------
 -(IBAction) globalsRadiosityTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	BOOL onState;
 	if ( sender==self)
 		theTag=cGlobalsRadiosityPretraceStartOn;
@@ -987,8 +987,8 @@
 //---------------------------------------------------------------------
 -(IBAction) globalsPhotonsTarget:(id)sender
 {
-	int theTag;
-	int nTag;
+	NSInteger theTag;
+	NSInteger nTag;
 	if ( sender==self)
 		theTag=cGlobalsPhotonsSpacingMatrix;
 	else
