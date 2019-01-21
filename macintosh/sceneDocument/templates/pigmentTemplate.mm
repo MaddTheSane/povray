@@ -1213,7 +1213,7 @@
 //---------------------------------------------------------------------
 -(IBAction) pigmentColorPatternSelectPopUpButton:(id)sender
 {
-	int selectedItem=[sender indexOfSelectedItem];
+	NSInteger selectedItem=[sender indexOfSelectedItem];
 	[pigmentColorPatternTabView selectTabViewItemAtIndex:[sender indexOfSelectedItem]];
 
 	if ( selectedItem >=cPigmentPatternAgate && selectedItem<=cPigmentPatternWrinkles)
@@ -1245,7 +1245,7 @@
 //---------------------------------------------------------------------
 -(IBAction) pigmentTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cPigmentTransformationsOn;
 	else
@@ -1657,7 +1657,7 @@
 {
 	id 	prefs=nil;
 
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	switch( tag)
 	{
 	

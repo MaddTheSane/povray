@@ -516,7 +516,7 @@ static renderDispatcher* _renderDispatcher;
 - (BOOL)validateMenuItem:(NSMenuItem *)aMenuItem
 {
 	NSIndexSet *selectedRowsSet=[mTableView selectedRowIndexes];
-	int numberOfSelectedRows=[selectedRowsSet count];
+	NSInteger numberOfSelectedRows=[selectedRowsSet count];
 	switch ([aMenuItem tag])
 	{
 		case eTag_ShowMenu:		return YES; break;
@@ -810,7 +810,7 @@ static renderDispatcher* _renderDispatcher;
 		{
 			if( resultCode == NSOKButton )
 			{
-				int current;
+				NSInteger current;
 				if ( insert == YES)
 				{
 					NSIndexSet *selectedRows=[mTableView selectedRowIndexes];
@@ -847,7 +847,7 @@ static renderDispatcher* _renderDispatcher;
 //---------------------------------------------------------------------
 -(void) batchApplySettingsPopup:(id)sender
 {
-	int index=[mSettingsPopupButton indexOfSelectedItem];
+	NSInteger index=[mSettingsPopupButton indexOfSelectedItem];
 	NSString *itemString=[mSettingsPopupButton itemTitleAtIndex:index];
 	NSMutableDictionary *dict=nil;
 
@@ -2176,7 +2176,7 @@ void *doRender(void* theObject)
 -(void) setButtons
 {
 	NSIndexSet *selectedRows=[mTableView selectedRowIndexes];
-	int number=[selectedRows count];
+	NSInteger number=[selectedRows count];
 	if ( [self batchIsRunning]==NO)
 	{
 		[mAbortButton setEnabled:NO];

@@ -339,7 +339,7 @@
 		}
 		
 	}
-	float oldh=mouseLoc.y;
+	CGFloat oldh=mouseLoc.y;
 	[self setNeedsDisplay:YES];
     while (keepOn && (PointFound || SlopeFound)) 
     {

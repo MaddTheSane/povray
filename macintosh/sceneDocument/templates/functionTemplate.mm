@@ -486,7 +486,7 @@
 	NSMutableDictionary *dict=[self preferences];
 	if ( dict )
 	{
-		int row=[functionTableView selectedRow];
+		NSInteger row=[functionTableView selectedRow];
 		[dict setObject:[NSNumber numberWithInt:mCurrentFunctions[row].RefNr]	 forKey:@"referenceNumberOfSelectedFunction"];
 	}
 }
@@ -529,7 +529,7 @@
 //---------------------------------------------------------------------
 -(void) updateViews
 {
-	int row=[functionTableView selectedRow];
+	NSInteger row=[functionTableView selectedRow];
 
 	
 	if ( row != -1) 	//a row is selected

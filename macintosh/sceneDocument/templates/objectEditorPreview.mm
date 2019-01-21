@@ -1325,7 +1325,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 			{
 				double U=0.0;
 				double c[4][2];
-				for (int y=x,t=0; y<=x+3; y++,t++)
+				for (NSInteger y=x,t=0; y<=x+3; y++,t++)
 				{
 					NSRect tempRect=NSInsetRect(mPointList[y],5,5);
 					c[t][0]=tempRect.origin.x;

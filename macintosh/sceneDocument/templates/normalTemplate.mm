@@ -1303,7 +1303,7 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 //---------------------------------------------------------------------
 -(IBAction) normalPatternSelectPopUpButton:(id)sender
 {
-	int selectedItem=[normalPatternSelectPopUpButton indexOfSelectedItem];
+	NSInteger selectedItem=[normalPatternSelectPopUpButton indexOfSelectedItem];
 	[normalPatternTabView selectTabViewItemAtIndex:selectedItem];
 	BOOL hideAmount=NO;
 	BOOL hideBumpSize=NO;
@@ -1431,7 +1431,7 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 //---------------------------------------------------------------------
 -(IBAction) normalTarget:(id)sender
 {
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cNormalTransformationsOn;
 	else
@@ -2053,7 +2053,7 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 {
 	id 	prefs=nil;
 
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	switch( tag)
 	{
 		case cNormalTransformationsEditButton:

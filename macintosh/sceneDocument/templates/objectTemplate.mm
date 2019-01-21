@@ -1999,7 +1999,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 -(IBAction) objectTarget:(id)sender
 {
 	BOOL on=YES;
-	int theTag;
+	NSInteger theTag;
 	if ( sender==self)
 		theTag=cObjectMaterialGroupOn;
 	else
@@ -2424,7 +2424,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 //---------------------------------------------------------------------
 -(IBAction) objectTypePopUp:(id)sender
 {
-	int item=[objectTypePopUp indexOfSelectedItem];
+	NSInteger item=[objectTypePopUp indexOfSelectedItem];
 	[objectTabView selectTabViewItemAtIndex:item];
 	BOOL showUv=YES;
 	BOOL showHollow=YES;
@@ -2513,7 +2513,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 			return nil;
 
 		if ( [identifier isEqualToString:@"nr"])
-			return [NSNumber numberWithInt:rowIndex+1];
+			return [NSNumber numberWithInteger:rowIndex+1];
 		else if ( [identifier isEqualToString:@"value"])
 			return [NSString stringWithFormat:FloatFormat,[[mPolyArray objectAtIndex:rowIndex]floatValue]];
 		else if ( [identifier isEqualToString:@"description"])

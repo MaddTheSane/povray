@@ -350,7 +350,7 @@ enum {
 //---------------------------------------------------------------------
 - (IBAction)switchedOn:(id)sender
 {
-	int tag=[sender tag];
+	NSInteger tag=[sender tag];
 	if ( tag >=cHeaderIncludeComment1On && tag <=cHeaderIncludeComment7On)
 		[self setCommentState];
 	else if ( tag >=cHeaderIncludeInclude1On && tag <=cHeaderIncludeInclude12On)

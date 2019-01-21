@@ -62,7 +62,7 @@ namespace vfe
 
 			remoteObject *rm=[[remoteObject alloc]initWithObjectsAndKeys:
 												[NSString stringWithUTF8String:fileName], @"fileName",
-												[NSNumber numberWithInt:lineNo], @"lineNo",	nil];
+												[NSNumber numberWithInteger:lineNo], @"lineNo",	nil];
 			[activeRenderPreview performSelectorOnMainThread:@selector(remoteMac_Parse_Error:)withObject: rm waitUntilDone:YES];
 			[rm release];
 		}

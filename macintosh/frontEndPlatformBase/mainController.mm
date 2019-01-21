@@ -362,7 +362,7 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 		return YES;
 	}
 
-	int theTag=[aMenuItem tag];
+	NSInteger theTag=[aMenuItem tag];
 	switch (theTag)
 	{
 		case eTag_ShowMenu:
@@ -592,7 +592,7 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 
 	if ( gIsRendering ==YES)
 	{
-		int res=NSRunAlertPanel( NSLocalizedStringFromTable(@"RenderInProgress", @"applicationLocalized", @"Rendering in progress..."),
+		NSInteger res=NSRunAlertPanel( NSLocalizedStringFromTable(@"RenderInProgress", @"applicationLocalized", @"Rendering in progress..."),
 														NSLocalizedStringFromTable(@"ReallyQuit", @"applicationLocalized", @"A file is being rendered. Do you really want to quit?"),
 														NSLocalizedStringFromTable(@"Cancel", @"applicationLocalized", @"Cancel"),
 														NSLocalizedStringFromTable(@"Quit", @"applicationLocalized", @"Quit"),
@@ -779,10 +779,7 @@ Bail:
 //---------------------------------------------------------------------
 // getNumberOfCpus
 //---------------------------------------------------------------------
--(int) getNumberOfCpus
-{
-	return mNumberOfCpus;
-}
+@synthesize getNumberOfCpus=mNumberOfCpus;
 
 
 @end
