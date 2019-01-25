@@ -143,18 +143,18 @@
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:cIorIndexWater],			@"interiorIorIndexPopUp",
 		@"1.3",																				@"interiorIorIndexEdit",
-		[NSNumber numberWithInt:NSOffState],					@"interiorDispersionGroupOn",
-		[NSNumber numberWithInt:NSOnState],						@"interiorDispersionSamplesOn",
+		@(NSOffState),					@"interiorDispersionGroupOn",
+		@(NSOnState),						@"interiorDispersionSamplesOn",
 		@"7",																					@"interiorDispersionSamplesEdit",
 		@"1.0",																				@"interiorDispersionValueEdit",
-		[NSNumber numberWithInt:NSOffState],					@"interiorCausticsOn",
+		@(NSOffState),					@"interiorCausticsOn",
 		@"1.0",																				@"interiorCausticsEdit",
-		[NSNumber numberWithInt:NSOffState],					@"interiorLightAttenuationGroupOn",
+		@(NSOffState),					@"interiorLightAttenuationGroupOn",
 		@"1",																					@"interiorLightAttenuationFadeDistanceEdit",
 		@"1",																					@"interiorLightAttenuationFadePowerEdit",
-		[NSNumber numberWithInt:NSOffState],					@"interiorLightAttenuationFadeColorGroupOn",
+		@(NSOffState),					@"interiorLightAttenuationFadeColorGroupOn",
 		[NSArchiver archivedDataWithRootObject:[MPColorWell grayColorAndFilter:NO]],	@"interiorLightAttenuationFadeColorColorWell",
-		[NSNumber numberWithInt:NSOffState],					@"interiorMediaGroupOn",
+		@(NSOffState),					@"interiorMediaGroupOn",
 	nil];
 
 	return initialDefaults;

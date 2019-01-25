@@ -330,13 +330,13 @@ static BOOL mSkySphereWritten;
 		
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSArchiver archivedDataWithRootObject:		[materialEditorMap standardMap]],		@"materialEditorMap",
-		[NSNumber numberWithInt:NSOffState],		@"materialMainTabView",
-		[NSNumber numberWithInt:NSOffState],		@"materialDontWrapInMaterial",
+		@(NSOffState),		@"materialMainTabView",
+		@(NSOffState),		@"materialDontWrapInMaterial",
 
-		[NSNumber numberWithInt:NSOffState],		@"materialTransformationsOn",
+		@(NSOffState),		@"materialTransformationsOn",
 		@"0.0",																	@"materialVEdit",
 		@"0.0",																	@"materialHEdit",
-		[NSNumber numberWithInt:NSOnState],			@"materialFillOn",
+		@(NSOnState),			@"materialFillOn",
 		@"25",																	@"materialFillEdit",
 		
 		[NSNumber numberWithInt:cObjectUnion],			@"materialObjectPopUp",

@@ -637,7 +637,7 @@ static renderDispatcher* _renderDispatcher;
 									NSMutableDictionary *dictCont=[[dict mutableCopy]autorelease];
 									if ( dictCont != nil)
 									{
-										[dictCont setObject:[NSNumber numberWithInt:NSOnState] forKey:@"continueRendering"];
+										[dictCont setObject:@(NSOnState) forKey:@"continueRendering"];
 										[mBatchMap setObject:dictCont atRow:x-1 atColumn:cSettingsIndex];
 									}
 								}

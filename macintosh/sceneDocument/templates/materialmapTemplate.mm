@@ -151,7 +151,7 @@ enum {
 		@"x+y+z",																				@"materialmapFunctionEdit",
 		@"300",																					@"materialmapFunctionImageWidth",
 		@"300",																					@"materialmapFunctionImageHeight",
-		[NSNumber numberWithInt:NSOffState],						@"materialmapProjectionOnceOn",
+		@(NSOffState),						@"materialmapProjectionOnceOn",
 		[NSNumber numberWithInt:cProjectionPlanar],			@"materialmapProjectionPopUp",
 		[NSNumber numberWithInt:cInterpolationNone],		@"materialmapInterpolationPopUp",
 	nil];

@@ -940,7 +940,7 @@ static const char *templateTypeNameArray[]={
 - (void) setXYZVectorAccordingToPopup:(NSPopUpButton*) popup xyzMatrix: (NSMatrix*)xyzMatrix 
 {
 	if ( [popup isEnabled]==NO)
-		[self enableObjectsAccordingToObject:[NSNumber numberWithInt:NSOffState], 
+		[self enableObjectsAccordingToObject:@(NSOffState), 
 			xyzMatrix, nil];
 	else
 	{
@@ -1258,9 +1258,9 @@ void WriteNormal(int keyword, MutableTabString *ds,NSDictionary *dict, BOOL writ
 		theDict=[[dict mutableCopy]autorelease];
 
 	if( keyword==cForceDontWrite)	//only change if we have to force don't write
-		[theDict setObject:[NSNumber numberWithInt:NSOnState] forKey:@"normalDontWrapInPigment"];
+		[theDict setObject:@(NSOnState) forKey:@"normalDontWrapInPigment"];
 	else if( keyword==cForceWrite)	//only change if we have to force don't write
-		[theDict setObject:[NSNumber numberWithInt:NSOffState] forKey:@"normalDontWrapInPigment"];
+		[theDict setObject:@(NSOffState) forKey:@"normalDontWrapInPigment"];
 
 	[NormalTemplate createDescriptionWithDictionary:theDict andTabs:[ds currentTabs]extraParam:writePattern  mutableTabString:ds];
 
@@ -1279,9 +1279,9 @@ void WritePigment(int keyword, MutableTabString *ds,NSDictionary *dict, BOOL wri
 		theDict=[[dict mutableCopy]autorelease];
 
 	if( keyword==cForceDontWrite)	//only change if we have to force don't write
-		[theDict setObject:[NSNumber numberWithInt:NSOnState] forKey:@"pigmentDontWrapInPigment"];
+		[theDict setObject:@(NSOnState) forKey:@"pigmentDontWrapInPigment"];
 	else if( keyword==cForceWrite)	//only change if we have to force don't write
-		[theDict setObject:[NSNumber numberWithInt:NSOffState] forKey:@"pigmentDontWrapInPigment"];
+		[theDict setObject:@(NSOffState) forKey:@"pigmentDontWrapInPigment"];
 
 	[PigmentTemplate createDescriptionWithDictionary:theDict andTabs:[ds currentTabs]extraParam:writePattern mutableTabString:ds];
 
