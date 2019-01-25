@@ -4655,7 +4655,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = openexr;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\" \"$(SRCROOT)/config/libraries_config/libz\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\"";
 			};
 			name = Debug;
 		};
@@ -4984,7 +4984,7 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = openexr;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\" \"$(SRCROOT)/config/libraries_config/libz\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/openexr/config\" \"$(SRCROOT)/config/libraries_config\" \"$(SRCROOT)/../libraries/openexr/IlmImf\"";
 			};
 			name = Release;
 		};
