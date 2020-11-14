@@ -41,7 +41,7 @@
 //------------------------------------------------------------------------------
 
 #include <vector>
-#include "half.h"
+#include <half.h>
 
 #include "ImfInt64.h"
 #include "ImfZip.h"

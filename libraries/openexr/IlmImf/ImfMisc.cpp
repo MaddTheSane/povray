@@ -46,8 +46,8 @@
 #include <ImfCompressor.h>
 #include <ImfChannelList.h>
 #include <ImfXdr.h>
-#include "ImathFun.h"
-#include "Iex.h"
+#include <ImathFun.h>
+#include <Iex.h>
 #include <ImfStdIO.h>
 #include <ImfConvert.h>
 #include <ImfPartType.h>

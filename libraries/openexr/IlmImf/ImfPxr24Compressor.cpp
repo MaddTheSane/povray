@@ -70,10 +70,10 @@
 #include "ImfCheckedArithmetic.h"
 #include "ImfNamespace.h"
 
-#include "ImathFun.h"
-#include "Iex.h"
+#include <ImathFun.h>
+#include <Iex.h>
 
-#include "half.h"
+#include <half.h>
 #include <zlib.h>
 #include <assert.h>
 #include <algorithm>

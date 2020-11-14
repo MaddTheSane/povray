@@ -42,7 +42,7 @@
 #include "ImfPixelType.h"
 #include "IlmThreadPool.h"
 
-#include "Iex.h"
+#include <Iex.h>
 #include <vector>
 OPENEXR_IMF_INTERNAL_NAMESPACE_SOURCE_ENTER
 

@@ -535,7 +535,6 @@
 	NSSize frameSize;
 	if ([NSScrollView respondsToSelector:@selector(frameSizeForContentSize:horizontalScrollerClass:verticalScrollerClass:borderType:controlSize:scrollerStyle:)])
 	{
-
     Class horizScrollerClass = [[scrollView horizontalScroller] class];
     Class vertScrollerClass = [[scrollView verticalScroller] class];
     

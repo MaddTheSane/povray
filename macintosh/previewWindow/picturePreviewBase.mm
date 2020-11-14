@@ -111,7 +111,6 @@ extern BOOL gDontErasePreveiw;
 	{
 		printf("fout!");
 	}
-
 	mBackingScaleFactor=1.0f;
 	mImagePixelsHeight=220;
 	mImagePixelsWidth=220;
@@ -141,7 +140,8 @@ extern BOOL gDontErasePreveiw;
 	 selector:@selector(vfeSessionStoppedRendering:)
 	 name:@"vfeSessionStoppedRendering"
 	 object:nil];
-
+	 
+	 //not available on 10.6
 	NSWindow *w=[self window];
 	[w setDelegate:self];
 
@@ -157,7 +157,7 @@ extern BOOL gDontErasePreveiw;
 			 name:NSWindowDidChangeBackingPropertiesNotification
 			 object:nil];
 	 }
-	
+
 	mBackgroundImagePattern=[[NSImage imageNamed:@"background.png"]retain];
 	#if defined (debugPreview ) && defined (debugPreviewWatchBackingProperties)
 		NSLog(@"exit awakeFromNib\n");

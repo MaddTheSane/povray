@@ -47,5 +47,4 @@
 
 // Apple machines need more stack storage.
 	#define POV_THREAD_STACK_SIZE (2048 * 1024 * 4)
-#define USE_BOOST_STACK_HACK
 #endif //POVRAY_MACINTOSH_SYSPOVCONFIGBACKEND_H

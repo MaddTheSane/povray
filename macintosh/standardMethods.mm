@@ -85,15 +85,12 @@
 //----------------------------------------------------------------------
 //	SetSubViewsOfNSBoxToState
 //----------------------------------------------------------------------
-//	Set all subviews of an NSBox to the state newState
+//	Set all subviews of the contentview of NSBox to the state newState
 //	which is setEnabled(YES/NO)
-//	Note that the array of subviews for NSBox is only one NSView
-//	The subviews of that view are the 'real' subviews of an NSBox
 //----------------------------------------------------------------------
 void SetSubViewsOfNSBoxToState( NSBox *group, NSInteger newState)
 {
-
-	NSArray *subviewArray=[[[group subviews]objectAtIndex:0] subviews] ;
+    NSArray *subviewArray=[[group contentView ]subviews];
 	NSUInteger numberOfSubViews=[subviewArray count];
 	
 	for (NSUInteger x=0; x<numberOfSubViews; x++)
