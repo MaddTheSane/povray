@@ -2002,101 +2002,98 @@ void *doRender(void* theObject)
 //---------------------------------------------------------------------
 -(NSString *) setInputFileNoPathNoExtension: (NSString*)fileName
 {
+	[self willChangeValueForKey:@"inputFileNoPathNoExtension"];
 	[inputFileNoPathNoExtension release];
 	inputFileNoPathNoExtension=[fileName copy];
+	[self didChangeValueForKey:@"inputFileNoPathNoExtension"];
 	return inputFileNoPathNoExtension;
 }
 
 //---------------------------------------------------------------------
 // inputFileNoPathNoExtension
 //---------------------------------------------------------------------
--(NSString *) inputFileNoPathNoExtension
-{
-	return inputFileNoPathNoExtension;
-}
+@synthesize inputFileNoPathNoExtension;
 
 //---------------------------------------------------------------------
 // setInputFileNoPathNoExtension
 //---------------------------------------------------------------------
 -(NSString *) setInputFileNameNoPathWithExtension: (NSString*)fileName
 {
+	[self willChangeValueForKey:@"inputFileNameNoPathWithExtension"];
 	[inputFileNameNoPathWithExtension release];
 	inputFileNameNoPathWithExtension=[fileName copy];
+	[self didChangeValueForKey:@"inputFileNameNoPathWithExtension"];
 	return inputFileNameNoPathWithExtension;
 }
 
 //---------------------------------------------------------------------
 // inputFileNameNoPathWithExtension
 //---------------------------------------------------------------------
--(NSString *) inputFileNameNoPathWithExtension
-{
-	return inputFileNameNoPathWithExtension;
-}
+@synthesize inputFileNameNoPathWithExtension;
 
 //---------------------------------------------------------------------
 // setInputFilePathWithSlash
 //---------------------------------------------------------------------
 -(NSString *) setInputFilePathWithSlash: (NSString*)path
 {
+	[self willChangeValueForKey:@"inputFilePathWithSlash"];
 	[inputFilePathWithSlash release];
 	inputFilePathWithSlash=[path copy];
+	[self didChangeValueForKey:@"inputFilePathWithSlash"];
 	return inputFilePathWithSlash;
 }
 
 //---------------------------------------------------------------------
 // inputFilePathWithSlash
 //---------------------------------------------------------------------
--(NSString *) inputFilePathWithSlash
-{
-	return inputFilePathWithSlash;
-}
+@synthesize inputFilePathWithSlash;
 
 //---------------------------------------------------------------------
 // setOutputFilePathWithSlash
 //---------------------------------------------------------------------
 -(NSString *) setOutputFilePathWithSlash: (NSString*)path
 {
+	[self willChangeValueForKey:@"outputFilePathWithSlash"];
 	[outputFilePathWithSlash release];
 	outputFilePathWithSlash=[path copy];
+	[self didChangeValueForKey:@"outputFilePathWithSlash"];
 	return outputFilePathWithSlash;
 }
 
 //---------------------------------------------------------------------
 // outputFilePathWithSlash
 //---------------------------------------------------------------------
--(NSString *) outputFilePathWithSlash
-{
-	return outputFilePathWithSlash;
-}
+@synthesize outputFilePathWithSlash;
 
 //---------------------------------------------------------------------
 // setOutputFileNameNoPathNoExtension
 //---------------------------------------------------------------------
 -(NSString *) setOutputFileNameNoPathNoExtension: (NSString*)fileName
 {
+	[self willChangeValueForKey:@"outputFileNameNoPathNoExtension"];
 	[outputFileNameNoPathNoExtension release];
 	outputFileNameNoPathNoExtension=[fileName copy];
+	[self didChangeValueForKey:@"outputFileNameNoPathNoExtension"];
 	return outputFileNameNoPathNoExtension;
 }
 
 //---------------------------------------------------------------------
 // outputFileNameNoPathNoExtension
 //---------------------------------------------------------------------
--(NSString *) outputFileNameNoPathNoExtension
-{
-	return outputFileNameNoPathNoExtension;
-}
+@synthesize outputFileNameNoPathNoExtension;
 
 //---------------------------------------------------------------------
 // buildOutputFileWithPathAndDot
 //---------------------------------------------------------------------
 -(NSString *) buildOutputFileWithPathAndDot
 {
+	[self willChangeValueForKey:@"outputFileWithPathAndDot"];
 	[outputFileWithPathAndDot release];
 	outputFileWithPathAndDot=[[self outputFilePathWithSlash] stringByAppendingString:[self outputFileNameNoPathNoExtension]];
 	//NSLog(@"outputFileWithPathAndDot: %@",[self outputFileWithPathAndDot]);
 	outputFileWithPathAndDot=[[[self outputFileWithPathAndDot] stringByAppendingString:@"."] copy];
 	//NSLog(@"outputFileWithPathAndDot: %@",[self outputFileWithPathAndDot]);
+	[self didChangeValueForKey:@"outputFileWithPathAndDot"];
 
 	return outputFileWithPathAndDot;
 }
@@ -2104,44 +2101,29 @@ void *doRender(void* theObject)
 //---------------------------------------------------------------------
 // outputFileWithPathAndDot
 //---------------------------------------------------------------------
--(NSString *) outputFileWithPathAndDot
-{
-	return outputFileWithPathAndDot;
-}
+@synthesize outputFileWithPathAndDot;
 
 //---------------------------------------------------------------------
 // setExtensionToAddIfNoneWasProvided
 //---------------------------------------------------------------------
 -(NSString *) setExtensionToAddIfNoneWasProvided: (NSString*)extension
 {
+	[self willChangeValueForKey:@"extensionToAddIfNoneWasProvided"];
 	[extensionToAddIfNoneWasProvided release];
 	extensionToAddIfNoneWasProvided=[extension copy];
+	[self didChangeValueForKey:@"extensionToAddIfNoneWasProvided"];
 	return extensionToAddIfNoneWasProvided;
 }
 
 //---------------------------------------------------------------------
 // extensionToAddIfNoneWasProvided
 //---------------------------------------------------------------------
--(NSString *) extensionToAddIfNoneWasProvided
-{
-	return extensionToAddIfNoneWasProvided;
-}
+@synthesize extensionToAddIfNoneWasProvided;
 
 //---------------------------------------------------------------------
 // batchIsRunning
 //---------------------------------------------------------------------
--(BOOL) batchIsRunning
-{
-	return mBatchIsRunning;
-}
-
-//---------------------------------------------------------------------
-// setBatchIsRunning
-//---------------------------------------------------------------------
--(void) setBatchIsRunning:(int)newState
-{
-	mBatchIsRunning=newState;
-}
+@synthesize batchIsRunning=mBatchIsRunning;
 
 //---------------------------------------------------------------------
 // batchSaveDefaults
@@ -2162,9 +2144,9 @@ void *doRender(void* theObject)
 			[defaults setObject:[NSNumber numberWithInt:mSorteerOplopend] forKey:@"sortMethod"];
 		}
 		if ( [mBatchWindow isVisible] )
-			[defaults setObject:[NSNumber numberWithBool:YES] forKey:@"batchwindowIsVisible"];
+			[defaults setObject:@YES forKey:@"batchwindowIsVisible"];
 		else
-			[defaults setObject:[NSNumber numberWithBool:NO] forKey:@"batchwindowIsVisible"];
+			[defaults setObject:@NO forKey:@"batchwindowIsVisible"];
 
 	}
 }

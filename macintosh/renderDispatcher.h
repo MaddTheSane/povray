@@ -119,8 +119,7 @@ void *doRender (void * theObject);
 
 -(void) setButtons;
 -(NSTableView*) tableView;
--(BOOL) batchIsRunning;
--(void) setBatchIsRunning:(int)newState;
+@property (readwrite) int batchIsRunning;
 -(void) batchSaveDefaults;
 -(void) setMap:(id)map;
 //render dispatcher
@@ -167,13 +166,13 @@ void *doRender (void * theObject);
 -(NSString *) setExtensionToAddIfNoneWasProvided: (NSString*)extension;
 
 //getters
--(NSString *) inputFileNoPathNoExtension;
--(NSString *) inputFileNameNoPathWithExtension;
--(NSString *) inputFilePathWithSlash;
--(NSString *) outputFilePathWithSlash;
--(NSString *) outputFileNameNoPathNoExtension;
--(NSString *) outputFileWithPathAndDot;
--(NSString *) extensionToAddIfNoneWasProvided;
+@property (readonly, copy) NSString *inputFileNoPathNoExtension;
+@property (readonly, copy) NSString *inputFileNameNoPathWithExtension;
+@property (readonly, copy) NSString *inputFilePathWithSlash;
+@property (readonly, copy) NSString *outputFilePathWithSlash;
+@property (readonly, copy) NSString *outputFileNameNoPathNoExtension;
+@property (readonly, copy) NSString *outputFileWithPathAndDot;
+@property (readonly, copy) NSString *extensionToAddIfNoneWasProvided;
 -(int) Argc;
 -(char**)Argv;
 @end

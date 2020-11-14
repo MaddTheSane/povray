@@ -130,8 +130,8 @@
 	double Degrees=(360.0/(double)(numberOfPoints-1))*(3.1415926535897932384626)/180.0;
 	for (counter=1; counter<=numberOfPoints; counter++)
 	{
-		subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:cos(Degrees*(double)(counter-1))]];
-		[subArray addObject:[NSNumber numberWithFloat:sin(Degrees*(double)(counter-1))]];
+		subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithDouble:cos(Degrees*(double)(counter-1))]];
+		[subArray addObject:[NSNumber numberWithDouble:sin(Degrees*(double)(counter-1))]];
 
 		if ( mainArray==nil)	//no entry yet
 			mainArray=[NSMutableArray arrayWithObject:subArray];
@@ -158,7 +158,7 @@
 		endPoint=numberOfPoints-1;
 		decreaser=2;
 		counterdecreaser=2;
-		mainArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:0.0]];
+		mainArray=[NSMutableArray arrayWithObject:@0.0f];
 	}
 	else
 	{
@@ -183,8 +183,8 @@
 	double Degrees=(180.0/(double)(numberOfPoints-(1+decreaser)))*(3.1415926535897932384626)/180.0;
 	for (counter=startPoint; counter<=endPoint; counter++)
 	{
-		subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:0.5*cos(s90+(Degrees*(double)(counter-counterdecreaser)))]];
-		[subArray addObject:[NSNumber numberWithFloat:0.5+(0.5*sin(s90+(Degrees*(double)(counter-counterdecreaser))))]];
+		subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithDouble:0.5*cos(s90+(Degrees*(double)(counter-counterdecreaser)))]];
+		[subArray addObject:[NSNumber numberWithDouble:0.5+(0.5*sin(s90+(Degrees*(double)(counter-counterdecreaser))))]];
 
 		if ( mainArray==nil)	//no entry yet
 			mainArray=[NSMutableArray arrayWithObject:subArray];
@@ -195,14 +195,14 @@
 	}
 	if ( [self templateType]==menuTagTemplateSor || [self buttonState:cSplineTypePopUp] == cQuadraticSpline || [self buttonState:cSplineTypePopUp]==cCubicSpline)
 	{
-		subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:0.0]];
-		[subArray addObject:[NSNumber numberWithFloat:0.0]];
+		subArray=[NSMutableArray arrayWithObject:@0.0f];
+		[subArray addObject:@0.0f];
 		[mainArray replaceObjectAtIndex:0 withObject:subArray];
 	}
 	if ([self templateType]==menuTagTemplateSor || [self buttonState:cSplineTypePopUp] == cCubicSpline )
 	{
-		subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:0.0]];
-		[subArray addObject:[NSNumber numberWithFloat:1.0]];
+		subArray=[NSMutableArray arrayWithObject:@0.0f];
+		[subArray addObject:@1.0f];
 		[mainArray addObject:subArray];
 	}
 	[self setArray:mainArray];
@@ -231,8 +231,8 @@
 
 	for (counter=1,Segments=1; counter<=numberOfPoints; counter++,Segments++)
 	{
-		subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:0.5*cos(s90+(Degrees*(double)(Segments-1)))]];
-		[subArray addObject:[NSNumber numberWithFloat:0.5+(0.5*sin(s90+(Degrees*(double)(Segments-1))))]];
+		subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithDouble:0.5*cos(s90+(Degrees*(double)(Segments-1)))]];
+		[subArray addObject:[NSNumber numberWithDouble:0.5+(0.5*sin(s90+(Degrees*(double)(Segments-1))))]];
 
 		if ( mainArray==nil)	//no entry yet
 			mainArray=[NSMutableArray arrayWithObject:subArray];
@@ -243,8 +243,8 @@
 		if ( counter % 4 ==0 && ( counter != 1 && counter != numberOfPoints))
 		{
 			//duplicate entry
-			subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:0.5*cos(s90+(Degrees*(double)(Segments-1)))]];
-			[subArray addObject:[NSNumber numberWithFloat:0.5+(0.5*sin(s90+(Degrees*(double)(Segments-1))))]];
+			subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithDouble:0.5*cos(s90+(Degrees*(double)(Segments-1)))]];
+			[subArray addObject:[NSNumber numberWithDouble:0.5+(0.5*sin(s90+(Degrees*(double)(Segments-1))))]];
 			[mainArray addObject:subArray];
 			subArray=nil;
 			counter ++;
@@ -343,32 +343,32 @@
 			double p3x=(((p4x-p1x)/3)*2)+p1x;
 			double p3y=(((p4y-p1y)/3)*2)+p1y;
 			
-			subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:p1x]];
-			[subArray addObject:[NSNumber numberWithFloat:p1y]];
+			subArray=[NSMutableArray arrayWithObject:@(p1x)];
+			[subArray addObject:@(p1y)];
 			if ( mainArray==nil)	//no entry yet
 				mainArray=[NSMutableArray arrayWithObject:subArray];
 			else
 				[mainArray addObject:subArray];
 
-			subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:p2x]];
-			[subArray addObject:[NSNumber numberWithFloat:p2y]];
+			subArray=[NSMutableArray arrayWithObject:@(p2x)];
+			[subArray addObject:@(p2y)];
 			[mainArray addObject:subArray];
 
-			subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:p3x]];
-			[subArray addObject:[NSNumber numberWithFloat:p3y]];
+			subArray=[NSMutableArray arrayWithObject:@(p3x)];
+			[subArray addObject:@(p3y)];
 			[mainArray addObject:subArray];
 
 			if ( cnt+3 < NumberOfPoints)
 			{
-				subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:p4x]];
-				[subArray addObject:[NSNumber numberWithFloat:p4y]];
+				subArray=[NSMutableArray arrayWithObject:@(p4x)];
+				[subArray addObject:@(p4y)];
 				[mainArray addObject:subArray];
 				subArray=nil;
 				}
 		}
 	
-		subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithFloat:cos(Degrees*(double)(1-1))]];
-		[subArray addObject:[NSNumber numberWithFloat:sin(Degrees*(double)(1-1))]];
+		subArray=[NSMutableArray arrayWithObject:[NSNumber numberWithDouble:cos(Degrees*(double)(1-1))]];
+		[subArray addObject:[NSNumber numberWithDouble:sin(Degrees*(double)(1-1))]];
 		[mainArray addObject:subArray];
 		subArray=nil;
 	}
@@ -626,12 +626,18 @@
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
 	[encoder encodeObject:mMapArray];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mSlopeOn];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mPointOn];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mRasterOn];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mCurveOn];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mSplineTypePopUp];
-	[encoder encodeValueOfObjCType:@encode(int) at:&mTemplateType];
+	int enc = mSlopeOn;
+	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
+	enc = mPointOn;
+	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
+	enc = mTemplateType;
+	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
+	enc = mTemplateType;
+	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
+	enc = mTemplateType;
+	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
+	enc = mTemplateType;
+	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
 }
 
 //---------------------------------------------------------------------
@@ -641,12 +647,19 @@
 {
 	self = [super initWithCoder:decoder];
 	[self setArray:[decoder decodeObject]];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mSlopeOn];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mPointOn];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mRasterOn];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mCurveOn];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mSplineTypePopUp];
-	[decoder decodeValueOfObjCType:@encode(int) at:&mTemplateType];
+	int tmp;
+	[decoder decodeValueOfObjCType:@encode(int) at:&tmp];
+	mSlopeOn = tmp;
+	[decoder decodeValueOfObjCType:@encode(int) at:&tmp];
+	mPointOn = tmp;
+	[decoder decodeValueOfObjCType:@encode(int) at:&tmp];
+	mRasterOn = tmp;
+	[decoder decodeValueOfObjCType:@encode(int) at:&tmp];
+	mCurveOn = tmp;
+	[decoder decodeValueOfObjCType:@encode(int) at:&tmp];
+	mSplineTypePopUp = tmp;
+	[decoder decodeValueOfObjCType:@encode(int) at:&tmp];
+	mTemplateType = tmp;
 	[self setSelectedRow:dNoRowSelected];
 	return self;
 }

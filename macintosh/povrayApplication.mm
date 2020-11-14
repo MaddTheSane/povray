@@ -89,7 +89,7 @@
 		NSEnumerator *en=[documentsArray objectEnumerator];
 		id doc;
 		NSMutableArray *dict=[[[NSMutableArray alloc]init]autorelease];
-		while ( (doc =[en nextObject] )!= nil)
+		for ( doc in en )
 		{
 			if ( [doc fileName]!=nil && [doc isDocumentEdited]==NO)
 			{

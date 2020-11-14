@@ -130,13 +130,13 @@
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		@(NSOnState),			@"photonsTargetOn",
-		@"1.0",															@"photonsSpacingEdit",
+		@"1.0",						@"photonsSpacingEdit",
 		@(NSOnState),			@"photonsRefractionOn",
-		[NSNumber numberWithInt:cFirstCell],				@"photonsRefractionMaxtrix",
+		@(cFirstCell),		@"photonsRefractionMaxtrix",
 		@(NSOnState),			@"photonsReflectionOn",
-		[NSNumber numberWithInt:cFirstCell],				@"photonsReflectionMaxtrix",
+		@(cFirstCell),		@"photonsReflectionMaxtrix",
 		@(NSOnState),			@"photonsCollectOn",
-		[NSNumber numberWithInt:cFirstCell],				@"photonsCollectMaxtrix",
+		@(cFirstCell),		@"photonsCollectMaxtrix",
 		@(NSOnState),			@"photonsPassThroughOn",
 		nil
 	];
@@ -152,15 +152,15 @@
 	[super awakeFromNib];
 
 	mOutlets =[NSDictionary dictionaryWithObjectsAndKeys:
-	photonsTargetOn,				@"photonsTargetOn",
-	photonsSpacingEdit,			@"photonsSpacingEdit",
+	photonsTargetOn,				  @"photonsTargetOn",
+	photonsSpacingEdit,			  @"photonsSpacingEdit",
 	photonsRefractionOn,			@"photonsRefractionOn",
 	photonsRefractionMaxtrix,	@"photonsRefractionMaxtrix",
 	photonsReflectionOn,			@"photonsReflectionOn",
 	photonsReflectionMaxtrix,	@"photonsReflectionMaxtrix",
-	photonsCollectOn,				@"photonsCollectOn",
+	photonsCollectOn,				  @"photonsCollectOn",
 	photonsCollectMaxtrix,		@"photonsCollectMaxtrix",
-	photonsPassThroughOn,		@"photonsPassThroughOn",
+	photonsPassThroughOn,		  @"photonsPassThroughOn",
 	nil] ;
 	
 	[mOutlets retain];

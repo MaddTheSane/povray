@@ -42,8 +42,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface PovRayApplication : NSApplication
-{
-}
 
 - (void)sendEvent:(NSEvent *)anEvent;
 @end

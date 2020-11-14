@@ -5665,7 +5665,7 @@ static DBL density_pattern(const VECTOR EPoint, const TPATTERN *TPat)
 	DBL Ex, Ey, Ez;
 	DBL xx, yy, zz;
 	DBL xi, yi;
-	DBL f111, f112, f121, f122, f211, f212, f221, f222;
+	DBL f111=0, f112=0, f121=0, f122=0, f211=0, f212=0, f221=0, f222=0;
 	float intpd2[4][4];
 	DBL density = 0.0;
 	DENSITY_FILE_DATA *Data;
