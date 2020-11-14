@@ -125,6 +125,8 @@
 		#define POVRAY_PLATFORM_NAME "Apple_Intel32"
 	#elif defined(__x86_64__)
 		#define POVRAY_PLATFORM_NAME "Apple_Intel64"
+	#elif defined(__aarch64__)
+		#define POVRAY_PLATFORM_NAME "Apple_Arm64"
 	#endif
 
 	#define ALTMAIN

@@ -446,7 +446,9 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 	// create message for about box dialog
 	NSString	*messageToCopyInAboutDialog=nil;
 
-#if __LP64__
+#if __aarch64__
+	messageToCopyInAboutDialog=[NSString stringWithFormat:@"POV-Ray v%s (Arm 64 bit)\n",POV_RAY_VERSION];
+#elif __x86_64__
 	messageToCopyInAboutDialog=[NSString stringWithFormat:@"POV-Ray v%s (Intel 64 bit)\n",POV_RAY_VERSION];
 #else
 	messageToCopyInAboutDialog=[NSString stringWithFormat:@"POV-Ray v%s (Intel 32 bit)\n",POV_RAY_VERSION];
@@ -465,8 +467,10 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 
 //message window
 	[[MessageViewController sharedInstance] printNSString: @"---------------------------------------------------------------------------------------\n"	fromStream: WARNING_STREAM];
-#if __LP64__
+#if __x86_64__
 	[[MessageViewController sharedInstance] printNSString:@"POV-Ray Unofficial (Intel 64 bit)\n"	fromStream: WARNING_STREAM];
+#elif __aarch64__
+	[[MessageViewController sharedInstance] printNSString:@"POV-Ray Unofficial (Arm 64 bit)\n"	fromStream: WARNING_STREAM];
 #else
 	[[MessageViewController sharedInstance] printNSString:@"POV-Ray Unofficial (Intel 32 bit)\n"	fromStream: WARNING_STREAM];
 #endif
@@ -522,14 +526,16 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 				for (int x= 1; x<=[openDocuments count]; x++)
 				{
 					NSArray *documentArray=[openDocuments objectAtIndex:x-1];
-					SceneDocument *document=[[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:[documentArray objectAtIndex:1]] display:YES error:nil];
-					[[document window] setFrameFromString:[documentArray objectAtIndex:0]];
-					NSRange range=NSRangeFromString([documentArray objectAtIndex:2]);
-					if(range.location > [[[document getSceneTextView]textStorage]length])
-						range.location=0;
-					[[document getSceneTextView] setSelectedRange:range];
-					[[document getSceneTextView] scrollRangeToVisible:range];
-					[document showWindows];
+					[[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:[documentArray objectAtIndex:1]] display:YES completionHandler:^(NSDocument * _Nullable document1, BOOL documentWasAlreadyOpen, NSError * _Nullable error) {
+						SceneDocument *document = (id)document1;
+						[[document window] setFrameFromString:[documentArray objectAtIndex:0]];
+						NSRange range=NSRangeFromString([documentArray objectAtIndex:2]);
+						if(range.location > [[[document getSceneTextView]textStorage]length])
+							range.location=0;
+						[[document getSceneTextView] setSelectedRange:range];
+						[[document getSceneTextView] scrollRangeToVisible:range];
+						[document showWindows];
+					}];
 				}
 			}
 		}
