@@ -50,7 +50,7 @@
 //---------------------------------------------------------------------
 // standardLatheMapWithView
 //---------------------------------------------------------------------
-+(id) standardMap:(int) type withView:(id)view
++(id) standardMap:(NSInteger) type withView:(id)view
 {
 	objectmap *c=[[objectmap alloc] init];	 
 	[c setButtonState:cLinearSpline forButton:cSplineTypePopUp];
@@ -66,20 +66,9 @@
 }
 
 //---------------------------------------------------------------------
-// setTemplateType
-//---------------------------------------------------------------------
--(void) setTemplateType:(int)type
-{
-	mTemplateType=type;
-}
-
-//---------------------------------------------------------------------
 // templateType
 //---------------------------------------------------------------------
--(int) templateType
-{
-	return mTemplateType;
-}
+@synthesize templateType=mTemplateType;
 
 //---------------------------------------------------------------------
 // makeMap: withPoint
@@ -650,6 +639,7 @@
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
+	self = [super initWithCoder:decoder];
 	[self setArray:[decoder decodeObject]];
 	[decoder decodeValueOfObjCType:@encode(int) at:&mSlopeOn];
 	[decoder decodeValueOfObjCType:@encode(int) at:&mPointOn];

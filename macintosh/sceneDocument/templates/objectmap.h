@@ -71,13 +71,11 @@ typedef NS_ENUM (NSInteger, eObjectmapIndex) {
 	NSControlStateValue mRasterOn;
 	NSControlStateValue mCurveOn;
 	NSControlStateValue mSplineTypePopUp;
-	NSControlStateValue mTemplateType;
+	NSInteger mTemplateType;
 }
 
-+(id) standardMap:(int) type withView:(id)view;
-@property int templateType;
--(void) setTemplateType:(int)type;
--(int) templateType;
++(id) standardMap:(NSInteger) type withView:(id)view;
+@property NSInteger templateType;
 
 -(void) makeMapWithPoints:(int)numberOfPoints;
 
