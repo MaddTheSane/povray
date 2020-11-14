@@ -1154,7 +1154,7 @@ static const char *templateTypeNameArray[]={
 
 	if ( colorPickerController != nil)
 	{
-		if ( [NSBundle loadNibNamed:@"ColorPicker.nib" owner:colorPickerController] == YES)
+		if ( [NSBundle loadNibNamed:@"ColorPicker" owner:colorPickerController] == YES)
 		{
 			[[NSApplication sharedApplication] beginSheet:[colorPickerController getWindow] 
 				modalForWindow:[self getWindow] modalDelegate:self 

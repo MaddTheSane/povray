@@ -451,7 +451,7 @@ enum {
 				[SlopeButton setHidden:NO];
 				break;
 	}
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"NSTableViewSelectionDidChangeNotification" object:mTableView];
+	[[NSNotificationCenter defaultCenter] postNotificationName:NSTableViewSelectionDidChangeNotification object:mTableView];
 //	[self tableViewSelectionDidChange:nil];
 	[self setButtons];
 }

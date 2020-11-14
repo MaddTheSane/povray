@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -66,13 +65,13 @@
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="21" y="215" width="600" height="452"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="1002"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="600" height="452"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" id="7">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7">
                         <rect key="frame" x="462" y="13" width="71" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="369">
@@ -84,7 +83,7 @@
                             <outlet property="nextKeyView" destination="9" id="12"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="8">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8">
                         <rect key="frame" x="9" y="13" width="112" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Reset to default" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="370">
@@ -96,7 +95,7 @@
                             <outlet property="nextKeyView" destination="7" id="13"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="9">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9">
                         <rect key="frame" x="531" y="13" width="64" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="371">
@@ -111,7 +110,7 @@ DQ
                             <outlet property="nextKeyView" destination="8" id="14"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="10">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10">
                         <rect key="frame" x="153" y="13" width="72" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="372">
@@ -122,7 +121,7 @@ DQ
                             <action selector="openButton:" target="-2" id="282"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="11">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11">
                         <rect key="frame" x="223" y="13" width="69" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="373">
@@ -133,29 +132,29 @@ DQ
                             <action selector="saveButton:" target="-2" id="281"/>
                         </connections>
                     </button>
-                    <box id="15">
+                    <box fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                         <rect key="frame" x="11" y="55" width="442" height="116"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <userGuides>
                             <userLayoutGuide location="58" affinity="minY"/>
                         </userGuides>
                         <view key="contentView" id="Ixk-jm-Wn5">
-                            <rect key="frame" x="2" y="2" width="438" height="99"/>
+                            <rect key="frame" x="3" y="3" width="436" height="98"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField verticalHuggingPriority="750" id="23">
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23">
                                     <rect key="frame" x="83" y="7" width="30" height="20"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="374">
                                         <font key="font" metaFont="smallSystem"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
                                         <action selector="setModified:" target="-2" id="264"/>
                                     </connections>
                                 </textField>
-                                <button id="24">
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24">
                                     <rect key="frame" x="13" y="8" width="71" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="check" title="adaptive:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="375">
@@ -166,7 +165,7 @@ DQ
                                         <action selector="lightAreaLightAdaptiveOn:" target="-2" id="265"/>
                                     </connections>
                                 </button>
-                                <button id="25">
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="25">
                                     <rect key="frame" x="121" y="8" width="48" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="check" title="jitter" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="376">
@@ -177,7 +176,7 @@ DQ
                                         <action selector="setModified:" target="-2" id="325"/>
                                     </connections>
                                 </button>
-                                <textField verticalHuggingPriority="750" id="127">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="127">
                                     <rect key="frame" x="266" y="46" width="13" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="," id="377">
@@ -186,7 +185,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <popUpButton verticalHuggingPriority="750" id="128">
+                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="128">
                                     <rect key="frame" x="65" y="41" width="79" height="22"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <popUpButtonCell key="cell" type="push" title="x=y=z" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="133" id="378">
@@ -206,7 +205,7 @@ DQ
                                         <action selector="lightAreaLightAxis2Popup:" target="-2" id="258"/>
                                     </connections>
                                 </popUpButton>
-                                <textField verticalHuggingPriority="750" id="135">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="135">
                                     <rect key="frame" x="207" y="46" width="13" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="," id="379">
@@ -215,7 +214,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="136">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="136">
                                     <rect key="frame" x="323" y="46" width="13" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="&gt;" id="380">
@@ -224,7 +223,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="137">
+                                <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="track" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="137">
                                     <rect key="frame" x="157" y="44" width="166" height="19"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -271,7 +270,7 @@ DQ
                                         <outlet property="nextKeyView" destination="293" id="360"/>
                                     </connections>
                                 </matrix>
-                                <textField verticalHuggingPriority="750" id="141">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="141">
                                     <rect key="frame" x="143" y="42" width="11" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="&lt;" id="381">
@@ -280,7 +279,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="142">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="142">
                                     <rect key="frame" x="266" y="75" width="13" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="," id="382">
@@ -289,7 +288,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <popUpButton verticalHuggingPriority="750" id="143">
+                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="143">
                                     <rect key="frame" x="65" y="70" width="79" height="22"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <popUpButtonCell key="cell" type="push" title="x=y=z" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="148" id="383">
@@ -309,7 +308,7 @@ DQ
                                         <action selector="lightAreaLightAxis1Popup:" target="-2" id="257"/>
                                     </connections>
                                 </popUpButton>
-                                <textField verticalHuggingPriority="750" id="150">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="150">
                                     <rect key="frame" x="207" y="75" width="13" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="," id="384">
@@ -318,7 +317,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="151">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="151">
                                     <rect key="frame" x="323" y="75" width="13" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="&gt;" id="385">
@@ -327,7 +326,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="152">
+                                <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="track" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="152">
                                     <rect key="frame" x="157" y="73" width="166" height="19"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -374,7 +373,7 @@ DQ
                                         <outlet property="nextKeyView" destination="291" id="361"/>
                                     </connections>
                                 </matrix>
-                                <textField verticalHuggingPriority="750" id="156">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="156">
                                     <rect key="frame" x="143" y="71" width="11" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="&lt;" id="386">
@@ -383,7 +382,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="181">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="181">
                                     <rect key="frame" x="13" y="75" width="45" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="387">
@@ -394,7 +393,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="182">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="182">
                                     <rect key="frame" x="13" y="46" width="45" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="388">
@@ -405,7 +404,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <button id="184">
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="184">
                                     <rect key="frame" x="174" y="7" width="61" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="check" title="orient" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="389">
@@ -416,7 +415,7 @@ DQ
                                         <action selector="setModified:" target="-2" id="268"/>
                                     </connections>
                                 </button>
-                                <button id="185">
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="185">
                                     <rect key="frame" x="230" y="7" width="62" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="check" title="circular" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="390">
@@ -427,7 +426,7 @@ DQ
                                         <action selector="setModified:" target="-2" id="269"/>
                                     </connections>
                                 </button>
-                                <button id="447">
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="447">
                                     <rect key="frame" x="295" y="6" width="117" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="check" title="area_illiumination" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="448">
@@ -438,12 +437,12 @@ DQ
                                         <action selector="setModified:" target="-2" id="449"/>
                                     </connections>
                                 </button>
-                                <textField verticalHuggingPriority="750" id="291">
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="291">
                                     <rect key="frame" x="370" y="72" width="32" height="20"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="3" drawsBackground="YES" id="391">
                                         <font key="font" metaFont="smallSystem"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
@@ -451,7 +450,7 @@ DQ
                                         <outlet property="nextKeyView" destination="137" id="359"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="292">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="292">
                                     <rect key="frame" x="337" y="74" width="34" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="size:" id="392">
@@ -460,12 +459,12 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="293">
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="293">
                                     <rect key="frame" x="370" y="44" width="32" height="20"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="3" drawsBackground="YES" id="393">
                                         <font key="font" metaFont="smallSystem"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
@@ -473,7 +472,7 @@ DQ
                                         <outlet property="nextKeyView" destination="23" id="365"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="294">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="294">
                                     <rect key="frame" x="337" y="46" width="34" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="size:" id="394">
@@ -485,7 +484,7 @@ DQ
                             </subviews>
                         </view>
                     </box>
-                    <button id="33">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33">
                         <rect key="frame" x="16" y="158" width="81" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Area light" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="397">
@@ -496,19 +495,19 @@ DQ
                             <action selector="lightAreaLightGroupOn:" target="-2" id="256"/>
                         </connections>
                     </button>
-                    <box id="36">
+                    <box fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="36">
                         <rect key="frame" x="11" y="178" width="442" height="94"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="f7y-ag-n0M">
-                            <rect key="frame" x="2" y="2" width="438" height="77"/>
+                            <rect key="frame" x="3" y="3" width="436" height="76"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField verticalHuggingPriority="750" id="48">
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="48">
                                     <rect key="frame" x="87" y="12" width="48" height="20"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="0.3" drawsBackground="YES" id="399">
                                         <font key="font" metaFont="smallSystem"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
@@ -516,7 +515,7 @@ DQ
                                         <outlet property="nextKeyView" destination="53" id="56"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="41">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="41">
                                     <rect key="frame" x="13" y="11" width="74" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="398">
@@ -527,12 +526,12 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="53">
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="53">
                                     <rect key="frame" x="210" y="12" width="48" height="20"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="3" drawsBackground="YES" id="401">
                                         <font key="font" metaFont="smallSystem"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
@@ -540,7 +539,7 @@ DQ
                                         <outlet property="nextKeyView" destination="169" id="357"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="49">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49">
                                     <rect key="frame" x="140" y="14" width="71" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="400">
@@ -551,7 +550,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <popUpButton verticalHuggingPriority="750" id="157">
+                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="157">
                                     <rect key="frame" x="13" y="44" width="113" height="22"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <popUpButtonCell key="cell" type="push" title="cylinder light" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="159" id="402">
@@ -568,7 +567,7 @@ DQ
                                         <action selector="setModified:" target="-2" id="326"/>
                                     </connections>
                                 </popUpButton>
-                                <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="161">
+                                <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="track" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="161">
                                     <rect key="frame" x="194" y="46" width="166" height="19"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -615,7 +614,7 @@ DQ
                                         <outlet property="nextKeyView" destination="48" id="364"/>
                                     </connections>
                                 </matrix>
-                                <textField verticalHuggingPriority="750" id="165">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="165">
                                     <rect key="frame" x="359" y="50" width="13" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="&gt;" id="403">
@@ -624,7 +623,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="167">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="167">
                                     <rect key="frame" x="243" y="50" width="13" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="," id="404">
@@ -633,7 +632,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="168">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="168">
                                     <rect key="frame" x="302" y="50" width="13" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="," id="405">
@@ -642,12 +641,12 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="169">
+                                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="169">
                                     <rect key="frame" x="329" y="12" width="48" height="20"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="3" drawsBackground="YES" id="406">
                                         <font key="font" metaFont="smallSystem"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                     <connections>
@@ -655,7 +654,7 @@ DQ
                                         <outlet property="nextKeyView" destination="152" id="358"/>
                                     </connections>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="170">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="170">
                                     <rect key="frame" x="270" y="14" width="60" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" id="407">
@@ -666,7 +665,7 @@ DQ
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <textField verticalHuggingPriority="750" id="180">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="180">
                                     <rect key="frame" x="128" y="49" width="71" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="408">
@@ -680,7 +679,7 @@ DQ
                             </subviews>
                         </view>
                     </box>
-                    <button id="54">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="54">
                         <rect key="frame" x="16" y="259" width="108" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Directional light" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="409">
@@ -691,14 +690,14 @@ DQ
                             <action selector="lightDirectionalLightGroupOn:" target="-2" id="248"/>
                         </connections>
                     </button>
-                    <box id="57">
+                    <box fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="57">
                         <rect key="frame" x="455" y="55" width="138" height="217"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="alg-Ca-nip">
-                            <rect key="frame" x="2" y="2" width="134" height="200"/>
+                            <rect key="frame" x="3" y="3" width="132" height="199"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <button id="186">
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="186">
                                     <rect key="frame" x="13" y="173" width="73" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="check" title="reflection" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="410">
@@ -709,7 +708,7 @@ DQ
                                         <action selector="lightPhotonsGroupChanged:" target="-2" id="330"/>
                                     </connections>
                                 </button>
-                                <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="187">
+                                <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="187">
                                     <rect key="frame" x="90" y="154" width="44" height="38"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -738,7 +737,7 @@ DQ
                                         </column>
                                     </cells>
                                 </matrix>
-                                <button id="190">
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="190">
                                     <rect key="frame" x="13" y="122" width="74" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="check" title="refraction" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="411">
@@ -749,7 +748,7 @@ DQ
                                         <action selector="lightPhotonsGroupChanged:" target="-2" id="331"/>
                                     </connections>
                                 </button>
-                                <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="191">
+                                <matrix verticalHuggingPriority="750" fixedFrame="YES" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="191">
                                     <rect key="frame" x="90" y="103" width="44" height="38"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -778,7 +777,7 @@ DQ
                                         </column>
                                     </cells>
                                 </matrix>
-                                <button id="194">
+                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="194">
                                     <rect key="frame" x="13" y="61" width="85" height="18"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <buttonCell key="cell" type="check" title="area_light" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="412">
@@ -792,7 +791,7 @@ DQ
                             </subviews>
                         </view>
                     </box>
-                    <button id="77">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="77">
                         <rect key="frame" x="460" y="259" width="87" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="Photons" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="413">
@@ -803,7 +802,7 @@ DQ
                             <action selector="lightPhotonsGroupChanged:" target="-2" id="329"/>
                         </connections>
                     </button>
-                    <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="78">
+                    <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="track" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78">
                         <rect key="frame" x="84" y="413" width="166" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -850,7 +849,7 @@ DQ
                             <outlet property="nextKeyView" destination="301" id="362"/>
                         </connections>
                     </matrix>
-                    <textField verticalHuggingPriority="750" id="82">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82">
                         <rect key="frame" x="16" y="415" width="65" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="414">
@@ -861,8 +860,8 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="83">
-                        <rect key="frame" x="126" y="415" width="13" height="14"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="83">
+                        <rect key="frame" x="133" y="415" width="13" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="," id="415">
                             <font key="font" metaFont="smallSystem"/>
@@ -870,7 +869,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="84">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="84">
                         <rect key="frame" x="250" y="415" width="13" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="&gt;" id="416">
@@ -879,8 +878,8 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="85">
-                        <rect key="frame" x="185" y="415" width="13" height="14"/>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="85">
+                        <rect key="frame" x="190" y="415" width="13" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="," id="417">
                             <font key="font" metaFont="smallSystem"/>
@@ -888,7 +887,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <colorWell id="86" customClass="MPColorWell">
+                    <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="86" customClass="MPColorWell">
                         <rect key="frame" x="57" y="373" width="99" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -896,7 +895,7 @@ DQ
                             <action selector="displayColorPicker:" target="-2" id="340"/>
                         </connections>
                     </colorWell>
-                    <button id="171">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="171">
                         <rect key="frame" x="16" y="331" width="121" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="projected_through" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="418">
@@ -907,7 +906,7 @@ DQ
                             <action selector="lightProjectedTroughOn:" target="-2" id="324"/>
                         </connections>
                     </button>
-                    <button id="172">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="172">
                         <rect key="frame" x="16" y="295" width="89" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="parallel light" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="419">
@@ -918,7 +917,7 @@ DQ
                             <action selector="setModified:" target="-2" id="247"/>
                         </connections>
                     </button>
-                    <button id="173">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="173">
                         <rect key="frame" x="268" y="416" width="121" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="looks_like {...}" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="420">
@@ -929,7 +928,7 @@ DQ
                             <action selector="setModified:" target="-2" id="241"/>
                         </connections>
                     </button>
-                    <button id="174">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="174">
                         <rect key="frame" x="268" y="396" width="89" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="shadowless" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="421">
@@ -940,7 +939,7 @@ DQ
                             <action selector="setModified:" target="-2" id="242"/>
                         </connections>
                     </button>
-                    <button id="175">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="175">
                         <rect key="frame" x="268" y="373" width="99" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="fade_distance:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="422">
@@ -951,7 +950,7 @@ DQ
                             <action selector="lightFadeDistanceOn:" target="-2" id="323"/>
                         </connections>
                     </button>
-                    <button id="176">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="176">
                         <rect key="frame" x="448" y="416" width="136" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="media_interaction off" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="423">
@@ -962,7 +961,7 @@ DQ
                             <action selector="setModified:" target="-2" id="244"/>
                         </connections>
                     </button>
-                    <button id="177">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="177">
                         <rect key="frame" x="448" y="396" width="136" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="media_attenuation" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="424">
@@ -973,7 +972,7 @@ DQ
                             <action selector="setModified:" target="-2" id="245"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" id="178">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="178">
                         <rect key="frame" x="16" y="382" width="35" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" id="425">
@@ -984,28 +983,28 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="195">
+                    <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="195">
                         <rect key="frame" x="0.0" y="359" width="600" height="2"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="2cl-yh-G3N">
+                        <view key="contentView" ambiguous="YES" id="2cl-yh-G3N">
                             <rect key="frame" x="1" y="1" width="598" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                     </box>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="197">
+                    <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="197">
                         <rect key="frame" x="261" y="359" width="1" height="99"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="uZO-Nq-ByX">
+                        <view key="contentView" ambiguous="YES" id="uZO-Nq-ByX">
                             <rect key="frame" x="1" y="1" width="0.0" height="97"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                     </box>
-                    <textField verticalHuggingPriority="750" id="289">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="289">
                         <rect key="frame" x="143" y="330" width="263" height="20"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="object" drawsBackground="YES" id="426">
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -1013,12 +1012,12 @@ DQ
                             <outlet property="nextKeyView" destination="311" id="355"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="301">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="301">
                         <rect key="frame" x="375" y="373" width="37" height="20"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="427">
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -1026,7 +1025,7 @@ DQ
                             <outlet property="nextKeyView" destination="289" id="356"/>
                         </connections>
                     </textField>
-                    <popUpButton verticalHuggingPriority="750" id="303">
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="303">
                         <rect key="frame" x="457" y="369" width="112" height="22"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <popUpButtonCell key="cell" type="push" title="Quadratic - 2" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="clipping" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="305" id="429">
@@ -1043,7 +1042,7 @@ DQ
                             <action selector="setModified:" target="-2" id="310"/>
                         </connections>
                     </popUpButton>
-                    <textField verticalHuggingPriority="750" id="302">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="302">
                         <rect key="frame" x="416" y="372" width="42" height="18"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="right" title="power:" id="428">
@@ -1052,7 +1051,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <matrix verticalHuggingPriority="750" mode="track" allowsEmptySelection="NO" autosizesCells="NO" id="311">
+                    <matrix verticalHuggingPriority="750" fixedFrame="YES" mode="track" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="311">
                         <rect key="frame" x="205" y="294" width="166" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1096,7 +1095,7 @@ DQ
                             </column>
                         </cells>
                     </matrix>
-                    <textField verticalHuggingPriority="750" id="315">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="315">
                         <rect key="frame" x="370" y="298" width="13" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="&gt;" id="430">
@@ -1105,7 +1104,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="316">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="316">
                         <rect key="frame" x="254" y="298" width="13" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="," id="431">
@@ -1117,7 +1116,7 @@ DQ
                             <outlet property="nextKeyView" destination="161" id="363"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="317">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="317">
                         <rect key="frame" x="313" y="298" width="13" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="," id="432">
@@ -1126,7 +1125,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="318">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="318">
                         <rect key="frame" x="139" y="297" width="71" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="433">
@@ -1137,7 +1136,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="451">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="451">
                         <rect key="frame" x="161" y="381" width="48" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="* factor:" id="452">
@@ -1146,12 +1145,12 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="453">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="453">
                         <rect key="frame" x="212" y="378" width="37" height="20"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="454">
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>

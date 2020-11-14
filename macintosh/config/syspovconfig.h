@@ -163,7 +163,6 @@
 
 /// Specifies the person or organization responsible for this build.
 /// @attention Please set this to your real name, and/or include a working email or website address to contact you.
-#define DISTRIBUTION_MESSAGE_2 "Your name - your e-mail address@xx.xx"
-#error Please fill in DISTRIBUTION_MESSAGE_2, then remove this line
+#define DISTRIBUTION_MESSAGE_2 "C.W. Betts - computers57@hotmail.com"
 
 #endif // POVRAY_MACINTOSH_SYSPOVCONFIG_H

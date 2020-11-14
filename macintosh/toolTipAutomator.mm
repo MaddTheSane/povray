@@ -43,7 +43,7 @@
 #import "syspovdebug.h"
 @implementation ToolTipAutomator
 
-+(void) setTooltips:(NSString*)nibFile andDictionary:(NSDictionary *) dictionayWithOutlets
++(void) setTooltips:(NSString*)nibFile andDictionary:(NSDictionary<NSString*,id> *) dictionayWithOutlets
 {
 	NSString *key=nil;
 	NSString *tagString=nil;
@@ -52,8 +52,8 @@
 		return;
 	
 
-	NSEnumerator *en = [dictionayWithOutlets keyEnumerator];
-	while ( (key = [en nextObject]) != nil ) 
+	NSEnumerator<NSString*> *en = [dictionayWithOutlets keyEnumerator];
+	for ( key in en )
 	{
 		id object=[dictionayWithOutlets objectForKey:key];
 		

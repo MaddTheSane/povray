@@ -77,7 +77,7 @@ enum eObjectIsoBound {
 	cSphereContainer	=1
 	};	
 	
-enum {
+NS_ENUM(NSInteger) {
 	menuTagTemplateReserved					=0,
 	menuTagTemplateCamera						=1,	//*
 	menuTagTemplateLight						=2,	//*

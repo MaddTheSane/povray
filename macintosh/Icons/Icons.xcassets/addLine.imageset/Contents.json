@@ -1,0 +1,41 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "addLine.png",
+      "display-gamut" : "sRGB",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "addLine copy.png",
+      "display-gamut" : "display-P3",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "addLine@2x.png",
+      "display-gamut" : "sRGB",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "display-gamut" : "display-P3"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "display-gamut" : "sRGB"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "display-gamut" : "display-P3"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

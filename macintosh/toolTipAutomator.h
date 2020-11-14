@@ -44,5 +44,5 @@
 {
 	
 }
-+(void) setTooltips:(NSString*)nibFile andDictionary:(NSDictionary *) dictionayWithOutlets;
++(void) setTooltips:(NSString*)nibFile andDictionary:(NSDictionary<NSString*,id> *) dictionayWithOutlets;
 @end

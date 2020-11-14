@@ -622,12 +622,12 @@ static BOOL mSkySphereWritten;
 				else
 				{
 					NSRunAlertPanel(NSLocalizedStringFromTable(@"WrongTemplateSettings", @"applicationLocalized", @"Wrong preferences file"),
-					LocalizedSettingsfileToBeUsed,
+					@"%@",
 					NSLocalizedStringFromTable(@"Ok", @"applicationLocalized", @"Cancel"),
 													nil, 
-													nil);
+													nil, LocalizedSettingsfileToBeUsed);
 				}
-				[[NSNotificationCenter defaultCenter] postNotificationName:@"NSTableViewSelectionDidChangeNotification" object:mTableView];
+				[[NSNotificationCenter defaultCenter] postNotificationName:NSTableViewSelectionDidChangeNotification object:mTableView];
 			}
 		}
 	};

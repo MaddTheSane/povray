@@ -186,7 +186,7 @@
 //---------------------------------------------------------------------
 -(void) updateControls
 {
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"NSTableViewSelectionDidChangeNotification" object:mTableView];
+	[[NSNotificationCenter defaultCenter] postNotificationName:NSTableViewSelectionDidChangeNotification object:mTableView];
 //	[self tableViewSelectionDidChange:nil];
 	[self setButtons];
 }

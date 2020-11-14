@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -105,7 +105,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleGetInfoString</key>
-	<string>POV-Ray Unofficial, (c) 1991-2003 Persistene of Vision Team. (c) 2003- 2016 Persistence of Vision Raytracer Pty. Ltd.Unofficial Compile by: Yvo and René© Smellenbergh e-mail: yvo.s@gmx.net</string>
+	<string>POV-Ray Unofficial, © 1991-2003 Persistene of Vision Team. © 2003- 2016 Persistence of Vision Raytracer Pty. Ltd.Unofficial Compile by: Yvo and René Smellenbergh e-mail: yvo.s@gmx.net</string>
 	<key>CFBundleIconFile</key>
 	<string>ApplicationIcons</string>
 	<key>CFBundleIdentifier</key>
