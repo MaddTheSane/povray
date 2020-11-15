@@ -172,7 +172,7 @@ DQ
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <size key="minSize" width="518" height="126"/>
-                                    <size key="maxSize" width="535" height="10000000"/>
+                                    <size key="maxSize" width="550" height="10000000"/>
                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                 </textView>
                             </subviews>
@@ -574,6 +574,7 @@ DQ
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="-581" y="88"/>
         </customView>
         <customView id="268" userLabel="ab_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>
@@ -622,6 +623,7 @@ DQ
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="-717" y="-71"/>
         </customView>
         <customView id="273" userLabel="s1s2_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>
@@ -670,6 +672,7 @@ DQ
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="-853" y="-232"/>
         </customView>
         <customView id="278" userLabel="ida_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>
@@ -1430,6 +1433,7 @@ DQ
                     </connections>
                 </popUpButton>
             </subviews>
+            <point key="canvasLocation" x="22" y="124"/>
         </customView>
         <customView id="363" userLabel="vloo_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>

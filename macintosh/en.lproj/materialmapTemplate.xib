@@ -244,7 +244,7 @@ DQ
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="65">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="65">
                                 <rect key="frame" x="21" y="60" width="52" height="14"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="function:" id="161">
@@ -297,7 +297,7 @@ DQ
                             <action selector="materialmapTarget:" target="-2" id="130"/>
                         </connections>
                     </popUpButton>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="84">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="84">
                         <rect key="frame" x="12" y="407" width="51" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="file type:" id="163">
@@ -392,7 +392,7 @@ DQ
                             <action selector="setModified:" target="-2" id="138"/>
                         </connections>
                     </popUpButton>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="102">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="102">
                         <rect key="frame" x="263" y="295" width="62" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="projection:" id="169">
@@ -423,7 +423,7 @@ DQ
                             <action selector="setModified:" target="-2" id="137"/>
                         </connections>
                     </popUpButton>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="109">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="109">
                         <rect key="frame" x="12" y="295" width="77" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="interpolation:" id="171">
@@ -447,7 +447,7 @@ DQ
                         <rect key="frame" x="202" y="398" width="268" height="29"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="112">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="112">
                                 <rect key="frame" x="133" y="8" width="78" height="14"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="image height:" id="173">
@@ -456,7 +456,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="113">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" preferredMaxLayoutWidth="47" translatesAutoresizingMaskIntoConstraints="NO" id="113">
                                 <rect key="frame" x="211" y="6" width="47" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="174">
@@ -468,7 +468,7 @@ DQ
                                     <action selector="setModified:" target="-2" id="132"/>
                                 </connections>
                             </textField>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="115">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="115">
                                 <rect key="frame" x="3" y="9" width="73" height="14"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="image width:" id="176">
@@ -477,7 +477,7 @@ DQ
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="114">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" preferredMaxLayoutWidth="47" translatesAutoresizingMaskIntoConstraints="NO" id="114">
                                 <rect key="frame" x="81" y="7" width="47" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="175">
