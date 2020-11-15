@@ -39,7 +39,7 @@
 ///
 //******************************************************************************
 #import "MainController.h"
-#import "MaterialPreview.h"
+#import "materialPreview.h"
  
 // this must be the last file included
 #import "syspovdebug.h"

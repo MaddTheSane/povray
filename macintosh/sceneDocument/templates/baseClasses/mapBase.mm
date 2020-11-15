@@ -231,13 +231,19 @@
 //---------------------------------------------------------------------
 @synthesize selectedRow=mSelectedRow;
 
+// NSCoding keys
+#define MapArrayCodingKey @"mMapArray"
+
 //---------------------------------------------------------------------
 // encodeWithCoder:encoder
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
+	if ([encoder allowsKeyedCoding]) {
+		[encoder encodeObject:mMapArray forKey:MapArrayCodingKey];
+	} else {
 	[encoder encodeObject:mMapArray];
-
+	}
 }
 
 //---------------------------------------------------------------------
@@ -246,7 +252,11 @@
 -(id)initWithCoder:(NSCoder*) decoder
 {
 	self = [super init];
+	if ([decoder allowsKeyedCoding]) {
+		[self setArray:[decoder decodeObjectForKey:MapArrayCodingKey]];
+	} else {
 	[self setArray:[decoder decodeObject]];
+	}
 
 	return self;
 }

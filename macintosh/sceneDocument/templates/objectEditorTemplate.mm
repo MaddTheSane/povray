@@ -299,7 +299,7 @@ enum {
 //---------------------------------------------------------------------
 // applyArrows
 //---------------------------------------------------------------------
--(void) applyArrows:(int) tag
+-(void) applyArrows:(NSInteger) tag
 {
 	const char* t=[[objectEditorMoveEdit stringValue] UTF8String];
 	float value=atof(t);
@@ -343,7 +343,7 @@ enum {
 //---------------------------------------------------------------------
 // applyScaleRotate
 //---------------------------------------------------------------------
--(void) applyScaleRotate:(int)tag
+-(void) applyScaleRotate:(NSInteger)tag
 {
 	const char* t;
 	float value=0.0;
@@ -381,7 +381,7 @@ enum {
 	}
 	else		//rotate
 	{
-		float radGr=3.1415927/180.0*value;
+		float radGr=M_PI/180.0*value;
 		float tempx;
 		for( NSInteger ct=0; ct<[mMap count]; ct++)
 		{	
@@ -486,20 +486,20 @@ enum {
 		}
 		else if (  [mMap buttonState:cSplineTypePopUp]==cBezierSpline)
 		{
-			int SelectedSegment=(rowIndex/4)+1;
+			NSInteger SelectedSegment=(rowIndex/4)+1;
 
 			if ( rowIndex == 0 )																//first point always start of segment
-				str=[NSString stringWithFormat:@"S %d",SelectedSegment];
+				str=[NSString stringWithFormat:@"S %ld",(long)SelectedSegment];
 			else if ( rowIndex == [mMap count]-1)									//last point always end of a segment
-				str=[NSString stringWithFormat:@"E %d",SelectedSegment];
+				str=[NSString stringWithFormat:@"E %ld",(long)SelectedSegment];
 			else if ( (((rowIndex+1)/2) & 1)	&& ((rowIndex+1) % 2==0))					// First controlpoint of a segment
-				str=[NSString stringWithFormat:@"Cs %d",SelectedSegment];
+				str=[NSString stringWithFormat:@"Cs %ld",(long)SelectedSegment];
 			else if ( (rowIndex+1) % 4 == 0 )														// end of a segment
-				str=[NSString stringWithFormat:@"E %d",SelectedSegment];
+				str=[NSString stringWithFormat:@"E %ld",(long)SelectedSegment];
 			else if ( rowIndex % 4 == 0)												//start of a segment
-				str=[NSString stringWithFormat:@"S %d",SelectedSegment];
+				str=[NSString stringWithFormat:@"S %ld",(long)SelectedSegment];
 			else																						//must be last controlpoint of a segment
-				str=[NSString stringWithFormat:@"Ce %d",SelectedSegment];
+				str=[NSString stringWithFormat:@"Ce %ld",(long)SelectedSegment];
 		}	
 
 

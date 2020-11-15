@@ -43,7 +43,7 @@
 #import "mapBaseTemplate.h"
 #import "objectmap.h"
 	
-@interface ObjectEditorTemplate : MapBaseTemplate
+@interface ObjectEditorTemplate : MapBaseTemplate <NSTableViewDataSource>
 {
 
 	IBOutlet NSButton 			*SlopeButton;
@@ -77,8 +77,8 @@
 	
 }
 -(IBAction) objectmapmapButtons:(id)sender;
--(void) applyArrows:(int) tag;
--(void) applyScaleRotate:(int)tag;
+-(void) applyArrows:(NSInteger) tag;
+-(void) applyScaleRotate:(NSInteger)tag;
 -(void) setPointToMin:(float & ) theValue thePoint:(NSInteger&)thePoint;
 
 @end

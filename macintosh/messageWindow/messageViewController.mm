@@ -40,7 +40,7 @@
 #import <Cocoa/Cocoa.h>
 #import "MainController.h"
 
-#import "MessageViewController.h"
+#import "messageViewController.h"
 #import "rendererGUIBridge.h"
 #include "configbase.h"
 #import "povray.h"

@@ -66,7 +66,7 @@ NS_ENUM(NSInteger) {
 	IBOutlet NSView			*mFilterTransmitView;
 	IBOutlet NSButton		*mGrayOn;
 	
-	id mDelegate;
+	__weak id mDelegate;
 	IBOutlet NSPanel *window;
 	CGFloat mFilter,mTransmit;	
 	NSControlStateValue mFilterOnState;

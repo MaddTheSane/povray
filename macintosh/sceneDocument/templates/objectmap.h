@@ -74,6 +74,8 @@ typedef NS_ENUM (NSInteger, eObjectmapIndex) {
 	NSInteger mTemplateType;
 }
 
+-(instancetype)init NS_DESIGNATED_INITIALIZER;
+
 +(id) standardMap:(NSInteger) type withView:(id)view;
 @property NSInteger templateType;
 
@@ -89,6 +91,8 @@ typedef NS_ENUM (NSInteger, eObjectmapIndex) {
 
 -(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button;
 -(NSControlStateValue) buttonState:(NSInteger)button;
+
+-(id)initWithCoder:(NSCoder*) decoder NS_DESIGNATED_INITIALIZER;
 
 @end
 

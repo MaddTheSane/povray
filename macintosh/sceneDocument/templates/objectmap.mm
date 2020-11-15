@@ -71,6 +71,17 @@
 @synthesize templateType=mTemplateType;
 
 //---------------------------------------------------------------------
+// init
+//---------------------------------------------------------------------
+- (instancetype)init
+{
+	if (self = [super init]) {
+		// ??
+	}
+	return self;
+}
+
+//---------------------------------------------------------------------
 // makeMap: withPoint
 //---------------------------------------------------------------------
 -(void) makeMapWithPoints:(int)numberOfPoints 
@@ -620,24 +631,43 @@
 	}
 }
 
+// NSCoding keys
+#define SlopeOnCodingKey @"mSlopeOn"
+#define PointOnCodingKey @"mPointOn"
+#define RasterOnCodingKey @"mRasterOn"
+#define CurveOnCodingKey @"mCurveOn"
+#define SplineTypePopUpCodingKey @"mSplineTypePopUp"
+#define TemplateTypeCodingKey @"mTemplateType"
+
 //---------------------------------------------------------------------
 // encodeWithCoder:encoder
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
-	[encoder encodeObject:mMapArray];
+	[super encodeWithCoder:encoder];
+	if ([encoder allowsKeyedCoding]) {
+//		[encoder encodeObject:mMapArray forKey:MapArrayCodingKey];
+		[encoder encodeInteger:mSlopeOn forKey:SlopeOnCodingKey];
+		[encoder encodeInteger:mPointOn forKey:PointOnCodingKey];
+		[encoder encodeInteger:mRasterOn forKey:RasterOnCodingKey];
+		[encoder encodeInteger:mCurveOn forKey:CurveOnCodingKey];
+		[encoder encodeInteger:mSplineTypePopUp forKey:SplineTypePopUpCodingKey];
+		[encoder encodeInteger:mTemplateType forKey:TemplateTypeCodingKey];
+	} else {
+	//[encoder encodeObject:mMapArray];
 	int enc = mSlopeOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
 	enc = mPointOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
-	enc = mTemplateType;
+	enc = mRasterOn;
+	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
+	enc = mCurveOn;
+	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
+	enc = mSplineTypePopUp;
 	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
 	enc = mTemplateType;
 	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
-	enc = mTemplateType;
-	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
-	enc = mTemplateType;
-	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
+	}
 }
 
 //---------------------------------------------------------------------
@@ -646,7 +676,16 @@
 -(id)initWithCoder:(NSCoder*) decoder
 {
 	self = [super initWithCoder:decoder];
-	[self setArray:[decoder decodeObject]];
+	if ([decoder allowsKeyedCoding]) {
+//		[self setArray:[decoder decodeObjectForKey:MapArrayCodingKey]];
+		mSlopeOn = [decoder decodeIntegerForKey:SlopeOnCodingKey];
+		mPointOn = [decoder decodeIntegerForKey:PointOnCodingKey];
+		mRasterOn = [decoder decodeIntegerForKey:RasterOnCodingKey];
+		mCurveOn = [decoder decodeIntegerForKey:CurveOnCodingKey];
+		mSplineTypePopUp = [decoder decodeIntegerForKey:SplineTypePopUpCodingKey];
+		mTemplateType = [decoder decodeIntegerForKey:TemplateTypeCodingKey];
+	} else {
+//	[self setArray:[decoder decodeObject]];
 	int tmp;
 	[decoder decodeValueOfObjCType:@encode(int) at:&tmp];
 	mSlopeOn = tmp;
@@ -660,6 +699,7 @@
 	mSplineTypePopUp = tmp;
 	[decoder decodeValueOfObjCType:@encode(int) at:&tmp];
 	mTemplateType = tmp;
+	}
 	[self setSelectedRow:dNoRowSelected];
 	return self;
 }

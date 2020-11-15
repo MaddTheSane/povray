@@ -38,7 +38,7 @@
 ///
 //******************************************************************************
 #import "MainController.h"
-#import "PicturePreview.h"
+#import "picturePreview.h"
 #import "ToolTipAutomator.h"
 #import "rendererGUIBridge.h"
 #import <limits>

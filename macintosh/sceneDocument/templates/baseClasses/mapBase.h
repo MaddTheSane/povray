@@ -55,11 +55,13 @@ enum eSlopeButtonTags {
 	id						mTemplate;	//slopemapTemplate, colormapTempalte,...
 	NSInteger			mSelectedRow;
 }
+-(id)initWithCoder:(NSCoder*) decoder NS_DESIGNATED_INITIALIZER;
+
 -(void)  reloadData;
 
 -(void) mapBaseSetTemplate:(id) owner;
 -(void) selectTableRow:(NSInteger)index;
--(instancetype) init;
+-(instancetype) init NS_DESIGNATED_INITIALIZER;
 -(void) setViewDirty;
 @property (nonatomic, assign) id preview;
 -(void) removeEntryAtIndex:(NSInteger)index reload:(BOOL)forceReload;
