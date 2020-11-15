@@ -291,14 +291,14 @@ static BOOL mSkySphereWritten;
 		[materialPreviewTabView selectTabViewItemAtIndex:cPreviewTab];
 		gMaterialPreview=mateiralPreviewView;
 		NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
-			[NSNumber numberWithBool:YES] ,	@"shouldStartRendering",
+			@YES,	@"shouldStartRendering",
 			currentSettings,				@"rendersettings",
-			[NSNumber numberWithBool:YES],  @"renderMaterial",
+			@YES,  @"renderMaterial",
 			[NSDate date],					@"dateOfPosting",
 			nil];
 
 		[[NSNotificationCenter defaultCenter]
-			postNotificationName:@"renderDocument" 
+			postNotificationName:POVRenderDocumentNotification
 			object:self 
 			userInfo:dict];
 	}
@@ -400,13 +400,13 @@ static BOOL mSkySphereWritten;
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderState:)
-		name:@"renderState"
+		name:POVRenderStateNotification
 		object:nil];
 		
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderState:)
-		name:@"preparingState"
+		name:POVRenderPreparingNotification
 		object:nil];
 	if ( [[renderDispatcher sharedInstance] rendering]==YES 
 				|| [[renderDispatcher sharedInstance] preparingToRender]==YES)

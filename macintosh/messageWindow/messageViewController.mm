@@ -149,7 +149,7 @@ static MessageViewController* _messageViewController;
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderState:)
-		name:@"renderState"
+		name:POVRenderStateNotification
 		object:nil];
 
 	mTextSize=0;	// no text in the buffer

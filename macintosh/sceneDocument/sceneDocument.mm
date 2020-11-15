@@ -343,7 +343,7 @@
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderState:)
-		name:@"renderState"
+		name:POVRenderStateNotification
 		object:nil];
 
 	
@@ -760,7 +760,7 @@
 			nil];
 
 		[[NSNotificationCenter defaultCenter]
-			postNotificationName:@"renderDocument" 
+			postNotificationName:POVRenderDocumentNotification
 			object:self 
 			userInfo:dict];
 	}
@@ -772,7 +772,7 @@
 //---------------------------------------------------------------------
 -(void) moveDocumentToRenderingPreferences
 {
-	[[NSNotificationCenter defaultCenter]postNotificationName:@"acceptDocument" 
+	[[NSNotificationCenter defaultCenter]postNotificationName:POVRenderSessionAcceptDocumentNotification
 		object:self 
 		userInfo:nil];
 }

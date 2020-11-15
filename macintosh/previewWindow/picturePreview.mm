@@ -71,19 +71,19 @@
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderState:)
-		name:@"renderState"
+		name:POVRenderStateNotification
 		object:nil];
 		
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(newSelectionInPreferencesPanelSet:)
-		name:@"newSelectionInPreferencesPanelSet"
+		name:POVRenderNewSelectionInPreferencesPanelSetNotification
 		object:nil];
 		
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(pauseStatusChanged:)
-		name:@"pauseStatusChanged"
+		name:POVRenderPauseStatusChangedNotification
 		object:nil];
 
 	[self initializeToolbar];
@@ -361,7 +361,7 @@
 			nil];
 
 		[[NSNotificationCenter defaultCenter]
-			postNotificationName:@"newSelectionInPreviewwindowSet" 
+			postNotificationName:POVRenderNewSelectionInPreviewWindowSetNotification
 			object:self 
 			userInfo:dict];
 		

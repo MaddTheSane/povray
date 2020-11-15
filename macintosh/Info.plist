@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -26,6 +26,12 @@
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.povray.pov</string>
+			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
 			<key>NSDocumentClass</key>
@@ -51,6 +57,12 @@
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.povray.inc</string>
+			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
 			<key>NSDocumentClass</key>
@@ -105,7 +117,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleGetInfoString</key>
-	<string>POV-Ray Unofficial, (c) 1991-2003 Persistene of Vision Team. (c) 2003- 2016 Persistence of Vision Raytracer Pty. Ltd.Unofficial Compile by: Yvo and René© Smellenbergh e-mail: yvo.s@gmx.net</string>
+	<string>POV-Ray Unofficial, © 1991-2003 Persistene of Vision Team. © 2003- 2016 Persistence of Vision Raytracer Pty. Ltd.Unofficial Compile by: Yvo and René© Smellenbergh e-mail: yvo.s@gmx.net</string>
 	<key>CFBundleIconFile</key>
 	<string>ApplicationIcons</string>
 	<key>CFBundleIdentifier</key>
@@ -141,6 +153,11 @@
 			<string>POV-Ray source</string>
 			<key>UTTypeIconFile</key>
 			<string>MPDocumentIcon</string>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconText</key>
+				<string>POV</string>
+			</dict>
 			<key>UTTypeIdentifier</key>
 			<string>org.povray.pov</string>
 			<key>UTTypeTagSpecification</key>
@@ -152,6 +169,30 @@
 				<key>public.mime-type</key>
 				<array>
 					<string>model/x-pov</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.source-code</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>POV-Ray Include</string>
+			<key>UTTypeIconFile</key>
+			<string>MPIncludeIcon</string>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconText</key>
+				<string>inc</string>
+			</dict>
+			<key>UTTypeIdentifier</key>
+			<string>org.povray.inc</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>inc</string>
 				</array>
 			</dict>
 		</dict>

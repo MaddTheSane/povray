@@ -472,25 +472,25 @@ static PreferencesPanelController* _preferencesPanelController;
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self
 	 selector:@selector(renderState:)
-	 name:@"renderState"
+	 name:POVRenderStateNotification
 	 object:nil];
 	
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self
 	 selector:@selector(renderState:)
-	 name:@"preparingState"
+	 name:POVRenderPreparingNotification
 	 object:nil];
 	
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self
 	 selector:@selector(acceptDocument:)
-	 name:@"acceptDocument"
+	 name:POVRenderSessionAcceptDocumentNotification
 	 object:nil];
 	
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self
 	 selector:@selector(newSelectionInPreviewwindowSet:)
-	 name:@"newSelectionInPreviewwindowSet"
+	 name:POVRenderNewSelectionInPreviewWindowSetNotification
 	 object:nil];
 	
 	//settingspanel
@@ -1076,7 +1076,7 @@ static PreferencesPanelController* _preferencesPanelController;
 -(void) sendNotificationSubsetDidChange
 {
 	NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
-											[NSNumber numberWithBool:YES], @"yStartsAtTop",
+											@YES, @"yStartsAtTop",
 											[NSNumber numberWithInt: [xSubsetStart intValue]] ,	@"columnStart",
 											[NSNumber numberWithInt: [xSubsetEnd intValue]] ,		@"columnEnd",
 											[NSNumber numberWithInt: [ySubsetStart intValue]],	@"rowStart",
@@ -1086,7 +1086,7 @@ static PreferencesPanelController* _preferencesPanelController;
 											nil];
 	
 	[[NSNotificationCenter defaultCenter]
-	 postNotificationName:@"newSelectionInPreferencesPanelSet"
+	 postNotificationName:POVRenderNewSelectionInPreferencesPanelSetNotification
 	 object:self
 	 userInfo:dict];
 }
@@ -1174,7 +1174,7 @@ static PreferencesPanelController* _preferencesPanelController;
 												[NSDate date],								@"dateOfPosting",
 												nil];
 		
-				[[NSNotificationCenter defaultCenter] postNotificationName:@"renderDocument" object:self userInfo:dict];
+				[[NSNotificationCenter defaultCenter] postNotificationName:POVRenderDocumentNotification object:self userInfo:dict];
 			}
 			break;
 		case cRenderingPreferencesPresets:
@@ -1710,7 +1710,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	[mBackupSettingsArray release];	// no need for it anymore
 	mBackupSettingsArray=nil;
 	// post notification so that our batch window knows of the changed settings
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"renderingSettingsChaged" 	object:self 	userInfo:nil];
+	[[NSNotificationCenter defaultCenter] postNotificationName:POVRenderSettingsChangedNotification 	object:self 	userInfo:nil];
 }
 
 //---------------------------------------------------------------------

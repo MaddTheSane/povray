@@ -52,6 +52,16 @@
 // this must be the last file included
 #import "syspovdebug.h"
 
+NSNotificationName const POVRenderDocumentNotification = @"renderDocument";
+NSNotificationName const POVRenderSettingsChangedNotification = @"renderingSettingsChaged";
+NSNotificationName const POVRenderStateNotification = @"renderState";
+NSNotificationName const POVRenderPreparingNotification = @"preparingState";
+NSNotificationName const POVRenderSessionStoppedRenderingNotification = @"vfeSessionStoppedRendering";
+NSNotificationName const POVRenderSessionAcceptDocumentNotification = @"acceptDocument";
+NSNotificationName const POVRenderNewSelectionInPreviewWindowSetNotification = @"newSelectionInPreviewwindowSet";
+NSNotificationName const POVRenderPauseStatusChangedNotification = @"pauseStatusChanged";
+NSNotificationName const POVRenderNewSelectionInPreferencesPanelSetNotification = @"newSelectionInPreferencesPanelSet";
+
 BOOL gOnlyDisplayPart=NO;
 BOOL gDontErasePreveiw=NO;
 static NSInteger compareBatchEntryUsingSelector(id p1, id p2, void *context);
@@ -94,7 +104,7 @@ static renderDispatcher* _renderDispatcher;
 		availableArgc=120;
 		Argc=0;
 		Argv=nil;
-		if ([NSBundle loadNibNamed:@"batch.nib" owner:self] == YES)
+		if ([NSBundle loadNibNamed:@"batch" owner:self] == YES)
 		{
 		}
 		else
@@ -203,7 +213,7 @@ static renderDispatcher* _renderDispatcher;
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderDocument:)
-		name:@"renderDocument"
+		name:POVRenderDocumentNotification
 		object:nil];
 
 	// we need to know when a rendering settings are added or removed
@@ -211,13 +221,13 @@ static renderDispatcher* _renderDispatcher;
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(buildSettingsPopup)
-		name:@"renderingSettingsChaged"
+		name:POVRenderSettingsChangedNotification
 		object:nil];
 
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderState:)
-		name:@"renderState"
+		name:POVRenderStateNotification
 		object:nil];
 
 	[mSettingsPopupButton setAutoenablesItems:NO];
@@ -720,16 +730,16 @@ static renderDispatcher* _renderDispatcher;
 				if ( currentSettings)	//make sure we have usable settings to render the file
 				{
 					NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
-															[NSNumber numberWithBool:YES] ,	@"shouldStartRendering",
+															@YES,													@"shouldStartRendering",
 															[mBatchMap objectAtRow:x-1 atColumn:cNameIndex], 				@"fileName",
-															currentSettings,								@"rendersettings",
+															currentSettings,							@"rendersettings",
 															[NSDate date],								@"dateOfPosting",
-															[NSNumber numberWithBool:YES],	@"isBatchRender",
+															@YES,													@"isBatchRender",
 															nil];
 					[self setBatchIsRunning:YES];
 					[self setButtons];
 					[[NSNotificationCenter defaultCenter]
-						postNotificationName:@"renderDocument"
+						postNotificationName:POVRenderDocumentNotification
 						object:self
 						userInfo:dict];
 					return;
@@ -803,7 +813,7 @@ static renderDispatcher* _renderDispatcher;
 	[openPanel setAllowsMultipleSelection:YES];
 	[openPanel setCanChooseDirectories:NO];
 	[openPanel setCanChooseFiles:YES];
-	[openPanel setAllowedFileTypes:[NSArray arrayWithObject:@"pov"]];
+	[openPanel setAllowedFileTypes:[NSArray arrayWithObject:@"org.povray.pov"]];
 	void (^batchOpenFilesPanelFinishedHandler)(NSInteger) = ^( NSInteger resultCode)
 	{
 		@autoreleasepool
@@ -891,7 +901,7 @@ static renderDispatcher* _renderDispatcher;
 
 -(void)notifyVfeSessionStoppedRendering
 {
-	[[NSNotificationCenter defaultCenter]	postNotificationName:@"vfeSessionStoppedRendering" object:nil userInfo:nil];
+	[[NSNotificationCenter defaultCenter]	postNotificationName:POVRenderSessionStoppedRenderingNotification object:nil userInfo:nil];
 }
 //---------------------------------------------------------------------
 // setIsRendering
@@ -924,7 +934,7 @@ static renderDispatcher* _renderDispatcher;
 		mThreadID=0l;
 	}
 
-	[[NSNotificationCenter defaultCenter]	postNotificationName:@"renderState" object:self userInfo:dict];
+	[[NSNotificationCenter defaultCenter]	postNotificationName:POVRenderStateNotification object:self userInfo:dict];
 	if ( gApplicationShouldTerminate == YES)
 		[[NSApplication sharedApplication]terminate:nil];
 
@@ -944,11 +954,10 @@ static renderDispatcher* _renderDispatcher;
 -(void) setPreparingToRender: (BOOL) flag
 {
 	mPreparingToRender=flag;
-	NSDictionary *dict=[NSDictionary dictionaryWithObject:
-											[NSNumber numberWithBool:flag] forKey:@"preparingStarted"];
+	NSDictionary *dict= @{@"preparingStarted": @(flag)};
 
 	[[NSNotificationCenter defaultCenter]
-		postNotificationName:@"preparingState"
+		postNotificationName:POVRenderPreparingNotification
 		object:self userInfo:dict];
 }
 
@@ -1044,9 +1053,9 @@ static renderDispatcher* _renderDispatcher;
 					{
 						if ( [mPostingObject isKindOfClass:[SceneDocument class]]   )
 						{
-							NSDictionary *infoDict=[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:@"orderFront"];
+							NSDictionary *infoDict=[NSDictionary dictionaryWithObject:@NO forKey:@"orderFront"];
 
-							[[NSNotificationCenter defaultCenter]postNotificationName:@"acceptDocument"
+							[[NSNotificationCenter defaultCenter]postNotificationName:POVRenderSessionAcceptDocumentNotification
 																																 object:mPostingObject
 																															 userInfo:infoDict];
 							//make sure that we have the new file settings
@@ -1972,7 +1981,7 @@ void *doRender(void* theObject)
 			if ( mSessionResult== true)
 				gIsPausing=NO;
 		}
-		[[NSNotificationCenter defaultCenter]	postNotificationName:@"pauseStatusChanged" object:self userInfo:nil];
+		[[NSNotificationCenter defaultCenter]	postNotificationName:POVRenderPauseStatusChangedNotification object:self userInfo:nil];
 	}
 	else
 	{

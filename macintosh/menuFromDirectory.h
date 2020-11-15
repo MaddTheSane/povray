@@ -65,9 +65,10 @@ enum entryType {
 
 }
 
-+(instancetype) fromDirectory:(NSString*)path withExtensions:(NSArray<NSString*>*)extensionsArray
-											forMainMenuItem:(NSMenuItem*)mainMenuItem  
-											scaleFactor:(CGFloat)scale	action:(SEL)selector;
++(instancetype) fromDirectory:(NSString*)path
+							 withExtensions:(NSArray<NSString*>*)extensionsArray
+							forMainMenuItem:(NSMenuItem*)mainMenuItem
+									scaleFactor:(CGFloat)scale	action:(SEL)selector;
 - (instancetype)initWithPath:(NSString*) path andExtensions:(NSArray<NSString*>*) extensions;
 -(BOOL) isFileValid: (NSString *)file extensionResult:(NSString**)foundExtension;
 -(id) directoryItemForNSMenuItem:(NSMenuItem*)menuItem;

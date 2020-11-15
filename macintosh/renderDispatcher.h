@@ -47,6 +47,16 @@
 
 void *doRender (void * theObject);
 
+extern NSNotificationName const POVRenderDocumentNotification;
+extern NSNotificationName const POVRenderSettingsChangedNotification;
+extern NSNotificationName const POVRenderStateNotification;
+extern NSNotificationName const POVRenderPreparingNotification;
+extern NSNotificationName const POVRenderSessionStoppedRenderingNotification;
+extern NSNotificationName const POVRenderSessionAcceptDocumentNotification;
+extern NSNotificationName const POVRenderNewSelectionInPreviewWindowSetNotification;
+extern NSNotificationName const POVRenderPauseStatusChangedNotification;
+extern NSNotificationName const POVRenderNewSelectionInPreferencesPanelSetNotification;
+
 @interface renderDispatcher : NSObject
 {
 	// batch

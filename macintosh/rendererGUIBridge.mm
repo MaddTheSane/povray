@@ -137,7 +137,7 @@ namespace vfe
 					if ( lres== true)
 						gIsPausing=YES;
 					if ( olState != gIsPausing)
-						[[NSNotificationCenter defaultCenter]	postNotificationName:@"pauseStatusChanged" object:nil userInfo:nil];
+						[[NSNotificationCenter defaultCenter]	postNotificationName:POVRenderPauseStatusChangedNotification object:nil userInfo:nil];
 
 				}
 

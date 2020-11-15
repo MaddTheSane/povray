@@ -140,7 +140,7 @@ extern BOOL gDontErasePreveiw;
 	[[NSNotificationCenter defaultCenter]
 	 addObserver:self
 	 selector:@selector(vfeSessionStoppedRendering:)
-	 name:@"vfeSessionStoppedRendering"
+	 name:POVRenderSessionStoppedRenderingNotification
 	 object:nil];
 
 	NSWindow *w=[self window];
@@ -159,7 +159,7 @@ extern BOOL gDontErasePreveiw;
 			 object:nil];
 	 }
 	
-	mBackgroundImagePattern=[[NSImage imageNamed:@"background.png"]retain];
+	mBackgroundImagePattern=[[NSImage imageNamed:@"background"]retain];
 	#if defined (debugPreview ) && defined (debugPreviewWatchBackingProperties)
 		NSLog(@"exit awakeFromNib\n");
 	#endif
