@@ -74,11 +74,13 @@
 /* Define to the version of this package. */
 #define PACKAGE_VERSION "1.5.14"
 
+#ifdef __arm64__
 /* Align row buffers */
-/* #undef PNG_ALIGNED_MEMORY_SUPPORTED */
+#define PNG_ALIGNED_MEMORY_SUPPORTED 1
 
 /* ARM NEON filter initialization function */
 /* #undef PNG_FILTER_OPTIMIZATIONS */
+#endif
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1

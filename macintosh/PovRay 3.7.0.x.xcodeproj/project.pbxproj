@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		553A62872580C0AA004D15BB /* pnginfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62822580C0A9004D15BB /* pnginfo.h */; };
+		553A62882580C0AA004D15BB /* pngdebug.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62832580C0AA004D15BB /* pngdebug.h */; };
+		553A62892580C0AA004D15BB /* png.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62842580C0AA004D15BB /* png.h */; };
+		553A628A2580C0AA004D15BB /* pngstruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62852580C0AA004D15BB /* pngstruct.h */; };
+		553A628B2580C0AA004D15BB /* pngpriv.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62862580C0AA004D15BB /* pngpriv.h */; };
 		5567B88B211394E2003BFAE4 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5567B88A211394E2003BFAE4 /* Icons.xcassets */; };
 		55B88C2D21137FDF00AA468A /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B88C2C21137FDF00AA468A /* libz.1.tbd */; };
 		8222236D1D4535F90062FCA5 /* preferencesPanelController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8222236C1D4535F90062FCA5 /* preferencesPanelController.mm */; };
@@ -5690,6 +5695,11 @@
 		550D5A172114D2540039C3B1 /* tz_db_base.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = tz_db_base.hpp; sourceTree = "<group>"; };
 		550D5A182114D2540039C3B1 /* wrapping_int.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = wrapping_int.hpp; sourceTree = "<group>"; };
 		550D5A192114D2540039C3B1 /* year_month_day.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = year_month_day.hpp; sourceTree = "<group>"; };
+		553A62822580C0A9004D15BB /* pnginfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pnginfo.h; sourceTree = "<group>"; };
+		553A62832580C0AA004D15BB /* pngdebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngdebug.h; sourceTree = "<group>"; };
+		553A62842580C0AA004D15BB /* png.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png.h; sourceTree = "<group>"; };
+		553A62852580C0AA004D15BB /* pngstruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngstruct.h; sourceTree = "<group>"; };
+		553A62862580C0AA004D15BB /* pngpriv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngpriv.h; sourceTree = "<group>"; };
 		5567B88A211394E2003BFAE4 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		55B88C2C21137FDF00AA468A /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		8207D2E01D04648000A42189 /* eLut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eLut.h; sourceTree = "<group>"; };
@@ -5709,7 +5719,7 @@
 		821CDDD80C9017A600CC0BDA /* libpng.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libpng.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		821CDDDD0C9017BA00CC0BDA /* libtiff.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtiff.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		821CDDE20C9017C500CC0BDA /* libjpeg.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libjpeg.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8222236B1D4535F90062FCA5 /* preferencesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = preferencesPanelController.h; sourceTree = "<group>"; };
+		8222236B1D4535F90062FCA5 /* preferencesPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = preferencesPanelController.h; sourceTree = "<group>"; usesTabs = 0; };
 		8222236C1D4535F90062FCA5 /* preferencesPanelController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = preferencesPanelController.mm; sourceTree = "<group>"; };
 		8222236E1D45360D0062FCA5 /* backgroundTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = backgroundTemplate.h; path = sceneDocument/templates/backgroundTemplate.h; sourceTree = SOURCE_ROOT; };
 		8222236F1D45360D0062FCA5 /* backgroundTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = backgroundTemplate.mm; path = sceneDocument/templates/backgroundTemplate.mm; sourceTree = SOURCE_ROOT; };
@@ -15454,6 +15464,11 @@
 		82B9A1530C904CE0002D62D9 /* png */ = {
 			isa = PBXGroup;
 			children = (
+				553A62842580C0AA004D15BB /* png.h */,
+				553A62832580C0AA004D15BB /* pngdebug.h */,
+				553A62822580C0A9004D15BB /* pnginfo.h */,
+				553A62862580C0AA004D15BB /* pngpriv.h */,
+				553A62852580C0AA004D15BB /* pngstruct.h */,
 				826CBDD61D035252000A7A98 /* png.c */,
 				826CBDD71D035252000A7A98 /* pngerror.c */,
 				826CBDD81D035252000A7A98 /* pngget.c */,
@@ -15633,6 +15648,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553A62892580C0AA004D15BB /* png.h in Headers */,
+				553A62882580C0AA004D15BB /* pngdebug.h in Headers */,
+				553A62872580C0AA004D15BB /* pnginfo.h in Headers */,
+				553A628B2580C0AA004D15BB /* pngpriv.h in Headers */,
+				553A628A2580C0AA004D15BB /* pngstruct.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -17256,6 +17276,11 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_INPUT_FILETYPE = automatic;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"${inherited}",
+					PNG_CONFIGURE_LIBPNG,
+					HAVE_CONFIG_H,
+				);
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = png;
@@ -17408,6 +17433,11 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_INPUT_FILETYPE = automatic;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"${inherited}",
+					PNG_CONFIGURE_LIBPNG,
+					HAVE_CONFIG_H,
+				);
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = png;

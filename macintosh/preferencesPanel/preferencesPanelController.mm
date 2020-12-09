@@ -45,8 +45,8 @@
 // this must be the last file included
 #import "syspovdebug.h"
 
-static NSInteger sortSettingsByName(id first, id last, void*context);
-static NSInteger sortSettingsBySize(id first, id last, void*context);
+static NSComparisonResult sortSettingsByName(id first, id last, void*context);
+static NSComparisonResult sortSettingsBySize(id first, id last, void*context);
 
 static PreferencesPanelController* _preferencesPanelController;
 
@@ -101,23 +101,23 @@ static PreferencesPanelController* _preferencesPanelController;
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		
 	//name of dict ***********************************************************************************
-	dFactorySettings,													@"dictionaryName",
-	[NSNumber numberWithInt:0],									@"indexOfSelectedTabViewItem",
+	dFactorySettings,				@"dictionaryName",
+	@(0),									  @"indexOfSelectedTabViewItem",
 
 
 	//files and paths ***********************************************************************************
-	[NSNumber numberWithInt:cLanguageVersion36X],	@"languageVersion",
-	[NSNumber numberWithInt:37],									@"languageVersion_xx",
-	@"" ,																					@"sceneFile",
-	@"" ,																					@"imageFile",
+	@(cLanguageVersion36X),	@"languageVersion",
+	@37,									  @"languageVersion_xx",
+	@"" ,										@"sceneFile",
+	@"" ,										@"imageFile",
 	@(NSOffState),					@"useIniInputFile",
-	@"" ,																					@"iniInputFile",
-	@"" ,																					@"include1",
-	@"" ,																					@"include2",
+	@"" ,										@"iniInputFile",
+	@"" ,										@"include1",
+	@"" ,										@"include2",
 	@(NSOffState),					@"mRadiosityLoadSaveGroupOn",
 	@(NSOffState),					@"mRadiosityLoadOn",
 	@(NSOffState),					@"mRadiositySaveOn",
-	@"" ,																					@"mRadiosityFileNameEdit",
+	@"" ,										@"mRadiosityFileNameEdit",
 
 	//image & quality ***********************************************************************************
 	@"320" ,										@"imageSizeX",
@@ -126,15 +126,15 @@ static PreferencesPanelController* _preferencesPanelController;
 	@"1" ,											@"ySubsetStart",
 	@"320" ,										@"xSubsetEnd",
 	@"240" ,										@"ySubsetEnd",
-	@(NSOnState) ,            @"ratioOnOff",
-	[NSNumber numberWithInt:cRatio4_3] ,            @"ratioPresets",
+	@(NSOnState),               @"ratioOnOff",
+	@(cRatio4_3),               @"ratioPresets",
 	@"4" ,											@"ratioX",
 	@"3" ,											@"ratioY",
 
 	//output options ***********************************************************************************
-	[NSNumber numberWithInt:cImageTypeDontSave],	@"imageType",
+	@(cImageTypeDontSave),	@"imageType",
 	@(NSOffState),					@"addAlphaChannel",
-	[NSNumber numberWithInt:cBitDepth16],					@"bitDepth",
+	@(cBitDepth16),					@"bitDepth",
 	@(NSOffState),					@"dontDisplay",
 	@(NSOffState),					@"dontErasePreview",
 	@(NSOffState),					@"onlyDisplayPart",
@@ -142,36 +142,36 @@ static PreferencesPanelController* _preferencesPanelController;
 	@(NSOffState),					@"writeIniFile",
 	//file gamma
 	@(NSOffState),					@"fileGammaOn",
-	@"sRGB" ,																			@"fileGammaEdit",
+	@"sRGB" ,								@"fileGammaEdit",
 	@(NSOffState),					@"grayScaleOutputOn",
 
 	//Quality ***********************************************************************************
-	[NSNumber numberWithInt:9] ,									@"quality",
+	@9 ,									@"quality",
 	//dithering
 	@(NSOffState),					@"ditheringOn",
-	[NSNumber numberWithInt:cDitheringFloydSteinberg],	@"ditheringMethod",
+	@(cDitheringFloydSteinberg),	@"ditheringMethod",
 
 	//anti-aliasing
 	@(NSOnState),			@"samplingOn",
-	[NSNumber numberWithInt:1] ,						@"sampleMethod",
-	@"0.3",																	@"sampleThreshold",
-	@"3",																		@"sampleRecursion",
-	@"1.0",																	@"sampleJitter",
-	@"2.5",																	@"mOutletSamplingGamma",
+	@1 ,							@"sampleMethod",
+	@"0.3",						@"sampleThreshold",
+	@"3",							@"sampleRecursion",
+	@"1.0",						@"sampleJitter",
+	@"2.5",						@"mOutletSamplingGamma",
 
 	//Bounding & Preview ***********************************************************************************
 	//Render pattern ****************************************************************************************
-	@"1" ,                                    @"renderBlockStep",
+	@"1" ,              @"renderBlockStep",
 	@(NSOffState),			@"renderBlockStepOn",
-	[NSNumber numberWithInt:cRenderPattern0], @"renderPattern",
+	@(cRenderPattern0), @"renderPattern",
 	//Threads ****************************************************************************************
-	[NSNumber numberWithInt:cAutomatic],          @"Work_Threads",
-	[NSNumber numberWithInt:cRenderBlockSize32],	@"RenderBlockSize",
+	@(cAutomatic),          @"Work_Threads",
+	@(cRenderBlockSize32),	@"RenderBlockSize",
 
 	//radiosity ***********************************************************************************
-	[NSNumber numberWithInt:cRadiosityVainOnCell],	@"mRadiosityVainMatrix",
+	@(cRadiosityVainOnCell),	@"mRadiosityVainMatrix",
 	//warning level
-	[NSNumber numberWithInt:cWarningLevel10],       @"mWarningLevelPopup",
+	@(cWarningLevel10),       @"mWarningLevelPopup",
 
 	//text streams ***********************************************************************************
 	@(NSOnState),					@"redirectTextStreamsOnOff",
@@ -187,7 +187,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	@(NSOnState),					@"warningToScreen",
 	//auto bounding ***********************************************************************************
 	@(NSOnState),					@"autoBoundingOnOff",
-	[NSNumber numberWithInt:cBoudingObjects3],	@"boundingObjects",
+	@(cBoudingObjects3),	@"boundingObjects",
 	@(NSOnState),					@"ignoreBoundedBy",
 	@(NSOnState),					@"splitUnions",
 	//new for 3.7 ***********************************************************************************
@@ -203,7 +203,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	@(NSOffState),					@"animationOnOff",
 	@(NSOffState),					@"turnCyclicAnimationOn",
 	@(NSOffState),					@"frameStepOn",
-	[NSNumber numberWithInt:cFieldRenderingOff],		@"fieldRendering",
+	@(cFieldRenderingOff),	@"fieldRendering",
 	@"0.0",																	@"clockInitial",
 	@"1.0",																	@"clockEnd",
 	@"1",																		@"initialFrame",
@@ -213,8 +213,8 @@ static PreferencesPanelController* _preferencesPanelController;
 	@"+1",																	@"frameStep",
 
 	//misc ***********************************************************************************
-	@"",																		@"redirectAllOutputImagesPath",
-	[NSNumber numberWithInt:cBitDepth16],					@"boundingObjects",
+	@"",										@"redirectAllOutputImagesPath",
+	@(cBitDepth16),					@"boundingObjects",
 	nil];
 	return initialDefaults;
 }
@@ -738,7 +738,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	//Render pattern ****************************************************************************************
 	[renderPattern selectItemAtIndex:[[dictToUse objectForKey:@"renderPattern"]intValue]];
 	[renderBlockStep setStringValue:[dictToUse objectForKey:@"renderBlockStep"]];
-	[renderBlockStepOn setState:[[dictToUse objectForKey:@"renderBlockStepOn"]intValue]];
+	[renderBlockStepOn setState:[[dictToUse objectForKey:@"renderBlockStepOn"]integerValue]];
 	[self preferencesTarget:renderBlockStepOn];
 //	[self renderBlockStepOn:renderBlockStepOn];
 	
@@ -1077,12 +1077,12 @@ static PreferencesPanelController* _preferencesPanelController;
 {
 	NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
 											@YES, @"yStartsAtTop",
-											[NSNumber numberWithInt: [xSubsetStart intValue]] ,	@"columnStart",
-											[NSNumber numberWithInt: [xSubsetEnd intValue]] ,		@"columnEnd",
-											[NSNumber numberWithInt: [ySubsetStart intValue]],	@"rowStart",
-											[NSNumber numberWithInt: [ySubsetEnd intValue]] ,		@"rowEnd",
-											[NSNumber numberWithInt: [imageSizeX intValue]] ,		@"imageSizeX",
-											[NSNumber numberWithInt: [imageSizeY intValue]] ,		@"imageSizeY",
+											@([xSubsetStart intValue]),	@"columnStart",
+											@([xSubsetEnd intValue]),		@"columnEnd",
+											@([ySubsetStart intValue]),	@"rowStart",
+											@([ySubsetEnd intValue]),		@"rowEnd",
+											@([imageSizeX intValue]),		@"imageSizeX",
+											@([imageSizeY intValue]),		@"imageSizeY",
 											nil];
 	
 	[[NSNotificationCenter defaultCenter]
@@ -1104,13 +1104,13 @@ static PreferencesPanelController* _preferencesPanelController;
 	
 	NSNumber *start=[[notification userInfo] objectForKey: @"columnStart"];
 	NSNumber *end=[[notification userInfo] objectForKey: @"columnEnd"];
-	[xSubsetStart setIntValue:[start intValue]];
-	[xSubsetEnd setIntValue:[end intValue]];
+	[xSubsetStart setIntegerValue:[start integerValue]];
+	[xSubsetEnd setIntegerValue:[end integerValue]];
 	
 	end=[[notification userInfo] objectForKey: @"rowEnd"];
 	start=[[notification userInfo] objectForKey: @"rowStart"];
-	[ySubsetStart setIntValue:[start intValue]];
-	[ySubsetEnd setIntValue:[end intValue]];
+	[ySubsetStart setIntegerValue:[start integerValue]];
+	[ySubsetEnd setIntegerValue:[end integerValue]];
 	[self updateStartEndRatio];
 	
 	[[tabViewOutlet window] makeKeyAndOrderFront:self];
@@ -1169,9 +1169,9 @@ static PreferencesPanelController* _preferencesPanelController;
 			if ( currentSettings)	//make sure we have usable settings to render the file
 			{
 				NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
-												[NSNumber numberWithBool:YES] ,	@"shouldStartRendering",
-												currentSettings,								@"rendersettings",
-												[NSDate date],								@"dateOfPosting",
+												@YES,								@"shouldStartRendering",
+												currentSettings,		@"rendersettings",
+												[NSDate date],			@"dateOfPosting",
 												nil];
 		
 				[[NSNotificationCenter defaultCenter] postNotificationName:POVRenderDocumentNotification object:self userInfo:dict];
@@ -1505,7 +1505,7 @@ static PreferencesPanelController* _preferencesPanelController;
 		if ( version <37)
 			[dict setObject:@([languageVersion indexOfSelectedItem]) forKey:@"languageVersion"];
 		else
-			[dict setObject:[NSNumber numberWithInt:cLanguageVersion36X] forKey:@"languageVersion"];
+			[dict setObject:@(cLanguageVersion36X) forKey:@"languageVersion"];
 		
 		[dict setObject:[sceneFile stringValue] forKey:@"sceneFile"];
 		[dict setObject:[imageFile stringValue] forKey:@"imageFile"];
@@ -1528,7 +1528,7 @@ static PreferencesPanelController* _preferencesPanelController;
 		[dict setObject:[ySubsetStart stringValue] forKey:@"ySubsetStart"];
 		[dict setObject:[xSubsetEnd stringValue] forKey:@"xSubsetEnd"];
 		[dict setObject:[ySubsetEnd stringValue] forKey:@"ySubsetEnd"];
-		[dict setObject:@([ratioOnOff state]) forKey:@"ratioOnOff"];
+		[dict setObject:@([ratioOnOff state] != NSControlStateValueOff) forKey:@"ratioOnOff"];
 		[dict setObject:@([ratioPresets indexOfSelectedItem]) forKey:@"ratioPresets"];
 		[dict setObject:[ratioX stringValue] forKey:@"ratioX"];
 		[dict setObject:[ratioY stringValue] forKey:@"ratioY"];
@@ -1550,12 +1550,12 @@ static PreferencesPanelController* _preferencesPanelController;
 		//quality
 		[dict setObject:@([quality indexOfSelectedItem]) forKey:@"quality"];
 		//dithering
-		[dict setObject:@([ditheringOn state]) forKey:@"ditheringOn"];
-		[dict setObject:@([highReproducibilityOn state]) forKey:@"highReproducibilityOn"];
+		[dict setObject:@([ditheringOn state] != NSControlStateValueOff) forKey:@"ditheringOn"];
+		[dict setObject:@([highReproducibilityOn state] != NSControlStateValueOff) forKey:@"highReproducibilityOn"];
 		[dict setObject:@([ditheringMethod indexOfSelectedItem]) forKey:@"ditheringMethod"];
 		
 		//anti-aliasing
-		[dict setObject:@([samplingOn state]) forKey:@"samplingOn"];
+		[dict setObject:@([samplingOn state] != NSControlStateValueOff) forKey:@"samplingOn"];
 		[dict setObject:@([sampleMethod indexOfSelectedItem]) forKey:@"sampleMethod"];
 		[dict setObject:[sampleThreshold stringValue] forKey:@"sampleThreshold"];
 		[dict setObject:[mOutletSamplingGamma stringValue] forKey:@"mOutletSamplingGamma"];
@@ -1577,9 +1577,9 @@ static PreferencesPanelController* _preferencesPanelController;
 		[dict setObject:@([renderBlockStepOn state]) forKey:@"renderBlockStepOn"];
 		
 		//text streams
-		[dict setObject:@([redirectTextStreamsOnOff state])forKey:@"redirectTextStreamsOnOff"];
-		[dict setObject:@([debugToFile state]) forKey:@"debugToFile"];
-		[dict setObject:@([debugToScreen state]) forKey:@"debugToScreen"];
+		[dict setObject:@([redirectTextStreamsOnOff state] != NSControlStateValueOff) forKey:@"redirectTextStreamsOnOff"];
+		[dict setObject:@([debugToFile state] != NSControlStateValueOff) forKey:@"debugToFile"];
+		[dict setObject:@([debugToScreen state] != NSControlStateValueOff) forKey:@"debugToScreen"];
 		[dict setObject:@([fatalToFile state]) forKey:@"fatalToFile"];
 		[dict setObject:@([fatalToScreen state]) forKey:@"fatalToScreen"];
 		[dict setObject:@([renderToFile state]) forKey:@"renderToFile"];
@@ -1590,11 +1590,11 @@ static PreferencesPanelController* _preferencesPanelController;
 		[dict setObject:@([warningToScreen state]) forKey:@"warningToScreen"];
 		
 		//bounding
-		[dict setObject:@([autoBoundingOnOff state])forKey:@"autoBoundingOnOff"];
+		[dict setObject:@([autoBoundingOnOff state] != NSControlStateValueOff)forKey:@"autoBoundingOnOff"];
 		[dict setObject:@([boundingObjects indexOfSelectedItem]) forKey:@"boundingObjects"];
 		[dict setObject:@([ignoreBoundedBy state]) forKey:@"ignoreBoundedBy"];
 		[dict setObject:@([splitUnions state]) forKey:@"splitUnions"];
-		[dict setObject:@([BSPBoundingMethodOnOff state])forKey:@"BSPBoundingMethodOnOff"];
+		[dict setObject:@([BSPBoundingMethodOnOff state] != NSControlStateValueOff) forKey:@"BSPBoundingMethodOnOff"];
 		[dict setObject:[BSP_MaxDepth stringValue] forKey:@"BSP_MaxDepth"];
 		[dict setObject:[BSP_BaseAccessCost stringValue] forKey:@"BSP_BaseAccessCost"];
 		[dict setObject:[BSP_ChildAccessCost stringValue] forKey:@"BSP_ChildAccessCost"];
@@ -1603,10 +1603,10 @@ static PreferencesPanelController* _preferencesPanelController;
 		
 	
 		//animation (clock)
-		[dict setObject:@([animationOnOff state]) forKey:@"animationOnOff"];
-		[dict setObject:@([turnCyclicAnimationOn state]) forKey:@"turnCyclicAnimationOn"];
-		[dict setObject:@([frameStepOn state]) forKey:@"frameStepOn"];
-		[dict setObject:@([fieldRendering indexOfSelectedItem]) forKey:@"fieldRendering"];
+		[dict setObject:@([animationOnOff state] != NSControlStateValueOff) forKey:@"animationOnOff"];
+		[dict setObject:@([turnCyclicAnimationOn state] != NSControlStateValueOff) forKey:@"turnCyclicAnimationOn"];
+		[dict setObject:@([frameStepOn state] != NSControlStateValueOff) forKey:@"frameStepOn"];
+		[dict setObject:@([fieldRendering indexOfSelectedItem] != NSControlStateValueOff) forKey:@"fieldRendering"];
 		[dict setObject:[clockInitial stringValue] forKey:@"clockInitial"];
 		[dict setObject:[clockEnd stringValue] forKey:@"clockEnd"];
 		[dict setObject:[initialFrame stringValue]forKey:@"initialFrame"];
@@ -1618,7 +1618,7 @@ static PreferencesPanelController* _preferencesPanelController;
 		
 		//misc
 		[dict setObject:[redirectAllOutputImagesPath stringValue] forKey:@"redirectAllOutputImagesPath"];
-		[dict setObject:@([redirectAllOutputImagesOnOff state]) forKey:@"redirectAllOutputImagesOnOff"];
+		[dict setObject:@([redirectAllOutputImagesOnOff state] != NSControlStateValueOff) forKey:@"redirectAllOutputImagesOnOff"];
 		
 		// before a render, force the current setting to be written to disc
 		// if a crash occurs, the settings are stored for the next launch
@@ -1927,7 +1927,7 @@ static PreferencesPanelController* _preferencesPanelController;
 //---------------------------------------------------------------------
 // sortSettingsBySize
 //---------------------------------------------------------------------
-static NSInteger sortSettingsBySize(id first, id last, void*context)
+static NSComparisonResult sortSettingsBySize(id first, id last, void*context)
 {
 	NSString *a, *b;
 	a=[first objectForKey:@"imageSizeX"];
@@ -1942,7 +1942,7 @@ static NSInteger sortSettingsBySize(id first, id last, void*context)
 //---------------------------------------------------------------------
 // sortSettingsByName
 //---------------------------------------------------------------------
-static NSInteger sortSettingsByName(id first, id last, void*context)
+static NSComparisonResult sortSettingsByName(id first, id last, void*context)
 {
 	NSString *a, *b;
 	NSRange range;
