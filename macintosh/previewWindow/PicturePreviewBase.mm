@@ -1,8 +1,8 @@
 //******************************************************************************
 ///
-/// @file /macintosh/previewWindow/picturePreviewBase.mm
+/// @file /macintosh/previewWindow/PicturePreviewBase.mm
 ///
-/// Base class for preview, used by picturePreview and materialpreview
+/// Base class for preview, used by PicturePreview and MaterialPreview
 ///
 /// @copyright
 /// @parblock
@@ -38,7 +38,7 @@
 ///
 //******************************************************************************
 #import <algorithm>
-#import "picturePreviewBase.h"
+#import "PicturePreviewBase.h"
 #import "sceneDocument.h"
 
 #import "rendererGUIBridge.h"
@@ -49,13 +49,13 @@
 extern BOOL gOnlyDisplayPart;
 extern BOOL gDontErasePreveiw;
 
-@class picturePreview;
+@class PicturePreview;
 
-@implementation picturePreviewBase
+@implementation PicturePreviewBase
 //---------------------------------------------------------------------
 // remoteMac_Parse_Error
 //---------------------------------------------------------------------
--(void) remoteMac_Parse_Error: (remoteObject*)remoteobject
+-(void) remoteMac_Parse_Error: (RemoteObject*)remoteobject
 {
 	[remoteobject retain];
 	//@autoreleasepool is set in fucntion Mac_Parse_Error() in renderGUIBridge.mm
@@ -118,7 +118,7 @@ extern BOOL gDontErasePreveiw;
 	mImagePixelsWidth=220;
 	mViewPixelsWidth = (CGFloat)mImagePixelsWidth;
 	mViewPixelsHeight = (CGFloat)mImagePixelsHeight;
-	mCreatingPicturePreviewBase=[ self isKindOfClass:[picturePreview class]];
+	mCreatingPicturePreviewBase=[ self isKindOfClass:[PicturePreview class]];
 
 	if ( mCreatingPicturePreviewBase == NO) // no scaling for material preview
 		mBackingScaleFactor=1.0f;
@@ -168,14 +168,14 @@ extern BOOL gDontErasePreveiw;
 //---------------------------------------------------------------------
 // displayInit
 //---------------------------------------------------------------------
--(void) displayInit: (remoteObject*)remoteobject
+-(void) displayInit: (RemoteObject*)remoteobject
 {
 	@autoreleasepool
 	{
 	#if defined (debugPreview ) && defined (debugPreviewAdjustWindow)
 		NSLog(@"enter display init");
 	#endif
-//	mCreatingPicturePreviewBase=[ self isKindOfClass:[picturePreview class]];
+//	mCreatingPicturePreviewBase=[ self isKindOfClass:[PicturePreview class]];
 
 	BOOL returnValue=YES;
 	mEraseDisplayOnStart=YES;
@@ -413,7 +413,7 @@ extern BOOL gDontErasePreveiw;
 			NSLog(@"copying backgroundinmage (from nsimage)");
 		#endif
 
-		[mBackgroundImage drawInRect:aRect fromRect:aRect operation:NSCompositeCopy fraction:1.0];
+		[mBackgroundImage drawInRect:aRect fromRect:aRect operation:NSCompositingOperationCopy fraction:1.0];
 	#else
 		#if defined (debugPreview ) && defined (debugPreviewImageForBackground)
 			NSLog(@"drawing background image");
@@ -426,7 +426,7 @@ extern BOOL gDontErasePreveiw;
 /*		dest.size.width*=2;
 		dest.size.height*=2;
 	*/
-	[mImage drawInRect:dest fromRect:aRect operation:NSCompositeSourceOver fraction:1.0];
+		[mImage drawInRect:dest fromRect:aRect operation:NSCompositingOperationSourceOver fraction:1.0];
 
 //	[mImage drawAtPoint:toPoint fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
 	#if defined (debugPreview ) && (defined (debugPreviewImageDrawing) || defined (debugPreviewImageForBackground))

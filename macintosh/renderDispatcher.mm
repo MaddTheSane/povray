@@ -1660,7 +1660,7 @@ static renderDispatcher* _renderDispatcher;
 	// worker threads:
 	if ( [settingsDict objectForKey:@"Work_Threads"] != nil)
 	{
-		NSInteger cpus=[[MainController sharedInstance]getNumberOfCpus];
+		NSInteger cpus=[[MainController sharedInstance]numberOfCPUs];
 		if ( cpus != -1)	// we know how many cores there are
 		{
 			switch ([[settingsDict objectForKey:@"Work_Threads"]intValue])

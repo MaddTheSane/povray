@@ -40,7 +40,7 @@
 #import <Cocoa/Cocoa.h>
 #import "MainController.h"
 
-#import "messageViewController.h"
+#import "MessageViewController.h"
 #import "rendererGUIBridge.h"
 #include "configbase.h"
 #import "povray.h"
@@ -54,7 +54,7 @@
 //---------------------------------------------------------------------
 // initWithCString
 //---------------------------------------------------------------------
--(MessageString*) initWithCString: (char*)theString andStream: (int) stream
+-(MessageString*) initWithCString: (const char*)theString andStream: (int) stream
 {
 	self=[super init];
 	mString=[[NSString alloc] initWithCString:theString encoding:NSASCIIStringEncoding];

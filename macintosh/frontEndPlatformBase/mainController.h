@@ -45,7 +45,7 @@
 #import "configbase.h"
 #import "renderDispatcher.h"
 #import "MessageViewController.h"
-#import "picturePreview.h"
+#import "PicturePreview.h"
 #import "MaterialPreview.h"
 #import "PreferencesPanelController.h"
 #import "renderDispatcher.h"
@@ -79,8 +79,8 @@ enum menuTags {
 	eTag_Export							=201
 };
 
-extern picturePreview		*gPicturePreview;
-extern materialPreview	*gMaterialPreview;
+extern PicturePreview		*gPicturePreview;
+extern MaterialPreview	*gMaterialPreview;
 extern NSInteger				numericBlockPoint;
 
 
@@ -158,7 +158,7 @@ extern volatile bool	gUserWantsToPauseRenderer;
 
 - (IBAction) batchMenu:(id)sender;
 - (void) applicationDidFinishLaunching:(NSNotification *)notification;
-- (NSInteger)	getNumberOfCpus;
+@property (readonly) NSInteger numberOfCPUs;
 
 
 @end 

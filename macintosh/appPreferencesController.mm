@@ -67,14 +67,14 @@ static appPreferencesController	*_appPreferencesController;
 
 	NSMutableDictionary *initialDefaults=
 	[NSMutableDictionary dictionaryWithObjectsAndKeys:
-	 [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:0.0/255.0 		green:0.0/255.0 		blue:194.0/255.0	alpha:1.0]], @"identifierColor",
-	 [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:196.0/255.0 	green:0.0/255.0 		blue:0.0/255.0		alpha:1.0]], @"multiLineCommentColor",
-	 [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:255.0/255.0 	green:0.0/255.0 		blue:128.0/255.0	alpha:1.0]], @"oneLineCommentColor",
-	 [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:190.0/255.0 	green:132.0/255.0 	blue:74.0/255.0	alpha:1.0]], @"preprocessorColor",
-	 [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:0.0/255.0 		green:163.0/255.0 	blue:0.0/255.0		alpha:1.0]], @"stringColor",
-	 [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:143.0/255.0 	green:41.0/255.0 		blue:158.0/255.0	alpha:1.0]], @"macroKleur",
-	 [NSArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:255.0/255.0 	green:94.0/255.0 		blue:10.0/255.0	alpha:1.0]], @"declareColor",
-	 [NSArchiver archivedDataWithRootObject:[NSFont userFontOfSize:11.0]], @"sceneDocumentFont",
+	 [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:0.0/255.0 		green:0.0/255.0 		blue:194.0/255.0	alpha:1.0]], @"identifierColor",
+	 [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:196.0/255.0 	green:0.0/255.0 		blue:0.0/255.0		alpha:1.0]], @"multiLineCommentColor",
+	 [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:255.0/255.0 	green:0.0/255.0 		blue:128.0/255.0	alpha:1.0]], @"oneLineCommentColor",
+	 [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:190.0/255.0 	green:132.0/255.0 	blue:74.0/255.0	alpha:1.0]], @"preprocessorColor",
+	 [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:0.0/255.0 		green:163.0/255.0 	blue:0.0/255.0		alpha:1.0]], @"stringColor",
+	 [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:143.0/255.0 	green:41.0/255.0 		blue:158.0/255.0	alpha:1.0]], @"macroKleur",
+	 [NSKeyedArchiver archivedDataWithRootObject:[NSColor colorWithCalibratedRed:255.0/255.0 	green:94.0/255.0 		blue:10.0/255.0	alpha:1.0]], @"declareColor",
+	 [NSKeyedArchiver archivedDataWithRootObject:[NSFont userFontOfSize:11.0]], @"sceneDocumentFont",
 	 @"1.8",															@"mOutletDisplayGammaEdit",
 	 @YES,	@"globalAutoSyntaxColoring",
 	 @(NSOnState),	@"maintainIndentation",
@@ -220,39 +220,67 @@ static appPreferencesController	*_appPreferencesController;
 	[mApplicationPreferencesWindow setDelegate:self];
 
 	[mIncludePathTableView reloadData];
-	[mTabView selectTabViewItemAtIndex:[[defaults objectForKey:@"indexOfAppPrefsSelectedTabViewItem"]intValue]];
+	[mTabView selectTabViewItemAtIndex:[defaults integerForKey:@"indexOfAppPrefsSelectedTabViewItem"]];
 
-	mPreprocessorColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"preprocessorColor"]];
+	mPreprocessorColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"preprocessorColor"]];
+	if (!mPreprocessorColor) {
+		mPreprocessorColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"preprocessorColor"]];
+		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mPreprocessorColor] forKey:@"preprocessorColor"];
+	}
 	[mPreprocessorColor retain];
-	mMultiLineCommentColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"multiLineCommentColor"]];
+	mMultiLineCommentColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"multiLineCommentColor"]];
+	if (!mMultiLineCommentColor) {
+		mMultiLineCommentColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"multiLineCommentColor"]];
+		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mMultiLineCommentColor] forKey:@"multiLineCommentColor"];
+	}
 	[mMultiLineCommentColor retain];
-	mOneLineCommentColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"oneLineCommentColor"]];
+	mOneLineCommentColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"oneLineCommentColor"]];
+	if (!mOneLineCommentColor) {
+		mOneLineCommentColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"oneLineCommentColor"]];
+		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mOneLineCommentColor] forKey:@"oneLineCommentColor"];
+	}
 	[mOneLineCommentColor retain];
-	mStringColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"stringColor"]];
+	mStringColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"stringColor"]];
+	if (!mStringColor) {
+		mStringColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"stringColor"]];
+		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mStringColor] forKey:@"stringColor"];
+	}
 	[mStringColor retain];
-	mIdentifierColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"identifierColor"]];
+	mIdentifierColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"identifierColor"]];
+	if (!mIdentifierColor) {
+		mIdentifierColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"identifierColor"]];
+		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mIdentifierColor] forKey:@"identifierColor"];
+	}
 	[mIdentifierColor retain];
 
-	mDeclareColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"declareColor"]];
+	mDeclareColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"declareColor"]];
+	if (!mDeclareColor) {
+		mDeclareColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"declareColor"]];
+		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mDeclareColor] forKey:@"declareColor"];
+	}
 	[mDeclareColor retain];
-	mMacroColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"macroKleur"]];
+	mMacroColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"macroKleur"]];
+	if (!mMacroColor) {
+		mMacroColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"macroKleur"]];
+		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mMacroColor] forKey:@"macroKleur"];
+	}
 	[mMacroColor retain];
 
 	// auto syntax coloring
-	globalAutoSyntaxColoring=[[defaults objectForKey:@"globalAutoSyntaxColoring"]boolValue];
+	globalAutoSyntaxColoring=[defaults boolForKey:@"globalAutoSyntaxColoring"];
 
 	// display gamma
-	mDisplayGammaString=[defaults objectForKey:@"mOutletDisplayGammaEdit"];
+	mDisplayGammaString=[defaults stringForKey:@"mOutletDisplayGammaEdit"];
 	[mDisplayGammaString retain];
 	[mOutletDisplayGammaEdit setStringValue:mInsertDirectory];
 
-	mDisplayGammaOn=[[defaults objectForKey:@"displayGammaOn"]intValue];
+	mDisplayGammaOn=[defaults integerForKey:@"displayGammaOn"];
 	[mDisplayGammaButton setState:mDisplayGammaOn];
 	enableObjectsAccordingToObject( mDisplayGammaButton, mOutletDisplayGammaEdit,nil);
 
 	// preview window to front
-	mAlwaysPutPreviewwindowInFrontOn=[[defaults objectForKey:@"mAlwaysPutPreviewwindowInFrontButton"]intValue];
-	mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationOn=[[defaults objectForKey:@"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton"]intValue];
+	mAlwaysPutPreviewwindowInFrontOn=[defaults integerForKey:@"mAlwaysPutPreviewwindowInFrontButton"];
+	mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationOn=[defaults integerForKey:@"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton"];
 	[mAlwaysPutPreviewwindowInFrontButton setIntegerValue:mAlwaysPutPreviewwindowInFrontOn];
 	[mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton setState:mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationOn];
 	enableObjectsAccordingToObject( mAlwaysPutPreviewwindowInFrontButton, mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton,nil);
@@ -260,7 +288,7 @@ static appPreferencesController	*_appPreferencesController;
 
 	//	SetSubViewsOfNSBoxToState(mSyntaxColorGroupBox, globalAutoSyntaxColoring);
 
-	rememberOpenWindowsOn=[[defaults objectForKey:@"rememberOpenWindowsOn"] intValue];
+	rememberOpenWindowsOn=[defaults integerForKey:@"rememberOpenWindowsOn"];
 	[mRememberOpenWindowsButton setState:rememberOpenWindowsOn];
 
 
@@ -275,7 +303,11 @@ static appPreferencesController	*_appPreferencesController;
 	numericBlockPoint=[[defaults objectForKey:@"numericBlockPoint"]intValue];
 	[mPointMatrix selectCellWithTag:numericBlockPoint];
 
-	mSceneDocumentFont=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"sceneDocumentFont"]];
+	mSceneDocumentFont=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"sceneDocumentFont"]];
+	{
+		mSceneDocumentFont=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"sceneDocumentFont"]];
+		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mSceneDocumentFont] forKey:@"sceneDocumentFont"];
+	}
 	[mSceneDocumentFont retain];
 
 
@@ -299,8 +331,8 @@ static appPreferencesController	*_appPreferencesController;
 	NSDictionary *tempStyle=[NSDictionary dictionaryWithObject:mSceneDocumentFont forKey:NSFontAttributeName];
 	NSAttributedString *title = [[[NSAttributedString alloc]       initWithString:@"m" attributes:tempStyle]autorelease];
 
-	float fontWidth=[title size].width;
-	fontWidth*=(float)tabDistance;
+	CGFloat fontWidth=[title size].width;
+	fontWidth*=(CGFloat)tabDistance;
 	[mDefaultParagraphStyle release];
 	mDefaultParagraphStyle	= [[NSParagraphStyle defaultParagraphStyle]mutableCopy];
 
@@ -424,7 +456,7 @@ static appPreferencesController	*_appPreferencesController;
 	{
 		@autoreleasepool
 		{
-			if( resultCode ==NSOKButton )
+			if( resultCode ==NSModalResponseOK )
 			{
 				NSURL *url = [openPanel URL];
 				if( url )
@@ -716,26 +748,26 @@ static appPreferencesController	*_appPreferencesController;
 	[self buildSyntaxStyles];
 	//	[self buildDefaultParagraphStyle];
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-	[defaults setObject:[NSArchiver archivedDataWithRootObject:mPreprocessorColor]forKey: @"preprocessorColor"];
-	[defaults setObject:[NSArchiver archivedDataWithRootObject:mMultiLineCommentColor]forKey: @"multiLineCommentColor"];
-	[defaults setObject:[NSArchiver archivedDataWithRootObject:mOneLineCommentColor]forKey: @"oneLineCommentColor"];
-	[defaults setObject:[NSArchiver archivedDataWithRootObject:mStringColor]forKey: @"stringColor"];
-	[defaults setObject:[NSArchiver archivedDataWithRootObject:mIdentifierColor]forKey: @"identifierColor"];
-	[defaults setObject:[NSArchiver archivedDataWithRootObject:mMacroColor]forKey: @"macroKleur"];
-	[defaults setObject:[NSArchiver archivedDataWithRootObject:mDeclareColor]forKey: @"declareColor"];
-	[defaults setObject:[NSArchiver archivedDataWithRootObject:mSceneDocumentFont]forKey: @"sceneDocumentFont"];
-	[defaults setObject:@(globalAutoSyntaxColoring) forKey: @"globalAutoSyntaxColoring"];
+	[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mPreprocessorColor]forKey: @"preprocessorColor"];
+	[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mMultiLineCommentColor]forKey: @"multiLineCommentColor"];
+	[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mOneLineCommentColor]forKey: @"oneLineCommentColor"];
+	[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mStringColor]forKey: @"stringColor"];
+	[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mIdentifierColor]forKey: @"identifierColor"];
+	[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mMacroColor]forKey: @"macroKleur"];
+	[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mDeclareColor]forKey: @"declareColor"];
+	[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mSceneDocumentFont]forKey: @"sceneDocumentFont"];
+	[defaults setBool:globalAutoSyntaxColoring forKey: @"globalAutoSyntaxColoring"];
 	[defaults setObject:mDisplayGammaString forKey: @"mOutletDisplayGammaEdit"];
-	[defaults setObject:@(mDisplayGammaOn) forKey: @"displayGammaOn"];
-	[defaults setObject:@(mAlwaysPutPreviewwindowInFrontOn) forKey: @"AlwaysPutPreviewwindowInFrontButton"];
-	[defaults setObject:@(mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationOn) forKey: @"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton"];
+	[defaults setInteger:mDisplayGammaOn forKey: @"displayGammaOn"];
+	[defaults setInteger:mAlwaysPutPreviewwindowInFrontOn forKey: @"AlwaysPutPreviewwindowInFrontButton"];
+	[defaults setInteger:mOnlyPutPreviewwindowInFrontForFirstFrameOfAnimationOn forKey: @"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton"];
 
 
-	[defaults setObject:@(rememberOpenWindowsOn) forKey: @"rememberOpenWindowsOn"];
-	[defaults setObject:@(maintainIndentation) forKey: @"maintainIndentation"];
-	[defaults setObject:@(autoIndentBraces) forKey: @"autoIndentBraces"];
-	[defaults setObject:@(tabDistance) forKey: @"tabDistance"];
-	[defaults setObject:@(numericBlockPoint) forKey: @"numericBlockPoint"];
+	[defaults setBool:rememberOpenWindowsOn forKey: @"rememberOpenWindowsOn"];
+	[defaults setBool:maintainIndentation forKey: @"maintainIndentation"];
+	[defaults setInteger:autoIndentBraces forKey: @"autoIndentBraces"];
+	[defaults setInteger:tabDistance forKey: @"tabDistance"];
+	[defaults setInteger:numericBlockPoint forKey: @"numericBlockPoint"];
 	[defaults setObject:mIncludePathsArray forKey: @"includePaths"];
 	[defaults setObject:mInsertDirectory forKey: @"mInsertMenuMainDirectoryEdit"];
 	[defaults setObject:mInsertMenuImageScaleFloat forKey: @"mInsertMenuImageScaleSlider"];
@@ -839,7 +871,7 @@ static appPreferencesController	*_appPreferencesController;
 	 {
 			@autoreleasepool
 			{
-				if( resultCode ==NSOKButton )
+				if( resultCode ==NSModalResponseOK )
 				{
 					NSURL *url = [openPanel URL];
 					if( url )
@@ -870,7 +902,7 @@ static appPreferencesController	*_appPreferencesController;
 	 {
 			@autoreleasepool
 			{
-				if( resultCode ==NSOKButton )
+				if( resultCode ==NSModalResponseOK )
 				{
 					NSURL *url = [openPanel URL];
 					if( url )
@@ -948,7 +980,7 @@ static appPreferencesController	*_appPreferencesController;
 
 	// declare our dragged type in the paste board
 	[pboard declareTypes: [NSArray arrayWithObjects: IncludePathDragType, nil] owner: self];
-	[pboard setData: [NSArchiver archivedDataWithRootObject:[mIncludePathsArray objectAtIndex:mDraggedRow]] forType: IncludePathDragType];
+	[pboard setData: [NSKeyedArchiver archivedDataWithRootObject:[mIncludePathsArray objectAtIndex:mDraggedRow]] forType: IncludePathDragType];
 
 	return YES;
 }
@@ -992,9 +1024,9 @@ static appPreferencesController	*_appPreferencesController;
 		[mIncludePathsArray removeObjectAtIndex: mDraggedRow];
 		// remove the index that got dragged, now that we are accepting the dragging
 		if ([mIncludePathsArray count] > 1 && [mIncludePathsArray count]-1 >=row)
-			[mIncludePathsArray insertObject: [NSUnarchiver unarchiveObjectWithData:data] atIndex: row];
+			[mIncludePathsArray insertObject: [NSKeyedUnarchiver unarchiveObjectWithData:data] atIndex: row];
 		else
-			[mIncludePathsArray addObject:[NSUnarchiver unarchiveObjectWithData:data]];
+			[mIncludePathsArray addObject:[NSKeyedUnarchiver unarchiveObjectWithData:data]];
 
 		// insert the new data (same one that got dragger) into the array
 

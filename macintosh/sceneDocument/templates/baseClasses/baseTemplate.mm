@@ -180,7 +180,7 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 -(void) templateSheetDidEnd: (NSWindow*)sheet returnCode: (int)returnCode contextInfo: (void*)contextInfo
 {
-	if ( returnCode ==NSOKButton)
+	if ( returnCode ==NSModalResponseOK)
 	{
 		NSMutableDictionary *dict=[mFileOwner removeStandardSettingsFromPreference:[mFileOwner preferences] ];
 		[self acceptsPreferences:dict forKey:[self keyName]];
@@ -291,15 +291,15 @@ static const char *templateTypeNameArray[]={
 					else
 					{
 						NSString *CurrentPanelString=NSStringFromClass([self class]);
-						NSRunAlertPanel( NSLocalizedStringFromTable(
-						@"WrongTemplateSettings",
-						@"applicationLocalized",
-						@"Wrong preferences file"),
-										NSLocalizedStringFromTable(@"SelectCorrectFile", @"applicationLocalized",
-																   @"Only %@ settings files can be used!"),
-														NSLocalizedStringFromTable(@"Ok", @"applicationLocalized", @"Cancel"),
-														nil,
-														nil, CurrentPanelString);
+						NSAlert *alert = [[NSAlert alloc] init];
+						alert.messageText = NSLocalizedStringFromTable(
+																													 @"WrongTemplateSettings",
+																		@"applicationLocalized",
+																		@"Wrong preferences file");
+						alert.informativeText = [NSString stringWithFormat:NSLocalizedStringFromTable(@"SelectCorrectFile", @"applicationLocalized",
+																																													@"Only %@ settings files can be used!"), CurrentPanelString];
+						[alert addButtonWithTitle:NSLocalizedStringFromTable(@"Ok", @"applicationLocalized", @"Cancel")];
+						[alert runModal];
 					}
 				}
 			}
@@ -429,7 +429,7 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 -(NSPanel*) getWindow
 {
-	return mWindow;
+	return self.window;
 }
 
 //---------------------------------------------------------------------

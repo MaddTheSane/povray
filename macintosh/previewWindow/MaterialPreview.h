@@ -1,8 +1,8 @@
 //******************************************************************************
 ///
-/// @file /macintosh/previewWindow/materialPreview.h
+/// @file /macintosh/previewWindow/MaterialPreview.h
 ///
-/// small subclass of picturePreviewBase used for the material template preveiw
+/// small subclass of PicturePreviewBase used for the material template preveiw
 /// to do: this class can be deleted after a few modifications in the base class
 ///
 /// @copyright
@@ -38,9 +38,9 @@
 /// @endparblock
 ///
 //******************************************************************************
-#import "picturePreviewBase.h"
+#import "PicturePreviewBase.h"
 
-@interface materialPreview :picturePreviewBase
+@interface MaterialPreview :PicturePreviewBase
 {
 }
 @end

@@ -74,7 +74,7 @@ enum {
 
 	[dict retain];
 
-	bodymap *bmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"bodymap"]];
+	BodyMap *bmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"bodymap"]];
 	switch ( [[dict objectForKey:@"bodymapType"]intValue])
 	{
 		case cPigmentmap:	[ds copyTabAndText:@"pigment_map {\n"]; break;
@@ -123,7 +123,7 @@ enum {
 	if (templateType == menuTagTemplateAllBodymaps || templateType== menuTagTemplateDensitymap)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[bodymap defaultMap]],	@"bodymap",
+								[NSArchiver archivedDataWithRootObject:[BodyMap defaultMap]],	@"bodymap",
 								[NSNumber numberWithInt:cDensitymap],										@"bodymapType", nil];
 		if ( templateType==menuTagTemplateAllBodymaps)
 		{
@@ -138,7 +138,7 @@ enum {
 	if (templateType == menuTagTemplateAllBodymaps || templateType== menuTagTemplatePigmentmap)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[bodymap defaultMap]],	@"bodymap",
+								[NSArchiver archivedDataWithRootObject:[BodyMap defaultMap]],	@"bodymap",
 								[NSNumber numberWithInt:cPigmentmap],										@"bodymapType", nil];
 		if ( templateType==menuTagTemplateAllBodymaps)
 		{
@@ -154,7 +154,7 @@ enum {
 	if (templateType == menuTagTemplateAllBodymaps || templateType== menuTagTemplateNormalmap)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[bodymap defaultMap]],	@"bodymap",
+								[NSArchiver archivedDataWithRootObject:[BodyMap defaultMap]],	@"bodymap",
 								[NSNumber numberWithInt:cNormalmap],										@"bodymapType", nil];
 		if ( templateType==menuTagTemplateAllBodymaps)
 		{
@@ -170,7 +170,7 @@ enum {
 	if (templateType == menuTagTemplateAllBodymaps || templateType== menuTagTemplateTexturemap)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[bodymap textureMap]],	@"bodymap",
+								[NSArchiver archivedDataWithRootObject:[BodyMap textureMap]],	@"bodymap",
 								[NSNumber numberWithInt:cTexturemap],									@"bodymapType", nil];
 		if ( templateType==menuTagTemplateAllBodymaps)
 		{
@@ -191,7 +191,7 @@ enum {
 //---------------------------------------------------------------------
 -(void) retrivePreferences
 {
-	[[self getWindow]makeFirstResponder: [self getWindow]];
+	[[self window] makeFirstResponder: [self window]];
 
 	NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
 	if (dict == nil)

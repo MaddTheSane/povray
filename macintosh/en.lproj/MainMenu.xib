@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -707,7 +706,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="470" height="376"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5455" customClass="pictureScrollView">
+                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5455" customClass="PictureScrollView">
                         <rect key="frame" x="-1" y="-1" width="472" height="378"/>
                         <clipView key="contentView" id="D8w-D4-p4D">
                             <rect key="frame" x="0.0" y="0.0" width="472" height="378"/>
@@ -717,7 +716,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="487" height="393"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5459" customClass="picturePreview">
+                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5459" customClass="PicturePreview">
                                             <rect key="frame" x="0.0" y="0.0" width="472" height="378"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
@@ -810,19 +809,19 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1235" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1235" customClass="GreenLED">
                         <rect key="frame" x="537" y="410" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1236" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1236" customClass="GreenLED">
                         <rect key="frame" x="460" y="410" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1412" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1412" customClass="GreenLED">
                         <rect key="frame" x="130" y="410" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1414" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1414" customClass="GreenLED">
                         <rect key="frame" x="225" y="410" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>

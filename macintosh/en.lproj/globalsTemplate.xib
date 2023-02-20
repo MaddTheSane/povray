@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -1368,15 +1367,15 @@ To avoid seams between objects, they currently must share a common interior.  
                             <action selector="saveButton:" target="-2" id="423"/>
                         </connections>
                     </button>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="632" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="632" customClass="GreenLED">
                         <rect key="frame" x="325" y="475" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="633" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="633" customClass="GreenLED">
                         <rect key="frame" x="403" y="475" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="706" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="706" customClass="GreenLED">
                         <rect key="frame" x="225" y="475" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -190,7 +189,7 @@
                                                 <action selector="materialTarget:" target="-2" id="170"/>
                                             </connections>
                                         </slider>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="36" customClass="materialPreview">
+                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="36" customClass="MaterialPreview">
                                             <rect key="frame" x="30" y="82" width="220" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </customView>
@@ -564,19 +563,19 @@ DQ
                             <action selector="materialButtons:" target="-2" id="125"/>
                         </connections>
                     </button>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="182" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="182" customClass="GreenLED">
                         <rect key="frame" x="157" y="487" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="183" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="183" customClass="GreenLED">
                         <rect key="frame" x="228" y="487" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="184" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="184" customClass="GreenLED">
                         <rect key="frame" x="289" y="487" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="185" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="185" customClass="GreenLED">
                         <rect key="frame" x="352" y="487" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>

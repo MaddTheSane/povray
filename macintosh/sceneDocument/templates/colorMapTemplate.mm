@@ -170,7 +170,7 @@ enum {
 //---------------------------------------------------------------------
 -(void) retrivePreferences
 {
-	[[self getWindow]makeFirstResponder: [self getWindow]];
+	[[self window] makeFirstResponder: [self window]];
 	NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
 	[dict autorelease];
 	if (dict == nil)

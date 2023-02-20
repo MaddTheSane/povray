@@ -44,7 +44,7 @@
  #define dFactorySettings @"Factory Settings"
  #define dLastValuesInPanel @"lastValuesInPanel"
 
-@interface greenLed : NSView
+@interface GreenLED : NSView
 @end
 
 NS_ENUM(NSInteger) {
@@ -235,10 +235,10 @@ typedef NS_ENUM(NSInteger, preferencesTag) {
 
 @interface PreferencesPanelController : NSObject <NSTabViewDelegate>
 {
-	IBOutlet greenLed			*mMiscGreenLed;
-	IBOutlet greenLed			*mClockGreenLed;
-	IBOutlet greenLed			*mUseIniGreenLed;
-	IBOutlet greenLed			*mSaveOutputfileGreenLed;
+	IBOutlet GreenLED			*mMiscGreenLed;
+	IBOutlet GreenLED			*mClockGreenLed;
+	IBOutlet GreenLED			*mUseIniGreenLed;
+	IBOutlet GreenLED			*mSaveOutputfileGreenLed;
 
 
 

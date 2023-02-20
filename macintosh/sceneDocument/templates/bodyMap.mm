@@ -48,17 +48,16 @@ enum {
 	};
 
 
-@implementation bodymap
+@implementation BodyMap
 
 //---------------------------------------------------------------------
 // defaultMap
 //---------------------------------------------------------------------
 +(id) defaultMap
 {
-	bodymap *c=[[bodymap alloc] init];
+	BodyMap *c=[[BodyMap alloc] init];
 	[c makeDefaultMap];
-	[c autorelease];
-	return c;
+	return [c autorelease];
 }
 
 //---------------------------------------------------------------------
@@ -66,10 +65,9 @@ enum {
 //---------------------------------------------------------------------
 +(id) textureMap
 {
-	bodymap *c=[[bodymap alloc] init];
+	BodyMap *c=[[BodyMap alloc] init];
 	[c makeTextureMap];
-	[c autorelease];
-	return c;
+	return [c autorelease];
 }
 
 //---------------------------------------------------------------------
@@ -199,12 +197,19 @@ enum {
 	[entry replaceObjectAtIndex:cIdentifierIndex withObject:identifier];
 }
 
+#define MapArrayKey @"mMapArray"
+
 //---------------------------------------------------------------------
 // encodeWithCoder:encoder
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
-	[encoder encodeObject:mMapArray];
+	[super encodeWithCoder:encoder];
+	if (encoder.allowsKeyedCoding) {
+		[encoder encodeObject:mMapArray forKey:MapArrayKey];
+	} else {
+		[encoder encodeObject:mMapArray];
+	}
 }
 
 //---------------------------------------------------------------------
@@ -212,7 +217,13 @@ enum {
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
-	[self setArray:[decoder decodeObject]];
+	if (self = [super initWithCoder:decoder]) {
+		if (decoder.allowsKeyedCoding) {
+			[self setArray:[decoder decodeObjectForKey:MapArrayKey]];
+		} else {
+			[self setArray:[decoder decodeObject]];
+		}
+	}
 	return self;
 }
 

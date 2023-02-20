@@ -341,12 +341,12 @@ NSMutableArray * scanForValuesInString(NSString *stringToScan)
  }
 
 //---------------------------------------------------------------------
-// remoteObject
+// RemoteObject
 //---------------------------------------------------------------------
 //An object to hold some variables to be used with a performSelectorOnMainThread	
 //	method.
 //---------------------------------------------------------------------
-@implementation remoteObject
+@implementation RemoteObject
 	- (id) initWithObjectsAndKeys:(id) firstObject, ...
 	{
 		self=[super init];

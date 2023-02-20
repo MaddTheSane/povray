@@ -85,9 +85,9 @@
 #import "standardMethods.h"
 
 #import "renderDispatcher.h"
-#import "messageViewController.h"
-#import "picturePreview.h"
-#import "materialPreview.h"
+#import "MessageViewController.h"
+#import "PicturePreview.h"
+#import "MaterialPreview.h"
 #import "preferencesPanelController.h"
 #import "renderDispatcher.h"
 #import "menuFromDirectory.h"

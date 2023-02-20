@@ -1,6 +1,6 @@
 //******************************************************************************
 ///
-/// @file /macintosh/previewWindow/picturePreview.h
+/// @file /macintosh/previewWindow/PicturePreview.h
 ///
 /// preview window control
 ///
@@ -37,7 +37,7 @@
 /// @endparblock
 ///
 //******************************************************************************
-#import "picturePreviewBase.h"
+#import "PicturePreviewBase.h"
 
 	#define PvtbIdentifier									@"PvtbIdentifier"
 	#define PvtbStopItemIdentifier					@"PvtbStopItemIdentifier"
@@ -58,7 +58,7 @@
 	#define dPvtbCutPaletteLabel NSLocalizedStringFromTable(@"PvtbCutPaletteLabel", @"previewWindowLocalized", @"")
 	#define dPvtbCutTooltip NSLocalizedStringFromTable(@"PvtbCutTooltip", @"previewWindowLocalized", @"")
 
-@interface pictureScrollView : NSScrollView
+@interface PictureScrollView : NSScrollView
 {
 
 
@@ -66,10 +66,10 @@
 }
 @end
 
-@interface picturePreview : picturePreviewBase 
+@interface PicturePreview : PicturePreviewBase 
 {
 	// variables needed for the image cache method
-	IBOutlet pictureScrollView *scrollView;
+	IBOutlet PictureScrollView *scrollView;
 	BOOL mHasSelectionRect;
 	BOOL mCanCut;
 	// scaledSelectionRect holds the format in image pixels as set in the prefs panel

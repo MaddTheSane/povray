@@ -314,12 +314,12 @@
 		826CB8B51D034CC4000A7A98 /* standardMethods.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7211D034CC4000A7A98 /* standardMethods.mm */; };
 		826CB8F81D034CC4000A7A98 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7651D034CC4000A7A98 /* main.mm */; };
 		826CB8F91D034CC4000A7A98 /* menuFromDirectory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7671D034CC4000A7A98 /* menuFromDirectory.mm */; };
-		826CB8FA1D034CC4000A7A98 /* messageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB76A1D034CC4000A7A98 /* messageViewController.mm */; };
+		826CB8FA1D034CC4000A7A98 /* MessageViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB76A1D034CC4000A7A98 /* MessageViewController.mm */; };
 		826CB8FB1D034CC4000A7A98 /* mutableTabString.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB76C1D034CC4000A7A98 /* mutableTabString.mm */; };
 		826CB8FC1D034CC4000A7A98 /* povrayApplication.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7711D034CC4000A7A98 /* povrayApplication.mm */; };
-		826CB8FE1D034CC4000A7A98 /* materialPreview.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB77C1D034CC4000A7A98 /* materialPreview.mm */; };
-		826CB8FF1D034CC4000A7A98 /* picturePreview.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB77E1D034CC4000A7A98 /* picturePreview.mm */; };
-		826CB9001D034CC4000A7A98 /* picturePreviewBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7801D034CC4000A7A98 /* picturePreviewBase.mm */; };
+		826CB8FE1D034CC4000A7A98 /* MaterialPreview.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB77C1D034CC4000A7A98 /* MaterialPreview.mm */; };
+		826CB8FF1D034CC4000A7A98 /* PicturePreview.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB77E1D034CC4000A7A98 /* PicturePreview.mm */; };
+		826CB9001D034CC4000A7A98 /* PicturePreviewBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7801D034CC4000A7A98 /* PicturePreviewBase.mm */; };
 		826CB9011D034CC4000A7A98 /* renderDispatcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7821D034CC4000A7A98 /* renderDispatcher.mm */; };
 		826CB9021D034CC4000A7A98 /* rendererGUIBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7841D034CC4000A7A98 /* rendererGUIBridge.mm */; };
 		826CB9031D034CC4000A7A98 /* colorPicker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7871D034CC4000A7A98 /* colorPicker.mm */; };
@@ -5719,7 +5719,6 @@
 		8222236E1D45360D0062FCA5 /* backgroundTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = backgroundTemplate.h; path = sceneDocument/templates/backgroundTemplate.h; sourceTree = SOURCE_ROOT; };
 		8222236F1D45360D0062FCA5 /* backgroundTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = backgroundTemplate.mm; path = sceneDocument/templates/backgroundTemplate.mm; sourceTree = SOURCE_ROOT; };
 		823625BB1D16909B0009612E /* macintoshDisplay.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = macintoshDisplay.mm; path = previewWindow/macintoshDisplay.mm; sourceTree = SOURCE_ROOT; };
-		823625BC1D16909B0009612E /* materialPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = materialPreview.h; path = previewWindow/materialPreview.h; sourceTree = SOURCE_ROOT; };
 		823B2A0B1D16E677007AA0CB /* macintoshDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = macintoshDisplay.h; path = previewWindow/macintoshDisplay.h; sourceTree = SOURCE_ROOT; };
 		82581718169172BD00292547 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		8258AD8B1D0492C100770E0D /* bbox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bbox.cpp; sourceTree = "<group>"; };
@@ -6028,8 +6027,8 @@
 		826CB7651D034CC4000A7A98 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		826CB7661D034CC4000A7A98 /* menuFromDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuFromDirectory.h; sourceTree = "<group>"; };
 		826CB7671D034CC4000A7A98 /* menuFromDirectory.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = menuFromDirectory.mm; sourceTree = "<group>"; };
-		826CB7691D034CC4000A7A98 /* messageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = messageViewController.h; sourceTree = "<group>"; };
-		826CB76A1D034CC4000A7A98 /* messageViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = messageViewController.mm; sourceTree = "<group>"; };
+		826CB7691D034CC4000A7A98 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		826CB76A1D034CC4000A7A98 /* MessageViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MessageViewController.mm; sourceTree = "<group>"; };
 		826CB76B1D034CC4000A7A98 /* mutableTabString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mutableTabString.h; sourceTree = "<group>"; };
 		826CB76C1D034CC4000A7A98 /* mutableTabString.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mutableTabString.mm; sourceTree = "<group>"; };
 		826CB7701D034CC4000A7A98 /* povrayApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = povrayApplication.h; sourceTree = "<group>"; };
@@ -6038,12 +6037,12 @@
 		826CB7741D034CC4000A7A98 /* openexr.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = openexr.pch; sourceTree = "<group>"; };
 		826CB7751D034CC4000A7A98 /* povrayUnofficial_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = povrayUnofficial_Prefix.pch; sourceTree = "<group>"; };
 		826CB7761D034CC4000A7A98 /* povrayBackendPrefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = povrayBackendPrefix.pch; sourceTree = "<group>"; };
-		826CB77B1D034CC4000A7A98 /* materialPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = materialPreview.h; sourceTree = "<group>"; };
-		826CB77C1D034CC4000A7A98 /* materialPreview.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = materialPreview.mm; sourceTree = "<group>"; };
-		826CB77D1D034CC4000A7A98 /* picturePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picturePreview.h; sourceTree = "<group>"; };
-		826CB77E1D034CC4000A7A98 /* picturePreview.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = picturePreview.mm; sourceTree = "<group>"; };
-		826CB77F1D034CC4000A7A98 /* picturePreviewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = picturePreviewBase.h; sourceTree = "<group>"; };
-		826CB7801D034CC4000A7A98 /* picturePreviewBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = picturePreviewBase.mm; sourceTree = "<group>"; };
+		826CB77B1D034CC4000A7A98 /* MaterialPreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialPreview.h; sourceTree = "<group>"; };
+		826CB77C1D034CC4000A7A98 /* MaterialPreview.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MaterialPreview.mm; sourceTree = "<group>"; };
+		826CB77D1D034CC4000A7A98 /* PicturePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturePreview.h; sourceTree = "<group>"; };
+		826CB77E1D034CC4000A7A98 /* PicturePreview.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PicturePreview.mm; sourceTree = "<group>"; };
+		826CB77F1D034CC4000A7A98 /* PicturePreviewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturePreviewBase.h; sourceTree = "<group>"; };
+		826CB7801D034CC4000A7A98 /* PicturePreviewBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PicturePreviewBase.mm; sourceTree = "<group>"; };
 		826CB7811D034CC4000A7A98 /* renderDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = renderDispatcher.h; sourceTree = "<group>"; };
 		826CB7821D034CC4000A7A98 /* renderDispatcher.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = renderDispatcher.mm; sourceTree = "<group>"; };
 		826CB7831D034CC4000A7A98 /* rendererGUIBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rendererGUIBridge.h; sourceTree = "<group>"; };
@@ -15195,8 +15194,8 @@
 				826CB7851D034CC4000A7A98 /* sceneDocument */,
 				826CB5CF1D034CC3000A7A98 /* appPreferencesController.h */,
 				826CB5D01D034CC3000A7A98 /* appPreferencesController.mm */,
-				826CB5D21D034CC3000A7A98 /* batchMap.mm */,
 				826CB5D11D034CC3000A7A98 /* batchMap.h */,
+				826CB5D21D034CC3000A7A98 /* batchMap.mm */,
 				826CB71E1D034CC4000A7A98 /* customColorwell.h */,
 				826CB71F1D034CC4000A7A98 /* customColorwell.m */,
 				826CB7201D034CC4000A7A98 /* standardMethods.h */,
@@ -15234,8 +15233,8 @@
 		826CB7681D034CC4000A7A98 /* messageWindow */ = {
 			isa = PBXGroup;
 			children = (
-				826CB7691D034CC4000A7A98 /* messageViewController.h */,
-				826CB76A1D034CC4000A7A98 /* messageViewController.mm */,
+				826CB7691D034CC4000A7A98 /* MessageViewController.h */,
+				826CB76A1D034CC4000A7A98 /* MessageViewController.mm */,
 			);
 			path = messageWindow;
 			sourceTree = "<group>";
@@ -15254,15 +15253,14 @@
 		826CB77A1D034CC4000A7A98 /* previewWindow */ = {
 			isa = PBXGroup;
 			children = (
-				826CB77B1D034CC4000A7A98 /* materialPreview.h */,
-				826CB77C1D034CC4000A7A98 /* materialPreview.mm */,
-				826CB77D1D034CC4000A7A98 /* picturePreview.h */,
-				826CB77E1D034CC4000A7A98 /* picturePreview.mm */,
-				826CB77F1D034CC4000A7A98 /* picturePreviewBase.h */,
-				826CB7801D034CC4000A7A98 /* picturePreviewBase.mm */,
-				823625BB1D16909B0009612E /* macintoshDisplay.mm */,
 				823B2A0B1D16E677007AA0CB /* macintoshDisplay.h */,
-				823625BC1D16909B0009612E /* materialPreview.h */,
+				823625BB1D16909B0009612E /* macintoshDisplay.mm */,
+				826CB77B1D034CC4000A7A98 /* MaterialPreview.h */,
+				826CB77C1D034CC4000A7A98 /* MaterialPreview.mm */,
+				826CB77D1D034CC4000A7A98 /* PicturePreview.h */,
+				826CB77E1D034CC4000A7A98 /* PicturePreview.mm */,
+				826CB77F1D034CC4000A7A98 /* PicturePreviewBase.h */,
+				826CB7801D034CC4000A7A98 /* PicturePreviewBase.mm */,
 			);
 			path = previewWindow;
 			sourceTree = "<group>";
@@ -16645,7 +16643,7 @@
 				826CB9081D034CC4000A7A98 /* sceneDocument.mm in Sources */,
 				826CB91A1D034CC4000A7A98 /* interiorTemplate.mm in Sources */,
 				826CB8FB1D034CC4000A7A98 /* mutableTabString.mm in Sources */,
-				826CB8FA1D034CC4000A7A98 /* messageViewController.mm in Sources */,
+				826CB8FA1D034CC4000A7A98 /* MessageViewController.mm in Sources */,
 				826CB7D81D034CC4000A7A98 /* appPreferencesController.mm in Sources */,
 				826CB9231D034CC4000A7A98 /* objectmap.mm in Sources */,
 				82B477B31D04712B0054B17E /* baseTemplate.mm in Sources */,
@@ -16673,10 +16671,10 @@
 				826CB9071D034CC4000A7A98 /* sceneDocument+templates.mm in Sources */,
 				826CB9161D034CC4000A7A98 /* functionsList.mm in Sources */,
 				826CB9181D034CC4000A7A98 /* globalsTemplate.mm in Sources */,
-				826CB8FE1D034CC4000A7A98 /* materialPreview.mm in Sources */,
+				826CB8FE1D034CC4000A7A98 /* MaterialPreview.mm in Sources */,
 				82B477B51D04712B0054B17E /* mapBaseTemplate.mm in Sources */,
 				826CB9261D034CC4000A7A98 /* pigmentTemplate.mm in Sources */,
-				826CB8FF1D034CC4000A7A98 /* picturePreview.mm in Sources */,
+				826CB8FF1D034CC4000A7A98 /* PicturePreview.mm in Sources */,
 				826CB9041D034CC4000A7A98 /* customDocumentController.mm in Sources */,
 				826CB9021D034CC4000A7A98 /* rendererGUIBridge.mm in Sources */,
 				826CBAD01D034E4C000A7A98 /* platformbase.cpp in Sources */,
@@ -16689,7 +16687,7 @@
 				826CB8B51D034CC4000A7A98 /* standardMethods.mm in Sources */,
 				826CB91B1D034CC4000A7A98 /* lightTemplate.mm in Sources */,
 				826CB91E1D034CC4000A7A98 /* materialTemplate.mm in Sources */,
-				826CB9001D034CC4000A7A98 /* picturePreviewBase.mm in Sources */,
+				826CB9001D034CC4000A7A98 /* PicturePreviewBase.mm in Sources */,
 				826CB9151D034CC4000A7A98 /* finishTemplate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

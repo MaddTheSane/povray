@@ -74,7 +74,7 @@ enum {
 
 	[dict retain];
 
-	bodymap *bmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"bodymap"]];
+	BodyMap *bmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"bodymap"]];
 
 	[ds copyTabAndText:@"texture {\n"];
 	[ds addTab];
@@ -145,7 +145,7 @@ enum {
 +(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-		[NSArchiver archivedDataWithRootObject:[bodymap defaultMap]],	@"bodymap",
+		[NSArchiver archivedDataWithRootObject:[BodyMap defaultMap]],	@"bodymap",
 		[NSNumber numberWithInt:cGif],									@"materialmapFileTypePopUp",
 		@"MyFile",																			@"materialmapFileName",
 		@"x+y+z",																				@"materialmapFunctionEdit",

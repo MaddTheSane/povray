@@ -50,14 +50,14 @@ static NSComparisonResult sortSettingsBySize(id first, id last, void*context);
 
 static PreferencesPanelController* _preferencesPanelController;
 
-@implementation greenLed
+@implementation GreenLED
 	//---------------------------------------------------------------------
 	// drawRect
 	//---------------------------------------------------------------------
 	- (void)drawRect:(NSRect)aRect
 	{
 		NSRect r=[self bounds];
-		[[NSColor greenColor]set];
+		[[NSColor systemGreenColor]set];
 		NSRectFill(r);
 		[[NSColor darkGrayColor]set];
 		NSFrameRect(r);
@@ -508,7 +508,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	NSArray *appArray=[defaults arrayForKey:@"mainPrefsArray"];
 	mSettingsArray=[[NSMutableArray alloc] initWithArray:appArray];
 	// work threads
-	[mNumberCoresFound setIntegerValue:[[MainController sharedInstance]getNumberOfCpus]];
+	[mNumberCoresFound setIntegerValue:[[MainController sharedInstance]numberOfCPUs]];
 	
 	
 	[self buildPreferencesPopup];

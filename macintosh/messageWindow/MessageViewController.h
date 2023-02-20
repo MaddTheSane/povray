@@ -48,7 +48,7 @@
 	NSString *mString;
 	int mStreamType;
 }
--(instancetype) initWithCString: (char*)theString andStream: (int) stream;
+-(instancetype) initWithCString: (const char*)theString andStream: (int) stream;
 @end
 
 @interface MessageViewController : NSObject
@@ -56,11 +56,11 @@
 	IBOutlet NSTextView *mMessageView;
   IBOutlet NSTextField *mProgressIndicator;
   NSFont					*mFont;
-	NSDictionary		*mBlackStyle;
-	NSDictionary		*mBlueStyle;
-	NSDictionary		*mRedStyle;
-	NSDictionary		*mMagentaStyle;
-	NSDictionary		*mGreenStyle;
+	NSDictionary<NSAttributedStringKey,id>		*mBlackStyle;
+	NSDictionary<NSAttributedStringKey,id>		*mBlueStyle;
+	NSDictionary<NSAttributedStringKey,id>		*mRedStyle;
+	NSDictionary<NSAttributedStringKey,id>		*mMagentaStyle;
+	NSDictionary<NSAttributedStringKey,id>		*mGreenStyle;
 	NSMutableArray	*mSceneStart;
 	IBOutlet NSWindow				*mWindow;
 	
@@ -88,6 +88,7 @@
 	IBOutlet NSTextField *mRenderTime;
 }
 + (MessageViewController*)sharedInstance;
+@property (class, readonly, retain) MessageViewController *sharedInstance;
 - (void) warningMessage: (NSString*) inMessage;
 - (void) statisticMessage: (NSString*) inMessage;
 - (void) renderMessage: (NSString*) inMessage;

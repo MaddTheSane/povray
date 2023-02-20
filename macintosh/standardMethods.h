@@ -54,12 +54,12 @@ NSMutableArray * scanForValuesInString(NSString *stringToScan);
 //OSStatus SendAppleEventToSystemProcess(AEEventID EventToSend);
 
 //---------------------------------------------------------------------
-// remoteObject
+// RemoteObject
 //---------------------------------------------------------------------
 //	An object to hold some variables to be used with a performSelectorOnMainThread
 //	method.
 //---------------------------------------------------------------------
-@interface remoteObject : NSObject
+@interface RemoteObject : NSObject
 {
     // variables needed for the image cache method
     NSMutableDictionary *mDict;
@@ -68,7 +68,7 @@ NSMutableArray * scanForValuesInString(NSString *stringToScan);
  	NSInteger mRef;
  	BOOL mReturnValue;
 } 
-	- (instancetype) initWithObjectsAndKeys:(id) firstObject, ...;
+	- (instancetype) initWithObjectsAndKeys:(id) firstObject, ... NS_REQUIRES_NIL_TERMINATION;
 	-(instancetype) initWithWidth: (NSInteger)width andHeight: (NSInteger)height andRef: (NSInteger)ref;
 	-(instancetype) initWithRef: (NSInteger)ref;
 @property (readonly, retain) NSMutableDictionary *dict;

@@ -52,7 +52,7 @@ namespace vfe
 	//---------------------------------------------------------------------
 	// Mac_Parse_Error
 	//---------------------------------------------------------------------
-	// remoteMac_Parse_Error is in picturePreviewBase.mm
+	// remoteMac_Parse_Error is in PicturePreviewBase.mm
 	//---------------------------------------------------------------------
 	void Mac_Parse_Error( const char *fileName, long  lineNo)
 	{
@@ -60,7 +60,7 @@ namespace vfe
 		{
 			[[MessageViewController sharedInstance] performSelectorOnMainThread:@selector(windowFront) withObject:nil waitUntilDone:YES];
 
-			remoteObject *rm=[[remoteObject alloc]initWithObjectsAndKeys:
+			RemoteObject *rm=[[RemoteObject alloc]initWithObjectsAndKeys:
 												@(fileName), @"fileName",
 												@(lineNo), @"lineNo",	nil];
 			[activeRenderPreview performSelectorOnMainThread:@selector(remoteMac_Parse_Error:)withObject: rm waitUntilDone:YES];

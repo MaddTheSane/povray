@@ -1,8 +1,8 @@
 //******************************************************************************
 ///
-/// @file /macintosh/previewWindow/picturePreviewBase.h
+/// @file /macintosh/previewWindow/PicturePreviewBase.h
 ///
-/// Base class for preview, used by picturePreview and materialpreview
+/// Base class for preview, used by PicturePreview and materialpreview
 ///
 /// @copyright
 /// @parblock
@@ -54,7 +54,7 @@
 #define xResetMaxValue FLT_MIN
 
 
-@interface picturePreviewBase : NSView <NSWindowDelegate,NSToolbarDelegate>
+@interface PicturePreviewBase : NSView <NSWindowDelegate,NSToolbarDelegate>
 {
 
 	pthread_mutex_t mMinMaxLock;
@@ -98,8 +98,8 @@
 -(void) DrawFilledRectangle: (NSUInteger) x ypos:(NSUInteger) y xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color:( const pov_frontend::Display::RGBA8&) colour;
 
 @property (copy) NSString *inputFileName;
--(void) displayInit: (remoteObject*)remoteobject;
--(void) remoteMac_Parse_Error: (remoteObject*)remoteobject;
+-(void) displayInit: (RemoteObject*)remoteobject;
+-(void) remoteMac_Parse_Error: (RemoteObject*)remoteobject;
 -(NSScreen*) screenHoldingLargestPartOfRect:(NSRect) rect;
 
 - (void) adjustWindow;

@@ -1,8 +1,8 @@
 //******************************************************************************
 ///
-/// @file /macintosh/previewWindow/materialPreview.mm
+/// @file /macintosh/previewWindow/MaterialPreview.mm
 ///
-/// small subclass of picturePreviewBase used for the material template preveiw
+/// small subclass of PicturePreviewBase used for the material template preveiw
 /// to do: this class can be deleted after a few modifications in the base class
 ///
 /// @copyright
@@ -39,12 +39,12 @@
 ///
 //******************************************************************************
 #import "MainController.h"
-#import "materialPreview.h"
+#import "MaterialPreview.h"
  
 // this must be the last file included
 #import "syspovdebug.h"
 
-@implementation materialPreview
+@implementation MaterialPreview
 
 
 //---------------------------------------------------------------------

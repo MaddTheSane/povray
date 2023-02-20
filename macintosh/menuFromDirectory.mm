@@ -265,7 +265,7 @@
 					NSSize originalSize = [sourceImage size];
 
 					[resizedImage lockFocus];
-					[sourceImage drawInRect: NSMakeRect(0, 0, newSize.width, newSize.height) fromRect: NSMakeRect(0, 0, originalSize.width, originalSize.height) operation: NSCompositeSourceOver fraction: 1.0];
+					[sourceImage drawInRect: NSMakeRect(0, 0, newSize.width, newSize.height) fromRect: NSMakeRect(0, 0, originalSize.width, originalSize.height) operation: NSCompositingOperationSourceOver fraction: 1.0];
 					[resizedImage unlockFocus];
 					[[directoryItem menuItem]setImage:resizedImage];
 				}

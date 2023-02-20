@@ -57,8 +57,8 @@
 // this must be the last file included
 #import "syspovdebug.h"
 
-picturePreview				*gPicturePreview=nil;
-materialPreview				*gMaterialPreview=nil;
+PicturePreview				*gPicturePreview=nil;
+MaterialPreview				*gMaterialPreview=nil;
 NSInteger							numericBlockPoint;
 static volatile int		insertMenuIsBeingWatched=notWatching;
 static MainController	*_mainController;
@@ -783,12 +783,9 @@ Bail:
 }
 
 //---------------------------------------------------------------------
-// getNumberOfCpus
+// numberOfCPUs
 //---------------------------------------------------------------------
--(NSInteger) getNumberOfCpus
-{
-	return mNumberOfCpus;
-}
+@synthesize numberOfCPUs=mNumberOfCpus;
 
 
 @end

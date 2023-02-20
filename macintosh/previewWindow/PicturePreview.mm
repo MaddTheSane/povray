@@ -1,6 +1,6 @@
 //******************************************************************************
 ///
-/// @file /macintosh/previewWindow/picturePreview.mm
+/// @file /macintosh/previewWindow/PicturePreview.mm
 ///
 /// preview window control
 ///
@@ -38,7 +38,7 @@
 ///
 //******************************************************************************
 #import "MainController.h"
-#import "picturePreview.h"
+#import "PicturePreview.h"
 #import "ToolTipAutomator.h"
 #import "rendererGUIBridge.h"
 #import <limits>
@@ -49,7 +49,7 @@
 
 #define makeFloat CGFloat alpha=( 255.0 - (CGFloat) a ) / 255.0;
 
-@implementation picturePreview
+@implementation PicturePreview
 
 //---------------------------------------------------------------------
 // windowShouldClose
@@ -279,11 +279,11 @@
 	#endif
     while (keepOn )
     {
-		theEvent = [[self window] nextEventMatchingMask: NSLeftMouseUpMask |  NSLeftMouseDraggedMask];
+			theEvent = [[self window] nextEventMatchingMask: NSEventMaskLeftMouseUp |  NSEventMaskLeftMouseDragged];
 		mouseLoc = [self convertPoint:[theEvent locationInWindow] fromView:nil];
 		switch ([theEvent type]) 
 		{
-		    case NSLeftMouseDragged:
+			case NSEventTypeLeftMouseDragged:
 		    	if( [theEvent deltaX] || [theEvent deltaY])	//dit we move?
 		    	{
 	    			NSRect thisRect=NSMakeRect(mouseLoc.x, mouseLoc.y, 1.0,1.0);
@@ -323,7 +323,7 @@
 						[self setNeedsDisplayInRect:mSelectionRectInViewFormat];
 		    	}	
 	        break;
-			case NSLeftMouseUp:
+			case NSEventTypeLeftMouseUp:
 				keepOn = NO;
 				break;
 			default:
@@ -353,7 +353,7 @@
 			NSLog(@"selectionrect: x: %f y: %f, width:%f, height: %f",mSelectionRectInPixelFormat.origin.x+1, mSelectionRectInPixelFormat.origin.y+1, mSelectionRectInPixelFormat.origin.x + mSelectionRectInPixelFormat.size.width, mSelectionRectInPixelFormat.origin.y + mSelectionRectInPixelFormat.size.height);
 		#endif
 		NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
-		[NSNumber numberWithBool:YES], @"yStartsAtTop",
+		@YES, @"yStartsAtTop",
 			[NSNumber numberWithInt: mSelectionRectInPixelFormat.origin.x+1] ,	@"columnStart",
 			[NSNumber numberWithInt: mSelectionRectInPixelFormat.origin.x + mSelectionRectInPixelFormat.size.width] ,	@"columnEnd",
 			[NSNumber numberWithInt: mSelectionRectInPixelFormat.origin.y+1] ,	@"rowStart",
@@ -747,10 +747,10 @@
 
 @end
 
-@implementation pictureScrollView
+@implementation PictureScrollView
 
 //---------------------------------------------------------------------
-// awakeFromNib (pictureScrollView)
+// awakeFromNib (PictureScrollView)
 //---------------------------------------------------------------------
 -(void) awakeFromNib
 {

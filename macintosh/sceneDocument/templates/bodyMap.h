@@ -41,11 +41,11 @@
 #import "MapBase.h"
 
 
-@interface bodymap : MapBase <NSCoding> 
+@interface BodyMap : MapBase <NSCoding> 
 {
 }
-+(id) defaultMap;
-+(id) textureMap;
++(BodyMap*) defaultMap;
++(BodyMap*) textureMap;
 
 -(void) makeDefaultMap;
 -(void) makeTextureMap;
