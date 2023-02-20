@@ -13,7 +13,7 @@
 			<string>MPDocumentIcon</string>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
-				<string>org.povray.pov</string>
+				<string>model/x-pov</string>
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>SceneFile</string>
@@ -42,10 +42,6 @@
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string>MPIncludeIcon</string>
-			<key>CFBundleTypeMIMETypes</key>
-			<array>
-				<string>public.plain-text</string>
-			</array>
 			<key>CFBundleTypeName</key>
 			<string>IncludeFile</string>
 			<key>CFBundleTypeOSTypes</key>
@@ -91,10 +87,6 @@
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string>MPIniIcon</string>
-			<key>CFBundleTypeMIMETypes</key>
-			<array>
-				<string>public.plain-text</string>
-			</array>
 			<key>CFBundleTypeName</key>
 			<string>IniFile</string>
 			<key>CFBundleTypeOSTypes</key>
@@ -104,6 +96,8 @@
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
 			<key>LSTypeIsPackage</key>
 			<false/>
 			<key>NSDocumentClass</key>
