@@ -196,8 +196,8 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 - (void) runTemplateSheet
 {
-	[[NSApplication sharedApplication] beginSheet:[mFileOwner getWindow] 
-				modalForWindow:[self getWindow] modalDelegate:self 
+	[[NSApplication sharedApplication] beginSheet:[mFileOwner window]
+																 modalForWindow:[self window] modalDelegate:self
 				didEndSelector:@selector(templateSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
 }
 
@@ -305,7 +305,7 @@ static const char *templateTypeNameArray[]={
 			}
 		}
 	};
-	[openPanel beginSheetModalForWindow:[self getWindow] 
+	[openPanel beginSheetModalForWindow:[self window]
                               completionHandler:openPreferencesOpenSavePanelHandler];
 }
 //---------------------------------------------------------------------
@@ -320,7 +320,7 @@ static const char *templateTypeNameArray[]={
 	[savePanel setAllowedFileTypes:[NSArray arrayWithObject:@"mpTpl"]];
 	[savePanel setTitle:@"Save template"];
 	
-  [savePanel beginSheetModalForWindow:[self getWindow] 
+	[savePanel beginSheetModalForWindow:[self window]
                               completionHandler: ^( NSInteger resultCode )
 	{
 		@autoreleasepool
@@ -338,7 +338,7 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 -(IBAction) cancelButton: (id)sender
 {
-	[[NSApplication sharedApplication] endSheet: [self getWindow] returnCode:NSCancelButton];
+	[[NSApplication sharedApplication] endSheet: [self window] returnCode:NSCancelButton];
 }
 
 //---------------------------------------------------------------------
@@ -348,7 +348,7 @@ static const char *templateTypeNameArray[]={
 {
 	[self retrivePreferences];
 	[self writeDefaultPreferences];
-	[[NSApplication sharedApplication] endSheet: [self getWindow] returnCode:NSOKButton];
+	[[NSApplication sharedApplication] endSheet: [self window] returnCode:NSOKButton];
 }
 
 //---------------------------------------------------------------------
@@ -460,7 +460,7 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 -(void) retrivePreferences
 {
-	[[self getWindow]makeFirstResponder: [self getWindow]];
+	[[self window]makeFirstResponder: [self window]];
 	if  ( mOutlets ==nil)
 		return;
 		
@@ -1011,7 +1011,7 @@ static const char *templateTypeNameArray[]={
 // disable/enable it according to the newState
 // make sure that item is near the control and to the right
 //----------------------------------------------------------------------
--(void) enableDisableItemInSuperview:(NSControl*) controlItem forString:searchString andState:(int)newState
+-(void) enableDisableItemInSuperview:(NSControl*) controlItem forString:(NSString*)searchString andState:(int)newState
 {
 	NSView *superView=[controlItem superview];
 	NSArray *subviewArray=[superView subviews];
@@ -1080,7 +1080,7 @@ static const char *templateTypeNameArray[]={
 	[openPanel setCanChooseFiles:YES];
 	[openPanel setAllowedFileTypes:fileTypes];
 	
-  [openPanel beginSheetModalForWindow:[self getWindow]
+  [openPanel beginSheetModalForWindow:[self window]
 										completionHandler: ^( NSInteger resultCode )
 	 {
 			@autoreleasepool
@@ -1135,8 +1135,8 @@ static const char *templateTypeNameArray[]={
 	{
 		if ( [NSBundle loadNibNamed:@"ColorPicker.nib" owner:colorPickerController] == YES)
 		{
-			[[NSApplication sharedApplication] beginSheet:[colorPickerController getWindow] 
-				modalForWindow:[self getWindow] modalDelegate:self 
+			[[NSApplication sharedApplication] beginSheet:[colorPickerController getWindow]
+																		 modalForWindow:[self window] modalDelegate:self
 				didEndSelector:@selector(colorPickerSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
 		}
 		else

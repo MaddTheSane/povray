@@ -310,7 +310,7 @@
 		8258AFDF1D0492C100770E0D /* statspov.h in Headers */ = {isa = PBXBuildFile; fileRef = 8258AEBE1D0492C100770E0D /* statspov.h */; };
 		826CB7D81D034CC4000A7A98 /* appPreferencesController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB5D01D034CC3000A7A98 /* appPreferencesController.mm */; };
 		826CB7D91D034CC4000A7A98 /* batchMap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB5D21D034CC3000A7A98 /* batchMap.mm */; };
-		826CB8B41D034CC4000A7A98 /* customColorwell.m in Sources */ = {isa = PBXBuildFile; fileRef = 826CB71F1D034CC4000A7A98 /* customColorwell.m */; };
+		826CB8B41D034CC4000A7A98 /* customColorwell.m in Sources */ = {isa = PBXBuildFile; fileRef = 826CB71F1D034CC4000A7A98 /* customColorwell.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		826CB8B51D034CC4000A7A98 /* standardMethods.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7211D034CC4000A7A98 /* standardMethods.mm */; };
 		826CB8F81D034CC4000A7A98 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7651D034CC4000A7A98 /* main.mm */; };
 		826CB8F91D034CC4000A7A98 /* menuFromDirectory.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7671D034CC4000A7A98 /* menuFromDirectory.mm */; };
@@ -16126,7 +16126,7 @@
 				KnownAssetTags = (
 					/Engels,
 				);
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
 						ProvisioningStyle = Manual;
@@ -17130,6 +17130,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = precompiledHeaders/openexr.pch;
 				HEADER_SEARCH_PATHS = (
@@ -17156,6 +17157,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = precompiledHeaders/ilmBase.pch;
 				INSTALL_PATH = /usr/local/lib;
@@ -17192,6 +17194,7 @@
 				CLANG_X86_VECTOR_INSTRUCTIONS = ssse3;
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -17209,7 +17212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -17226,6 +17229,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3.7.0.7.3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -17262,6 +17266,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"${inherited}",
@@ -17280,6 +17285,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_INPUT_FILETYPE = automatic;
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
@@ -17293,6 +17299,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_INPUT_FILETYPE = automatic;
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
@@ -17307,6 +17314,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -17355,6 +17363,7 @@
 				CLANG_X86_VECTOR_INSTRUCTIONS = ssse3;
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_DYNAMIC_NO_PIC = YES;
@@ -17373,7 +17382,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
 				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/**";
@@ -17389,6 +17398,7 @@
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Installer";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3.7.0.7.3;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				GCC_INPUT_FILETYPE = automatic;
@@ -17426,6 +17436,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"${inherited}",
@@ -17444,6 +17455,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_INPUT_FILETYPE = automatic;
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
@@ -17457,6 +17469,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_INPUT_FILETYPE = automatic;
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
@@ -17471,6 +17484,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_INPUT_FILETYPE = sourcecode.cpp.cpp;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -17498,6 +17512,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = precompiledHeaders/openexr.pch;
 				HEADER_SEARCH_PATHS = (
@@ -17524,6 +17539,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = precompiledHeaders/ilmBase.pch;
 				INSTALL_PATH = /usr/local/lib;

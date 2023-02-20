@@ -174,6 +174,7 @@ enum eImageMap {
 	cInterpolationNormilizedDistance	=4
 };
 
+@class ColorPicker;
 
 @interface BaseTemplate : NSObject <NSTabViewDelegate,NSTableViewDelegate>{
 					 NSPanel			*mWindow;
@@ -185,7 +186,7 @@ enum eImageMap {
 
 	NSMutableDictionary *mTemplatePrefs[25];
 	NSArray							*mExcludedObjectsForReset;	//arry with keys for objects to exclude from reset
-	id colorPickerController;		//used in BaseTemplate+callTemplates
+	ColorPicker *colorPickerController;		//used in BaseTemplate+callTemplates
 	
 	BaseTemplate *mFileOwner;	//fileOwner for nib file (is a subclass of basetempalte
 													// like cameraTemplate or lightTemplate...
@@ -203,7 +204,6 @@ enum eImageMap {
 -(id) fileOwner;
 
 @property (assign) IBOutlet NSPanel *window;
--(void) setWindow:(id)window;
 -(NSPanel*) getWindow NS_DEPRECATED_WITH_REPLACEMENT_MAC("-window", 10.2, 10.9);
 -(IBAction) okButton:(id)sender;
 -(IBAction) cancelButton: (id)sender;

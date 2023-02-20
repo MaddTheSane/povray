@@ -51,7 +51,7 @@
 	BOOL mHasFilterTransmit;
 	NSControlStateValue mGrayOn;
 }
--(BOOL) equals:(id)com;
+-(BOOL) equals:(MPColorWell*)com;
 +(instancetype) withColor:(NSColor*) color andFilter:(BOOL)filter;
 +(instancetype) whiteColorAndFilter:(BOOL)filter;
 +(instancetype) blackColorAndFilter:(BOOL)filter;

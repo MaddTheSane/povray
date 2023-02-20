@@ -49,9 +49,6 @@ NS_ENUM(NSInteger) {
 	cColorPicker=6,
 	cGrayButton=7
 };
-#if 0
-}
-#endif
 
 @interface ColorPicker : NSObject
 {
@@ -73,7 +70,7 @@ NS_ENUM(NSInteger) {
 	NSControlStateValue mTransmitOnState;
 	NSControlStateValue mGrayOnState;
 }
--(id) initWithDelegate:(id) delegate ;
+-(instancetype) initWithDelegate:(id) delegate ;
 -(IBAction) cancelButton: (id)sender;
 -(IBAction) okButton:(id)sender;
 -(IBAction) colorPickerTraget:(id)sender;

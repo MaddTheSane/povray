@@ -63,7 +63,6 @@
 		st=[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"F %.1f",[self filter]] attributes:tempDict];
 
 		[st drawInRect:rect];
-		[st release];
 	}
 	rect.origin.y-=10;
 
@@ -72,7 +71,6 @@
 		st=[[NSAttributedString alloc]initWithString:[NSString stringWithFormat:@"T %.1f",[self transmit]]attributes:tempDict];
 
 		[st drawInRect:rect];
-		[st release];
 	}
 
 }
@@ -80,9 +78,9 @@
 //---------------------------------------------------------------------
 // withColor
 //---------------------------------------------------------------------
-+(id) withColor:(id) color andFilter:(BOOL)filter
++(instancetype) withColor:(NSColor*) color andFilter:(BOOL)filter
 {
-	id well=[[[self alloc] init]autorelease];
+	id well=[[self alloc] init];
 	if ( well)
 	{
 		[well setHasFilterTransmit:YES];
@@ -129,7 +127,7 @@
 //---------------------------------------------------------------------
 // initWithCoder
 //---------------------------------------------------------------------
--(BOOL) equals:(id)com
+-(BOOL) equals:(MPColorWell*)com
 {
 	BOOL ret=YES;
 	NSColor *cl=[self color];
@@ -157,7 +155,11 @@
 
 - (BOOL)isEqual:(id)object
 {
-	return [self equals:object];
+	if ([object isKindOfClass:[MPColorWell class]]) {
+		return [self equals:object];
+	} else {
+		return NO;
+	}
 }
 
 #define FilterOnStateKey @"filterOnState"
@@ -222,9 +224,9 @@
 //---------------------------------------------------------------------
 // withColor
 //---------------------------------------------------------------------
-+(id) withColor:(NSColor*) color andFilter:(BOOL)filter
++(instancetype) withColor:(NSColor*) color andFilter:(BOOL)filter
 {
-	id well=[[[self alloc] init]autorelease];
+	id well=[[self alloc] init];
 	if ( well)
 	{
 		[well setHasFilterTransmit:filter];
