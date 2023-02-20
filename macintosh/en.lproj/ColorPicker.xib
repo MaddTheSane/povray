@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,12 +27,12 @@
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="53" y="62" width="338" height="182"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="1002"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="338" height="182"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" id="12">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="12">
                         <rect key="frame" x="190" y="13" width="71" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="101">
@@ -45,7 +44,7 @@
                             <outlet property="nextKeyView" destination="8" id="14"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="8">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8">
                         <rect key="frame" x="259" y="13" width="64" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="100">
@@ -59,7 +58,7 @@ DQ
                             <action selector="okButton:" target="-2" id="77"/>
                         </connections>
                     </button>
-                    <colorWell tag="6" id="17">
+                    <colorWell fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="17">
                         <rect key="frame" x="20" y="93" width="126" height="69"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,7 +66,7 @@ DQ
                             <action selector="colorPickerTraget:" target="-2" id="83"/>
                         </connections>
                     </colorWell>
-                    <textField verticalHuggingPriority="750" tag="1" id="19">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="19">
                         <rect key="frame" x="237" y="143" width="80" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="1" drawsBackground="YES" id="102">
@@ -79,7 +78,7 @@ DQ
                                 <decimal key="maximum" value="NaN"/>
                             </numberFormatter>
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -88,7 +87,7 @@ DQ
                             <outlet property="nextKeyView" destination="21" id="88"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="20">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="20">
                         <rect key="frame" x="223" y="146" width="15" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="R:" id="103">
@@ -97,7 +96,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" tag="2" id="21">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="21">
                         <rect key="frame" x="238" y="117" width="80" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="2" drawsBackground="YES" id="104">
@@ -109,7 +108,7 @@ DQ
                                 <decimal key="maximum" value="NaN"/>
                             </numberFormatter>
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -118,7 +117,7 @@ DQ
                             <outlet property="nextKeyView" destination="23" id="89"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="22">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22">
                         <rect key="frame" x="223" y="119" width="16" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="G:" id="105">
@@ -127,7 +126,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" tag="3" id="23">
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="23">
                         <rect key="frame" x="238" y="90" width="80" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="3" drawsBackground="YES" id="106">
@@ -139,7 +138,7 @@ DQ
                                 <decimal key="maximum" value="NaN"/>
                             </numberFormatter>
                             <font key="font" metaFont="smallSystem"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
@@ -148,7 +147,7 @@ DQ
                             <outlet property="nextKeyView" destination="59" id="90"/>
                         </connections>
                     </textField>
-                    <textField verticalHuggingPriority="750" id="24">
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="24">
                         <rect key="frame" x="223" y="92" width="14" height="14"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="B:" id="107">
@@ -157,7 +156,7 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button tag="7" id="25">
+                    <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="25">
                         <rect key="frame" x="159" y="111" width="35" height="29"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="bevel" title="=" bezelStyle="regularSquare" alignment="center" borderStyle="border" tag="7" inset="2" id="108">
@@ -168,7 +167,7 @@ DQ
                             <action selector="colorPickerTraget:" target="-2" id="82"/>
                         </connections>
                     </button>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="26">
+                    <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="26">
                         <rect key="frame" x="177" y="98" width="44" height="2"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="c3l-c0-huI">
@@ -176,7 +175,7 @@ DQ
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                     </box>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="28">
+                    <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="28">
                         <rect key="frame" x="176" y="151" width="44" height="2"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="HuP-eu-xTo">
@@ -184,7 +183,7 @@ DQ
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                     </box>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="30">
+                    <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="30">
                         <rect key="frame" x="176" y="98" width="2" height="10"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="Tc4-qM-OS0">
@@ -192,7 +191,7 @@ DQ
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                     </box>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="32">
+                    <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="32">
                         <rect key="frame" x="176" y="142" width="2" height="10"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="CZi-vx-gZg">
@@ -200,7 +199,7 @@ DQ
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                     </box>
-                    <box boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" id="57">
+                    <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="57">
                         <rect key="frame" x="196" y="125" width="24" height="2"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="5hR-lS-mI8">
@@ -208,11 +207,11 @@ DQ
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         </view>
                     </box>
-                    <customView id="63">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="63">
                         <rect key="frame" x="12" y="45" width="315" height="37"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button tag="5" id="62">
+                            <button fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="62">
                                 <rect key="frame" x="150" y="13" width="74" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <buttonCell key="cell" type="check" title="Transmit:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="5" inset="2" id="112">
@@ -223,7 +222,7 @@ DQ
                                     <action selector="colorPickerTraget:" target="-2" id="80"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" id="61">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61">
                                 <rect key="frame" x="226" y="12" width="80" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="111">
@@ -235,14 +234,14 @@ DQ
                                         <decimal key="maximum" value="NaN"/>
                                     </numberFormatter>
                                     <font key="font" metaFont="smallSystem"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
                                     <outlet property="nextKeyView" destination="19" id="92"/>
                                 </connections>
                             </textField>
-                            <button tag="4" id="60">
+                            <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="60">
                                 <rect key="frame" x="5" y="12" width="53" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <buttonCell key="cell" type="check" title="Filter:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="4" inset="2" id="110">
@@ -253,7 +252,7 @@ DQ
                                     <action selector="colorPickerTraget:" target="-2" id="79"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" id="59">
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="59">
                                 <rect key="frame" x="59" y="11" width="80" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="109">
@@ -265,7 +264,7 @@ DQ
                                         <decimal key="maximum" value="NaN"/>
                                     </numberFormatter>
                                     <font key="font" metaFont="smallSystem"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                                 <connections>
@@ -279,6 +278,7 @@ DQ
             <connections>
                 <outlet property="initialFirstResponder" destination="8" id="13"/>
             </connections>
+            <point key="canvasLocation" x="14" y="132"/>
         </window>
     </objects>
 </document>

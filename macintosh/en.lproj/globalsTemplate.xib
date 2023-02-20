@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -107,12 +106,12 @@
                 <outlet property="globalsSubsurfaceSamplesEditB" destination="895" id="903"/>
                 <outlet property="globalsSubsurfaceSamplesOn" destination="889" id="901"/>
                 <outlet property="globalsTabView" destination="7" id="451"/>
-                <outlet property="mWindow" destination="5" id="420"/>
                 <outlet property="templateCancelButton" destination="177" id="643"/>
                 <outlet property="templateOkButton" destination="180" id="644"/>
                 <outlet property="templateOpenButton" destination="179" id="641"/>
                 <outlet property="templateResetButton" destination="176" id="640"/>
                 <outlet property="templateSaveButton" destination="178" id="642"/>
+                <outlet property="window" destination="5" id="420"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -121,12 +120,12 @@
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="205" y="154" width="571" height="488"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="571" height="488"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" id="177">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="177">
                         <rect key="frame" x="404" y="13" width="71" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="855">
@@ -138,7 +137,7 @@
                             <outlet property="nextKeyView" destination="180" id="183"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="176">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="176">
                         <rect key="frame" x="8" y="5" width="112" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Reset to default" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="854">
@@ -150,7 +149,7 @@
                             <outlet property="nextKeyView" destination="177" id="184"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="180">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="180">
                         <rect key="frame" x="473" y="13" width="64" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="OK" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="858">
@@ -165,7 +164,7 @@ DQ
                             <outlet property="nextKeyView" destination="176" id="181"/>
                         </connections>
                     </button>
-                    <tabView id="7">
+                    <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7">
                         <rect key="frame" x="6" y="55" width="559" height="418"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <font key="font" metaFont="system"/>
@@ -175,14 +174,14 @@ DQ
                                     <rect key="frame" x="10" y="33" width="539" height="372"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box id="74">
+                                        <box fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74">
                                             <rect key="frame" x="31" y="217" width="217" height="127"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="cf0-9d-4YG">
-                                                <rect key="frame" x="2" y="2" width="213" height="110"/>
+                                                <rect key="frame" x="4" y="5" width="209" height="107"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <colorWell tag="2" id="193" customClass="MPColorWell">
+                                                    <colorWell fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="193" customClass="MPColorWell">
                                                         <rect key="frame" x="19" y="18" width="174" height="74"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -193,7 +192,7 @@ DQ
                                                 </subviews>
                                             </view>
                                         </box>
-                                        <button tag="1" id="122">
+                                        <button fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="122">
                                             <rect key="frame" x="36" y="331" width="95" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Ambient light" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="1" inset="2" id="754">
@@ -204,12 +203,12 @@ DQ
                                                 <action selector="globalsGlobalsTarget:" target="-2" id="428"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="187">
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="187">
                                             <rect key="frame" x="158" y="154" width="48" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="755">
                                                 <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
@@ -217,7 +216,7 @@ DQ
                                                 <outlet property="nextKeyView" destination="198" id="879"/>
                                             </connections>
                                         </textField>
-                                        <button tag="4" id="188">
+                                        <button fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="188">
                                             <rect key="frame" x="31" y="155" width="118" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="assumed_gamma:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="4" inset="2" id="756">
@@ -228,14 +227,14 @@ DQ
                                                 <action selector="globalsGlobalsTarget:" target="-2" id="433"/>
                                             </connections>
                                         </button>
-                                        <box id="194">
+                                        <box fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="194">
                                             <rect key="frame" x="276" y="215" width="217" height="127"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="doH-do-Tpa">
-                                                <rect key="frame" x="2" y="2" width="213" height="110"/>
+                                                <rect key="frame" x="4" y="5" width="209" height="107"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <colorWell tag="10" id="196" customClass="MPColorWell">
+                                                    <colorWell fixedFrame="YES" tag="10" translatesAutoresizingMaskIntoConstraints="NO" id="196" customClass="MPColorWell">
                                                         <rect key="frame" x="19" y="18" width="174" height="74"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <color key="color" red="0.058130499000000002" green="0.055541898999999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,7 +245,7 @@ DQ
                                                 </subviews>
                                             </view>
                                         </box>
-                                        <button tag="9" id="197">
+                                        <button fixedFrame="YES" tag="9" translatesAutoresizingMaskIntoConstraints="NO" id="197">
                                             <rect key="frame" x="281" y="329" width="106" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Irid_wavelength" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="9" inset="2" id="757">
@@ -257,12 +256,12 @@ DQ
                                                 <action selector="globalsGlobalsTarget:" target="-2" id="429"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="198">
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="198">
                                             <rect key="frame" x="158" y="129" width="48" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="758">
                                                 <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
@@ -270,7 +269,7 @@ DQ
                                                 <outlet property="nextKeyView" destination="200" id="880"/>
                                             </connections>
                                         </textField>
-                                        <button tag="5" id="199">
+                                        <button fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="199">
                                             <rect key="frame" x="31" y="130" width="87" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="adc_bailout:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="5" inset="2" id="759">
@@ -281,12 +280,12 @@ DQ
                                                 <action selector="globalsGlobalsTarget:" target="-2" id="435"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="200">
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="200">
                                             <rect key="frame" x="158" y="101" width="48" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="760">
                                                 <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
@@ -294,7 +293,7 @@ DQ
                                                 <outlet property="nextKeyView" destination="202" id="882"/>
                                             </connections>
                                         </textField>
-                                        <button tag="6" id="201">
+                                        <button fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="201">
                                             <rect key="frame" x="31" y="102" width="111" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="max_trace_level:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="6" inset="2" id="761">
@@ -305,12 +304,12 @@ DQ
                                                 <action selector="globalsGlobalsTarget:" target="-2" id="437"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="202">
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="202">
                                             <rect key="frame" x="158" y="73" width="48" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="762">
                                                 <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
@@ -318,7 +317,7 @@ DQ
                                                 <outlet property="nextKeyView" destination="204" id="883"/>
                                             </connections>
                                         </textField>
-                                        <button tag="7" id="203">
+                                        <button fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="203">
                                             <rect key="frame" x="31" y="74" width="121" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="number_of_waves:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="7" inset="2" id="763">
@@ -329,12 +328,12 @@ DQ
                                                 <action selector="globalsGlobalsTarget:" target="-2" id="439"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="204">
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="204">
                                             <rect key="frame" x="158" y="45" width="48" height="20"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="764">
                                                 <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
@@ -342,7 +341,7 @@ DQ
                                                 <outlet property="nextKeyView" destination="871" id="884"/>
                                             </connections>
                                         </textField>
-                                        <button tag="8" id="205">
+                                        <button fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="205">
                                             <rect key="frame" x="31" y="46" width="123" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="max_intersections:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="8" inset="2" id="765">
@@ -353,7 +352,7 @@ DQ
                                                 <action selector="globalsGlobalsTarget:" target="-2" id="441"/>
                                             </connections>
                                         </button>
-                                        <button tag="11" id="210">
+                                        <button fixedFrame="YES" tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="210">
                                             <rect key="frame" x="243" y="157" width="61" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="charset" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="11" inset="2" id="770">
@@ -364,7 +363,7 @@ DQ
                                                 <action selector="globalsGlobalsTarget:" target="-2" id="443"/>
                                             </connections>
                                         </button>
-                                        <popUpButton verticalHuggingPriority="750" id="211">
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="211">
                                             <rect key="frame" x="307" y="153" width="82" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <popUpButtonCell key="cell" type="push" title="sys" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="215" id="771">
@@ -382,7 +381,7 @@ DQ
                                                 <action selector="setModified:" target="-2" id="444"/>
                                             </connections>
                                         </popUpButton>
-                                        <button tag="12" id="216">
+                                        <button fixedFrame="YES" tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="216">
                                             <rect key="frame" x="243" y="128" width="108" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="noise_generator" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="12" inset="2" id="772">
@@ -393,7 +392,7 @@ DQ
                                                 <action selector="globalsGlobalsTarget:" target="-2" id="445"/>
                                             </connections>
                                         </button>
-                                        <popUpButton verticalHuggingPriority="750" id="217">
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="217">
                                             <rect key="frame" x="354" y="126" width="153" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <popUpButtonCell key="cell" type="push" title="3 (Perlin noise)" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="221" id="773">
@@ -411,7 +410,7 @@ DQ
                                                 <action selector="setModified:" target="-2" id="446"/>
                                             </connections>
                                         </popUpButton>
-                                        <button tag="13" id="869">
+                                        <button fixedFrame="YES" tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="869">
                                             <rect key="frame" x="243" y="97" width="96" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <buttonCell key="cell" type="check" title="mm_per_unit:" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="870">
@@ -422,12 +421,12 @@ DQ
                                                 <action selector="globalsGlobalsTarget:" target="-2" id="887"/>
                                             </connections>
                                         </button>
-                                        <textField verticalHuggingPriority="750" id="871">
+                                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="871">
                                             <rect key="frame" x="346" y="98" width="40" height="19"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="10" drawsBackground="YES" id="872">
                                                 <font key="font" metaFont="smallSystem"/>
-                                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                             <connections>
@@ -443,15 +442,15 @@ DQ
                                     <rect key="frame" x="10" y="33" width="539" height="372"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box title="Title" titlePosition="noTitle" id="701">
+                                        <box title="Title" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="701">
                                             <rect key="frame" x="1" y="238" width="537" height="108"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="8I3-kZ-GA9">
-                                                <rect key="frame" x="2" y="2" width="533" height="104"/>
+                                                <rect key="frame" x="4" y="5" width="529" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <button tag="2" id="889">
-                                                        <rect key="frame" x="26" y="65" width="70" height="20"/>
+                                                    <button tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="889">
+                                                        <rect key="frame" x="26" y="61" width="70" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="check" title="Samples:" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="890">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -461,8 +460,8 @@ DQ
                                                             <action selector="globalsSubsurfaceTarget:" target="-2" id="907"/>
                                                         </connections>
                                                     </button>
-                                                    <button tag="3" id="891">
-                                                        <rect key="frame" x="26" y="37" width="71" height="20"/>
+                                                    <button tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="891">
+                                                        <rect key="frame" x="26" y="33" width="71" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="check" title="Radiosity" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" tag="3" inset="2" id="892">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -472,26 +471,26 @@ DQ
                                                             <action selector="globalsSubsurfaceTarget:" target="-2" id="923"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="893">
-                                                        <rect key="frame" x="102" y="65" width="38" height="19"/>
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="893">
+                                                        <rect key="frame" x="102" y="61" width="38" height="19"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="894">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="895">
-                                                        <rect key="frame" x="154" y="65" width="38" height="19"/>
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="895">
+                                                        <rect key="frame" x="154" y="61" width="38" height="19"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="896">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="897">
-                                                        <rect key="frame" x="142" y="67" width="15" height="14"/>
+                                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="897">
+                                                        <rect key="frame" x="142" y="63" width="15" height="14"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="," id="898">
                                                             <font key="font" metaFont="smallSystem"/>
@@ -499,8 +498,8 @@ DQ
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="911">
-                                                        <rect key="frame" x="102" y="36" width="108" height="18"/>
+                                                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="911">
+                                                        <rect key="frame" x="102" y="32" width="108" height="18"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         <size key="cellSize" width="39" height="18"/>
@@ -527,7 +526,7 @@ DQ
                                                 </subviews>
                                             </view>
                                         </box>
-                                        <button tag="1" id="703">
+                                        <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="703">
                                             <rect key="frame" x="7" y="344" width="167" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Subsurface Light Transport" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="5" inset="2" id="853">
@@ -538,7 +537,7 @@ DQ
                                                 <action selector="globalsSubsurfaceOn:" target="-2" id="920"/>
                                             </connections>
                                         </button>
-                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="909">
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="909">
                                             <rect key="frame" x="12" y="24" width="513" height="196"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" id="910">
@@ -562,19 +561,19 @@ To avoid seams between objects, they currently must share a common interior.  
                                     <rect key="frame" x="10" y="33" width="539" height="372"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box id="222">
+                                        <box translatesAutoresizingMaskIntoConstraints="NO" id="222">
                                             <rect key="frame" x="0.0" y="0.0" width="536" height="367"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="tpO-pi-qUb">
-                                                <rect key="frame" x="2" y="2" width="532" height="350"/>
+                                                <rect key="frame" x="4" y="5" width="528" height="347"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField verticalHuggingPriority="750" id="258">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="258">
                                                         <rect key="frame" x="121" y="260" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="775">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -582,7 +581,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="260" id="713"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="1" id="259">
+                                                    <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="259">
                                                         <rect key="frame" x="14" y="261" width="100" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="pretrace_start:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="1" inset="2" id="776">
@@ -593,12 +592,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="517"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="260">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="260">
                                                         <rect key="frame" x="121" y="230" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="777">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -606,7 +605,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="262" id="714"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="2" id="261">
+                                                    <button tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="261">
                                                         <rect key="frame" x="14" y="231" width="95" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="pretrace_end:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="2" inset="2" id="778">
@@ -617,12 +616,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="518"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="262">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="262">
                                                         <rect key="frame" x="121" y="200" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="779">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -630,7 +629,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="264" id="715"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="3" id="263">
+                                                    <button tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="263">
                                                         <rect key="frame" x="14" y="201" width="84" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="brightness:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="3" inset="2" id="780">
@@ -641,12 +640,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="519"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="264">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="264">
                                                         <rect key="frame" x="121" y="320" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="781">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -654,7 +653,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="284" id="716"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="4" id="265">
+                                                    <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="265">
                                                         <rect key="frame" x="14" y="321" width="84" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="count:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="4" inset="2" id="782">
@@ -665,12 +664,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="520"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="266">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="266">
                                                         <rect key="frame" x="121" y="293" width="48" height="19"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="783">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -678,7 +677,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="286" id="723"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="5" id="267">
+                                                    <button tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="267">
                                                         <rect key="frame" x="14" y="293" width="101" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="nearest_count:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="5" inset="2" id="784">
@@ -689,12 +688,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="521"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="270">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="270">
                                                         <rect key="frame" x="467" y="120" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="787">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -702,7 +701,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="258" id="728"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="6" id="271">
+                                                    <button tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="271">
                                                         <rect key="frame" x="353" y="121" width="105" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="recursion_limit:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="6" inset="2" id="788">
@@ -713,7 +712,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="522"/>
                                                         </connections>
                                                     </button>
-                                                    <button tag="7" id="295">
+                                                    <button tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="295">
                                                         <rect key="frame" x="14" y="144" width="101" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="always_sample" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="7" inset="2" id="803">
@@ -721,7 +720,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <font key="font" metaFont="smallSystem"/>
                                                         </buttonCell>
                                                     </button>
-                                                    <button tag="15" id="291">
+                                                    <button tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="291">
                                                         <rect key="frame" x="353" y="177" width="111" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="minimum_reuse:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="15" inset="2" id="799">
@@ -732,12 +731,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="535"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="288">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="288">
                                                         <rect key="frame" x="467" y="204" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="796">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -745,12 +744,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="290" id="725"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="290">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="290">
                                                         <rect key="frame" x="467" y="176" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="798">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -758,7 +757,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="292" id="726"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="16" id="293">
+                                                    <button tag="16" translatesAutoresizingMaskIntoConstraints="NO" id="293">
                                                         <rect key="frame" x="353" y="149" width="87" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="adc_bailout:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="16" inset="2" id="801">
@@ -769,7 +768,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="536"/>
                                                         </connections>
                                                     </button>
-                                                    <button tag="13" id="287">
+                                                    <button tag="13" translatesAutoresizingMaskIntoConstraints="NO" id="287">
                                                         <rect key="frame" x="353" y="233" width="106" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="gray_threshold:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="13" inset="2" id="795">
@@ -780,12 +779,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="533"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="292">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="292">
                                                         <rect key="frame" x="467" y="148" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="800">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -793,7 +792,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="270" id="727"/>
                                                         </connections>
                                                     </textField>
-                                                    <button id="257">
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="257">
                                                         <rect key="frame" x="14" y="118" width="81" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="normal on" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="774">
@@ -804,7 +803,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="setModified:" target="-2" id="552"/>
                                                         </connections>
                                                     </button>
-                                                    <button tag="12" id="285">
+                                                    <button tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="285">
                                                         <rect key="frame" x="14" y="171" width="92" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="error_bound:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="12" inset="2" id="793">
@@ -815,7 +814,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="532"/>
                                                         </connections>
                                                     </button>
-                                                    <button id="294">
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="294">
                                                         <rect key="frame" x="14" y="93" width="75" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="media on" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="802">
@@ -826,7 +825,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="setModified:" target="-2" id="553"/>
                                                         </connections>
                                                     </button>
-                                                    <button tag="11" id="269">
+                                                    <button tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="269">
                                                         <rect key="frame" x="353" y="261" width="93" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="max_sample:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="11" inset="2" id="786">
@@ -837,12 +836,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="531"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="286">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="286">
                                                         <rect key="frame" x="467" y="232" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="794">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -850,24 +849,24 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="288" id="724"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="284">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="284">
                                                         <rect key="frame" x="121" y="171" width="48" height="19"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="792">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
                                                             <action selector="setModified:" target="-2" id="547"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="268">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="268">
                                                         <rect key="frame" x="467" y="260" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="785">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -875,7 +874,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="266" id="722"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="14" id="289">
+                                                    <button tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="289">
                                                         <rect key="frame" x="353" y="205" width="113" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="low_error_factor:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="14" inset="2" id="797">
@@ -886,8 +885,8 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="534"/>
                                                         </connections>
                                                     </button>
-                                                    <button tag="7" id="924">
-                                                        <rect key="frame" x="174" y="320" width="139" height="20"/>
+                                                    <button tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="924">
+                                                        <rect key="frame" x="174" y="317" width="139" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="check" title="Number of directions:" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="925">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -897,8 +896,8 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="933"/>
                                                         </connections>
                                                     </button>
-                                                    <button tag="8" id="926">
-                                                        <rect key="frame" x="174" y="292" width="126" height="20"/>
+                                                    <button tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="926">
+                                                        <rect key="frame" x="174" y="289" width="126" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="check" title="Adaptive prectrace:" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="927">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -908,8 +907,8 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="932"/>
                                                         </connections>
                                                     </button>
-                                                    <button id="934">
-                                                        <rect key="frame" x="14" y="67" width="126" height="20"/>
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="934">
+                                                        <rect key="frame" x="14" y="64" width="126" height="20"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <buttonCell key="cell" type="check" title="subsurface" bezelStyle="regularSquare" imagePosition="left" controlSize="small" inset="2" id="935">
                                                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -919,28 +918,28 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsRadiosityTarget:" target="-2" id="936"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="928">
-                                                        <rect key="frame" x="313" y="293" width="48" height="19"/>
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="928">
+                                                        <rect key="frame" x="313" y="290" width="48" height="19"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="929">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="930">
-                                                        <rect key="frame" x="313" y="321" width="48" height="19"/>
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="930">
+                                                        <rect key="frame" x="313" y="318" width="48" height="19"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="931">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
                                                 </subviews>
                                             </view>
                                         </box>
-                                        <button id="225">
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="225">
                                             <rect key="frame" x="5" y="356" width="87" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Radiosity" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="815">
@@ -959,19 +958,19 @@ To avoid seams between objects, they currently must share a common interior.  
                                     <rect key="frame" x="10" y="33" width="539" height="372"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box id="321">
+                                        <box translatesAutoresizingMaskIntoConstraints="NO" id="321">
                                             <rect key="frame" x="0.0" y="0.0" width="538" height="367"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="X2L-ep-ZVx">
-                                                <rect key="frame" x="2" y="2" width="534" height="350"/>
+                                                <rect key="frame" x="4" y="5" width="530" height="347"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <textField verticalHuggingPriority="750" id="326">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="326">
                                                         <rect key="frame" x="84" y="308" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="818">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -979,7 +978,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="357" id="736"/>
                                                         </connections>
                                                     </textField>
-                                                    <matrix verticalHuggingPriority="750" tag="14" allowsEmptySelection="NO" autosizesCells="NO" id="369">
+                                                    <matrix verticalHuggingPriority="750" tag="14" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="369">
                                                         <rect key="frame" x="13" y="277" width="64" height="52"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1005,12 +1004,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="589"/>
                                                         </connections>
                                                     </matrix>
-                                                    <textField verticalHuggingPriority="750" id="357">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="357">
                                                         <rect key="frame" x="84" y="280" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="830">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1018,12 +1017,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="366" id="737"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="366">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="366">
                                                         <rect key="frame" x="100" y="250" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="834">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1031,7 +1030,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="325" id="738"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="1" id="343">
+                                                    <button tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="343">
                                                         <rect key="frame" x="13" y="253" width="81" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="gather min" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="1" inset="2" id="827">
@@ -1042,12 +1041,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="590"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="325">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="325">
                                                         <rect key="frame" x="183" y="250" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="817">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1055,12 +1054,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="335" id="739"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="335">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="335">
                                                         <rect key="frame" x="100" y="221" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="822">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1068,7 +1067,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="339" id="740"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="3" id="364">
+                                                    <button tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="364">
                                                         <rect key="frame" x="13" y="223" width="55" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="media" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="3" inset="2" id="832">
@@ -1079,12 +1078,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="592"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="339">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="339">
                                                         <rect key="frame" x="215" y="222" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="826">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1092,7 +1091,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="371" id="741"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="4" id="333">
+                                                    <button tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="333">
                                                         <rect key="frame" x="153" y="224" width="61" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title=", factor" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="4" inset="2" id="821">
@@ -1103,7 +1102,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="593"/>
                                                         </connections>
                                                     </button>
-                                                    <button tag="10" id="338">
+                                                    <button tag="10" translatesAutoresizingMaskIntoConstraints="NO" id="338">
                                                         <rect key="frame" x="13" y="49" width="92" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="photon file" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="10" inset="2" id="825">
@@ -1114,7 +1113,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="599"/>
                                                         </connections>
                                                     </button>
-                                                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" id="340">
+                                                    <matrix verticalHuggingPriority="750" allowsEmptySelection="NO" autosizesCells="NO" translatesAutoresizingMaskIntoConstraints="NO" id="340">
                                                         <rect key="frame" x="109" y="29" width="63" height="38"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1140,12 +1139,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="600"/>
                                                         </connections>
                                                     </matrix>
-                                                    <textField verticalHuggingPriority="750" id="324">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="324">
                                                         <rect key="frame" x="164" y="36" width="340" height="22"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="thefile" drawsBackground="YES" id="816">
                                                             <font key="font" metaFont="system"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1153,7 +1152,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="353" id="747"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="8" id="365">
+                                                    <button tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="365">
                                                         <rect key="frame" x="13" y="129" width="111" height="18"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="max_trace_level:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="8" inset="2" id="833">
@@ -1164,12 +1163,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="597"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="336">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="336">
                                                         <rect key="frame" x="127" y="128" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="823">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1177,7 +1176,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="376" id="745"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="7" id="331">
+                                                    <button tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="331">
                                                         <rect key="frame" x="13" y="159" width="51" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="jitter:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="7" inset="2" id="820">
@@ -1188,12 +1187,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="596"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="355">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="355">
                                                         <rect key="frame" x="127" y="156" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="829">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1201,7 +1200,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="336" id="744"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="12" id="337">
+                                                    <button tag="12" translatesAutoresizingMaskIntoConstraints="NO" id="337">
                                                         <rect key="frame" x="348" y="227" width="73" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="autostop:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="12" inset="2" id="824">
@@ -1212,7 +1211,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="602"/>
                                                         </connections>
                                                     </button>
-                                                    <button tag="11" id="327">
+                                                    <button tag="11" translatesAutoresizingMaskIntoConstraints="NO" id="327">
                                                         <rect key="frame" x="348" y="255" width="87" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="adc_bailout:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="11" inset="2" id="819">
@@ -1223,12 +1222,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="601"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="359">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="359">
                                                         <rect key="frame" x="462" y="224" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="831">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1236,12 +1235,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="326" id="749"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="353">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="353">
                                                         <rect key="frame" x="462" y="252" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="828">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1249,12 +1248,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="359" id="748"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="371">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="371">
                                                         <rect key="frame" x="120" y="193" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="835">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1262,7 +1261,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="373" id="742"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="5" id="372">
+                                                    <button tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="372">
                                                         <rect key="frame" x="13" y="196" width="105" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="expand_thresh." bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="5" inset="2" id="836">
@@ -1273,12 +1272,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="594"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="373">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="373">
                                                         <rect key="frame" x="202" y="194" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="837">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1286,7 +1285,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="355" id="743"/>
                                                         </connections>
                                                     </textField>
-                                                    <button tag="9" id="375">
+                                                    <button tag="9" translatesAutoresizingMaskIntoConstraints="NO" id="375">
                                                         <rect key="frame" x="13" y="103" width="59" height="16"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <buttonCell key="cell" type="check" title="radius:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="9" inset="2" id="838">
@@ -1297,12 +1296,12 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <action selector="globalsPhotonsTarget:" target="-2" id="598"/>
                                                         </connections>
                                                     </button>
-                                                    <textField verticalHuggingPriority="750" id="376">
+                                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="376">
                                                         <rect key="frame" x="127" y="100" width="48" height="20"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="1.0" drawsBackground="YES" id="839">
                                                             <font key="font" metaFont="smallSystem"/>
-                                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                         <connections>
@@ -1310,7 +1309,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <outlet property="nextKeyView" destination="324" id="746"/>
                                                         </connections>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="628">
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="628">
                                                         <rect key="frame" x="153" y="253" width="31" height="14"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="max:" id="840">
@@ -1319,7 +1318,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                         </textFieldCell>
                                                     </textField>
-                                                    <textField verticalHuggingPriority="750" id="629">
+                                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="629">
                                                         <rect key="frame" x="173" y="196" width="31" height="14"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="min:" id="841">
@@ -1331,7 +1330,7 @@ To avoid seams between objects, they currently must share a common interior.  
                                                 </subviews>
                                             </view>
                                         </box>
-                                        <button id="368">
+                                        <button translatesAutoresizingMaskIntoConstraints="NO" id="368">
                                             <rect key="frame" x="5" y="356" width="87" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <buttonCell key="cell" type="check" title="Photons" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="842">
@@ -1347,7 +1346,7 @@ To avoid seams between objects, they currently must share a common interior.  
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
-                    <button verticalHuggingPriority="750" id="179">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="179">
                         <rect key="frame" x="267" y="12" width="72" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="857">
@@ -1358,7 +1357,7 @@ To avoid seams between objects, they currently must share a common interior.  
                             <action selector="openButton:" target="-2" id="422"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="178">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="178">
                         <rect key="frame" x="337" y="12" width="69" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="856">
@@ -1369,19 +1368,19 @@ To avoid seams between objects, they currently must share a common interior.  
                             <action selector="saveButton:" target="-2" id="423"/>
                         </connections>
                     </button>
-                    <customView id="632" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="632" customClass="greenLed">
                         <rect key="frame" x="325" y="475" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <customView id="633" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="633" customClass="greenLed">
                         <rect key="frame" x="403" y="475" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <customView id="706" customClass="greenLed">
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="706" customClass="greenLed">
                         <rect key="frame" x="225" y="475" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
-                    <button id="710">
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="710">
                         <rect key="frame" x="17" y="42" width="198" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="check" title="don't wrap in global_settings {...}" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" inset="2" id="859">

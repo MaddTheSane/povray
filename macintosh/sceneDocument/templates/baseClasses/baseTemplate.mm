@@ -203,22 +203,9 @@ static const char *templateTypeNameArray[]={
 
 
 //---------------------------------------------------------------------
-// setKeyName
-//---------------------------------------------------------------------
--(void)setKeyName:(NSString*)name
-{
-	[keyName release];
-	keyName=name;
-	[keyName retain];
-}
-
-//---------------------------------------------------------------------
 // keyName
 //---------------------------------------------------------------------
--(NSString *) keyName
-{
-	return keyName;
-}
+@synthesize keyName;
 
 //---------------------------------------------------------------------
 // defaultPreferencesName
@@ -446,17 +433,9 @@ static const char *templateTypeNameArray[]={
 }
 
 //---------------------------------------------------------------------
-// setWindow
+// window
 //---------------------------------------------------------------------
--(void) setWindow:(id)window
-{
-	// don't release the window,
-	// when the owner is released it will be freed
-	// if we do it now, some objects will be missing
-	// if pigment, normal, .. is used in material editor
-//	[mWindow release];	
-	mWindow=window;
-}
+@synthesize window=mWindow;
 
 //---------------------------------------------------------------------
 // updateControls

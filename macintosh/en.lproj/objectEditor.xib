@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,7 +18,6 @@
                 <outlet property="mInsertButton" destination="22" id="57"/>
                 <outlet property="mTableView" destination="11" id="69"/>
                 <outlet property="mTrashButton" destination="19" id="50"/>
-                <outlet property="mWindow" destination="5" id="41"/>
                 <outlet property="objectEditorActionOnPoints" destination="91" id="105"/>
                 <outlet property="objectEditorAddButton" destination="9" id="127"/>
                 <outlet property="objectEditorApplyMoveDownButton" destination="104" id="123"/>
@@ -42,6 +41,7 @@
                 <outlet property="templateOpenButton" destination="23" id="116"/>
                 <outlet property="templateResetButton" destination="16" id="115"/>
                 <outlet property="templateSaveButton" destination="24" id="118"/>
+                <outlet property="window" destination="5" id="41"/>
                 <outlet property="yColumn" destination="14" id="70"/>
             </connections>
         </customObject>
@@ -51,7 +51,7 @@
             <windowStyleMask key="styleMask" titled="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="348" y="123" width="649" height="537"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="649" height="537"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="649" height="537"/>
@@ -308,7 +308,7 @@ DQ
                                                 <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </tableColumn>
-                                        <tableColumn identifier="y" width="68.51318359375" minWidth="49.51318359375" maxWidth="80" id="14">
+                                        <tableColumn identifier="y" width="68.5" minWidth="49.51318359375" maxWidth="80" id="14">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="y-Value">
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -327,11 +327,11 @@ DQ
                                 </tableView>
                             </subviews>
                         </clipView>
-                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="229">
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="229">
                             <rect key="frame" x="-100" y="-100" width="249" height="15"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="228">
+                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="228">
                             <rect key="frame" x="-30" y="17" width="15" height="302"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>

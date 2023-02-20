@@ -109,9 +109,6 @@ NS_ENUM(NSInteger) {
 	menuTagTemplatePrism						=104,
 	menuTagTemplateSor							=105
 };
-#if 0
-}
-#endif
 
 enum {
 	cXYZVectorPopupXisYisZ		=0,
@@ -179,7 +176,7 @@ enum eImageMap {
 
 
 @interface BaseTemplate : NSObject <NSTabViewDelegate,NSTableViewDelegate>{
-	IBOutlet NSPanel			*mWindow;
+					 NSPanel			*mWindow;
 	IBOutlet NSButton		*templateOkButton;
 	IBOutlet NSButton		*templateCancelButton;
 	IBOutlet NSButton		*templateResetButton;
@@ -201,13 +198,13 @@ enum eImageMap {
 }
 
 -(id) initWithDocumentPointer:(id) caller andDictionary:(NSMutableDictionary*)preferences forType:(unsigned int) templateType;
--(void)setKeyName:(NSString*)name;
--(NSString *) keyName;
+@property (atomic, copy) NSString *keyName;
 -(id) caller;
 -(id) fileOwner;
 
+@property (assign) IBOutlet NSPanel *window;
 -(void) setWindow:(id)window;
--(NSPanel*) getWindow;
+-(NSPanel*) getWindow NS_DEPRECATED_WITH_REPLACEMENT_MAC("-window", 10.2, 10.9);
 -(IBAction) okButton:(id)sender;
 -(IBAction) cancelButton: (id)sender;
 -(IBAction) resetButton: (id)sender;

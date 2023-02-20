@@ -361,11 +361,6 @@
 		826CBA3E11035E82002B4FD0 /* libilmbase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 825D610711031C3A00E0FF88 /* libilmbase.a */; };
 		826CBA3F11035E82002B4FD0 /* libopenexr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 825D5FEA1103170E00E0FF88 /* libopenexr.a */; };
 		826CBA621D034D5E000A7A98 /* alpha.icns in Resources */ = {isa = PBXBuildFile; fileRef = 826CB9D51D034D23000A7A98 /* alpha.icns */; };
-		826CBA7F1D034D5E000A7A98 /* MPDocumentIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 826CB9F21D034D23000A7A98 /* MPDocumentIcon.icns */; };
-		826CBA801D034D5E000A7A98 /* MPIncludeIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 826CB9F31D034D23000A7A98 /* MPIncludeIcon.icns */; };
-		826CBA811D034D5E000A7A98 /* MPIniIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 826CB9F41D034D23000A7A98 /* MPIniIcon.icns */; };
-		826CBA821D034D5E000A7A98 /* MPTemplateIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 826CB9F51D034D23000A7A98 /* MPTemplateIcon.icns */; };
-		826CBA971D034D5E000A7A98 /* Scene.icns in Resources */ = {isa = PBXBuildFile; fileRef = 826CBA0A1D034D23000A7A98 /* Scene.icns */; };
 		826CBAA31D034DA6000A7A98 /* Documentation in Resources */ = {isa = PBXBuildFile; fileRef = 826CBAA21D034DA5000A7A98 /* Documentation */; };
 		826CBAA61D034E00000A7A98 /* ilmBase.pch in Headers */ = {isa = PBXBuildFile; fileRef = 826CB7731D034CC4000A7A98 /* ilmBase.pch */; };
 		826CBAA71D034E03000A7A98 /* openexr.pch in Headers */ = {isa = PBXBuildFile; fileRef = 826CB7741D034CC4000A7A98 /* openexr.pch */; };
@@ -6123,11 +6118,6 @@
 		826CB7D51D034CC4000A7A98 /* toolTipAutomator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = toolTipAutomator.h; sourceTree = "<group>"; };
 		826CB7D61D034CC4000A7A98 /* toolTipAutomator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = toolTipAutomator.mm; sourceTree = "<group>"; };
 		826CB9D51D034D23000A7A98 /* alpha.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = alpha.icns; sourceTree = "<group>"; };
-		826CB9F21D034D23000A7A98 /* MPDocumentIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MPDocumentIcon.icns; sourceTree = "<group>"; };
-		826CB9F31D034D23000A7A98 /* MPIncludeIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MPIncludeIcon.icns; sourceTree = "<group>"; };
-		826CB9F41D034D23000A7A98 /* MPIniIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MPIniIcon.icns; sourceTree = "<group>"; };
-		826CB9F51D034D23000A7A98 /* MPTemplateIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MPTemplateIcon.icns; sourceTree = "<group>"; };
-		826CBA0A1D034D23000A7A98 /* Scene.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Scene.icns; sourceTree = "<group>"; };
 		826CBAA21D034DA5000A7A98 /* Documentation */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Documentation; sourceTree = "<group>"; };
 		826CBAAE1D034E4C000A7A98 /* platformbase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = platformbase.cpp; sourceTree = "<group>"; };
 		826CBAAF1D034E4C000A7A98 /* vfeplatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vfeplatform.h; sourceTree = "<group>"; };
@@ -15366,11 +15356,6 @@
 			isa = PBXGroup;
 			children = (
 				826CB9D51D034D23000A7A98 /* alpha.icns */,
-				826CB9F21D034D23000A7A98 /* MPDocumentIcon.icns */,
-				826CB9F31D034D23000A7A98 /* MPIncludeIcon.icns */,
-				826CB9F41D034D23000A7A98 /* MPIniIcon.icns */,
-				826CB9F51D034D23000A7A98 /* MPTemplateIcon.icns */,
-				826CBA0A1D034D23000A7A98 /* Scene.icns */,
 				5567B88A211394E2003BFAE4 /* Icons.xcassets */,
 			);
 			path = Icons;
@@ -16217,11 +16202,7 @@
 				82E3D1541D450E2C00AE5B03 /* bodymapLocalized.strings in Resources */,
 				82BF5BFE1D4536D6006E40D9 /* MainMenu.xib in Resources */,
 				82E3D15C1D450E2C00AE5B03 /* finishTemplate.xib in Resources */,
-				826CBA7F1D034D5E000A7A98 /* MPDocumentIcon.icns in Resources */,
-				826CBA801D034D5E000A7A98 /* MPIncludeIcon.icns in Resources */,
-				826CBA811D034D5E000A7A98 /* MPIniIcon.icns in Resources */,
 				82E3D1521D450E2C00AE5B03 /* batch.xib in Resources */,
-				826CBA821D034D5E000A7A98 /* MPTemplateIcon.icns in Resources */,
 				82E3D17C1D450E2C00AE5B03 /* templateConverter.xib in Resources */,
 				82E3D15F1D450E2C00AE5B03 /* globalsTemplate.xib in Resources */,
 				82E3D1651D450E2C00AE5B03 /* lightTemplate.xib in Resources */,
@@ -16232,7 +16213,6 @@
 				82E3D1771D450E2C00AE5B03 /* preferencespanel.strings in Resources */,
 				826E9EC41DC896B600D3855A /* backgroundTemplate.xib in Resources */,
 				82E3D17E1D450E2C00AE5B03 /* transformationsTemplate.xib in Resources */,
-				826CBA971D034D5E000A7A98 /* Scene.icns in Resources */,
 				82E3D1561D450E2C00AE5B03 /* cameraLocalized.strings in Resources */,
 				82E3D1611D450E2C00AE5B03 /* headerIncludeTemplate.xib in Resources */,
 				82E3D1571D450E2C00AE5B03 /* cameraTemplate.xib in Resources */,
@@ -17245,6 +17225,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3.7.0.7.3;
 				DEVELOPMENT_TEAM = "";
 				GCC_INPUT_FILETYPE = automatic;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -17254,6 +17235,7 @@
 					REENTRANT,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../libraries/jpeg\"",
 					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
@@ -17261,7 +17243,12 @@
 					"\"$(SRCROOT)/../libraries/boost\"",
 					"\"$(SRCROOT)/../source\"/**",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "POV-Ray 3.7 Unofficial";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.graphics-design";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = PovRayApplication;
+				MARKETING_VERSION = 3.7.0.7.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.povray.unofficial37;
 				PRODUCT_NAME = "POVRay 3.7.0.x";
 				PROVISIONING_PROFILE = "";
@@ -17401,6 +17388,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Installer";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 3.7.0.7.3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				GCC_INPUT_FILETYPE = automatic;
@@ -17411,6 +17399,7 @@
 					REENTRANT,
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/../libraries/jpeg\"",
 					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
@@ -17418,7 +17407,12 @@
 					"\"$(SRCROOT)/../libraries/boost\"",
 					"\"$(SRCROOT)/../source\"/**",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
+				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "POV-Ray 3.7 Unofficial";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.graphics-design";
+				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSPrincipalClass = PovRayApplication;
+				MARKETING_VERSION = 3.7.0.7.3;
 				PRODUCT_BUNDLE_IDENTIFIER = org.povray.unofficial37;
 				PRODUCT_NAME = "POVRay 3.7.0.x";
 				PROVISIONING_PROFILE = "";

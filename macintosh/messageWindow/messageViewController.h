@@ -48,8 +48,9 @@
 	NSString *mString;
 	int mStreamType;
 }
-	-(MessageString*) initWithCString: (char*)theString andStream: (int) stream;
+-(instancetype) initWithCString: (char*)theString andStream: (int) stream;
 @end
+
 @interface MessageViewController : NSObject
 {
 	IBOutlet NSTextView *mMessageView;
@@ -61,7 +62,7 @@
 	NSDictionary		*mMagentaStyle;
 	NSDictionary		*mGreenStyle;
 	NSMutableArray	*mSceneStart;
-	NSWindow				*mWindow;
+	IBOutlet NSWindow				*mWindow;
 	
     long		mTextSize;
     NSTextStorage	*mTextStorage;
