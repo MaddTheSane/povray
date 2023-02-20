@@ -17250,6 +17250,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "POV-Ray 3.7 Unofficial";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.graphics-design";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "POV-Ray Unofficial, © 1991-2003 Persistene of Vision Team. © 2003- 2016 Persistence of Vision Raytracer Pty. Ltd.Unofficial Compile by: Yvo and René© Smellenbergh e-mail: yvo.s@gmx.net";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = PovRayApplication;
 				MARKETING_VERSION = 3.7.0.7.3;
@@ -17420,6 +17421,7 @@
 				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "POV-Ray 3.7 Unofficial";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.graphics-design";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "POV-Ray Unofficial, © 1991-2003 Persistene of Vision Team. © 2003- 2016 Persistence of Vision Raytracer Pty. Ltd.Unofficial Compile by: Yvo and René© Smellenbergh e-mail: yvo.s@gmx.net";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = PovRayApplication;
 				MARKETING_VERSION = 3.7.0.7.3;
