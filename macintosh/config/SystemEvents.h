@@ -49,7 +49,7 @@
 #import <ScriptingBridge/ScriptingBridge.h>
 
 
-@class SystemEventsApplication, SystemEventsDocument, SystemEventsWindow, SystemEventsUser, SystemEventsAppearancePreferencesObject, SystemEventsCDAndDVDPreferencesObject, SystemEventsInsertionPreference, SystemEventsDesktop, SystemEventsDockPreferencesObject, SystemEventsLoginItem, SystemEventsConfiguration, SystemEventsInterface, SystemEventsLocation, SystemEventsNetworkPreferencesObject, SystemEventsService, SystemEventsScreenSaver, SystemEventsScreenSaverPreferencesObject, SystemEventsSecurityPreferencesObject, SystemEventsDiskItem, SystemEventsAlias, SystemEventsDisk, SystemEventsDomain, SystemEventsClassicDomainObject, SystemEventsFile, SystemEventsFilePackage, SystemEventsFolder, SystemEventsLocalDomainObject, SystemEventsNetworkDomainObject, SystemEventsSystemDomainObject, SystemEventsUserDomainObject, SystemEventsFolderAction, SystemEventsScript, SystemEventsAction, SystemEventsAttribute, SystemEventsUIElement, SystemEventsBrowser, SystemEventsBusyIndicator, SystemEventsButton, SystemEventsCheckbox, SystemEventsColorWell, SystemEventsColumn, SystemEventsComboBox, SystemEventsDrawer, SystemEventsGroup, SystemEventsGrowArea, SystemEventsImage, SystemEventsIncrementor, SystemEventsList, SystemEventsMenu, SystemEventsMenuBar, SystemEventsMenuBarItem, SystemEventsMenuButton, SystemEventsMenuItem, SystemEventsOutline, SystemEventsPopOver, SystemEventsPopUpButton, SystemEventsProcess, SystemEventsApplicationProcess, SystemEventsDeskAccessoryProcess, SystemEventsProgressIndicator, SystemEventsRadioButton, SystemEventsRadioGroup, SystemEventsRelevanceIndicator, SystemEventsRow, SystemEventsScrollArea, SystemEventsScrollBar, SystemEventsSheet, SystemEventsSlider, SystemEventsSplitter, SystemEventsSplitterGroup, SystemEventsStaticText, SystemEventsTabGroup, SystemEventsTable, SystemEventsTextArea, SystemEventsTextField, SystemEventsToolbar, SystemEventsValueIndicator, SystemEventsPropertyListFile, SystemEventsData, SystemEventsPropertyListItem, SystemEventsAnnotation, SystemEventsQuickTimeData, SystemEventsAudioData, SystemEventsMovieData, SystemEventsQuickTimeFile, SystemEventsAudioFile, SystemEventsMovieFile, SystemEventsTrack, SystemEventsXMLAttribute, SystemEventsXMLData, SystemEventsXMLElement, SystemEventsXMLFile, SystemEventsPrintSettings, SystemEventsScriptingClass, SystemEventsScriptingCommand, SystemEventsScriptingDefinitionObject, SystemEventsScriptingElement, SystemEventsScriptingEnumeration, SystemEventsScriptingEnumerator, SystemEventsScriptingParameter, SystemEventsScriptingProperty, SystemEventsScriptingResultObject, SystemEventsScriptingSuite;
+@class SystemEventsApplication, SystemEventsDocument, SystemEventsWindow, SystemEventsUser, SystemEventsAppearancePreferencesObject, SystemEventsCDAndDVDPreferencesObject, SystemEventsInsertionPreference, SystemEventsDesktop, SystemEventsDockPreferencesObject, SystemEventsLoginItem, SystemEventsConfiguration, SystemEventsInterface, SystemEventsLocation, SystemEventsNetworkPreferencesObject, SystemEventsService, SystemEventsScreenSaver, SystemEventsScreenSaverPreferencesObject, SystemEventsSecurityPreferencesObject, SystemEventsDiskItem, SystemEventsAlias, SystemEventsDisk, SystemEventsDomain, SystemEventsClassicDomainObject, SystemEventsFile, SystemEventsFilePackage, SystemEventsFolder, SystemEventsLocalDomainObject, SystemEventsNetworkDomainObject, SystemEventsSystemDomainObject, SystemEventsUserDomainObject, SystemEventsFolderAction, SystemEventsScript, SystemEventsAction, SystemEventsAttribute, SystemEventsUIElement, SystemEventsBrowser, SystemEventsBusyIndicator, SystemEventsButton, SystemEventsCheckbox, SystemEventsColorWell, SystemEventsColumn, SystemEventsComboBox, SystemEventsDrawer, SystemEventsGroup, SystemEventsGrowArea, SystemEventsImage, SystemEventsIncrementor, SystemEventsList, SystemEventsMenu, SystemEventsMenuBar, SystemEventsMenuBarItem, SystemEventsMenuButton, SystemEventsMenuItem, SystemEventsOutline, SystemEventsPopOver, SystemEventsPopUpButton, SystemEventsProcess, SystemEventsApplicationProcess, SystemEventsDeskAccessoryProcess, SystemEventsProgressIndicator, SystemEventsRadioButton, SystemEventsRadioGroup, SystemEventsRelevanceIndicator, SystemEventsRow, SystemEventsScrollArea, SystemEventsScrollBar, SystemEventsSheet, SystemEventsSlider, SystemEventsSplitter, SystemEventsSplitterGroup, SystemEventsStaticText, SystemEventsTabGroup, SystemEventsTable, SystemEventsTextArea, SystemEventsTextField, SystemEventsToolbar, SystemEventsValueIndicator, SystemEventsPropertyListFile, SystemEventsData, SystemEventsPropertyListItem, SystemEventsXMLAttribute, SystemEventsXMLData, SystemEventsXMLElement, SystemEventsXMLFile, SystemEventsPrintSettings, SystemEventsScriptingClass, SystemEventsScriptingCommand, SystemEventsScriptingDefinitionObject, SystemEventsScriptingElement, SystemEventsScriptingEnumeration, SystemEventsScriptingEnumerator, SystemEventsScriptingParameter, SystemEventsScriptingProperty, SystemEventsScriptingResultObject, SystemEventsScriptingSuite;
 
 typedef NS_ENUM(OSType, SystemEventsSaveOptions) {
 	SystemEventsSaveOptionsYes = 'yes ' /* Save the file. */,
@@ -102,6 +102,14 @@ typedef NS_ENUM(OSType, SystemEventsDhac) {
 	SystemEventsDhacRunAScript = 'dhrs' /* run a script */
 };
 
+typedef NS_ENUM(OSType, SystemEventsDynamicStyle) {
+	SystemEventsDynamicStyleAuto = 'atmt' /* automatic (if supported, follows light/dark appearance) */,
+	SystemEventsDynamicStyleDynamic = 'dynm' /* dynamic (if supported, updates desktop picture based on time and/or location) */,
+	SystemEventsDynamicStyleLight = 'lite' /* light */,
+	SystemEventsDynamicStyleDark = 'dark' /* dark */,
+	SystemEventsDynamicStyleUnknown = 'unk\?' /* unknown value */
+};
+
 typedef NS_ENUM(OSType, SystemEventsDpls) {
 	SystemEventsDplsBottom = 'bott' /* bottom */,
 	SystemEventsDplsLeft = 'left' /* left */,
@@ -111,6 +119,12 @@ typedef NS_ENUM(OSType, SystemEventsDpls) {
 typedef NS_ENUM(OSType, SystemEventsDpef) {
 	SystemEventsDpefGenie = 'geni' /* genie */,
 	SystemEventsDpefScale = 'scal' /* scale */
+};
+
+typedef NS_ENUM(OSType, SystemEventsDpbh) {
+	SystemEventsDpbhMinimize = 'ddmi' /* minimize */,
+	SystemEventsDpbhOff = 'ddof' /* off */,
+	SystemEventsDpbhZoom = 'ddzo' /* zoom */
 };
 
 typedef NS_ENUM(OSType, SystemEventsEdfm) {
@@ -379,6 +393,7 @@ typedef NS_ENUM(OSType, SystemEventsAccs) {
 @property (copy) id picturesFolder;  // path to folder containing pictures for changing desktop background
 @property BOOL randomOrder;  // turn on for random ordering of changing desktop pictures
 @property BOOL translucentMenuBar;  // indicates whether the menu bar is translucent
+@property SystemEventsDynamicStyle dynamicStyle;  // desktop picture dynamic style
 
 
 @end
@@ -402,10 +417,15 @@ typedef NS_ENUM(OSType, SystemEventsAccs) {
 @property BOOL animate;  // is the animation of opening applications on or off?
 @property BOOL autohide;  // is autohiding the dock on or off?
 @property double dockSize;  // size/height of the items (between 0.0 (minimum) and 1.0 (maximum))
+@property BOOL autohideMenuBar;  // is autohiding the menu bar on or off?
+@property SystemEventsDpbh doubleClickBehavior;  // behaviour when double clicking window a title bar
 @property BOOL magnification;  // is magnification on or off?
 @property double magnificationSize;  // maximum magnification size when magnification is on (between 0.0 (minimum) and 1.0 (maximum))
 @property SystemEventsDpef minimizeEffect;  // minimization effect
+@property BOOL minimizeIntoApplication;  // minimize window into its application?
 @property SystemEventsDpls screenEdge;  // location on screen
+@property BOOL showIndicators;  // show indicators for open applications?
+@property BOOL showRecents;  // show recent applications?
 
 
 @end
@@ -554,20 +574,6 @@ typedef NS_ENUM(OSType, SystemEventsAccs) {
 
 - (void) start;  // start the screen saver
 - (void) stop;  // stop the screen saver
-
-@end
-
-
-
-/*
- * Audio File Suite
- */
-
-// The System Events application
-@interface SystemEventsApplication (AudioFileSuite)
-
-- (SBElementArray<SystemEventsAudioData *> *) audioDatas;
-- (SBElementArray<SystemEventsAudioFile *> *) audioFiles;
 
 @end
 
@@ -883,20 +889,6 @@ typedef NS_ENUM(OSType, SystemEventsAccs) {
 @property (copy, readonly) NSString *path;  // the file system path of the disk
 @property (copy, readonly) NSString *POSIXPath;  // the POSIX file system path of the disk
 
-
-@end
-
-
-
-/*
- * Movie File Suite
- */
-
-// The System Events application
-@interface SystemEventsApplication (MovieFileSuite)
-
-- (SBElementArray<SystemEventsMovieData *> *) movieDatas;
-- (SBElementArray<SystemEventsMovieFile *> *) movieFiles;
 
 @end
 
@@ -1398,162 +1390,6 @@ typedef NS_ENUM(OSType, SystemEventsAccs) {
 @property (copy, readonly) NSString *name;  // the name of the property list item ( if any )
 @property (copy) NSString *text;  // the text representation of the property list data
 @property (copy) id value;  // the value of the property list item
-
-
-@end
-
-
-
-/*
- * QuickTime File Suite
- */
-
-// The System Events application
-@interface SystemEventsApplication (QuickTimeFileSuite)
-
-- (SBElementArray<SystemEventsQuickTimeData *> *) QuickTimeDatas;
-- (SBElementArray<SystemEventsQuickTimeFile *> *) QuickTimeFiles;
-
-@end
-
-// A unit of user data in a QuickTime file
-@interface SystemEventsAnnotation : SBObject <SystemEventsGenericMethods>
-
-@property (copy, readonly) NSString *fullText;  // the full text of the annotation
-- (NSString *) id;  // the unique identifier of the annotation
-@property (copy, readonly) NSString *name;  // the name of the annotation
-
-
-@end
-
-// Data in QuickTime format
-@interface SystemEventsQuickTimeData : SBObject <SystemEventsGenericMethods>
-
-- (SBElementArray<SystemEventsAnnotation *> *) annotations;
-- (SBElementArray<SystemEventsTrack *> *) tracks;
-
-@property (readonly) BOOL autoPlay;  // will the movie automatically start playing? (saved with QuickTime file)
-@property (readonly) BOOL autoPresent;  // will the movie automatically start presenting? (saved with QuickTime file)
-@property (readonly) BOOL autoQuitWhenDone;  // will the player automatically quit when done playing? (saved with QuickTime file)
-@property (copy, readonly) NSDate *creationTime;  // the creation time of the QuickTime file
-@property (readonly) NSInteger dataSize;  // the size of the QuickTime file data
-@property (readonly) NSInteger duration;  // the duration of the QuickTime file, in terms of the time scale
-@property (copy, readonly) NSString *href;  // the internet location to open when clicking on the movie (overrides track hrefs)
-@property (readonly) BOOL looping;  // keep playing the movie in a loop?
-@property (copy, readonly) NSDate *modificationTime;  // the modification time of the QuickTime file
-@property (readonly) NSInteger preferredRate;  // the preferred rate of the QuickTime file
-@property (readonly) NSInteger preferredVolume;  // the preferred volume of the QuickTime file
-@property (readonly) SystemEventsPrmd presentationMode;  // mode in which the movie will be presented
-@property (readonly) SystemEventsMvsz presentationSize;  // size at which the movie will be presented
-@property (readonly) BOOL storedStream;  // is this a stored streaming movie?
-@property (readonly) NSInteger timeScale;  // the time scale of the QuickTime file
-
-
-@end
-
-
-
-/*
- * Audio File Suite
- */
-
-// Data in Audio format
-@interface SystemEventsAudioData : SystemEventsQuickTimeData
-
-
-@end
-
-
-
-/*
- * Movie File Suite
- */
-
-// Data in Movie format
-@interface SystemEventsMovieData : SystemEventsQuickTimeData
-
-@property (copy, readonly) NSArray<NSNumber *> *bounds;  // the bounding rectangle of the movie file
-@property (copy, readonly) NSArray<NSNumber *> *naturalDimensions;  // the dimensions the movie has when it is not scaled
-@property (readonly) NSInteger previewDuration;  // the preview duration of the movie file
-@property (readonly) NSInteger previewTime;  // the preview time of the movie file
-
-
-@end
-
-
-
-/*
- * QuickTime File Suite
- */
-
-// A file containing data in QuickTime format
-@interface SystemEventsQuickTimeFile : SystemEventsFile
-
-@property (copy, readonly) SystemEventsQuickTimeData *contents;  // the contents of the QuickTime file; elements and properties of the QuickTime data may be accessed as if they were elements and properties of the QuickTime file
-
-
-@end
-
-
-
-/*
- * Audio File Suite
- */
-
-// A file containing data in Audio format
-@interface SystemEventsAudioFile : SystemEventsQuickTimeFile
-
-@property (copy, readonly) SystemEventsAudioData *contents;  // the contents of the audio file; elements and properties of the audio data may be accessed as if they were elements and properties of the audio file
-
-
-@end
-
-
-
-/*
- * Movie File Suite
- */
-
-// A file containing data in Movie format
-@interface SystemEventsMovieFile : SystemEventsQuickTimeFile
-
-@property (copy, readonly) SystemEventsMovieData *contents;  // the contents of the movie file; elements and properties of the movie data may be accessed as if they were elements and properties of the movie file
-
-
-@end
-
-
-
-/*
- * QuickTime File Suite
- */
-
-// A track in a QuickTime file
-@interface SystemEventsTrack : SBObject <SystemEventsGenericMethods>
-
-- (SBElementArray<SystemEventsAnnotation *> *) annotations;
-
-@property (readonly) NSInteger audioChannelCount;  // the number of channels in the audio
-@property (readonly) BOOL audioCharacteristic;  // can the track be heard?
-@property (readonly) double audioSampleRate;  // the sample rate of the audio in kHz
-@property (readonly) NSInteger audioSampleSize;  // the size of uncompressed audio samples in bits
-@property (copy, readonly) NSDate *creationTime;  // the creation time of the track
-@property (copy, readonly) NSString *dataFormat;  // the data format
-@property (readonly) NSInteger dataRate;  // the data rate (bytes/sec) of the track
-@property (readonly) NSInteger dataSize;  // the size of the track data
-@property (copy, readonly) NSArray<NSNumber *> *dimensions;  // the current dimensions of the track
-@property (readonly) NSInteger duration;  // the duration of the track, in terms of the time scale
-@property BOOL enabled;  // should this track be used when the movie is playing?
-@property BOOL highQuality;  // is the track high quality?
-@property (copy, readonly) NSString *href;  // the internet location to open when clicking on the track
-@property (copy, readonly) NSString *kind;  // the name of the media in the track, in the current language (e.g., 'Sound', 'Video', 'Text', ...)
-@property (copy, readonly) NSDate *modificationTime;  // the modification time of the track
-@property (copy, readonly) NSString *name;  // the name of the track
-@property NSInteger startTime;  // the time delay before this track starts playing
-@property (copy, readonly) NSString *type;  // the type of media in the track (e.g., 'soun', 'vide', 'text', ...)
-@property (copy, readonly) NSString *typeClass;  // deprecated: use "type" instead ( included only to resolve a terminology conflict, script text will be updated upon compilation )
-@property (readonly) NSInteger videoDepth;  // the color depth of the video
-@property (readonly) BOOL visualCharacteristic;  // can the track be seen?
 
 
 @end
