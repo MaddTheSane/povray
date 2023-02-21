@@ -132,25 +132,26 @@ typedef NS_ENUM(NSInteger, windowInFront) {
 	NSMutableParagraphStyle	*mDefaultParagraphStyle;
 
 }
-+ (appPreferencesController*) sharedInstance;
+
+@property (readonly, class, retain) appPreferencesController *sharedInstance NS_SWIFT_NAME(shared);
 -(NSDictionary*) style:(textStyles)type;
--(float) scaleFactor;
+@property (readonly) float scaleFactor;
 -(void) setIncludePathArray:(id) pathsArray;
 -(IBAction)selectInsertMenuMainDirectoryButton:(id)sender;
 -(IBAction)applicationPreferences:(id)sender;
 -(void) setAddChangeRemoveButtons;
 -(void) selectionIncludePathTableViewChanged:(NSNotification *) notification;
--(void)controlTextDidChange:(NSNotification *)aNotification;
+-(void) controlTextDidChange:(NSNotification *)aNotification;
 -(void) deactivateColorWells;
 @property (getter=isModified) BOOL modified;
 -(void) buildSyntaxStyles;
 -(void) buildDefaultParagraphStyle;
--(IBAction)displayGammaButton:(id)sender;
+-(IBAction) displayGammaButton:(id)sender;
 -(void) storeNewAppPreferences;
 -(IBAction) selectFont:(id) sender;
 -(IBAction) colorChanged:(id) sender;
 -(IBAction) rememberOpenWindowsButton:(id) sender;
-- (IBAction)AlwaysPutPreviewwindowInFrontButton:(id)sender;
+-(IBAction) AlwaysPutPreviewwindowInFrontButton:(id)sender;
 -(IBAction) insertMenuImageSizeSlider:(id) sender;
 
 -(IBAction) pointMatrix:(id) sender;

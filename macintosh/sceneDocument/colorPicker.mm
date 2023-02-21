@@ -49,14 +49,6 @@
 
 
 //---------------------------------------------------------------------
-// dealloc
-//---------------------------------------------------------------------
--(void) dealloc
-{
-	[super dealloc];
-}
-
-//---------------------------------------------------------------------
 // awakeFromNib
 //---------------------------------------------------------------------
 -(void) awakeFromNib
@@ -154,7 +146,7 @@
 	// this doesn't work right now,
 	// formatter keeps formatting
 	// will look for a way to change color on the fly
-	int tag=[[aNotification object]tag];
+	NSInteger tag=[[aNotification object]tag];
 	switch (tag)
 	{
 		case cRedEdit:	//image with

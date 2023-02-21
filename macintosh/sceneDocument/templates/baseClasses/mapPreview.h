@@ -40,14 +40,14 @@
 #import <Cocoa/Cocoa.h>
 
 #define dNoRowSelected -1l
+@class MapBase;
 
 @interface mapPreview : NSView
 {
-	id mMap;
+	__kindof MapBase *mMap;
 }
 
--(void) setMap:(id)map;
--(id) map;
+@property (retain) __kindof MapBase *map;
 @end
 
 @interface colormapPreview : mapPreview
@@ -66,11 +66,11 @@
 	NSRect *mPointList;	
 	NSRect *mSlopePointList;	
 
-	int mSlopeOn;
-	int	mPointOn;
-	int	mCurveOn;
-	int mRasterOn;
-	int mSlopeFound;
+	NSControlStateValue mSlopeOn;
+	NSControlStateValue	mPointOn;
+	NSControlStateValue	mCurveOn;
+	NSControlStateValue mRasterOn;
+	NSControlStateValue mSlopeFound;
 }
 -(void)drawSelectedPoint;
 

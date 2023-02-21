@@ -52,7 +52,6 @@
 -(void) dealloc
 {
 	[self setMap:nil];
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------
@@ -60,9 +59,7 @@
 //---------------------------------------------------------------------
 -(void) setMap:(id)map
 {
-	[mMap release];
 	mMap=map;
-	[mMap retain];	
 	[mMap mapBaseSetTemplate:self];
 }
 
@@ -126,7 +123,7 @@
 //---------------------------------------------------------------------
 - (void)selectRow:(NSUInteger)rowIndex byExtendingSelection:(BOOL)flag
 {
-	[mTableView selectRowIndexes:[[[NSIndexSet alloc] initWithIndex:rowIndex]autorelease] byExtendingSelection:flag];
+	[mTableView selectRowIndexes:[[NSIndexSet alloc] initWithIndex:rowIndex] byExtendingSelection:flag];
 }
 
 //---------------------------------------------------------------------

@@ -51,7 +51,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -62,12 +62,10 @@
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 
 	
@@ -305,7 +303,6 @@
 	}
 	
 	//[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -327,7 +324,7 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:cGlobalsTab],					@"globalsTabView",
@@ -569,16 +566,12 @@
 
 		
 	nil];	
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"globalsLocalized" andDictionary:mOutlets];
 
 	//additional objects
 
 
-	mExcludedObjectsForReset=[NSArray arrayWithObjects:
-		@"globalsTabView",
-		nil];
-	[mExcludedObjectsForReset retain];
+	mExcludedObjectsForReset=@[@"globalsTabView"];
 	
 	[self  setValuesInPanel:[self preferences]];
 }
@@ -632,10 +625,10 @@
 				{
 					NSString *keepString=[self beginOfKeysForCurrentPanel];
 					//first make a default settings array with
-					NSMutableDictionary *refCompleteDefaultDict=[GlobalsTemplate createDefaults:mTemplateType];
+					NSMutableDictionary *refCompleteDefaultDict=[GlobalsTemplate createDefaults:self->mTemplateType];
 					if ( refCompleteDefaultDict== nil)
 						return;
-					NSMutableDictionary *refDefaultDictForThisPanel=[[refCompleteDefaultDict mutableCopy]autorelease ];
+					NSMutableDictionary *refDefaultDictForThisPanel=[refCompleteDefaultDict mutableCopy];
 					if ( refDefaultDictForThisPanel== nil)
 						return;
 					
@@ -651,7 +644,7 @@
 						}
 					}
 					
-					NSMutableDictionary *dictToBeLoadedInpanel=[[refDictLoadedFromFile mutableCopy]autorelease];
+					NSMutableDictionary *dictToBeLoadedInpanel=[refDictLoadedFromFile mutableCopy];
 					if( dictToBeLoadedInpanel == nil)
 						return;
 					//remove all settings that don't belong to the current panel
@@ -718,7 +711,7 @@
 		return;
 	// make a copy, we will remove all unrelated prefs here
 	// because you can not remove objects from a dict being enumerated
-	NSMutableDictionary	*saveDict = [[refDictCurrentPrefs mutableCopy]autorelease];
+	NSMutableDictionary	*saveDict = [refDictCurrentPrefs mutableCopy];
 	if ( saveDict==nil)
 		return;
 	
@@ -768,7 +761,7 @@
 
 	if ( keepString != nil)
 	{
-		NSMutableDictionary *dict=[[[GlobalsTemplate createDefaults:mTemplateType]mutableCopy]autorelease];
+		NSMutableDictionary *dict=[[GlobalsTemplate createDefaults:mTemplateType] mutableCopy];
 		if ( dict != nil )
 		{
 			NSEnumerator *en=[dict keyEnumerator];

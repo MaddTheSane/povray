@@ -45,7 +45,7 @@
 #import "configbase.h"
 #import "renderDispatcher.h"
 #import "MessageViewController.h"
-#import "picturePreview.h"
+#import "PicturePreview.h"
 #import "MaterialPreview.h"
 #import "PreferencesPanelController.h"
 #import "renderDispatcher.h"
@@ -79,8 +79,8 @@ enum menuTags {
 	eTag_Export							=201
 };
 
-extern picturePreview		*gPicturePreview;
-extern materialPreview	*gMaterialPreview;
+extern PicturePreview		*gPicturePreview;
+extern MaterialPreview	*gMaterialPreview;
 extern NSInteger				numericBlockPoint;
 
 
@@ -129,8 +129,8 @@ extern volatile bool	gUserWantsToPauseRenderer;
 + (MainController*) sharedInstance;
 - (void) previewWindowChangedName: (NSString*) newName;
 
-- (menuFromDirectory*) templateMainInsertMenu;
-- (void) setMenuFromDirectory: (menuFromDirectory*) menu;
+@property (strong) menuFromDirectory *templateMainInsertMenu;
+- (void) setMenuFromDirectory: (menuFromDirectory*) menu NS_DEPRECATED_WITH_REPLACEMENT_MAC("-setTemplateMainInsertMenu:", 10.2, 10.9);
 - (void) reloadTemplateInsertMenu;
 - (void) stopWatchingInsertMenu;
 
@@ -158,7 +158,7 @@ extern volatile bool	gUserWantsToPauseRenderer;
 
 - (IBAction) batchMenu:(id)sender;
 - (void) applicationDidFinishLaunching:(NSNotification *)notification;
-@property (readonly) NSInteger getNumberOfCpus;
+@property (readonly) NSInteger numberOfCPUs;
 
 
 @end 

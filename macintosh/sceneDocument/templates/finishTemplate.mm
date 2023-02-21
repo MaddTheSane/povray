@@ -58,7 +58,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 
 	if ( dict== nil)
@@ -68,12 +68,10 @@
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	if ( [[dict objectForKey:@"finishDontWrapInFinish"]intValue]==NSOffState)
 	{
@@ -180,7 +178,6 @@
 
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -203,7 +200,7 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		@(NSOffState),						@"finishDontWrapInFinish",
@@ -317,7 +314,6 @@
 		finishConserveEnergyOn,															@"finishConserveEnergyOn",
 	nil] ;
 	
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"finishLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"finishLocalized" andDictionary:

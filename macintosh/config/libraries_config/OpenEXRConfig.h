@@ -34,7 +34,11 @@
 // Define if we can support GCC style inline asm with AVX instructions
 //
 
+#ifdef __x86_64__
 #define OPENEXR_IMF_HAVE_GCC_INLINE_ASM_AVX 1
+#else
+#undef OPENEXR_IMF_HAVE_GCC_INLINE_ASM_AVX 
+#endif
 
 //
 // Define if we can use sysconf(_SC_NPROCESSORS_ONLN) to get CPU count

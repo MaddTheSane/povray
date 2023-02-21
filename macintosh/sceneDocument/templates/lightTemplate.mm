@@ -58,7 +58,7 @@ enum {
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -69,12 +69,10 @@ enum {
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	[ds copyTabAndText:@"light_source {\n"];
 	[ds addTab];
@@ -203,7 +201,6 @@ enum {
 	[ds copyTabAndText:@"}\n"];
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -225,7 +222,7 @@ enum {
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 
@@ -367,7 +364,6 @@ enum {
 		[lightParallelLightPointAtMatrix cellWithTag:2],	@"lightParallelLightPointAtMatrixZ",
 		
 	nil];
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"lightLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"lightLocalized" andDictionary:

@@ -48,7 +48,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -56,14 +56,12 @@
 		dict=[SlopemapTemplate createDefaults:menuTagTemplateColormap];
 	else
 		[BaseTemplate addMissingObjectsInPreferences:dict forClass:[SlopemapTemplate class] andTemplateType:menuTagTemplateColormap];
-	[dict retain];
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 		{
-			[dict release];
 			return nil;
 		}
 	}
@@ -86,7 +84,6 @@
 	[ds copyTabAndText:@"}\n"];
 
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -109,7 +106,7 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSArchiver archivedDataWithRootObject:		[slopemap standardMapWithView:nil]],		@"slopemap",
@@ -147,13 +144,12 @@
 //---------------------------------------------------------------------
 -(void) retrivePreferences
 {
-	[[self getWindow]makeFirstResponder: [self getWindow]];
-	NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
+	[[self window] makeFirstResponder: [self window]];
+	NSMutableDictionary *dict=[[NSMutableDictionary alloc] init];
 	if (dict == nil)
 		return;
 	[dict setObject:[NSArchiver archivedDataWithRootObject:mMap] forKey:@"slopemap"];
 	[self setPreferences:dict];
-	[dict release];
 }
 
 

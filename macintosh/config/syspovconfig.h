@@ -125,6 +125,8 @@
 		#define POVRAY_PLATFORM_NAME "Apple_Intel32"
 	#elif defined(__x86_64__)
 		#define POVRAY_PLATFORM_NAME "Apple_Intel64"
+	#elif defined(__aarch64__)
+		#define POVRAY_PLATFORM_NAME "Apple_Arm64"
 	#endif
 
 	#define ALTMAIN
@@ -163,7 +165,7 @@
 
 /// Specifies the person or organization responsible for this build.
 /// @attention Please set this to your real name, and/or include a working email or website address to contact you.
-#define DISTRIBUTION_MESSAGE_2 "Your name - your e-mail address@xx.xx"
-#error Please fill in DISTRIBUTION_MESSAGE_2, then remove this line
+#define DISTRIBUTION_MESSAGE_2 "C.W. Betts - computers57@hotmail.com"
+//#error Please fill in DISTRIBUTION_MESSAGE_2, then remove this line
 
 #endif // POVRAY_MACINTOSH_SYSPOVCONFIG_H

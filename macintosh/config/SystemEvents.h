@@ -170,7 +170,7 @@ typedef NS_ENUM(OSType, SystemEventsAccs) {
 	SystemEventsAccsWriteOnly = 'writ' /* write only */
 };
 
-@protocol SystemEventsGenericMethods
+@protocol SystemEventsGenericMethods <NSObject>
 
 - (void) closeSaving:(SystemEventsSaveOptions)saving savingIn:(SystemEventsFile *)savingIn;  // Close a document.
 - (void) saveIn:(SystemEventsFile *)in_ as:(SystemEventsSaveableFileFormat)as;  // Save a document.

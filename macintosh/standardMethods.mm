@@ -121,7 +121,7 @@ void SetSubViewsOfNSBoxToState( NSBox *group, NSControlStateValue newState)
 		}	
 	}
 }
-void SetSubViewsOfNSTabViewToState( NSTabView *tabv, NSInteger newState)
+void SetSubViewsOfNSTabViewToState( NSTabView *tabv, NSControlStateValue newState)
 {
 
 	NSArray *tabviewItems=[tabv tabViewItems];
@@ -163,7 +163,7 @@ void SetSubViewsOfNSTabViewToState( NSTabView *tabv, NSInteger newState)
 }
 
 
-void SetSubViewsOfNSViewToState( NSView *view, NSInteger newState)
+void SetSubViewsOfNSViewToState( NSView *view, NSControlStateValue newState)
 {
 
 	NSArray *subviewArray=[view subviews] ;
@@ -324,7 +324,7 @@ NSMutableArray * scanForValuesInString(NSString *stringToScan)
 	NSCharacterSet *decimalsCharacterString=[NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
 	NSString *scannedCharacters;
 	
-	NSMutableArray *result = [[[NSMutableArray alloc]init]autorelease];
+	NSMutableArray *result = [[NSMutableArray alloc] init];
 	
 	[scanner scanUpToCharactersFromSet:decimalsCharacterString intoString:nil];
 	while ([scanner scanCharactersFromSet:decimalsCharacterString intoString:&scannedCharacters] )
@@ -338,12 +338,12 @@ NSMutableArray * scanForValuesInString(NSString *stringToScan)
  }
 
 //---------------------------------------------------------------------
-// remoteObject
+// RemoteObject
 //---------------------------------------------------------------------
 //An object to hold some variables to be used with a performSelectorOnMainThread	
 //	method.
 //---------------------------------------------------------------------
-@implementation remoteObject
+@implementation RemoteObject
 	- (id) initWithObjectsAndKeys:(id) firstObject, ...
 	{
 		self=[super init];
@@ -383,42 +383,9 @@ NSMutableArray * scanForValuesInString(NSString *stringToScan)
 		mReturnValue=0;
 		return self;
 	}
-	-(NSMutableDictionary*) dict
-	{
-		return mDict;
-	}
-
-	-(NSInteger) width
-	{
-		return mWidth;
-	}
-	
-	-(NSInteger)height
-	{
-		return mHeight;
-	}
-
-	-(NSInteger) ref
-	{
-		return mRef;
-	}
-	
-	-(BOOL) returnValue
-	{
-		return mReturnValue;
-	}
-
-	-(void) setReturnValue: (BOOL) returnValue
-	{
-		mReturnValue=returnValue;
-	}
-	-(void) dealloc
-	{
-		if ( mDict != nil)
-		{
-			[mDict release];
-			mDict=nil;
-		}
-		[super dealloc];
-	}
+@synthesize dict=mDict;
+@synthesize width=mWidth;
+@synthesize height=mHeight;
+@synthesize ref=mRef;
+@synthesize returnValue=mReturnValue;
 @end

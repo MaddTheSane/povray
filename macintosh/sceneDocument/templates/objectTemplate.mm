@@ -122,7 +122,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -140,12 +140,10 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 		return nil;
 	}
-
-	[dict retain];
 
 	switch ( [[dict objectForKey:@"objectTypePopUp"]intValue])
 	{
@@ -514,8 +512,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				}
 				if ( objectEditorPrefs==nil)	// should never happen
 				{
-					[dict release];
-					return nil;		
+					return nil;
 				}
 				[ds copyTabAndText:@"lathe {\n"];
 				[ds addTab];
@@ -530,7 +527,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 					case cCubicSpline: 			[ds copyTabAndText:@"cubic_spline\n"];			break;
 					case cBezierSpline: 		[ds copyTabAndText:@"bezier_spline\n"];			break;
 				}			
-				[ds appendTabAndFormat:@"%d,\n",[oMap count]];
+			[ds appendTabAndFormat:@"%lu,\n",(unsigned long)[oMap count]];
 
 				for ( int row=0; row <[oMap count]-1; row++)
 				{
@@ -636,7 +633,6 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				funcStr=[dict objectForKey:@"polyArray"];
 				if ( funcStr==nil)
 				{
-					[dict release];
 					return nil;
 				}
 				switch ([[dict objectForKey:@"objectPolyPolyTypePopUp"]intValue])
@@ -703,7 +699,6 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				}
 				if ( objectEditorPrefs==nil)	// should never happen
 				{
-					[dict release];
 					return nil;
 				}
 				[ds copyTabAndText:@"polygon {\n"];
@@ -711,7 +706,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 
 				oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
 
-				[ds appendTabAndFormat:@"%d\n",[oMap count]];
+			[ds appendTabAndFormat:@"%lu\n",(unsigned long)[oMap count]];
 
 				for ( int row=0; row <[oMap count]-1; row++)
 				{
@@ -743,7 +738,6 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				}
 				if ( objectEditorPrefs==nil)	// should never happen
 				{
-					[dict release];
 					return nil;
 				}
 				oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
@@ -751,7 +745,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				if ( [[dict objectForKey:@"objectPrismBevelPrismGroupOn"]intValue]==NSOnState && [[dict objectForKey:@"objectPrismSweepTypePopUp"]intValue]==cPrismLinearSweep)
 				{
 					[ds copyTabAndText:@"//*************** START BEVELED PRISM ***************\n"];
-					[ds appendTabAndFormat:@"#declare PrismPoints = array [%d] \n",[oMap count]];
+					[ds appendTabAndFormat:@"#declare PrismPoints = array [%lu] \n",(unsigned long)[oMap count]];
 					[ds copyTabAndText:@"{\n"];
 					[ds addTab];
 					for ( int row=0; row <[oMap count]-1; row++)
@@ -901,7 +895,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 					[ds appendTabAndFormat:@"%@,\t//Base height\n",[dict objectForKey:@"objectPrismBaseHeightEdit"]];
 					[ds appendTabAndFormat:@"%@,\t//Top height\n",[dict objectForKey:@"objectPrismTopHeightEdit"]];
 
-					[ds appendTabAndFormat:@"%d\n",[oMap count]];
+					[ds appendTabAndFormat:@"%lu\n",(unsigned long)[oMap count]];
 				
 					for ( int row=0; row <[oMap count]-1; row++)
 					{
@@ -960,13 +954,12 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				}
 				if ( objectEditorPrefs==nil)	// should never happen
 				{
-					[dict release];
-					return nil;		
+					return nil;
 				}
 					oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
 					[ds copyTabAndText:@"sor {\n"];
 					[ds addTab];
-					[ds appendTabAndFormat:@"%d\n",[oMap count]];
+			[ds appendTabAndFormat:@"%lu\n",(unsigned long)[oMap count]];
 					for ( int row=0; row <[oMap count]-1; row++)
 					{
 						[ds appendTabAndFormat:@"<%@, %@>,\n",[oMap stringFromFloatWithFormat:FloatFormat atRow:row atColumn:cObjectmapXIndex],
@@ -1247,21 +1240,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				break;
 	}
 //	[ds autorelease];
-	[dict release];
 	return ds;
-}
-
-//---------------------------------------------------------------------
-// dealloc
-//---------------------------------------------------------------------
--(void) dealloc
-{
-	if ( mPolyArray != nil)
-	{
-		[mPolyArray release];
-		mPolyArray=nil;
-	}
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------
@@ -1282,7 +1261,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:cObjectBicubicPatch],						@"objectTypePopUp",
@@ -1302,7 +1281,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"1.0",																	@"objectRadiosityImportanceEdit",
 
 		//bicubic patch
-		[NSNumber numberWithInt:0],							@"objectBicubicPatchTypePopUp",
+		@0,							@"objectBicubicPatchTypePopUp",
 		@"0.0",																	@"objectBicubicPatchFlatnessEdit",
 		@"3",																		@"objectBicubicPatchUStepsEdit",
 		@"3",																		@"objectBicubicPatchVStepsEdit",
@@ -1410,7 +1389,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		@"0.0",																	@"objectIsoContainerSphereCenterMatrixY",
 		@"0.0",																	@"objectIsoContainerSphereCenterMatrixZ",
 		@"0.0",																	@"objectIsoContainerSphereRadiusEdit",
-		@(NSOffState),		@"objectIsoOpenOn",
+		@(NSOffState),													@"objectIsoOpenOn",
 //fractal
 		@"1.0",																	@"objectFractal4DjuliaParameterMatrixX",
 		@"0.0",																	@"objectFractal4DjuliaParameterMatrixY",
@@ -1802,7 +1781,6 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		[objectTriangleInsideXYZVectorMatrix cellWithTag:2],	@"objectTriangleInsideXYZVectorMatrixZ",
 
 	nil];	
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"objectLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"objectLocalized" andDictionary:
@@ -1870,9 +1848,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 
 		nil]
 	];
-	mExcludedObjectsForReset=[NSArray arrayWithObjects:
-		@"objectTypePopUp",nil];
-	[mExcludedObjectsForReset retain];
+	mExcludedObjectsForReset = @[@"objectTypePopUp"];
 	[self  setValuesInPanel:[self preferences]];
 }
 
@@ -1894,11 +1870,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 	[self setObjectPolygon:[preferences objectForKey:@"objectPolygon"]];
 	[self setObjectPrism:[preferences objectForKey:@"objectPrism"]];
 	[self setObjectSor:[preferences objectForKey:@"objectSor"]];
-	if ( mPolyArray != nil)
-	{
-		[mPolyArray release];
-	}
-	mPolyArray=[[[preferences objectForKey:@"polyArray"]mutableCopy]retain];
+	mPolyArray = [[preferences objectForKey:@"polyArray"] mutableCopy];
 
 	[super setValuesInPanel:preferences];
 	[self objectTypePopUp:nil];

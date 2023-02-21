@@ -44,19 +44,23 @@
  #define dFactorySettings @"Factory Settings"
  #define dLastValuesInPanel @"lastValuesInPanel"
 
-@interface greenLed : NSView
+@interface GreenLED : NSView
 @end
 
 NS_ENUM(NSInteger) {
 	cAppRenderBlockSizePopup    =50,
-	
+};
+
+NS_ENUM(int) {
 	cRenderBlockSize4           =0,
 	CRenderBlockSize8           =1,
 	cRenderBlockSize16          =2,
 	cRenderBlockSize32          =3,
 	cRenderBlockSize64          =4,
 	cRenderBlockSize128         =5,
-	
+};
+
+NS_ENUM(int) {
 	cAutomatic                  =0,
 	cCpusMinus1                 =2,
 	cCpusPlus1                  =3,
@@ -66,14 +70,18 @@ NS_ENUM(NSInteger) {
 	cCpu4                       =8,
 	cCpu5                       =9,
 	cCpu6                       =10,
+};
 
+NS_ENUM(int) {
 	cRenderPattern0             =0,
 	cRenderPattern1             =1,
 	cRenderPattern2             =2,
 	cRenderPattern3             =3,
 	cRenderPattern4             =4,
 	cRenderPattern5             =5,
-	
+};
+
+NS_ENUM(int) {
 	cLanguageVersion1X          =0,
 	cLanguageVersion2X          =1,
 	cLanguageVersion30X         =2,
@@ -81,28 +89,36 @@ NS_ENUM(NSInteger) {
 	cLanguageVersion35X         =4,
 	cLanguageVersion36X         =5,
 	cLanguageVersion37X         =6,
+};
 
+NS_ENUM(int) {
 	cBitDepth5                  =0,
 	cBitDepth8                  =1,
 	cBitDepth12                 =2,
 	cBitDepth16                 =3,
+};
 
+typedef NS_ENUM(NSInteger, cImageType) {
 	cImageTypeDontSave          =0,
-	cImageTypeTarga 			=1,
+	cImageTypeTarga 						=1,
 	cImageTypeTargaCompressed   =2,
 	cImageTypePNG               =3,
 	cImageTypePPM               =4,
 	cImageTypeHdr               =5,
 	cImageTypeExr               =6,
 	cImageTypeLastMenu          = cImageTypeExr,
-	
+};
+
+NS_ENUM(int) {
 	cDitheringB2				=0,
 	cDitheringB3				=1,
 	cDitheringB4				=2,
 	cDitheringD1				=3,
 	cDitheringD2				=4,
 	cDitheringFloydSteinberg	=5,
-	
+};
+
+NS_ENUM(int) {
 	cRatio1_1                   =0,
 	cRatio2_1                   =1,
 	cRatio4_3                   =2,
@@ -110,15 +126,20 @@ NS_ENUM(NSInteger) {
 	cRatio1_2                   =5,
 	cRatio3_4                   =6,
 	cRatio9_16                  =7,
+};
 
+NS_ENUM(int) {
 	cRadiosityVainOnCell        =1,
 	cRadiosityVainOffCell       =2,
-	
+};
 
+NS_ENUM(int) {
 	cWarningLevel0              =0,
 	cWarningLevel5              =1,
 	cWarningLevel10             =2,
+};
 
+NS_ENUM(int) {
 	cBoudingObjects1            =0,
 	cBoudingObjects3            =1,
 	cBoudingObjects5            =2,
@@ -129,12 +150,15 @@ NS_ENUM(NSInteger) {
 	cBoudingObjects30           =7,
 	cBoudingObjects35           =8,
 	cBoudingObjects40           =9,
+};
 
-
+typedef NS_ENUM(int, cFieldRendering) {
 	cFieldRenderingOff          =0,
 	cFieldRenderingStartEven    =2,
 	cFieldRenderingStartOdd     =3,
+};
 
+NS_ENUM(int) {
 	cSave                       =0,
 	cModify                     =1
 };
@@ -212,12 +236,12 @@ typedef NS_ENUM(NSInteger, preferencesTag) {
 };
 
 
-@interface PreferencesPanelController : NSObject
+@interface PreferencesPanelController : NSObject <NSTabViewDelegate>
 {
-	IBOutlet id				mMiscGreenLed;
-	IBOutlet id				mClockGreenLed;
-	IBOutlet id				mUseIniGreenLed;
-	IBOutlet id				mSaveOutputfileGreenLed;
+	IBOutlet GreenLED			*mMiscGreenLed;
+	IBOutlet GreenLED			*mClockGreenLed;
+	IBOutlet GreenLED			*mUseIniGreenLed;
+	IBOutlet GreenLED			*mSaveOutputfileGreenLed;
 
 
 
@@ -228,7 +252,7 @@ typedef NS_ENUM(NSInteger, preferencesTag) {
 	IBOutlet NSButton			*settingsPanelRename;
 	IBOutlet NSTextField	*settingsPanelTextField;
 	IBOutlet NSTableView	*settingsPanelTableView;
-	int 									mSettingsPanelMode;
+	NSInteger 						mSettingsPanelMode;
 	IBOutlet NSTextField	*settingsPanelX;
 	IBOutlet NSTextField	*settingsPanelY;
 	IBOutlet NSTextField	*settingsPanelAntiAliasing;
@@ -379,7 +403,7 @@ typedef NS_ENUM(NSInteger, preferencesTag) {
 }
 
 + (void) initialize;
-+ (PreferencesPanelController*)sharedInstance;
+@property (class, readonly) PreferencesPanelController *sharedInstance;
 + (NSMutableDictionary *) mutableDictionaryWithDefaultSettings;
 //actions
 - (IBAction) preferencesTarget:(id)sender;
@@ -395,13 +419,12 @@ typedef NS_ENUM(NSInteger, preferencesTag) {
 -(void) setButtonStateSettingsPanel: (NSMutableDictionary*) dictToUse;
 -(void) selectionSettingsPanelTableViewChanged:(NSNotification *) notification;
 -(void) saveCurrentSettingsInDefaultSettings: (NSNotification *)ntf;
--(void) processSettingsPanel:(int) saveEdit;
+-(void) processSettingsPanel:(NSInteger) saveEdit;
 
 - (void) selectInclude: (id) sender forField:(NSTextField*)textfield;
 - (NSMutableDictionary*) setttingsDictionaryWithName: (NSString*)dictionaryToSearchFor;
 - (BOOL) putDictionaryInPanel: (NSMutableDictionary*)dictToUse allowFileChange:(BOOL)fileChange;
 -(void) setPanelTitle;
-- (void)tabView:(NSTabView *)tabView didSelectTabViewItem:(NSTabViewItem *)tabViewItem;
 -(NSMutableDictionary*) getDictWithCurrentSettings:(BOOL) writeToDefaults;
  - (NSInteger) putDictionaryInSettingsArray: (NSMutableDictionary*)dictionaryToAdd;
 - (void) updateStartEndRatio;

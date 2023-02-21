@@ -52,13 +52,15 @@ namespace detail {
             std::streamsize n=static_cast<std::streamsize>(w-size-!!prefix_space);
             std::streamsize n_after = 0, n_before = 0; 
             res.reserve(static_cast<size_type>(w)); // allocate once for the 2 inserts
-            if(center) 
-                n_after = n/2, n_before = n - n_after; 
-            else 
-                if(f & std::ios_base::left)
+            if(center) {
+                n_after = n/2; n_before = n - n_after;
+            } else {
+                if(f & std::ios_base::left) {
                     n_after = n;
-                else
+                } else {
                     n_before = n;
+				}
+			}
             // now make the res string :
             if(n_before) res.append(static_cast<size_type>(n_before), fill_char);
             if(prefix_space) 

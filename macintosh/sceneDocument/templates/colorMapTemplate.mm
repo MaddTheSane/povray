@@ -58,7 +58,7 @@ enum {
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -69,12 +69,10 @@ enum {
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	[ds copyTabAndText:@"color_map {\n"];
 	[ds addTab];
@@ -116,7 +114,6 @@ enum {
 
 	
 	//[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -139,7 +136,7 @@ enum {
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 [NSArchiver archivedDataWithRootObject:		[colormap standardMapWithView:nil]],					@"colormap",
@@ -161,8 +158,6 @@ enum {
 	[colorPanel setTarget: nil];
 	[colorPanel setAction: NULL];
 	[colorPanel orderOut:nil]; // hide the panel
-
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------
@@ -170,9 +165,8 @@ enum {
 //---------------------------------------------------------------------
 -(void) retrivePreferences
 {
-	[[self getWindow]makeFirstResponder: [self getWindow]];
+	[[self window] makeFirstResponder: [self window]];
 	NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
-	[dict autorelease];
 	if (dict == nil)
 		return;
 	[dict setObject:[NSArchiver archivedDataWithRootObject:mMap] forKey:@"colormap"];
@@ -186,7 +180,7 @@ enum {
 {
 	NSTableColumn * color=[mTableView tableColumnWithIdentifier:@"Color"];
 
-	mColorCell = [[[ColorCell alloc] init] autorelease];	// create the special color well cell
+	mColorCell = [[ColorCell alloc] init];	// create the special color well cell
     [mColorCell setEditable: YES];								// allow user to change the color
 	[mColorCell setTarget: self];								// set colorClick as the method to call
 	[mColorCell setAction: @selector (colorClick:)];		// when the color well is clicked on

@@ -93,7 +93,7 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 	if ( dict== nil)
 		dict=[NormalTemplate createDefaults:menuTagTemplateNormal];
@@ -102,12 +102,10 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	if ( [[dict objectForKey:@"normalDontWrapInNormal"]intValue]==NSOffState)
 	{
@@ -616,7 +614,6 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -638,7 +635,7 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:cNormalPatternTab],			@"normalMainTabView",
@@ -661,8 +658,8 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 		[NSNumber numberWithInt:cNormalPatternBrick],			@"normalPatternSelectPopUpButton",
 
 		 	//brick
-			[NSNumber numberWithInt:cFirstCell],			@"normalPatternBrickFullNormalMatrix",
-			@(NSOnState),			@"normalPatternBrickAmountOn",
+			@(cFirstCell),											@"normalPatternBrickFullNormalMatrix",
+			@(NSOnState),												@"normalPatternBrickAmountOn",
 			@"0.5",															@"normalPatternBrickAmountEdit",
 			@(NSOffState),			@"normalPatternBrickBrickSizeOn",
 		 	@"8",																@"normalPatternBrickBrickSizeMatrixX",
@@ -714,7 +711,7 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 			 	@"0.1",																		@"normalPatternCheckerFullNormal2ScaleMatrixX",
 			 	@"0.1",																		@"normalPatternCheckerFullNormal2ScaleMatrixY",
 			 	@"0.1",																		@"normalPatternCheckerFullNormal2ScaleMatrixZ",
-			 	[NSNumber numberWithInt:0],										@"normalPatternCheckerFullNormal2ArmsPopUp",
+			 	@0,																				@"normalPatternCheckerFullNormal2ArmsPopUp",
 
 		 	//hexagon
 			[NSNumber numberWithInt:cFirstCell],								@"normalPatternHexagonFullNormalMatrix",
@@ -778,7 +775,7 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 			@"2",																			@"normalPatternCrackleType4Edit",
 
 		//density file
-			[NSNumber numberWithInt:0],										@"normalPatternDisityFileInterpolationPopUp",
+			@0,																					@"normalPatternDisityFileInterpolationPopUp",
 			@"MyFile",																	@"normalPatternDisityFileFileNameEdit",
 		//facets
 			@"0.1",																		@"normalPatternFacetsCoordsEdit",
@@ -810,7 +807,7 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 			@"x+y+z",																	@"normalPatternImagePatternFunctionFunctionEdit",
 			@"300",																		@"normalPatternImagePatternFunctionImageWidth",
 			@"300",																		@"normalPatternImagePatternFunctionImageHeight",
-			@(NSOffState),						@"normalPatternImageMapProjectionOnceOn",
+			@(NSOffState),														@"normalPatternImageMapProjectionOnceOn",
 			[NSNumber numberWithInt:cProjectionPlanar],				@"normalPatternImageMapProjectionPopUp",
 			[NSNumber numberWithInt:cInterpolationNone],			@"normalPatternImageMapInterpolationPopUp",
 
@@ -821,7 +818,7 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 			@"1.0",																		@"normalPatternProjectionXYZMatrixX",	
 			@"1.0",																		@"normalPatternProjectionXYZMatrixY",	
 			@"1.0",																		@"normalPatternProjectionXYZMatrixZ",	
-			@(NSOffState),						@"normalPatternProjectionBlurOn",
+			@(NSOffState),														@"normalPatternProjectionBlurOn",
 			@"0.0",																		@"normalPatternProjectionAmountEdit",
 			@"1.0",																		@"normalPatternProjectionSamplesEdit",
 
@@ -833,28 +830,28 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 			@"1.0",																		@"normalPatternSlopeDirectionMatrixX",
 			@"1.0",																		@"normalPatternSlopeDirectionMatrixY",
 			@"1.0",																		@"normalPatternSlopeDirectionMatrixZ",
-			@(NSOffState),						@"normalPatternSlopeSlopeOn",
+			@(NSOffState),														@"normalPatternSlopeSlopeOn",
 			@"0.0",																		@"normalPatternSlopeSlopeLowEdit",	
 			@"1.0",																		@"normalPatternSlopeSlopeHighEdit",	
-			@(NSOffState),						@"normalPatternSlopeAltitudeOn",
+			@(NSOffState),														@"normalPatternSlopeAltitudeOn",
 			[NSNumber numberWithInt:cXYZVectorPopupY],			@"normalPatternSlopeAltitudeXYZPopUp",
 			@"1.0",																		@"normalPatternSlopeAltitudeMatrixX",
 			@"1.0",																		@"normalPatternSlopeAltitudeMatrixY",
 			@"1.0",																		@"normalPatternSlopeAltitudeMatrixZ",
-			@(NSOffState),						@"normalPatternSlopeOffsetOn",
-			@"0.0",																		@"normalPatternSlopeOffsetLowEdit",	
+			@(NSOffState),														@"normalPatternSlopeOffsetOn",
+			@"0.0",																		@"normalPatternSlopeOffsetLowEdit",
 			@"1.0",																		@"normalPatternSlopeOffsetHighEdit",	
 			//spiral*******************************************************************************************************
 			[NSNumber numberWithInt:0],													@"normalPatternSpiralTypePopUp",
 			@"2",																						@"normalPatternSpiralNrOfArmsEdit",
 
 	  	//normal image_map
-		[NSNumber numberWithInt:cGif],												@"normalImageMapFileTypePopUp",
+		@(cGif),												@"normalImageMapFileTypePopUp",
 		@"MyFile",																				@"normalImageMapFileName",
 		@"x+y+z",																				@"normalImageMapFunctionEdit",
 		@"300",																					@"normalImageMapFunctionImageWidth",
 		@"300",																					@"normalImageMapFunctionImageHeight",
-		@(NSOffState),									@"normalImageMapProjectionOnceOn",
+		@(NSOffState),																	@"normalImageMapProjectionOnceOn",
 		[NSNumber numberWithInt:cProjectionPlanar],							@"normalImageMapProjectionPopUp",
 		[NSNumber numberWithInt:cInterpolationNone],						@"normalImageMapInterpolationPopUp",
 		[NSNumber numberWithInt:cColor],								@"normalImageMapGetBumpHeightPopUp",
@@ -1100,7 +1097,6 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 	normalFunctionEdit,																@"normalFunctionEdit",
 	nil] ;
 	
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"normalLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"normalLocalized" andDictionary:
@@ -1167,11 +1163,9 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 	nw.height=240;
 	[normalPatternTabView setFrameSize:nw];
 	// end of fix
-	mExcludedObjectsForReset=[NSArray arrayWithObjects:
+	mExcludedObjectsForReset=@[
 		@"normalMainTabView",
-		@"normalPatternSelectPopUpButton",
-		nil];
-	[mExcludedObjectsForReset retain];
+		@"normalPatternSelectPopUpButton"];
 	
 	[self  setValuesInPanel:[self preferences]];
 }

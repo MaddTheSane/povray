@@ -50,7 +50,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 
 	if ( dict== nil)
@@ -60,12 +60,10 @@
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 
 	[ds copyTabAndText:@"photons {\n"];
@@ -103,7 +101,6 @@
 
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -126,17 +123,17 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		@(NSOnState),			@"photonsTargetOn",
-		@"1.0",															@"photonsSpacingEdit",
+		@"1.0",						@"photonsSpacingEdit",
 		@(NSOnState),			@"photonsRefractionOn",
-		[NSNumber numberWithInt:cFirstCell],				@"photonsRefractionMaxtrix",
+		@(cFirstCell),		@"photonsRefractionMaxtrix",
 		@(NSOnState),			@"photonsReflectionOn",
-		[NSNumber numberWithInt:cFirstCell],				@"photonsReflectionMaxtrix",
+		@(cFirstCell),		@"photonsReflectionMaxtrix",
 		@(NSOnState),			@"photonsCollectOn",
-		[NSNumber numberWithInt:cFirstCell],				@"photonsCollectMaxtrix",
+		@(cFirstCell),		@"photonsCollectMaxtrix",
 		@(NSOnState),			@"photonsPassThroughOn",
 		nil
 	];
@@ -152,18 +149,17 @@
 	[super awakeFromNib];
 
 	mOutlets =[NSDictionary dictionaryWithObjectsAndKeys:
-	photonsTargetOn,				@"photonsTargetOn",
-	photonsSpacingEdit,			@"photonsSpacingEdit",
+	photonsTargetOn,				  @"photonsTargetOn",
+	photonsSpacingEdit,			  @"photonsSpacingEdit",
 	photonsRefractionOn,			@"photonsRefractionOn",
 	photonsRefractionMaxtrix,	@"photonsRefractionMaxtrix",
 	photonsReflectionOn,			@"photonsReflectionOn",
 	photonsReflectionMaxtrix,	@"photonsReflectionMaxtrix",
-	photonsCollectOn,				@"photonsCollectOn",
+	photonsCollectOn,				  @"photonsCollectOn",
 	photonsCollectMaxtrix,		@"photonsCollectMaxtrix",
-	photonsPassThroughOn,		@"photonsPassThroughOn",
+	photonsPassThroughOn,		  @"photonsPassThroughOn",
 	nil] ;
 	
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"photonsLocalized" andDictionary:mOutlets];
 
 	[self  setValuesInPanel:[self preferences]];

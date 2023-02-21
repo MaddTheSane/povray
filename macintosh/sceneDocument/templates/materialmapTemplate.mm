@@ -56,7 +56,7 @@ enum {
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -67,14 +67,12 @@ enum {
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
 
-	[dict retain];
-
-	bodymap *bmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"bodymap"]];
+	BodyMap *bmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"bodymap"]];
 
 	[ds copyTabAndText:@"texture {\n"];
 	[ds addTab];
@@ -120,7 +118,6 @@ enum {
 	[ds copyTabAndText:@"}\n"];
 
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -142,10 +139,10 @@ enum {
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-		[NSArchiver archivedDataWithRootObject:[bodymap defaultMap]],	@"bodymap",
+		[NSArchiver archivedDataWithRootObject:[BodyMap defaultMap]],	@"bodymap",
 		[NSNumber numberWithInt:cGif],									@"materialmapFileTypePopUp",
 		@"MyFile",																			@"materialmapFileName",
 		@"x+y+z",																				@"materialmapFunctionEdit",
@@ -176,8 +173,6 @@ enum {
 		materialmapInterpolationPopUp,	@"materialmapInterpolationPopUp",
 		materialmapProjectionOnceOn,		@"materialmapProjectionOnceOn",
 	nil] ;
-	
-	[mOutlets retain];
 
 	[ToolTipAutomator setTooltips:@"materialmapLocalized" andDictionary:mOutlets];
 	//additional objects
@@ -222,7 +217,6 @@ enum {
 -(void) setValuesInPanel:(NSMutableDictionary*)preferences
 {
  	mMap=[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"bodymap"]];
- 	[mMap retain];
  	[super setValuesInPanel:preferences];
  	[mTableView noteNumberOfRowsChanged];
 	[self setButtons];

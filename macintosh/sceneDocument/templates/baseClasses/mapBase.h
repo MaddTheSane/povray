@@ -55,19 +55,19 @@ typedef NS_ENUM(NSInteger, eSlopeButtonTags) {
 	id						mTemplate;	//slopemapTemplate, colormapTempalte,...
 	NSInteger			mSelectedRow;
 }
+-(id)initWithCoder:(NSCoder*) decoder NS_DESIGNATED_INITIALIZER;
+
 -(void)  reloadData;
 
 -(void) mapBaseSetTemplate:(id) owner;
 -(void) selectTableRow:(NSInteger)index;
--(instancetype) init;
+-(instancetype) init NS_DESIGNATED_INITIALIZER;
 -(void) setViewDirty;
 @property (nonatomic, assign) id preview;
 -(void) removeEntryAtIndex:(NSInteger)index reload:(BOOL)forceReload;
 @property (readonly) NSUInteger count;
--(void) setArray:(NSMutableArray*) array;
--(id) array;
--(void) setSelectedRow:(NSInteger) row;
--(NSUInteger) selectedRow;
+@property (strong) NSMutableArray *array;
+@property (nonatomic) NSInteger selectedRow;
 -(NSInteger) firstSelectedRow;
 - (void)selectRow:(NSUInteger)rowIndex byExtendingSelection:(BOOL)flag;
 

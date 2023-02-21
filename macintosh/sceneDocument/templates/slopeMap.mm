@@ -52,7 +52,6 @@
 	slopemap *c=[[slopemap alloc] init];
 	[c makeDefaultMap];
 	[c setPreview:view];
-	[c autorelease];
 	return c;
 }
 
@@ -123,9 +122,9 @@
 {
 	NSMutableArray *old=[mMapArray objectAtIndex:[self count]-1];
 	NSMutableArray *newArray=[NSMutableArray arrayWithObjects:
-											[[[old objectAtIndex:cSlopemapLocationIndex]copy]autorelease],
-											[[[old objectAtIndex:cSlopemapHeightIndex]copy]autorelease],
-											[[[old objectAtIndex:cSlopemapSlopeIndex]copy]autorelease],
+														[[old objectAtIndex:cSlopemapLocationIndex]copy],
+														[[old objectAtIndex:cSlopemapHeightIndex]copy],
+														[[old objectAtIndex:cSlopemapSlopeIndex]copy],
 											nil];
 	[mMapArray addObject:newArray];
 	[self setViewDirty];
@@ -175,6 +174,7 @@
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
+	[super encodeWithCoder:encoder];
 	if ([encoder allowsKeyedCoding]) {
 		[encoder encodeObject:mMapArray forKey:EncodedMapArray];
 		[encoder encodeInteger:mSlopeOn forKey:EncodedSlopeOn];
@@ -218,8 +218,8 @@
 			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
 			tmpInt = (int)mCurveOn;
 			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
-			[self setSelectedRow:dNoRowSelected];
 		}
+		[self setSelectedRow:dNoRowSelected];
 	}
 	return self;
 }

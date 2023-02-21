@@ -41,7 +41,7 @@
 #import	<sys/stat.h>
 #import	<sys/fcntl.h>
 #import	<unistd.h>
-#import<pthread.h>
+#import <pthread.h>
 #import "mainController.h"
 #import "appPreferencesController.h"
 #import "rendererGUIBridge.h"
@@ -57,8 +57,8 @@
 // this must be the last file included
 #import "syspovdebug.h"
 
-picturePreview				*gPicturePreview=nil;
-materialPreview				*gMaterialPreview=nil;
+PicturePreview				*gPicturePreview=nil;
+MaterialPreview				*gMaterialPreview=nil;
 NSInteger							numericBlockPoint;
 static volatile int		insertMenuIsBeingWatched=notWatching;
 static MainController	*_mainController;
@@ -182,12 +182,12 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 //---------------------------------------------------------------------
 - (void) goToSleepAfterOneMinute
 {
-	mGoToSleepAlert= [[[NSAlert alloc] init] autorelease];
+	mGoToSleepAlert= [[NSAlert alloc] init];
 	mGoToSleepInformatieveText=[mGoToSleepAlert informativeText];
 	[mGoToSleepAlert addButtonWithTitle: @"Sleep"];
 	[mGoToSleepAlert addButtonWithTitle: @"Cancel"];
 	[mGoToSleepAlert setMessageText: @"Computer will go to sleep in 60 seconds."];
-	[mGoToSleepAlert setAlertStyle: NSInformationalAlertStyle];
+	[mGoToSleepAlert setAlertStyle: NSAlertStyleInformational];
 	mCountDownForSleep=60;
 	mGoToSleepTimer = [NSTimer timerWithTimeInterval: 1 target:self
 																					selector: @selector(putToSleep:)	userInfo:nil repeats:YES];
@@ -446,7 +446,9 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 	// create message for about box dialog
 	NSString	*messageToCopyInAboutDialog=nil;
 
-#if __LP64__
+#if __aarch64__
+	messageToCopyInAboutDialog=[NSString stringWithFormat:@"POV-Ray v%s (Arm 64 bit)\n",POV_RAY_VERSION];
+#elif __x86_64__
 	messageToCopyInAboutDialog=[NSString stringWithFormat:@"POV-Ray v%s (Intel 64 bit)\n",POV_RAY_VERSION];
 #else
 	messageToCopyInAboutDialog=[NSString stringWithFormat:@"POV-Ray v%s (Intel 32 bit)\n",POV_RAY_VERSION];
@@ -465,8 +467,10 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 
 //message window
 	[[MessageViewController sharedInstance] printNSString: @"---------------------------------------------------------------------------------------\n"	fromStream: WARNING_STREAM];
-#if __LP64__
+#if __x86_64__
 	[[MessageViewController sharedInstance] printNSString:@"POV-Ray Unofficial (Intel 64 bit)\n"	fromStream: WARNING_STREAM];
+#elif __aarch64__
+	[[MessageViewController sharedInstance] printNSString:@"POV-Ray Unofficial (Arm 64 bit)\n"	fromStream: WARNING_STREAM];
 #else
 	[[MessageViewController sharedInstance] printNSString:@"POV-Ray Unofficial (Intel 32 bit)\n"	fromStream: WARNING_STREAM];
 #endif
@@ -522,14 +526,16 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 				for (int x= 1; x<=[openDocuments count]; x++)
 				{
 					NSArray *documentArray=[openDocuments objectAtIndex:x-1];
-					SceneDocument *document=[[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:[documentArray objectAtIndex:1]] display:YES error:nil];
-					[[document window] setFrameFromString:[documentArray objectAtIndex:0]];
-					NSRange range=NSRangeFromString([documentArray objectAtIndex:2]);
-					if(range.location > [[[document getSceneTextView]textStorage]length])
-						range.location=0;
-					[[document getSceneTextView] setSelectedRange:range];
-					[[document getSceneTextView] scrollRangeToVisible:range];
-					[document showWindows];
+					[[NSDocumentController sharedDocumentController] openDocumentWithContentsOfURL:[NSURL fileURLWithPath:[documentArray objectAtIndex:1]] display:YES completionHandler:^(NSDocument * _Nullable document1, BOOL documentWasAlreadyOpen, NSError * _Nullable error) {
+						SceneDocument *document = (id)document1;
+						[[document window] setFrameFromString:[documentArray objectAtIndex:0]];
+						NSRange range=NSRangeFromString([documentArray objectAtIndex:2]);
+						if(range.location > [[[document getSceneTextView]textStorage]length])
+							range.location=0;
+						[[document getSceneTextView] setSelectedRange:range];
+						[[document getSceneTextView] scrollRangeToVisible:range];
+						[document showWindows];
+					}];
 				}
 			}
 		}
@@ -616,19 +622,14 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 //---------------------------------------------------------------------
 // templateMainInsertMenu
 //---------------------------------------------------------------------
--(menuFromDirectory*)templateMainInsertMenu;
-{
-	return mMainTemplateInsertMenu;
-}
+@synthesize templateMainInsertMenu=mMainTemplateInsertMenu;
 
 //---------------------------------------------------------------------
 // setMenuFromDirectory
 //---------------------------------------------------------------------
 - (void) setMenuFromDirectory: (menuFromDirectory*) menu;
 {
-	[mMainTemplateInsertMenu release];
-	mMainTemplateInsertMenu=menu;
-	[mMainTemplateInsertMenu retain];
+	self.templateMainInsertMenu=menu;
 }
 
 
@@ -647,32 +648,30 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 
 	// create a new item to add the new insert menu on
 	// will be added to the manubar later
-	NSMenuItem		*tempItem=[[[NSMenuItem alloc]initWithTitle:@"Insert" action:@selector(insertMenu:) keyEquivalent:@""]autorelease];
+	NSMenuItem		*tempItem=[[NSMenuItem alloc]initWithTitle:@"Insert" action:@selector(insertMenu:) keyEquivalent:@""];
 	if ( tempItem == nil)
 		return;
 
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
-	NSMenu *m=[[[NSMenu alloc]initWithTitle:@"Insert"]autorelease];
-	[tempItem setSubmenu:m];
-	// build the new insert menu
-	[self setMenuFromDirectory:[menuFromDirectory fromDirectory:mainInsertPath
-																							 withExtensions:[NSArray arrayWithObjects: @"txt",nil]
-																							forMainMenuItem:tempItem
-																									scaleFactor:scaleFactor action:@selector(insertMenu:)]];
-
-
-	NSInteger indexForInsertMenuItem=[mMainMenu indexOfItem:mTemplateMenuItem];
-	[mMainMenu insertItem:tempItem atIndex:indexForInsertMenuItem ];
-	[pool release] ;
-
+	@autoreleasepool {
+		NSMenu *m=[[NSMenu alloc]initWithTitle:@"Insert"];
+		[tempItem setSubmenu:m];
+		// build the new insert menu
+		[self setTemplateMainInsertMenu:[menuFromDirectory fromDirectory:mainInsertPath
+																								 withExtensions:[NSArray arrayWithObjects: @"txt",nil]
+																								forMainMenuItem:tempItem
+																										scaleFactor:scaleFactor action:@selector(insertMenu:)]];
+		
+		
+		NSInteger indexForInsertMenuItem=[mMainMenu indexOfItem:mTemplateMenuItem];
+		[mMainMenu insertItem:tempItem atIndex:indexForInsertMenuItem ];
+	}
 	//return;
 
 	//fixme************************************************fixme
 	// create an array with only directories
 	// to watch for changes
-	NSMutableArray *dirAr=[[[NSMutableArray alloc]init]autorelease];
-	[dirAr addObject:[[[[self templateMainInsertMenu] path]copy]autorelease]];
+	NSMutableArray<NSString*> *dirAr=[[NSMutableArray alloc]init];
+	[dirAr addObject:[[[self templateMainInsertMenu] path]copy]];
 
 	[[ self templateMainInsertMenu] directories:dirAr];
 	[NSThread detachNewThreadSelector:  @selector(watchInsertDirectories:)  toTarget: self
@@ -691,8 +690,7 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 -(void) watchInsertDirectories:(id) anobject
 {
 	insertMenuIsBeingWatched=watching;
-	NSMutableArray *dirAr=(NSMutableArray*)anobject;
-	NSAutoreleasePool *pool;
+	NSArray<NSString*> *dirAr=(NSMutableArray*)anobject;
 	int				i;
 	int				kq;
 	//int				ev_count;
@@ -705,19 +703,19 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 	NOTE_ATTRIB | NOTE_LINK | NOTE_RENAME | NOTE_REVOKE;
 	if ( (kq = kqueue()) < 0 )
 		goto Bail;
-	pool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
 	for (  foldersToWatch = 0 ; foldersToWatch < [dirAr count] ; foldersToWatch++ )
 	{
 		//  Currently the O_EVTONLY is designed so that to keep a dir file descriptor open without stopping users from unmounting the disk.  HFS+ only on 10.3
 		//  Open a descriptor for each directory we are watching
-		fd[foldersToWatch]	= open( [[dirAr objectAtIndex:foldersToWatch]UTF8String], O_EVTONLY );
+		fd[foldersToWatch]	= open( [[dirAr objectAtIndex:foldersToWatch] fileSystemRepresentation], O_EVTONLY );
 		if ( fd[foldersToWatch] <= 0 )
 			break;	//  If we get any errors, just break and continue with what we have
 		EV_SET( &ev_change[foldersToWatch], fd[foldersToWatch], EVFILT_VNODE, EV_ADD | EV_CLEAR|EV_ENABLE | EV_ONESHOT, vnode_events, 0,0); // &(mpTaskInfo->mpControlInfo[foldersToWatch]) );
 	}
-	[pool release];
+	}
 
-	/*ev_count	=*/kevent( kq, ev_change, foldersToWatch, ev_receive, [dirAr count], NULL );
+	/*ev_count	=*/kevent( kq, ev_change, foldersToWatch, ev_receive, (int)[dirAr count], NULL );
 
 Bail:
 	//NSLog(@"bailing");
@@ -727,7 +725,7 @@ Bail:
 	if ( insertMenuIsBeingWatched != aborting) // we are aborting and should not watch again
 	{
 		insertMenuIsBeingWatched=notWatching;
-		[self performSelectorOnMainThread:@selector(reloadTemplateInsertMenu)withObject: nil waitUntilDone:NO];
+		[self performSelectorOnMainThread:@selector(reloadTemplateInsertMenu) withObject: nil waitUntilDone:NO];
 	}
 	delete []ev_receive;
 	return;
@@ -750,7 +748,7 @@ Bail:
 	{
 		[mMainMenu removeItemAtIndex:indexForInsertMenuItem];
 	}
-	[self setMenuFromDirectory:nil];
+	[self setTemplateMainInsertMenu:nil];
 	[self buildTemplateInsertMenu];
 }
 
@@ -777,9 +775,9 @@ Bail:
 }
 
 //---------------------------------------------------------------------
-// getNumberOfCpus
+// numberOfCPUs
 //---------------------------------------------------------------------
-@synthesize getNumberOfCpus=mNumberOfCpus;
+@synthesize numberOfCPUs=mNumberOfCpus;
 
 
 @end

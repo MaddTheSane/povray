@@ -131,7 +131,7 @@ void RadiosityTask::Run()
 
 		double jitter = min(1.0, pretraceSize / 2.0);
 		double offset = (pretraceSize - 1.0) / 2.0;
-		unsigned int subBlockCount = pBlockInfo->incompleteSubBlocks.size();
+		unsigned long subBlockCount = pBlockInfo->incompleteSubBlocks.size();
 
 		int subBlockDivideX;
 		int subBlockDivideY;

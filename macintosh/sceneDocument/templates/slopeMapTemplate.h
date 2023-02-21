@@ -42,7 +42,7 @@
 #import "mapBaseTemplate.h"
 #import "slopeMap.h"
 
-@interface SlopemapTemplate : MapBaseTemplate
+@interface SlopemapTemplate : MapBaseTemplate <NSTableViewDataSource>
 {
 	IBOutlet NSButton *SlopeButton;
 	IBOutlet NSButton *PointButton;

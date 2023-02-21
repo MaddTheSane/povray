@@ -46,7 +46,7 @@
 #import "finishTemplate.h"
 #import "interiorTemplate.h"
 #import "materialEditorMap.h"
-#import "materialPreview.h"
+#import "MaterialPreview.h"
 
 typedef NS_ENUM(NSInteger, eMaterialButtons) {
 	cMaterialPigmentTab		=0,
@@ -147,7 +147,7 @@ enum eMaterialPreview {
   IBOutlet NSPopUpButton	*materialReflectPopUp;
 
 
-	IBOutlet materialPreview	*mateiralPreviewView;
+	IBOutlet MaterialPreview	*mateiralPreviewView;
 	
     
   //internal 

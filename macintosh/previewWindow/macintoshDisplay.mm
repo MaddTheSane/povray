@@ -71,7 +71,7 @@ namespace vfe
 			if ( ystart < 0)
 				ystart = 0;
 
-			remoteObject *rm=[[remoteObject alloc]initWithObjectsAndKeys:
+			RemoteObject *rm=[[RemoteObject alloc] initWithObjectsAndKeys:
 												[NSNumber numberWithInt:w], @"w",
 												[NSNumber numberWithInt:h], @"h",
 												[NSNumber numberWithInt:xstart], @"xStart",
@@ -80,8 +80,7 @@ namespace vfe
 												[NSNumber numberWithInt:yend], @"yEnd",
 												nil];
 
-			[activeRenderPreview performSelectorOnMainThread:@selector(displayInit:)withObject: rm waitUntilDone:YES];
-			[rm release];
+			[activeRenderPreview performSelectorOnMainThread:@selector(displayInit:) withObject: rm waitUntilDone:YES];
 		}
 	}
 

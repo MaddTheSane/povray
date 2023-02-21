@@ -52,7 +52,7 @@ namespace vfe
 	//---------------------------------------------------------------------
 	// Mac_Parse_Error
 	//---------------------------------------------------------------------
-	// remoteMac_Parse_Error is in picturePreviewBase.mm
+	// remoteMac_Parse_Error is in PicturePreviewBase.mm
 	//---------------------------------------------------------------------
 	void Mac_Parse_Error( const char *fileName, long  lineNo)
 	{
@@ -60,11 +60,10 @@ namespace vfe
 		{
 			[[MessageViewController sharedInstance] performSelectorOnMainThread:@selector(windowFront) withObject:nil waitUntilDone:YES];
 
-			remoteObject *rm=[[remoteObject alloc]initWithObjectsAndKeys:
-												[NSString stringWithUTF8String:fileName], @"fileName",
-												[NSNumber numberWithInteger:lineNo], @"lineNo",	nil];
+			RemoteObject *rm=[[RemoteObject alloc]initWithObjectsAndKeys:
+												@(fileName), @"fileName",
+												@(lineNo), @"lineNo",	nil];
 			[activeRenderPreview performSelectorOnMainThread:@selector(remoteMac_Parse_Error:)withObject: rm waitUntilDone:YES];
-			[rm release];
 		}
 	}
 
@@ -137,7 +136,7 @@ namespace vfe
 					if ( lres== true)
 						gIsPausing=YES;
 					if ( olState != gIsPausing)
-						[[NSNotificationCenter defaultCenter]	postNotificationName:@"pauseStatusChanged" object:nil userInfo:nil];
+						[[NSNotificationCenter defaultCenter]	postNotificationName:POVRenderPauseStatusChangedNotification object:nil userInfo:nil];
 
 				}
 

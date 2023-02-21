@@ -62,7 +62,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 
 	if ( dict== nil)
@@ -72,18 +72,16 @@
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	[ds copyTabAndText:@"interior {\n"];
 	[ds addTab];
 
 //interior type 
-	if ( [[dict objectForKey:@"interiorIorIndexEdit"] floatValue] != 1.0 || [[dict objectForKey:@"interiorDispersionGroupOn"]intValue]==NSOnState)
+	if ( [[dict objectForKey:@"interiorIorIndexEdit"] doubleValue] != 1.0 || [[dict objectForKey:@"interiorDispersionGroupOn"]intValue]==NSOnState)
 		[ds appendTabAndFormat:@"ior %@\n",[dict objectForKey:@"interiorIorIndexEdit"]];
 
 	if (  [[dict objectForKey:@"interiorCausticsOn"]intValue]==NSOnState)
@@ -115,7 +113,6 @@
 
 	[ds removeTab];
 	[ds copyTabAndText:@"}\n"];
-	[dict release];
 	return ds;
 }
 
@@ -138,7 +135,7 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:cIorIndexWater],			@"interiorIorIndexPopUp",
@@ -196,7 +193,6 @@
 		newItem=[[NSMenuItem alloc]init];	
 		[newItem setTitle:[itemArray objectAtIndex:index]];
 		[m	addItem:newItem];
-		[newItem release];
 	}
 	
 	mOutlets =[NSDictionary dictionaryWithObjectsAndKeys:
@@ -217,8 +213,6 @@
 
 	nil] ;
 	
-	[mOutlets retain];
-
 	[ToolTipAutomator setTooltips:@"interiorLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"interiorLocalized" andDictionary:
@@ -301,7 +295,7 @@
 //---------------------------------------------------------------------
 -(IBAction) interiorTarget:(id)sender
 {
-	NSInteger theTag;
+	eInteriorTags theTag;
 	if ( sender==self)
 		theTag=cInteriorDispersionGroupOn;
 	else

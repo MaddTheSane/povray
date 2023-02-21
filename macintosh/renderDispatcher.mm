@@ -52,6 +52,16 @@
 // this must be the last file included
 #import "syspovdebug.h"
 
+NSNotificationName const POVRenderDocumentNotification = @"renderDocument";
+NSNotificationName const POVRenderSettingsChangedNotification = @"renderingSettingsChaged";
+NSNotificationName const POVRenderStateNotification = @"renderState";
+NSNotificationName const POVRenderPreparingNotification = @"preparingState";
+NSNotificationName const POVRenderSessionStoppedRenderingNotification = @"vfeSessionStoppedRendering";
+NSNotificationName const POVRenderSessionAcceptDocumentNotification = @"acceptDocument";
+NSNotificationName const POVRenderNewSelectionInPreviewWindowSetNotification = @"newSelectionInPreviewwindowSet";
+NSNotificationName const POVRenderPauseStatusChangedNotification = @"pauseStatusChanged";
+NSNotificationName const POVRenderNewSelectionInPreferencesPanelSetNotification = @"newSelectionInPreferencesPanelSet";
+
 BOOL gOnlyDisplayPart=NO;
 BOOL gDontErasePreveiw=NO;
 static NSInteger compareBatchEntryUsingSelector(id p1, id p2, void *context);
@@ -94,7 +104,7 @@ static renderDispatcher* _renderDispatcher;
 		availableArgc=120;
 		Argc=0;
 		Argv=nil;
-		if ([NSBundle loadNibNamed:@"batch.nib" owner:self] == YES)
+		if ([NSBundle loadNibNamed:@"batch" owner:self] == YES)
 		{
 		}
 		else
@@ -203,7 +213,7 @@ static renderDispatcher* _renderDispatcher;
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderDocument:)
-		name:@"renderDocument"
+		name:POVRenderDocumentNotification
 		object:nil];
 
 	// we need to know when a rendering settings are added or removed
@@ -211,13 +221,13 @@ static renderDispatcher* _renderDispatcher;
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(buildSettingsPopup)
-		name:@"renderingSettingsChaged"
+		name:POVRenderSettingsChangedNotification
 		object:nil];
 
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderState:)
-		name:@"renderState"
+		name:POVRenderStateNotification
 		object:nil];
 
 	[mSettingsPopupButton setAutoenablesItems:NO];
@@ -720,16 +730,16 @@ static renderDispatcher* _renderDispatcher;
 				if ( currentSettings)	//make sure we have usable settings to render the file
 				{
 					NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
-															[NSNumber numberWithBool:YES] ,	@"shouldStartRendering",
+															@YES,													@"shouldStartRendering",
 															[mBatchMap objectAtRow:x-1 atColumn:cNameIndex], 				@"fileName",
-															currentSettings,								@"rendersettings",
+															currentSettings,							@"rendersettings",
 															[NSDate date],								@"dateOfPosting",
-															[NSNumber numberWithBool:YES],	@"isBatchRender",
+															@YES,													@"isBatchRender",
 															nil];
 					[self setBatchIsRunning:YES];
 					[self setButtons];
 					[[NSNotificationCenter defaultCenter]
-						postNotificationName:@"renderDocument"
+						postNotificationName:POVRenderDocumentNotification
 						object:self
 						userInfo:dict];
 					return;
@@ -803,7 +813,7 @@ static renderDispatcher* _renderDispatcher;
 	[openPanel setAllowsMultipleSelection:YES];
 	[openPanel setCanChooseDirectories:NO];
 	[openPanel setCanChooseFiles:YES];
-	[openPanel setAllowedFileTypes:[NSArray arrayWithObject:@"pov"]];
+	[openPanel setAllowedFileTypes:[NSArray arrayWithObject:@"org.povray.pov"]];
 	void (^batchOpenFilesPanelFinishedHandler)(NSInteger) = ^( NSInteger resultCode)
 	{
 		@autoreleasepool
@@ -891,7 +901,7 @@ static renderDispatcher* _renderDispatcher;
 
 -(void)notifyVfeSessionStoppedRendering
 {
-	[[NSNotificationCenter defaultCenter]	postNotificationName:@"vfeSessionStoppedRendering" object:nil userInfo:nil];
+	[[NSNotificationCenter defaultCenter]	postNotificationName:POVRenderSessionStoppedRenderingNotification object:nil userInfo:nil];
 }
 //---------------------------------------------------------------------
 // setIsRendering
@@ -924,7 +934,7 @@ static renderDispatcher* _renderDispatcher;
 		mThreadID=0l;
 	}
 
-	[[NSNotificationCenter defaultCenter]	postNotificationName:@"renderState" object:self userInfo:dict];
+	[[NSNotificationCenter defaultCenter]	postNotificationName:POVRenderStateNotification object:self userInfo:dict];
 	if ( gApplicationShouldTerminate == YES)
 		[[NSApplication sharedApplication]terminate:nil];
 
@@ -944,11 +954,10 @@ static renderDispatcher* _renderDispatcher;
 -(void) setPreparingToRender: (BOOL) flag
 {
 	mPreparingToRender=flag;
-	NSDictionary *dict=[NSDictionary dictionaryWithObject:
-											[NSNumber numberWithBool:flag] forKey:@"preparingStarted"];
+	NSDictionary *dict= @{@"preparingStarted": @(flag)};
 
 	[[NSNotificationCenter defaultCenter]
-		postNotificationName:@"preparingState"
+		postNotificationName:POVRenderPreparingNotification
 		object:self userInfo:dict];
 }
 
@@ -1044,9 +1053,9 @@ static renderDispatcher* _renderDispatcher;
 					{
 						if ( [mPostingObject isKindOfClass:[SceneDocument class]]   )
 						{
-							NSDictionary *infoDict=[NSDictionary dictionaryWithObject:[NSNumber numberWithBool:NO] forKey:@"orderFront"];
+							NSDictionary *infoDict=[NSDictionary dictionaryWithObject:@NO forKey:@"orderFront"];
 
-							[[NSNotificationCenter defaultCenter]postNotificationName:@"acceptDocument"
+							[[NSNotificationCenter defaultCenter]postNotificationName:POVRenderSessionAcceptDocumentNotification
 																																 object:mPostingObject
 																															 userInfo:infoDict];
 							//make sure that we have the new file settings
@@ -1651,7 +1660,7 @@ static renderDispatcher* _renderDispatcher;
 	// worker threads:
 	if ( [settingsDict objectForKey:@"Work_Threads"] != nil)
 	{
-		NSInteger cpus=[[MainController sharedInstance]getNumberOfCpus];
+		NSInteger cpus=[[MainController sharedInstance]numberOfCPUs];
 		if ( cpus != -1)	// we know how many cores there are
 		{
 			switch ([[settingsDict objectForKey:@"Work_Threads"]intValue])
@@ -1972,7 +1981,7 @@ void *doRender(void* theObject)
 			if ( mSessionResult== true)
 				gIsPausing=NO;
 		}
-		[[NSNotificationCenter defaultCenter]	postNotificationName:@"pauseStatusChanged" object:self userInfo:nil];
+		[[NSNotificationCenter defaultCenter]	postNotificationName:POVRenderPauseStatusChangedNotification object:self userInfo:nil];
 	}
 	else
 	{
@@ -2002,101 +2011,98 @@ void *doRender(void* theObject)
 //---------------------------------------------------------------------
 -(NSString *) setInputFileNoPathNoExtension: (NSString*)fileName
 {
+	[self willChangeValueForKey:@"inputFileNoPathNoExtension"];
 	[inputFileNoPathNoExtension release];
 	inputFileNoPathNoExtension=[fileName copy];
+	[self didChangeValueForKey:@"inputFileNoPathNoExtension"];
 	return inputFileNoPathNoExtension;
 }
 
 //---------------------------------------------------------------------
 // inputFileNoPathNoExtension
 //---------------------------------------------------------------------
--(NSString *) inputFileNoPathNoExtension
-{
-	return inputFileNoPathNoExtension;
-}
+@synthesize inputFileNoPathNoExtension;
 
 //---------------------------------------------------------------------
 // setInputFileNoPathNoExtension
 //---------------------------------------------------------------------
 -(NSString *) setInputFileNameNoPathWithExtension: (NSString*)fileName
 {
+	[self willChangeValueForKey:@"inputFileNameNoPathWithExtension"];
 	[inputFileNameNoPathWithExtension release];
 	inputFileNameNoPathWithExtension=[fileName copy];
+	[self didChangeValueForKey:@"inputFileNameNoPathWithExtension"];
 	return inputFileNameNoPathWithExtension;
 }
 
 //---------------------------------------------------------------------
 // inputFileNameNoPathWithExtension
 //---------------------------------------------------------------------
--(NSString *) inputFileNameNoPathWithExtension
-{
-	return inputFileNameNoPathWithExtension;
-}
+@synthesize inputFileNameNoPathWithExtension;
 
 //---------------------------------------------------------------------
 // setInputFilePathWithSlash
 //---------------------------------------------------------------------
 -(NSString *) setInputFilePathWithSlash: (NSString*)path
 {
+	[self willChangeValueForKey:@"inputFilePathWithSlash"];
 	[inputFilePathWithSlash release];
 	inputFilePathWithSlash=[path copy];
+	[self didChangeValueForKey:@"inputFilePathWithSlash"];
 	return inputFilePathWithSlash;
 }
 
 //---------------------------------------------------------------------
 // inputFilePathWithSlash
 //---------------------------------------------------------------------
--(NSString *) inputFilePathWithSlash
-{
-	return inputFilePathWithSlash;
-}
+@synthesize inputFilePathWithSlash;
 
 //---------------------------------------------------------------------
 // setOutputFilePathWithSlash
 //---------------------------------------------------------------------
 -(NSString *) setOutputFilePathWithSlash: (NSString*)path
 {
+	[self willChangeValueForKey:@"outputFilePathWithSlash"];
 	[outputFilePathWithSlash release];
 	outputFilePathWithSlash=[path copy];
+	[self didChangeValueForKey:@"outputFilePathWithSlash"];
 	return outputFilePathWithSlash;
 }
 
 //---------------------------------------------------------------------
 // outputFilePathWithSlash
 //---------------------------------------------------------------------
--(NSString *) outputFilePathWithSlash
-{
-	return outputFilePathWithSlash;
-}
+@synthesize outputFilePathWithSlash;
 
 //---------------------------------------------------------------------
 // setOutputFileNameNoPathNoExtension
 //---------------------------------------------------------------------
 -(NSString *) setOutputFileNameNoPathNoExtension: (NSString*)fileName
 {
+	[self willChangeValueForKey:@"outputFileNameNoPathNoExtension"];
 	[outputFileNameNoPathNoExtension release];
 	outputFileNameNoPathNoExtension=[fileName copy];
+	[self didChangeValueForKey:@"outputFileNameNoPathNoExtension"];
 	return outputFileNameNoPathNoExtension;
 }
 
 //---------------------------------------------------------------------
 // outputFileNameNoPathNoExtension
 //---------------------------------------------------------------------
--(NSString *) outputFileNameNoPathNoExtension
-{
-	return outputFileNameNoPathNoExtension;
-}
+@synthesize outputFileNameNoPathNoExtension;
 
 //---------------------------------------------------------------------
 // buildOutputFileWithPathAndDot
 //---------------------------------------------------------------------
 -(NSString *) buildOutputFileWithPathAndDot
 {
+	[self willChangeValueForKey:@"outputFileWithPathAndDot"];
 	[outputFileWithPathAndDot release];
 	outputFileWithPathAndDot=[[self outputFilePathWithSlash] stringByAppendingString:[self outputFileNameNoPathNoExtension]];
 	//NSLog(@"outputFileWithPathAndDot: %@",[self outputFileWithPathAndDot]);
 	outputFileWithPathAndDot=[[[self outputFileWithPathAndDot] stringByAppendingString:@"."] copy];
 	//NSLog(@"outputFileWithPathAndDot: %@",[self outputFileWithPathAndDot]);
+	[self didChangeValueForKey:@"outputFileWithPathAndDot"];
 
 	return outputFileWithPathAndDot;
 }
@@ -2104,44 +2110,29 @@ void *doRender(void* theObject)
 //---------------------------------------------------------------------
 // outputFileWithPathAndDot
 //---------------------------------------------------------------------
--(NSString *) outputFileWithPathAndDot
-{
-	return outputFileWithPathAndDot;
-}
+@synthesize outputFileWithPathAndDot;
 
 //---------------------------------------------------------------------
 // setExtensionToAddIfNoneWasProvided
 //---------------------------------------------------------------------
 -(NSString *) setExtensionToAddIfNoneWasProvided: (NSString*)extension
 {
+	[self willChangeValueForKey:@"extensionToAddIfNoneWasProvided"];
 	[extensionToAddIfNoneWasProvided release];
 	extensionToAddIfNoneWasProvided=[extension copy];
+	[self didChangeValueForKey:@"extensionToAddIfNoneWasProvided"];
 	return extensionToAddIfNoneWasProvided;
 }
 
 //---------------------------------------------------------------------
 // extensionToAddIfNoneWasProvided
 //---------------------------------------------------------------------
--(NSString *) extensionToAddIfNoneWasProvided
-{
-	return extensionToAddIfNoneWasProvided;
-}
+@synthesize extensionToAddIfNoneWasProvided;
 
 //---------------------------------------------------------------------
 // batchIsRunning
 //---------------------------------------------------------------------
--(BOOL) batchIsRunning
-{
-	return mBatchIsRunning;
-}
-
-//---------------------------------------------------------------------
-// setBatchIsRunning
-//---------------------------------------------------------------------
--(void) setBatchIsRunning:(int)newState
-{
-	mBatchIsRunning=newState;
-}
+@synthesize batchIsRunning=mBatchIsRunning;
 
 //---------------------------------------------------------------------
 // batchSaveDefaults
@@ -2162,9 +2153,9 @@ void *doRender(void* theObject)
 			[defaults setObject:[NSNumber numberWithInt:mSorteerOplopend] forKey:@"sortMethod"];
 		}
 		if ( [mBatchWindow isVisible] )
-			[defaults setObject:[NSNumber numberWithBool:YES] forKey:@"batchwindowIsVisible"];
+			[defaults setObject:@YES forKey:@"batchwindowIsVisible"];
 		else
-			[defaults setObject:[NSNumber numberWithBool:NO] forKey:@"batchwindowIsVisible"];
+			[defaults setObject:@NO forKey:@"batchwindowIsVisible"];
 
 	}
 }

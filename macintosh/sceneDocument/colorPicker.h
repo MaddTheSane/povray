@@ -40,7 +40,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-enum {
+NS_ENUM(NSInteger) {
 	cRedEdit = 1,
 	cGreenEdit=2,
 	cBlueEdit=3,
@@ -63,14 +63,14 @@ enum {
 	IBOutlet NSView			*mFilterTransmitView;
 	IBOutlet NSButton		*mGrayOn;
 	
-	id mDelegate;
+	__weak id mDelegate;
 	IBOutlet NSPanel *window;
 	CGFloat mFilter,mTransmit;
 	NSControlStateValue mFilterOnState;
 	NSControlStateValue mTransmitOnState;
 	NSControlStateValue mGrayOnState;
 }
--(id) initWithDelegate:(id) delegate ;
+-(instancetype) initWithDelegate:(id) delegate ;
 -(IBAction) cancelButton: (id)sender;
 -(IBAction) okButton:(id)sender;
 -(IBAction) colorPickerTraget:(id)sender;

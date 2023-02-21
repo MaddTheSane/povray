@@ -50,7 +50,7 @@
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 	if ( dict== nil)
@@ -59,14 +59,12 @@
 	}
 	else
 		[BaseTemplate addMissingObjectsInPreferences:dict forClass:[CameraTemplate class] andTemplateType:menuTagTemplateCamera];
-	[dict retain];
 	
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 		{
-			[dict release];
 			return nil;
 			
 		}
@@ -250,7 +248,6 @@
 		[ds copyTabAndText:@"}\n"];
 	}
 	//	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -305,7 +302,7 @@
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		[NSNumber numberWithInt:cCameraPredefinedTab],					@"cameraTabView",
@@ -372,7 +369,7 @@
 -(void) awakeFromNib
 {
 	[super awakeFromNib];
-	mOutlets =[NSDictionary dictionaryWithObjectsAndKeys:
+	mOutlets =[[NSDictionary alloc] initWithObjectsAndKeys:
 		cameraTabView,									@"cameraTabView",
 
 		[cameraLocationMatrix cellWithTag:0],					@"cameraLocationMatrixX",	
@@ -428,7 +425,6 @@
 		cameraUserDefinedDirectionFunctionZ,	@"cameraUserDefinedDirectionFunctionMatrixZ",
 
 	nil] ;
-	[mOutlets retain];
 	
 	[ToolTipAutomator setTooltips:@"cameraLocalized" andDictionary:mOutlets];
 	//additional objects
@@ -452,10 +448,7 @@
 		nil]
 		];
 		
-	mExcludedObjectsForReset=[NSArray arrayWithObjects:
-		@"cameraTabView",
-		nil];
-	[mExcludedObjectsForReset retain];
+	mExcludedObjectsForReset=@[@"cameraTabView"];
 		
 	[self  setValuesInPanel:[self preferences]];
 	

@@ -98,7 +98,7 @@ enum {
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 	NSString *buttonString;
@@ -111,11 +111,10 @@ enum {
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-	[dict retain];
 
 	BOOL lineWritten=NO;
 	for (int x=1; x<=7; x++)
@@ -153,7 +152,6 @@ enum {
 		[ds appendFormat:@"%@\n",[dict objectForKey:@"headerIncludeVersion2"]];
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -175,7 +173,7 @@ enum {
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 		@"Persistence of Vision Ray Tracer Scene Description File",	@"headerIncludeComment1",	
@@ -283,7 +281,6 @@ enum {
 	nil] ;
 	[ToolTipAutomator setTooltips:@"headerIncludeLocalized" andDictionary:mOutlets];
 
-	[mOutlets retain];
 	[self  setValuesInPanel:[self preferences]];
 }
 

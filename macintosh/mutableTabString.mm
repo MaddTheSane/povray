@@ -48,7 +48,7 @@
 //---------------------------------------------------------------------
 // initWithTabs
 //---------------------------------------------------------------------
--(id) initWithTabs:(int)tabs andCallerType:(BOOL) callerIsSceneDocument
+-(id) initWithTabs:(NSInteger)tabs andCallerType:(BOOL) callerIsSceneDocument
 {
 	self =[super init];
 	if ( self)		
@@ -56,9 +56,9 @@
 		mTabCount=tabs;
 		mCallerIsSceneDocument=callerIsSceneDocument;
 		mFirstTimeWritten=NO;
-		[self setString:[[[NSMutableString alloc] init]autorelease]];
-		[self setTabString:[[[NSMutableString alloc]init]autorelease] ];
-		for (int x=1; x<=mTabCount; x++)
+		[self setString:[[NSMutableString alloc] init]];
+		[self setTabString:[[NSMutableString alloc]init]];
+		for (NSInteger x=1; x<=mTabCount; x++)
 			[[self tabString] appendString:@"\t"];
 	}
 	return self;
@@ -122,11 +122,7 @@
 //---------------------------------------------------------------------
 // currentTabs
 //---------------------------------------------------------------------
--(int) currentTabs
-{
-	return mTabCount;
-//	return [mTabString length];
-}
+@synthesize currentTabs=mTabCount;
 
 //---------------------------------------------------------------------
 // removeTab
@@ -165,10 +161,18 @@
 {
 	va_list argumentList;
 	va_start(argumentList,format);
-	
-	NSString *temp=[[[NSString alloc] initWithFormat:format arguments:argumentList]autorelease];
-	[[self string] appendString:temp];
+	[self appendFormat:format arguments:argumentList];
 	va_end(argumentList);
+}
+
+//---------------------------------------------------------------------
+// appendFormat
+//---------------------------------------------------------------------
+- (void)appendFormat:(NSString *)format arguments:(va_list)args
+{
+	
+	NSString *temp=[[NSString alloc] initWithFormat:format arguments:args];
+	[[self string] appendString:temp];
 }
 
 //---------------------------------------------------------------------
@@ -176,12 +180,20 @@
 //---------------------------------------------------------------------
 -(void) appendTabAndFormat:(NSString*)format,...
 {
-	[self copyTabText];
 	va_list argumentList;
 	va_start(argumentList,format);
-	NSString *temp=[[[NSString alloc] initWithFormat:format arguments:argumentList]autorelease];
-	[[self string] appendString:temp];
+	[self appendTabAndFormat:format arguments:argumentList];
 	va_end(argumentList);
+}
+
+//---------------------------------------------------------------------
+// appendTabAndFormat
+//---------------------------------------------------------------------
+-(void) appendTabAndFormat:(NSString*)format arguments:(va_list)args
+{
+	[self copyTabText];
+	NSString *temp=[[NSString alloc] initWithFormat:format arguments:args];
+	[[self string] appendString:temp];
 }
 
 //---------------------------------------------------------------------
@@ -325,6 +337,5 @@
 {
 	[self setString:nil];
 	[self setTabString:nil];
-	[super dealloc];
 }
 @end

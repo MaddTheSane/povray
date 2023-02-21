@@ -55,7 +55,7 @@ static BOOL mSkySphereWritten;
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) WritingPattern mutableTabString:(MutableTabString*) ds
 {
 	mSkySphereWritten=NO;
 	if ( dict== nil)
@@ -65,12 +65,10 @@ static BOOL mSkySphereWritten;
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	materialEditorMap *cmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"materialEditorMap"]];
 	
@@ -102,7 +100,6 @@ static BOOL mSkySphereWritten;
 
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -167,7 +164,7 @@ static BOOL mSkySphereWritten;
 	if ( dict== nil)
 		return;
 		
-	MutableTabString *ds=[[[MutableTabString alloc] initWithTabs:0 andCallerType:NO]autorelease];
+	MutableTabString *ds=[[MutableTabString alloc] initWithTabs:0 andCallerType:NO];
 	materialEditorMap *cmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"materialEditorMap"]];
 	[ds copyTabAndText:@"#version 3.7;"];
 	[ds copyTabAndText:@"global_settings {assumed_gamma 1.0}"];
@@ -186,7 +183,7 @@ static BOOL mSkySphereWritten;
 			for (NSInteger x=beginLayer; x<=endLayer; x++)
 				[MaterialTemplate addLayer:ds atIndex:x fromMap:cmap];
 			[ds removeTab];
-			if ( [[dict objectForKey:@"materialTransformationsOn"]intValue]==NSOnState)
+			if ( [[dict objectForKey:@"materialTransformationsOn"]integerValue]==NSOnState)
 			{
 				[TransformationsTemplate createDescriptionWithDictionary:[dict objectForKey:@"materialTransformations"]
 						andTabs:[ds currentTabs] extraParam:0 mutableTabString:ds];
@@ -205,7 +202,7 @@ static BOOL mSkySphereWritten;
 			[ds addTab];
 			for (NSInteger x=beginLayer; x<=endLayer; x++)
 				[MaterialTemplate addLayer:ds atIndex:x fromMap:cmap];
-			if ( [[dict objectForKey:@"materialTransformationsOn"]intValue]==NSOnState)
+			if ( [[dict objectForKey:@"materialTransformationsOn"]integerValue]==NSOnState)
 			{
 				[TransformationsTemplate createDescriptionWithDictionary:[dict objectForKey:@"materialTransformations"]
 						andTabs:[ds currentTabs] extraParam:0 mutableTabString:ds];
@@ -225,7 +222,7 @@ static BOOL mSkySphereWritten;
 			[ds addTab];
 			for (NSInteger x=beginLayer; x<=endLayer; x++)
 				[MaterialTemplate addLayer:ds atIndex:x fromMap:cmap];
-			if ( [[dict objectForKey:@"materialTransformationsOn"]intValue]==NSOnState)
+			if ( [[dict objectForKey:@"materialTransformationsOn"]integerValue]==NSOnState)
 			{
 				[TransformationsTemplate createDescriptionWithDictionary:[dict objectForKey:@"materialTransformations"]
 						andTabs:[ds currentTabs] extraParam:0 mutableTabString:ds];
@@ -243,7 +240,7 @@ static BOOL mSkySphereWritten;
 			[ds addTab];
 			for (NSInteger x=beginLayer; x<=endLayer; x++)
 				[MaterialTemplate addLayer:ds atIndex:x fromMap:cmap];
-			if ( [[dict objectForKey:@"materialTransformationsOn"]intValue]==NSOnState)
+			if ( [[dict objectForKey:@"materialTransformationsOn"]integerValue]==NSOnState)
 			{
 				[TransformationsTemplate createDescriptionWithDictionary:[dict objectForKey:@"materialTransformations"]
 						andTabs:[ds currentTabs] extraParam:0 mutableTabString:ds];
@@ -261,7 +258,7 @@ static BOOL mSkySphereWritten;
 			[ds addTab];
 			for (NSInteger x=beginLayer; x<=endLayer; x++)
 				[MaterialTemplate addLayer:ds atIndex:x fromMap:cmap];
-			if ( [[dict objectForKey:@"materialTransformationsOn"]intValue]==NSOnState)
+			if ( [[dict objectForKey:@"materialTransformationsOn"]integerValue]==NSOnState)
 			{
 				[TransformationsTemplate createDescriptionWithDictionary:[dict objectForKey:@"materialTransformations"]
 						andTabs:[ds currentTabs] extraParam:0 mutableTabString:ds];
@@ -291,14 +288,14 @@ static BOOL mSkySphereWritten;
 		[materialPreviewTabView selectTabViewItemAtIndex:cPreviewTab];
 		gMaterialPreview=mateiralPreviewView;
 		NSDictionary *dict=[NSDictionary dictionaryWithObjectsAndKeys:
-			[NSNumber numberWithBool:YES] ,	@"shouldStartRendering",
+			@YES,	@"shouldStartRendering",
 			currentSettings,				@"rendersettings",
-			[NSNumber numberWithBool:YES],  @"renderMaterial",
+			@YES,  @"renderMaterial",
 			[NSDate date],					@"dateOfPosting",
 			nil];
 
 		[[NSNotificationCenter defaultCenter]
-			postNotificationName:@"renderDocument" 
+			postNotificationName:POVRenderDocumentNotification
 			object:self 
 			userInfo:dict];
 	}
@@ -324,7 +321,7 @@ static BOOL mSkySphereWritten;
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 		
 		
@@ -354,11 +351,6 @@ static BOOL mSkySphereWritten;
 -(void) dealloc
 {
 	[[NSNotificationCenter defaultCenter]removeObserver:self];
-	[mPigmentFileOwner release];
-	[mNormalFileOwner release];
-	[mFinishFileOwner release];
-	[mInteriorFileOwner release];
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------
@@ -400,13 +392,13 @@ static BOOL mSkySphereWritten;
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderState:)
-		name:@"renderState"
+		name:POVRenderStateNotification
 		object:nil];
 		
 	[[NSNotificationCenter defaultCenter]
 		addObserver:self
 		selector:@selector(renderState:)
-		name:@"preparingState"
+		name:POVRenderPreparingNotification
 		object:nil];
 	if ( [[renderDispatcher sharedInstance] rendering]==YES 
 				|| [[renderDispatcher sharedInstance] preparingToRender]==YES)
@@ -430,8 +422,6 @@ static BOOL mSkySphereWritten;
 
 	nil] ;
 	
-	[mOutlets retain];
-
 	[ToolTipAutomator setTooltips:@"materialEditorLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"materialEditorLocalized" andDictionary:
@@ -455,35 +445,35 @@ static BOOL mSkySphereWritten;
 	mPigmentFileOwner=[[PigmentTemplate alloc] initWithDocumentPointer:self 
 		andDictionary:nil forType:menuTagTemplatePigment];
 	[NSBundle loadNibNamed:@"pigmentTemplate.nib" owner:mPigmentFileOwner];
-	[mPigmentFileOwner setWindow:[self getWindow]];	//for sheets
+	[mPigmentFileOwner setWindow:[self window]];	//for sheets
 	[materialPigmentViewHolder  addSubview:[mPigmentFileOwner pigmentMainViewNIBView]];
 
 	mNormalFileOwner=[[NormalTemplate alloc] initWithDocumentPointer:self 
 		andDictionary:nil forType:menuTagTemplateNormal];
 	[NSBundle loadNibNamed:@"normalTemplate.nib" owner:mNormalFileOwner];
-	[mNormalFileOwner setWindow:[self getWindow]];	//for sheets
+	[mNormalFileOwner setWindow:[self window]];	//for sheets
 	[materialNormalViewHolder  addSubview:[mNormalFileOwner normalMainViewNIBView]];
 
 	mFinishFileOwner=[[FinishTemplate alloc] initWithDocumentPointer:self 
 		andDictionary:nil forType:menuTagTemplateFinish];
 	[NSBundle loadNibNamed:@"finishTemplate.nib" owner:mFinishFileOwner];
-	[mFinishFileOwner setWindow:[self getWindow]];	//for sheets
+	[mFinishFileOwner setWindow:[self window]];	//for sheets
 	[materialFinishViewHolder  addSubview:[mFinishFileOwner finishMainViewNIBView]];
 
 	mInteriorFileOwner=[[InteriorTemplate alloc] initWithDocumentPointer:self 
 		andDictionary:nil forType:menuTagTemplateInterior];
 	[NSBundle loadNibNamed:@"interiorTemplate.nib" owner:mInteriorFileOwner];
-	[mInteriorFileOwner setWindow:[self getWindow]];	//for sheets
+	[mInteriorFileOwner setWindow:[self window]];	//for sheets
 	[materialInteriorViewHolder  addSubview:[mInteriorFileOwner interiorMainViewNIBView]];
 
 
     // setup the NSButtonCell to place inside the table view
  	id checkboxCell;
-     checkboxCell = [[[NSButtonCell alloc] initTextCell: @""] autorelease];
+     checkboxCell = [[NSButtonCell alloc] initTextCell: @""];
     [checkboxCell setEditable: YES];
     [checkboxCell setButtonType: NSSwitchButton];
     [checkboxCell setImagePosition: NSImageOnly];
-    [checkboxCell setControlSize: NSSmallControlSize];
+    [checkboxCell setControlSize: NSControlSizeSmall];
     
     // actually place the button cell on the table view
     [[mTableView tableColumnWithIdentifier: @"Active"] setDataCell: checkboxCell];
@@ -548,7 +538,7 @@ static BOOL mSkySphereWritten;
 		@autoreleasepool
 		{
 			NSMutableDictionary *dict=nil;
-			if ( resultCode == NSOKButton )
+			if ( resultCode == NSModalResponseOK )
 				dict=[NSMutableDictionary dictionaryWithContentsOfURL:[openPanel URL]];
 			NSString *LocalizedSettingsfileToBeUsed=nil;
 			if ( dict != nil)
@@ -627,11 +617,11 @@ static BOOL mSkySphereWritten;
 													nil, 
 													nil, LocalizedSettingsfileToBeUsed);
 				}
-				[[NSNotificationCenter defaultCenter] postNotificationName:@"NSTableViewSelectionDidChangeNotification" object:mTableView];
+				[[NSNotificationCenter defaultCenter] postNotificationName:NSTableViewSelectionDidChangeNotification object:self->mTableView];
 			}
 		}
 	};
-	[openPanel beginSheetModalForWindow:[self getWindow] 
+	[openPanel beginSheetModalForWindow:[self window]
                               completionHandler:importPreferencesOpenSavePanelHandler];
 
 }
@@ -643,7 +633,7 @@ static BOOL mSkySphereWritten;
 //---------------------------------------------------------------------
 -(void) exportSettings
 {
-	[[self getWindow]makeFirstResponder: [self getWindow]];
+	[[self window] makeFirstResponder: [self window]];
 	id trimmedPrefs=nil;
 	NSString *PanelTitle=nil;
 	NSInteger currentTab=[materialMainTabView indexOfTabViewItem:[materialMainTabView selectedTabViewItem]];
@@ -678,12 +668,12 @@ static BOOL mSkySphereWritten;
 	[savePanel setDirectoryURL:nil];
 	[savePanel setTitle:PanelTitle];
 	
- [savePanel beginSheetModalForWindow:[self getWindow] 
+ [savePanel beginSheetModalForWindow:[self window]
                               completionHandler: ^( NSInteger resultCode )
 	{
 		@autoreleasepool
 	 	{
-			if( resultCode ==NSOKButton )
+			if( resultCode ==NSModalResponseOK )
 				[trimmedPrefs writeToURL:[savePanel URL] atomically:YES];
     }
 	}
@@ -1094,7 +1084,7 @@ static BOOL mSkySphereWritten;
     }
     [mTableView reloadData];
   
-    [mTableView selectRowIndexes:[[[NSIndexSet alloc] initWithIndex:row]autorelease] byExtendingSelection: NO];	// select the row
+    [mTableView selectRowIndexes:[[NSIndexSet alloc] initWithIndex:row] byExtendingSelection: NO];	// select the row
     
     return YES;
 }

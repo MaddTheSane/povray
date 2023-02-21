@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
-        <capability name="box content view" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,23 +16,23 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Convert v3.1 template file" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" frameAutosaveName="convertTemplatePanel" animationBehavior="default" id="7" userLabel="Panel">
+        <window title="Convert v3.1 template file" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="convertTemplatePanel" animationBehavior="default" id="7" userLabel="Panel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="283" y="226" width="600" height="206"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="1002"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <view key="contentView" id="8">
                 <rect key="frame" x="0.0" y="0.0" width="600" height="206"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <box title="Target Directory" id="10">
+                    <box fixedFrame="YES" title="Target Directory" translatesAutoresizingMaskIntoConstraints="NO" id="10">
                         <rect key="frame" x="88" y="56" width="495" height="59"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="0sl-LD-FAI">
-                            <rect key="frame" x="2" y="2" width="491" height="42"/>
+                            <rect key="frame" x="4" y="5" width="487" height="39"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField verticalHuggingPriority="750" id="9">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9">
                                     <rect key="frame" x="13" y="14" width="467" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="System Font Text" id="39">
@@ -45,14 +44,14 @@
                             </subviews>
                         </view>
                     </box>
-                    <box title="Template File" id="12">
+                    <box fixedFrame="YES" title="Template File" translatesAutoresizingMaskIntoConstraints="NO" id="12">
                         <rect key="frame" x="88" y="134" width="495" height="59"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <view key="contentView" id="2ur-QE-s7b">
-                            <rect key="frame" x="2" y="2" width="491" height="42"/>
+                            <rect key="frame" x="4" y="5" width="487" height="39"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <textField verticalHuggingPriority="750" id="14">
+                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14">
                                     <rect key="frame" x="13" y="14" width="422" height="14"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" title="System Font Text" id="40">
@@ -64,7 +63,7 @@
                             </subviews>
                         </view>
                     </box>
-                    <button verticalHuggingPriority="750" id="15">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="15">
                         <rect key="frame" x="496" y="12" width="90" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Convert" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="35">
@@ -75,7 +74,7 @@
                             <action selector="convert:" target="-2" id="24"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="16">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="16">
                         <rect key="frame" x="406" y="12" width="90" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="36">
@@ -86,11 +85,11 @@
                             <action selector="cancel:" target="-2" id="23"/>
                         </connections>
                     </button>
-                    <progressIndicator verticalHuggingPriority="750" maxValue="100" bezeled="NO" style="bar" id="17">
+                    <progressIndicator verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="17">
                         <rect key="frame" x="23" y="18" width="374" height="20"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </progressIndicator>
-                    <button verticalHuggingPriority="750" id="18">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="18">
                         <rect key="frame" x="20" y="143" width="68" height="28"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Select..." bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="37">
@@ -101,7 +100,7 @@
                             <action selector="selectTemplateFile:" target="-2" id="21"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" id="19">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19">
                         <rect key="frame" x="20" y="72" width="68" height="28"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Select..." bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="38">
@@ -114,6 +113,7 @@
                     </button>
                 </subviews>
             </view>
+            <point key="canvasLocation" x="14" y="132"/>
         </window>
     </objects>
 </document>

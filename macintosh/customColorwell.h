@@ -52,22 +52,21 @@
 	NSControlStateValue mGrayOn;
 }
 -(BOOL) equals:(MPColorWell*)com;
-+(MPColorWell*) withColor:(NSColor*) color andFilter:(BOOL)filter;
-+(MPColorWell*) whiteColorAndFilter:(BOOL)filter;
-+(MPColorWell*) blackColorAndFilter:(BOOL)filter;
-+(MPColorWell*) redColorAndFilter:(BOOL)filter;
-+(MPColorWell*) blueColorAndFilter:(BOOL)filter;
-+(MPColorWell*) cyanColorAndFilter:(BOOL)filter;
-+(MPColorWell*) magentaColorAndFilter:(BOOL)filter;
-+(MPColorWell*) yellowColorAndFilter:(BOOL)filter;
-+(MPColorWell*) greenColorAndFilter:(BOOL)filter;
-+(MPColorWell*) grayColorAndFilter:(BOOL)filter;
-+(MPColorWell*) lightGrayColorAndFilter:(BOOL)filter;
-+ (MPColorWell*)colorWithCalibratedRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha filter:(BOOL)filter;
--(id) clearFilterTransmit;
++(instancetype) withColor:(NSColor*) color andFilter:(BOOL)filter;
++(instancetype) whiteColorAndFilter:(BOOL)filter;
++(instancetype) blackColorAndFilter:(BOOL)filter;
++(instancetype) redColorAndFilter:(BOOL)filter;
++(instancetype) blueColorAndFilter:(BOOL)filter;
++(instancetype) cyanColorAndFilter:(BOOL)filter;
++(instancetype) magentaColorAndFilter:(BOOL)filter;
++(instancetype) yellowColorAndFilter:(BOOL)filter;
++(instancetype) greenColorAndFilter:(BOOL)filter;
++(instancetype) grayColorAndFilter:(BOOL)filter;
++(instancetype) lightGrayColorAndFilter:(BOOL)filter;
++ (instancetype)colorWithCalibratedRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha filter:(BOOL)filter;
+-(void) clearFilterTransmit;
 
 
--(void) setHasFilterTransmit:(BOOL)filter;
 @property BOOL hasFilterTransmit;
 
 @property (readonly) CGFloat filter;
@@ -77,7 +76,6 @@
 @property (readwrite) NSControlStateValue grayOn;
 
 -(void) setFilter:(CGFloat)filter toState:(NSControlStateValue)filterOn andTransmit:(CGFloat)transmit toState:(NSControlStateValue)transmitOn ;
--(void) setGrayOn:(NSControlStateValue)gray;
 
 
 @end
@@ -86,9 +84,8 @@
 @interface MPFTColorWell: MPColorWell <NSCoding>
 {
 }
-+(MPColorWell*) withColor:(NSColor*) color andFilter:(BOOL)filter;
--(BOOL) hasFilterTransmit;
--(void) setHasFilterTransmit:(BOOL)filter;
++(instancetype) withColor:(NSColor*) color andFilter:(BOOL)filter;
+@property BOOL hasFilterTransmit;
 
 @end
 

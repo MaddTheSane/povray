@@ -40,7 +40,7 @@
 #import <Cocoa/Cocoa.h>
 #import "mapBase.h"
 
-enum eObjectmapIndex {
+typedef NS_ENUM (NSInteger, eObjectmapIndex) {
 	cObjectmapXIndex		=0,
 	cObjectmapYIndex		=1,
 	
@@ -71,13 +71,13 @@ enum eObjectmapIndex {
 	NSControlStateValue mRasterOn;
 	NSControlStateValue mCurveOn;
 	NSControlStateValue mSplineTypePopUp;
-	int mTemplateType;
+	NSInteger mTemplateType;
 }
 
-+(instancetype) standardMap:(int) type withView:(id)view;
-@property (nonatomic) int templateType;
--(void) setTemplateType:(int)type;
--(int) templateType;
+-(instancetype)init NS_DESIGNATED_INITIALIZER;
+
++(objectmap*) standardMap:(NSInteger) type withView:(id)view;
+@property NSInteger templateType;
 
 -(void) makeMapWithPoints:(int)numberOfPoints;
 
@@ -91,6 +91,8 @@ enum eObjectmapIndex {
 
 -(void) setButtonState:(NSControlStateValue) state forButton:(NSInteger)button;
 -(NSControlStateValue) buttonState:(NSInteger)button;
+
+-(id)initWithCoder:(NSCoder*) decoder NS_DESIGNATED_INITIALIZER;
 
 @end
 

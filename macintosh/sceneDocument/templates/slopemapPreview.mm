@@ -54,14 +54,13 @@
 	if ( mPointList)
 	{
 		delete mPointList;
-		mPointList=0l;
+		mPointList=nullptr;
 	}	
 	if ( mSlopePointList)
 	{
 		delete mSlopePointList;
-		mSlopePointList=0l;
+		mSlopePointList=nullptr;
 	}	
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------
@@ -343,11 +342,11 @@
 	[self setNeedsDisplay:YES];
     while (keepOn && (PointFound || SlopeFound)) 
     {
-		theEvent = [[self window] nextEventMatchingMask: NSLeftMouseUpMask |  NSLeftMouseDraggedMask];
+		theEvent = [[self window] nextEventMatchingMask: NSEventMaskLeftMouseUp |  NSEventMaskLeftMouseDragged];
 		mouseLoc = [self convertPoint:[theEvent locationInWindow] fromView:nil];
 		switch ([theEvent type]) 
 		{
-		    case NSLeftMouseDragged:
+			case NSEventTypeLeftMouseDragged:
 		    	if( [theEvent deltaX] || [theEvent deltaY])	//dit we move?
 		    	{
 		    		double x,y;
@@ -379,7 +378,7 @@
 					[mMap reloadData];
 		    	}	
 	            break;
-			case NSLeftMouseUp:
+			case NSEventTypeLeftMouseUp:
 				keepOn = NO;
 				break;
 			default:

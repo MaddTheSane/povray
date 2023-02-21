@@ -41,8 +41,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ToolTipAutomator: NSObject
-{
-	
-}
 +(void) setTooltips:(NSString*)nibFile andDictionary:(NSDictionary *) dictionayWithOutlets;
 @end

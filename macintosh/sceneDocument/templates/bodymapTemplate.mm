@@ -55,7 +55,7 @@ enum {
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
@@ -67,14 +67,12 @@ enum {
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
 
-	[dict retain];
-
-	bodymap *bmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"bodymap"]];
+	BodyMap *bmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"bodymap"]];
 	switch ( [[dict objectForKey:@"bodymapType"]intValue])
 	{
 		case cPigmentmap:	[ds copyTabAndText:@"pigment_map {\n"]; break;
@@ -92,7 +90,6 @@ enum {
 	[ds copyTabAndText:@"}\n"];
 
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -107,7 +104,7 @@ enum {
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	//if templateType is menuTagTemplateAllBodymaps all default maps
 	// will be created.
@@ -123,7 +120,7 @@ enum {
 	if (templateType == menuTagTemplateAllBodymaps || templateType== menuTagTemplateDensitymap)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[bodymap defaultMap]],	@"bodymap",
+								[NSArchiver archivedDataWithRootObject:[BodyMap defaultMap]],	@"bodymap",
 								[NSNumber numberWithInt:cDensitymap],										@"bodymapType", nil];
 		if ( templateType==menuTagTemplateAllBodymaps)
 		{
@@ -138,7 +135,7 @@ enum {
 	if (templateType == menuTagTemplateAllBodymaps || templateType== menuTagTemplatePigmentmap)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[bodymap defaultMap]],	@"bodymap",
+								[NSArchiver archivedDataWithRootObject:[BodyMap defaultMap]],	@"bodymap",
 								[NSNumber numberWithInt:cPigmentmap],										@"bodymapType", nil];
 		if ( templateType==menuTagTemplateAllBodymaps)
 		{
@@ -154,7 +151,7 @@ enum {
 	if (templateType == menuTagTemplateAllBodymaps || templateType== menuTagTemplateNormalmap)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[bodymap defaultMap]],	@"bodymap",
+								[NSArchiver archivedDataWithRootObject:[BodyMap defaultMap]],	@"bodymap",
 								[NSNumber numberWithInt:cNormalmap],										@"bodymapType", nil];
 		if ( templateType==menuTagTemplateAllBodymaps)
 		{
@@ -170,7 +167,7 @@ enum {
 	if (templateType == menuTagTemplateAllBodymaps || templateType== menuTagTemplateTexturemap)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[bodymap textureMap]],	@"bodymap",
+								[NSArchiver archivedDataWithRootObject:[BodyMap textureMap]],	@"bodymap",
 								[NSNumber numberWithInt:cTexturemap],									@"bodymapType", nil];
 		if ( templateType==menuTagTemplateAllBodymaps)
 		{
@@ -191,7 +188,7 @@ enum {
 //---------------------------------------------------------------------
 -(void) retrivePreferences
 {
-	[[self getWindow]makeFirstResponder: [self getWindow]];
+	[[self window] makeFirstResponder: [self window]];
 
 	NSMutableDictionary *dict=[[NSMutableDictionary alloc]init];
 	if (dict == nil)
@@ -206,7 +203,6 @@ enum {
 	}
 
 	[self setPreferences:dict];
-	[dict release];
 }
 
 //---------------------------------------------------------------------
@@ -255,7 +251,6 @@ enum {
 -(void) setValuesInPanel:(NSMutableDictionary*)preferences
 {
  	mMap=[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"bodymap"]];
- 	[mMap retain];
  	[mTableView noteNumberOfRowsChanged];
 	[self setButtons];
 

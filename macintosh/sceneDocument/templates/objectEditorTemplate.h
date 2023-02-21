@@ -43,7 +43,7 @@
 #import "mapBaseTemplate.h"
 #import "objectmap.h"
 	
-@interface ObjectEditorTemplate : MapBaseTemplate
+@interface ObjectEditorTemplate : MapBaseTemplate <NSTableViewDataSource>
 {
 
 	IBOutlet NSButton 			*SlopeButton;

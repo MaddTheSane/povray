@@ -66,17 +66,17 @@ enum eTransformationPanelNumbers {
 //---------------------------------------------------------------------
 // createDescriptionWithDictionary:andTabs
 //---------------------------------------------------------------------
-+(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(int) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
++(MutableTabString *) createDescriptionWithDictionary:(NSDictionary*) dict andTabs:(NSInteger) tabs extraParam:(int) param mutableTabString:(MutableTabString*) ds
 
 {
 
 	if ( dict== nil)
-		dict=[[TransformationsTemplate createDefaults:menuTagTemplateTransformations]autorelease];
+		dict=[TransformationsTemplate createDefaults:menuTagTemplateTransformations];
 	else
 		[BaseTemplate addMissingObjectsInPreferences:dict forClass:[TransformationsTemplate class] andTemplateType:menuTagTemplateTransformations];
 
 	if (ds == nil )
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 	if (ds == nil )
 		return nil;
 
@@ -339,21 +339,12 @@ enum eTransformationPanelNumbers {
 }
 
 //---------------------------------------------------------------------
-// dealloc
-//---------------------------------------------------------------------
--(void) dealloc
-{
-	[mTopObjects release];
-	[mMidObjects release];
-	[mBottomObjects release];
-	[super dealloc];
-}
-
-//---------------------------------------------------------------------
 // initialize
 //---------------------------------------------------------------------
 +(void) initialize
 {
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
 	NSDictionary *initialDefaults=[TransformationsTemplate createDefaults:menuTagTemplateTransformations];
 
 
@@ -362,12 +353,13 @@ enum eTransformationPanelNumbers {
 		nil];
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
 	[defaults registerDefaults:factoryDefaults];
+	});
 }
 
 //---------------------------------------------------------------------
 // createDefaults
 //---------------------------------------------------------------------
-+(NSMutableDictionary *) createDefaults:(unsigned int) templateType
++(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -989,7 +981,6 @@ enum eTransformationPanelNumbers {
 
 
 	nil] ;
-	[mOutlets retain];
 
 	[ToolTipAutomator setTooltips:@"transformationsLocalized" andDictionary:mOutlets];
 	//additional objects
@@ -1059,7 +1050,6 @@ enum eTransformationPanelNumbers {
 		topWarp3DOrientationView,	@"Warp3DOrientationView",
 
 		nil];
-		[mTopObjects retain];
 
 //mMidObjects
 	mMidObjects=[NSDictionary dictionaryWithObjectsAndKeys:
@@ -1082,7 +1072,6 @@ enum eTransformationPanelNumbers {
 		midWarp3DDistExpView,		@"Warp3DDistExpView",			midWarp3DDistanceView,			@"Warp3DDistanceView",			midWarp3DNormalView,				@"Warp3DNormalView",
 		midWarp3DOrientationView,	@"Warp3DOrientationView",
 		nil];
-		[mMidObjects retain];
 
 //mBottomObjects
 	mBottomObjects=[NSDictionary dictionaryWithObjectsAndKeys:
@@ -1105,7 +1094,6 @@ enum eTransformationPanelNumbers {
 		bottomWarp3DDistExpView,		@"Warp3DDistExpView",			bottomWarp3DDistanceView,				@"Warp3DDistanceView",			bottomWarp3DNormalView,				@"Warp3DNormalView",
 		bottomWarp3DOrientationView,	@"Warp3DOrientationView",
 		nil];
-		[mBottomObjects retain];
 	[self  setValuesInPanel:[self preferences]];
 	[self updateControls];
 
