@@ -281,7 +281,7 @@ namespace vfe
 							errormsg += filename + "\"\n";
 							if (line > 0)
 							{
-								sprintf(str, "%u", line);
+								snprintf(str, sizeof(str), "%u", line);
 								errormsg += " line ";
 								errormsg += str;
 								errormsg +="\n";

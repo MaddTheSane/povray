@@ -12,6 +12,10 @@
 		553A62892580C0AA004D15BB /* png.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62842580C0AA004D15BB /* png.h */; };
 		553A628A2580C0AA004D15BB /* pngstruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62852580C0AA004D15BB /* pngstruct.h */; };
 		553A628B2580C0AA004D15BB /* pngpriv.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62862580C0AA004D15BB /* pngpriv.h */; };
+		5553EF6829A538B7007B9534 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5553EF6A29A538B7007B9534 /* InfoPlist.strings */; };
+		5553EF6C29A53B17007B9534 /* IlmThreadNamespace.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF6B29A53B17007B9534 /* IlmThreadNamespace.h */; };
+		5553EF6F29A53B5F007B9534 /* IlmThreadForward.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF6D29A53B5F007B9534 /* IlmThreadForward.h */; };
+		5553EF7029A53B5F007B9534 /* IlmThreadExport.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF6E29A53B5F007B9534 /* IlmThreadExport.h */; };
 		55B1735629A4CD9A00FE3F46 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5567B88A211394E2003BFAE4 /* Icons.xcassets */; };
 		55B88C2D21137FDF00AA468A /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B88C2C21137FDF00AA468A /* libz.1.tbd */; };
 		8222236D1D4535F90062FCA5 /* preferencesPanelController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8222236C1D4535F90062FCA5 /* preferencesPanelController.mm */; };
@@ -5695,6 +5699,10 @@
 		553A62842580C0AA004D15BB /* png.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png.h; sourceTree = "<group>"; };
 		553A62852580C0AA004D15BB /* pngstruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngstruct.h; sourceTree = "<group>"; };
 		553A62862580C0AA004D15BB /* pngpriv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngpriv.h; sourceTree = "<group>"; };
+		5553EF6929A538B7007B9534 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5553EF6B29A53B17007B9534 /* IlmThreadNamespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IlmThreadNamespace.h; sourceTree = "<group>"; };
+		5553EF6D29A53B5F007B9534 /* IlmThreadForward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IlmThreadForward.h; sourceTree = "<group>"; };
+		5553EF6E29A53B5F007B9534 /* IlmThreadExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IlmThreadExport.h; sourceTree = "<group>"; };
 		5567B88A211394E2003BFAE4 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		55B88C2C21137FDF00AA468A /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		8207D2E01D04648000A42189 /* eLut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eLut.h; sourceTree = "<group>"; };
@@ -15141,9 +15149,12 @@
 			children = (
 				826CBB201D034FC4000A7A98 /* IlmThread.cpp */,
 				826CBB211D034FC4000A7A98 /* IlmThread.h */,
+				5553EF6E29A53B5F007B9534 /* IlmThreadExport.h */,
+				5553EF6D29A53B5F007B9534 /* IlmThreadForward.h */,
 				826CBB221D034FC4000A7A98 /* IlmThreadMutex.cpp */,
 				826CBB231D034FC4000A7A98 /* IlmThreadMutex.h */,
 				826CBB241D034FC4000A7A98 /* IlmThreadMutexPosix.cpp */,
+				5553EF6B29A53B17007B9534 /* IlmThreadNamespace.h */,
 				826CBB251D034FC4000A7A98 /* IlmThreadPool.cpp */,
 				826CBB261D034FC4000A7A98 /* IlmThreadPool.h */,
 				826CBB271D034FC4000A7A98 /* IlmThreadPosix.cpp */,
@@ -15586,11 +15597,13 @@
 				82E3D1021D450E2C00AE5B03 /* colormapTemplate.xib */,
 				82E3D1041D450E2C00AE5B03 /* ColorPicker.xib */,
 				82E3D1061D450E2C00AE5B03 /* finishLocalized.strings */,
+				82E3D1081D450E2C00AE5B03 /* finishTemplate.xib */,
 				82E3D10A1D450E2C00AE5B03 /* functionTemplate.xib */,
 				82E3D10C1D450E2C00AE5B03 /* globalsLocalized.strings */,
 				82E3D10E1D450E2C00AE5B03 /* globalsTemplate.xib */,
 				82E3D1101D450E2C00AE5B03 /* headerIncludeLocalized.strings */,
 				82E3D1121D450E2C00AE5B03 /* headerIncludeTemplate.xib */,
+				5553EF6A29A538B7007B9534 /* InfoPlist.strings */,
 				82E3D1141D450E2C00AE5B03 /* interiorLocalized.strings */,
 				82E3D1161D450E2C00AE5B03 /* interiorTemplate.xib */,
 				82E3D1181D450E2C00AE5B03 /* lightLocalized.strings */,
@@ -15609,7 +15622,6 @@
 				82E3D1321D450E2C00AE5B03 /* objectLocalized.strings */,
 				82E3D1341D450E2C00AE5B03 /* objectTemplate.xib */,
 				82E3D1361D450E2C00AE5B03 /* photonsLocalized.strings */,
-				82E3D1081D450E2C00AE5B03 /* finishTemplate.xib */,
 				82E3D1381D450E2C00AE5B03 /* photonsTemplate.xib */,
 				82E3D13A1D450E2C00AE5B03 /* pigmentLocalized.strings */,
 				82E3D13C1D450E2C00AE5B03 /* pigmentTemplate.xib */,
@@ -15783,8 +15795,10 @@
 				826CBB811D035020000A7A98 /* ImathRoots.h in Headers */,
 				826CBB871D035020000A7A98 /* ImathVecAlgo.h in Headers */,
 				826CBB1F1D034F8D000A7A98 /* IexThrowErrnoExc.h in Headers */,
+				5553EF7029A53B5F007B9534 /* IlmThreadExport.h in Headers */,
 				826CBB6B1D035020000A7A98 /* ImathFrustum.h in Headers */,
 				826CBB711D035020000A7A98 /* ImathHalfLimits.h in Headers */,
+				5553EF6F29A53B5F007B9534 /* IlmThreadForward.h in Headers */,
 				826CBB6C1D035020000A7A98 /* ImathFrustumTest.h in Headers */,
 				826CBB721D035020000A7A98 /* ImathInt64.h in Headers */,
 				826CBB1C1D034F8D000A7A98 /* IexMacros.h in Headers */,
@@ -15797,6 +15811,7 @@
 				826CBB1A1D034F8D000A7A98 /* IexBaseExc.h in Headers */,
 				826CBB771D035020000A7A98 /* ImathMath.h in Headers */,
 				826CBB841D035020000A7A98 /* ImathSphere.h in Headers */,
+				5553EF6C29A53B17007B9534 /* IlmThreadNamespace.h in Headers */,
 				826CBB7B1D035020000A7A98 /* ImathNamespace.h in Headers */,
 				826CBB2F1D034FC4000A7A98 /* IlmThreadMutex.h in Headers */,
 				826CBB7C1D035020000A7A98 /* ImathPlane.h in Headers */,
@@ -16199,6 +16214,7 @@
 				82E3D1671D450E2C00AE5B03 /* materialEditorLocalized.strings in Resources */,
 				82E3D1711D450E2C00AE5B03 /* objectLocalized.strings in Resources */,
 				82E3D1541D450E2C00AE5B03 /* bodymapLocalized.strings in Resources */,
+				5553EF6829A538B7007B9534 /* InfoPlist.strings in Resources */,
 				82BF5BFE1D4536D6006E40D9 /* MainMenu.xib in Resources */,
 				82E3D15C1D450E2C00AE5B03 /* finishTemplate.xib in Resources */,
 				82E3D1521D450E2C00AE5B03 /* batch.xib in Resources */,
@@ -16730,6 +16746,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5553EF6A29A538B7007B9534 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5553EF6929A538B7007B9534 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		826E9EC21DC896B600D3855A /* backgroundTemplate.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -17156,7 +17180,7 @@
 		825D610A11031C3B00E0FF88 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -17556,7 +17580,7 @@
 		82A1003615F51A650023C5F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;

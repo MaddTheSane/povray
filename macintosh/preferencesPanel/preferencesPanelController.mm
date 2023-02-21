@@ -889,13 +889,13 @@ static PreferencesPanelController* _preferencesPanelController;
 			[savePanel beginSheetModalForWindow:[imageFile window]
 												completionHandler: ^( NSInteger resultCode )
 			 {
-			@autoreleasepool
-			{
-					 if( (resultCode == NSOKButton) && [imageFile respondsToSelector:@selector(setStringValue:)])
-						 [imageFile setStringValue:[[savePanel URL]path]];
+				@autoreleasepool
+				{
+					if( (resultCode == NSModalResponseOK) && [self->imageFile respondsToSelector:@selector(setStringValue:)])
+						[self->imageFile setStringValue:[[savePanel URL] path]];
+				}
 			}
-			 }
-			 ];
+			];
 		}
 			break;
 			
@@ -943,13 +943,13 @@ static PreferencesPanelController* _preferencesPanelController;
 			[openPanel beginSheetModalForWindow:[iniInputFile window]
 												completionHandler: ^( NSInteger resultCode )
 			 {
-			@autoreleasepool
-			{
-					 if( (resultCode == NSOKButton) && [iniInputFile respondsToSelector:@selector(setStringValue:)])
-						 [iniInputFile setStringValue:[[openPanel URL]path]];
+				@autoreleasepool
+				{
+					if( (resultCode == NSModalResponseOK) && [self->iniInputFile respondsToSelector:@selector(setStringValue:)])
+						[self->iniInputFile setStringValue:[[openPanel URL]path]];
+				}
 			}
-			 }
-			 ];
+			];
 			break;
 	}
 }
@@ -1452,8 +1452,8 @@ static PreferencesPanelController* _preferencesPanelController;
 				{
 					@autoreleasepool
 					{
-						if( (resultCode == NSOKButton) && [redirectAllOutputImagesPath respondsToSelector:@selector(setStringValue:)])
-							[redirectAllOutputImagesPath setStringValue:[[openPanel URL]path]];
+						if( (resultCode == NSModalResponseOK) && [self->redirectAllOutputImagesPath respondsToSelector:@selector(setStringValue:)])
+							[self->redirectAllOutputImagesPath setStringValue:[[openPanel URL] path]];
 					}
 				}
 			];

@@ -11,6 +11,8 @@
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string>MPDocumentIcon</string>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<false/>
 			<key>CFBundleTypeMIMETypes</key>
 			<array>
 				<string>model/x-pov</string>
@@ -42,6 +44,8 @@
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string>MPIncludeIcon</string>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<false/>
 			<key>CFBundleTypeName</key>
 			<string>IncludeFile</string>
 			<key>CFBundleTypeOSTypes</key>
@@ -71,10 +75,18 @@
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string>MPTemplateIcon</string>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<false/>
 			<key>CFBundleTypeName</key>
 			<string>Template</string>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>org.povray.unofficial.mptpl</string>
+			</array>
 			<key>LSTypeIsPackage</key>
 			<false/>
 			<key>NSPersistentStoreTypeKey</key>
@@ -87,6 +99,8 @@
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string>MPIniIcon</string>
+			<key>CFBundleTypeIconSystemGenerated</key>
+			<false/>
 			<key>CFBundleTypeName</key>
 			<string>IniFile</string>
 			<key>CFBundleTypeOSTypes</key>
@@ -163,6 +177,27 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>inc</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.source-code</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>POV-Ray Template</string>
+			<key>UTTypeIconFile</key>
+			<string>MPTemplateIcon</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>org.povray.unofficial.mptpl</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>mpTpl</string>
 				</array>
 			</dict>
 		</dict>

@@ -518,7 +518,10 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				[ds addTab];
 
 
+			oMap=[NSKeyedUnarchiver unarchiveObjectWithData:objectEditorPrefs];
+			if (!oMap) {
 				oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
+			}
 
 				switch([oMap buttonState:cSplineTypePopUp])
 				{
@@ -704,7 +707,10 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				[ds copyTabAndText:@"polygon {\n"];
 				[ds addTab];
 
+			oMap=[NSKeyedUnarchiver unarchiveObjectWithData:objectEditorPrefs];
+			if (!oMap) {
 				oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
+			}
 
 			[ds appendTabAndFormat:@"%lu\n",(unsigned long)[oMap count]];
 
@@ -740,7 +746,10 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				{
 					return nil;
 				}
+			oMap=[NSKeyedUnarchiver unarchiveObjectWithData:objectEditorPrefs];
+			if (!oMap) {
 				oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
+			}
 
 				if ( [[dict objectForKey:@"objectPrismBevelPrismGroupOn"]intValue]==NSOnState && [[dict objectForKey:@"objectPrismSweepTypePopUp"]intValue]==cPrismLinearSweep)
 				{
@@ -956,7 +965,10 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				{
 					return nil;
 				}
+			oMap=[NSKeyedUnarchiver unarchiveObjectWithData:objectEditorPrefs];
+			if (!oMap) {
 					oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
+			}
 					[ds copyTabAndText:@"sor {\n"];
 					[ds addTab];
 			[ds appendTabAndFormat:@"%lu\n",(unsigned long)[oMap count]];

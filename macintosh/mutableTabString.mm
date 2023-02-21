@@ -277,8 +277,10 @@
 	if ( obj==nil)
 		return;
 		
-	id well=[NSUnarchiver unarchiveObjectWithData:obj];
-	
+	id well=[NSKeyedUnarchiver unarchiveObjectWithData:obj];
+	if (well==nil) {
+		well=[NSUnarchiver unarchiveObjectWithData:obj];
+	}
 	if (well==nil)
 		return;
 

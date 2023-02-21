@@ -239,7 +239,7 @@ static renderDispatcher* _renderDispatcher;
 	[checkboxCell setEditable: YES];
 	[checkboxCell setButtonType: NSSwitchButton];
 	[checkboxCell setImagePosition: NSImageOnly];
-	[checkboxCell setControlSize: NSSmallControlSize];
+	[checkboxCell setControlSize: NSControlSizeSmall];
 
 	// actually place the button cell on the table view
 	[mOnOffColumn setDataCell: checkboxCell];
@@ -253,7 +253,10 @@ static renderDispatcher* _renderDispatcher;
 	id anObject=[defaults objectForKey:@"defaultBatch"];
 	if (anObject != nil)
 	{
-		id map=[NSUnarchiver unarchiveObjectWithData: [anObject objectForKey:@"batchMap"]];
+		id map=[NSKeyedUnarchiver unarchiveObjectWithData: [anObject objectForKey:@"batchMap"]];
+		if (!map) {
+			map=[NSUnarchiver unarchiveObjectWithData: [anObject objectForKey:@"batchMap"]];
+		}
 		if ( map)
 		{
 			[self setMap:map];
@@ -1996,11 +1999,12 @@ void *doRender(void* theObject)
 //---------------------------------------------------------------------
 -(void) addCommand: (const char*)command withString: (NSString*)string
 {
-	static char formatString[]="%s=%s";
+	static const char formatString[]="%s=%s";
 	if ( [string UTF8String])
 	{
-		Argv[++Argc]=(char*)malloc( strlen(command) + strlen([string UTF8String]) + strlen(formatString) + 1);
-		sprintf((char*)Argv[Argc],formatString,command, [string UTF8String]);
+		size_t allocSize = strlen(command) + strlen([string UTF8String]) + strlen(formatString) + 1;
+		Argv[++Argc]=(char*)malloc(allocSize);
+		snprintf((char*)Argv[Argc], allocSize, formatString, command, [string UTF8String]);
 	}
 }
 
