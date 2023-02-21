@@ -111,11 +111,10 @@ enum {
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-	[dict retain];
 
 	BOOL lineWritten=NO;
 	for (int x=1; x<=7; x++)
@@ -153,7 +152,6 @@ enum {
 		[ds appendFormat:@"%@\n",[dict objectForKey:@"headerIncludeVersion2"]];
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -283,7 +281,6 @@ enum {
 	nil] ;
 	[ToolTipAutomator setTooltips:@"headerIncludeLocalized" andDictionary:mOutlets];
 
-	[mOutlets retain];
 	[self  setValuesInPanel:[self preferences]];
 }
 

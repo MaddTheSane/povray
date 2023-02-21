@@ -123,26 +123,6 @@ static appPreferencesController	*_appPreferencesController;
 -(void) dealloc
 {
 	[self  setIncludePathArray:nil];
-
-	[mPreprocessorColor release];					mPreprocessorColor=nil;
-	[mMultiLineCommentColor release];			mMultiLineCommentColor=nil;
-	[mOneLineCommentColor release];				mOneLineCommentColor=nil;
-	[mStringColor release];								mStringColor=nil;
-	[mInsertDirectory release];						mInsertDirectory=nil;
-	[mInsertMenuImageScaleFloat release]; mInsertMenuImageScaleFloat=nil;
-	[mIdentifierColor release];						mIdentifierColor=nil;
-	[mMacroColor release];								mMacroColor=nil;
-	[mDeclareColor release];							mDeclareColor=nil;
-	[mBlackStyleDict release];						mBlackStyleDict=nil;
-	[mKeyWordStyleDict release];					mKeyWordStyleDict=nil;
-	[mPreprocessorStyleDict release];			mPreprocessorStyleDict=nil;
-	[mMultiLineCommentStyleDict release];	mMultiLineCommentStyleDict=nil;
-	[mOneLineCommentStyleDict release];		mOneLineCommentStyleDict=nil;
-	[mStringStyleDict release];						mStringStyleDict=nil;
-	[mMacroStyleDict release];						mMacroStyleDict=nil;
-	[mDeclareStyleDict release];					mDeclareStyleDict=nil;
-	[mModifiedFlag release];
-	[super dealloc];
 }
 
 //--------------------------------------------------------------------
@@ -150,9 +130,7 @@ static appPreferencesController	*_appPreferencesController;
 //---------------------------------------------------------------------
 -(void) setIncludePathArray:(id) pathsArray
 {
-	[mIncludePathsArray release];
 	mIncludePathsArray=pathsArray;
-	[mIncludePathsArray retain];
 }
 
 //--------------------------------------------------------------------
@@ -207,16 +185,14 @@ static appPreferencesController	*_appPreferencesController;
 	[mTabSize setDelegate:self];	// we need to know when changed
 
 	mInsertDirectory=[defaults objectForKey:@"mInsertMenuMainDirectoryEdit"];
-	[mInsertDirectory retain];
 	[mInsertMenuMainDirectoryEdit setStringValue:mInsertDirectory];
 	[mInsertMenuMainDirectoryEdit setToolTip:mInsertDirectory];
 	mInsertMenuImageScaleFloat=[defaults objectForKey:@"mInsertMenuImageScaleSlider"];
-	[mInsertMenuImageScaleFloat retain];
 	[mInsertMenuImageScaleSlider setFloatValue:[mInsertMenuImageScaleFloat floatValue]];
 
-	[self setIncludePathArray:[[[defaults objectForKey:@"includePaths"]mutableCopy]autorelease]];
+	[self setIncludePathArray:[[defaults objectForKey:@"includePaths"]mutableCopy]];
 	if (mIncludePathsArray==nil)
-		[self setIncludePathArray:[[[NSMutableArray alloc]init]autorelease]];
+		[self setIncludePathArray:[[NSMutableArray alloc]init]];
 	[mApplicationPreferencesWindow setDelegate:self];
 
 	[mIncludePathTableView reloadData];
@@ -227,51 +203,43 @@ static appPreferencesController	*_appPreferencesController;
 		mPreprocessorColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"preprocessorColor"]];
 		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mPreprocessorColor] forKey:@"preprocessorColor"];
 	}
-	[mPreprocessorColor retain];
 	mMultiLineCommentColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"multiLineCommentColor"]];
 	if (!mMultiLineCommentColor) {
 		mMultiLineCommentColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"multiLineCommentColor"]];
 		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mMultiLineCommentColor] forKey:@"multiLineCommentColor"];
 	}
-	[mMultiLineCommentColor retain];
 	mOneLineCommentColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"oneLineCommentColor"]];
 	if (!mOneLineCommentColor) {
 		mOneLineCommentColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"oneLineCommentColor"]];
 		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mOneLineCommentColor] forKey:@"oneLineCommentColor"];
 	}
-	[mOneLineCommentColor retain];
 	mStringColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"stringColor"]];
 	if (!mStringColor) {
 		mStringColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"stringColor"]];
 		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mStringColor] forKey:@"stringColor"];
 	}
-	[mStringColor retain];
 	mIdentifierColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"identifierColor"]];
 	if (!mIdentifierColor) {
 		mIdentifierColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"identifierColor"]];
 		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mIdentifierColor] forKey:@"identifierColor"];
 	}
-	[mIdentifierColor retain];
 
 	mDeclareColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"declareColor"]];
 	if (!mDeclareColor) {
 		mDeclareColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"declareColor"]];
 		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mDeclareColor] forKey:@"declareColor"];
 	}
-	[mDeclareColor retain];
 	mMacroColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"macroKleur"]];
 	if (!mMacroColor) {
 		mMacroColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"macroKleur"]];
 		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mMacroColor] forKey:@"macroKleur"];
 	}
-	[mMacroColor retain];
 
 	// auto syntax coloring
 	globalAutoSyntaxColoring=[defaults boolForKey:@"globalAutoSyntaxColoring"];
 
 	// display gamma
 	mDisplayGammaString=[defaults stringForKey:@"mOutletDisplayGammaEdit"];
-	[mDisplayGammaString retain];
 	[mOutletDisplayGammaEdit setStringValue:mInsertDirectory];
 
 	mDisplayGammaOn=[defaults integerForKey:@"displayGammaOn"];
@@ -308,7 +276,6 @@ static appPreferencesController	*_appPreferencesController;
 		mSceneDocumentFont=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"sceneDocumentFont"]];
 		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mSceneDocumentFont] forKey:@"sceneDocumentFont"];
 	}
-	[mSceneDocumentFont retain];
 
 
 	[self buildSyntaxStyles];
@@ -329,16 +296,15 @@ static appPreferencesController	*_appPreferencesController;
 -(void) buildDefaultParagraphStyle
 {
 	NSDictionary *tempStyle=[NSDictionary dictionaryWithObject:mSceneDocumentFont forKey:NSFontAttributeName];
-	NSAttributedString *title = [[[NSAttributedString alloc]       initWithString:@"m" attributes:tempStyle]autorelease];
+	NSAttributedString *title = [[NSAttributedString alloc]       initWithString:@"m" attributes:tempStyle];
 
 	CGFloat fontWidth=[title size].width;
 	fontWidth*=(CGFloat)tabDistance;
-	[mDefaultParagraphStyle release];
 	mDefaultParagraphStyle	= [[NSParagraphStyle defaultParagraphStyle]mutableCopy];
 
-	NSMutableArray *newArray=[[[NSMutableArray alloc]init]autorelease];
+	NSMutableArray *newArray=[[NSMutableArray alloc]init];
 	for (int x=1; x<20; x++)
-		[newArray addObject:[[[NSTextTab alloc] initWithType:NSLeftTabStopType location:x*fontWidth]autorelease]];
+		[newArray addObject:[[NSTextTab alloc] initWithType:NSLeftTabStopType location:x*fontWidth]];
 	[mDefaultParagraphStyle setTabStops:newArray];
 }
 
@@ -349,71 +315,63 @@ static appPreferencesController	*_appPreferencesController;
 //---------------------------------------------------------------------
 -(void) buildSyntaxStyles
 {
-	[mBlackStyleDict release];
-	[mKeyWordStyleDict release];
-	[mPreprocessorStyleDict release];
-	[mMultiLineCommentStyleDict release];
-	[mOneLineCommentStyleDict release];
-	[mStringStyleDict release];
-	[mMacroStyleDict release];
-	[mDeclareStyleDict release];
 	[self buildDefaultParagraphStyle];
 
-	mBlackStyleDict = [[NSDictionary dictionaryWithObjectsAndKeys:
+	mBlackStyleDict = [[NSDictionary alloc] initWithObjectsAndKeys:
 											mSceneDocumentFont, NSFontAttributeName,
 											mDefaultParagraphStyle, NSParagraphStyleAttributeName,
 											[NSColor blackColor], NSForegroundColorAttributeName,
 											noneCommentAttribute,allExceptCommentAndStringAttribute,
-											nil]retain];
+											nil];
 
-	mKeyWordStyleDict = [[NSDictionary dictionaryWithObjectsAndKeys:
+	mKeyWordStyleDict = [[NSDictionary alloc] initWithObjectsAndKeys:
 												mSceneDocumentFont, NSFontAttributeName,
 												mDefaultParagraphStyle, NSParagraphStyleAttributeName,
 												mIdentifierColor, NSForegroundColorAttributeName,
 												noneCommentAttribute,allExceptCommentAndStringAttribute,
-												nil] retain];
+												nil];
 
-	mPreprocessorStyleDict =[ [NSDictionary dictionaryWithObjectsAndKeys:
+	mPreprocessorStyleDict =[[NSDictionary alloc] initWithObjectsAndKeys:
 														 mSceneDocumentFont, NSFontAttributeName,
 														 mDefaultParagraphStyle, NSParagraphStyleAttributeName,
 														 mPreprocessorColor, NSForegroundColorAttributeName,
 														 noneCommentAttribute,allExceptCommentAndStringAttribute,
-														 nil] retain];
+														 nil];
 
-	mMultiLineCommentStyleDict=[[NSDictionary dictionaryWithObjectsAndKeys:
+	mMultiLineCommentStyleDict=[[NSDictionary alloc] initWithObjectsAndKeys:
 															 mSceneDocumentFont, NSFontAttributeName,
 															 mDefaultParagraphStyle, NSParagraphStyleAttributeName,
 															 mMultiLineCommentColor, NSForegroundColorAttributeName,
 															 commentAttribute, commentAndStringAttributeName,
-															 nil]retain];
+															 nil];
 
-	mOneLineCommentStyleDict=[[NSDictionary dictionaryWithObjectsAndKeys:
+	mOneLineCommentStyleDict=[[NSDictionary alloc] initWithObjectsAndKeys:
 														 mSceneDocumentFont, NSFontAttributeName,
 														 mDefaultParagraphStyle, NSParagraphStyleAttributeName,
 														 mOneLineCommentColor, NSForegroundColorAttributeName,
 														 commentAttribute, commentAndStringAttributeName,
-														 nil]retain];
+														 nil];
 
-	mStringStyleDict=[[NSDictionary dictionaryWithObjectsAndKeys:
+	mStringStyleDict=[[NSDictionary alloc] initWithObjectsAndKeys:
 										 mSceneDocumentFont, NSFontAttributeName,
 										 mDefaultParagraphStyle, NSParagraphStyleAttributeName,
 										 mStringColor, NSForegroundColorAttributeName,
 										 commentAttribute, commentAndStringAttributeName,
-										 nil]retain];
+										 nil];
 
-	mMacroStyleDict=[[NSDictionary dictionaryWithObjectsAndKeys:
+	mMacroStyleDict=[[NSDictionary alloc] initWithObjectsAndKeys:
 										mSceneDocumentFont, NSFontAttributeName,
 										mDefaultParagraphStyle, NSParagraphStyleAttributeName,
 										mMacroColor, NSForegroundColorAttributeName,
 										noneCommentAttribute,allExceptCommentAndStringAttribute,
-										nil]retain];
+										nil];
 
-	mDeclareStyleDict=[[NSDictionary dictionaryWithObjectsAndKeys:
+	mDeclareStyleDict=[[NSDictionary alloc] initWithObjectsAndKeys:
 											mSceneDocumentFont, NSFontAttributeName,
 											mDefaultParagraphStyle, NSParagraphStyleAttributeName,
 											mDeclareColor, NSForegroundColorAttributeName,
 											noneCommentAttribute,allExceptCommentAndStringAttribute,
-											nil]retain];
+											nil];
 }
 
 //---------------------------------------------------------------------
@@ -462,8 +420,8 @@ static appPreferencesController	*_appPreferencesController;
 				if( url )
 				{
 					// Get the directory from the open panel
-					[mInsertMenuMainDirectoryEdit setStringValue: [url path]];
-					[mInsertMenuMainDirectoryEdit setToolTip:[url path]];
+					[self->mInsertMenuMainDirectoryEdit setStringValue: [url path]];
+					[self->mInsertMenuMainDirectoryEdit setToolTip:[url path]];
 					[self setModified:YES];
 				} // if
 			} // if
@@ -565,9 +523,9 @@ static appPreferencesController	*_appPreferencesController;
 	[mTabSize setIntValue:tabDistance];
 
 	NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-	[self setIncludePathArray:[[[defaults objectForKey:@"includePaths"]mutableCopy]autorelease]];
+	[self setIncludePathArray:[[defaults objectForKey:@"includePaths"]mutableCopy]];
 	if (mIncludePathsArray==nil)
-		[self setIncludePathArray:[[[NSMutableArray alloc]init]autorelease]];
+		[self setIncludePathArray:[[NSMutableArray alloc]init]];
 	[mIncludePathTableView noteNumberOfRowsChanged];
 
 	[self deactivateColorWells];
@@ -636,8 +594,7 @@ static appPreferencesController	*_appPreferencesController;
 //---------------------------------------------------------------------
 -(void) setModified:(BOOL)flag
 {
-	[mModifiedFlag release];
-	mModifiedFlag=[[NSNumber numberWithBool:flag]retain];
+	mModifiedFlag=[NSNumber numberWithBool:flag];
 	if ( flag==YES)
 
 		[mApplyButton setEnabled:YES];
@@ -703,37 +660,26 @@ static appPreferencesController	*_appPreferencesController;
 //---------------------------------------------------------------------
 -(void) storeNewAppPreferences
 {
-	[mSceneDocumentFont release];
-	mSceneDocumentFont=[[mSelectedFont font]retain];
-	[mPreprocessorColor release];
-	mPreprocessorColor=[[mPreprocessorColorWell color]retain];
+	mSceneDocumentFont=[mSelectedFont font];
+	mPreprocessorColor=[[mPreprocessorColorWell color]copy];
 
-	[mMultiLineCommentColor release];
 	mMultiLineCommentColor=[[mMultiLineCommentColorWell color]copy];
 
-	[mOneLineCommentColor release];
 	mOneLineCommentColor=[[mOneLineCommentColorWell color]copy];
 
-	[mStringColor release];
 	mStringColor=[[mStringColorWell color]copy];
 
-	[mInsertDirectory release];
 	mInsertDirectory=[[mInsertMenuMainDirectoryEdit stringValue]copy];
 
-	[mInsertMenuImageScaleFloat release];
-	mInsertMenuImageScaleFloat=[[NSNumber numberWithFloat:[mInsertMenuImageScaleSlider floatValue]]retain];
+	mInsertMenuImageScaleFloat=[NSNumber numberWithFloat:[mInsertMenuImageScaleSlider floatValue]];
 
-	[mIdentifierColor release];
 	mIdentifierColor=[[mIdentifierColorWell color]copy];
 
-	[mDeclareColor release];
 	mDeclareColor=[[mDeclaresColorWell color]copy];
 
-	[mMacroColor release];
 	mMacroColor=[[mMacroColorWell color]copy];
 
 	globalAutoSyntaxColoring=[mSyntaxColorOn state] == NSOnState;
-	[mDisplayGammaString release];
 	mDisplayGammaString=[[mOutletDisplayGammaEdit stringValue]copy];
 	mDisplayGammaOn=[mDisplayGammaButton state];
 	mAlwaysPutPreviewwindowInFrontOn=[mAlwaysPutPreviewwindowInFrontButton state];
@@ -876,8 +822,8 @@ static appPreferencesController	*_appPreferencesController;
 					NSURL *url = [openPanel URL];
 					if( url )
 					{
-						[mIncludePathsArray replaceObjectAtIndex:mSelectedRowForChangePath withObject:[url path]];
-						[mIncludePathTableView reloadData];
+						[self->mIncludePathsArray replaceObjectAtIndex:self->mSelectedRowForChangePath withObject:[url path]];
+						[self->mIncludePathTableView reloadData];
 						[self setModified:YES];
 					} // if
 				} // if
@@ -907,8 +853,8 @@ static appPreferencesController	*_appPreferencesController;
 					NSURL *url = [openPanel URL];
 					if( url )
 					{
-						[mIncludePathsArray addObject:[url path]];
-						[mIncludePathTableView noteNumberOfRowsChanged];
+						[self->mIncludePathsArray addObject:[url path]];
+						[self->mIncludePathTableView noteNumberOfRowsChanged];
 						[self setModified:YES];
 					} // if
 				} // if
@@ -1069,7 +1015,7 @@ static appPreferencesController	*_appPreferencesController;
 	}
 	
 	
-	[mIncludePathTableView selectRowIndexes:[[[NSIndexSet alloc] initWithIndex:row]autorelease] byExtendingSelection: NO];	// select the row
+	[mIncludePathTableView selectRowIndexes:[[NSIndexSet alloc] initWithIndex:row] byExtendingSelection: NO];	// select the row
 	[self setModified:YES];
 	
 	return YES;

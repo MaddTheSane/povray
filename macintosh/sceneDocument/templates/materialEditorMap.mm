@@ -51,7 +51,6 @@
 {
 	materialEditorMap *c=[[materialEditorMap alloc] init];
 	[c makeDefaultMap];
-	[c autorelease];
 	return c;
 }
 
@@ -110,6 +109,7 @@
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
+	[super encodeWithCoder:encoder];
 	[encoder encodeObject:mMapArray];
 }
 
@@ -118,6 +118,7 @@
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
+	self = [super initWithCoder:decoder];
 	[self setArray:[decoder decodeObject]];
 	return self;
 }

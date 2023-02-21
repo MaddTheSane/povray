@@ -320,10 +320,10 @@
 		826CB8FE1D034CC4000A7A98 /* MaterialPreview.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB77C1D034CC4000A7A98 /* MaterialPreview.mm */; };
 		826CB8FF1D034CC4000A7A98 /* PicturePreview.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB77E1D034CC4000A7A98 /* PicturePreview.mm */; };
 		826CB9001D034CC4000A7A98 /* PicturePreviewBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7801D034CC4000A7A98 /* PicturePreviewBase.mm */; };
-		826CB9011D034CC4000A7A98 /* renderDispatcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7821D034CC4000A7A98 /* renderDispatcher.mm */; };
+		826CB9011D034CC4000A7A98 /* renderDispatcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7821D034CC4000A7A98 /* renderDispatcher.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		826CB9021D034CC4000A7A98 /* rendererGUIBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7841D034CC4000A7A98 /* rendererGUIBridge.mm */; };
 		826CB9031D034CC4000A7A98 /* colorPicker.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7871D034CC4000A7A98 /* colorPicker.mm */; };
-		826CB9041D034CC4000A7A98 /* customDocumentController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7891D034CC4000A7A98 /* customDocumentController.mm */; };
+		826CB9041D034CC4000A7A98 /* customDocumentController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7891D034CC4000A7A98 /* customDocumentController.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		826CB9051D034CC4000A7A98 /* sceneDocument+highlighting.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB78B1D034CC4000A7A98 /* sceneDocument+highlighting.mm */; };
 		826CB9061D034CC4000A7A98 /* sceneDocument+printing.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB78D1D034CC4000A7A98 /* sceneDocument+printing.mm */; };
 		826CB9071D034CC4000A7A98 /* sceneDocument+templates.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB78F1D034CC4000A7A98 /* sceneDocument+templates.mm */; };
@@ -337,7 +337,7 @@
 		826CB9141D034CC4000A7A98 /* colorMapTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7AA1D034CC4000A7A98 /* colorMapTemplate.mm */; };
 		826CB9151D034CC4000A7A98 /* finishTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7AC1D034CC4000A7A98 /* finishTemplate.mm */; };
 		826CB9161D034CC4000A7A98 /* functionsList.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7AD1D034CC4000A7A98 /* functionsList.mm */; };
-		826CB9171D034CC4000A7A98 /* functionTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7AF1D034CC4000A7A98 /* functionTemplate.mm */; };
+		826CB9171D034CC4000A7A98 /* functionTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7AF1D034CC4000A7A98 /* functionTemplate.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		826CB9181D034CC4000A7A98 /* globalsTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7B11D034CC4000A7A98 /* globalsTemplate.mm */; };
 		826CB9191D034CC4000A7A98 /* headerIncludeTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7B31D034CC4000A7A98 /* headerIncludeTemplate.mm */; };
 		826CB91A1D034CC4000A7A98 /* interiorTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7B51D034CC4000A7A98 /* interiorTemplate.mm */; };
@@ -17223,6 +17223,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ApplicationIcons;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -17393,6 +17394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = ApplicationIcons;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Installer";
 				COMBINE_HIDPI_IMAGES = YES;

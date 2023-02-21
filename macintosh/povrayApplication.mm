@@ -48,7 +48,7 @@
 
 - (void)sendEvent:(NSEvent *)anEvent
 {
-	if ( numericBlockPoint != 0 && [anEvent type]==NSKeyDown && [anEvent keyCode]==65)	
+	if ( numericBlockPoint != 0 && [anEvent type]==NSEventTypeKeyDown && [anEvent keyCode]==65)
 	{
 		NSString *newString;
 
@@ -88,7 +88,7 @@
 		NSArray *documentsArray=[ctrl documents];
 		NSEnumerator *en=[documentsArray objectEnumerator];
 		id doc;
-		NSMutableArray *dict=[[[NSMutableArray alloc]init]autorelease];
+		NSMutableArray *dict=[[NSMutableArray alloc]init];
 		for ( doc in en )
 		{
 			if ( [doc fileName]!=nil && [doc isDocumentEdited]==NO)

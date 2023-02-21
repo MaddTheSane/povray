@@ -395,17 +395,6 @@
 }
 
 //---------------------------------------------------------------------
-// dealloc																												*/
-//---------------------------------------------------------------------
-- (void)dealloc
-{
-	[ mCutToolbarItem release];
-	[ mStopToolbarItem release];
-	[ mPauseToolbarItem release];
-   [super dealloc];
-}
- 
-//---------------------------------------------------------------------
 // displayDrawPixelBlock*/
 //---------------------------------------------------------------------
 -(void) DrawPixelBlock: (NSUInteger) x ypos:(NSUInteger) y xpos2:(NSUInteger)x2 ypos2:(NSUInteger) y2 RGBA8Color:( const pov_frontend::Display::RGBA8*) colour
@@ -742,7 +731,6 @@
    [toolbar setDisplayMode:NSToolbarDisplayModeIconOnly];
    [toolbar setDelegate:self];
    [[self window] setToolbar:toolbar];
-   [toolbar release];
 }
 
 @end

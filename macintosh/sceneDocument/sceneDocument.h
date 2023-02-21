@@ -137,10 +137,10 @@ enum menuItems {
 
 typedef struct {
 	char *wordAsCString;
-	NSString *wordAsNSString;
+	CFStringRef wordAsNSString;
 	long wordLength;
 	unsigned short wordStyle;
-	unsigned location;
+	NSUInteger location;
 	BOOL isLocal;
 	} keyWords;
  
@@ -368,7 +368,8 @@ extern	NSRange mEffectiveRecoloredRange;	// this contains the range recolored.
 -(NSWindow*) window;
 -(void) selectLine:(NSUInteger)lineNumber;
 
--(NSMutableAttributedString*) mutableAttibutedStringFromFile;
+-(NSMutableAttributedString*) mutableAttibutedStringFromFile NS_DEPRECATED_WITH_REPLACEMENT_MAC("-mutableAttributedStringFromFile", 10.2, 10.9);
+@property (strong) NSMutableAttributedString *mutableAttributedStringFromFile;
 -(void) setMutableAttributedStringFromFile: (NSMutableAttributedString *)str;
 
 - (void)initializeToolbar;

@@ -57,7 +57,7 @@ enum {
 {
 	BodyMap *c=[[BodyMap alloc] init];
 	[c makeDefaultMap];
-	return [c autorelease];
+	return c;
 }
 
 //---------------------------------------------------------------------
@@ -67,7 +67,7 @@ enum {
 {
 	BodyMap *c=[[BodyMap alloc] init];
 	[c makeTextureMap];
-	return [c autorelease];
+	return c;
 }
 
 //---------------------------------------------------------------------
@@ -173,8 +173,8 @@ enum {
 {
 	NSMutableArray *old=[mMapArray objectAtIndex:[self count]-1];
 	NSMutableArray *newArray=[NSMutableArray arrayWithObjects:
-											[[[old objectAtIndex:cLocationIndex]copy]autorelease],
-											[[[old objectAtIndex:cIdentifierIndex]copy]autorelease],
+														[[old objectAtIndex:cLocationIndex]copy],
+														[[old objectAtIndex:cIdentifierIndex]copy],
 											nil];
 	[mMapArray addObject:newArray];
 }

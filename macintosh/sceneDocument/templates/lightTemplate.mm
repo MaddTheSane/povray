@@ -69,12 +69,10 @@ enum {
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	[ds copyTabAndText:@"light_source {\n"];
 	[ds addTab];
@@ -203,7 +201,6 @@ enum {
 	[ds copyTabAndText:@"}\n"];
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -367,7 +364,6 @@ enum {
 		[lightParallelLightPointAtMatrix cellWithTag:2],	@"lightParallelLightPointAtMatrixZ",
 		
 	nil];
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"lightLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"lightLocalized" andDictionary:

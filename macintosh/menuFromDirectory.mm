@@ -82,7 +82,6 @@
 	// release all objects
 	[[ self itemsArray] removeAllObjects];
 	[self setItemsArray:nil];
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------
@@ -91,7 +90,7 @@
 +(menuFromDirectory*) fromDirectory:(NSString*)path withExtensions:(NSArray*)extensionsArray forMainMenuItem:(NSMenuItem*)mainMenuItem 
 											scaleFactor:(CGFloat)scale action:(SEL) selector
 {
-	menuFromDirectory *nw=[[[self alloc]initWithPath:path andExtensions:extensionsArray ]autorelease];
+	menuFromDirectory *nw=[[self alloc] initWithPath:path andExtensions:extensionsArray];
 	if ( nw != nil)
 	{
 		[nw setMainMenuItem:mainMenuItem];
@@ -119,7 +118,7 @@
 		directoryContents=[fm contentsOfDirectoryAtPath:[self path] error:nil];
 		if ( [directoryContents count])
 		{
-			[self setItemsArray:[[[NSMutableArray alloc]init]autorelease]];
+			[self setItemsArray:[[NSMutableArray alloc] init]];
 			[self validateContents:directoryContents];
 			[self addMenuToMainMenu:[self mainMenuItem]];
 		}
@@ -158,20 +157,14 @@
 // creates an array with all the directories, not files
 // the returned array can be used to watch any changes
 //---------------------------------------------------------------------
--(void) directories:(NSMutableArray*)dirAr
+-(void) directories:(NSMutableArray<NSString*>*)dirAr
 {
-	NSMutableArray *ar=[self itemsArray];
-	NSInteger num=[ar count];
-	if ( num)
+	for (menuFromDirectoryItem *obj in self.itemsArray)
 	{
-		for (NSInteger x=0; x<num; x++)
+		if ( [obj subDir] )	// subdir, scan this one
 		{
-			id obj=[ar objectAtIndex:x];
-			if ( [obj subDir] )	// subdir, scan this one
-			{
-				[dirAr addObject:[[[obj fullFileName]copy]autorelease]];
-				[[obj subDir]directories:dirAr];
-			}
+			[dirAr addObject:[[obj fullFileName] copy]];
+			[[obj subDir] directories:dirAr];
 		}
 	}
 }
@@ -192,7 +185,7 @@
 		return;
 	if ([self menu]== nil )
 	{
-		NSMenu *m=[[[NSMenu alloc]initWithTitle:@""]autorelease];
+		NSMenu *m=[[NSMenu alloc] initWithTitle:@""];
 		[self setMenu:m]; 
 	}
 		
@@ -202,7 +195,7 @@
 		NSString *path=[self path];
 		NSString *fileAndPath=[path stringByAppendingString:file];
 		[fm fileExistsAtPath:fileAndPath isDirectory:&isDir];
-		menuFromDirectoryItem *directoryItem=[[[menuFromDirectoryItem alloc]init]autorelease];
+		menuFromDirectoryItem *directoryItem=[[menuFromDirectoryItem alloc] init];
 		if ( isDir==YES)
 			[directoryItem setKindOfFile:kDirectory];
 		else
@@ -225,7 +218,7 @@
 		}
 		else if ( [directoryItem kindOfFile] == kDirectory)
 		{
-			newMenuItem=[[[NSMenuItem alloc]initWithTitle:[directoryItem menuName] action:[self action] keyEquivalent:@""]autorelease];
+			newMenuItem=[[NSMenuItem alloc] initWithTitle:[directoryItem menuName] action:[self action] keyEquivalent:@""];
 			[directoryItem setMenuItem:newMenuItem];
 			[self addObject:directoryItem];
 			menuFromDirectory *mfd=[menuFromDirectory fromDirectory:fileAndPath withExtensions:[self extensions] 
@@ -239,7 +232,7 @@
 			{
 				if ( [[directoryItem menuName] hasSuffix:@".txt"])// no '.txt' in the menu name
 					[directoryItem setMenuName: [[directoryItem menuName]stringByDeletingPathExtension] ];
-				newMenuItem=[[[NSMenuItem alloc]initWithTitle:[directoryItem menuName] action:[self action] keyEquivalent:@""]autorelease];
+				newMenuItem=[[NSMenuItem alloc] initWithTitle:[directoryItem menuName] action:[self action] keyEquivalent:@""];
 				[directoryItem setMenuItem:newMenuItem];
 				NSString *nameWithoutExtension = [[directoryItem fullFileName] stringByDeletingPathExtension];
 				NSString *imageName=nil;
@@ -255,19 +248,19 @@
 					imageName = [nameWithoutExtension stringByAppendingString:@".jpeg"];
 				if ( imageName  != nil)
 				{
-					NSImage *sourceImage=[[[NSImage alloc]initWithContentsOfFile:imageName]autorelease];
+					NSImage *sourceImage=[[NSImage alloc] initWithContentsOfFile:imageName];
 					NSSize newSize=[sourceImage size];
 					newSize.width *=[self scaleFactor]/100;
 					newSize.height*=[self scaleFactor]/100;
 					
 					
-					NSImage *resizedImage = [[[NSImage alloc] initWithSize:newSize ]autorelease];
+					NSImage *resizedImage = [[NSImage alloc] initWithSize:newSize];
 					NSSize originalSize = [sourceImage size];
 
 					[resizedImage lockFocus];
 					[sourceImage drawInRect: NSMakeRect(0, 0, newSize.width, newSize.height) fromRect: NSMakeRect(0, 0, originalSize.width, originalSize.height) operation: NSCompositingOperationSourceOver fraction: 1.0];
 					[resizedImage unlockFocus];
-					[[directoryItem menuItem]setImage:resizedImage];
+					[[directoryItem menuItem] setImage:resizedImage];
 				}
 				[self addObject:directoryItem];
 			}
@@ -531,7 +524,6 @@
 	[self setPath:nil];
 	[self setMenuItem:nil];
 	[self setSubDir:nil];
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------
@@ -559,7 +551,7 @@
 //---------------------------------------------------------------------
 -(NSString*) fullFileName
 {
-	return [[self path]stringByAppendingString:[self fileName]];
+	return [[self path] stringByAppendingPathComponent:[self fileName]];
 }
 
 //---------------------------------------------------------------------

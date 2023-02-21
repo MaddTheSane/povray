@@ -202,7 +202,6 @@ enum {
 		objectEditorMoveEdit,				@"objectEditorMoveEdit",
 	nil];
 
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"objectEditorLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"objectEditorLocalized" andDictionary:

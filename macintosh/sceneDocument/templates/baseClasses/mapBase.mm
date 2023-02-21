@@ -53,7 +53,7 @@
 	if ( self)
 	{
 		mSelectedRow=dNoRowSelected;
-		[self setArray:[[[NSMutableArray alloc]init]autorelease]];
+		[self setArray:[[NSMutableArray alloc] init]];
 	}
 	return self;
 }
@@ -121,7 +121,6 @@
 {
 	[self mapBaseSetTemplate:nil];
 	[self setArray:nil];
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------
@@ -176,22 +175,9 @@
 
 
 //---------------------------------------------------------------------
-// setArray
-//---------------------------------------------------------------------
--(void) setArray:(NSMutableArray*) array
-{
-	[mMapArray release];
-	mMapArray=array;
-	[mMapArray retain];
-}
-
-//---------------------------------------------------------------------
 // array
 //---------------------------------------------------------------------
--(id) array
-{
-	return mMapArray;
-}
+@synthesize array=mMapArray;
 
 //---------------------------------------------------------------------
 // archivedObjectAtIndex

@@ -67,12 +67,10 @@ enum {
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	BodyMap *bmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"bodymap"]];
 
@@ -120,7 +118,6 @@ enum {
 	[ds copyTabAndText:@"}\n"];
 
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -176,8 +173,6 @@ enum {
 		materialmapInterpolationPopUp,	@"materialmapInterpolationPopUp",
 		materialmapProjectionOnceOn,		@"materialmapProjectionOnceOn",
 	nil] ;
-	
-	[mOutlets retain];
 
 	[ToolTipAutomator setTooltips:@"materialmapLocalized" andDictionary:mOutlets];
 	//additional objects
@@ -222,7 +217,6 @@ enum {
 -(void) setValuesInPanel:(NSMutableDictionary*)preferences
 {
  	mMap=[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"bodymap"]];
- 	[mMap retain];
  	[super setValuesInPanel:preferences];
  	[mTableView noteNumberOfRowsChanged];
 	[self setButtons];

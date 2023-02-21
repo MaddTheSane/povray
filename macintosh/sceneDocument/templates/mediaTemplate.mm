@@ -61,12 +61,10 @@
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	if ( [[dict objectForKey:@"mediaDontWrapInMedia"]integerValue]==NSOffState)
 	{
@@ -181,7 +179,6 @@
 
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -288,8 +285,6 @@
 		mediaSamplingRatioOn,				@"mediaSamplingRatioOn",
 		mediaSamplingRatioEdit,				@"mediaSamplingRatioEdit",
 	nil] ;
-	
-	[mOutlets retain];
 	
 	[ToolTipAutomator setTooltips:@"mediaLocalized" andDictionary:mOutlets];
 	//additional objects

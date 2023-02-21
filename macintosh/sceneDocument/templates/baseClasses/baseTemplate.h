@@ -177,7 +177,7 @@ enum eImageMap {
 @class ColorPicker;
 
 @interface BaseTemplate : NSObject <NSTabViewDelegate,NSTableViewDelegate>{
-					 NSPanel			*mWindow;
+	__unsafe_unretained NSPanel			*mWindow;
 	IBOutlet NSButton		*templateOkButton;
 	IBOutlet NSButton		*templateCancelButton;
 	IBOutlet NSButton		*templateResetButton;

@@ -57,7 +57,6 @@ extern BOOL gDontErasePreveiw;
 //---------------------------------------------------------------------
 -(void) remoteMac_Parse_Error: (RemoteObject*)remoteobject
 {
-	[remoteobject retain];
 	//@autoreleasepool is set in fucntion Mac_Parse_Error() in renderGUIBridge.mm
 	NSString *file=[[remoteobject dict]objectForKey:@"fileName"];
 	if ( file == nil)
@@ -66,7 +65,6 @@ extern BOOL gDontErasePreveiw;
 		if (document) {
 			NSInteger n=[[[remoteobject dict] objectForKey:@"lineNo"] integerValue];
 			[(SceneDocument*)document selectLine:n];
-			[remoteobject release];
 		}
 	}];
 }
@@ -159,7 +157,7 @@ extern BOOL gDontErasePreveiw;
 			 object:nil];
 	 }
 	
-	mBackgroundImagePattern=[[NSImage imageNamed:@"background"]retain];
+	mBackgroundImagePattern=[NSImage imageNamed:@"background"];
 	#if defined (debugPreview ) && defined (debugPreviewWatchBackingProperties)
 		NSLog(@"exit awakeFromNib\n");
 	#endif
@@ -244,11 +242,11 @@ extern BOOL gDontErasePreveiw;
 	#if defined (debugPreview ) && (defined (debugPreviewAdjustWindow) || defined (debugPreviewWatchDisplayTimer))
 		NSLog(@"In displayInit, setting up displaytimer\n");
 	#endif
-	mDisplayUpdater = [[NSTimer timerWithTimeInterval:updateTimerInterval
+	mDisplayUpdater = [NSTimer timerWithTimeInterval:updateTimerInterval
 								target:self
    							selector:@selector(forceDisplayUpdate:)
    							userInfo:nil
-   							repeats:YES] retain];
+   							repeats:YES];
    [[NSRunLoop mainRunLoop] addTimer:mDisplayUpdater forMode:NSDefaultRunLoopMode];
 
 	[self adjustWindow];
@@ -338,14 +336,12 @@ extern BOOL gDontErasePreveiw;
     // clean up the caches.  We are zeroing out the pointers so that we
     // don't mistakenly try to use an invalid (freed) pointer.
 	[mImage removeRepresentation:mImageCache];
-	[mImageCache release];
 	mImageCache = nil;
 
 	#ifdef useImageForBackground
 		#if defined (debugPreview ) && defined (debugPreviewImageForBackground)
 			NSLog(@"releasing backgroundinmage");
 		#endif
-		[mBackgroundImage release];
 		mBackgroundImage=nil;
 	#endif
 	
@@ -363,18 +359,14 @@ extern BOOL gDontErasePreveiw;
 
 		   // make sure we release all the resources we allocated, so we don't leak memory
 	[self _destroyCache];
-	[mImage release];
-	[mBackgroundImagePattern release];
 	[[NSNotificationCenter defaultCenter]removeObserver:self];
 	[self setInputFileName:nil];
 	#ifdef useImageForBackground
 		#if defined (debugPreview ) && defined (debugPreviewImageForBackground)
 			NSLog(@"releasing in dealloc backgroundinmage");
 		#endif
-		[mBackgroundImage release];
 		mBackgroundImage=nil;
 	#endif
-	[super dealloc];
 }
 }
 
@@ -525,7 +517,6 @@ extern BOOL gDontErasePreveiw;
 			NSLog(@"In displayClose: invalidating and removing displayTimer\n");
 		#endif
 		[mDisplayUpdater invalidate];
-		[mDisplayUpdater release];
 		mDisplayUpdater=nil;
 	}
 	// make sure the whole image is drawn

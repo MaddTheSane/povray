@@ -89,8 +89,7 @@ static PreferencesPanelController* _preferencesPanelController;
 //---------------------------------------------------------------------
 - (void) dealloc
 {
-	[[NSNotificationCenter defaultCenter]removeObserver:self];
-	[super dealloc];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 //---------------------------------------------------------------------
@@ -242,9 +241,7 @@ static PreferencesPanelController* _preferencesPanelController;
 //---------------------------------------------------------------------
 - (NSNumber*)setIndexOfSelectedTabViewItem:(NSNumber *)selectedTab
 {
-	[indexOfSelectedTabViewItem release];
 	indexOfSelectedTabViewItem=selectedTab;
-	[indexOfSelectedTabViewItem retain];
 	return indexOfSelectedTabViewItem;
 }
 
@@ -535,13 +532,13 @@ static PreferencesPanelController* _preferencesPanelController;
 	NSMenuItem *newItem;
 	[renderingPreferencesPresets removeAllItems];
 	
-	newItem=[[[NSMenuItem alloc]init] autorelease];	[newItem setTitle:@"Save current settings..."];
+	newItem=[[NSMenuItem alloc]init];	[newItem setTitle:@"Save current settings..."];
 	[settingsPresetsMenu	addItem:newItem];
-	newItem=[[[NSMenuItem alloc]init] autorelease];	[newItem setTitle:@"Edit list of settings..."];
+	newItem=[[NSMenuItem alloc]init];	[newItem setTitle:@"Edit list of settings..."];
 	[settingsPresetsMenu	addItem:newItem];
 	[settingsPresetsMenu	addItem:[NSMenuItem separatorItem]];
 	//factory settings
-	newItem=[	[[NSMenuItem alloc]init] autorelease];
+	newItem=[[NSMenuItem alloc]init];
 	[newItem setTitle:dFactorySettings];
 	[settingsPresetsMenu	addItem:newItem];
 	[settingsPresetsMenu	addItem:[NSMenuItem separatorItem]];
@@ -555,7 +552,6 @@ static PreferencesPanelController* _preferencesPanelController;
 		newItem=[[NSMenuItem alloc]init];
 		[newItem setTitle:dictName];
 		[settingsPresetsMenu	addItem:newItem];
-		[newItem release];
 	}
 	//end of presets menu
 }
@@ -870,7 +866,7 @@ static PreferencesPanelController* _preferencesPanelController;
 			 {
 			@autoreleasepool
 			{
-			 if ( resultCode == NSOKButton)
+				if ( resultCode == NSModalResponseOK)
 				 {
 					 [sceneFile setStringValue:[[openPanel URL]path]];
 					 [self setPanelTitle];
@@ -987,7 +983,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	 {
 			@autoreleasepool
 			{
-			 if( (resultCode == NSOKButton) && [textfield respondsToSelector:@selector(setStringValue:)])
+				if( (resultCode == NSModalResponseOK) && [textfield respondsToSelector:@selector(setStringValue:)])
 				 [textfield setStringValue:[[openPanel URL]path]];
 			}
 	 }
@@ -1477,10 +1473,9 @@ static PreferencesPanelController* _preferencesPanelController;
 {
 	// make sure changes are set
 	[[tabViewOutlet window] makeFirstResponder: [tabViewOutlet window] ];
-	NSMutableDictionary *dict=[[NSMutableDictionary dictionary]autorelease];
+	NSMutableDictionary *dict=[NSMutableDictionary dictionary];
 	if ( dict)
 	{
-		[dict retain];
 		//name of the dictionary
 		[dict setObject:dLastValuesInPanel forKey:@"dictionaryName"];
 		//files & paths
@@ -1707,8 +1702,7 @@ static PreferencesPanelController* _preferencesPanelController;
 		[defaults setObject:@([[settingsPanelSortMatrix selectedCell] tag]) forKey: @"sortBySize"];
 	}
 	[self updateDefaults];
-	[mBackupSettingsArray release];	// no need for it anymore
-	mBackupSettingsArray=nil;
+	mBackupSettingsArray=nil; // no need for it anymore
 	// post notification so that our batch window knows of the changed settings
 	[[NSNotificationCenter defaultCenter] postNotificationName:POVRenderSettingsChangedNotification 	object:self 	userInfo:nil];
 }
@@ -1759,7 +1753,6 @@ static PreferencesPanelController* _preferencesPanelController;
 {
 	[[NSApplication sharedApplication] endSheet: settingsPanel];
 	// restore to the way it was before we called the panel
-	[mSettingsArray release];
 	mSettingsArray=mBackupSettingsArray;
 	mBackupSettingsArray=nil;
 	[self buildPreferencesPopup];

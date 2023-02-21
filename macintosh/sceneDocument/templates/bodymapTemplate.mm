@@ -67,12 +67,10 @@ enum {
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	BodyMap *bmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"bodymap"]];
 	switch ( [[dict objectForKey:@"bodymapType"]intValue])
@@ -92,7 +90,6 @@ enum {
 	[ds copyTabAndText:@"}\n"];
 
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -206,7 +203,6 @@ enum {
 	}
 
 	[self setPreferences:dict];
-	[dict release];
 }
 
 //---------------------------------------------------------------------
@@ -255,7 +251,6 @@ enum {
 -(void) setValuesInPanel:(NSMutableDictionary*)preferences
 {
  	mMap=[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"bodymap"]];
- 	[mMap retain];
  	[mTableView noteNumberOfRowsChanged];
 	[self setButtons];
 

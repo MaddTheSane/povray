@@ -56,8 +56,8 @@
 		mTabCount=tabs;
 		mCallerIsSceneDocument=callerIsSceneDocument;
 		mFirstTimeWritten=NO;
-		[self setString:[[[NSMutableString alloc] init]autorelease]];
-		[self setTabString:[[[NSMutableString alloc]init]autorelease] ];
+		[self setString:[[NSMutableString alloc] init]];
+		[self setTabString:[[NSMutableString alloc]init]];
 		for (NSInteger x=1; x<=mTabCount; x++)
 			[[self tabString] appendString:@"\t"];
 	}
@@ -173,7 +173,6 @@
 	
 	NSString *temp=[[NSString alloc] initWithFormat:format arguments:args];
 	[[self string] appendString:temp];
-	[temp release];
 }
 
 //---------------------------------------------------------------------
@@ -195,7 +194,6 @@
 	[self copyTabText];
 	NSString *temp=[[NSString alloc] initWithFormat:format arguments:args];
 	[[self string] appendString:temp];
-	[temp release];
 }
 
 //---------------------------------------------------------------------
@@ -339,6 +337,5 @@
 {
 	[self setString:nil];
 	[self setTabString:nil];
-	[super dealloc];
 }
 @end

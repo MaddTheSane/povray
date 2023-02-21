@@ -61,7 +61,6 @@
 	[c setTemplateType:type];
 	[c makeMapWithPoints:6];
 	[c setPreview:view];	
-	[c autorelease]; 
 	return c;
 }
 

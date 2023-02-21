@@ -327,7 +327,7 @@ NSMutableArray * scanForValuesInString(NSString *stringToScan)
 	NSCharacterSet *decimalsCharacterString=[NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
 	NSString *scannedCharacters;
 	
-	NSMutableArray *result = [[[NSMutableArray alloc]init]autorelease];
+	NSMutableArray *result = [[NSMutableArray alloc] init];
 	
 	[scanner scanUpToCharactersFromSet:decimalsCharacterString intoString:nil];
 	while ([scanner scanCharactersFromSet:decimalsCharacterString intoString:&scannedCharacters] )
@@ -391,13 +391,4 @@ NSMutableArray * scanForValuesInString(NSString *stringToScan)
 @synthesize height=mHeight;
 @synthesize ref=mRef;
 @synthesize returnValue=mReturnValue;
-	-(void) dealloc
-	{
-		if ( mDict != nil)
-		{
-			[mDict release];
-			mDict=nil;
-		}
-		[super dealloc];
-	}
 @end

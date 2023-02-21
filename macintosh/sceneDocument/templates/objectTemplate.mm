@@ -140,12 +140,10 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 		return nil;
 	}
-
-	[dict retain];
 
 	switch ( [[dict objectForKey:@"objectTypePopUp"]intValue])
 	{
@@ -514,8 +512,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				}
 				if ( objectEditorPrefs==nil)	// should never happen
 				{
-					[dict release];
-					return nil;		
+					return nil;
 				}
 				[ds copyTabAndText:@"lathe {\n"];
 				[ds addTab];
@@ -636,7 +633,6 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				funcStr=[dict objectForKey:@"polyArray"];
 				if ( funcStr==nil)
 				{
-					[dict release];
 					return nil;
 				}
 				switch ([[dict objectForKey:@"objectPolyPolyTypePopUp"]intValue])
@@ -703,7 +699,6 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				}
 				if ( objectEditorPrefs==nil)	// should never happen
 				{
-					[dict release];
 					return nil;
 				}
 				[ds copyTabAndText:@"polygon {\n"];
@@ -743,7 +738,6 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				}
 				if ( objectEditorPrefs==nil)	// should never happen
 				{
-					[dict release];
 					return nil;
 				}
 				oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
@@ -960,8 +954,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				}
 				if ( objectEditorPrefs==nil)	// should never happen
 				{
-					[dict release];
-					return nil;		
+					return nil;
 				}
 					oMap=[NSUnarchiver unarchiveObjectWithData:objectEditorPrefs];
 					[ds copyTabAndText:@"sor {\n"];
@@ -1247,21 +1240,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 				break;
 	}
 //	[ds autorelease];
-	[dict release];
 	return ds;
-}
-
-//---------------------------------------------------------------------
-// dealloc
-//---------------------------------------------------------------------
--(void) dealloc
-{
-	if ( mPolyArray != nil)
-	{
-		[mPolyArray release];
-		mPolyArray=nil;
-	}
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------
@@ -1802,7 +1781,6 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 		[objectTriangleInsideXYZVectorMatrix cellWithTag:2],	@"objectTriangleInsideXYZVectorMatrixZ",
 
 	nil];	
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"objectLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"objectLocalized" andDictionary:
@@ -1870,9 +1848,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 
 		nil]
 	];
-	mExcludedObjectsForReset=[NSArray arrayWithObjects:
-		@"objectTypePopUp",nil];
-	[mExcludedObjectsForReset retain];
+	mExcludedObjectsForReset = @[@"objectTypePopUp"];
 	[self  setValuesInPanel:[self preferences]];
 }
 
@@ -1894,11 +1870,7 @@ const char Poly7[120][10]={"\px7","\px6y","\px5z","\px5","\px5y2","\px5yz","\px5
 	[self setObjectPolygon:[preferences objectForKey:@"objectPolygon"]];
 	[self setObjectPrism:[preferences objectForKey:@"objectPrism"]];
 	[self setObjectSor:[preferences objectForKey:@"objectSor"]];
-	if ( mPolyArray != nil)
-	{
-		[mPolyArray release];
-	}
-	mPolyArray=[[[preferences objectForKey:@"polyArray"]mutableCopy]retain];
+	mPolyArray = [[preferences objectForKey:@"polyArray"] mutableCopy];
 
 	[super setValuesInPanel:preferences];
 	[self objectTypePopUp:nil];

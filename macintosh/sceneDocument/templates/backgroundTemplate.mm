@@ -63,12 +63,10 @@
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 
 	switch ( [[dict objectForKey:@"backgroundTabView"]intValue])
@@ -209,7 +207,6 @@
 	[ds copyTabAndText:@"}\n"];
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -277,7 +274,7 @@
 	//customized color map is in a dictionary because
 	// we use it as preferences for the color map template
 	// rainbow and b&w are not editable so they can be in colormap format directly
-		[NSDictionary dictionaryWithObjectsAndKeys:
+																				[[NSDictionary alloc] initWithObjectsAndKeys:
 			[NSArchiver archivedDataWithRootObject:[colormap standardMapWithView:nil]],		@"colormap",nil
 		],																															@"customizedColorMap",
 		[NSArchiver archivedDataWithRootObject:	[colormap rainbowMapWithView:nil]],			@"rainbowColorMap",
@@ -324,7 +321,7 @@
 -(void) awakeFromNib
 {
 	[super awakeFromNib];
-	mOutlets =[NSDictionary dictionaryWithObjectsAndKeys:
+	mOutlets =[[NSDictionary alloc] initWithObjectsAndKeys:
 		backgroundTabView,																@"backgroundTabView",
 	//background
 		backgroundColorWell,															@"backgroundColorWell",
@@ -392,8 +389,6 @@
 		backgroundGlowColorWell,													@"backgroundGlowColorWell",
 	nil] ;
 	
-	[mOutlets retain];
-	
 	[ToolTipAutomator setTooltips:@"backgroundLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"backgroundLocalized" andDictionary:
@@ -417,10 +412,7 @@
 			backgroundGlowTransformationsButton, @"backgroundGlowTransformationsButton",
 		nil]
 		];
-	mExcludedObjectsForReset=[NSArray arrayWithObjects:
-		@"backgroundTabView",
-		nil];
-	[mExcludedObjectsForReset retain];
+	mExcludedObjectsForReset=@[@"backgroundTabView"];
 
 	[self  setValuesInPanel:[self preferences]];
 }

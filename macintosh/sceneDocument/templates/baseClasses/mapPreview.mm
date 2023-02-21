@@ -64,7 +64,6 @@
 -(void) dealloc
 {
 	[self setMap:nil];
-	[super dealloc];
 }
 
 

@@ -127,14 +127,9 @@ static const char *templateTypeNameArray[]={
 {
 
 	[self setPreferences:nil];
-	[mOutlets release];
 	mOutlets=nil;
-	[keyName release];
 	for (int x=0; x<=24; x++)
 		[self setTemplatePrefs:x withObject:nil];
-	[mExcludedObjectsForReset release];
-	mExcludedObjectsForReset=nil;
-	[super dealloc];
 }
 
 	
@@ -156,9 +151,9 @@ static const char *templateTypeNameArray[]={
 		else 	if ( [[self caller]isMemberOfClass:[SceneDocument class]])
 		{
 			NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-			id dict=[defaults  objectForKey:[self defaultPreferencesName]];
+			id dict=[defaults  dictionaryForKey:[self defaultPreferencesName]];
 			if ( dict != nil)
-				dict=[[dict mutableCopy]autorelease];
+				dict=[dict mutableCopy];
 			[self setPreferences:dict];
 		}
 
@@ -187,7 +182,6 @@ static const char *templateTypeNameArray[]={
 	}
 //	[sheet orderOut: nil];
 	[sheet close];
-	[mFileOwner release];
 	mFileOwner=nil;
 }
 
@@ -244,7 +238,7 @@ static const char *templateTypeNameArray[]={
 -(IBAction) resetButton: (id)sender
 {
 	[self setPreferences:[[self class] createDefaults:mTemplateType]];
-	NSMutableDictionary *dict=[[[self preferences]mutableCopy]autorelease];
+	NSMutableDictionary *dict=[[self preferences] mutableCopy];
 	if ( dict != nil)
 	{
 		if ( mExcludedObjectsForReset != nil)
@@ -277,7 +271,7 @@ static const char *templateTypeNameArray[]={
 		@autoreleasepool
 			{
 			NSDictionary *dict=nil;
-     	if ( resultCode == NSOKButton )
+			if ( resultCode == NSModalResponseOK )
 			{
 				dict=[NSDictionary dictionaryWithContentsOfURL:[openPanel URL]];
 				id dictName=[dict objectForKey:@"dictionaryTypeDefaults"];
@@ -285,7 +279,7 @@ static const char *templateTypeNameArray[]={
 				{
 					if ( [dictName isEqualToString:[self dictionaryTypeName]])
 					{
-						[self setPreferences:[[dict mutableCopy]autorelease]];
+						[self setPreferences:[dict mutableCopy]];
 						[self setValuesInPanel:[self preferences]];
 					}
 					else
@@ -317,7 +311,7 @@ static const char *templateTypeNameArray[]={
 	NSMutableDictionary *trimmedPrefs=[self removeStandardSettingsFromPreference:[self preferences] ];
 	NSSavePanel *savePanel=[NSSavePanel savePanel];
 	[savePanel setCanCreateDirectories:YES];
-	[savePanel setAllowedFileTypes:[NSArray arrayWithObject:@"mpTpl"]];
+	[savePanel setAllowedFileTypes:@[@"mpTpl"]];
 	[savePanel setTitle:@"Save template"];
 	
 	[savePanel beginSheetModalForWindow:[self window]
@@ -325,7 +319,7 @@ static const char *templateTypeNameArray[]={
 	{
 		@autoreleasepool
 		{
-			if( resultCode ==NSOKButton )
+			if( resultCode ==NSModalResponseOK )
 				[trimmedPrefs writeToURL:[savePanel URL] atomically:YES ];
 			}
 		}
@@ -374,9 +368,7 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 -(void) setPreferences:(id) preferences
 {
-	[mPreferences release];
 	mPreferences=preferences;
-	[mPreferences retain];
 	
 	// now make sure that all keys are available
 	// to do this, compare the dictionary we store
@@ -538,8 +530,6 @@ static const char *templateTypeNameArray[]={
 	}	
 
 	[self setPreferences:dict];
-	[dict release];
-
 }
 
 //---------------------------------------------------------------------
@@ -560,7 +550,7 @@ static const char *templateTypeNameArray[]={
 	if ( inPreferences!=nil)
 	{
 //		preferences=[NSUnarchiver unarchiveObjectWithData:[NSArchiver archivedDataWithRootObject:inPreferences]];
-		preferences=[[inPreferences mutableCopy]autorelease];
+		preferences=[inPreferences mutableCopy];
 		
 		NSMutableDictionary *defaultsPreferencesDict=[[self class] createDefaults:mTemplateType];
 		if ( defaultsPreferencesDict ==nil)
@@ -1106,9 +1096,7 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 -(void) setTemplatePrefs:(int)number withObject:(id)objc
 {
-	[mTemplatePrefs[number] release];
-			mTemplatePrefs[number]=[objc mutableCopy];	
-	[mTemplatePrefs[number] retain];
+			mTemplatePrefs[number]=[objc mutableCopy];
 }
 
 
@@ -1117,10 +1105,12 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 - (void) callTemplate:(int)templateNumber 	withDictionary:(NSMutableDictionary*) dict andKeyName:(NSString*) key
 {
+	BaseTemplate *tmpTemplate = mFileOwner;
 	[SceneDocument displayTemplateNumber:templateNumber 
-							fileowner:mFileOwner
+							fileowner:&tmpTemplate
 							caller:self 
 							dictionary:dict];
+	mFileOwner = tmpTemplate;
 	[self setKeyName:key];
 }
 
@@ -1141,7 +1131,6 @@ static const char *templateTypeNameArray[]={
 		}
 		else
 		{
-			[colorPickerController release];
 			colorPickerController=nil;
 		}
 	}	
@@ -1155,7 +1144,6 @@ static const char *templateTypeNameArray[]={
 	{
 	}
 	[sheet orderOut: nil];
-	[colorPickerController release];
 	colorPickerController=nil;
 }
 
@@ -1234,7 +1222,7 @@ void WriteNormal(int keyword, MutableTabString *ds,NSDictionary *dict, BOOL writ
 	if ( dict==nil)
 		theDict=[NormalTemplate createDefaults:menuTagTemplateNormal];
 	else
-		theDict=[[dict mutableCopy]autorelease];
+		theDict=[dict mutableCopy];
 
 	if( keyword==cForceDontWrite)	//only change if we have to force don't write
 		[theDict setObject:@(NSOnState) forKey:@"normalDontWrapInPigment"];
@@ -1255,7 +1243,7 @@ void WritePigment(int keyword, MutableTabString *ds,NSDictionary *dict, BOOL wri
 	if ( dict==nil)
 		theDict=[PigmentTemplate createDefaults:menuTagTemplatePigment];
 	else
-		theDict=[[dict mutableCopy]autorelease];
+		theDict=[dict mutableCopy];
 
 	if( keyword==cForceDontWrite)	//only change if we have to force don't write
 		[theDict setObject:@(NSOnState) forKey:@"pigmentDontWrapInPigment"];

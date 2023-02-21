@@ -91,12 +91,10 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 	if ( mPointList)
 	{
 		delete mPointList;
-		mPointList=0l;
+		mPointList=nullptr;
 	}	
 	[self setImagePath:nil];
 	[self setImage:nil];
-	
-	[super dealloc];
 }
 
 // ---------------------------------------------------------------------------
@@ -115,7 +113,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 			[openPanel setCanChooseFiles:YES];
 			[openPanel setAllowedFileTypes:[NSImage imageTypes]];
 			res=[openPanel runModal];
-			if ( NSOKButton==res)
+			if ( NSModalResponseOK==res)
 				[self loadNewBackgroundImage:[[openPanel URL] path]];
 			break;
 		case cBackgroundPictureReload:
@@ -275,8 +273,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 	if ( [ rep isKindOfClass:[NSBitmapImageRep class]]==NO)
 	{
 		NSData *tiff_data = [[NSData alloc] initWithData:[img TIFFRepresentation]];
-		[tiff_data autorelease];
-		NSBitmapImageRep *bitmap = [[[NSBitmapImageRep alloc] initWithData:tiff_data]autorelease];
+		NSBitmapImageRep *bitmap = [[NSBitmapImageRep alloc] initWithData:tiff_data];
 		NSArray *repArray=[img representations];
 		if (repArray !=nil)
 		{
@@ -353,48 +350,21 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 }
 
 //---------------------------------------------------------------------
-// setImage
-//---------------------------------------------------------------------
--(void) setImage:(NSImage *)img
-{
-	[mImage release];
-	mImage=img;
-	[mImage retain];
-	
-}	
-
-//---------------------------------------------------------------------
 // image
 //---------------------------------------------------------------------
--(NSImage*) image
-{
-	return mImage;
-}
-
-//---------------------------------------------------------------------
-// setImagePath
-//---------------------------------------------------------------------
--(void) setImagePath:(NSString *)file
-{
-	[mImagePath release];
-	mImagePath=[file copy];
-//	[mImagePath retain];
-}	
+@synthesize image=mImage;
 
 //---------------------------------------------------------------------
 // imagePath
 //---------------------------------------------------------------------
--(NSString*) imagePath
-{
-	return mImagePath;
-}
+@synthesize imagePath=mImagePath;
 
 //---------------------------------------------------------------------
 // loadNewBackgroundImage
 //---------------------------------------------------------------------
 -(void) loadNewBackgroundImage:(NSString*)file
 {
-	NSImage *newImage=[[[NSImage alloc]initWithContentsOfFile:[[file copy]autorelease]]autorelease];
+	NSImage *newImage=[[NSImage alloc]initWithContentsOfFile:file];
 	if ( newImage!= nil)
 	{
 	//	[newImage autorelease];
@@ -524,7 +494,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 	{
 		[self calculateBackgroundRects];
 
-		[[self image] drawInRect:mImageToRect fromRect:mImageFromRect operation:NSCompositeSourceOver fraction:1];
+		[[self image] drawInRect:mImageToRect fromRect:mImageFromRect operation:NSCompositingOperationSourceOver fraction:1];
 	}
 
 	// subtracting these from the local mouse position
@@ -703,7 +673,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 		{
 			Found=YES;
 			FoundPoint=counter;
-			if ( [theEvent modifierFlags]&NSShiftKeyMask)
+			if ( [theEvent modifierFlags]&NSEventModifierFlagShift)
 				[mMap selectRow:counter byExtendingSelection:YES];	//will make our template select a row
 			else
 				[mMap selectRow:counter byExtendingSelection:NO];	//will make our template select a row
@@ -719,18 +689,18 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 			[self getControlPoint:FoundPoint controlPoint:ControlPoint centerPoint:CenterPoint event:theEvent];
 		[self getLeftRightPoint:FoundPoint leftPoint:LeftPoint rightPoint:RightPoint event:theEvent];
 
-		theEvent = [[self window] nextEventMatchingMask: NSLeftMouseUpMask |  NSLeftMouseDraggedMask];
+		theEvent = [[self window] nextEventMatchingMask: NSEventMaskLeftMouseUp |  NSEventMaskLeftMouseDragged];
 		mouseLoc = [self convertPoint:[theEvent locationInWindow] fromView:nil];
 		BOOL shifted=NO;
-		if ( [theEvent modifierFlags]&NSShiftKeyMask)
+		if ( [theEvent modifierFlags]&NSEventModifierFlagShift)
 			shifted=YES;
 
 		switch ([theEvent type]) 
 		{
-		    case NSLeftMouseDragged:
+			case NSEventTypeLeftMouseDragged:
 		    	if( [theEvent deltaX] || [theEvent deltaY])	//did we move?
 		    	{
-		    		float x,y;
+						CGFloat x,y;
 		    		y=mouseLoc.y;
 	    			x=mouseLoc.x;
 
@@ -739,13 +709,13 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 					if ( [mMap templateType] == menuTagTemplatePolygon || [mMap templateType]==menuTagTemplatePrism )
 					{
 					
-						x=(x*2/(float)NSWidth(mRasterFrame))-1;
-						y=(y*2/(float)NSHeight(mRasterFrame))-1;
+						x=(x*2/(CGFloat)NSWidth(mRasterFrame))-1;
+						y=(y*2/(CGFloat)NSHeight(mRasterFrame))-1;
 					}
 					else
 					{
-						x/=(float)NSWidth(mRasterFrame);
-						y/=(float)NSWidth(mRasterFrame);
+						x/=(CGFloat)NSWidth(mRasterFrame);
+						y/=(CGFloat)NSWidth(mRasterFrame);
 					}	
 
 					[self setPointToMin:x thePoint:FoundPoint];
@@ -771,7 +741,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 						{	
 							if ( ct!=FoundPoint && [[mMap tableView] isRowSelected:ct])
 							{
-								float temp=[mMap floatAtRow:ct atColumn:cObjectmapYIndex];
+								CGFloat temp=[mMap floatAtRow:ct atColumn:cObjectmapYIndex];
 								temp-=tempHeight;
 								[mMap setFloat:temp atRow:ct atColumn:cObjectmapYIndex];
 
@@ -788,7 +758,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 						if ( LastPoint != -1)
 						{
 							[mMap setFloat:y atRow:LastPoint atColumn:cObjectmapYIndex];
-							float t=x;
+							CGFloat t=x;
 							[self setPointToMin:t thePoint:LastPoint];
 							[mMap setFloat:t atRow:LastPoint atColumn:cObjectmapXIndex];
 						}	
@@ -799,7 +769,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 						{
 							if ( LeftPoint != -1)
 							{
-								float t=-1*(tempHeight-[mMap floatAtRow:FoundPoint atColumn:cObjectmapYIndex]);
+								CGFloat t=-1*(tempHeight-[mMap floatAtRow:FoundPoint atColumn:cObjectmapYIndex]);
 								t+=[mMap floatAtRow:LeftPoint atColumn:cObjectmapYIndex];
 								[mMap setFloat:t atRow:LeftPoint atColumn:cObjectmapYIndex];
 
@@ -811,7 +781,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 							}				
 							if ( RightPoint != -1)
 							{
-								float t=-1*(tempHeight-[mMap floatAtRow:FoundPoint atColumn:cObjectmapYIndex]);
+								CGFloat t=-1*(tempHeight-[mMap floatAtRow:FoundPoint atColumn:cObjectmapYIndex]);
 								t+=[mMap floatAtRow:RightPoint atColumn:cObjectmapYIndex];
 								[mMap setFloat:t atRow:RightPoint atColumn:cObjectmapYIndex];
 
@@ -826,7 +796,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 					[mMap reloadData];
 		    	}	
 	            break;
-			case NSLeftMouseUp:
+			case NSEventTypeLeftMouseUp:
 				keepOn = NO;
 				break;
 			default:
@@ -844,7 +814,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 //	See if a point can be les then zero
 // ---------------------------------------------------------------------------
 
--(void) setPointToMin:(float & ) theValue thePoint:(NSInteger&)thePoint
+-(void) setPointToMin:(CGFloat & ) theValue thePoint:(NSInteger&)thePoint
 {
 	if ( [mMap templateType] == menuTagTemplateLathe )
 	{
@@ -972,7 +942,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 	NSInteger NumberOfPoints=[mMap count]-1;	//index of last point  (!= number of points)
 	ControlPoint=-1;
 
-	if ( [event modifierFlags]&NSAlternateKeyMask)
+	if ( [event modifierFlags]&NSEventModifierFlagOption)
 		return;
 	
 	if ( [mMap buttonState:cSplineTypePopUp] != cBezierSpline)	//only bezier
@@ -1048,7 +1018,7 @@ static  BOOL MInvers2(myMatrix r,myMatrix m);
 	if ([mMap templateType] != menuTagTemplateLathe && [mMap templateType] != menuTagTemplatePrism)
 		return;
 		
-	if ( [event modifierFlags]&NSAlternateKeyMask)
+	if ( [event modifierFlags]&NSEventModifierFlagOption)
 		return;
 		
 	if ( [mMap buttonState:cSplineTypePopUp] != cBezierSpline)

@@ -76,7 +76,7 @@ typedef NS_ENUM (NSInteger, eObjectmapIndex) {
 
 -(instancetype)init NS_DESIGNATED_INITIALIZER;
 
-+(id) standardMap:(NSInteger) type withView:(id)view;
++(objectmap*) standardMap:(NSInteger) type withView:(id)view;
 @property NSInteger templateType;
 
 -(void) makeMapWithPoints:(int)numberOfPoints;

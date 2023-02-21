@@ -68,139 +68,138 @@
 //---------------------------------------------------------------------
 // displayTemplate:owner:caller:dict
 //---------------------------------------------------------------------
-+(void) displayTemplateNumber:(NSInteger) tagNumber fileowner:(BaseTemplate*&) fileOwner caller:(id)caller dictionary:(NSMutableDictionary*) dict
++(void) displayTemplateNumber:(NSInteger) tagNumber fileowner:(BaseTemplate**) fileOwner caller:(id)caller dictionary:(NSMutableDictionary*) dict
 {
 	NSString *bundleName=nil;
 	switch (tagNumber)
 	{
 		case menuTagTemplateCamera:
-			fileOwner=[[CameraTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateCamera];
+			*fileOwner=[[CameraTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateCamera];
 			bundleName=@"cameraTemplate.nib";
 			break;
 		case menuTagTemplateLight:
-			fileOwner=[[LightTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateLight];
+			*fileOwner=[[LightTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateLight];
 			bundleName=@"lightTemplate.nib";
 			break;
 		case menuTagTemplateObject:
-			fileOwner=[[ObjectTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateObject];
+			*fileOwner=[[ObjectTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateObject];
 			bundleName=@"objectTemplate.nib";
 			break;
 		case menuTagTemplateTransformations:
-			fileOwner=[[TransformationsTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateTransformations];
+			*fileOwner=[[TransformationsTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateTransformations];
 			bundleName=@"transformationsTemplate.nib";
 			break;
 		case menuTagTemplateFunctions:
-			fileOwner=[[FunctionTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateFunctions];
+			*fileOwner=[[FunctionTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateFunctions];
 			bundleName=@"functionTemplate.nib";
 			break;
 		case menuTagTemplatePigment:
-			fileOwner=[[PigmentTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplatePigment];
+			*fileOwner=[[PigmentTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplatePigment];
 			bundleName=@"pigmentTemplate.nib";
 			break;
 		case menuTagTemplateFinish:
-			fileOwner=[[FinishTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateFinish];
+			*fileOwner=[[FinishTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateFinish];
 			bundleName=@"finishTemplate.nib";
 			break;
 		case menuTagTemplateNormal:
-			fileOwner=[[NormalTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateNormal];
+			*fileOwner=[[NormalTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateNormal];
 			bundleName=@"normalTemplate.nib";
 			break;
 
 		case menuTagTemplateInterior:
-			fileOwner=[[InteriorTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateInterior];
+			*fileOwner=[[InteriorTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateInterior];
 			bundleName=@"interiorTemplate.nib";
 			break;
 
 		case menuTagTemplateMedia:
-			fileOwner=[[MediaTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateMedia];
+			*fileOwner=[[MediaTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateMedia];
 			bundleName=@"mediaTemplate.nib";
 			break;
 		case menuTagTemplatePhotons:
-			fileOwner=[[PhotonsTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplatePhotons];
+			*fileOwner=[[PhotonsTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplatePhotons];
 			bundleName=@"photonsTemplate.nib";
 			break;
 		case menuTagTemplateBackground:
-			fileOwner=[[BackgroundTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateBackground];
+			*fileOwner=[[BackgroundTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateBackground];
 			bundleName=@"backgroundTemplate.nib";
 			break;
 
 		case menuTagTemplateColormap:
-			fileOwner=[[ColormapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateColormap];
+			*fileOwner=[[ColormapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateColormap];
 			bundleName=@"colormapTemplate.nib";
 			break;
 			
 		case menuTagTemplateDensitymap:
-			fileOwner=[[BodymapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateDensitymap];
+			*fileOwner=[[BodymapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateDensitymap];
 			bundleName=@"bodymapTemplate.nib";
 			break;
 
 		case menuTagTemplateNormalmap:
-			fileOwner=[[BodymapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateNormalmap];
+			*fileOwner=[[BodymapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateNormalmap];
 			bundleName=@"bodymapTemplate.nib";
 			break;
 		case menuTagTemplatePigmentmap:
-			fileOwner=[[BodymapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplatePigmentmap];
+			*fileOwner=[[BodymapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplatePigmentmap];
 			bundleName=@"bodymapTemplate.nib";
 			break;
 
 		case menuTagTemplateMaterialmap:
-			fileOwner=[[MaterialmapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateMaterialmap];
+			*fileOwner=[[MaterialmapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateMaterialmap];
 			bundleName=@"materialmapTemplate.nib";
 			break;
 
 		case menuTagTemplateSlopemap:
-			fileOwner=[[SlopemapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateSlopemap];
+			*fileOwner=[[SlopemapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateSlopemap];
 			bundleName=@"slopemapTemplate.nib";
 			break;
 			
 			
 		case menuTagTemplateTexturemap:
-			fileOwner=[[BodymapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateTexturemap];
+			*fileOwner=[[BodymapTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateTexturemap];
 			bundleName=@"bodymapTemplate.nib";
 			break;
 		case menuTagTemplateHeaderInclude:
-			fileOwner=[[HeaderIncludeTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateHeaderInclude];
+			*fileOwner=[[HeaderIncludeTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateHeaderInclude];
 			bundleName=@"headerIncludeTemplate.nib";
 			break;
 		case menuTagTemplateGlobals:
-			fileOwner=[[GlobalsTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateGlobals];
+			*fileOwner=[[GlobalsTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateGlobals];
 			bundleName=@"globalsTemplate.nib";
 			break;
 		case menuTagTemplateMaterial:
-			fileOwner=[[MaterialTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateMaterial];
+			*fileOwner=[[MaterialTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateMaterial];
 			bundleName=@"materialTemplate.nib";
 			break;
 
 //object
 		case menuTagTemplateLathe:
-			fileOwner=[[ObjectEditorTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateLathe];
+			*fileOwner=[[ObjectEditorTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateLathe];
 			bundleName=@"objectEditor.nib";
 			break;
 		case menuTagTemplatePolygon:
-			fileOwner=[[ObjectEditorTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplatePolygon];
+			*fileOwner=[[ObjectEditorTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplatePolygon];
 			bundleName=@"objectEditor.nib";
 			break;
 		case menuTagTemplatePrism:
-			fileOwner=[[ObjectEditorTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplatePrism];
+			*fileOwner=[[ObjectEditorTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplatePrism];
 			bundleName=@"objectEditor.nib";
 			break;
 		case menuTagTemplateSor:
-			fileOwner=[[ObjectEditorTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateSor];
+			*fileOwner=[[ObjectEditorTemplate alloc] initWithDocumentPointer:caller andDictionary:dict forType:menuTagTemplateSor];
 			bundleName=@"objectEditor.nib";
 			break;
 
 
 	}
-	if ( fileOwner != nil)
+	if ( *fileOwner != nil)
 	{
-		if ( [NSBundle loadNibNamed:bundleName owner:fileOwner] == YES)
+		if ( [NSBundle loadNibNamed:bundleName owner:*fileOwner] == YES)
 		{
 			[caller runTemplateSheet];
 		}
 		else
 		{
-			[fileOwner release];
-			fileOwner=nil;
+			*fileOwner=nil;
 		}
 	}
 }
@@ -210,7 +209,7 @@
 //---------------------------------------------------------------------
 - (void) runTemplateSheet
 {
-	[[NSApplication sharedApplication] beginSheet:[mFileOwner getWindow] 
+	[[NSApplication sharedApplication] beginSheet:[mFileOwner window]
 				modalForWindow:[self window] modalDelegate:self 
 				didEndSelector:@selector(templateSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
 }
@@ -271,7 +270,6 @@
 	{
 		NSDictionary *dict=[mFileOwner preferences];
 		MutableTabString *ds=[[MutableTabString alloc] initWithTabs:[self findTabsCurrentLine] andCallerType:YES];
-		[ds autorelease];
 		[[mFileOwner class] createDescriptionWithDictionary:dict andTabs:[self findTabsCurrentLine] extraParam:0 mutableTabString:ds];
 		if ( [mSceneTextView shouldChangeTextInRange:[mSceneTextView selectedRange] replacementString:[ds string]])
 		{
@@ -281,7 +279,6 @@
 	}
 //	[sheet orderOut: nil];
 	[sheet close];	// will release it also
-	[mFileOwner release];
 	mFileOwner=nil;
 }
 

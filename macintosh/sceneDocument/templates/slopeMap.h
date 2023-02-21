@@ -54,7 +54,7 @@ enum eSlopemapIndex {
 	NSControlStateValue 				mCurveOn;
 }
 
-+(instancetype) standardMapWithView:(id)view;
++(slopemap*) standardMapWithView:(id)view;
 
 -(void) makeDefaultMap;
 

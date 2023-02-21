@@ -182,12 +182,12 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 //---------------------------------------------------------------------
 - (void) goToSleepAfterOneMinute
 {
-	mGoToSleepAlert= [[[NSAlert alloc] init] autorelease];
+	mGoToSleepAlert= [[NSAlert alloc] init];
 	mGoToSleepInformatieveText=[mGoToSleepAlert informativeText];
 	[mGoToSleepAlert addButtonWithTitle: @"Sleep"];
 	[mGoToSleepAlert addButtonWithTitle: @"Cancel"];
 	[mGoToSleepAlert setMessageText: @"Computer will go to sleep in 60 seconds."];
-	[mGoToSleepAlert setAlertStyle: NSInformationalAlertStyle];
+	[mGoToSleepAlert setAlertStyle: NSAlertStyleInformational];
 	mCountDownForSleep=60;
 	mGoToSleepTimer = [NSTimer timerWithTimeInterval: 1 target:self
 																					selector: @selector(putToSleep:)	userInfo:nil repeats:YES];
@@ -622,19 +622,14 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 //---------------------------------------------------------------------
 // templateMainInsertMenu
 //---------------------------------------------------------------------
--(menuFromDirectory*)templateMainInsertMenu;
-{
-	return mMainTemplateInsertMenu;
-}
+@synthesize templateMainInsertMenu=mMainTemplateInsertMenu;
 
 //---------------------------------------------------------------------
 // setMenuFromDirectory
 //---------------------------------------------------------------------
 - (void) setMenuFromDirectory: (menuFromDirectory*) menu;
 {
-	[mMainTemplateInsertMenu release];
-	mMainTemplateInsertMenu=menu;
-	[mMainTemplateInsertMenu retain];
+	self.templateMainInsertMenu=menu;
 }
 
 
@@ -653,32 +648,30 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 
 	// create a new item to add the new insert menu on
 	// will be added to the manubar later
-	NSMenuItem		*tempItem=[[[NSMenuItem alloc]initWithTitle:@"Insert" action:@selector(insertMenu:) keyEquivalent:@""]autorelease];
+	NSMenuItem		*tempItem=[[NSMenuItem alloc]initWithTitle:@"Insert" action:@selector(insertMenu:) keyEquivalent:@""];
 	if ( tempItem == nil)
 		return;
 
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-
-	NSMenu *m=[[[NSMenu alloc]initWithTitle:@"Insert"]autorelease];
-	[tempItem setSubmenu:m];
-	// build the new insert menu
-	[self setMenuFromDirectory:[menuFromDirectory fromDirectory:mainInsertPath
-																							 withExtensions:[NSArray arrayWithObjects: @"txt",nil]
-																							forMainMenuItem:tempItem
-																									scaleFactor:scaleFactor action:@selector(insertMenu:)]];
-
-
-	NSInteger indexForInsertMenuItem=[mMainMenu indexOfItem:mTemplateMenuItem];
-	[mMainMenu insertItem:tempItem atIndex:indexForInsertMenuItem ];
-	[pool release] ;
-
+	@autoreleasepool {
+		NSMenu *m=[[NSMenu alloc]initWithTitle:@"Insert"];
+		[tempItem setSubmenu:m];
+		// build the new insert menu
+		[self setTemplateMainInsertMenu:[menuFromDirectory fromDirectory:mainInsertPath
+																								 withExtensions:[NSArray arrayWithObjects: @"txt",nil]
+																								forMainMenuItem:tempItem
+																										scaleFactor:scaleFactor action:@selector(insertMenu:)]];
+		
+		
+		NSInteger indexForInsertMenuItem=[mMainMenu indexOfItem:mTemplateMenuItem];
+		[mMainMenu insertItem:tempItem atIndex:indexForInsertMenuItem ];
+	}
 	//return;
 
 	//fixme************************************************fixme
 	// create an array with only directories
 	// to watch for changes
-	NSMutableArray *dirAr=[[[NSMutableArray alloc]init]autorelease];
-	[dirAr addObject:[[[[self templateMainInsertMenu] path]copy]autorelease]];
+	NSMutableArray<NSString*> *dirAr=[[NSMutableArray alloc]init];
+	[dirAr addObject:[[[self templateMainInsertMenu] path]copy]];
 
 	[[ self templateMainInsertMenu] directories:dirAr];
 	[NSThread detachNewThreadSelector:  @selector(watchInsertDirectories:)  toTarget: self
@@ -697,8 +690,7 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 -(void) watchInsertDirectories:(id) anobject
 {
 	insertMenuIsBeingWatched=watching;
-	NSMutableArray *dirAr=(NSMutableArray*)anobject;
-	NSAutoreleasePool *pool;
+	NSArray<NSString*> *dirAr=(NSMutableArray*)anobject;
 	int				i;
 	int				kq;
 	//int				ev_count;
@@ -711,17 +703,17 @@ volatile bool	gUserWantsToPauseRenderer = NO;
 	NOTE_ATTRIB | NOTE_LINK | NOTE_RENAME | NOTE_REVOKE;
 	if ( (kq = kqueue()) < 0 )
 		goto Bail;
-	pool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
 	for (  foldersToWatch = 0 ; foldersToWatch < [dirAr count] ; foldersToWatch++ )
 	{
 		//  Currently the O_EVTONLY is designed so that to keep a dir file descriptor open without stopping users from unmounting the disk.  HFS+ only on 10.3
 		//  Open a descriptor for each directory we are watching
-		fd[foldersToWatch]	= open( [[dirAr objectAtIndex:foldersToWatch]UTF8String], O_EVTONLY );
+		fd[foldersToWatch]	= open( [[dirAr objectAtIndex:foldersToWatch] fileSystemRepresentation], O_EVTONLY );
 		if ( fd[foldersToWatch] <= 0 )
 			break;	//  If we get any errors, just break and continue with what we have
 		EV_SET( &ev_change[foldersToWatch], fd[foldersToWatch], EVFILT_VNODE, EV_ADD | EV_CLEAR|EV_ENABLE | EV_ONESHOT, vnode_events, 0,0); // &(mpTaskInfo->mpControlInfo[foldersToWatch]) );
 	}
-	[pool release];
+	}
 
 	/*ev_count	=*/kevent( kq, ev_change, foldersToWatch, ev_receive, (int)[dirAr count], NULL );
 
@@ -733,7 +725,7 @@ Bail:
 	if ( insertMenuIsBeingWatched != aborting) // we are aborting and should not watch again
 	{
 		insertMenuIsBeingWatched=notWatching;
-		[self performSelectorOnMainThread:@selector(reloadTemplateInsertMenu)withObject: nil waitUntilDone:NO];
+		[self performSelectorOnMainThread:@selector(reloadTemplateInsertMenu) withObject: nil waitUntilDone:NO];
 	}
 	delete []ev_receive;
 	return;
@@ -756,7 +748,7 @@ Bail:
 	{
 		[mMainMenu removeItemAtIndex:indexForInsertMenuItem];
 	}
-	[self setMenuFromDirectory:nil];
+	[self setTemplateMainInsertMenu:nil];
 	[self buildTemplateInsertMenu];
 }
 

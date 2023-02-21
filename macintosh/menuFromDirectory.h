@@ -48,6 +48,8 @@ enum entryType {
 	
 	};
 
+@class menuFromDirectoryItem;
+
 //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 //+++++++++++++++++++++++++++++++++++++++++++++++++
 // menuFromDirectory
@@ -58,7 +60,7 @@ enum entryType {
 	NSString				*mPath;
 	NSMenuItem			*mMainMenuItem;
 	NSArray 				*mExtensions;
-	NSMutableArray 	*mItemsArray;
+	NSMutableArray<menuFromDirectoryItem*> 	*mItemsArray;
 	NSMenu					*mMenu;
 	SEL 						mAction;
 	CGFloat					mScaleFactor;
@@ -72,7 +74,7 @@ enum entryType {
 - (instancetype)initWithPath:(NSString*) path andExtensions:(NSArray<NSString*>*) extensions;
 -(BOOL) isFileValid: (NSString *)file extensionResult:(NSString**)foundExtension;
 -(id) directoryItemForNSMenuItem:(NSMenuItem*)menuItem;
--(void) directories:(NSMutableArray*)dirAr;
+-(void) directories:(NSMutableArray<NSString*>*)dirAr;
 @property (nonatomic) CGFloat scaleFactor;
 -(NSString *) itemNameFromFilename:(NSString *)file;
 -(void) addObject:(id)objectToAdd;
@@ -81,7 +83,7 @@ enum entryType {
 @property SEL action;
 @property (copy) NSString *path;
 @property (copy) NSArray<NSString*> *extensions;
-@property (retain) NSMutableArray *itemsArray;
+@property (retain) NSMutableArray<menuFromDirectoryItem*> *itemsArray;
 @property (retain) NSMenuItem *mainMenuItem;
 @property (retain) NSMenu *menu;
 -(void) validateContents:(NSArray<NSString*>*)contents;

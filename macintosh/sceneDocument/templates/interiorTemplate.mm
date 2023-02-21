@@ -72,12 +72,10 @@
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	[ds copyTabAndText:@"interior {\n"];
 	[ds addTab];
@@ -115,7 +113,6 @@
 
 	[ds removeTab];
 	[ds copyTabAndText:@"}\n"];
-	[dict release];
 	return ds;
 }
 
@@ -196,7 +193,6 @@
 		newItem=[[NSMenuItem alloc]init];	
 		[newItem setTitle:[itemArray objectAtIndex:index]];
 		[m	addItem:newItem];
-		[newItem release];
 	}
 	
 	mOutlets =[NSDictionary dictionaryWithObjectsAndKeys:
@@ -217,8 +213,6 @@
 
 	nil] ;
 	
-	[mOutlets retain];
-
 	[ToolTipAutomator setTooltips:@"interiorLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"interiorLocalized" andDictionary:

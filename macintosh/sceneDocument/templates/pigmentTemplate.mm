@@ -55,16 +55,6 @@
 @implementation PigmentTemplate
 
 //---------------------------------------------------------------------
-// dealloc
-//---------------------------------------------------------------------
--(void) dealloc
-{
-	[mPigmentPatternColormapViewArray release];
-	mPigmentPatternColormapViewArray=nil;
-	[super dealloc];
-}
-
-//---------------------------------------------------------------------
 // pigmentMainViewNIBView
 //---------------------------------------------------------------------
 -(NSView*) pigmentMainViewNIBView
@@ -86,11 +76,10 @@
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-	[dict retain];
 
 
 	if ( [[dict objectForKey:@"pigmentDontWrapInPigment"]intValue]==NSOffState)
@@ -613,7 +602,6 @@
 
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -810,7 +798,7 @@
 
 	[pigmentImageMapProjectionPopUp setAutoenablesItems:NO];
 	[pigmentColorPatternImageMapProjectionPopUp setAutoenablesItems:NO];
-	NSView *dummyView=[[[NSView alloc]init]autorelease];	//not used, to fill empty spots in array
+	NSView *dummyView=[[NSView alloc] init];	//not used, to fill empty spots in array
 	// disable some items from the projection popup in image map
 	[[pigmentImageMapProjectionPopUp itemAtIndex:cProjection3]setEnabled:NO];
 	[[pigmentImageMapProjectionPopUp itemAtIndex:cProjection4]setEnabled:NO];
@@ -862,7 +850,6 @@
 		// pigmentFunction also has a color map
 		pigmentFunctionColorMapView,
 	nil	];
-	[mPigmentPatternColormapViewArray retain];
 
 	mOutlets =[NSDictionary dictionaryWithObjectsAndKeys:
 		pigmentMainTabView,																				@"pigmentMainTabView",
@@ -1003,8 +990,6 @@
 
 	nil] ;
 	
-	[mOutlets retain];
-	
 	[ToolTipAutomator setTooltips:@"pigmentLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"pigmentLocalized" andDictionary:
@@ -1057,13 +1042,11 @@
 	[pigmentColorPatternTabView setFrameSize:nw];
 	// end of fix
 
-	mExcludedObjectsForReset=[NSArray arrayWithObjects:
+	mExcludedObjectsForReset=@[
 		@"pigmentMainTabView",
-		@"pigmentColorPatternSelectPopUpButton",
-		nil];
-	[mExcludedObjectsForReset retain];
+		@"pigmentColorPatternSelectPopUpButton"];
 
-	[self  setValuesInPanel:[self preferences]];
+	[self setValuesInPanel:[self preferences]];
 }
 
 //---------------------------------------------------------------------

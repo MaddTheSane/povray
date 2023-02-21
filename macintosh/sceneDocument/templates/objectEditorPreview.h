@@ -71,8 +71,8 @@ enum {
 	NSRect mFrame;
 	NSRect mRasterFrame;
 	NSRect mDrawFrame;
-	float mXToCenter;
-	float mYToCenter;
+	CGFloat mXToCenter;
+	CGFloat mYToCenter;
 	float mRasterStep;
 	NSRect *mPointList;	
 		
@@ -91,10 +91,8 @@ enum {
 }
 -(IBAction) backgroundPicturePopup:(id)sender;
 -(void) calculateBackgroundRects;
--(NSString*) imagePath;
--(void) setImagePath:(NSString *)file;
--(NSImage*) image;
--(void) setImage:(NSImage *)img;
+@property (copy) NSString* imagePath;
+@property (strong) NSImage* image;
 -(void) 	resetImagePosition;
 -(void) setImageControls;
 -(void) grayScale;
@@ -107,7 +105,7 @@ enum {
 
 -(void)drawSelectedPoint;
 -(void) getControlPoint:(NSInteger) SelectedPoint controlPoint:(NSInteger&)ControlPoint centerPoint:(NSInteger&)CenterPoint event:(NSEvent*)event;
--(void) setPointToMin:(float & ) theValue thePoint:(NSInteger&)thePoint;
+-(void) setPointToMin:(CGFloat & ) theValue thePoint:(NSInteger&)thePoint;
 -(void) drawPolygon;
 -(void) drawPrism;
 -(void) drawSor;

@@ -60,12 +60,10 @@
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 
 	[ds copyTabAndText:@"photons {\n"];
@@ -103,7 +101,6 @@
 
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -163,7 +160,6 @@
 	photonsPassThroughOn,		  @"photonsPassThroughOn",
 	nil] ;
 	
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"photonsLocalized" andDictionary:mOutlets];
 
 	[self  setValuesInPanel:[self preferences]];

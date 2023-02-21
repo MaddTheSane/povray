@@ -61,15 +61,6 @@
 	mStreamType=stream;
 	return self;
 }
-
-//---------------------------------------------------------------------
-// dealloc
-//---------------------------------------------------------------------
--(void)dealloc
-{
-	[mString release];
-	[super dealloc];
-}
 @end
 
 static MessageViewController* _messageViewController;
@@ -159,34 +150,34 @@ static MessageViewController* _messageViewController;
 	}
 	mTextStorage= [mMessageView textStorage];
 	// now set the mFont to monaco size 11
-	mFont=[[NSFont userFixedPitchFontOfSize:0.0] retain];
+	mFont=[NSFont userFixedPitchFontOfSize:0.0];
 	[mMessageView setFont:mFont];
 
 	// init all styles
-	mBlackStyle =[ [NSDictionary dictionaryWithObjectsAndKeys:
+	mBlackStyle =[NSDictionary dictionaryWithObjectsAndKeys:
 									mFont, NSFontAttributeName,
 									[NSColor blackColor], NSForegroundColorAttributeName,
-									nil] retain];
+									nil];
 
-	mBlueStyle =[ [NSDictionary dictionaryWithObjectsAndKeys:
+	mBlueStyle =[NSDictionary dictionaryWithObjectsAndKeys:
 								 mFont, NSFontAttributeName,
 								 [NSColor colorWithCalibratedRed:0.0/255.0 		green:0.0/255.0 		blue:194.0/255.0	alpha:1.0], NSForegroundColorAttributeName,
-								 nil] retain];
+								 nil];
 
-	mRedStyle =[ [NSDictionary dictionaryWithObjectsAndKeys:
+	mRedStyle =[NSDictionary dictionaryWithObjectsAndKeys:
 								mFont, NSFontAttributeName,
 								[NSColor colorWithCalibratedRed:196.0/255.0 	green:0.0/255.0 		blue:0.0/255.0		alpha:1.0], NSForegroundColorAttributeName,
-								nil] retain];
+								nil];
 
-	mMagentaStyle =[ [NSDictionary dictionaryWithObjectsAndKeys:
+	mMagentaStyle =[NSDictionary dictionaryWithObjectsAndKeys:
 										mFont, NSFontAttributeName,
 										[NSColor colorWithCalibratedRed:255.0/255.0 	green:0.0/255.0 		blue:128.0/255.0	alpha:1.0], NSForegroundColorAttributeName,
-										nil] retain];
+										nil];
 
-	mGreenStyle =[ [NSDictionary dictionaryWithObjectsAndKeys:
+	mGreenStyle =[NSDictionary dictionaryWithObjectsAndKeys:
 									mFont, NSFontAttributeName,
 									[NSColor colorWithCalibratedRed:0.0/255.0 		green:163.0/255.0 	blue:0.0/255.0		alpha:1.0], NSForegroundColorAttributeName,
-									nil] retain];
+									nil];
 
 
 }
@@ -200,13 +191,13 @@ static MessageViewController* _messageViewController;
 //---------------------------------------------------------------------
 - (void) initRenderTimeUpdateTimer;
 {
-	mRenderTimeUpdater = [[NSTimer timerWithTimeInterval:1.0
+	mRenderTimeUpdater = [NSTimer timerWithTimeInterval:1.0
 												target:self
 												selector:@selector(updateRenderTime:)
 												userInfo:nil
-												repeats:YES] retain];
+												repeats:YES];
 
-	mStartDate=[[NSDate dateWithTimeIntervalSinceNow:0]retain];
+	mStartDate=[NSDate dateWithTimeIntervalSinceNow:0];
 	[[NSRunLoop currentRunLoop] addTimer:mRenderTimeUpdater forMode:NSDefaultRunLoopMode];
 }
 
@@ -219,12 +210,10 @@ static MessageViewController* _messageViewController;
 	if ( mRenderTimeUpdater != nil)
 	{
 		[mRenderTimeUpdater invalidate];
-		[mRenderTimeUpdater release];
 		mRenderTimeUpdater=nil;
 	}
 	if ( mStartDate != nil )
 	{
-		[mStartDate release];
 		mStartDate=nil;
 	}
 }
@@ -310,42 +299,41 @@ static MessageViewController* _messageViewController;
 {
 	[mTextStorage beginEditing];
 
-	NSAttributedString *newString=[NSAttributedString alloc];
+	NSAttributedString *newString;
 	switch (StreamType)
 	{
 		case streams(BANNER_STREAM):
 			//if (POV_NAMESPACE::Stage==STAGE_INIT)
-			newString=[newString initWithString:inMessage attributes:mBlueStyle];
+			newString=[[NSAttributedString alloc] initWithString:inMessage attributes:mBlueStyle];
 			//fixme
 #if(0)
-			newString=[newString initWithString:inMessage attributes:mBlueStyle];
+			newString=[[NSAttributedString alloc] initWithString:inMessage attributes:mBlueStyle];
 			else
-				newString=[newString initWithString:inMessage attributes:mBlackStyle];
+				newString=[[NSAttributedString alloc] initWithString:inMessage attributes:mBlackStyle];
 #endif
 			break;
 
 		case streams(STATUS_STREAM):
-			newString=[newString initWithString:inMessage attributes:mBlackStyle];
+			newString=[[NSAttributedString alloc] initWithString:inMessage attributes:mBlackStyle];
 			break;
 		case streams(DEBUG_STREAM):
-			newString=[newString initWithString:inMessage attributes:mBlackStyle];
+			newString=[[NSAttributedString alloc] initWithString:inMessage attributes:mBlackStyle];
 			break;
 		case streams(FATAL_STREAM):
-			newString=[newString initWithString:inMessage attributes:mRedStyle];
+			newString=[[NSAttributedString alloc] initWithString:inMessage attributes:mRedStyle];
 			break;
 		case streams(RENDER_STREAM):
-			newString=[newString initWithString:inMessage attributes:mBlueStyle];
+			newString=[[NSAttributedString alloc] initWithString:inMessage attributes:mBlueStyle];
 			break;
 		case streams(STATISTIC_STREAM):
-			newString=[newString initWithString:inMessage attributes:mMagentaStyle];
+			newString=[[NSAttributedString alloc] initWithString:inMessage attributes:mMagentaStyle];
 			break;
 		case streams(WARNING_STREAM):
-			newString=[newString initWithString:inMessage attributes:mGreenStyle];
+			newString=[[NSAttributedString alloc] initWithString:inMessage attributes:mGreenStyle];
 			break;
 	}
 
 	[mTextStorage appendAttributedString:newString];
-	[newString release];
 	[mTextStorage endEditing];
 	[mMessageView scrollRangeToVisible: NSMakeRange([[mMessageView string] length], 0)];
 }
@@ -368,18 +356,10 @@ static MessageViewController* _messageViewController;
 -(void) dealloc
 {
 	[self removeRenderTimeUpdateTimer];
-	[[NSNotificationCenter defaultCenter]removeObserver:self];
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
 
-	[mBlackStyle release];
-	[mBlueStyle release];
-	[mRedStyle release];
-	[mMagentaStyle release];
-	[mGreenStyle release];
-	[mFont release];
-	[mSceneStart release];
 	mSceneStart=nil;
 	_messageViewController=nil;
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------

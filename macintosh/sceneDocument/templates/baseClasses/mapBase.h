@@ -66,8 +66,7 @@ enum eSlopeButtonTags {
 @property (nonatomic, assign) id preview;
 -(void) removeEntryAtIndex:(NSInteger)index reload:(BOOL)forceReload;
 @property (readonly) NSUInteger count;
--(void) setArray:(NSMutableArray*) array;
--(id) array;
+@property (strong) NSMutableArray *array;
 @property (nonatomic) NSInteger selectedRow;
 -(NSInteger) firstSelectedRow;
 - (void)selectRow:(NSUInteger)rowIndex byExtendingSelection:(BOOL)flag;

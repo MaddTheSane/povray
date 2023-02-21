@@ -68,12 +68,10 @@
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	if ( [[dict objectForKey:@"finishDontWrapInFinish"]intValue]==NSOffState)
 	{
@@ -180,7 +178,6 @@
 
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -317,7 +314,6 @@
 		finishConserveEnergyOn,															@"finishConserveEnergyOn",
 	nil] ;
 	
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"finishLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"finishLocalized" andDictionary:

@@ -81,7 +81,6 @@ namespace vfe
 												nil];
 
 			[activeRenderPreview performSelectorOnMainThread:@selector(displayInit:) withObject: rm waitUntilDone:YES];
-			[rm release];
 		}
 	}
 

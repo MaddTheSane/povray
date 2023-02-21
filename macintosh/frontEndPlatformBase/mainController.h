@@ -129,8 +129,8 @@ extern volatile bool	gUserWantsToPauseRenderer;
 + (MainController*) sharedInstance;
 - (void) previewWindowChangedName: (NSString*) newName;
 
-- (menuFromDirectory*) templateMainInsertMenu;
-- (void) setMenuFromDirectory: (menuFromDirectory*) menu;
+@property (strong) menuFromDirectory *templateMainInsertMenu;
+- (void) setMenuFromDirectory: (menuFromDirectory*) menu NS_DEPRECATED_WITH_REPLACEMENT_MAC("-setTemplateMainInsertMenu:", 10.2, 10.9);
 - (void) reloadTemplateInsertMenu;
 - (void) stopWatchingInsertMenu;
 

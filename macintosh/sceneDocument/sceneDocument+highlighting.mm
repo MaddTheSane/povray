@@ -124,17 +124,17 @@ static NSCharacterSet *newlineCharacterSet=nil;
 
 +(void) initializeSyntaxHightlighting
 {
-	wordCharacterSet=[[NSCharacterSet characterSetWithCharactersInString:
-		@"#ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_1234567890"]retain];
-	toNextWordCharacterSet=[[NSCharacterSet characterSetWithCharactersInString:
-		@"#ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_"]retain];
-	toNextWordOrCommentOrStringCharacterSet=[[NSCharacterSet characterSetWithCharactersInString:
-		@"\"/#ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_"]retain];
-	 macroDeclareSet=[[NSCharacterSet characterSetWithCharactersInString:
-		@"#macrodelinu"]retain];
-	 newlineCharacterSet=[[NSCharacterSet characterSetWithCharactersInString:
-		@"\n\r"]retain];
-	 commentStringBeginCharacterSet=[[NSCharacterSet characterSetWithCharactersInString:@"/\""]retain];
+	wordCharacterSet=[NSCharacterSet characterSetWithCharactersInString:
+		@"#ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_1234567890"];
+	toNextWordCharacterSet=[NSCharacterSet characterSetWithCharactersInString:
+		@"#ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_"];
+	toNextWordOrCommentOrStringCharacterSet=[NSCharacterSet characterSetWithCharactersInString:
+		@"\"/#ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz_"];
+	 macroDeclareSet=[NSCharacterSet characterSetWithCharactersInString:
+		@"#macrodelinu"];
+	 newlineCharacterSet=[NSCharacterSet characterSetWithCharactersInString:
+		@"\n\r"];
+	 commentStringBeginCharacterSet=[NSCharacterSet characterSetWithCharactersInString:@"/\""];
 
 	
 	// how many keywords are there?
@@ -189,16 +189,16 @@ static NSCharacterSet *newlineCharacterSet=nil;
 		if ( wasPreprocessorWord==YES)
 		{
 			num++;
-			sKeywordsList[num].wordAsNSString=[[[NSString stringWithUTF8String:"#"] stringByAppendingString:[NSString stringWithUTF8String:ptr]] retain];
+			sKeywordsList[num].wordAsNSString=(CFStringRef)CFBridgingRetain([[NSString stringWithUTF8String:"#"] stringByAppendingString:[NSString stringWithUTF8String:ptr]]);
 			sKeywordsList[num].wordStyle=usePreprocessorStyle;
 		}
 		else
 		{
 			num++;
-			sKeywordsList[num].wordAsNSString=[[NSString stringWithUTF8String:ptr] retain];
+			sKeywordsList[num].wordAsNSString=(CFStringRef)CFBridgingRetain(@(ptr));
 			sKeywordsList[num].wordStyle=useKeywordStyle;
 		}
-		char *tempPtr=(char*)[sKeywordsList[num].wordAsNSString UTF8String];
+		char *tempPtr=(char*)[(__bridge NSString*)sKeywordsList[num].wordAsNSString UTF8String];
 		sKeywordsList[num].wordLength=strlen(tempPtr);
 		sKeywordsList[num].wordAsCString=(char*)malloc(sKeywordsList[num].wordLength);
 		memcpy(sKeywordsList[num].wordAsCString,tempPtr,sKeywordsList[num].wordLength);
@@ -215,7 +215,7 @@ static NSCharacterSet *newlineCharacterSet=nil;
 	for (NSInteger x=0; x<sNumberOfKeyWords; x++)
 	{
 		free(sKeywordsList[x].wordAsCString);
-		[sKeywordsList[x].wordAsNSString release];
+		CFRelease(sKeywordsList[x].wordAsNSString);
 	}
 	free(sKeywordsList);
 	sKeywordsList=NULL;
@@ -233,12 +233,12 @@ static NSCharacterSet *newlineCharacterSet=nil;
 //---------------------------------------------------------------------
 +(void) releaseCharacterSets
 {
-	[wordCharacterSet release];
-	[toNextWordCharacterSet release];
-	[toNextWordOrCommentOrStringCharacterSet release];
-	[macroDeclareSet release];
-	[newlineCharacterSet release];
-	[commentStringBeginCharacterSet release];
+	wordCharacterSet = nil;
+	toNextWordCharacterSet = nil;
+	toNextWordOrCommentOrStringCharacterSet = nil;
+	macroDeclareSet = nil;
+	newlineCharacterSet = nil;
+	commentStringBeginCharacterSet = nil;
 
 }
 
@@ -255,7 +255,6 @@ static NSCharacterSet *newlineCharacterSet=nil;
 	NSRange tempRange=NSMakeRange(0,[ms length]);
 	if (mSyntaxColoringOn == NO) // make it all black
 	{
-		[mIncludeList release];
 		mIncludeList=nil;
 		[self releaseDeclareList];
 		[self releaseMacroList];
@@ -772,7 +771,6 @@ shakeMessage(@"recoloring");
 	NSString *storageString=[ ms string];
 	if (ms==nil)
 		return;
-	[mIncludeList release];
 	mIncludeList=nil;
 	NSString *rangeMode;
 	NSRange rangeWithSameAttributes;
@@ -1007,10 +1005,10 @@ shakeMessage(@"recoloring");
 	mNumberOfMacros++;
 	mAvailableFreeMacroPositions--;
 	
-	mMacroList[mNumberOfMacros-1].wordAsNSString=[macroName copy];
+	mMacroList[mNumberOfMacros-1].wordAsNSString=(CFStringRef)CFBridgingRetain([macroName copy]);
 	mMacroList[mNumberOfMacros-1].wordStyle=useMacroStyle;
 	mMacroList[mNumberOfMacros-1].location=macroLocation;
-	char *tempPtr=(char*)[mMacroList[mNumberOfMacros-1].wordAsNSString UTF8String];
+	char *tempPtr=(char*)[(__bridge NSString*)mMacroList[mNumberOfMacros-1].wordAsNSString UTF8String];
 	mMacroList[mNumberOfMacros-1].wordLength=strlen(tempPtr);
 	mMacroList[mNumberOfMacros-1].wordAsCString=(char*)malloc(mMacroList[mNumberOfMacros-1].wordLength);
 	memcpy(mMacroList[mNumberOfMacros-1].wordAsCString,tempPtr,mMacroList[mNumberOfMacros-1].wordLength);
@@ -1062,12 +1060,12 @@ shakeMessage(@"recoloring");
 	mNumberOfDeclares++;
 	mAvailableFreeDeclarePositions--;
 	
-	mDeclareList[mNumberOfDeclares-1].wordAsNSString=[declareName copy];
+	mDeclareList[mNumberOfDeclares-1].wordAsNSString=(CFStringRef)CFBridgingRetain([declareName copy]);
 	mDeclareList[mNumberOfDeclares-1].wordStyle=useDeclareStyle;
 	mDeclareList[mNumberOfDeclares-1].location=declareLocation;
 	mDeclareList[mNumberOfDeclares-1].isLocal=isLocal;
 
-	char *tempPtr=(char*)[mDeclareList[mNumberOfDeclares-1].wordAsNSString UTF8String];
+	char *tempPtr=(char*)[(__bridge NSString*)mDeclareList[mNumberOfDeclares-1].wordAsNSString UTF8String];
 	mDeclareList[mNumberOfDeclares-1].wordLength=strlen(tempPtr);
 	mDeclareList[mNumberOfDeclares-1].wordAsCString=(char*)malloc(mDeclareList[mNumberOfDeclares-1].wordLength);
 	memcpy(mDeclareList[mNumberOfDeclares-1].wordAsCString,tempPtr,mDeclareList[mNumberOfDeclares-1].wordLength);
@@ -1100,7 +1098,7 @@ shakeMessage(@"recoloring");
 	for (int x=0; x<mNumberOfDeclares; x++)
 	{
 		free(mDeclareList[x].wordAsCString);
-		[mDeclareList[x].wordAsNSString release];
+		CFRelease(mDeclareList[x].wordAsNSString);
 	}
 	free(mDeclareList);
 	mDeclareList=NULL;
@@ -1123,7 +1121,7 @@ shakeMessage(@"recoloring");
 	for (int x=0; x<mNumberOfMacros; x++)
 	{
 		free(mMacroList[x].wordAsCString);
-		[mMacroList[x].wordAsNSString release];
+		CFRelease(mMacroList[x].wordAsNSString);
 	}
 	free(mMacroList);
 	mMacroList=NULL;

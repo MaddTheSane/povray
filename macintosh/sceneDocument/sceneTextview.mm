@@ -78,7 +78,6 @@ static BOOL CheckBraces(NSTextView *textView,NSInteger offset, NSString *str, NS
 		{
 			[self insertText:previousLineWhitespaceString];
 		}
-		[previousLineScanner release];
 		
 		if (autoIndentBraces == NSOnState) 
 		{
@@ -182,7 +181,6 @@ static BOOL CheckBraces(NSTextView *textView,NSInteger offset, NSString *str, NS
 						}
 				
 					}
-					[openingLineScanner release];
 					break;
 				} 
 				else 

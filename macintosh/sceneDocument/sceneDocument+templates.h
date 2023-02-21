@@ -40,7 +40,7 @@
 #import  "sceneDocument.h"
 
 @interface  SceneDocument (templates)
-+(void) displayTemplateNumber:(NSInteger) tagNumber fileowner:(BaseTemplate*&) fileOwner caller:(id)caller dictionary:(NSMutableDictionary*) dict;
++(void) displayTemplateNumber:(NSInteger) tagNumber fileowner:(BaseTemplate**) fileOwner caller:(id)caller dictionary:(NSMutableDictionary*) dict;
 //- (void) alertPanelDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo;
 //-(void) untitledFileIsSaved:(NSDocument *)doc didSave:(BOOL)didSave contextInfo:(void*)contextInfo;
 

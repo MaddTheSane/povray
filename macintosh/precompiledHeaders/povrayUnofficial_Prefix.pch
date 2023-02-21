@@ -50,9 +50,9 @@
 #include "syspovconfig.h"
 #include "syspovconfigfrontend.h"
 	#include <algorithm>
-	#include <stdarg.h>
-	#include <stdio.h>
-	#include <string.h>
+	#include <cstdarg>
+	#include <cstdio>
+	#include <cstring>
 	#include <cmath>
 	#include "vfeconf.h"
 	#include "vfe.h"

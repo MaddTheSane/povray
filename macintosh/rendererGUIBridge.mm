@@ -64,7 +64,6 @@ namespace vfe
 												@(fileName), @"fileName",
 												@(lineNo), @"lineNo",	nil];
 			[activeRenderPreview performSelectorOnMainThread:@selector(remoteMac_Parse_Error:)withObject: rm waitUntilDone:YES];
-			[rm release];
 		}
 	}
 

@@ -52,8 +52,8 @@
 -(void) addTab;
 @property (readonly) NSInteger currentTabs;
 
-@property (retain) NSMutableString *string;
-@property (retain) NSMutableString *tabString;
+@property (strong) NSMutableString *string;
+@property (strong) NSMutableString *tabString;
 @property (readonly) NSUInteger length;
 
 -(void) copyTabAndText:(NSString*)string;
@@ -64,7 +64,7 @@
 -(void) addRGBColor:(NSDictionary*)dict forKey:(NSString*)key andTitle:(NSString*) title comma:(BOOL)cm newLine:(BOOL)nl;
 -(void)appendFormat:(NSString *)format, ... NS_FORMAT_FUNCTION(1,2);
 -(void)appendFormat:(NSString *)format arguments:(va_list)args NS_FORMAT_FUNCTION(1,0);
--(void) appendTabAndFormat:(NSString*)format,... NS_FORMAT_FUNCTION(1,2);
+-(void)appendTabAndFormat:(NSString*)format,... NS_FORMAT_FUNCTION(1,2);
 -(void)appendTabAndFormat:(NSString *)format arguments:(va_list)args NS_FORMAT_FUNCTION(1,0);
 
 @end

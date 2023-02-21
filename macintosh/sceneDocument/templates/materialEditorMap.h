@@ -58,7 +58,7 @@ enum eMaterialmapIndex {
 {
 }
 
-+(id) standardMap;
++(materialEditorMap*) standardMap;
 
 -(void) makeDefaultMap;
 -(NSMutableArray*) makeDefaultEntry;

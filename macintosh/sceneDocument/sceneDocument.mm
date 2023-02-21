@@ -216,7 +216,7 @@
 						[NSColor redColor], NSForegroundColorAttributeName,
 					nil];
 	
-	NSAttributedString *st=[[[NSAttributedString alloc]initWithString:@"1" attributes:gotoLineTextAttributes]autorelease];
+	NSAttributedString *st=[[NSAttributedString alloc] initWithString:@"1" attributes:gotoLineTextAttributes];
 	[gotoEdit setAttributedStringValue:st];
   [[gotoEdit cell] setBordered:YES];
 	
@@ -232,14 +232,19 @@
 -(IBAction) templatePopup:(id)sender
 {
 	// called from menu
-	if ( [sender isMemberOfClass:[NSMenuItem class]])
-		[SceneDocument displayTemplateNumber:[sender tag] fileowner:mFileOwner caller:self dictionary:nil ];
-	// or called from the popup in the toolbar
-	else
+	if ( [sender isMemberOfClass:[NSMenuItem class]]) {
+		BaseTemplate *tmp = mFileOwner;
+		[SceneDocument displayTemplateNumber:[sender tag] fileowner:&tmp caller:self dictionary:nil ];
+		mFileOwner = tmp;
+		// or called from the popup in the toolbar
+	} else
 	{
 		id menu=[sender itemAtIndex:[sender indexOfSelectedItem]];
-		if (menu != nil)
-			[SceneDocument displayTemplateNumber:[menu tag] fileowner:mFileOwner caller:self dictionary:nil ];
+		if (menu != nil) {
+			BaseTemplate *tmp = mFileOwner;
+			[SceneDocument displayTemplateNumber:[menu tag] fileowner:&tmp caller:self dictionary:nil ];
+			mFileOwner = tmp;
+		}
 	}
 }
 
@@ -283,12 +288,6 @@
 	[self setMutableAttributedStringFromFile:nil];
 	[self releaseMacroList];
 	[self releaseDeclareList];
-	[mIncludeList release];
-	mIncludeList=nil;
-	#ifdef debugColorSyntax
-		[mDate release];
-	#endif
-	[super dealloc];
 }
 
 //---------------------------------------------------------------------
@@ -306,10 +305,10 @@
 //	if ( [[mSceneTextView layoutManager]respondsToSelector:@selector(setAllowsNonContiguousLayout:)])
 			[[mSceneTextView layoutManager]setAllowsNonContiguousLayout:NO];
 
-	if ( [self mutableAttibutedStringFromFile])
+	if ( [self mutableAttributedStringFromFile])
 	{
 		colorTimeStart(@"Setting string in texwie");
-		[[mSceneTextView textStorage] setAttributedString: [self mutableAttibutedStringFromFile]];
+		[[mSceneTextView textStorage] setAttributedString: [self mutableAttributedStringFromFile]];
 		// we have to do it here because when the file was loaded,
 		// the nib file wasn't loaded yet
 		[self rebuildDeclarePopup];
@@ -470,7 +469,7 @@
 		if (fileFound==NO)	
 		{
 			NSMutableDictionary *dict=[[PreferencesPanelController sharedInstance] getDictWithCurrentSettings:NO];
-			NSMutableArray *paths=[[[NSMutableArray alloc] init]autorelease];
+			NSMutableArray *paths=[[NSMutableArray alloc] init];
 			if ( dict != nil)
 			{
 				[paths addObject:[dict objectForKey:@"include1"]];
@@ -549,19 +548,14 @@
 //---------------------------------------------------------------------
 // setStringFromFile
 //---------------------------------------------------------------------
--(void) setMutableAttributedStringFromFile: (NSMutableAttributedString *)str
-{
-	[mMutableAttributedStringFromFile release];
-	mMutableAttributedStringFromFile=str;
-	[mMutableAttributedStringFromFile retain];
-}
+@synthesize mutableAttributedStringFromFile=mMutableAttributedStringFromFile;
 
 //---------------------------------------------------------------------
 // stringFromFile
 //---------------------------------------------------------------------
 -(NSMutableAttributedString*) mutableAttibutedStringFromFile
 {
-	return mMutableAttributedStringFromFile;
+	return self.mutableAttributedStringFromFile;
 }
 
 //---------------------------------------------------------------------
@@ -583,7 +577,7 @@
 		{
 			for(int y=1; y<=mDeclareCountList[x].reserved; y++)
 			{
-				menuTitle=mDeclareList[mDeclareCountList[x].pointers[y-1]].wordAsNSString;
+				menuTitle=(__bridge NSString*)mDeclareList[mDeclareCountList[x].pointers[y-1]].wordAsNSString;
 				if ( mDeclareList[mDeclareCountList[x].pointers[y-1]].isLocal ==YES)	// is a local
 					menuTitle=[menuTitle stringByAppendingString:@" (local)"];
 				[menu addItemWithTitle:menuTitle action:nil keyEquivalent:@""];
@@ -609,7 +603,7 @@
 	{	
 		for(int x=1; x<=mNumberOfMacros; x++)
 		{
-			[mMacroPopup addItemWithTitle:mMacroList[x-1].wordAsNSString];
+			[mMacroPopup addItemWithTitle:(__bridge NSString*)mMacroList[x-1].wordAsNSString];
 		}
 		[mMacroPopup setEnabled:YES];
 	}
@@ -800,13 +794,13 @@
 
 
 //	@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
-	[self setMutableAttributedStringFromFile:[[[NSMutableAttributedString alloc] initWithData:data options:	@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]} documentAttributes:nil error:nil]autorelease]];
-	[self recolorCompleteAttributedString:[self mutableAttibutedStringFromFile] sender:self];
+	[self setMutableAttributedStringFromFile:[[NSMutableAttributedString alloc] initWithData:data options:	@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]} documentAttributes:nil error:nil]];
+	[self recolorCompleteAttributedString:[self mutableAttributedStringFromFile] sender:self];
 
 	mStringFromFileIsColored=YES;
 	if (mSceneTextView !=nil)	//nib not loaded yet
 	{
-		[[mSceneTextView textStorage] setAttributedString: [self mutableAttibutedStringFromFile ]];
+		[[mSceneTextView textStorage] setAttributedString: [self mutableAttributedStringFromFile]];
 		[self setMutableAttributedStringFromFile:nil];
 	}
 	return YES;
@@ -855,19 +849,20 @@
 				NSString *hugeString=[NSString stringWithString:[absoluteURL lastPathComponent]];
 				hugeString=[hugeString stringByAppendingString:messageString];
 				hugeString =[hugeString stringByAppendingString:@"25Mb."];
-				NSInteger res=NSRunAlertPanel( hugeString,
-																NSLocalizedStringFromTable(@"StillLoad", @"applicationLocalized", @"Load with color off, color on or skip loading?"),
-																	NSLocalizedStringFromTable(@"DontLoad", @"applicationLocalized", @"Skip"),
-																NSLocalizedStringFromTable(@"ColorOn", @"applicationLocalized", @"Color on"),
-																NSLocalizedStringFromTable(@"ColorOff", @"applicationLocalized", @"Color off"),
-																nil);
-				if ( res == NSAlertDefaultReturn) //cancel
+				NSAlert *alert = [[NSAlert alloc] init];
+				alert.messageText = hugeString;
+				alert.informativeText = NSLocalizedStringFromTable(@"StillLoad", @"applicationLocalized", @"Load with color off, color on or skip loading?");
+				[alert addButtonWithTitle:NSLocalizedStringFromTable(@"DontLoad", @"applicationLocalized", @"Skip")];
+				[alert addButtonWithTitle:NSLocalizedStringFromTable(@"ColorOn", @"applicationLocalized", @"Color on")];
+				[alert addButtonWithTitle:NSLocalizedStringFromTable(@"ColorOff", @"applicationLocalized", @"Color off")];
+				NSInteger res = [alert runModal];
+				if ( res == NSAlertFirstButtonReturn) //cancel
 				{
 					if (outError != nil)
 						*outError = [NSError errorWithDomain:NSCocoaErrorDomain code:NSUserCancelledError userInfo:nil];
 					return NO;
 				}
-				else if (res == NSAlertOtherReturn)	// color off
+				else if (res == NSAlertThirdButtonReturn)	// color off
 				{
 					mSyntaxColoringOn=NO;
 				}
@@ -878,14 +873,14 @@
 			}
 
 			NSMutableAttributedString *loadedString=nil;
-				#ifdef debugFileLoading
-				NSLog(@"Reading file from disk");
-			#endif
+#ifdef debugFileLoading
+			NSLog(@"Reading file from disk");
+#endif
 			// try to load the file with NSUTF8-endocing (will work for 99%)
-			loadedString=[[[NSMutableAttributedString alloc] initWithURL:absoluteURL options:@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}  documentAttributes:nil error:outError/*&theError*/]autorelease];
+			loadedString=[[NSMutableAttributedString alloc] initWithURL:absoluteURL options:@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}  documentAttributes:nil error:outError/*&theError*/];
 
 			if ( loadedString == nil) // probably not a UTF8-encoded file Try Mac roman encoding
-				loadedString=[[[NSMutableAttributedString alloc] initWithURL:absoluteURL options:@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSMacOSRomanStringEncoding]}  documentAttributes:nil error:outError/*&theError*/]autorelease];
+				loadedString=[[NSMutableAttributedString alloc] initWithURL:absoluteURL options:@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSMacOSRomanStringEncoding]}  documentAttributes:nil error:outError/*&theError*/];
 
 			if (loadedString == nil) // no utf8 or Mac roman exit
 				return NO;
@@ -1116,9 +1111,9 @@ NS_ENDHANDLER
 	else
 	{
 		//[goToPanel makeKeyAndOrderFront: self];
-		[[NSApplication sharedApplication] beginSheet:mGotoPanel 
-				modalForWindow:[self window] modalDelegate:self 
-				didEndSelector:@selector(sheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+		[self.window beginSheet:mGotoPanel completionHandler:^(NSModalResponse returnCode) {
+//			[self sheetDidEnd:mGotoPanel returnCode:0 contextInfo:NULL];
+		}];
 	}
 }
 
@@ -1127,13 +1122,13 @@ NS_ENDHANDLER
 //---------------------------------------------------------------------
 -(IBAction) gotoLineCanel: (id)sender
 {
-	[[NSApplication sharedApplication] endSheet: mGotoPanel];
+	[self.window endSheet: mGotoPanel];
 }
 
 //---------------------------------------------------------------------
 // sheetDidEnd
 //---------------------------------------------------------------------
--(void) sheetDidEnd: (NSWindow*)sheet returnCode: (int)returnCode contextInfo: (void*)contextInfo
+-(void) sheetDidEnd: (NSWindow*)sheet returnCode: (NSInteger)returnCode contextInfo: (void*)contextInfo
 {
 	[sheet orderOut: nil];
 }
@@ -1145,7 +1140,7 @@ NS_ENDHANDLER
 -(IBAction) gotoLineOk:(id)sender
 {
 	[self selectLine:[mGotoPanelLineNumber intValue]];
-	[[NSApplication sharedApplication] endSheet: mGotoPanel];
+	[self.window endSheet: mGotoPanel];
 }
 
 #pragma mark ----- toolbar
@@ -1181,8 +1176,7 @@ NS_ENDHANDLER
 {
     NSToolbarItem *toolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:itemIdent];
 
-    [toolbarItem autorelease];
-    if ([itemIdent isEqual:renderSceneDocumentToolBarItemIdintifier]) 
+    if ([itemIdent isEqual:renderSceneDocumentToolBarItemIdintifier])
     { 
         [toolbarItem setLabel:dToolbarRenderLabel ];
         [toolbarItem setPaletteLabel: dToolbarRenderPaletteLabel];
@@ -1330,7 +1324,6 @@ NS_ENDHANDLER
     [toolbar setDisplayMode:NSToolbarDisplayModeIconOnly];
     [toolbar setDelegate:self];
     [[self window] setToolbar:toolbar];
-    [toolbar release];
 }
 
 //---------------------------------------------------------------------

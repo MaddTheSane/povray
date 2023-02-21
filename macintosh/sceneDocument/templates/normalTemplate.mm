@@ -102,12 +102,10 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 
 	if (ds == nil )
 	{
-		ds=[[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO]autorelease];
+		ds=[[MutableTabString alloc] initWithTabs:tabs andCallerType:NO];
 		if (ds == nil )
 			return nil;
 	}
-
-	[dict retain];
 
 	if ( [[dict objectForKey:@"normalDontWrapInNormal"]intValue]==NSOffState)
 	{
@@ -616,7 +614,6 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 
 	
 //	[ds autorelease];
-	[dict release];
 	return ds;
 }
 
@@ -1100,7 +1097,6 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 	normalFunctionEdit,																@"normalFunctionEdit",
 	nil] ;
 	
-	[mOutlets retain];
 	[ToolTipAutomator setTooltips:@"normalLocalized" andDictionary:mOutlets];
 	//additional objects
 	[ToolTipAutomator setTooltips:@"normalLocalized" andDictionary:
@@ -1167,11 +1163,9 @@ static void WriteStandardNormal(NSDictionary *dict, MutableTabString *ds,NSStrin
 	nw.height=240;
 	[normalPatternTabView setFrameSize:nw];
 	// end of fix
-	mExcludedObjectsForReset=[NSArray arrayWithObjects:
+	mExcludedObjectsForReset=@[
 		@"normalMainTabView",
-		@"normalPatternSelectPopUpButton",
-		nil];
-	[mExcludedObjectsForReset retain];
+		@"normalPatternSelectPopUpButton"];
 	
 	[self  setValuesInPanel:[self preferences]];
 }

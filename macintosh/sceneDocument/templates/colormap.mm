@@ -80,7 +80,6 @@
 	colormap *c=[[self alloc] init];
 	[c makeDefaultMap];
 	[c setPreview:view];
-	[c autorelease];
 	return c;
 }
 //---------------------------------------------------------------------
@@ -91,7 +90,6 @@
 	colormap *c=[[self alloc] init];
 	[c makeRainbowMap];
 	[c setPreview:view];
-	[c autorelease];
 	return c;
 }
 //---------------------------------------------------------------------
@@ -102,7 +100,6 @@
 	colormap *c=[[self alloc] init];
 	[c makeBlackAndWhiteMap];
 	[c setPreview:view];
-	[c autorelease];
 	return c;
 }	
 
@@ -314,10 +311,10 @@
 {
 	NSMutableArray *old=[mMapArray objectAtIndex:[self count]-1];
 	NSMutableArray *newArray=[NSMutableArray arrayWithObjects:
-											[[[old objectAtIndex:cColormapLocationIndex]copy]autorelease],
-											[[[old objectAtIndex:cColormapColorIndex]copy]autorelease],
-											[[[old objectAtIndex:cColormapFilterIndex]copy]autorelease],
-											[[[old objectAtIndex:cColormapTransmitIndex]copy]autorelease],
+														[[old objectAtIndex:cColormapLocationIndex]copy],
+														[[old objectAtIndex:cColormapColorIndex]copy],
+														[[old objectAtIndex:cColormapFilterIndex]copy],
+														[[old objectAtIndex:cColormapTransmitIndex]copy],
 											nil];
 	[mMapArray addObject:newArray];
 	[self setViewDirty];
