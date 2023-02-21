@@ -37,7 +37,7 @@
 /// @endparblock
 ///
 //******************************************************************************
-#import "colormap.h"
+#import "ColorMap.h"
 
 // this must be the last file included
 #import "syspovdebug.h"
@@ -70,14 +70,14 @@
 
 @end
 
-@implementation colormap
+@implementation ColorMap
 
 //---------------------------------------------------------------------
 // standardMapWithView
 //---------------------------------------------------------------------
 +(id) standardMapWithView:(id)view
 {
-	colormap *c=[[self alloc] init];
+	ColorMap *c=[[self alloc] init];
 	[c makeDefaultMap];
 	[c setPreview:view];
 	return c;
@@ -87,7 +87,7 @@
 //---------------------------------------------------------------------
 +(id) rainbowMapWithView:(id)view
 {
-	colormap *c=[[self alloc] init];
+	ColorMap *c=[[self alloc] init];
 	[c makeRainbowMap];
 	[c setPreview:view];
 	return c;
@@ -97,7 +97,7 @@
 //---------------------------------------------------------------------
 +(id) blackAndWhiteMapWithView:(id)view
 {
-	colormap *c=[[self alloc] init];
+	ColorMap *c=[[self alloc] init];
 	[c makeBlackAndWhiteMap];
 	[c setPreview:view];
 	return c;
@@ -396,13 +396,11 @@
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
 	if ([encoder allowsKeyedCoding]) {
-		[encoder encodeObject:mMapArray forKey:EncodedMapArray];
 		[encoder encodeInteger:mUseGrayColorOn forKey:EncodedUseGrayColorOn];
 		[encoder encodeInteger:mFilterOn forKey:EncodedFilterOn];
 		[encoder encodeInteger:mTransmitOn forKey:EncodedTransmitOn];
 	} else {
 		int tmpInt;
-	[encoder encodeObject:mMapArray];
 		tmpInt = (int)mUseGrayColorOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
 		tmpInt = (int)mFilterOn;
@@ -419,13 +417,11 @@
 {
 	if (self = [super init]) {
 		if ([decoder allowsKeyedCoding] && [decoder containsValueForKey:EncodedMapArray]) {
-			[self setArray:[decoder decodeObjectForKey:EncodedMapArray]];
 			mUseGrayColorOn = [decoder decodeIntegerForKey:EncodedUseGrayColorOn];
 			mFilterOn = [decoder decodeIntegerForKey:EncodedFilterOn];
 			mTransmitOn = [decoder decodeIntegerForKey:EncodedTransmitOn];
 		} else {
 			int tmpInt;
-			[self setArray:[decoder decodeObject]];
 			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
 			mUseGrayColorOn = tmpInt;
 			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];

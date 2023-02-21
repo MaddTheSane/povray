@@ -48,7 +48,7 @@
 #import "standardMethods.h"
 #import "sceneDocument+templates.h"
 #import "tooltipAutomator.h"
-#import "colormap.h"
+#import "ColorMap.h"
 
 // this must be the last file included
 #import "syspovdebug.h"

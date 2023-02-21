@@ -816,12 +816,12 @@ static renderDispatcher* _renderDispatcher;
 	[openPanel setAllowsMultipleSelection:YES];
 	[openPanel setCanChooseDirectories:NO];
 	[openPanel setCanChooseFiles:YES];
-	[openPanel setAllowedFileTypes:[NSArray arrayWithObject:@"org.povray.pov"]];
+	[openPanel setAllowedFileTypes:@[@"org.povray.pov"]];
 	void (^batchOpenFilesPanelFinishedHandler)(NSInteger) = ^( NSInteger resultCode)
 	{
 		@autoreleasepool
 		{
-			if( resultCode == NSOKButton )
+			if( resultCode == NSModalResponseOK )
 			{
 				NSInteger current;
 				if ( insert == YES)
@@ -2143,7 +2143,7 @@ void *doRender(void* theObject)
 //---------------------------------------------------------------------
 -(void) batchSaveDefaults
 {
-	id batchMap=[NSArchiver archivedDataWithRootObject:mBatchMap];
+	NSData *batchMap=[NSKeyedArchiver archivedDataWithRootObject:mBatchMap];
 	NSDictionary *dict=[NSDictionary dictionaryWithObject:batchMap forKey:@"batchMap"];
 
 	if ( dict)
@@ -2498,7 +2498,7 @@ void *doRender(void* theObject)
 	return YES;
 }
 
-static NSInteger compareBatchEntryUsingSelector(id p1, id p2, void *context)
+static NSInteger compareBatchEntryUsingSelector(NSMutableArray *p1, NSMutableArray *p2, void *context)
 {
 	sortStruct *str=(sortStruct*)context;
 	switch (str->type)

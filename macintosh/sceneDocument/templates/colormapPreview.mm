@@ -38,7 +38,7 @@
 ///
 //******************************************************************************
 #import "mapPreview.h"
-#import "colormap.h"
+#import "ColorMap.h"
 
 // this must be the last file included
 #import "syspovdebug.h"
@@ -50,7 +50,7 @@
 //---------------------------------------------------------------------
 - (void)drawRect:(NSRect)aRect
 {
-	colormap *cMap=(colormap*)mMap;
+	ColorMap *cMap=(ColorMap*)mMap;
 	NSRect bounds=[self bounds];
 	// turn aliassing off otherwize the result is not nice :-)
 	[[NSGraphicsContext currentContext] setShouldAntialias:NO];

@@ -42,8 +42,7 @@
 
 
 @interface BodyMap : MapBase <NSCoding> 
-{
-}
+
 +(BodyMap*) defaultMap;
 +(BodyMap*) textureMap;
 

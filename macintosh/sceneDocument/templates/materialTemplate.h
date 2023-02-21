@@ -45,7 +45,7 @@
 #import "normalTemplate.h"
 #import "finishTemplate.h"
 #import "interiorTemplate.h"
-#import "materialEditorMap.h"
+#import "MaterialEditorMap.h"
 #import "MaterialPreview.h"
 
 typedef NS_ENUM(NSInteger, eMaterialButtons) {

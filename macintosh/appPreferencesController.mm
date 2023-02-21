@@ -201,38 +201,73 @@ static appPreferencesController	*_appPreferencesController;
 	mPreprocessorColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"preprocessorColor"]];
 	if (!mPreprocessorColor) {
 		mPreprocessorColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"preprocessorColor"]];
-		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mPreprocessorColor] forKey:@"preprocessorColor"];
+		if (mPreprocessorColor) {
+			[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mPreprocessorColor] forKey:@"preprocessorColor"];
+		} else {
+			[defaults removeObjectForKey:@"preprocessorColor"];
+			mPreprocessorColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"preprocessorColor"]];
+		}
 	}
 	mMultiLineCommentColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"multiLineCommentColor"]];
 	if (!mMultiLineCommentColor) {
 		mMultiLineCommentColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"multiLineCommentColor"]];
-		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mMultiLineCommentColor] forKey:@"multiLineCommentColor"];
+		if (mMultiLineCommentColor) {
+			[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mMultiLineCommentColor] forKey:@"multiLineCommentColor"];
+		} else {
+			[defaults removeObjectForKey:@"multiLineCommentColor"];
+			mMultiLineCommentColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"multiLineCommentColor"]];
+		}
 	}
 	mOneLineCommentColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"oneLineCommentColor"]];
 	if (!mOneLineCommentColor) {
 		mOneLineCommentColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"oneLineCommentColor"]];
-		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mOneLineCommentColor] forKey:@"oneLineCommentColor"];
+		if (mOneLineCommentColor) {
+			[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mOneLineCommentColor] forKey:@"oneLineCommentColor"];
+		} else {
+			[defaults removeObjectForKey:@"oneLineCommentColor"];
+			mOneLineCommentColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"oneLineCommentColor"]];
+		}
 	}
 	mStringColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"stringColor"]];
 	if (!mStringColor) {
 		mStringColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"stringColor"]];
-		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mStringColor] forKey:@"stringColor"];
+		if (mStringColor) {
+			[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mStringColor] forKey:@"stringColor"];
+		} else {
+			[defaults removeObjectForKey:@"stringColor"];
+			mStringColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"stringColor"]];
+		}
 	}
 	mIdentifierColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"identifierColor"]];
 	if (!mIdentifierColor) {
 		mIdentifierColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"identifierColor"]];
-		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mIdentifierColor] forKey:@"identifierColor"];
+		if (mIdentifierColor) {
+			[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mIdentifierColor] forKey:@"identifierColor"];
+		} else {
+			[defaults removeObjectForKey:@"identifierColor"];
+			mIdentifierColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"identifierColor"]];
+		}
 	}
 
 	mDeclareColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"declareColor"]];
 	if (!mDeclareColor) {
 		mDeclareColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"declareColor"]];
-		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mDeclareColor] forKey:@"declareColor"];
+		if (mDeclareColor) {
+			[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mDeclareColor] forKey:@"declareColor"];
+		} else {
+			[defaults removeObjectForKey:@"declareColor"];
+			mDeclareColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"declareColor"]];
+		}
 	}
 	mMacroColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"macroKleur"]];
 	if (!mMacroColor) {
 		mMacroColor=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"macroKleur"]];
-		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mMacroColor] forKey:@"macroKleur"];
+		if (mMacroColor) {
+			[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mMacroColor] forKey:@"macroKleur"];
+		} else {
+			[defaults removeObjectForKey:@"macroKleur"];
+			mMacroColor=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults dataForKey:@"macroKleur"]];
+		}
 	}
 
 	// auto syntax coloring
@@ -274,7 +309,12 @@ static appPreferencesController	*_appPreferencesController;
 	mSceneDocumentFont=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"sceneDocumentFont"]];
 	{
 		mSceneDocumentFont=[NSUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"sceneDocumentFont"]];
-		[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mSceneDocumentFont] forKey:@"sceneDocumentFont"];
+		if (mSceneDocumentFont) {
+			[defaults setObject:[NSKeyedArchiver archivedDataWithRootObject:mSceneDocumentFont] forKey:@"sceneDocumentFont"];
+		} else {
+			[defaults removeObjectForKey:@"sceneDocumentFont"];
+			mSceneDocumentFont=[NSKeyedUnarchiver unarchiveObjectWithData:[defaults objectForKey:@"sceneDocumentFont"]];
+		}
 	}
 
 
@@ -553,34 +593,31 @@ static appPreferencesController	*_appPreferencesController;
 }
 
 //---------------------------------------------------------------------
-// closeWindowAlertSheetDidEnd
-//---------------------------------------------------------------------
-- (void) closeWindowAlertSheetDidEnd:(NSWindow *)sheet returnCode:(int)returnCode contextInfo:(void *)contextInfo
-{
-	[sheet orderOut:nil];
-	if ( returnCode ==NSAlertDefaultReturn)	//ok
-	{
-		[self applyButton:nil];
-		[mApplicationPreferencesWindow close];
-	}
-
-	else if ( returnCode==NSAlertOtherReturn)	//cancel (dont save and don't close window
-		[self cancelButton:self];
-}
-//---------------------------------------------------------------------
 // windowShouldClose (delegate)
 //---------------------------------------------------------------------
-- (BOOL)windowShouldClose:(id)sender
+- (BOOL)windowShouldClose:(NSWindow *)sender
 {
 	if ( [self isModified])
 	{
-		NSBeginAlertSheet( @"Really close", @"Save", @"Cancel", @"Don't Save",
-											mApplicationPreferencesWindow, self,
-											@selector(closeWindowAlertSheetDidEnd:returnCode:contextInfo:),
-											nil,
-											nil,
-											@"There are unsaved changes.\nDo you wich to save them?",
-											nil);
+		NSAlert *alert = [[NSAlert alloc] init];
+		alert.messageText = @"Really close";
+		alert.informativeText = @"There are unsaved changes.\nDo you wich to save them?";
+		[alert addButtonWithTitle:@"Save"];
+		[alert addButtonWithTitle:@"Cancel"];
+		NSButton *desButton = [alert addButtonWithTitle:@"Don't Save"];
+		if (@available(macOS 11.0, *)) {
+			desButton.hasDestructiveAction = YES;
+		}
+		[alert beginSheetModalForWindow:mApplicationPreferencesWindow completionHandler:^(NSModalResponse returnCode) {
+			if ( returnCode ==NSAlertFirstButtonReturn)	//ok
+			{
+				[self applyButton:nil];
+				[self->mApplicationPreferencesWindow close];
+			}
+
+			else if ( returnCode==NSAlertThirdButtonReturn)	//cancel (don't save and close window)
+				[self cancelButton:self];
+		}];
 
 	}
 	else

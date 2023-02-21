@@ -47,7 +47,7 @@
 #import "sceneDocument+templates.h"
 #import "baseTemplate.h"
 #import "tooltipAutomator.h"
-#import "colormap.h"
+#import "ColorMap.h"
 
 // this must be the last file included
 #import "syspovdebug.h"
@@ -629,19 +629,19 @@
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
 	//customized color map is in a dictionary because
 	// we use it as preferences for the color map template
-	// rainbow and b&w are not editable so they can be in colormap format directly
+	// rainbow and b&w are not editable so they can be in ColorMap format directly
 		[NSDictionary dictionaryWithObjectsAndKeys:
-		[NSArchiver archivedDataWithRootObject:[colormap standardMapWithView:nil]],@"colormap",nil],	@"customizedColorMap",
-		[NSArchiver archivedDataWithRootObject:[colormap rainbowMapWithView:nil]],										@"rainbowColorMap",
-		[NSArchiver archivedDataWithRootObject:[colormap blackAndWhiteMapWithView:nil]],							@"blackAndWhiteColorMap",
+		[NSKeyedArchiver archivedDataWithRootObject:[ColorMap standardMapWithView:nil]],@"colormap",nil],	@"customizedColorMap",
+		[NSKeyedArchiver archivedDataWithRootObject:[ColorMap rainbowMapWithView:nil]],										@"rainbowColorMap",
+		[NSKeyedArchiver archivedDataWithRootObject:[ColorMap blackAndWhiteMapWithView:nil]],							@"blackAndWhiteColorMap",
 		[NSNumber numberWithInt:0],															@"pigmentColorMapTabView",
 		@(NSOffState),										@"pigmentDontWrapInPigment",
 		[NSNumber numberWithInt:cPigmentFullColorTab],					@"pigmentMainTabView",
 		@(NSOffState),										@"pigmentTransformationsOn",
 		@(NSOffState),										@"pigmentQuickColorOn",
-		[NSArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentQuickColorColorWell",
+		[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentQuickColorColorWell",
 		//full color
-		[NSArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]], 	@"pigmentFullColorColorWell",
+		[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]], 	@"pigmentFullColorColorWell",
 		@(NSOffState),									@"pigmentFullColorAddCommentOn",
 		@"",																									@"pigmentFullColorCommentTextField",
 		//color pattern
@@ -652,29 +652,29 @@
 				@"8.0",																						@"pigmentColorPatternBrickBrickSizeMatrixX",
 				@"3.0",																						@"pigmentColorPatternBrickBrickSizeMatrixY",
 				@"4.5",																						@"pigmentColorPatternBrickBrickSizeMatrixZ",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentColorPatternBrickBrickColor",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentColorPatternBrickBrickColor",
 				@"0.5",																						@"pigmentColorPatternBrickMortarEdit",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell grayColorAndFilter:YES]], 	@"pigmentColorPatternBrickMortarColor",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell grayColorAndFilter:YES]], 	@"pigmentColorPatternBrickMortarColor",
 				//checker****************************************************************************************************
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]], 	@"pigmentColorPatternCheckerColor1",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell greenColorAndFilter:YES]],	@"pigmentColorPatternCheckerColor2",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]], 	@"pigmentColorPatternCheckerColor1",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell greenColorAndFilter:YES]],	@"pigmentColorPatternCheckerColor2",
 				//hexagon***************************************************************************************************
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentColorPatternHexagonColor1",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell greenColorAndFilter:YES]],	@"pigmentColorPatternHexagonColor2",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]],	@"pigmentColorPatternHexagonColor3",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentColorPatternHexagonColor1",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell greenColorAndFilter:YES]],	@"pigmentColorPatternHexagonColor2",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]],	@"pigmentColorPatternHexagonColor3",
 				//object******************************************************************************************************
 				//square***************************************************************************************************
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentColorPatternSquareColor1",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]],	@"pigmentColorPatternSquareColor2",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell yellowColorAndFilter:YES]],	@"pigmentColorPatternSquareColor3",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell greenColorAndFilter:YES]],	@"pigmentColorPatternSquareColor4",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentColorPatternSquareColor1",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]],	@"pigmentColorPatternSquareColor2",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell yellowColorAndFilter:YES]],	@"pigmentColorPatternSquareColor3",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell greenColorAndFilter:YES]],	@"pigmentColorPatternSquareColor4",
 				//triangular***************************************************************************************************
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentColorPatternTriangularColor1",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]],	@"pigmentColorPatternTriangularColor2",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell cyanColorAndFilter:YES]],	@"pigmentColorPatternTriangularColor3",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell magentaColorAndFilter:YES]],	@"pigmentColorPatternTriangularColor4",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell yellowColorAndFilter:YES]],	@"pigmentColorPatternTriangularColor5",
-				[NSArchiver archivedDataWithRootObject:[MPFTColorWell greenColorAndFilter:YES]],	@"pigmentColorPatternTriangularColor6",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell redColorAndFilter:YES]], 	@"pigmentColorPatternTriangularColor1",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell blueColorAndFilter:YES]],	@"pigmentColorPatternTriangularColor2",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell cyanColorAndFilter:YES]],	@"pigmentColorPatternTriangularColor3",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell magentaColorAndFilter:YES]],	@"pigmentColorPatternTriangularColor4",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell yellowColorAndFilter:YES]],	@"pigmentColorPatternTriangularColor5",
+				[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell greenColorAndFilter:YES]],	@"pigmentColorPatternTriangularColor6",
 				//agate*******************************************************************************************************
 				@"1.0",																					@"pigmentColorPatternAgateTurbEdit",
 				//aoi*******************************************************************************************************
@@ -1062,14 +1062,33 @@
 
 	//customized color map is in a dictionary because
 	// we use it as preferences for the color map template
-	// rainbow and b&w are not editable so they can be in colormap format directly
+	// rainbow and b&w are not editable so they can be in ColorMap format directly
 	id cm=[preferences objectForKey:@"customizedColorMap"];
 	if ( cm)
 		cm=[cm objectForKey:@"colormap"];
-	if( cm)
-		[[NSUnarchiver unarchiveObjectWithData:cm] setPreview:pigmentColorMapCustomizedPreview];
- 	[[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"rainbowColorMap"]]setPreview:pigmentColorMapRainbowPreview];
- 	[[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"blackAndWhiteColorMap"]]setPreview:pigmentColorMapBlackAndWhitePreview];
+	if( cm) {
+		ColorMap *aBase = [NSKeyedUnarchiver unarchiveObjectWithData:cm];
+		if (!aBase) {
+			aBase = [NSUnarchiver unarchiveObjectWithData:cm];
+		}
+		[aBase setPreview:pigmentColorMapCustomizedPreview];
+	}
+	{
+		NSData *dat = [preferences objectForKey:@"rainbowColorMap"];
+		ColorMap *aBase = [NSKeyedUnarchiver unarchiveObjectWithData:dat];
+		if (!aBase) {
+			aBase = [NSUnarchiver unarchiveObjectWithData:dat];
+		}
+		[aBase setPreview:pigmentColorMapRainbowPreview];
+	}
+	{
+		NSData *dat = [preferences objectForKey:@"blackAndWhiteColorMap"];
+		ColorMap *aBase = [NSKeyedUnarchiver unarchiveObjectWithData:dat];
+		if (!aBase) {
+			aBase = [NSUnarchiver unarchiveObjectWithData:dat];
+		}
+		[aBase setPreview:pigmentColorMapBlackAndWhitePreview];
+	}
 
 	[self setPigmentTransformations:[preferences objectForKey:@"pigmentTransformations"]];
 	[self setPigmentCamera:[preferences objectForKey:@"pigmentCamera"]];
@@ -1097,16 +1116,16 @@
 	NSMutableDictionary *dict=[self preferences];
 	//customized color map is in a dictionary because
 	// we use it as preferences for the color map template
-	// rainbow and b&w are not editable so they can be in colormap format directly
+	// rainbow and b&w are not editable so they can be in ColorMap format directly
 	[dict setObject:[NSDictionary dictionaryWithObject:
-								[NSArchiver archivedDataWithRootObject:[pigmentColorMapCustomizedPreview  map]] 
+								[NSKeyedArchiver archivedDataWithRootObject:[pigmentColorMapCustomizedPreview  map]]
 								forKey:@"colormap"]
 								forKey:@"customizedColorMap"];
 	[dict setObject:
-								[NSArchiver archivedDataWithRootObject:[pigmentColorMapRainbowPreview  map]] 
+								[NSKeyedArchiver archivedDataWithRootObject:[pigmentColorMapRainbowPreview  map]]
 								forKey:@"rainbowColorMap"];
 	[dict setObject:
-								[NSArchiver archivedDataWithRootObject:[pigmentColorMapBlackAndWhitePreview  map]] 
+								[NSKeyedArchiver archivedDataWithRootObject:[pigmentColorMapBlackAndWhitePreview  map]]
 								forKey:@"blackAndWhiteColorMap"];
 								
 //store transformations if selected
@@ -1556,10 +1575,13 @@
 	if( [key isEqualToString:@"customizedColorMap"])
 	{
 		obj=[dict objectForKey:@"colormap"];
-		if ( obj != nil)// was default and removed from prefs, add a new default
-			obj=[NSUnarchiver unarchiveObjectWithData:obj];
-		else
-			obj=[colormap standardMapWithView:nil];
+		if ( obj != nil) {// was default and removed from prefs, add a new default
+			obj=[NSKeyedUnarchiver unarchiveObjectWithData:obj];
+			if (!obj) {
+				obj=[NSUnarchiver unarchiveObjectWithData:obj];
+			}
+		} else
+			obj=[ColorMap standardMapWithView:nil];
 		[obj setPreview:pigmentColorMapCustomizedPreview];
 		[pigmentColorMapCustomizedPreview setNeedsDisplay:YES];
 	}
@@ -1647,7 +1669,7 @@
 		case cPigmentColorMapEditCustomizedColorMap:
 			[self callTemplate:menuTagTemplateColormap 
 					withDictionary:[NSMutableDictionary dictionaryWithObject:
-											[NSArchiver archivedDataWithRootObject:
+											[NSKeyedArchiver archivedDataWithRootObject:
 												[pigmentColorMapCustomizedPreview  map]
 											] 
 											forKey:@"colormap"

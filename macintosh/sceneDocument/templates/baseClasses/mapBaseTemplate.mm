@@ -40,6 +40,7 @@
 #import "mapBaseTemplate.h"
 #import "mapPreview.h"
 #import "SlopeMap.h"
+#import "MaterialEditorMap.h"
 
 // this must be the last file included
 #import "syspovdebug.h"
@@ -62,6 +63,8 @@
 	mMap=map;
 	[mMap mapBaseSetTemplate:self];
 }
+
+@synthesize map=mMap;
 
 //---------------------------------------------------------------------
 // selectTableRow:index

@@ -40,7 +40,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "mapBaseTemplate.h"
-#import "colormap.h"
+#import "ColorMap.h"
 #import "mapPreview.h"
 
 @interface ColormapTemplate : MapBaseTemplate

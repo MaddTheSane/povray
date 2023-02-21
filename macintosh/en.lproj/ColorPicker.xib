@@ -23,7 +23,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Colorpicker" customClass="NSPanel">
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="5" userLabel="Colorpicker" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="53" y="62" width="338" height="182"/>
@@ -70,13 +70,7 @@ DQ
                         <rect key="frame" x="237" y="143" width="80" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="1" drawsBackground="YES" id="102">
-                            <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0.00000" negativeFormat="-0.00000" hasThousandSeparators="NO" thousandSeparator="." id="86">
-                                <attributedString key="attributedStringForZero">
-                                    <fragment content="0,0"/>
-                                </attributedString>
-                                <decimal key="minimum" value="NaN"/>
-                                <decimal key="maximum" value="NaN"/>
-                            </numberFormatter>
+                            <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="0.00000" negativeFormat="-0.00000" usesGroupingSeparator="NO" formatWidth="-1" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="5" maximumFractionDigits="5" decimalSeparator="," groupingSeparator="." id="86"/>
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -100,13 +94,7 @@ DQ
                         <rect key="frame" x="238" y="117" width="80" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="2" drawsBackground="YES" id="104">
-                            <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0.00000" negativeFormat="-0.00000" hasThousandSeparators="NO" thousandSeparator="." id="93">
-                                <attributedString key="attributedStringForZero">
-                                    <fragment content="0,0"/>
-                                </attributedString>
-                                <decimal key="minimum" value="NaN"/>
-                                <decimal key="maximum" value="NaN"/>
-                            </numberFormatter>
+                            <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="0.00000" negativeFormat="-0.00000" usesGroupingSeparator="NO" formatWidth="-1" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="5" maximumFractionDigits="5" decimalSeparator="," groupingSeparator="." id="93"/>
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -130,13 +118,7 @@ DQ
                         <rect key="frame" x="238" y="90" width="80" height="19"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" tag="3" drawsBackground="YES" id="106">
-                            <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0.00000" negativeFormat="-0.00000" hasThousandSeparators="NO" thousandSeparator="." id="94">
-                                <attributedString key="attributedStringForZero">
-                                    <fragment content="0,0"/>
-                                </attributedString>
-                                <decimal key="minimum" value="NaN"/>
-                                <decimal key="maximum" value="NaN"/>
-                            </numberFormatter>
+                            <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="0.00000" negativeFormat="-0.00000" usesGroupingSeparator="NO" formatWidth="-1" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="5" maximumFractionDigits="5" decimalSeparator="," groupingSeparator="." id="94"/>
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -192,7 +174,7 @@ DQ
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="62">
-                                <rect key="frame" x="150" y="13" width="74" height="16"/>
+                                <rect key="frame" x="150" y="12" width="74" height="16"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <buttonCell key="cell" type="check" title="Transmit:" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="5" inset="2" id="112">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -203,16 +185,10 @@ DQ
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61">
-                                <rect key="frame" x="226" y="12" width="80" height="19"/>
+                                <rect key="frame" x="226" y="11" width="80" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="111">
-                                    <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0.00000" negativeFormat="-0.00000" hasThousandSeparators="NO" thousandSeparator="." id="96">
-                                        <attributedString key="attributedStringForZero">
-                                            <fragment content="0,0"/>
-                                        </attributedString>
-                                        <decimal key="minimum" value="NaN"/>
-                                        <decimal key="maximum" value="NaN"/>
-                                    </numberFormatter>
+                                    <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="0.00000" negativeFormat="-0.00000" usesGroupingSeparator="NO" formatWidth="-1" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="5" maximumFractionDigits="5" decimalSeparator="," groupingSeparator="." id="96"/>
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -236,13 +212,7 @@ DQ
                                 <rect key="frame" x="59" y="11" width="80" height="19"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="109">
-                                    <numberFormatter key="formatter" formatterBehavior="10_0" positiveFormat="0.00000" negativeFormat="-0.00000" hasThousandSeparators="NO" thousandSeparator="." id="95">
-                                        <attributedString key="attributedStringForZero">
-                                            <fragment content="0,0"/>
-                                        </attributedString>
-                                        <decimal key="minimum" value="NaN"/>
-                                        <decimal key="maximum" value="NaN"/>
-                                    </numberFormatter>
+                                    <numberFormatter key="formatter" formatterBehavior="custom10_4" positiveFormat="0.00000" negativeFormat="-0.00000" usesGroupingSeparator="NO" formatWidth="-1" groupingSize="0" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" minimumFractionDigits="5" maximumFractionDigits="5" decimalSeparator="," groupingSeparator="." id="95"/>
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

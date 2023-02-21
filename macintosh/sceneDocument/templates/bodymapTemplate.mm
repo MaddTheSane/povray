@@ -39,6 +39,7 @@
 //******************************************************************************
 #import "bodymapTemplate.h"
 #import "tooltipAutomator.h"
+#import "bodyMap.h"
 
 // this must be the last file included
 #import "syspovdebug.h"

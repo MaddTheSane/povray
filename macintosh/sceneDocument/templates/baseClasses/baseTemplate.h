@@ -177,7 +177,7 @@ enum eImageMap {
 @class ColorPicker;
 
 @interface BaseTemplate : NSObject <NSTabViewDelegate,NSTableViewDelegate>{
-	__unsafe_unretained NSPanel			*mWindow;
+	__weak NSPanel			*mWindow;
 	IBOutlet NSButton		*templateOkButton;
 	IBOutlet NSButton		*templateCancelButton;
 	IBOutlet NSButton		*templateResetButton;
@@ -188,9 +188,9 @@ enum eImageMap {
 	NSArray							*mExcludedObjectsForReset;	//arry with keys for objects to exclude from reset
 	ColorPicker *colorPickerController;		//used in BaseTemplate+callTemplates
 	
-	BaseTemplate *mFileOwner;	//fileOwner for nib file (is a subclass of basetempalte
+	__kindof BaseTemplate *mFileOwner;	//fileOwner for nib file (is a subclass of basetempalte
 													// like cameraTemplate or lightTemplate...
-	id									mTemplateCaller; // could be scenedocument or another template
+	__weak id						mTemplateCaller; // could be scenedocument or another template
 	NSString						*keyName; // hold the keyname for prefs
 	NSMutableDictionary *mPreferences;
 	unsigned int				mTemplateType;
@@ -200,10 +200,10 @@ enum eImageMap {
 
 -(id) initWithDocumentPointer:(id) caller andDictionary:(NSMutableDictionary*)preferences forType:(unsigned int) templateType;
 @property (atomic, copy) NSString *keyName;
--(id) caller;
--(id) fileOwner;
+@property (readonly, weak) id caller;
+@property (readonly, strong) __kindof BaseTemplate* fileOwner;
 
-@property (assign) IBOutlet NSPanel *window;
+@property (weak) IBOutlet NSPanel *window;
 -(NSPanel*) getWindow NS_DEPRECATED_WITH_REPLACEMENT_MAC("-window", 10.2, 10.9);
 -(IBAction) okButton:(id)sender;
 -(IBAction) cancelButton: (id)sender;
@@ -211,12 +211,11 @@ enum eImageMap {
 -(IBAction) openButton: (id)sender;
 -(IBAction) saveButton: (id)sender;
 
--(void) setPreferences:(id) preferences;
 +(id) addMissingObjectsInPreferences:(id)preferences forClass:(Class)_Class andTemplateType:(unsigned int)templateType;
 
 -(NSMutableDictionary*) removeStandardSettingsFromPreference:(NSMutableDictionary*) inPreferences;
 
--(NSMutableDictionary*) preferences;
+@property (nonatomic, strong) NSMutableDictionary* preferences;
 -(void) writeDefaultPreferences;
 
 -(IBAction) setModified:(id) sender;
@@ -225,14 +224,13 @@ enum eImageMap {
 
 - (void) selectFile:(id)fileName withTypes:(NSArray*)fileTypes keepFullPath:(BOOL) keepFullPath;
 
--(void) templateSheetDidEnd: (NSWindow*)sheet returnCode: (int)returnCode contextInfo: (void*)contextInfo;
 -(NSString *) dictionaryTypeName;
 
 // setting of controls
 	//if the referenceObject is on, all other objects are enabled
 	//if not, they are disabled
-- (void) enableObjectsAccordingToObject:(id) referenceObject, ...;
-- (void) enableObjectsAccordingToState:(int)state, ...;
+- (void) enableObjectsAccordingToObject:(id) referenceObject, ... NS_REQUIRES_NIL_TERMINATION;
+- (void) enableObjectsAccordingToState:(int)state, ... NS_REQUIRES_NIL_TERMINATION;
 - (void) setXYZVectorAccordingToPopup:(NSPopUpButton*) popup xyzMatrix: (NSMatrix*)xyzMatrix ;
 -(void) setSubViewsOfNSBox:( NSBox *) group toNSButton:(NSButton*)button;
 -(void) setSubViewsOfNSBoxReverse:( NSBox *) group toNSButton:(NSButton*)button;
@@ -255,7 +253,6 @@ enum eImageMap {
 
 @interface  BaseTemplate (callTemplates)
 - (void) callTemplate:(int)templateNumber withDictionary:(NSMutableDictionary*) dict andKeyName:(NSString*) key;
--(void) colorPickerSheetDidEnd: (NSWindow*)sheet returnCode: (NSModalResponse)returnCode contextInfo: (void*)contextInfo;
 -(IBAction) displayColorPicker:(id)sender;
 -(void) setTemplatePrefs:(int)number withObject:(id)objc;
 @end

@@ -69,7 +69,10 @@
 
 	[ds copyTabAndText:@"slope_map {\n"];
 	[ds addTab];
-	slopemap *cmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"slopemap"]];
+	slopemap *cmap=[NSKeyedUnarchiver unarchiveObjectWithData:[dict objectForKey:@"slopemap"]];
+	if (!cmap) {
+		cmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"slopemap"]];
+	}
 
 	for ( int x=1; x<=[cmap count]; x++)
 	{
@@ -109,7 +112,7 @@
 +(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-		[NSArchiver archivedDataWithRootObject:		[slopemap standardMapWithView:nil]],		@"slopemap",
+		[NSKeyedArchiver archivedDataWithRootObject:		[slopemap standardMapWithView:nil]],		@"slopemap",
 	nil];
 
 	return initialDefaults;
@@ -148,7 +151,7 @@
 	NSMutableDictionary *dict=[[NSMutableDictionary alloc] init];
 	if (dict == nil)
 		return;
-	[dict setObject:[NSArchiver archivedDataWithRootObject:mMap] forKey:@"slopemap"];
+	[dict setObject:[NSKeyedArchiver archivedDataWithRootObject:mMap] forKey:@"slopemap"];
 	[self setPreferences:dict];
 }
 
@@ -167,7 +170,12 @@
 //---------------------------------------------------------------------
 -(void) setValuesInPanel:(NSMutableDictionary*)preferences
 {
- 	[self setMap:[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"slopemap"]]];
+	NSData *aDat = [preferences objectForKey:@"slopemap"];
+	MapBase *mb = [NSKeyedUnarchiver unarchiveObjectWithData:aDat];
+	if (!mb) {
+		mb = [NSUnarchiver unarchiveObjectWithData:aDat];
+	}
+ 	[self setMap:mb];
  	[mMap setPreview:previewView];
  	[ mTableView noteNumberOfRowsChanged];
 	[SlopeButton setState:[mMap buttonState:cSlopeButton]];

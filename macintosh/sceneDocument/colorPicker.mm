@@ -119,7 +119,7 @@
 		if ([mDelegate hasFilterTransmit]==YES)
 			[mDelegate setFilter:mFilter toState:mFilterOnState andTransmit:mTransmit toState:mTransmitOnState];
 	}
-	[[NSApplication sharedApplication] endSheet: window returnCode:NSOKButton];
+	[self.getWindow.sheetParent endSheet: window returnCode:NSModalResponseOK];
 }
 
 //---------------------------------------------------------------------
@@ -129,7 +129,7 @@
 {
 	[[self getWindow]makeFirstResponder: [self getWindow]];
 	[mColorWell deactivate];
-	[[NSApplication sharedApplication] endSheet: window returnCode:NSCancelButton];
+	[self.getWindow.sheetParent endSheet: window returnCode:NSModalResponseCancel];
 }
 
 //---------------------------------------------------------------------

@@ -736,12 +736,12 @@
 	[savePanel setAllowedFileTypes:[NSArray arrayWithObject:@"mpTpl"]];
 	[savePanel setTitle:@"export template"];
 	[savePanel setDirectoryURL:nil];
- [savePanel beginSheetModalForWindow:[self getWindow]
-                              completionHandler: ^( NSInteger resultCode )
+	[savePanel beginSheetModalForWindow:[self window]
+										completionHandler: ^( NSInteger resultCode )
 	{
 		@autoreleasepool
 	 	{
-			if( resultCode ==NSOKButton )
+			if( resultCode ==NSModalResponseOK )
 				[trimmedPrefs writeToURL:[savePanel URL] atomically:YES];
     }
 	}

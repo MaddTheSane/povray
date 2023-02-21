@@ -197,19 +197,12 @@ enum {
 	[entry replaceObjectAtIndex:cIdentifierIndex withObject:identifier];
 }
 
-#define EncodedBodyMap @"POVBodyMap"
-
 //---------------------------------------------------------------------
 // encodeWithCoder:encoder
 //---------------------------------------------------------------------
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
 	[super encodeWithCoder:encoder];
-	if ([encoder allowsKeyedCoding]) {
-		[encoder encodeObject:mMapArray forKey:EncodedBodyMap];
-	} else {
-	[encoder encodeObject:mMapArray];
-	}
 }
 
 //---------------------------------------------------------------------
@@ -218,11 +211,6 @@ enum {
 -(id)initWithCoder:(NSCoder*) decoder
 {
 	if (self = [super initWithCoder:decoder]) {
-		if ([decoder allowsKeyedCoding] && [decoder containsValueForKey:EncodedBodyMap]) {
-			[self setArray:[decoder decodeObjectForKey:EncodedBodyMap]];
-		} else {
-	[self setArray:[decoder decodeObject]];
-		}
 	}
 	return self;
 }

@@ -16,6 +16,17 @@
 		5553EF6C29A53B17007B9534 /* IlmThreadNamespace.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF6B29A53B17007B9534 /* IlmThreadNamespace.h */; };
 		5553EF6F29A53B5F007B9534 /* IlmThreadForward.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF6D29A53B5F007B9534 /* IlmThreadForward.h */; };
 		5553EF7029A53B5F007B9534 /* IlmThreadExport.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF6E29A53B5F007B9534 /* IlmThreadExport.h */; };
+		5553EF7E29A56F53007B9534 /* cdjpeg.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7329A56F52007B9534 /* cdjpeg.h */; };
+		5553EF7F29A56F53007B9534 /* jpeglib.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7429A56F52007B9534 /* jpeglib.h */; };
+		5553EF8029A56F53007B9534 /* transupp.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7529A56F52007B9534 /* transupp.h */; };
+		5553EF8129A56F53007B9534 /* jinclude.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7629A56F53007B9534 /* jinclude.h */; };
+		5553EF8229A56F53007B9534 /* jversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7729A56F53007B9534 /* jversion.h */; };
+		5553EF8329A56F53007B9534 /* jerror.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7829A56F53007B9534 /* jerror.h */; };
+		5553EF8429A56F53007B9534 /* cderror.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7929A56F53007B9534 /* cderror.h */; };
+		5553EF8529A56F53007B9534 /* jmorecfg.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7A29A56F53007B9534 /* jmorecfg.h */; };
+		5553EF8629A56F53007B9534 /* jmemsys.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7B29A56F53007B9534 /* jmemsys.h */; };
+		5553EF8729A56F53007B9534 /* jdct.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7C29A56F53007B9534 /* jdct.h */; };
+		5553EF8829A56F53007B9534 /* jpegint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7D29A56F53007B9534 /* jpegint.h */; };
 		55B1735629A4CD9A00FE3F46 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5567B88A211394E2003BFAE4 /* Icons.xcassets */; };
 		55B88C2D21137FDF00AA468A /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B88C2C21137FDF00AA468A /* libz.1.tbd */; };
 		8222236D1D4535F90062FCA5 /* preferencesPanelController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8222236C1D4535F90062FCA5 /* preferencesPanelController.mm */; };
@@ -336,7 +347,7 @@
 		826CB90F1D034CC4000A7A98 /* bodyMap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7A11D034CC4000A7A98 /* bodyMap.mm */; };
 		826CB9101D034CC4000A7A98 /* bodymapTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7A31D034CC4000A7A98 /* bodymapTemplate.mm */; };
 		826CB9111D034CC4000A7A98 /* cameraTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7A51D034CC4000A7A98 /* cameraTemplate.mm */; };
-		826CB9121D034CC4000A7A98 /* colormap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7A71D034CC4000A7A98 /* colormap.mm */; };
+		826CB9121D034CC4000A7A98 /* ColorMap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7A71D034CC4000A7A98 /* ColorMap.mm */; };
 		826CB9131D034CC4000A7A98 /* colormapPreview.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7A81D034CC4000A7A98 /* colormapPreview.mm */; };
 		826CB9141D034CC4000A7A98 /* colorMapTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7AA1D034CC4000A7A98 /* colorMapTemplate.mm */; };
 		826CB9151D034CC4000A7A98 /* finishTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7AC1D034CC4000A7A98 /* finishTemplate.mm */; };
@@ -346,7 +357,7 @@
 		826CB9191D034CC4000A7A98 /* headerIncludeTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7B31D034CC4000A7A98 /* headerIncludeTemplate.mm */; };
 		826CB91A1D034CC4000A7A98 /* interiorTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7B51D034CC4000A7A98 /* interiorTemplate.mm */; };
 		826CB91B1D034CC4000A7A98 /* lightTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7B71D034CC4000A7A98 /* lightTemplate.mm */; };
-		826CB91C1D034CC4000A7A98 /* materialEditorMap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7B91D034CC4000A7A98 /* materialEditorMap.mm */; };
+		826CB91C1D034CC4000A7A98 /* MaterialEditorMap.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7B91D034CC4000A7A98 /* MaterialEditorMap.mm */; };
 		826CB91D1D034CC4000A7A98 /* materialmapTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7BB1D034CC4000A7A98 /* materialmapTemplate.mm */; };
 		826CB91E1D034CC4000A7A98 /* materialTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7BD1D034CC4000A7A98 /* materialTemplate.mm */; };
 		826CB91F1D034CC4000A7A98 /* mediaTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 826CB7BF1D034CC4000A7A98 /* mediaTemplate.mm */; };
@@ -5703,6 +5714,17 @@
 		5553EF6B29A53B17007B9534 /* IlmThreadNamespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IlmThreadNamespace.h; sourceTree = "<group>"; };
 		5553EF6D29A53B5F007B9534 /* IlmThreadForward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IlmThreadForward.h; sourceTree = "<group>"; };
 		5553EF6E29A53B5F007B9534 /* IlmThreadExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IlmThreadExport.h; sourceTree = "<group>"; };
+		5553EF7329A56F52007B9534 /* cdjpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cdjpeg.h; sourceTree = "<group>"; };
+		5553EF7429A56F52007B9534 /* jpeglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpeglib.h; sourceTree = "<group>"; };
+		5553EF7529A56F52007B9534 /* transupp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transupp.h; sourceTree = "<group>"; };
+		5553EF7629A56F53007B9534 /* jinclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jinclude.h; sourceTree = "<group>"; };
+		5553EF7729A56F53007B9534 /* jversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jversion.h; sourceTree = "<group>"; };
+		5553EF7829A56F53007B9534 /* jerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jerror.h; sourceTree = "<group>"; };
+		5553EF7929A56F53007B9534 /* cderror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cderror.h; sourceTree = "<group>"; };
+		5553EF7A29A56F53007B9534 /* jmorecfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmorecfg.h; sourceTree = "<group>"; };
+		5553EF7B29A56F53007B9534 /* jmemsys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmemsys.h; sourceTree = "<group>"; };
+		5553EF7C29A56F53007B9534 /* jdct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jdct.h; sourceTree = "<group>"; };
+		5553EF7D29A56F53007B9534 /* jpegint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpegint.h; sourceTree = "<group>"; };
 		5567B88A211394E2003BFAE4 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		55B88C2C21137FDF00AA468A /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		8207D2E01D04648000A42189 /* eLut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eLut.h; sourceTree = "<group>"; };
@@ -6075,8 +6097,8 @@
 		826CB7A31D034CC4000A7A98 /* bodymapTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = bodymapTemplate.mm; sourceTree = "<group>"; };
 		826CB7A41D034CC4000A7A98 /* cameraTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cameraTemplate.h; sourceTree = "<group>"; };
 		826CB7A51D034CC4000A7A98 /* cameraTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = cameraTemplate.mm; sourceTree = "<group>"; };
-		826CB7A61D034CC4000A7A98 /* colormap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = colormap.h; sourceTree = "<group>"; };
-		826CB7A71D034CC4000A7A98 /* colormap.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = colormap.mm; sourceTree = "<group>"; };
+		826CB7A61D034CC4000A7A98 /* ColorMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorMap.h; sourceTree = "<group>"; };
+		826CB7A71D034CC4000A7A98 /* ColorMap.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ColorMap.mm; sourceTree = "<group>"; };
 		826CB7A81D034CC4000A7A98 /* colormapPreview.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = colormapPreview.mm; sourceTree = "<group>"; };
 		826CB7A91D034CC4000A7A98 /* colorMapTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = colorMapTemplate.h; sourceTree = "<group>"; };
 		826CB7AA1D034CC4000A7A98 /* colorMapTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = colorMapTemplate.mm; sourceTree = "<group>"; };
@@ -6093,8 +6115,8 @@
 		826CB7B51D034CC4000A7A98 /* interiorTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = interiorTemplate.mm; sourceTree = "<group>"; };
 		826CB7B61D034CC4000A7A98 /* lightTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lightTemplate.h; sourceTree = "<group>"; };
 		826CB7B71D034CC4000A7A98 /* lightTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = lightTemplate.mm; sourceTree = "<group>"; };
-		826CB7B81D034CC4000A7A98 /* materialEditorMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = materialEditorMap.h; sourceTree = "<group>"; };
-		826CB7B91D034CC4000A7A98 /* materialEditorMap.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = materialEditorMap.mm; sourceTree = "<group>"; };
+		826CB7B81D034CC4000A7A98 /* MaterialEditorMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaterialEditorMap.h; sourceTree = "<group>"; };
+		826CB7B91D034CC4000A7A98 /* MaterialEditorMap.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MaterialEditorMap.mm; sourceTree = "<group>"; };
 		826CB7BA1D034CC4000A7A98 /* materialmapTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = materialmapTemplate.h; sourceTree = "<group>"; };
 		826CB7BB1D034CC4000A7A98 /* materialmapTemplate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = materialmapTemplate.mm; sourceTree = "<group>"; };
 		826CB7BC1D034CC4000A7A98 /* materialTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = materialTemplate.h; sourceTree = "<group>"; };
@@ -15311,8 +15333,8 @@
 				826CB7A31D034CC4000A7A98 /* bodymapTemplate.mm */,
 				826CB7A41D034CC4000A7A98 /* cameraTemplate.h */,
 				826CB7A51D034CC4000A7A98 /* cameraTemplate.mm */,
-				826CB7A61D034CC4000A7A98 /* colormap.h */,
-				826CB7A71D034CC4000A7A98 /* colormap.mm */,
+				826CB7A61D034CC4000A7A98 /* ColorMap.h */,
+				826CB7A71D034CC4000A7A98 /* ColorMap.mm */,
 				826CB7A81D034CC4000A7A98 /* colormapPreview.mm */,
 				826CB7A91D034CC4000A7A98 /* colorMapTemplate.h */,
 				826CB7AA1D034CC4000A7A98 /* colorMapTemplate.mm */,
@@ -15329,8 +15351,8 @@
 				826CB7B51D034CC4000A7A98 /* interiorTemplate.mm */,
 				826CB7B61D034CC4000A7A98 /* lightTemplate.h */,
 				826CB7B71D034CC4000A7A98 /* lightTemplate.mm */,
-				826CB7B81D034CC4000A7A98 /* materialEditorMap.h */,
-				826CB7B91D034CC4000A7A98 /* materialEditorMap.mm */,
+				826CB7B81D034CC4000A7A98 /* MaterialEditorMap.h */,
+				826CB7B91D034CC4000A7A98 /* MaterialEditorMap.mm */,
 				826CB7BA1D034CC4000A7A98 /* materialmapTemplate.h */,
 				826CB7BB1D034CC4000A7A98 /* materialmapTemplate.mm */,
 				826CB7BC1D034CC4000A7A98 /* materialTemplate.h */,
@@ -15486,6 +15508,8 @@
 		82B9A1540C904CE4002D62D9 /* jpeg */ = {
 			isa = PBXGroup;
 			children = (
+				5553EF7929A56F53007B9534 /* cderror.h */,
+				5553EF7329A56F52007B9534 /* cdjpeg.h */,
 				826CBD681D0351F7000A7A98 /* jaricom.c */,
 				826CBD691D0351F7000A7A98 /* jcapimin.c */,
 				826CBD6A1D0351F7000A7A98 /* jcapistd.c */,
@@ -15509,6 +15533,7 @@
 				826CBD7C1D0351F7000A7A98 /* jdatadst.c */,
 				826CBD7D1D0351F7000A7A98 /* jdcoefct.c */,
 				826CBD7E1D0351F7000A7A98 /* jdcolor.c */,
+				5553EF7C29A56F53007B9534 /* jdct.h */,
 				826CBD7F1D0351F7000A7A98 /* jddctmgr.c */,
 				826CBD801D0351F7000A7A98 /* jdhuff.c */,
 				826CBD811D0351F7000A7A98 /* jdinput.c */,
@@ -15520,17 +15545,25 @@
 				826CBD871D0351F7000A7A98 /* jdsample.c */,
 				826CBD881D0351F7000A7A98 /* jdtrans.c */,
 				826CBD891D0351F7000A7A98 /* jerror.c */,
+				5553EF7829A56F53007B9534 /* jerror.h */,
 				826CBD8A1D0351F7000A7A98 /* jfdctflt.c */,
 				826CBD8B1D0351F7000A7A98 /* jfdctfst.c */,
 				826CBD8C1D0351F7000A7A98 /* jfdctint.c */,
 				826CBD8D1D0351F7000A7A98 /* jidctflt.c */,
 				826CBD8E1D0351F7000A7A98 /* jidctfst.c */,
 				826CBD8F1D0351F7000A7A98 /* jidctint.c */,
+				5553EF7629A56F53007B9534 /* jinclude.h */,
 				826CBD901D0351F7000A7A98 /* jmemmgr.c */,
 				826CBD911D0351F7000A7A98 /* jmemnobs.c */,
+				5553EF7B29A56F53007B9534 /* jmemsys.h */,
+				5553EF7A29A56F53007B9534 /* jmorecfg.h */,
+				5553EF7D29A56F53007B9534 /* jpegint.h */,
+				5553EF7429A56F52007B9534 /* jpeglib.h */,
 				826CBD921D0351F7000A7A98 /* jquant1.c */,
 				826CBD931D0351F7000A7A98 /* jquant2.c */,
 				826CBD941D0351F7000A7A98 /* jutils.c */,
+				5553EF7729A56F53007B9534 /* jversion.h */,
+				5553EF7529A56F52007B9534 /* transupp.h */,
 			);
 			path = jpeg;
 			sourceTree = "<group>";
@@ -15665,6 +15698,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5553EF8329A56F53007B9534 /* jerror.h in Headers */,
+				5553EF8029A56F53007B9534 /* transupp.h in Headers */,
+				5553EF7F29A56F53007B9534 /* jpeglib.h in Headers */,
+				5553EF8829A56F53007B9534 /* jpegint.h in Headers */,
+				5553EF8129A56F53007B9534 /* jinclude.h in Headers */,
+				5553EF7E29A56F53007B9534 /* cdjpeg.h in Headers */,
+				5553EF8729A56F53007B9534 /* jdct.h in Headers */,
+				5553EF8529A56F53007B9534 /* jmorecfg.h in Headers */,
+				5553EF8629A56F53007B9534 /* jmemsys.h in Headers */,
+				5553EF8429A56F53007B9534 /* cderror.h in Headers */,
+				5553EF8229A56F53007B9534 /* jversion.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -16668,7 +16712,7 @@
 				826CB9221D034CC4000A7A98 /* objectEditorTemplate.mm in Sources */,
 				826CB9051D034CC4000A7A98 /* sceneDocument+highlighting.mm in Sources */,
 				82B477B41D04712B0054B17E /* mapBase.mm in Sources */,
-				826CB91C1D034CC4000A7A98 /* materialEditorMap.mm in Sources */,
+				826CB91C1D034CC4000A7A98 /* MaterialEditorMap.mm in Sources */,
 				826CB9101D034CC4000A7A98 /* bodymapTemplate.mm in Sources */,
 				826CB91D1D034CC4000A7A98 /* materialmapTemplate.mm in Sources */,
 				826CB9291D034CC4000A7A98 /* slopeMapTemplate.mm in Sources */,
@@ -16696,7 +16740,7 @@
 				826CB9041D034CC4000A7A98 /* customDocumentController.mm in Sources */,
 				826CB9021D034CC4000A7A98 /* rendererGUIBridge.mm in Sources */,
 				826CBAD01D034E4C000A7A98 /* platformbase.cpp in Sources */,
-				826CB9121D034CC4000A7A98 /* colormap.mm in Sources */,
+				826CB9121D034CC4000A7A98 /* ColorMap.mm in Sources */,
 				826CB9061D034CC4000A7A98 /* sceneDocument+printing.mm in Sources */,
 				826CB9271D034CC4000A7A98 /* slopeMap.mm in Sources */,
 				82B477B61D04712B0054B17E /* mapPreview.mm in Sources */,

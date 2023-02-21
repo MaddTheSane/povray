@@ -38,6 +38,8 @@
 ///
 //******************************************************************************
 #import "mapBase.h"
+#import "baseTemplate.h"
+#import "mapPreview.h"
 
 // this must be the last file included
 #import "syspovdebug.h"
@@ -187,7 +189,7 @@
 	if (index > [self count])
 		return nil;
 	NSMutableArray *entry=[mMapArray objectAtIndex:index];
-	return [NSArchiver archivedDataWithRootObject:entry];
+	return [NSKeyedArchiver archivedDataWithRootObject:entry];
 }
 
 //---------------------------------------------------------------------
@@ -195,7 +197,10 @@
 //---------------------------------------------------------------------
 -(void ) insertArchivedObject:(NSData *)data atIndex:(NSInteger) index
 {
-	id object=[NSUnarchiver unarchiveObjectWithData:data];
+	id object=[NSKeyedUnarchiver unarchiveObjectWithData:data];
+	if (!object) {
+		object=[NSUnarchiver unarchiveObjectWithData:data];
+	}
 	if ( object)
 		[[self array] insertObject:object atIndex:index];
 }
@@ -229,7 +234,6 @@
 		[encoder encodeObject:mMapArray forKey:EncodedMapArray];
 	} else {
 	[encoder encodeObject:mMapArray];
-
 	}
 }
 

@@ -645,7 +645,6 @@
 {
 	[super encodeWithCoder:encoder];
 	if ([encoder allowsKeyedCoding]) {
-//		[encoder encodeObject:mMapArray forKey:MapArrayCodingKey];
 		[encoder encodeInteger:mSlopeOn forKey:SlopeOnCodingKey];
 		[encoder encodeInteger:mPointOn forKey:PointOnCodingKey];
 		[encoder encodeInteger:mRasterOn forKey:RasterOnCodingKey];
@@ -653,18 +652,17 @@
 		[encoder encodeInteger:mSplineTypePopUp forKey:SplineTypePopUpCodingKey];
 		[encoder encodeInteger:mTemplateType forKey:TemplateTypeCodingKey];
 	} else {
-	//[encoder encodeObject:mMapArray];
-	int enc = mSlopeOn;
+	int enc = (int)mSlopeOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
-	enc = mPointOn;
+	enc = (int)mPointOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
-	enc = mRasterOn;
+	enc = (int)mRasterOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
-	enc = mCurveOn;
+	enc = (int)mCurveOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
-	enc = mSplineTypePopUp;
+	enc = (int)mSplineTypePopUp;
 	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
-	enc = mTemplateType;
+	enc = (int)mTemplateType;
 	[encoder encodeValueOfObjCType:@encode(int) at:&enc];
 	}
 }
@@ -676,7 +674,6 @@
 {
 	self = [super initWithCoder:decoder];
 	if ([decoder allowsKeyedCoding]) {
-//		[self setArray:[decoder decodeObjectForKey:MapArrayCodingKey]];
 		mSlopeOn = [decoder decodeIntegerForKey:SlopeOnCodingKey];
 		mPointOn = [decoder decodeIntegerForKey:PointOnCodingKey];
 		mRasterOn = [decoder decodeIntegerForKey:RasterOnCodingKey];
@@ -684,7 +681,6 @@
 		mSplineTypePopUp = [decoder decodeIntegerForKey:SplineTypePopUpCodingKey];
 		mTemplateType = [decoder decodeIntegerForKey:TemplateTypeCodingKey];
 	} else {
-//	[self setArray:[decoder decodeObject]];
 	int tmp;
 	[decoder decodeValueOfObjCType:@encode(int) at:&tmp];
 	mSlopeOn = tmp;

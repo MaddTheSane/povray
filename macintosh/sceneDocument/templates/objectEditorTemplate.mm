@@ -92,7 +92,7 @@ enum {
 	if (templateType == menuTagTemplateAllObjectmaps || templateType== menuTagTemplateLathe)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[objectmap standardMap:menuTagTemplateLathe withView:nil]],	@"objectmap",
+								[NSKeyedArchiver archivedDataWithRootObject:[objectmap standardMap:menuTagTemplateLathe withView:nil]],	@"objectmap",
 								@"6",																					@"drawPointsEdit",
 								[NSNumber numberWithInt:cFirstCell],			@"objectEditorActionOnPoints",
 								@"0.1",														@"objectEditorScaleEdit",
@@ -112,7 +112,7 @@ enum {
 	if (templateType == menuTagTemplateAllObjectmaps || templateType== menuTagTemplatePolygon)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[objectmap standardMap:menuTagTemplatePolygon withView:nil]],	@"objectmap",
+								[NSKeyedArchiver archivedDataWithRootObject:[objectmap standardMap:menuTagTemplatePolygon withView:nil]],	@"objectmap",
 								@"6",																					@"drawPointsEdit",
 								[NSNumber numberWithInt:cFirstCell],			@"objectEditorActionOnPoints",
 								@"0.1",														@"objectEditorScaleEdit",
@@ -133,7 +133,7 @@ enum {
 	if (templateType == menuTagTemplateAllObjectmaps || templateType== menuTagTemplatePrism)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[objectmap standardMap:menuTagTemplatePrism withView:nil]],	@"objectmap",
+								[NSKeyedArchiver archivedDataWithRootObject:[objectmap standardMap:menuTagTemplatePrism withView:nil]],	@"objectmap",
 								@"6",																					@"drawPointsEdit",
 								[NSNumber numberWithInt:cFirstCell],			@"objectEditorActionOnPoints",
 								@"0.1",														@"objectEditorScaleEdit",
@@ -154,7 +154,7 @@ enum {
 	if (templateType == menuTagTemplateAllObjectmaps || templateType== menuTagTemplateSor)
 	{
 		initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSArchiver archivedDataWithRootObject:[objectmap standardMap:menuTagTemplateSor withView:nil]],	@"objectmap",
+								[NSKeyedArchiver archivedDataWithRootObject:[objectmap standardMap:menuTagTemplateSor withView:nil]],	@"objectmap",
 								@"6",																					@"drawPointsEdit",
 								[NSNumber numberWithInt:cFirstCell],			@"objectEditorActionOnPoints",
 								@"0.1",														@"objectEditorScaleEdit",
@@ -414,7 +414,7 @@ enum {
 	NSMutableDictionary *dict=[self preferences];
 	if (dict == nil)
 		return;
-	[dict setObject:[NSArchiver archivedDataWithRootObject:mMap] forKey:@"objectmap"];
+	[dict setObject:[NSKeyedArchiver archivedDataWithRootObject:mMap] forKey:@"objectmap"];
 }
 
 //---------------------------------------------------------------------
@@ -422,7 +422,12 @@ enum {
 //---------------------------------------------------------------------
 -(void) setValuesInPanel:(NSMutableDictionary*)preferences
 {
- 	[self setMap:[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"objectmap"]]];
+	NSData *tmpDat = [preferences objectForKey:@"objectmap"];
+	id aMap = [NSKeyedUnarchiver unarchiveObjectWithData:tmpDat];
+	if (!aMap) {
+		aMap = [NSUnarchiver unarchiveObjectWithData:tmpDat];
+	}
+ 	[self setMap:aMap];
  	[mMap setPreview:previewView];
 	[SlopeButton setState:[mMap buttonState:cSlopeButton]];
 	[PointButton setState:[mMap buttonState:cPointButton]];

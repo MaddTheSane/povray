@@ -76,7 +76,7 @@ enum {
 
 	[ds copyTabAndText:@"color_map {\n"];
 	[ds addTab];
-	colormap *cmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"colormap"]];
+	ColorMap *cmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"colormap"]];
 
 	for ( int x=1; x<=[cmap count]; x++)
 	{
@@ -139,7 +139,7 @@ enum {
 +(NSMutableDictionary *) createDefaults:(NSUInteger) templateType
 {
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-[NSArchiver archivedDataWithRootObject:		[colormap standardMapWithView:nil]],					@"colormap",
+[NSArchiver archivedDataWithRootObject:		[ColorMap standardMapWithView:nil]],					@"colormap",
 	nil];
 
 	return initialDefaults;

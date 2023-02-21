@@ -70,9 +70,9 @@ static BOOL mSkySphereWritten;
 			return nil;
 	}
 
-	materialEditorMap *cmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"materialEditorMap"]];
+	MaterialEditorMap *cmap=[NSKeyedUnarchiver unarchiveObjectWithData:[dict objectForKey:@"materialEditorMap"]];
 	
-	if ( [[dict objectForKey:@"materialDontWrapInMaterial"]intValue]==NSOffState)
+	if ( [[dict objectForKey:@"materialDontWrapInMaterial"] integerValue]==NSOffState)
 	{
 		[ds copyTabAndText:@"material {\n"];
 		[ds addTab];
@@ -165,7 +165,7 @@ static BOOL mSkySphereWritten;
 		return;
 		
 	MutableTabString *ds=[[MutableTabString alloc] initWithTabs:0 andCallerType:NO];
-	materialEditorMap *cmap=[NSUnarchiver unarchiveObjectWithData:[dict objectForKey:@"materialEditorMap"]];
+	MaterialEditorMap *cmap=[NSKeyedUnarchiver unarchiveObjectWithData:[dict objectForKey:@"materialEditorMap"]];
 	[ds copyTabAndText:@"#version 3.7;"];
 	[ds copyTabAndText:@"global_settings {assumed_gamma 1.0}"];
 	[MaterialTemplate addCameraToString:ds withDict:dict];
@@ -326,7 +326,7 @@ static BOOL mSkySphereWritten;
 		
 		
 	NSMutableDictionary *initialDefaults=[NSMutableDictionary dictionaryWithObjectsAndKeys:
-		[NSArchiver archivedDataWithRootObject:		[materialEditorMap standardMap]],		@"materialEditorMap",
+		[NSKeyedArchiver archivedDataWithRootObject:		[MaterialEditorMap standardMap]],		@"materialEditorMap",
 		@(NSOffState),		@"materialMainTabView",
 		@(NSOffState),		@"materialDontWrapInMaterial",
 
@@ -611,11 +611,11 @@ static BOOL mSkySphereWritten;
 				}
 				else
 				{
-					NSRunAlertPanel(NSLocalizedStringFromTable(@"WrongTemplateSettings", @"applicationLocalized", @"Wrong preferences file"),
-					@"%@",
-					NSLocalizedStringFromTable(@"Ok", @"applicationLocalized", @"Cancel"),
-													nil, 
-													nil, LocalizedSettingsfileToBeUsed);
+					NSAlert *alert = [[NSAlert alloc] init];
+					alert.messageText = NSLocalizedStringFromTable(@"WrongTemplateSettings", @"applicationLocalized", @"Wrong preferences file");
+					alert.informativeText = LocalizedSettingsfileToBeUsed;
+					[alert addButtonWithTitle:NSLocalizedStringFromTable(@"Ok", @"applicationLocalized", @"Cancel")];
+					[alert runModal];
 				}
 				[[NSNotificationCenter defaultCenter] postNotificationName:NSTableViewSelectionDidChangeNotification object:self->mTableView];
 			}
@@ -668,16 +668,16 @@ static BOOL mSkySphereWritten;
 	[savePanel setDirectoryURL:nil];
 	[savePanel setTitle:PanelTitle];
 	
- [savePanel beginSheetModalForWindow:[self window]
-                              completionHandler: ^( NSInteger resultCode )
-	{
+	[savePanel beginSheetModalForWindow:[self window]
+										completionHandler: ^( NSInteger resultCode )
+	 {
 		@autoreleasepool
-	 	{
+		{
 			if( resultCode ==NSModalResponseOK )
 				[trimmedPrefs writeToURL:[savePanel URL] atomically:YES];
-    }
+		}
 	}
-  ];	
+	];	
 }
 
 	
@@ -719,7 +719,7 @@ static BOOL mSkySphereWritten;
 		[mMap setObject:trimmedPrefs atRow:z atColumn:cMaterialmapInteriorDictIndex];
 	}	
 
-	[dict setObject:[NSArchiver archivedDataWithRootObject:mMap] forKey:@"materialEditorMap"];
+	[dict setObject:[NSKeyedArchiver archivedDataWithRootObject:mMap] forKey:@"materialEditorMap"];
 
 //store transformations if selected
 	if ( materialTransformations != nil )
@@ -733,7 +733,7 @@ static BOOL mSkySphereWritten;
 //---------------------------------------------------------------------
 -(void) setValuesInPanel:(NSMutableDictionary*)preferences
 {
- 	[self setMap:[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"materialEditorMap"]]];
+ 	[self setMap:[NSKeyedUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"materialEditorMap"]]];
 	[mMap selectTableRow:0];
 	[self setMaterialTransformations:[preferences objectForKey:@"materialTransformations"]];
 	[super setValuesInPanel:preferences];

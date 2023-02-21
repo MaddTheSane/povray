@@ -150,7 +150,7 @@ enum  {
 	IBOutlet NSTextField			*backgroundRainbowAngleEdit;
 	IBOutlet NSTextField			*backgroundRainbowWidthEdit;
 	IBOutlet NSTextField			*backgroundRainbowDistanceEdit;
-	//colormap
+	//ColorMap
 	IBOutlet NSTabView				*backgroundRainbowColorMapTabView;
 	IBOutlet colormapPreview	*backgroundRainbowColorMapBlackAndWhitePreview;
 	IBOutlet colormapPreview	*backgroundRainbowColorMapRainbowPreview;

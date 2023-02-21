@@ -652,13 +652,13 @@
 	{
 		if ( [[mSceneTextView textStorage]length]/(1024*1024) > 25l)
 		{
-			NSInteger res=NSRunAlertPanel( NSLocalizedStringFromTable(@"DocumentIsHuge", @"applicationLocalized", @"This is a large file\n"),
-														NSLocalizedStringFromTable(@"DocumentIsHuge2", @"applicationLocalized", @"Turning on syntax coloring will lock up the computer for a long time.\nDo you want to proceed anyway?"),
-														NSLocalizedStringFromTable(@"ColorOff", @"applicationLocalized", @"Color off"),
-														NSLocalizedStringFromTable(@"ColorOn", @"applicationLocalized", @"Color on"),
-														nil,
-														nil);
-			if ( res == NSAlertDefaultReturn) //cancel
+			NSAlert *alert = [[NSAlert alloc] init];
+			alert.messageText = NSLocalizedStringFromTable(@"DocumentIsHuge", @"applicationLocalized", @"This is a large file\n");
+			alert.informativeText = NSLocalizedStringFromTable(@"DocumentIsHuge2", @"applicationLocalized", @"Turning on syntax coloring will lock up the computer for a long time.\nDo you want to proceed anyway?");
+			[alert addButtonWithTitle:NSLocalizedStringFromTable(@"ColorOff", @"applicationLocalized", @"Color off")];
+			[alert addButtonWithTitle:NSLocalizedStringFromTable(@"ColorOn", @"applicationLocalized", @"Color on")];
+			NSInteger res=[alert runModal];
+			if ( res == NSAlertFirstButtonReturn) //cancel
 				mSyntaxColoringOn=NO;
 			else	//color on
 				mSyntaxColoringOn=YES;

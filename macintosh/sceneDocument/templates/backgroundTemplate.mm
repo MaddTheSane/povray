@@ -43,7 +43,7 @@
 #import "transformationsTemplate.h"
 #import "standardMethods.h"
 #import "TooltipAutomator.h"
-#import "colormap.h"
+#import "ColorMap.h"
 
 // this must be the last file included
 #import "syspovdebug.h"
@@ -235,7 +235,7 @@
 		[NSNumber numberWithInt:cBackground],							@"backgroundTabView",
 
 		//background
-		[NSArchiver archivedDataWithRootObject:[MPColorWell grayColorAndFilter:NO]],	@"backgroundColorWell",
+		[NSKeyedArchiver archivedDataWithRootObject:[MPColorWell grayColorAndFilter:NO]],	@"backgroundColorWell",
 		//fog
 		@(cConstantFog),																	@"backgroundFogTypePopUp",
 		@"0.0",																						@"backgroundFogDistanceEdit",
@@ -248,7 +248,7 @@
 		@"0.0",																						@"backgroundFogOffsetEdit",
 		@(NSOffState),																		@"backgroundFogAltitudeOn",
 		@"0.0",																						@"backgroundFogAltitudeEdit",
-		[NSArchiver archivedDataWithRootObject:[MPFTColorWell grayColorAndFilter:YES]],	@"backgroundFogColorColorWell",
+		[NSKeyedArchiver archivedDataWithRootObject:[MPFTColorWell grayColorAndFilter:YES]],	@"backgroundFogColorColorWell",
 		@(NSOffState),																		@"backgroundFogTurbulenceOn",
 		@(cXYZVectorPopupXandYandZ),											@"backgroundFogTurbulenceXYZPopUp",
 		@"0.0",																						@"backgroundFogTurbulenceMatrixX",
@@ -273,12 +273,12 @@
 		@"1000",																					@"backgroundRainbowDistanceEdit",
 	//customized color map is in a dictionary because
 	// we use it as preferences for the color map template
-	// rainbow and b&w are not editable so they can be in colormap format directly
+	// rainbow and b&w are not editable so they can be in ColorMap format directly
 																				[[NSDictionary alloc] initWithObjectsAndKeys:
-			[NSArchiver archivedDataWithRootObject:[colormap standardMapWithView:nil]],		@"colormap",nil
+			[NSKeyedArchiver archivedDataWithRootObject:[ColorMap standardMapWithView:nil]],		@"colormap",nil
 		],																															@"customizedColorMap",
-		[NSArchiver archivedDataWithRootObject:	[colormap rainbowMapWithView:nil]],			@"rainbowColorMap",
-		[NSArchiver archivedDataWithRootObject:	[colormap blackAndWhiteMapWithView:nil]],	@"blackAndWhiteColorMap",
+		[NSKeyedArchiver archivedDataWithRootObject:	[ColorMap rainbowMapWithView:nil]],			@"rainbowColorMap",
+		[NSKeyedArchiver archivedDataWithRootObject:	[ColorMap blackAndWhiteMapWithView:nil]],	@"blackAndWhiteColorMap",
 		@(cRainBow),																			@"backgroundRainbowColorMapTabView",
 		@(NSOffState),																		@"backgroundRainbowJitterOn",
 		@"0.05",																					@"backgroundRainbowJitterEdit",
@@ -308,7 +308,7 @@
 		@"0.0",																						@"backgroundGlowRadiusEdit",
 		@"0.0",																						@"backgroundGlowFadePowerEdit",
 		@(NSOffState),																		@"backgroundGlowTransformationsOn",
-		[NSArchiver archivedDataWithRootObject:[MPColorWell grayColorAndFilter:NO]],	@"backgroundGlowColorWell",
+		[NSKeyedArchiver archivedDataWithRootObject:[MPColorWell grayColorAndFilter:NO]],	@"backgroundGlowColorWell",
 
 	nil];
 
@@ -424,14 +424,14 @@
 {
 	//customized color map is in a dictionary because
 	// we use it as preferences for the color map template
-	// rainbow and b&w are not editable so they can be in colormap format directly
+	// rainbow and b&w are not editable so they can be in ColorMap format directly
 	id cm=[preferences objectForKey:@"customizedColorMap"];
 	if ( cm)
 		cm=[cm objectForKey:@"colormap"];
 	if( cm)
-		[[NSUnarchiver unarchiveObjectWithData:cm] setPreview:backgroundRainbowColorMapCustomizedPreview];
- 	[[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"rainbowColorMap"]]setPreview:backgroundRainbowColorMapRainbowPreview];
- 	[[NSUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"blackAndWhiteColorMap"]]setPreview:backgroundRainbowColorMapBlackAndWhitePreview];
+		[[NSKeyedUnarchiver unarchiveObjectWithData:cm] setPreview:backgroundRainbowColorMapCustomizedPreview];
+ 	[[NSKeyedUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"rainbowColorMap"]]setPreview:backgroundRainbowColorMapRainbowPreview];
+ 	[[NSKeyedUnarchiver unarchiveObjectWithData:[preferences objectForKey:@"blackAndWhiteColorMap"]]setPreview:backgroundRainbowColorMapBlackAndWhitePreview];
 	[self setGlowTransformations:[preferences objectForKey:@"glowTransformations"]];
 	[self setBackgroundSkysphereEditPigment1:[preferences objectForKey:@"backgroundSkysphereEditPigment1"]];
 	[self setBackgroundSkysphereEditPigment2:[preferences objectForKey:@"backgroundSkysphereEditPigment2"]];
@@ -451,16 +451,16 @@
 	NSMutableDictionary *dict=[self preferences];
 	//customized color map is in a dictionary because
 	// we use it as preferences for the color map template
-	// rainbow and b&w are not editable so they can be in colormap format directly
+	// rainbow and b&w are not editable so they can be in ColorMap format directly
 	[dict setObject:[NSDictionary dictionaryWithObject:
-								[NSArchiver archivedDataWithRootObject:[backgroundRainbowColorMapCustomizedPreview  map]] 
+								[NSKeyedArchiver archivedDataWithRootObject:[backgroundRainbowColorMapCustomizedPreview  map]]
 								forKey:@"colormap"]
 								forKey:@"customizedColorMap"];
 	[dict setObject:
-								[NSArchiver archivedDataWithRootObject:[backgroundRainbowColorMapRainbowPreview  map]] 
+								[NSKeyedArchiver archivedDataWithRootObject:[backgroundRainbowColorMapRainbowPreview  map]]
 								forKey:@"rainbowColorMap"];
 	[dict setObject:
-								[NSArchiver archivedDataWithRootObject:[backgroundRainbowColorMapBlackAndWhitePreview  map]] 
+								[NSKeyedArchiver archivedDataWithRootObject:[backgroundRainbowColorMapBlackAndWhitePreview  map]]
 								forKey:@"blackAndWhiteColorMap"];
 
 //store transformations if selected
@@ -498,9 +498,9 @@
 	{
 		obj=[dict objectForKey:@"colormap"];
 		if ( obj != nil)// was default and removed from prefs, add a new default
-			obj=[NSUnarchiver unarchiveObjectWithData:obj];
+			obj=[NSKeyedUnarchiver unarchiveObjectWithData:obj];
 		else
-			obj=[colormap standardMapWithView:nil];
+			obj=[ColorMap standardMapWithView:nil];
 		[obj setPreview:backgroundRainbowColorMapCustomizedPreview];
 		[backgroundRainbowColorMapCustomizedPreview setNeedsDisplay:YES];
 	}
@@ -567,7 +567,7 @@
 		case cRainbowColorMapEditCustomizedColorMap:
 			[self callTemplate:menuTagTemplateColormap 
 					withDictionary:[NSMutableDictionary dictionaryWithObject:
-											[NSArchiver archivedDataWithRootObject:
+											[NSKeyedArchiver archivedDataWithRootObject:
 												[backgroundRainbowColorMapCustomizedPreview  map]
 											] 
 											forKey:@"colormap"

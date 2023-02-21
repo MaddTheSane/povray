@@ -42,9 +42,11 @@
 #import <Cocoa/Cocoa.h>
 #import "baseTemplate.h"
 
-@interface MapBaseTemplate : BaseTemplate
+@class MapBase;
+
+@interface MapBaseTemplate : BaseTemplate <NSTableViewDataSource, NSTableViewDelegate>
 {
-		id										mMap;	//object materialEditorMap
+		__kindof MapBase			*mMap;	//object MaterialEditorMap
     IBOutlet NSTableView 	*mTableView;
     IBOutlet NSButton 		*mAddButton;
     IBOutlet NSButton 		*mInsertButton;
@@ -52,7 +54,7 @@
 }
 
 -(void) selectTableRow:(NSInteger)index;
--(void) setMap:(id)map;
+@property (nonatomic, strong) __kindof MapBase* map;
 -(void) setButtons;
 - (IBAction)addButton:(id)sender;
 - (IBAction)insertButton:(id)sender;

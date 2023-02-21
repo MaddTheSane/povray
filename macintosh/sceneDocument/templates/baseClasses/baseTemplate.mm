@@ -171,28 +171,20 @@ static const char *templateTypeNameArray[]={
 
 
 //---------------------------------------------------------------------
-// templateSheetDidEnd
-//---------------------------------------------------------------------
--(void) templateSheetDidEnd: (NSWindow*)sheet returnCode: (int)returnCode contextInfo: (void*)contextInfo
-{
-	if ( returnCode ==NSModalResponseOK)
-	{
-		NSMutableDictionary *dict=[mFileOwner removeStandardSettingsFromPreference:[mFileOwner preferences] ];
-		[self acceptsPreferences:dict forKey:[self keyName]];
-	}
-//	[sheet orderOut: nil];
-	[sheet close];
-	mFileOwner=nil;
-}
-
-//---------------------------------------------------------------------
 // runTemplateSheet
 //---------------------------------------------------------------------
 - (void) runTemplateSheet
 {
-	[[NSApplication sharedApplication] beginSheet:[mFileOwner window]
-																 modalForWindow:[self window] modalDelegate:self
-				didEndSelector:@selector(templateSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+	[self.window beginSheet:mFileOwner.window completionHandler:^(NSModalResponse returnCode) {
+		if ( returnCode ==NSModalResponseOK)
+		{
+			NSMutableDictionary *dict=[self->mFileOwner removeStandardSettingsFromPreference:[self->mFileOwner preferences] ];
+			[self acceptsPreferences:dict forKey:[self keyName]];
+		}
+	//	[sheet orderOut: nil];
+//		[sheet close];
+		self->mFileOwner=nil;
+	}];
 }
 
 
@@ -219,18 +211,12 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 // caller
 //---------------------------------------------------------------------
--(id) caller
-{
-	return mTemplateCaller;
-}
+@synthesize caller=mTemplateCaller;
 
 //---------------------------------------------------------------------
 // fileOwner
 //---------------------------------------------------------------------
--(id) fileOwner
-{
-	return mFileOwner;
-}
+@synthesize fileOwner=mFileOwner;
 
 //---------------------------------------------------------------------
 // resetButton
@@ -300,7 +286,7 @@ static const char *templateTypeNameArray[]={
 		}
 	};
 	[openPanel beginSheetModalForWindow:[self window]
-                              completionHandler:openPreferencesOpenSavePanelHandler];
+										completionHandler:openPreferencesOpenSavePanelHandler];
 }
 //---------------------------------------------------------------------
 // saveButton
@@ -311,19 +297,19 @@ static const char *templateTypeNameArray[]={
 	NSMutableDictionary *trimmedPrefs=[self removeStandardSettingsFromPreference:[self preferences] ];
 	NSSavePanel *savePanel=[NSSavePanel savePanel];
 	[savePanel setCanCreateDirectories:YES];
-	[savePanel setAllowedFileTypes:@[@"mpTpl"]];
+	[savePanel setAllowedFileTypes:@[@"mpTpl", @"mptpl"]];
 	[savePanel setTitle:@"Save template"];
 	
 	[savePanel beginSheetModalForWindow:[self window]
-                              completionHandler: ^( NSInteger resultCode )
-	{
+										completionHandler: ^( NSInteger resultCode )
+	 {
 		@autoreleasepool
 		{
 			if( resultCode ==NSModalResponseOK )
 				[trimmedPrefs writeToURL:[savePanel URL] atomically:YES ];
-			}
 		}
-  ];
+	}
+	];
 
 }
 
@@ -332,7 +318,7 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 -(IBAction) cancelButton: (id)sender
 {
-	[[NSApplication sharedApplication] endSheet: [self window] returnCode:NSCancelButton];
+	[self.window endSheet:mFileOwner.window returnCode:NSModalResponseCancel];
 }
 
 //---------------------------------------------------------------------
@@ -342,7 +328,7 @@ static const char *templateTypeNameArray[]={
 {
 	[self retrivePreferences];
 	[self writeDefaultPreferences];
-	[[NSApplication sharedApplication] endSheet: [self window] returnCode:NSOKButton];
+	[self.window endSheet:mFileOwner.window returnCode:NSModalResponseOK];
 }
 
 //---------------------------------------------------------------------
@@ -411,10 +397,7 @@ static const char *templateTypeNameArray[]={
 //---------------------------------------------------------------------
 // preferences
 //---------------------------------------------------------------------
--(NSMutableDictionary*) preferences
-{
-	return mPreferences;
-}
+@synthesize preferences=mPreferences;
 
 //---------------------------------------------------------------------
 // getWindow
@@ -495,18 +478,18 @@ static const char *templateTypeNameArray[]={
 		
 		else if ( [outlet isMemberOfClass:[MPColorWell class]])
 		{
-			anObject=	[NSArchiver archivedDataWithRootObject:outlet];
+			anObject=	[NSKeyedArchiver archivedDataWithRootObject:outlet];
 			[dict setObject:anObject forKey:key];
 		}
 		else if ( [outlet isMemberOfClass:[MPFTColorWell class]])
 		{
-			anObject=	[NSArchiver archivedDataWithRootObject:outlet];
+			anObject=	[NSKeyedArchiver archivedDataWithRootObject:outlet];
 			[dict setObject:anObject forKey:key];
 		}
 
 		else if ( [outlet isMemberOfClass:[NSColorWell class]])
 		{
-			anObject=	[NSArchiver archivedDataWithRootObject:[outlet color]];
+			anObject=	[NSKeyedArchiver archivedDataWithRootObject:[outlet color]];
 			[dict setObject:anObject forKey:key];
 		}
 
@@ -588,8 +571,14 @@ static const char *templateTypeNameArray[]={
 				//****************
 				else if ( [preferencesObject isKindOfClass:[NSData class]])
 				{
-					id dataPreferences=[NSUnarchiver unarchiveObjectWithData:preferencesObject] ;
-					id dataDefault=[NSUnarchiver unarchiveObjectWithData:defaultsObject];
+					id dataPreferences=[NSKeyedUnarchiver unarchiveObjectWithData:preferencesObject];
+					if (!dataPreferences) {
+						dataPreferences=[NSUnarchiver unarchiveObjectWithData:preferencesObject];
+					}
+					id dataDefault=[NSKeyedUnarchiver unarchiveObjectWithData:defaultsObject];
+					if (!dataDefault) {
+						dataDefault=[NSUnarchiver unarchiveObjectWithData:defaultsObject];
+					}
 					if ( [dataPreferences isMemberOfClass:[MPFTColorWell class]] || [dataPreferences isMemberOfClass:[MPColorWell class]])
 					{
 						if ( [dataPreferences equals:dataDefault])
@@ -702,7 +691,10 @@ static const char *templateTypeNameArray[]={
 				//color***************************************************************************
 				else if ( [outlet isMemberOfClass:[MPColorWell class]])
 				{
-					id unarchivedObject=[NSUnarchiver unarchiveObjectWithData:anObject];
+					id unarchivedObject=[NSKeyedUnarchiver unarchiveObjectWithData:anObject];
+					if (!unarchivedObject) {
+						unarchivedObject=[NSUnarchiver unarchiveObjectWithData:anObject];
+					}
 					if ( [unarchivedObject isKindOfClass:[NSColor class]])
 					{
 						[outlet setColor:unarchivedObject];
@@ -717,7 +709,10 @@ static const char *templateTypeNameArray[]={
 				}
 				else if ( [outlet isMemberOfClass:[MPFTColorWell class]])
 				{
-					id unarchivedObject=[NSUnarchiver unarchiveObjectWithData:anObject];
+					id unarchivedObject=[NSKeyedUnarchiver unarchiveObjectWithData:anObject];
+					if (!unarchivedObject) {
+						unarchivedObject=[NSUnarchiver unarchiveObjectWithData:anObject];
+					}
 					if ( [unarchivedObject isKindOfClass:[NSColor class]])
 					{
 						[outlet setColor:unarchivedObject];
@@ -737,7 +732,11 @@ static const char *templateTypeNameArray[]={
 
 				else if ( [outlet isMemberOfClass:[NSColorWell class]])
 				{
-					[outlet setColor:[NSUnarchiver unarchiveObjectWithData:anObject]];
+					NSColor *aColor = [NSKeyedUnarchiver unarchiveObjectWithData:anObject];
+					if (!aColor) {
+						aColor = [NSUnarchiver unarchiveObjectWithData:anObject];
+					}
+					[outlet setColor:aColor];
 					found=YES;
 				}
 				//end color***************************************************************************
@@ -1070,21 +1069,21 @@ static const char *templateTypeNameArray[]={
 	[openPanel setCanChooseFiles:YES];
 	[openPanel setAllowedFileTypes:fileTypes];
 	
-  [openPanel beginSheetModalForWindow:[self window]
+	[openPanel beginSheetModalForWindow:[self window]
 										completionHandler: ^( NSInteger resultCode )
 	 {
-			@autoreleasepool
+		@autoreleasepool
+		{
+			if( resultCode ==NSModalResponseOK )
 			{
-			 if( resultCode ==NSOKButton )
-			 {
-				 if ( keepFullPath==YES)
-					 [fileName setStringValue:[[openPanel URL]path]];
-				 else
-					 [fileName setStringValue:[[[openPanel URL]path] lastPathComponent]];
-			 }
+				if ( keepFullPath==YES)
+					[fileName setStringValue:[[openPanel URL]path]];
+				else
+					[fileName setStringValue:[[[openPanel URL]path] lastPathComponent]];
 			}
-	 }
-	 ];
+		}
+	}
+	];
 }
 
 @end
@@ -1125,26 +1124,20 @@ static const char *templateTypeNameArray[]={
 	{
 		if ( [NSBundle loadNibNamed:@"ColorPicker.nib" owner:colorPickerController] == YES)
 		{
-			[[NSApplication sharedApplication] beginSheet:[colorPickerController getWindow]
-																		 modalForWindow:[self window] modalDelegate:self
-				didEndSelector:@selector(colorPickerSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+			[self.window beginSheet:[colorPickerController getWindow] completionHandler:^(NSModalResponse returnCode) {
+				if ( returnCode ==NSModalResponseOK)
+				{
+				}
+//				[sheet orderOut: nil];
+				self->colorPickerController=nil;
+
+			}];
 		}
 		else
 		{
 			colorPickerController=nil;
 		}
 	}	
-}
-//---------------------------------------------------------------------
-// colorPickerSheetDidEnd
-//---------------------------------------------------------------------
--(void) colorPickerSheetDidEnd: (NSWindow*)sheet returnCode: (NSModalResponse)returnCode contextInfo: (void*)contextInfo
-{
-	if ( returnCode ==NSOKButton)
-	{
-	}
-	[sheet orderOut: nil];
-	colorPickerController=nil;
 }
 
 @end

@@ -176,22 +176,20 @@
 {
 	[super encodeWithCoder:encoder];
 	if ([encoder allowsKeyedCoding]) {
-		[encoder encodeObject:mMapArray forKey:EncodedMapArray];
 		[encoder encodeInteger:mSlopeOn forKey:EncodedSlopeOn];
 		[encoder encodeInteger:mPointOn forKey:EncodedPointOn];
 		[encoder encodeInteger:mRasterOn forKey:EncodedRasterOn];
 		[encoder encodeInteger:mCurveOn forKey:EncodedCurveOn];
 	} else {
 	int tmpInt;
-	[encoder encodeObject:mMapArray];
+		tmpInt = (int)mSlopeOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
-	mSlopeOn = tmpInt;
+		tmpInt = (int)mPointOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
-	mPointOn = tmpInt;
+		tmpInt = (int)mRasterOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
-	mRasterOn = tmpInt;
+		tmpInt = (int)mCurveOn;
 	[encoder encodeValueOfObjCType:@encode(int) at:&tmpInt];
-	mCurveOn = tmpInt;
 	}
 }
 
@@ -200,24 +198,22 @@
 //---------------------------------------------------------------------
 -(id)initWithCoder:(NSCoder*) decoder
 {
-	if (self = [super init]) {
+	if (self = [super initWithCoder:decoder]) {
 		if ([decoder allowsKeyedCoding] && [decoder containsValueForKey:EncodedMapArray]) {
-			[self setArray:[decoder decodeObjectForKey:EncodedMapArray]];
 			mSlopeOn = [decoder decodeIntegerForKey:EncodedSlopeOn];
 			mPointOn = [decoder decodeIntegerForKey:EncodedPointOn];
 			mRasterOn = [decoder decodeIntegerForKey:EncodedRasterOn];
 			mCurveOn = [decoder decodeIntegerForKey:EncodedCurveOn];
 		} else {
 			int tmpInt;
-			[self setArray:[decoder decodeObject]];
-			tmpInt = (int)mSlopeOn;
 			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
-			tmpInt = (int)mPointOn;
+			mSlopeOn = tmpInt;
 			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
-			tmpInt = (int)mRasterOn;
+			mPointOn = tmpInt;
 			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
-			tmpInt = (int)mCurveOn;
+			mRasterOn = tmpInt;
 			[decoder decodeValueOfObjCType:@encode(int) at:&tmpInt];
+			mCurveOn = tmpInt;
 		}
 		[self setSelectedRow:dNoRowSelected];
 	}

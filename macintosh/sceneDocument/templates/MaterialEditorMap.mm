@@ -37,19 +37,19 @@
 /// @endparblock
 ///
 //******************************************************************************
-#import "materialEditorMap.h"
+#import "MaterialEditorMap.h"
 
 // this must be the last file included
 #import "syspovdebug.h"
 
-@implementation materialEditorMap		//from MapBase
+@implementation MaterialEditorMap		//from MapBase
 
 //---------------------------------------------------------------------
 // standardMap
 //---------------------------------------------------------------------
 +(id) standardMap
 {
-	materialEditorMap *c=[[materialEditorMap alloc] init];
+	MaterialEditorMap *c=[[MaterialEditorMap alloc] init];
 	[c makeDefaultMap];
 	return c;
 }
@@ -91,7 +91,7 @@
 //---------------------------------------------------------------------
 // insertEntryAtIndex
 //---------------------------------------------------------------------
--(void) insertEntryAtIndex:(int)index
+-(void) insertEntryAtIndex:(NSInteger)index
 {
 	[mMapArray insertObject:[self makeDefaultEntry] atIndex:index];
 }
@@ -110,7 +110,6 @@
 -(void) encodeWithCoder:(NSCoder *) encoder
 {
 	[super encodeWithCoder:encoder];
-	[encoder encodeObject:mMapArray];
 }
 
 //---------------------------------------------------------------------
@@ -119,7 +118,6 @@
 -(id)initWithCoder:(NSCoder*) decoder
 {
 	self = [super initWithCoder:decoder];
-	[self setArray:[decoder decodeObject]];
 	return self;
 }
 

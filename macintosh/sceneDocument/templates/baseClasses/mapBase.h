@@ -48,11 +48,14 @@ typedef NS_ENUM(NSInteger, eSlopeButtonTags) {
 	cRasterButton	=40
 };
 
+@class BaseTemplate;
+@class mapPreview;
+
 @interface MapBase : NSObject <NSCoding> 
 {
-	NSMutableArray *mMapArray;
-	id						mPreview __unsafe_unretained;		//pointer
-	id						mTemplate;	//slopemapTemplate, colormapTempalte,...
+	NSMutableArray<NSMutableArray*> *mMapArray;
+	__weak __kindof mapPreview *mPreview;		//pointer
+	__weak __kindof BaseTemplate* mTemplate;	//slopemapTemplate, colormapTempalte,...
 	NSInteger			mSelectedRow;
 }
 -(id)initWithCoder:(NSCoder*) decoder NS_DESIGNATED_INITIALIZER;
@@ -63,10 +66,10 @@ typedef NS_ENUM(NSInteger, eSlopeButtonTags) {
 -(void) selectTableRow:(NSInteger)index;
 -(instancetype) init NS_DESIGNATED_INITIALIZER;
 -(void) setViewDirty;
-@property (nonatomic, assign) id preview;
+@property (nonatomic, weak) __kindof mapPreview *preview;
 -(void) removeEntryAtIndex:(NSInteger)index reload:(BOOL)forceReload;
 @property (readonly) NSUInteger count;
-@property (strong) NSMutableArray *array;
+@property (strong) NSMutableArray<NSMutableArray*> *array;
 @property (nonatomic) NSInteger selectedRow;
 -(NSInteger) firstSelectedRow;
 - (void)selectRow:(NSUInteger)rowIndex byExtendingSelection:(BOOL)flag;

@@ -39,33 +39,57 @@
 //******************************************************************************
 #import <Cocoa/Cocoa.h>
 #import "mapBase.h"
-#import "materialTemplate.h"
 
-enum eMaterialmapIndex {
-	cMaterialmapLayerNameIndex		=0,
-	cMaterialmapOnOffIndex				=1,
-	cMaterialmapPigmentOnIndex		=2,
-	cMaterialmapNormalOnIndex		=3,
-	cMaterialmapFinishOnIndex			=4,
-	cMaterialmapInteriorOnIndex		=5,
-	cMaterialmapPigmentDictIndex	=6,
-	cMaterialmapNormalDictIndex		=7,
-	cMaterialmapFinishDictIndex		=8,
-	cMaterialmapInteriorDictIndex		=9
+typedef NS_ENUM(NSInteger, eColormapButtonsTags) {
+	cFilterButton			= 10,
+	cTransmitButton		=20,
+	cGrayColorButton	=30
 };
+enum {
+	cColormapLocationIndex=0,
+	cColormapColorIndex=1,
+	cColormapFilterIndex=2,
+	cColormapTransmitIndex=3
+	};
 
-@interface materialEditorMap : MapBase <NSCoding> 
+@interface ColorMap : MapBase <NSCoding>
 {
+	NSControlStateValue	mUseGrayColorOn;
+	NSControlStateValue	mFilterOn;
+	NSControlStateValue	mTransmitOn;
+	
 }
-
-+(materialEditorMap*) standardMap;
++(instancetype) standardMapWithView:(id)view;
++(instancetype) rainbowMapWithView:(id)view;
++(instancetype) blackAndWhiteMapWithView:(id)view;
 
 -(void) makeDefaultMap;
--(NSMutableArray*) makeDefaultEntry;
+-(void) makeRainbowMap;
+-(void) makeBlackAndWhiteMap;
 
+-(void)replaceEntryAtIndex:(NSUInteger) index withObject:(NSColor *) color;
 -(void) addEntry;
--(void) insertEntryAtIndex:(int)index;
+-(void) insertEntryAtIndex:(NSInteger)index;
+
+
+-(void) setButtonState:(NSControlStateValue) state forButton:(eColormapButtonsTags)button;
+-(NSControlStateValue) buttonState:(eColormapButtonsTags)button;
+
+
+-(NSString *) redAtIndex:(NSUInteger) index;
+-(NSString *) greenAtIndex:(NSUInteger) index;
+-(NSString *) blueAtIndex:(NSUInteger) index;
+
+-(void) setRed:(NSString *)red atIndex:(NSUInteger) index;
+-(void) setGreen:(NSString *)green atIndex:(NSUInteger) index;
+-(void) setBlue:(NSString *)blue atIndex:(NSUInteger) index;
 
 @end
 
+@interface ColorCell : NSActionCell 
+{
+	BOOL mUseGrayScale;
+}
+@property BOOL isGrayScale;
 
+@end
