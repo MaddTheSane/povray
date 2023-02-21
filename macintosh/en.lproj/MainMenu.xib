@@ -615,7 +615,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="715" y="414" width="764" height="563"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="213" height="25"/>
             <view key="contentView" id="211">
                 <rect key="frame" x="0.0" y="0.0" width="764" height="563"/>
@@ -701,7 +701,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="318" y="703" width="470" height="376"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="213" height="25"/>
             <view key="contentView" id="268">
                 <rect key="frame" x="0.0" y="0.0" width="470" height="376"/>
@@ -754,7 +754,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="548" y="155" width="680" height="422"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="213" height="25"/>
             <view key="contentView" id="293">
                 <rect key="frame" x="0.0" y="0.0" width="680" height="422"/>
@@ -2774,7 +2774,7 @@ All images, individual and batch renderings, are saved to this folder if this op
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="1008" y="498" width="488" height="460"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="213" height="25"/>
             <view key="contentView" id="5262">
                 <rect key="frame" x="0.0" y="0.0" width="488" height="460"/>
@@ -3361,7 +3361,7 @@ DQ
             <windowStyleMask key="styleMask" titled="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="86" y="220" width="533" height="296"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="430" height="250"/>
             <view key="contentView" id="1072">
                 <rect key="frame" x="0.0" y="0.0" width="533" height="296"/>
@@ -3478,7 +3478,7 @@ DQ
                             <string key="title">1280
 
 </string>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -3490,7 +3490,7 @@ DQ
                             <string key="title">1280
 
 </string>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -3502,7 +3502,7 @@ DQ
                             <string key="title">1280
 
 </string>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -3514,7 +3514,7 @@ DQ
                             <string key="title">1280
 
 </string>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -3526,7 +3526,7 @@ DQ
                             <string key="title">1280
 
 </string>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -3550,7 +3550,7 @@ DQ
                             <string key="title">1280
 
 </string>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -3562,7 +3562,7 @@ DQ
                             <string key="title">1280
 
 </string>
-                            <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
@@ -3619,7 +3619,7 @@ DQ
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <clipView key="contentView" id="mbL-cU-bBn">
                             <rect key="frame" x="1" y="1" width="533" height="162"/>
-                            <autoresizingMask key="autoresizingMask"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" headerView="4576" id="1078">
                                     <rect key="frame" x="0.0" y="6524" width="533" height="145"/>
@@ -3656,7 +3656,7 @@ DQ
                             <rect key="frame" x="518" y="18" width="16" height="145"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <tableHeaderView key="headerView" id="4576">
+                        <tableHeaderView key="headerView" wantsLayer="YES" id="4576">
                             <rect key="frame" x="0.0" y="0.0" width="533" height="17"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
@@ -3672,7 +3672,7 @@ DQ
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="94" y="129" width="300" height="460"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="213" height="25"/>
             <view key="contentView" id="1255">
                 <rect key="frame" x="0.0" y="0.0" width="300" height="460"/>
@@ -3700,7 +3700,7 @@ DQ
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="31" y="393" width="437" height="25"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="213" height="25"/>
             <view key="contentView" id="1428">
                 <rect key="frame" x="0.0" y="0.0" width="437" height="25"/>

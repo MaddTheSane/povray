@@ -721,6 +721,7 @@ DQ
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="-989" y="-393"/>
         </customView>
         <customView id="285" userLabel="idv_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>
@@ -820,6 +821,7 @@ DQ
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="-1125" y="-554"/>
         </customView>
         <customView id="295" userLabel="abcd_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>
@@ -910,6 +912,7 @@ DQ
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="-1260" y="-715"/>
         </customView>
         <customView id="304" userLabel="alp_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>
@@ -979,6 +982,7 @@ DQ
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="-1389" y="-876"/>
         </customView>
         <customView id="311" userLabel="spl_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>
@@ -1048,6 +1052,7 @@ DQ
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="-1520" y="-1037"/>
         </customView>
         <customView id="318" userLabel="v1v2a_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>
@@ -1219,6 +1224,7 @@ DQ
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="-1656" y="-1198"/>
         </customView>
         <customView id="335" userLabel="nvslp_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>
@@ -1577,10 +1583,12 @@ DQ
                     </connections>
                 </textField>
             </subviews>
+            <point key="canvasLocation" x="-283" y="543"/>
         </customView>
         <customView id="524" userLabel="empty_view">
             <rect key="frame" x="0.0" y="0.0" width="535" height="95"/>
             <autoresizingMask key="autoresizingMask"/>
+            <point key="canvasLocation" x="-886" y="526"/>
         </customView>
     </objects>
 </document>

@@ -159,8 +159,8 @@
             <rect key="contentRect" x="0.0" y="170" width="248" height="107"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="213" height="107"/>
-            <view key="contentView" misplaced="YES" id="88">
-                <rect key="frame" x="0.0" y="0.0" width="248" height="107"/>
+            <view key="contentView" id="88">
+                <rect key="frame" x="0.0" y="0.0" width="248" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="89">

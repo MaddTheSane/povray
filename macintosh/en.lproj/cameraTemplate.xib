@@ -1041,14 +1041,14 @@ DQ
                                     <rect key="frame" x="10" y="33" width="384" height="397"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <box title="Location:" translatesAutoresizingMaskIntoConstraints="NO" id="637">
+                                        <box fixedFrame="YES" title="Location:" translatesAutoresizingMaskIntoConstraints="NO" id="637">
                                             <rect key="frame" x="7" y="213" width="368" height="172"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="Uar-KT-ABM">
                                                 <rect key="frame" x="4" y="5" width="360" height="152"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <tabView drawsBackground="NO" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="632">
+                                                    <tabView fixedFrame="YES" drawsBackground="NO" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="632">
                                                         <rect key="frame" x="7" y="4" width="349" height="148"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <font key="font" metaFont="system"/>
@@ -1058,7 +1058,7 @@ DQ
                                                                     <rect key="frame" x="0.0" y="0.0" width="349" height="148"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="658">
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="658">
                                                                             <rect key="frame" x="13" y="118" width="87" height="14"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="947">
@@ -1069,7 +1069,7 @@ DQ
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
-                                                                        <button verticalHuggingPriority="750" tag="60" translatesAutoresizingMaskIntoConstraints="NO" id="659">
+                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" tag="60" translatesAutoresizingMaskIntoConstraints="NO" id="659">
                                                                             <rect key="frame" x="30" y="98" width="60" height="19"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <buttonCell key="cell" type="smallSquare" title="Insert" bezelStyle="smallSquare" alignment="center" controlSize="mini" borderStyle="border" tag="60" inset="2" id="948">
@@ -1080,7 +1080,7 @@ DQ
                                                                                 <action selector="cameraButtons:" target="-2" id="836"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="660">
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="660">
                                                                             <rect key="frame" x="15" y="73" width="87" height="14"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="949">
@@ -1091,7 +1091,7 @@ DQ
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
-                                                                        <button verticalHuggingPriority="750" tag="70" translatesAutoresizingMaskIntoConstraints="NO" id="661">
+                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" tag="70" translatesAutoresizingMaskIntoConstraints="NO" id="661">
                                                                             <rect key="frame" x="32" y="53" width="60" height="19"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <buttonCell key="cell" type="smallSquare" title="Insert" bezelStyle="smallSquare" alignment="center" controlSize="mini" borderStyle="border" tag="70" inset="2" id="950">
@@ -1102,7 +1102,7 @@ DQ
                                                                                 <action selector="cameraButtons:" target="-2" id="837"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="662">
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="662">
                                                                             <rect key="frame" x="13" y="31" width="87" height="14"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="951">
@@ -1113,7 +1113,7 @@ DQ
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
-                                                                        <button verticalHuggingPriority="750" tag="80" translatesAutoresizingMaskIntoConstraints="NO" id="663">
+                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" tag="80" translatesAutoresizingMaskIntoConstraints="NO" id="663">
                                                                             <rect key="frame" x="30" y="11" width="60" height="19"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <buttonCell key="cell" type="smallSquare" title="Insert" bezelStyle="smallSquare" alignment="center" controlSize="mini" borderStyle="border" tag="80" inset="2" id="952">
@@ -1124,12 +1124,12 @@ DQ
                                                                                 <action selector="cameraButtons:" target="-2" id="838"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="781">
+                                                                        <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="781">
                                                                             <rect key="frame" x="106" y="103" width="243" height="34"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <clipView key="contentView" drawsBackground="NO" id="7KY-wG-erM">
                                                                                 <rect key="frame" x="1" y="1" width="241" height="32"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" allowsUndo="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="782">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="241" height="32"/>
@@ -1165,12 +1165,12 @@ DQ
                                                                                 <outlet property="nextKeyView" destination="784" id="883"/>
                                                                             </connections>
                                                                         </scrollView>
-                                                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="783">
+                                                                        <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="783">
                                                                             <rect key="frame" x="106" y="59" width="243" height="34"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <clipView key="contentView" drawsBackground="NO" id="Y49-vy-5Nr">
                                                                                 <rect key="frame" x="1" y="1" width="241" height="32"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" allowsUndo="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="784">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="241" height="32"/>
@@ -1206,12 +1206,12 @@ DQ
                                                                                 <outlet property="nextKeyView" destination="786" id="884"/>
                                                                             </connections>
                                                                         </scrollView>
-                                                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="785">
+                                                                        <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="785">
                                                                             <rect key="frame" x="106" y="12" width="243" height="34"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <clipView key="contentView" drawsBackground="NO" id="q0j-08-ucC">
                                                                                 <rect key="frame" x="1" y="1" width="241" height="32"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" allowsUndo="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="786">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="241" height="32"/>
@@ -1274,14 +1274,14 @@ DQ
                                                 </subviews>
                                             </view>
                                         </box>
-                                        <box title="Direction:" translatesAutoresizingMaskIntoConstraints="NO" id="665">
+                                        <box fixedFrame="YES" title="Direction:" translatesAutoresizingMaskIntoConstraints="NO" id="665">
                                             <rect key="frame" x="8" y="30" width="368" height="172"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <view key="contentView" id="eEV-iE-MS3">
                                                 <rect key="frame" x="4" y="5" width="360" height="152"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
-                                                    <tabView drawsBackground="NO" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="667">
+                                                    <tabView fixedFrame="YES" drawsBackground="NO" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="667">
                                                         <rect key="frame" x="7" y="6" width="349" height="148"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <font key="font" metaFont="system"/>
@@ -1291,7 +1291,7 @@ DQ
                                                                     <rect key="frame" x="0.0" y="0.0" width="349" height="148"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <subviews>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="672">
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="672">
                                                                             <rect key="frame" x="13" y="118" width="87" height="14"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="955">
@@ -1302,7 +1302,7 @@ DQ
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
-                                                                        <button verticalHuggingPriority="750" tag="20" translatesAutoresizingMaskIntoConstraints="NO" id="677">
+                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" tag="20" translatesAutoresizingMaskIntoConstraints="NO" id="677">
                                                                             <rect key="frame" x="30" y="98" width="60" height="19"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <buttonCell key="cell" type="smallSquare" title="Insert" bezelStyle="smallSquare" alignment="center" controlSize="mini" borderStyle="border" tag="20" inset="2" id="956">
@@ -1313,7 +1313,7 @@ DQ
                                                                                 <action selector="cameraButtons:" target="-2" id="833"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="671">
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="671">
                                                                             <rect key="frame" x="15" y="73" width="87" height="14"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="954">
@@ -1324,7 +1324,7 @@ DQ
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
-                                                                        <button verticalHuggingPriority="750" tag="30" translatesAutoresizingMaskIntoConstraints="NO" id="678">
+                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" tag="30" translatesAutoresizingMaskIntoConstraints="NO" id="678">
                                                                             <rect key="frame" x="32" y="53" width="60" height="19"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <buttonCell key="cell" type="smallSquare" title="Insert" bezelStyle="smallSquare" alignment="center" controlSize="mini" borderStyle="border" tag="30" inset="2" id="957">
@@ -1335,7 +1335,7 @@ DQ
                                                                                 <action selector="cameraButtons:" target="-2" id="834"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="679">
+                                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="679">
                                                                             <rect key="frame" x="13" y="31" width="87" height="14"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="958">
@@ -1346,7 +1346,7 @@ DQ
                                                                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                             </textFieldCell>
                                                                         </textField>
-                                                                        <button verticalHuggingPriority="750" tag="40" translatesAutoresizingMaskIntoConstraints="NO" id="670">
+                                                                        <button verticalHuggingPriority="750" fixedFrame="YES" tag="40" translatesAutoresizingMaskIntoConstraints="NO" id="670">
                                                                             <rect key="frame" x="30" y="11" width="60" height="19"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <buttonCell key="cell" type="smallSquare" title="Insert" bezelStyle="smallSquare" alignment="center" controlSize="mini" borderStyle="border" tag="40" inset="2" id="953">
@@ -1357,12 +1357,12 @@ DQ
                                                                                 <action selector="cameraButtons:" target="-2" id="835"/>
                                                                             </connections>
                                                                         </button>
-                                                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="762">
+                                                                        <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="762">
                                                                             <rect key="frame" x="98" y="97" width="243" height="34"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <clipView key="contentView" drawsBackground="NO" id="7TL-RF-lzK">
                                                                                 <rect key="frame" x="1" y="1" width="241" height="32"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" allowsUndo="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="763">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="241" height="32"/>
@@ -1398,12 +1398,12 @@ DQ
                                                                                 <outlet property="nextKeyView" destination="766" id="886"/>
                                                                             </connections>
                                                                         </scrollView>
-                                                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="765">
+                                                                        <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="765">
                                                                             <rect key="frame" x="98" y="50" width="243" height="34"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <clipView key="contentView" drawsBackground="NO" id="AfH-py-2Xf">
                                                                                 <rect key="frame" x="1" y="1" width="241" height="32"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" allowsUndo="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="766">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="241" height="32"/>
@@ -1439,12 +1439,12 @@ DQ
                                                                                 <outlet property="nextKeyView" destination="768" id="887"/>
                                                                             </connections>
                                                                         </scrollView>
-                                                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="767">
+                                                                        <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="767">
                                                                             <rect key="frame" x="98" y="6" width="243" height="34"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <clipView key="contentView" drawsBackground="NO" id="CiK-fQ-lQh">
                                                                                 <rect key="frame" x="1" y="1" width="241" height="32"/>
-                                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                 <subviews>
                                                                                     <textView importsGraphics="NO" verticallyResizable="YES" usesFontPanel="YES" allowsUndo="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="768">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="241" height="32"/>
@@ -1507,7 +1507,7 @@ DQ
                                                 </subviews>
                                             </view>
                                         </box>
-                                        <popUpButton verticalHuggingPriority="750" tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="683">
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" tag="14" translatesAutoresizingMaskIntoConstraints="NO" id="683">
                                             <rect key="frame" x="71" y="181" width="130" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <popUpButtonCell key="cell" type="push" title="function" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="686" id="960">
@@ -1524,7 +1524,7 @@ DQ
                                                 <action selector="cameraTarget:" target="-2" id="858"/>
                                             </connections>
                                         </popUpButton>
-                                        <popUpButton verticalHuggingPriority="750" tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="622">
+                                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="622">
                                             <rect key="frame" x="67" y="364" width="130" height="22"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <popUpButtonCell key="cell" type="push" title="function" bezelStyle="rounded" alignment="left" controlSize="small" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" inset="2" arrowPosition="arrowAtCenter" preferredEdge="maxY" selectedItem="624" id="945">

@@ -63,7 +63,7 @@
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="238" y="331" width="500" height="480"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="500" height="480"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -232,37 +232,21 @@ DQ
                                         <outlet property="nextKeyView" destination="106" id="242"/>
                                     </connections>
                                 </textField>
-                                <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="119">
+                                <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="119">
                                     <rect key="frame" x="73" y="64" width="25" height="2"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <view key="contentView" id="cln-HW-bws">
-                                        <rect key="frame" x="1" y="1" width="23" height="0.0"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </view>
                                 </box>
-                                <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="121">
+                                <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="121">
                                     <rect key="frame" x="71" y="29" width="25" height="2"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <view key="contentView" id="smV-Ah-gE4">
-                                        <rect key="frame" x="1" y="1" width="23" height="0.0"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </view>
                                 </box>
-                                <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="123">
+                                <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="123">
                                     <rect key="frame" x="71" y="58" width="2" height="8"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <view key="contentView" id="tXc-Rh-681">
-                                        <rect key="frame" x="1" y="1" width="0.0" height="6"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </view>
                                 </box>
-                                <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="125">
+                                <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="125">
                                     <rect key="frame" x="71" y="30" width="2" height="8"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <view key="contentView" id="wtd-qA-uGU">
-                                        <rect key="frame" x="1" y="1" width="0.0" height="6"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </view>
                                 </box>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="127">
                                     <rect key="frame" x="103" y="23" width="30" height="14"/>

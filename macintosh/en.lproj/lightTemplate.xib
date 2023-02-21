@@ -983,21 +983,13 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="195">
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="195">
                         <rect key="frame" x="0.0" y="359" width="600" height="2"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="2cl-yh-G3N">
-                            <rect key="frame" x="1" y="1" width="598" height="0.0"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
-                    <box fixedFrame="YES" boxType="oldStyle" borderType="line" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="197">
+                    <box horizontalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="197">
                         <rect key="frame" x="261" y="359" width="1" height="99"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <view key="contentView" id="uZO-Nq-ByX">
-                            <rect key="frame" x="1" y="1" width="0.0" height="97"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        </view>
                     </box>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="289">
                         <rect key="frame" x="143" y="330" width="263" height="20"/>

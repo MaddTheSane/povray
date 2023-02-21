@@ -51,7 +51,7 @@
             <windowStyleMask key="styleMask" titled="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="348" y="123" width="649" height="537"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <value key="minSize" type="size" width="649" height="537"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="649" height="537"/>
@@ -335,7 +335,7 @@ DQ
                             <rect key="frame" x="-30" y="17" width="15" height="302"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
-                        <tableHeaderView key="headerView" id="230">
+                        <tableHeaderView key="headerView" wantsLayer="YES" id="230">
                             <rect key="frame" x="0.0" y="0.0" width="213" height="17"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
@@ -354,7 +354,7 @@ DQ
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </box>
                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80">
-                        <rect key="frame" x="81" y="78" width="31" height="14"/>
+                        <rect key="frame" x="81" y="78" width="39" height="14"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Scale" id="202">
                             <font key="font" metaFont="smallSystem"/>
@@ -647,7 +647,7 @@ DQ
             <connections>
                 <outlet property="initialFirstResponder" destination="17" id="26"/>
             </connections>
-            <point key="canvasLocation" x="59" y="145"/>
+            <point key="canvasLocation" x="58.5" y="144.5"/>
         </window>
     </objects>
     <resources>

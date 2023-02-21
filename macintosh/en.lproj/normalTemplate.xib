@@ -234,7 +234,7 @@
             <windowStyleMask key="styleMask" titled="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="34" y="83" width="500" height="480"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="500" height="480"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -276,7 +276,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="10">
-                        <rect key="frame" x="122" y="13" width="58" height="27"/>
+                        <rect key="frame" x="122" y="13" width="57" height="27"/>
                         <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="2912">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="smallSystem"/>
@@ -286,7 +286,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="11">
-                        <rect key="frame" x="176" y="13" width="54" height="27"/>
+                        <rect key="frame" x="175" y="13" width="54" height="27"/>
                         <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="2913">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="smallSystem"/>
