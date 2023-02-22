@@ -319,7 +319,7 @@
 	[nvslpView release];
 	[vlooView release];
 	if ( mCurrentFunctions != nil)
-		delete mCurrentFunctions;
+		delete[] mCurrentFunctions;
 	[[NSNotificationCenter defaultCenter]removeObserver:self];
 	[super dealloc];
 }
@@ -468,7 +468,7 @@
 +(SFunctionListPtr) functionForIndex:(NSInteger)reference
 {
 	int x=0;
-	while (FunctionList[x].Kind != Endlist)
+	while (FunctionList[x].Kind != F_Endlist)
 	{
 		if ( FunctionList[x].RefNr==reference)
 			return &FunctionList[x];
@@ -497,10 +497,10 @@
 -(void) buildCurrentFunctions:(NSInteger) type
 {
 	if ( mCurrentFunctions != nil)
-		delete mCurrentFunctions;
+		delete[] mCurrentFunctions;
 	int x=0;
 	mItems=0;
-	while (FunctionList[x].Kind != Endlist)
+	while (FunctionList[x].Kind != F_Endlist)
 	{
 		if ( FunctionList[x].Kind==type || type==F_All)
 			mItems++;
@@ -511,7 +511,7 @@
 	
 	x=0;
 	int item=0;
-	while (FunctionList[x].Kind != Endlist)
+	while (FunctionList[x].Kind != F_Endlist)
 	{
 		if ( FunctionList[x].Kind==type || type==F_All)
 		{

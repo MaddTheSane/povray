@@ -677,7 +677,7 @@ static BOOL mSkySphereWritten;
 				[trimmedPrefs writeToURL:[savePanel URL] atomically:YES];
 		}
 	}
-	];	
+	];
 }
 
 	
@@ -689,7 +689,7 @@ static BOOL mSkySphereWritten;
 	[super retrivePreferences];	// will create new prefs and store them
 	
 	//make sure we have all changed settings in the selected layer
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"NSTableViewSelectionIsChangingNotification" object:mTableView];
+	[[NSNotificationCenter defaultCenter] postNotificationName:NSTableViewSelectionIsChangingNotification object:mTableView];
 
 	//now we can add a few things
 	NSMutableDictionary *dict=[self preferences];
@@ -1029,7 +1029,7 @@ static BOOL mSkySphereWritten;
     // declare our dragged type in the paste board
     [pboard declareTypes: [NSArray arrayWithObjects: SITDADDragType, nil] owner: self];
     
-	[[NSNotificationCenter defaultCenter] postNotificationName:@"NSTableViewSelectionIsChangingNotification" object:mTableView];
+	[[NSNotificationCenter defaultCenter] postNotificationName:NSTableViewSelectionIsChangingNotification object:mTableView];
 
     // put the data value into the paste board
     [pboard setData: [mMap archivedObjectAtIndex: mDraggedRow] forType: SITDADDragType];

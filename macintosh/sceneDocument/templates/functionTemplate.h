@@ -41,7 +41,7 @@
 #import <Cocoa/Cocoa.h>
 #import "baseTemplate.h"
 
-enum {
+typedef NS_ENUM(UInt16, SFunctionPane) {
 	Function_Empty		=1,
 	Function_A				=2,
 	Function_AB			=3,
@@ -69,8 +69,10 @@ enum {
 	Function_ID			=25,
 	Function_IDA			=26,
 	Function_IDV			=27,
-	Function_ABC			=28,
+	Function_ABC			=28
+};
 
+typedef NS_ENUM(UInt16, SFunctionKind) {
 	F_All						=0,
 	F_BuiltIn					,
 	F_BuiltInFloat			,
@@ -78,20 +80,22 @@ enum {
 	F_Math					,
 	F_String					,
 	F_Trigonometry		,
-	F_Pattern						
+	F_Pattern						,
+	F_Endlist = 16
 };
 
-const UInt16 All 				=1;
-const UInt16 Iso				=2;
-const UInt16 Parametric	=4;
-const UInt16 Endlist		=16;
+typedef NS_OPTIONS(UInt16, SFunctionWhere) {
+	SFunctionAll = 1,
+	SFunctionIso = 2,
+	SFunctionParametric = 4,
+};
 
 
 typedef struct {
 	unsigned short RefNr;
-	unsigned short	Kind;
-	unsigned short Pane;
-	unsigned short Where;
+	SFunctionKind  Kind;
+	SFunctionPane  Pane;
+	SFunctionWhere Where;
 	NSString *	Syntax;
 	NSString *	Result;
 	const char 		*Description;
@@ -137,7 +141,7 @@ extern SFunctionList FunctionList[];
  
 @interface FunctionTemplate : BaseTemplate
 {
-	IBOutlet	NSTabView		*mainTabView;
+	IBOutlet NSTabView		*mainTabView;
 	IBOutlet NSView				*emptyView;
 	IBOutlet NSView				*xyzpView;
 	IBOutlet NSView				*abView;

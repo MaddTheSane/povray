@@ -142,10 +142,10 @@ namespace vfePlatform
 		UCS2String vfeMacSession::CreateTemporaryFile(void) const
 		{
 			NSString *tempFileName=NSTemporaryDirectory();
-			tempFileName=[tempFileName stringByAppendingString:@"/povtempfile"];
+			tempFileName=[tempFileName stringByAppendingPathComponent:@"povtempfile"];
 
 
-			return ASCIItoUCS2String ([tempFileName UTF8String]);
+			return ASCIItoUCS2String ([tempFileName fileSystemRepresentation]);
 		}
 
 		/////////////////////////////////////////////////////////////////////////

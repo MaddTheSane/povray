@@ -44,7 +44,7 @@
 
 SFunctionList FunctionList[]=	
 {
-	{1,	F_BuiltIn,	Function_XYZP0_P4,	Iso|All,
+	{1,	F_BuiltIn,	Function_XYZP0_P4,	SFunctionIso|SFunctionAll,
 		@"f_algbr_cyl1(x,y,z,P0,P1,P2,P3,P4)",	@"",	"A 2d curve is extruded along a third axis. With the SOR option on, it is rotated about the Y-axis.\n\nx, y, z: transformation parameters\nP0: Field strength\nP1: Field limit\nP2: SOR switch\nP3: SOR offset\nP4: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1", @"1.5", @"1", @"0", @"0", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -54,7 +54,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{2,	F_BuiltIn,	Function_XYZP0_P4,	Iso|All,
+	{2,	F_BuiltIn,	Function_XYZP0_P4,	SFunctionIso|SFunctionAll,
 		@"f_algbr_cyl2(x,y,z,P0,P1,P2,P3,P4)",	@"",	"A 2d curve is extruded along a third axis. With the SOR option on, it is rotated about the Y-axis.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Field limit\nP2: SOR switch\nP3: SOR offset\nP4: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.3", @"5", @"1", @"0", @"0", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -64,7 +64,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{3,	F_BuiltIn,	Function_XYZP0_P4,	Iso|All,
+	{3,	F_BuiltIn,	Function_XYZP0_P4,	SFunctionIso|SFunctionAll,
 		@"f_algbr_cyl3(x,y,z,P0,P1,P2,P3,P4)",	@"",	"A 2d curve is extruded along a third axis. With the SOR option on, it is rotated about the Y-axis.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Field limit\nP2: SOR switch\nP3: SOR offset\nP4: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-1", @"3", @"1", @"0", @"0", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -74,7 +74,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{4,	F_BuiltIn,	Function_XYZP0_P4,	Iso|All,
+	{4,	F_BuiltIn,	Function_XYZP0_P4,	SFunctionIso|SFunctionAll,
 		@"f_algbr_cyl4(x,y,z,P0,P1,P2,P3,P4)",	@"",	"A 2d curve is extruded along a third axis. With the SOR option on, it is rotated about the Y-axis.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Field limit\nP2: SOR switch\nP3: SOR offset\nP4: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.4", @"5", @"1", @"0", @"0", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -84,7 +84,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{5,	F_BuiltIn,	Function_XYZP0_P1,	Iso|All,
+	{5,	F_BuiltIn,	Function_XYZP0_P1,	SFunctionIso|SFunctionAll,
 		@"f_bicorn(x,y,z,P0,P1)",	@"",	"A surface of revolution\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Scale",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.01", @"3", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -94,7 +94,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{6,	F_BuiltIn,	Function_XYZP0_P1,	Iso|All,
+	{6,	F_BuiltIn,	Function_XYZP0_P1,	SFunctionIso|SFunctionAll,
 		@"f_bifolia(x,y,z,P0,P1)",	@"",	"Something like the top part of a paraboloid bounded below by another paraboloid\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Scale",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-1", @"3", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -104,7 +104,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{7,	F_BuiltIn,	Function_XYZP0_P4,	Iso|All,
+	{7,	F_BuiltIn,	Function_XYZP0_P4,	SFunctionIso|SFunctionAll,
 		@"f_blob(x,y,z,P0,P1,P2,P3,P4)",	@"",	"Blobs that are similar to a CSG blob with two spherical components. Needs negative threshold settings.\n\nx, y, z: transformation parameters\nP0: X distance between the two components\nP1: Bolb strength of component 1\nP2: Inverse blob radius of component 1\nP3: Blob strength of component 2\nP4: Inverse blob radius of component 2",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1.4", @"1", @"0.8", @"1.2", @"1", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -114,7 +114,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{8,	F_BuiltIn,	Function_XYZP0_P3,	Iso|All,
+	{8,	F_BuiltIn,	Function_XYZP0_P3,	SFunctionIso|SFunctionAll,
 		@"f_blob2(x,y,z,P0,P1,P2,P3)",	@"",	"Similar to a CSG blob with two components.\n\nx, y, z: transformation parameters\nP0: Separation along the X-axis from the first component at the origin\nP1: Inverse size\nP2: Blob strength\nP3: Threshold",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1", @"5", @"2", @"1", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -124,7 +124,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{9,	F_BuiltIn,	Function_XYZP0_P1,	Iso|All,
+	{9,	F_BuiltIn,	Function_XYZP0_P1,	SFunctionIso|SFunctionAll,
 		@"f_boy_surface(x,y,z,P0,P1)",	@"",	"Boy's surface.\n\nx, y, z: transformation parameters\nP0: Field strength (negative; use low values)\nP1: Scale",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.001", @"0.01", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -134,7 +134,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{10,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{10,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_comma(x,y,z,P0)",	@"",	"Comma shape.\n\nx, y, z: transformation parameters\nP0: Scale",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -144,7 +144,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{11,	F_BuiltIn,	Function_XYZP0_P3,	Iso|All,
+	{11,	F_BuiltIn,	Function_XYZP0_P3,	SFunctionIso|SFunctionAll,
 		@"f_cross_ellipsoids(x,y,z,P0,P1,P2,P3)",	@"",	"Union of three crossed ellipsoids along each axis.\n\nx, y, z: transformation parameters\nP0: Eccentricity value\nP1: Inverse size\nP2: Diameter\nP3: Threshold",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.05", @"8", @"8", @"1", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -154,7 +154,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{12,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{12,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_crossed_trough(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.05", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -164,7 +164,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{13,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{13,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_cubic_saddle(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative; low values)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.5", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -174,7 +174,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{14,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{14,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_cushion(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.25", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -184,7 +184,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{15,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{15,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_devils_curve(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.2", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -194,7 +194,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{16,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{16,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_devils_curve_2d(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: X-factor\nP2: Y-factor\nP3: SOR switch\nP4: SOR offset\nP5: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-1", @"0.25", @"0.3", @"1", @"0", @"0", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -204,7 +204,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{17,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{17,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_dupin_cyclid(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Major radius of torus\nP2: Minor radius of torus\nP3: X displacement of torus\nP4: Y displacement of torus\nP5: Radius of inversion",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.05", @"0.27", @"0.04", @"0.55", @"0", @"1", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -214,7 +214,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{18,	F_BuiltIn,	Function_XYZP0_P2,	Iso|All,
+	{18,	F_BuiltIn,	Function_XYZP0_P2,	SFunctionIso|SFunctionAll,
 		@"f_ellipsoid(x,y,z,P0,P1,P2)",	@"",	"Sphere or elliposoid. Needs \"threshold 1\".\n\nx, y, z: transformation parameters\nP0: X scale (inverse)\nP1: Y scale (inverse)\nP2: Z scale (inverse)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1.053", @"3.3", @"1.053", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -224,7 +224,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{19,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{19,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_enneper(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -234,7 +234,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{20,	F_BuiltIn,	Function_XYZP0_P3,	Iso|All,
+	{20,	F_BuiltIn,	Function_XYZP0_P3,	SFunctionIso|SFunctionAll,
 		@"f_flange_cover(x,y,z,P0,P1,P2,P3)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Spikiness (1 is sphere, lower gives spikes)\nP1: Inverse size\nP2: Flange\nP3: Threshold",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.01", @"35", @"1.5", @"1.2", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -244,7 +244,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{21,	F_BuiltIn,	Function_XYZP0_P2,	Iso|All,
+	{21,	F_BuiltIn,	Function_XYZP0_P2,	SFunctionIso|SFunctionAll,
 		@"f_folium_surface(x,y,z,P0,P1,P2)",	@"",	"A paraboloid glued to a plane\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Inverse Neck width factor\nP2: Divergence (widens paraboloid)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.02", @"15", @"15", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -254,7 +254,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{22,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{22,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_folium_surface_2d(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"Extrude or rotate the folium curve.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Neck width factor\nP2: Divergence (widens paraboloid)\nP3: SOR switch\nP4: SOR offset\nP5: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.01", @"12", @"20", @"1", @"0", @"0", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -264,7 +264,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{23,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{23,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_glob(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -274,7 +274,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{24,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{24,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_heart(x,y,z,P0)",	@"",	"Heart shape.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.001", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -284,7 +284,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{25,	F_BuiltIn,	Function_XYZP0_P9,	Iso|All,
+	{25,	F_BuiltIn,	Function_XYZP0_P9,	SFunctionIso|SFunctionAll,
 		@"f_helical_torus(x,y,z,P0,P1,P2,P3,P4,P5,P6,P7,P8,P9)",	@"",	"Some parameter sets produce a torus with a helical winding around it.\n\nx, y, z: transformation parameters\nP0: Major radius\nP1: Nr of winding loops\nP2: Twistiness of winding\nP3: Fatness of winding?\nP4: Threshold\nP5: Inverse minor radius\nP6: Another fatness of winding control?\nP7: Groove period\nP8: Groove amplitude\nP9: Groove phase",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"2", @"7", @"1", @"0.1", @"1", @"0.5", @"1", @"6", @"2", @"0",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -294,7 +294,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{26,	F_BuiltIn,	Function_XYZP0_P6,	Iso|All,
+	{26,	F_BuiltIn,	Function_XYZP0_P6,	SFunctionIso|SFunctionAll,
 		@"f_helix1(x,y,z,P0,P1,P2,P3,P4,P5,P6)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Nr of helixes\nP1: Period (controls nr of turns per unit length)\nP2: Minor radius\nP3: Major radius\nP4: Shape parameter\nP5: Cross section type\nP6: Cross section rotation angle (degrees)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1", @"8", @"0.3", @"0.9", @"0.6", @"0.2", @"0", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -304,7 +304,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{27,	F_BuiltIn,	Function_XYZP0_P6,	Iso|All,
+	{27,	F_BuiltIn,	Function_XYZP0_P6,	SFunctionIso|SFunctionAll,
 		@"f_helix2(x,y,z,P0,P1,P2,P3,P4,P5,P6)",	@"",	"Needs a negated function!\n\nx, y, z: transformation parameters\nP0: not used\nP1: Period (controls the nr of turns per unit length)\nP2: Minor radius\nP3: Major radius\nP4: Not used\nP5: Cross section type\nP6: Cross section rotation angle (degrees)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0", @"8", @"0.35", @"0.4", @"0", @"0.5", @"0", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -314,7 +314,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{28,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{28,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_hex_x(x,y,z,P0)",	@"",	"Grid of hexagonal cylinders along the Z-axis. Threshold value controls diameter of cylinders.\nNegating the function creates a honey-comb structure.\n\nx, y, z: transformation parameters\nP0: No effect (syntax requires this parameter)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -324,7 +324,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{29,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{29,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_hex_y(x,y,z,P0)",	@"",	"Hexagonal lattice of infinite boxes along the Z-axis.\n\nx, y, z: transformation parameters\nP0: No effect (syntax requires this parameter)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -334,7 +334,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{30,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{30,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_hetero_mf(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"Multifractal height fields and patterns of \"1/f\" noise.\n\nx, y, z: transformation parameters\nP0: Negative of the exponent of the basis noise frequencies\nP1: Multiplyer used to get from one octave to the next\nP2: Number of different frequencies added to the fractal\nP3: Offset or base altitude\nP4: Scales the heterogeneity of the fractal\nP5: Type of noise-generator",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1.1", @"2.05", @"15", @"0.26", @"0.01", @"1", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -344,7 +344,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{31,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{31,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_hunt_surface(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.01", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -354,7 +354,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{32,	F_BuiltIn,	Function_XYZP0_P2,	Iso|All,
+	{32,	F_BuiltIn,	Function_XYZP0_P2,	SFunctionIso|SFunctionAll,
 		@"f_hyperbolic_torus(x,y,z,P0,P1,P2)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Major radius\nP2: Minor radius",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.005", @"1", @"0.6", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -364,7 +364,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{33,	F_BuiltIn,	Function_XYZP0_P3,	Iso|All,
+	{33,	F_BuiltIn,	Function_XYZP0_P3,	SFunctionIso|SFunctionAll,
 		@"f_isect_ellipsoids(x,y,z,P0,P1,P2,P3)",	@"",	"Intersection of three crossed ellipsoids, each oriented along an axis.\n\nx, y, z: transformation parameters\nP0: Eccentricity\nP1: Inverse size\nP2: Diameter\nP3: Threshold",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"5", @"1", @"18", @"1", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -374,7 +374,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{34,	F_BuiltIn,	Function_XYZP0_P2,	Iso|All,
+	{34,	F_BuiltIn,	Function_XYZP0_P2,	SFunctionIso|SFunctionAll,
 		@"f_kampyle_of_eudoxus(x,y,z,P0,P1,P2)",	@"",	"Like two infinite palnes with a dimple at the centre.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Dimple factor\nP2: Closeness (distance between planes)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.001", @"0.01", @"2", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -384,7 +384,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{35,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{35,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_kampyle_of_eudoxus_2d(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"Rotates or extrudes the kampyle of eudoxus curve.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Dimple factor\nP2: Closenes (distance between planes)\nP3: SOR switch\nP4: SOR offset\nP5: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.001", @"0", @"2", @"1", @"0", @"90", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -394,7 +394,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{36,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{36,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_klein_bottle(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.0005", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -404,7 +404,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{37,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{37,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_kummer_surface_v1(x,y,z,P0)",	@"",	"A collection of radiating rods.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.01", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -414,7 +414,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{38,	F_BuiltIn,	Function_XYZP0_P3,	Iso|All,
+	{38,	F_BuiltIn,	Function_XYZP0_P3,	SFunctionIso|SFunctionAll,
 		@"f_kummer_surface_v2(x,y,z,P0,P1,P2,P3)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Rod width (when negative)\nP2: Divergence (when negative)\nP3: Controls length of half of the rods. Sign inversion controls the other half.",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.0005", @"-0.3", @"-0.97", @"0", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -424,7 +424,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{39,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{39,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_lemniscate_of_gerono(x,y,z,P0)",	@"",	"Hourglass shape.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -434,7 +434,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{40,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{40,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_lemniscate_of_gerono_2d(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"Rotates or extrudes the lemniscate curve.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Size control\nP2: Width\nP3: SOR switch\nP4: SOR offset\nP5: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.1", @"1", @"1", @"1", @"2", @"-45", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -444,7 +444,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{41,	F_BuiltIn,	Function_XYZP0_P4,	Iso|All,
+	{41,	F_BuiltIn,	Function_XYZP0_P4,	SFunctionIso|SFunctionAll,
 		@"f_mesh1(x,y,z,P0,P1,P2,P3,P4)",	@"",	"Threshold should not be zero. Thickness of threads is controlled by the threshold value.\n\nx, y, z: transformation parameters\nP0: Interval of threads\nP1: Distance between neighbouring threads\nP2: Relative thickness in X and Z directions\nP3: Amplitude of weaving effect\nP4: Relative thickness in Y direction",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.125", @"0.125", @"0.1", @"0.01", @"0.1", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -454,7 +454,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{42,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{42,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_mitre(x,y,z,P0)",	@"",	"Like an ellipsoid nipped in half.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.5", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -464,7 +464,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{43,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{43,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_nodal_cubic(x,y,z,P0)",	@"",	"Extruding a stophid curve.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.005", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -474,7 +474,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{44,	F_BuiltIn,	Function_XYZ,	Iso|All,
+	{44,	F_BuiltIn,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_noise3d(x,y,z)",	@"",	"\n\nx, y, z: transformation parameters",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -484,7 +484,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{45,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{45,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_noise_generator(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Noise generator number",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"2", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -494,7 +494,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{46,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{46,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_odd(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -504,7 +504,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{47,	F_BuiltIn,	Function_XYZP0_P3,	Iso|All,
+	{47,	F_BuiltIn,	Function_XYZP0_P3,	SFunctionIso|SFunctionAll,
 		@"f_ovals_of_cassini(x,y,z,P0,P1,P2,P3)",	@"",	"Generalization of the torus shape.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Major radius\nP2: Controls the filling of the torus centre\nP3: Thickness",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.1", @"0.4", @"0.18", @"6", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -514,7 +514,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{48,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{48,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_paraboloid(x,y,z,P0)",	@"",	"Rotation of a parabola around the Y-axis.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -524,7 +524,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{49,	F_BuiltIn,	Function_XYZP0_P2,	Iso|All,
+	{49,	F_BuiltIn,	Function_XYZP0_P2,	SFunctionIso|SFunctionAll,
 		@"f_parabolic_torus(x,y,z,P0,P1,P2)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Major radius\nP2: Minor radius",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.1", @"0.4", @"0.5", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -534,7 +534,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{50,	F_BuiltIn,	Function_XYZ,	Iso|All,
+	{50,	F_BuiltIn,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_ph(x,y,z)",	@"",	"Surface of all points at a particular lattitude, i;e; a cone. The angle is controlled by the threshold value.\n\nx, y, z: transformation parameters",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -544,7 +544,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{51,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{51,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_pillow(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -554,7 +554,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{52,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{52,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_piriform(x,y,z,P0)",	@"",	"Like half a lemniscate.\n\nx, y, z: transformation parameters\nP0: Field strength",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.7", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -564,7 +564,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{53,	F_BuiltIn,	Function_XYZP0_P6,	Iso|All,
+	{53,	F_BuiltIn,	Function_XYZP0_P6,	SFunctionIso|SFunctionAll,
 		@"f_piriform_2d(x,y,z,P0,P1,P2,P3,P4,P5,P6)",	@"",	"Extrudes or revolves the piriform curve along an axis.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Size factor 1\nP2: Size factor 2\nP3: Fatness\nP4: SOR switch\nP5: SOR offset\nP6: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-1", @"1", @"-1", @"0.9", @"1", @"0", @"-90", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -574,7 +574,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{54,	F_BuiltIn,	Function_XYZP0_P4,	Iso|All,
+	{54,	F_BuiltIn,	Function_XYZP0_P4,	SFunctionIso|SFunctionAll,
 		@"f_poly4(x,y,z,P0,P1,P2,P3,P4)",	@"",	"Rotation of any polynomial up to degree 4.\n\nx, y, z: transformation parameters\nP0: Constant\nP1: Y coefficient\nP2: pow(Y,2) coefficient\nP3: pow(Y,3) coefficient\nP4: pow(Y,4) coefficient",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0", @"1", @"-1", @"0", @"0", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -584,7 +584,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{55,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{55,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_polytubes(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"Collection of tubes following a polynomial up to degree 4.\n\nx, y, z: transformation parameters\nP0: Nr of tubes\nP1: Constant\nP2: Y coefficient\nP3: pow(Y,2) coefficient\nP4: pow(Y,3) coefficient\nP5: pow(Y,4) coefficient",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"8", @"-1", @"-0.01", @"-0.02", @"0.1", @"-0.25", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -594,7 +594,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{56,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{56,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_quantum(x,y,z,P0)",	@"",	"Like the shape of the electron density cloud for one of the d orbitals.\n\nx, y, z: transformation parameters\nP0: Not used but required",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -604,7 +604,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{57,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{57,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_quartic_paraboloid(x,y,z,P0)",	@"",	"Square-shaped paraboloid.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.01", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -614,7 +614,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{58,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{58,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_quartic_saddle(x,y,z,P0)",	@"",	"Square-shaped saddle.\n\nx, y, z: transformation parameters\nP0: Field strength",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.05", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -624,7 +624,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{59,	F_BuiltIn,	Function_XYZP0_P2,	Iso|All,
+	{59,	F_BuiltIn,	Function_XYZP0_P2,	SFunctionIso|SFunctionAll,
 		@"f_quartic_cylinder(x,y,z,P0,P1,P2)",	@"",	"A cylinder with an egg-shaped centre.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Diameter of the \"egg\"\nP2: Width control of the cylinder and heighth of \"egg\"",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-1", @"0.8", @"0.2", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -634,7 +634,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{60,	F_BuiltIn,	Function_XYZ,	Iso|All,
+	{60,	F_BuiltIn,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_r(x,y,z)",	@"",	"Sphere. Threshold controls the radius.\n\nx, y, z: transformation parameters",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -644,7 +644,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{61,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{61,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_ridge(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"Mainly intended for modifying other surfaces.\n\nx, y, z: transformation parameters\nP0: Lambda\nP1: Octaves\nP2: Omega\nP3: Offset\nP4: Ridge\nP5: Type of noise generator",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1", @"3", @"1", @"0.2", @"0", @"0", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -654,7 +654,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{62,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{62,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_ridged_mf(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"Multifractal height fields and patterns.\n\nx, y, z: transformation parameters\nP0: Negative exponent of the basis noise fraquencies\nP1: Multiplyer to get from one octave to the next\nP2: Nr of different frequencies added to the fractal\nP3: Offset controlling the fractal dimension changes from altitude to altitude\nP4: Gain. Weights successive contributions to the accumulated fractal result\nP5: Type of noise generator",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"2", @"3", @"1", @"0.1", @"1", @"0", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -664,7 +664,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{63,	F_BuiltIn,	Function_XYZP0_P3,	Iso|All,
+	{63,	F_BuiltIn,	Function_XYZP0_P3,	SFunctionIso|SFunctionAll,
 		@"f_rounded_box(x,y,z,P0,P1,P2,P3)",	@"",	"Defined in a cube from -1 to +1. Scale parameters adjust the size without affecting the radius of curvature.\n\nx, y, z: transformation parameters\nP0: Radius of curvature\nP1: Scale X\nP2: Scale Y\nP3: Scale Z",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.3", @"1", @"1", @"1", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -674,7 +674,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{64,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{64,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_sphere(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Radius of the sphere",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -684,7 +684,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{65,	F_BuiltIn,	Function_XYZP0_P4,	Iso|All,
+	{65,	F_BuiltIn,	Function_XYZP0_P4,	SFunctionIso|SFunctionAll,
 		@"f_spikes(x,y,z,P0,P1,P2,P3,P4)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Spikiness\nP1: Hollowness\nP2: Size\nP3: Roundness\nP4: Fatness",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.04", @"5.6", @"-4", @"0.1", @"1", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -694,7 +694,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{66,	F_BuiltIn,	Function_XYZP0_P3,	Iso|All,
+	{66,	F_BuiltIn,	Function_XYZP0_P3,	SFunctionIso|SFunctionAll,
 		@"f_spikes_2d(x,y,z,P0,P1,P2,P3)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Heighth of central spike\nP1: Frequency of spikes in X direction\nP2: Frequency of spikes in Z direction\nP3: Demping factor for spikes farther from the centre",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.7", @"15", @"15", @"2.2", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -704,7 +704,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{67,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{67,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_spiral(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Distance between windings\nP1: Thickness\nP2: Outer diameter of spiral\nP3: Not used\nP4: Not used\nP5: Cross section type",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.2", @"0.04", @"1", @"0", @"0", @"1", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -714,7 +714,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{68,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{68,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_steiners_roman(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-1", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -724,7 +724,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{69,	F_BuiltIn,	Function_XYZP0_P3,	Iso|All,
+	{69,	F_BuiltIn,	Function_XYZP0_P3,	SFunctionIso|SFunctionAll,
 		@"f_strophoid(x,y,z,P0,P1,P2,P3)",	@"",	"Infinite plane with a bulb\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Size of bulb\nP2: Sharpness\nP3: Flatness of top end of bulb",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.2", @"2", @"0.5", @"0.9", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -734,7 +734,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{70,	F_BuiltIn,	Function_XYZP0_P6,	Iso|All,
+	{70,	F_BuiltIn,	Function_XYZP0_P6,	SFunctionIso|SFunctionAll,
 		@"f_strophoid_2d(x,y,z,P0,P1,P2,P3,P4,P5,P6)",	@"",	"Extrudes or rotates the strophoid curve along an axis.\n\nx, y, z: transformation parameters\nP0: Field strength\nP1: Size of bulb\nP2: Sharpness\nP3: Fatness\nP4: SOR switch\nP5: SOR offset\nP6: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.02", @"-8", @"0.8", @"0.3", @"1", @"0", @"0", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -744,7 +744,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{71,	F_BuiltIn,	Function_XYZP0_P1,	Iso|All,
+	{71,	F_BuiltIn,	Function_XYZP0_P1,	SFunctionIso|SFunctionAll,
 		@"f_superellipsoid(x,y,z,P0,P1)",	@"",	"Needs a negated function.\n\nx, y, z: transformation parameters\nP0: East-west exponent\nP1: North-south exponent",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.3", @"0.5", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -754,7 +754,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{72,	F_BuiltIn,	Function_XYZ,	Iso|All,
+	{72,	F_BuiltIn,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_th(x,y,z)",	@"",	"Produces a value equal to the \"theta\" angle, in radians, at any point. It is like the longitude coordinate on the Earth.\n\nx, y, z: transformation parameters",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -764,7 +764,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{73,	F_BuiltIn,	Function_XYZP0_P1,	Iso|All,
+	{73,	F_BuiltIn,	Function_XYZP0_P1,	SFunctionIso|SFunctionAll,
 		@"f_torus(x,y,z,P0,P1)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Major radius\nP1: Minor radius",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"0.8", @"0.2", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -774,7 +774,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{74,	F_BuiltIn,	Function_XYZP0_P2,	Iso|All,
+	{74,	F_BuiltIn,	Function_XYZP0_P2,	SFunctionIso|SFunctionAll,
 		@"f_torus2(x,y,z,P0,P1,P2)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Major radius\nP2: Minor radius",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-1", @"0.4", @"0.07", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -784,7 +784,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{75,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{75,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_torus_gumdrop(x,y,z,P0)",	@"",	"A torus with a couple of gumdrops hanging off the end.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.01", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -794,7 +794,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{76,	F_BuiltIn,	Function_XYZP0,	Iso|All,
+	{76,	F_BuiltIn,	Function_XYZP0,	SFunctionIso|SFunctionAll,
 		@"f_umbrella(x,y,z,P0)",	@"",	"\n\nx, y, z: transformation parameters\nP0: Field strength (negative)",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.2", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -804,7 +804,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{77,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{77,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_witch_of_agnesi(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"Looks like a witches hat.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Controls width of the spike",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.09", @"0.02", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -814,7 +814,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{78,	F_BuiltIn,	Function_XYZP0_P5,	Iso|All,
+	{78,	F_BuiltIn,	Function_XYZP0_P5,	SFunctionIso|SFunctionAll,
 		@"f_witch_of_agnesi_2d(x,y,z,P0,P1,P2,P3,P4,P5)",	@"",	"Rotates or extrudes the witch of agnesi curve along an axis.\n\nx, y, z: transformation parameters\nP0: Field strength (negative)\nP1: Size of spike\nP2: Heighth of spike\nP3: SOR switch\nP4: SOR offset\nP5: SOR angle",
 		/*x,y,z,p0-p9*/ @"x", @"y", @"z", @"-0.2", @"0.2", @"0.08", @"0", @"0", @"0", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -824,7 +824,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{79,	F_BuiltInFloat,	Function_Empty,	All,
+	{79,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"clock",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -834,7 +834,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{80,	F_BuiltInFloat,	Function_Empty,	All,
+	{80,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"clock_delta",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -844,7 +844,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{81,	F_BuiltInFloat,	Function_Empty,	All,
+	{81,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"clock_on",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -854,7 +854,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{82,	F_BuiltInFloat,	Function_Empty,	All,
+	{82,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"final_clock",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -864,7 +864,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{83,	F_BuiltInFloat,	Function_Empty,	All,
+	{83,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"final_frame",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -874,7 +874,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{84,	F_BuiltInFloat,	Function_Empty,	All,
+	{84,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"frame_number",	@"integer",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -884,7 +884,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{85,	F_BuiltInFloat,	Function_Empty,	All,
+	{85,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"initial_clock",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -894,7 +894,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{86,	F_BuiltInFloat,	Function_Empty,	All,
+	{86,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"initial_frame",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -904,7 +904,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{87,	F_BuiltInFloat,	Function_Empty,	All,
+	{87,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"image_width",	@"integer",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -914,7 +914,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{88,	F_BuiltInFloat,	Function_Empty,	All,
+	{88,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"image_height",	@"integer",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -924,7 +924,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{89,	F_BuiltInFloat,	Function_Empty,	All,
+	{89,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"on",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -934,7 +934,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{90,	F_BuiltInFloat,	Function_Empty,	All,
+	{90,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"off",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -944,7 +944,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{91,	F_BuiltInFloat,	Function_Empty,	All,
+	{91,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"yes",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -954,7 +954,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{92,	F_BuiltInFloat,	Function_Empty,	All,
+	{92,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"no",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -964,7 +964,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{93,	F_BuiltInFloat,	Function_Empty,	All,
+	{93,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"true",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -974,7 +974,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{94,	F_BuiltInFloat,	Function_Empty,	All,
+	{94,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"false",	@"integer",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -984,7 +984,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{95,	F_BuiltInFloat,	Function_Empty,	Iso|All,
+	{95,	F_BuiltInFloat,	Function_Empty,	SFunctionIso|SFunctionAll,
 		@"pi",	@"",	"Returns the value of pi\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -994,7 +994,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{96,	F_BuiltInFloat,	Function_Empty,	Iso|All,
+	{96,	F_BuiltInFloat,	Function_Empty,	SFunctionIso|SFunctionAll,
 		@"e",	@"float",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1004,7 +1004,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{97,	F_BuiltInFloat,	Function_Empty,	All,
+	{97,	F_BuiltInFloat,	Function_Empty,	SFunctionAll,
 		@"E",	@"float",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1014,7 +1014,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{138,	F_Evaluate,	Function_ID,	All,
+	{138,	F_Evaluate,	Function_ID,	SFunctionAll,
 		@"dimensions(ID)",	@"integer",	"Number of dimensions of a specified array.\n\nReturns the number of dimensions of a previously declared array identifier.\nExample: for #declare Array= array[6][10], dimensions(Array) returns the value 2.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1024,7 +1024,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{139,	F_Evaluate,	Function_IDA,	All,
+	{139,	F_Evaluate,	Function_IDA,	SFunctionAll,
 		@"dimension_size(ID, A)",	@"integer",	"Size of the array's specified dimension.\n\nReturns the size of a given dimension of a previously declared array identifier. Dimensions are numbered left-to-right starting with 1.\nExample: dimension_size(Array,2) returns the value 10 from #declare Array=array[6][10]",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1034,7 +1034,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{140,	F_Evaluate,	Function_ID,	All,
+	{140,	F_Evaluate,	Function_ID,	SFunctionAll,
 		@"file_exists(ID)",	@"true/false",	"Attempts to open the file specified by the string \"S\".\n\nThe current directory and all library directories specified by the Library_Path or +L options are also searched.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1044,7 +1044,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{141,	F_Evaluate,	Function_IDV,	All,
+	{141,	F_Evaluate,	Function_IDV,	SFunctionAll,
 		@"inside(ID, V)",	@"true/false",	"Check if point \"V\" is inside a declared object \"O\".\n\nReturns 0,0 when the vector \"V\" is outside the object, specified by the object-identifier \"O\", or 1,0 if it is inside.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1054,7 +1054,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{142,	F_Evaluate,	Function_ABC,	Iso|All,
+	{142,	F_Evaluate,	Function_ABC,	SFunctionIso|SFunctionAll,
 		@"select(A,B,C)",	@"float",	"Compares \"A\" with zero\n\nCompares \"A\" with zero. Depending on the outcome it will return \"B\" or \"C\".\nIf \"A\"<0 it will return \"B\", else \"C\" (A>=0)",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1064,7 +1064,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{144,	F_Evaluate,	Function_ID,	All,
+	{144,	F_Evaluate,	Function_ID,	SFunctionAll,
 		@"min_extent(ID)",	@"vector",	"Minimum x,y,z values for an object declared by the string \"S\".\n\nReturns the coordinates of one corner of the object's bounding box",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1074,7 +1074,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{145,	F_Evaluate,	Function_ID,	All,
+	{145,	F_Evaluate,	Function_ID,	SFunctionAll,
 		@"max_extent(ID)",	@"vector",	"Maximum x,y,z values for an object declared by the string \"S\".\n\nReturns the coordinates of one corner of the object's bounding box",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1084,7 +1084,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{146,	F_Evaluate,	Function_ABCD,	Iso|All,
+	{146,	F_Evaluate,	Function_ABCD,	SFunctionIso|SFunctionAll,
 		@"select(A,B,C,D)",	@"float",	"Compares \"A\" with zero\n\nCompares \"A\" with zero. Depending on the outcome it will return \"B\", \"C\" or \"D\".\nIf \"A\"<0 it will return \"B\". If \"A\"=0 it will return \"C\".  Else it will return \"D\" (A>0)",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1094,7 +1094,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{147,	F_Math,	Function_A,	Iso|All,
+	{147,	F_Math,	Function_A,	SFunctionIso|SFunctionAll,
 		@"abs(A)",	@"float",	"Absolute value of A\n\nIf A is negative, returns A otherwise returns A",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1104,7 +1104,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{148,	F_Math,	Function_A,	Iso|All,
+	{148,	F_Math,	Function_A,	SFunctionIso|SFunctionAll,
 		@"ceil(A)",	@"integer",	"Ceiling of \"A\"\n\nReturns the smallest integer greater than \"A\". Rounds up to the next higher integer",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1114,7 +1114,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{149,	F_Math,	Function_AB,	Iso|All,
+	{149,	F_Math,	Function_AB,	SFunctionIso|SFunctionAll,
 		@"div(A,B)",	@"integer",	"Integer division\n\nReturns the integer part of (\"A\"/\"B\")",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1124,7 +1124,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{150,	F_Math,	Function_A,	All,
+	{150,	F_Math,	Function_A,	SFunctionAll,
 		@"exp(A)",	@"float",	"Exponential of \"A\"\n\nReturns the value of e raised to the power \"A\" where e is the base of the natural logarithm.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1134,7 +1134,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{151,	F_Math,	Function_A,	Iso|All,
+	{151,	F_Math,	Function_A,	SFunctionIso|SFunctionAll,
 		@"floor(A)",	@"integer",	"Floor of \"A\"\n\nReturns the largest integer less than \"A\". Rounds down to the next lower integer.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1144,7 +1144,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{152,	F_Math,	Function_A,	Iso|All,
+	{152,	F_Math,	Function_A,	SFunctionIso|SFunctionAll,
 		@"int(A)",	@"integer",	"Integer part of \"A\"\n\nReturns the truncated integer part of \"A\". Rounds towards zero.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1154,7 +1154,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{153,	F_Math,	Function_A,	Iso|All,
+	{153,	F_Math,	Function_A,	SFunctionIso|SFunctionAll,
 		@"log(A)",	@"float",	"Logarithm of \"A\"\n\nReturns the logarithm base 10 of the value \"A\"",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1164,7 +1164,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{154,	F_Math,	Function_A,	Iso|All,
+	{154,	F_Math,	Function_A,	SFunctionIso|SFunctionAll,
 		@"ln(A)",	@"float",	"Natural logarithm of \"A\"\n\nReturns the natural logarithm base e of the value \"A\"",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1174,7 +1174,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{155,	F_Math,	Function_AB,	Iso|All,
+	{155,	F_Math,	Function_AB,	SFunctionIso|SFunctionAll,
 		@"max(A,B, ...)",	@"float",	"Maximum of \"A\" and \"B\"\n\nReturns A if A is larger than B. Otherwise returns B.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1184,7 +1184,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{156,	F_Math,	Function_AB,	Iso|All,
+	{156,	F_Math,	Function_AB,	SFunctionIso|SFunctionAll,
 		@"min(A,B, ...)",	@"float",	"Minimum of \"A\" and \"B\"\n\nReturns A if A is smaller than B. Otherwise returns B.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1194,7 +1194,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{157,	F_Math,	Function_AB,	Iso|All,
+	{157,	F_Math,	Function_AB,	SFunctionIso|SFunctionAll,
 		@"mod(A,B)",	@"float",	"Value \"A\" modulo \"B\".\n\nReturns the remainder after the integer division of \"A\"/\"B\". Formula is mod=((A/B)-int(A/B))*B",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1204,7 +1204,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{158,	F_Math,	Function_AB,	Iso|All,
+	{158,	F_Math,	Function_AB,	SFunctionIso|SFunctionAll,
 		@"pow(A,B)",	@"float",	"Exponentiation.\n\nReturns the value of \"A\" raised to the power \"B\"",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1214,7 +1214,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{159,	F_Math,	Function_A,	All,
+	{159,	F_Math,	Function_A,	SFunctionAll,
 		@"rand(I)",	@"float",	"Returns the next pseudo-random number from the stream specified by the positive integer \"I\".\n\nYou must call seed() to initialize a random stream before calling rand().The numbers are uniformely distributed, and have values between 0.0 and 1.0 inclusively.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1224,7 +1224,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{160,	F_Math,	Function_A,	All,
+	{160,	F_Math,	Function_A,	SFunctionAll,
 		@"seed(I)",	@"float",	"Initializes a new pseudo-random stream with the initial seed value \"i\".\n\nThe number corresponding to this random stream is returned.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1234,7 +1234,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{161,	F_Math,	Function_A,	Iso|All,
+	{161,	F_Math,	Function_A,	SFunctionIso|SFunctionAll,
 		@"sqrt(A)",	@"float",	"Square root of value \"A\".\n\nReturns the value whose square is \"A\".",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1244,7 +1244,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{162,	F_Math,	Function_V1V2,	All,
+	{162,	F_Math,	Function_V1V2,	SFunctionAll,
 		@"vdot(V1,V2)",	@"float",	"Dot product of \"V1\" and \"V2\"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1254,7 +1254,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{163,	F_Math,	Function_V,	All,
+	{163,	F_Math,	Function_V,	SFunctionAll,
 		@"vlength(V)",	@"float",	"Length of vector \"V\"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1264,7 +1264,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{164,	F_Math,	Function_VLOO,	All,
+	{164,	F_Math,	Function_VLOO,	SFunctionAll,
 		@"vturbulence(Lambda, Omega, Octaves, V)",	@"vector",	"Turbulence vector of  \"V\"\n\nReturns the turbulence vector for the point \"V\" based on the parameters for Lambda, Omega and Octaves",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1274,7 +1274,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{165,	F_Math,	Function_V1V2,	All,
+	{165,	F_Math,	Function_V1V2,	SFunctionAll,
 		@"vrotate(V1,V2)",	@"vector",	"Rotate point \"V1\" about origin by rotation vector \"V2\"\n\nRotate point \"V1\" about the x-axis by an angle specified in degrees by the float value \"V2x\". Then similarly for \"V2y\" and \"V2z\"",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1284,7 +1284,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{166,	F_Math,	Function_V,	All,
+	{166,	F_Math,	Function_V,	SFunctionAll,
 		@"vnormalize(V)",	@"vector",	"Normalize vector \"V\"\n\nReturns a unit length vector that has the same direction as \"V\"",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1294,7 +1294,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{167,	F_Math,	Function_V1V2,	All,
+	{167,	F_Math,	Function_V1V2,	SFunctionAll,
 		@"vcross(V1,V2)",	@"vector",	"Cross product of vector \"V1\" and vector \"V2\".\n\nReturns a vector that is the vector cross product of two vectors.\nThe resulting vector is perpendicular to the two original vectors and its length is proportional to the angle between them.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1304,7 +1304,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{168,	F_Math,	Function_V1V2A,	All,
+	{168,	F_Math,	Function_V1V2A,	SFunctionAll,
 		@"vaxis_rotate(V1,V2,A)",	@"vector",	"Rotate point \"V1\" about axis \"V2\" by angle \"A\".\n\nThe angle through which point V1 is rotated is specified in degrees by the float value \"A\".",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1314,7 +1314,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{209,	F_Pattern,	Function_XYZ,	Iso|All,
+	{209,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_agate(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1324,7 +1324,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{210,	F_Pattern,	Function_XYZ,	Iso|All,
+	{210,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_boxed(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1334,7 +1334,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{211,	F_Pattern,	Function_XYZ,	Iso|All,
+	{211,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_bozo(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1344,7 +1344,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{212,	F_Pattern,	Function_XYZ,	Iso|All,
+	{212,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_brick(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1354,7 +1354,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{213,	F_Pattern,	Function_XYZ,	Iso|All,
+	{213,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_bumps(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1364,7 +1364,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{214,	F_Pattern,	Function_XYZ,	Iso|All,
+	{214,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_checker(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1374,7 +1374,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{215,	F_Pattern,	Function_XYZ,	Iso|All,
+	{215,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_crackle(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1384,7 +1384,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{216,	F_Pattern,	Function_XYZ,	Iso|All,
+	{216,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_cylindrical(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1394,7 +1394,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{217,	F_Pattern,	Function_XYZ,	Iso|All,
+	{217,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_dents(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1404,7 +1404,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{218,	F_Pattern,	Function_XYZ,	Iso|All,
+	{218,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_gradientX(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1414,7 +1414,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{219,	F_Pattern,	Function_XYZ,	Iso|All,
+	{219,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_gradientY(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1424,7 +1424,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{220,	F_Pattern,	Function_XYZ,	Iso|All,
+	{220,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_gradientZ(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1434,7 +1434,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{221,	F_Pattern,	Function_XYZ,	Iso|All,
+	{221,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_granite(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1444,7 +1444,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{222,	F_Pattern,	Function_XYZ,	Iso|All,
+	{222,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_hexagon(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1454,7 +1454,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{223,	F_Pattern,	Function_XYZ,	Iso|All,
+	{223,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_leopard(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1464,7 +1464,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{224,	F_Pattern,	Function_XYZ,	Iso|All,
+	{224,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_mandel(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1474,7 +1474,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{225,	F_Pattern,	Function_XYZ,	Iso|All,
+	{225,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_marble(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1484,7 +1484,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{226,	F_Pattern,	Function_XYZ,	Iso|All,
+	{226,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_onion(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1494,7 +1494,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{227,	F_Pattern,	Function_XYZ,	Iso|All,
+	{227,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_planar(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1504,7 +1504,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{228,	F_Pattern,	Function_XYZ,	Iso|All,
+	{228,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_radial(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1514,7 +1514,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{229,	F_Pattern,	Function_XYZ,	Iso|All,
+	{229,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_ripples(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1524,7 +1524,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{230,	F_Pattern,	Function_XYZ,	Iso|All,
+	{230,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_spherical(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1534,7 +1534,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{231,	F_Pattern,	Function_XYZ,	Iso|All,
+	{231,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_spiral1(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1544,7 +1544,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{232,	F_Pattern,	Function_XYZ,	Iso|All,
+	{232,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_spiral2(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1554,7 +1554,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{233,	F_Pattern,	Function_XYZ,	Iso|All,
+	{233,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_spotted(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1564,7 +1564,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{234,	F_Pattern,	Function_XYZ,	Iso|All,
+	{234,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_waves(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1574,7 +1574,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{235,	F_Pattern,	Function_XYZ,	Iso|All,
+	{235,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_wood(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1584,7 +1584,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{236,	F_Pattern,	Function_XYZ,	Iso|All,
+	{236,	F_Pattern,	Function_XYZ,	SFunctionIso|SFunctionAll,
 		@"f_wrinkles(x,y,z)",	@"",	"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1594,7 +1594,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{184,	F_String,	Function_S,	All,
+	{184,	F_String,	Function_S,	SFunctionAll,
 		@"asc(S)",	@"integer",	"ASCII value of the first character of the string S\n\nReturns an integer value in the range 0 to 255 that is the ASCII value of the first character of the string \"S\"\nExample: asc(\"ABC\") is 65 because that is the value of the character \"A\".",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1604,7 +1604,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{185,	F_String,	Function_S1S2,	All,
+	{185,	F_String,	Function_S1S2,	SFunctionAll,
 		@"strcmp(S1, S2)",	@"float",	"Compares string \"S1\" to string \"S2\".\n\nReturns zero if the strings are equal, a positive number if \"S1\" comes after \"S2\" in the ASCII collating sequence, else a negative number.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1614,7 +1614,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{186,	F_String,	Function_S,	All,
+	{186,	F_String,	Function_S,	SFunctionAll,
 		@"strlen(S)",	@"integer",	"Length of string \"S\".\n\nReturns the number of characters in the string \"A\".",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1624,7 +1624,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{187,	F_String,	Function_S,	All,
+	{187,	F_String,	Function_S,	SFunctionAll,
 		@"val(S)",	@"float",	"Converts string \"S\" to its float value represented by the string\n\nExample: val(\"12.3\") is 12.3 as float.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1634,7 +1634,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{188,	F_String,	Function_A,	All,
+	{188,	F_String,	Function_A,	SFunctionAll,
 		@"chr(A)",	@"string",	"Character whose ASCII character value is \"A\"\n\nReturns a single character string. The ASCII value of the character is specified by the integer \"A\" which must be in the range 0 to 255.\nExample: chr(70) is the string \"F\"",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1644,7 +1644,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{189,	F_String,	Function_S1S2,	All,
+	{189,	F_String,	Function_S1S2,	SFunctionAll,
 		@"concat(S1,S2, ...)",	@"string",	"Concatenates strings \"S1\" and \"S2\"\n\nReturns a string that is the concatenation of all parameter strings. Must have at least 2 parameters but may have more",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1654,7 +1654,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{190,	F_String,	Function_ALP,	All,
+	{190,	F_String,	Function_ALP,	SFunctionAll,
 		@"str(A,L,P)",	@"string",	"Returns a formatted string representation of float value \"A\"\n\nThe integer \"L\" specifies the min length of the string and the type of left padding used if the string's representation is shorter than the min. \"P\" gives the number of digits after the decimal point",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1664,7 +1664,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{191,	F_String,	Function_S,	All,
+	{191,	F_String,	Function_S,	SFunctionAll,
 		@"strlwr(S)",	@"string",	"Lower case of \"S\"\n\nReturns a new string in which all upper case letters in the string \"S\" are converted to lower case.\nExample: strlwr(\"Hello\") results in \"hello\"",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1674,7 +1674,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{192,	F_String,	Function_SPL,	All,
+	{192,	F_String,	Function_SPL,	SFunctionAll,
 		@"substr(S,P,L)",	@"string",	"Sub-string of \"S\"\n\nReturns a string that is a subset of the characters in string \"S\", starting at the position specified by the integer value \"P\" for a length specified by the integer value \"L\"",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1684,7 +1684,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{193,	F_String,	Function_S,	All,
+	{193,	F_String,	Function_S,	SFunctionAll,
 		@"strupr(S)",	@"string",	"Upper case of \"S\"\n\nReturns a new string in which all lower case letters in the string \"S\" are converted to upper case.\nExample: strupr(\"Hello\") results in \"HELLO\"",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1694,7 +1694,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{194,	F_String,	Function_NVSLP,	All,
+	{194,	F_String,	Function_NVSLP,	SFunctionAll,
 		@"vstr(N,V,S,L,P)",	@"string",	"Converts vector \"V\" to a formatted string\n\nReturns a formatted string representation of vector \"V\", where the elements of the vector are separated by the string parameter \"S\". The integer value \"N\" specifies the amount of dimensions in vector \"V\". The functio of \"L\" and \"P\" is the same as in str()",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1704,7 +1704,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{195,	F_Trigonometry,	Function_A,	Iso|All,
+	{195,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"acos(A)",	@"float",	"Arc-cosine of \"A\"\n\nReturns the angle, measured in radians, whose cosine is \"A\"",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1714,7 +1714,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{196,	F_Trigonometry,	Function_A,	Iso|All,
+	{196,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"acosh(A)",	@"float",	"Invers hyperbolic cosine of \"A\"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1724,7 +1724,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{197,	F_Trigonometry,	Function_A,	Iso|All,
+	{197,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"asin(A)",	@"float",	"Arc-sine of \"A\"\n\nReturns the angle, measured in radians, whose sine is \"A\".",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1734,7 +1734,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{198,	F_Trigonometry,	Function_A,	Iso|All,
+	{198,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"asinh(A)",	@"",	"Invers hyperbolic sine of \"A\"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1744,7 +1744,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{199,	F_Trigonometry,	Function_AB,	Iso|All,
+	{199,	F_Trigonometry,	Function_AB,	SFunctionIso|SFunctionAll,
 		@"atan2(A,B)",	@"float",	"Arc-tangent of (\"A\"/\"B\")\n\nReturns the angle, measured in radians, whose tangent is (\"A\"/\"B\").",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1754,7 +1754,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{200,	F_Trigonometry,	Function_A,	Iso|All,
+	{200,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"atanh(A)",	@"",	"Invers hyperbolic tangent of \"A\"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1764,7 +1764,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{201,	F_Trigonometry,	Function_A,	Iso|All,
+	{201,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"cos(A)",	@"float",	"Cosine of angle \"A\"\n\nReturns the cosine of the angle \"A\", where \"A\" is measured in radians",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1774,7 +1774,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{202,	F_Trigonometry,	Function_A,	Iso|All,
+	{202,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"cosh(A)",	@"",	"Hyperbolic cosine of \"A\"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1784,7 +1784,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{203,	F_Trigonometry,	Function_A,	Iso|All,
+	{203,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"degrees(A)",	@"float",	"Converts radians to degrees\n\nReturns the angle measured in degrees whose value in radians is \"A\".\nFormula is degrees=A/pi*180",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1794,7 +1794,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{204,	F_Trigonometry,	Function_A,	Iso|All,
+	{204,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"radians(A)",	@"float",	"Converts degrees to radians\n\nReturns the angle measured in radians whose value in degrees is \"A\". Formula is radians=A*pi/180",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1804,7 +1804,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{205,	F_Trigonometry,	Function_A,	Iso|All,
+	{205,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"sin(A)",	@"float",	"Sine of angle \"A\".\n\nAngle \"A\" is measured in radians.",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1814,7 +1814,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{206,	F_Trigonometry,	Function_A,	Iso|All,
+	{206,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"sinh(A)",	@"",	"Hyperbolic sine of \"A\"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1824,7 +1824,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{207,	F_Trigonometry,	Function_A,	Iso|All,
+	{207,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"tan(A)",	@"float",	"Tangent of angle \"A\".\n\nAngle \"A\" is measured in radians. ",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1834,7 +1834,7 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{208,	F_Trigonometry,	Function_A,	Iso|All,
+	{208,	F_Trigonometry,	Function_A,	SFunctionIso|SFunctionAll,
 		@"tanh(A)",	@"",	"Hyperbolic tangent of \"A\"\n\n",
 		/*x,y,z,p0-p9*/ @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"",
 		/*s, s1, s2*/ @"", @"", @"",
@@ -1844,6 +1844,6 @@ SFunctionList FunctionList[]=
 		/*OM, OC, LA*/ @"", @"", @"", @"",
 		/*N*/ },
 
-	{32000,Endlist,	Function_Empty,	All,	@"",	@"",	"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",}
+	{32000,F_Endlist,	Function_Empty,	SFunctionAll,	@"",	@"",	"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",	@"",}
 };
 

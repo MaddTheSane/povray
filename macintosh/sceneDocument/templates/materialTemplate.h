@@ -108,7 +108,7 @@ enum eMaterialPreview {
 
 #define setMaterialTransformations setTemplatePrefs:0 withObject
 
-@interface MaterialTemplate : MapBaseTemplate
+@interface MaterialTemplate : MapBaseTemplate <NSTableViewDataSource>
 {
 
 	//main
