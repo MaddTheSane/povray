@@ -189,7 +189,7 @@ static NSCharacterSet *newlineCharacterSet=nil;
 		if ( wasPreprocessorWord==YES)
 		{
 			num++;
-			sKeywordsList[num].wordAsNSString=(CFStringRef)CFBridgingRetain([[NSString stringWithUTF8String:"#"] stringByAppendingString:[NSString stringWithUTF8String:ptr]]);
+			sKeywordsList[num].wordAsNSString=(CFStringRef)CFBridgingRetain([@"#" stringByAppendingString:[NSString stringWithUTF8String:ptr]]);
 			sKeywordsList[num].wordStyle=usePreprocessorStyle;
 		}
 		else

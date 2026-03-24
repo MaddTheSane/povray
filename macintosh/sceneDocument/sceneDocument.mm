@@ -792,7 +792,7 @@
 
 
 //	@{NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType,NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}
-	[self setMutableAttributedStringFromFile:[[NSMutableAttributedString alloc] initWithData:data options:	@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]} documentAttributes:nil error:nil]];
+	[self setMutableAttributedStringFromFile:[[NSMutableAttributedString alloc] initWithData:data options:	@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)} documentAttributes:nil error:nil]];
 	[self recolorCompleteAttributedString:[self mutableAttributedStringFromFile] sender:self];
 
 	mStringFromFileIsColored=YES;
@@ -875,10 +875,10 @@
 			NSLog(@"Reading file from disk");
 #endif
 			// try to load the file with NSUTF8-endocing (will work for 99%)
-			loadedString=[[NSMutableAttributedString alloc] initWithURL:absoluteURL options:@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSUTF8StringEncoding]}  documentAttributes:nil error:outError/*&theError*/];
+			loadedString=[[NSMutableAttributedString alloc] initWithURL:absoluteURL options:@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: @(NSUTF8StringEncoding)}  documentAttributes:nil error:outError/*&theError*/];
 
 			if ( loadedString == nil) // probably not a UTF8-encoded file Try Mac roman encoding
-				loadedString=[[NSMutableAttributedString alloc] initWithURL:absoluteURL options:@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: [NSNumber numberWithInt:NSMacOSRomanStringEncoding]}  documentAttributes:nil error:outError/*&theError*/];
+				loadedString=[[NSMutableAttributedString alloc] initWithURL:absoluteURL options:@{ NSDocumentTypeDocumentAttribute: NSPlainTextDocumentType, NSCharacterEncodingDocumentAttribute: @(NSMacOSRomanStringEncoding)}  documentAttributes:nil error:outError/*&theError*/];
 
 			if (loadedString == nil) // no utf8 or Mac roman exit
 				return NO;

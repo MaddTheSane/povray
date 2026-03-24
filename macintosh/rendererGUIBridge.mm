@@ -164,7 +164,7 @@ namespace vfe
 			retval=	RETURN_ERROR;
 
 		[messageView performSelectorOnMainThread:@selector(removeRenderTimeUpdateTimer) withObject:nil waitUntilDone:YES];
-		[messageView performSelectorOnMainThread: SEL_updateProgress withObject:[NSString stringWithUTF8String:"Ready"] waitUntilDone:YES];
+		[messageView performSelectorOnMainThread: SEL_updateProgress withObject:@"Ready" waitUntilDone:YES];
 		return retval;
 	}
 
