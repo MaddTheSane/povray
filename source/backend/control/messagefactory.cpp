@@ -63,7 +63,7 @@ void MessageFactory::Warning(unsigned int level, const char *format,...)
 	POVMSObject msg;
 	char localvsbuffer[1024];
 
-	sprintf(localvsbuffer, "%s Warning: ", stageName);
+	snprintf(localvsbuffer, sizeof(localvsbuffer), "%s Warning: ", stageName);
 
 	va_start(marker, format);
 	vsnprintf(localvsbuffer + strlen(localvsbuffer), 1023 - strlen(localvsbuffer), format, marker);
@@ -103,7 +103,7 @@ void MessageFactory::WarningAt(unsigned int level, const UCS2 *filename, POV_LON
 	POVMSObject msg;
 	char localvsbuffer[1024];
 
-	sprintf(localvsbuffer, "%s Warning: ", stageName);
+	snprintf(localvsbuffer, sizeof(localvsbuffer), "%s Warning: ", stageName);
 
 	va_start(marker, format);
 	vsnprintf(localvsbuffer + strlen(localvsbuffer), 1023 - strlen(localvsbuffer), format, marker);
@@ -148,7 +148,7 @@ void MessageFactory::PossibleError(const char *format,...)
 	POVMSObject msg;
 	char localvsbuffer[1024];
 
-	sprintf(localvsbuffer, "Possible %s Error: ", stageName);
+	snprintf(localvsbuffer, sizeof(localvsbuffer), "Possible %s Error: ", stageName);
 
 	va_start(marker, format);
 	vsnprintf(localvsbuffer + strlen(localvsbuffer), 1023 - strlen(localvsbuffer), format, marker);
@@ -185,7 +185,7 @@ void MessageFactory::PossibleErrorAt(const UCS2 *filename, POV_LONG line, POV_LO
 	POVMSObject msg;
 	char localvsbuffer[1024];
 
-	sprintf(localvsbuffer, "Possible %s Error: ", stageName);
+	snprintf(localvsbuffer, sizeof(localvsbuffer), "Possible %s Error: ", stageName);
 
 	va_start(marker, format);
 	vsnprintf(localvsbuffer + strlen(localvsbuffer), 1023 - strlen(localvsbuffer), format, marker);
@@ -227,7 +227,7 @@ std::string MessageFactory::SendError(const char *format, va_list arglist, const
 	POVMSObject msg;
 	char localvsbuffer[1024];
 
-	sprintf(localvsbuffer, "%s Error: ", stageName);
+	snprintf(localvsbuffer, sizeof(localvsbuffer), "%s Error: ", stageName);
 	vsnprintf(localvsbuffer + strlen(localvsbuffer), 1023 - strlen(localvsbuffer), format, arglist);
 	CleanupString(localvsbuffer);
 

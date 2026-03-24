@@ -8331,7 +8331,7 @@ void Parser::Parse_Declare(bool is_local, bool after_hash)
 				else
 				{
 					char str[256];
-					sprintf(str, "Identifier '%.128s' was declared deprecated.", Token.Token_String);
+					snprintf(str, sizeof(str), "Identifier '%.128s' was declared deprecated.", Token.Token_String);
 					Temp_Entry->Deprecation_Message = POV_STRDUP(str);
 				}
 			}

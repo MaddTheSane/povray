@@ -14606,11 +14606,11 @@
 				8258AD891D0492C100770E0D /* backend */,
 				8258AE511D0492C100770E0D /* base */,
 				8258AE9B1D0492C100770E0D /* frontend */,
-				8258AEB61D0492C100770E0D /* lightgrp.cpp */,
 				8258AEB71D0492C100770E0D /* lightgrp.h */,
+				8258AEB61D0492C100770E0D /* lightgrp.cpp */,
 				8258AEB81D0492C100770E0D /* optout.cpp */,
-				8258AEB91D0492C100770E0D /* pov_mem.cpp */,
 				8258AEBA1D0492C100770E0D /* pov_mem.h */,
+				8258AEB91D0492C100770E0D /* pov_mem.cpp */,
 				8258AEBB1D0492C100770E0D /* povrayold.h */,
 				8258AEBE1D0492C100770E0D /* statspov.h */,
 			);
@@ -14631,8 +14631,8 @@
 				8258ADBC1D0492C100770E0D /* math */,
 				8258ADCC1D0492C100770E0D /* parser */,
 				8258ADD71D0492C100770E0D /* pattern */,
-				8258ADDC1D0492C100770E0D /* povray.cpp */,
 				8258ADDD1D0492C100770E0D /* povray.h */,
+				8258ADDC1D0492C100770E0D /* povray.cpp */,
 				8258ADDE1D0492C100770E0D /* render */,
 				8258ADEB1D0492C100770E0D /* scene */,
 				8258ADF81D0492C100770E0D /* shape */,
@@ -14646,14 +14646,14 @@
 		8258AD8A1D0492C100770E0D /* bounding */ = {
 			isa = PBXGroup;
 			children = (
-				8258AD8B1D0492C100770E0D /* bbox.cpp */,
 				8258AD8C1D0492C100770E0D /* bbox.h */,
-				8258AD8D1D0492C100770E0D /* bcyl.cpp */,
+				8258AD8B1D0492C100770E0D /* bbox.cpp */,
 				8258AD8E1D0492C100770E0D /* bcyl.h */,
-				8258AD8F1D0492C100770E0D /* boundingtask.cpp */,
+				8258AD8D1D0492C100770E0D /* bcyl.cpp */,
 				8258AD901D0492C100770E0D /* boundingtask.h */,
-				8258AD911D0492C100770E0D /* bsphere.cpp */,
+				8258AD8F1D0492C100770E0D /* boundingtask.cpp */,
 				8258AD921D0492C100770E0D /* bsphere.h */,
+				8258AD911D0492C100770E0D /* bsphere.cpp */,
 			);
 			path = bounding;
 			sourceTree = "<group>";
@@ -14661,12 +14661,12 @@
 		8258AD931D0492C100770E0D /* colour */ = {
 			isa = PBXGroup;
 			children = (
-				8258AD941D0492C100770E0D /* colour.cpp */,
 				8258AD951D0492C100770E0D /* colour.h */,
-				8258AD961D0492C100770E0D /* colutils.cpp */,
+				8258AD941D0492C100770E0D /* colour.cpp */,
 				8258AD971D0492C100770E0D /* colutils.h */,
-				8258AD981D0492C100770E0D /* spectral.cpp */,
+				8258AD961D0492C100770E0D /* colutils.cpp */,
 				8258AD991D0492C100770E0D /* spectral.h */,
+				8258AD981D0492C100770E0D /* spectral.cpp */,
 			);
 			path = colour;
 			sourceTree = "<group>";
@@ -14674,12 +14674,12 @@
 		8258AD9B1D0492C100770E0D /* control */ = {
 			isa = PBXGroup;
 			children = (
-				8258AD9C1D0492C100770E0D /* benchmark.cpp */,
 				8258AD9D1D0492C100770E0D /* benchmark.h */,
-				8258AD9E1D0492C100770E0D /* messagefactory.cpp */,
+				8258AD9C1D0492C100770E0D /* benchmark.cpp */,
 				8258AD9F1D0492C100770E0D /* messagefactory.h */,
-				8258ADA01D0492C100770E0D /* renderbackend.cpp */,
+				8258AD9E1D0492C100770E0D /* messagefactory.cpp */,
 				8258ADA11D0492C100770E0D /* renderbackend.h */,
+				8258ADA01D0492C100770E0D /* renderbackend.cpp */,
 			);
 			path = control;
 			sourceTree = "<group>";
@@ -14687,10 +14687,10 @@
 		8258ADA31D0492C100770E0D /* interior */ = {
 			isa = PBXGroup;
 			children = (
-				8258ADA41D0492C100770E0D /* interior.cpp */,
 				8258ADA51D0492C100770E0D /* interior.h */,
-				8258ADA61D0492C100770E0D /* media.cpp */,
+				8258ADA41D0492C100770E0D /* interior.cpp */,
 				8258ADA71D0492C100770E0D /* media.h */,
+				8258ADA61D0492C100770E0D /* media.cpp */,
 			);
 			path = interior;
 			sourceTree = "<group>";
@@ -14698,25 +14698,25 @@
 		8258ADA81D0492C100770E0D /* lighting */ = {
 			isa = PBXGroup;
 			children = (
-				8258ADA91D0492C100770E0D /* photonestimationtask.cpp */,
 				8258ADAA1D0492C100770E0D /* photonestimationtask.h */,
-				8258ADAB1D0492C100770E0D /* photons.cpp */,
+				8258ADA91D0492C100770E0D /* photonestimationtask.cpp */,
 				8258ADAC1D0492C100770E0D /* photons.h */,
-				8258ADAD1D0492C100770E0D /* photonshootingstrategy.cpp */,
+				8258ADAB1D0492C100770E0D /* photons.cpp */,
 				8258ADAE1D0492C100770E0D /* photonshootingstrategy.h */,
-				8258ADAF1D0492C100770E0D /* photonshootingtask.cpp */,
+				8258ADAD1D0492C100770E0D /* photonshootingstrategy.cpp */,
 				8258ADB01D0492C100770E0D /* photonshootingtask.h */,
-				8258ADB11D0492C100770E0D /* photonsortingtask.cpp */,
+				8258ADAF1D0492C100770E0D /* photonshootingtask.cpp */,
 				8258ADB21D0492C100770E0D /* photonsortingtask.h */,
-				8258ADB31D0492C100770E0D /* photonstrategytask.cpp */,
+				8258ADB11D0492C100770E0D /* photonsortingtask.cpp */,
 				8258ADB41D0492C100770E0D /* photonstrategytask.h */,
-				8258ADB51D0492C100770E0D /* point.cpp */,
+				8258ADB31D0492C100770E0D /* photonstrategytask.cpp */,
 				8258ADB61D0492C100770E0D /* point.h */,
+				8258ADB51D0492C100770E0D /* point.cpp */,
 				8258ADB71D0492C100770E0D /* rad_data.cpp */,
-				8258ADB81D0492C100770E0D /* radiosity.cpp */,
 				8258ADB91D0492C100770E0D /* radiosity.h */,
-				8258ADBA1D0492C100770E0D /* subsurface.cpp */,
+				8258ADB81D0492C100770E0D /* radiosity.cpp */,
 				8258ADBB1D0492C100770E0D /* subsurface.h */,
+				8258ADBA1D0492C100770E0D /* subsurface.cpp */,
 			);
 			path = lighting;
 			sourceTree = "<group>";
@@ -14724,20 +14724,20 @@
 		8258ADBC1D0492C100770E0D /* math */ = {
 			isa = PBXGroup;
 			children = (
-				8258ADBD1D0492C100770E0D /* chi2.cpp */,
 				8258ADBE1D0492C100770E0D /* chi2.h */,
-				8258ADBF1D0492C100770E0D /* hcmplx.cpp */,
+				8258ADBD1D0492C100770E0D /* chi2.cpp */,
 				8258ADC01D0492C100770E0D /* hcmplx.h */,
-				8258ADC11D0492C100770E0D /* mathutil.cpp */,
+				8258ADBF1D0492C100770E0D /* hcmplx.cpp */,
 				8258ADC21D0492C100770E0D /* mathutil.h */,
-				8258ADC31D0492C100770E0D /* matrices.cpp */,
+				8258ADC11D0492C100770E0D /* mathutil.cpp */,
 				8258ADC41D0492C100770E0D /* matrices.h */,
-				8258ADC51D0492C100770E0D /* polysolv.cpp */,
+				8258ADC31D0492C100770E0D /* matrices.cpp */,
 				8258ADC61D0492C100770E0D /* polysolv.h */,
-				8258ADC71D0492C100770E0D /* quatern.cpp */,
+				8258ADC51D0492C100770E0D /* polysolv.cpp */,
 				8258ADC81D0492C100770E0D /* quatern.h */,
-				8258ADC91D0492C100770E0D /* splines.cpp */,
+				8258ADC71D0492C100770E0D /* quatern.cpp */,
 				8258ADCA1D0492C100770E0D /* splines.h */,
+				8258ADC91D0492C100770E0D /* splines.cpp */,
 				8258ADCB1D0492C100770E0D /* vector.h */,
 			);
 			path = math;
@@ -14749,12 +14749,12 @@
 				8258ADCD1D0492C100770E0D /* express.cpp */,
 				8258ADCE1D0492C100770E0D /* fnsyntax.cpp */,
 				8258ADCF1D0492C100770E0D /* function.cpp */,
-				8258ADD01D0492C100770E0D /* parse.cpp */,
 				8258ADD11D0492C100770E0D /* parse.h */,
+				8258ADD01D0492C100770E0D /* parse.cpp */,
 				8258ADD21D0492C100770E0D /* parsestr.cpp */,
 				8258ADD31D0492C100770E0D /* parstxtr.cpp */,
-				8258ADD41D0492C100770E0D /* reswords.cpp */,
 				8258ADD51D0492C100770E0D /* reswords.h */,
+				8258ADD41D0492C100770E0D /* reswords.cpp */,
 				8258ADD61D0492C100770E0D /* tokenize.cpp */,
 			);
 			path = parser;
@@ -14763,10 +14763,10 @@
 		8258ADD71D0492C100770E0D /* pattern */ = {
 			isa = PBXGroup;
 			children = (
-				8258ADD81D0492C100770E0D /* pattern.cpp */,
 				8258ADD91D0492C100770E0D /* pattern.h */,
-				8258ADDA1D0492C100770E0D /* warps.cpp */,
+				8258ADD81D0492C100770E0D /* pattern.cpp */,
 				8258ADDB1D0492C100770E0D /* warps.h */,
+				8258ADDA1D0492C100770E0D /* warps.cpp */,
 			);
 			path = pattern;
 			sourceTree = "<group>";
@@ -14774,18 +14774,18 @@
 		8258ADDE1D0492C100770E0D /* render */ = {
 			isa = PBXGroup;
 			children = (
-				8258ADDF1D0492C100770E0D /* radiositytask.cpp */,
 				8258ADE01D0492C100770E0D /* radiositytask.h */,
-				8258ADE11D0492C100770E0D /* ray.cpp */,
+				8258ADDF1D0492C100770E0D /* radiositytask.cpp */,
 				8258ADE21D0492C100770E0D /* ray.h */,
-				8258ADE31D0492C100770E0D /* rendertask.cpp */,
+				8258ADE11D0492C100770E0D /* ray.cpp */,
 				8258ADE41D0492C100770E0D /* rendertask.h */,
-				8258ADE51D0492C100770E0D /* trace.cpp */,
+				8258ADE31D0492C100770E0D /* rendertask.cpp */,
 				8258ADE61D0492C100770E0D /* trace.h */,
-				8258ADE71D0492C100770E0D /* tracepixel.cpp */,
+				8258ADE51D0492C100770E0D /* trace.cpp */,
 				8258ADE81D0492C100770E0D /* tracepixel.h */,
-				8258ADE91D0492C100770E0D /* tracetask.cpp */,
+				8258ADE71D0492C100770E0D /* tracepixel.cpp */,
 				8258ADEA1D0492C100770E0D /* tracetask.h */,
+				8258ADE91D0492C100770E0D /* tracetask.cpp */,
 			);
 			path = render;
 			sourceTree = "<group>";
@@ -14793,18 +14793,18 @@
 		8258ADEB1D0492C100770E0D /* scene */ = {
 			isa = PBXGroup;
 			children = (
-				8258ADEC1D0492C100770E0D /* atmosph.cpp */,
 				8258ADED1D0492C100770E0D /* atmosph.h */,
-				8258ADEE1D0492C100770E0D /* camera.cpp */,
+				8258ADEC1D0492C100770E0D /* atmosph.cpp */,
 				8258ADEF1D0492C100770E0D /* camera.h */,
-				8258ADF01D0492C100770E0D /* objects.cpp */,
+				8258ADEE1D0492C100770E0D /* camera.cpp */,
 				8258ADF11D0492C100770E0D /* objects.h */,
-				8258ADF21D0492C100770E0D /* scene.cpp */,
+				8258ADF01D0492C100770E0D /* objects.cpp */,
 				8258ADF31D0492C100770E0D /* scene.h */,
-				8258ADF41D0492C100770E0D /* threaddata.cpp */,
+				8258ADF21D0492C100770E0D /* scene.cpp */,
 				8258ADF51D0492C100770E0D /* threaddata.h */,
-				8258ADF61D0492C100770E0D /* view.cpp */,
+				8258ADF41D0492C100770E0D /* threaddata.cpp */,
 				8258ADF71D0492C100770E0D /* view.h */,
+				8258ADF61D0492C100770E0D /* view.cpp */,
 			);
 			path = scene;
 			sourceTree = "<group>";
@@ -14812,56 +14812,56 @@
 		8258ADF81D0492C100770E0D /* shape */ = {
 			isa = PBXGroup;
 			children = (
-				8258ADF91D0492C100770E0D /* bezier.cpp */,
 				8258ADFA1D0492C100770E0D /* bezier.h */,
-				8258ADFB1D0492C100770E0D /* blob.cpp */,
+				8258ADF91D0492C100770E0D /* bezier.cpp */,
 				8258ADFC1D0492C100770E0D /* blob.h */,
-				8258ADFD1D0492C100770E0D /* boxes.cpp */,
+				8258ADFB1D0492C100770E0D /* blob.cpp */,
 				8258ADFE1D0492C100770E0D /* boxes.h */,
-				8258ADFF1D0492C100770E0D /* cones.cpp */,
+				8258ADFD1D0492C100770E0D /* boxes.cpp */,
 				8258AE001D0492C100770E0D /* cones.h */,
-				8258AE011D0492C100770E0D /* csg.cpp */,
+				8258ADFF1D0492C100770E0D /* cones.cpp */,
 				8258AE021D0492C100770E0D /* csg.h */,
-				8258AE031D0492C100770E0D /* discs.cpp */,
+				8258AE011D0492C100770E0D /* csg.cpp */,
 				8258AE041D0492C100770E0D /* discs.h */,
-				8258AE051D0492C100770E0D /* fpmetric.cpp */,
+				8258AE031D0492C100770E0D /* discs.cpp */,
 				8258AE061D0492C100770E0D /* fpmetric.h */,
-				8258AE071D0492C100770E0D /* fractal.cpp */,
+				8258AE051D0492C100770E0D /* fpmetric.cpp */,
 				8258AE081D0492C100770E0D /* fractal.h */,
-				8258AE091D0492C100770E0D /* hfield.cpp */,
+				8258AE071D0492C100770E0D /* fractal.cpp */,
 				8258AE0A1D0492C100770E0D /* hfield.h */,
-				8258AE0B1D0492C100770E0D /* isosurf.cpp */,
+				8258AE091D0492C100770E0D /* hfield.cpp */,
 				8258AE0C1D0492C100770E0D /* isosurf.h */,
-				8258AE0D1D0492C100770E0D /* lathe.cpp */,
+				8258AE0B1D0492C100770E0D /* isosurf.cpp */,
 				8258AE0E1D0492C100770E0D /* lathe.h */,
-				8258AE0F1D0492C100770E0D /* mesh.cpp */,
+				8258AE0D1D0492C100770E0D /* lathe.cpp */,
 				8258AE101D0492C100770E0D /* mesh.h */,
-				8258AE111D0492C100770E0D /* ovus.cpp */,
+				8258AE0F1D0492C100770E0D /* mesh.cpp */,
 				8258AE121D0492C100770E0D /* ovus.h */,
-				8258AE131D0492C100770E0D /* planes.cpp */,
+				8258AE111D0492C100770E0D /* ovus.cpp */,
 				8258AE141D0492C100770E0D /* planes.h */,
-				8258AE151D0492C100770E0D /* poly.cpp */,
+				8258AE131D0492C100770E0D /* planes.cpp */,
 				8258AE161D0492C100770E0D /* poly.h */,
-				8258AE171D0492C100770E0D /* polygon.cpp */,
+				8258AE151D0492C100770E0D /* poly.cpp */,
 				8258AE181D0492C100770E0D /* polygon.h */,
-				8258AE191D0492C100770E0D /* prism.cpp */,
+				8258AE171D0492C100770E0D /* polygon.cpp */,
 				8258AE1A1D0492C100770E0D /* prism.h */,
-				8258AE1B1D0492C100770E0D /* quadrics.cpp */,
+				8258AE191D0492C100770E0D /* prism.cpp */,
 				8258AE1C1D0492C100770E0D /* quadrics.h */,
-				8258AE1D1D0492C100770E0D /* sor.cpp */,
+				8258AE1B1D0492C100770E0D /* quadrics.cpp */,
 				8258AE1E1D0492C100770E0D /* sor.h */,
-				8258AE1F1D0492C100770E0D /* spheres.cpp */,
+				8258AE1D1D0492C100770E0D /* sor.cpp */,
 				8258AE201D0492C100770E0D /* spheres.h */,
-				8258AE211D0492C100770E0D /* sphsweep.cpp */,
+				8258AE1F1D0492C100770E0D /* spheres.cpp */,
 				8258AE221D0492C100770E0D /* sphsweep.h */,
-				8258AE231D0492C100770E0D /* super.cpp */,
+				8258AE211D0492C100770E0D /* sphsweep.cpp */,
 				8258AE241D0492C100770E0D /* super.h */,
-				8258AE251D0492C100770E0D /* torus.cpp */,
+				8258AE231D0492C100770E0D /* super.cpp */,
 				8258AE261D0492C100770E0D /* torus.h */,
-				8258AE271D0492C100770E0D /* triangle.cpp */,
+				8258AE251D0492C100770E0D /* torus.cpp */,
 				8258AE281D0492C100770E0D /* triangle.h */,
-				8258AE291D0492C100770E0D /* truetype.cpp */,
+				8258AE271D0492C100770E0D /* triangle.cpp */,
 				8258AE2A1D0492C100770E0D /* truetype.h */,
+				8258AE291D0492C100770E0D /* truetype.cpp */,
 			);
 			path = shape;
 			sourceTree = "<group>";
@@ -14869,28 +14869,28 @@
 		8258AE2B1D0492C100770E0D /* support */ = {
 			isa = PBXGroup;
 			children = (
-				8258AE2C1D0492C100770E0D /* bsptree.cpp */,
 				8258AE2D1D0492C100770E0D /* bsptree.h */,
-				8258AE2E1D0492C100770E0D /* fileutil.cpp */,
+				8258AE2C1D0492C100770E0D /* bsptree.cpp */,
 				8258AE2F1D0492C100770E0D /* fileutil.h */,
+				8258AE2E1D0492C100770E0D /* fileutil.cpp */,
 				8258AE301D0492C100770E0D /* fixedallocator.h */,
-				8258AE311D0492C100770E0D /* imageutil.cpp */,
 				8258AE321D0492C100770E0D /* imageutil.h */,
-				8258AE331D0492C100770E0D /* jitter.cpp */,
+				8258AE311D0492C100770E0D /* imageutil.cpp */,
 				8258AE341D0492C100770E0D /* jitter.h */,
-				8258AE351D0492C100770E0D /* msgutil.cpp */,
+				8258AE331D0492C100770E0D /* jitter.cpp */,
 				8258AE361D0492C100770E0D /* msgutil.h */,
-				8258AE371D0492C100770E0D /* octree.cpp */,
+				8258AE351D0492C100770E0D /* msgutil.cpp */,
 				8258AE381D0492C100770E0D /* octree.h */,
-				8258AE391D0492C100770E0D /* randomsequences.cpp */,
+				8258AE371D0492C100770E0D /* octree.cpp */,
 				8258AE3A1D0492C100770E0D /* randomsequences.h */,
+				8258AE391D0492C100770E0D /* randomsequences.cpp */,
 				8258AE3B1D0492C100770E0D /* simplevector.h */,
-				8258AE3C1D0492C100770E0D /* statistics.cpp */,
 				8258AE3D1D0492C100770E0D /* statistics.h */,
-				8258AE3E1D0492C100770E0D /* task.cpp */,
+				8258AE3C1D0492C100770E0D /* statistics.cpp */,
 				8258AE3F1D0492C100770E0D /* task.h */,
-				8258AE401D0492C100770E0D /* taskqueue.cpp */,
+				8258AE3E1D0492C100770E0D /* task.cpp */,
 				8258AE411D0492C100770E0D /* taskqueue.h */,
+				8258AE401D0492C100770E0D /* taskqueue.cpp */,
 			);
 			path = support;
 			sourceTree = "<group>";
@@ -14899,12 +14899,12 @@
 			isa = PBXGroup;
 			children = (
 				8258AE431D0492C100770E0D /* avxfma4check.h */,
-				8258AE441D0492C100770E0D /* normal.cpp */,
 				8258AE451D0492C100770E0D /* normal.h */,
-				8258AE461D0492C100770E0D /* pigment.cpp */,
+				8258AE441D0492C100770E0D /* normal.cpp */,
 				8258AE471D0492C100770E0D /* pigment.h */,
-				8258AE481D0492C100770E0D /* texture.cpp */,
+				8258AE461D0492C100770E0D /* pigment.cpp */,
 				8258AE491D0492C100770E0D /* texture.h */,
+				8258AE481D0492C100770E0D /* texture.cpp */,
 			);
 			path = texture;
 			sourceTree = "<group>";
@@ -14912,12 +14912,12 @@
 		8258AE4A1D0492C100770E0D /* vm */ = {
 			isa = PBXGroup;
 			children = (
-				8258AE4B1D0492C100770E0D /* fncode.cpp */,
 				8258AE4C1D0492C100770E0D /* fncode.h */,
-				8258AE4D1D0492C100770E0D /* fnintern.cpp */,
+				8258AE4B1D0492C100770E0D /* fncode.cpp */,
 				8258AE4E1D0492C100770E0D /* fnintern.h */,
-				8258AE4F1D0492C100770E0D /* fnpovfpu.cpp */,
+				8258AE4D1D0492C100770E0D /* fnintern.cpp */,
 				8258AE501D0492C100770E0D /* fnpovfpu.h */,
+				8258AE4F1D0492C100770E0D /* fnpovfpu.cpp */,
 			);
 			path = vm;
 			sourceTree = "<group>";
@@ -14927,33 +14927,33 @@
 			children = (
 				8258AE521D0492C100770E0D /* animation */,
 				8258AE571D0492C100770E0D /* configbase.h */,
-				8258AE581D0492C100770E0D /* fileinputoutput.cpp */,
 				8258AE591D0492C100770E0D /* fileinputoutput.h */,
+				8258AE581D0492C100770E0D /* fileinputoutput.cpp */,
 				8258AE5A1D0492C100770E0D /* font */,
 				8258AE641D0492C100770E0D /* image */,
-				8258AE831D0492C100770E0D /* path.cpp */,
 				8258AE841D0492C100770E0D /* path.h */,
+				8258AE831D0492C100770E0D /* path.cpp */,
 				8258AE851D0492C100770E0D /* platformbase.h */,
 				8258AE861D0492C100770E0D /* pointer.h */,
-				8258AE871D0492C100770E0D /* pov_err.cpp */,
 				8258AE881D0492C100770E0D /* pov_err.h */,
+				8258AE871D0492C100770E0D /* pov_err.cpp */,
 				8258AE891D0492C100770E0D /* povdebug.h */,
-				8258AE8A1D0492C100770E0D /* povms.cpp */,
 				8258AE8B1D0492C100770E0D /* povms.h */,
-				8258AE8C1D0492C100770E0D /* povmscpp.cpp */,
+				8258AE8A1D0492C100770E0D /* povms.cpp */,
 				8258AE8D1D0492C100770E0D /* povmscpp.h */,
+				8258AE8C1D0492C100770E0D /* povmscpp.cpp */,
 				8258AE8E1D0492C100770E0D /* povmsgid.h */,
-				8258AE8F1D0492C100770E0D /* processoptions.cpp */,
 				8258AE901D0492C100770E0D /* processoptions.h */,
+				8258AE8F1D0492C100770E0D /* processoptions.cpp */,
 				8258AE911D0492C100770E0D /* safemath.h */,
-				8258AE921D0492C100770E0D /* stringutilities.cpp */,
 				8258AE931D0492C100770E0D /* stringutilities.h */,
-				8258AE941D0492C100770E0D /* textstream.cpp */,
+				8258AE921D0492C100770E0D /* stringutilities.cpp */,
 				8258AE951D0492C100770E0D /* textstream.h */,
-				8258AE961D0492C100770E0D /* textstreambuffer.cpp */,
+				8258AE941D0492C100770E0D /* textstream.cpp */,
 				8258AE971D0492C100770E0D /* textstreambuffer.h */,
-				8258AE981D0492C100770E0D /* timer.cpp */,
+				8258AE961D0492C100770E0D /* textstreambuffer.cpp */,
 				8258AE991D0492C100770E0D /* timer.h */,
+				8258AE981D0492C100770E0D /* timer.cpp */,
 				8258AE9A1D0492C100770E0D /* types.h */,
 			);
 			path = base;
@@ -14962,10 +14962,10 @@
 		8258AE521D0492C100770E0D /* animation */ = {
 			isa = PBXGroup;
 			children = (
-				8258AE531D0492C100770E0D /* animation.cpp */,
 				8258AE541D0492C100770E0D /* animation.h */,
-				8258AE551D0492C100770E0D /* moov.cpp */,
+				8258AE531D0492C100770E0D /* animation.cpp */,
 				8258AE561D0492C100770E0D /* moov.h */,
+				8258AE551D0492C100770E0D /* moov.cpp */,
 			);
 			path = animation;
 			sourceTree = "<group>";
@@ -14973,15 +14973,15 @@
 		8258AE5A1D0492C100770E0D /* font */ = {
 			isa = PBXGroup;
 			children = (
-				8258AE5B1D0492C100770E0D /* crystal.cpp */,
 				8258AE5C1D0492C100770E0D /* crystal.h */,
-				8258AE5D1D0492C100770E0D /* cyrvetic.cpp */,
+				8258AE5B1D0492C100770E0D /* crystal.cpp */,
 				8258AE5E1D0492C100770E0D /* cyrvetic.h */,
-				8258AE5F1D0492C100770E0D /* povlogo.cpp */,
+				8258AE5D1D0492C100770E0D /* cyrvetic.cpp */,
 				8258AE601D0492C100770E0D /* povlogo.h */,
+				8258AE5F1D0492C100770E0D /* povlogo.cpp */,
 				8258AE611D0492C100770E0D /* Readme.txt */,
-				8258AE621D0492C100770E0D /* timrom.cpp */,
 				8258AE631D0492C100770E0D /* timrom.h */,
+				8258AE621D0492C100770E0D /* timrom.cpp */,
 			);
 			path = font;
 			sourceTree = "<group>";
@@ -14989,34 +14989,34 @@
 		8258AE641D0492C100770E0D /* image */ = {
 			isa = PBXGroup;
 			children = (
-				8258AE651D0492C100770E0D /* bmp.cpp */,
 				8258AE661D0492C100770E0D /* bmp.h */,
-				8258AE671D0492C100770E0D /* colourspace.cpp */,
+				8258AE651D0492C100770E0D /* bmp.cpp */,
 				8258AE681D0492C100770E0D /* colourspace.h */,
-				8258AE691D0492C100770E0D /* encoding.cpp */,
+				8258AE671D0492C100770E0D /* colourspace.cpp */,
 				8258AE6A1D0492C100770E0D /* encoding.h */,
-				8258AE6B1D0492C100770E0D /* gif.cpp */,
+				8258AE691D0492C100770E0D /* encoding.cpp */,
 				8258AE6C1D0492C100770E0D /* gif.h */,
+				8258AE6B1D0492C100770E0D /* gif.cpp */,
 				8258AE6D1D0492C100770E0D /* gifdecod.cpp */,
-				8258AE6E1D0492C100770E0D /* hdr.cpp */,
 				8258AE6F1D0492C100770E0D /* hdr.h */,
-				8258AE701D0492C100770E0D /* iff.cpp */,
+				8258AE6E1D0492C100770E0D /* hdr.cpp */,
 				8258AE711D0492C100770E0D /* iff.h */,
-				8258AE721D0492C100770E0D /* image.cpp */,
+				8258AE701D0492C100770E0D /* iff.cpp */,
 				8258AE731D0492C100770E0D /* image.h */,
+				8258AE721D0492C100770E0D /* image.cpp */,
 				8258AE741D0492C100770E0D /* jpeg.cpp */,
 				8258AE751D0492C100770E0D /* jpeg_pov.h */,
 				8258AE761D0492C100770E0D /* metadata.h */,
-				8258AE771D0492C100770E0D /* openexr.cpp */,
 				8258AE781D0492C100770E0D /* openexr.h */,
-				8258AE791D0492C100770E0D /* pgm.cpp */,
+				8258AE771D0492C100770E0D /* openexr.cpp */,
 				8258AE7A1D0492C100770E0D /* pgm.h */,
+				8258AE791D0492C100770E0D /* pgm.cpp */,
 				8258AE7B1D0492C100770E0D /* png.cpp */,
 				8258AE7C1D0492C100770E0D /* png_pov.h */,
-				8258AE7D1D0492C100770E0D /* ppm.cpp */,
 				8258AE7E1D0492C100770E0D /* ppm.h */,
-				8258AE7F1D0492C100770E0D /* targa.cpp */,
+				8258AE7D1D0492C100770E0D /* ppm.cpp */,
 				8258AE801D0492C100770E0D /* targa.h */,
+				8258AE7F1D0492C100770E0D /* targa.cpp */,
 				8258AE811D0492C100770E0D /* tiff.cpp */,
 				8258AE821D0492C100770E0D /* tiff_pov.h */,
 			);
@@ -15026,31 +15026,31 @@
 		8258AE9B1D0492C100770E0D /* frontend */ = {
 			isa = PBXGroup;
 			children = (
-				8258AE9C1D0492C100770E0D /* animationprocessing.cpp */,
 				8258AE9D1D0492C100770E0D /* animationprocessing.h */,
+				8258AE9C1D0492C100770E0D /* animationprocessing.cpp */,
 				8258AE9E1D0492C100770E0D /* configfrontend.h */,
-				8258AE9F1D0492C100770E0D /* console.cpp */,
 				8258AEA01D0492C100770E0D /* console.h */,
-				8258AEA11D0492C100770E0D /* defaultplatformbase.cpp */,
+				8258AE9F1D0492C100770E0D /* console.cpp */,
 				8258AEA21D0492C100770E0D /* defaultplatformbase.h */,
-				8258AEA31D0492C100770E0D /* display.cpp */,
+				8258AEA11D0492C100770E0D /* defaultplatformbase.cpp */,
 				8258AEA41D0492C100770E0D /* display.h */,
-				8258AEA51D0492C100770E0D /* filemessagehandler.cpp */,
+				8258AEA31D0492C100770E0D /* display.cpp */,
 				8258AEA61D0492C100770E0D /* filemessagehandler.h */,
-				8258AEA71D0492C100770E0D /* imagemessagehandler.cpp */,
+				8258AEA51D0492C100770E0D /* filemessagehandler.cpp */,
 				8258AEA81D0492C100770E0D /* imagemessagehandler.h */,
-				8258AEA91D0492C100770E0D /* imageprocessing.cpp */,
+				8258AEA71D0492C100770E0D /* imagemessagehandler.cpp */,
 				8258AEAA1D0492C100770E0D /* imageprocessing.h */,
-				8258AEAB1D0492C100770E0D /* parsermessagehandler.cpp */,
+				8258AEA91D0492C100770E0D /* imageprocessing.cpp */,
 				8258AEAC1D0492C100770E0D /* parsermessagehandler.h */,
-				8258AEAD1D0492C100770E0D /* processrenderoptions.cpp */,
+				8258AEAB1D0492C100770E0D /* parsermessagehandler.cpp */,
 				8258AEAE1D0492C100770E0D /* processrenderoptions.h */,
-				8258AEAF1D0492C100770E0D /* renderfrontend.cpp */,
+				8258AEAD1D0492C100770E0D /* processrenderoptions.cpp */,
 				8258AEB01D0492C100770E0D /* renderfrontend.h */,
-				8258AEB11D0492C100770E0D /* rendermessagehandler.cpp */,
+				8258AEAF1D0492C100770E0D /* renderfrontend.cpp */,
 				8258AEB21D0492C100770E0D /* rendermessagehandler.h */,
-				8258AEB31D0492C100770E0D /* shelloutprocessing.cpp */,
+				8258AEB11D0492C100770E0D /* rendermessagehandler.cpp */,
 				8258AEB41D0492C100770E0D /* shelloutprocessing.h */,
+				8258AEB31D0492C100770E0D /* shelloutprocessing.cpp */,
 				8258AEB51D0492C100770E0D /* simplefrontend.h */,
 			);
 			path = frontend;
@@ -15401,17 +15401,17 @@
 				826CBAB21D034E4C000A7A98 /* syspovprotobackend.h */,
 				826CBAB31D034E4C000A7A98 /* syspovprotobase.h */,
 				826CBAB41D034E4C000A7A98 /* syspovprotofrontend.h */,
-				826CBABC1D034E4C000A7A98 /* vfe.cpp */,
 				826CBABD1D034E4C000A7A98 /* vfe.h */,
+				826CBABC1D034E4C000A7A98 /* vfe.cpp */,
 				826CBABE1D034E4C000A7A98 /* vfeconf.h */,
 				826CBABF1D034E4C000A7A98 /* vfecontrol.cpp */,
 				826CBAC01D034E4C000A7A98 /* vfedisplay.cpp */,
-				826CBAC11D034E4C000A7A98 /* vfepovms.cpp */,
 				826CBAC21D034E4C000A7A98 /* vfepovms.h */,
-				826CBAC31D034E4C000A7A98 /* vfeprecomp.cpp */,
+				826CBAC11D034E4C000A7A98 /* vfepovms.cpp */,
 				826CBAC41D034E4C000A7A98 /* vfeprecomp.h */,
-				826CBAC51D034E4C000A7A98 /* vfesession.cpp */,
+				826CBAC31D034E4C000A7A98 /* vfeprecomp.cpp */,
 				826CBAC61D034E4C000A7A98 /* vfesession.h */,
+				826CBAC51D034E4C000A7A98 /* vfesession.cpp */,
 			);
 			name = vfe;
 			path = ../vfe;

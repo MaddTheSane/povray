@@ -958,17 +958,20 @@ NS_DURING
 	{
 		rangeToRemove=NSMakeRange(lastLineRange.location,0);
 		[mSceneTextView setSelectedRange:rangeToRemove];
-		if ( lastLineRange.location==lineRange.location)	
+		if (lastLineRange.location==lineRange.location)	{
 			firstLine=YES;
-		[mSceneTextView insertText:StringToInsert];
+		}
+		[mSceneTextView insertText:StringToInsert replacementRange:rangeToRemove];
 		sizeAdded+=lengte;
-		if ( lastLineRange.location==0)
+		if ( lastLineRange.location==0) {
 			break;
+		}
 		lastLineRange=[str lineRangeForRange:NSMakeRange(lastLineRange.location-1, 0)];
 	}while(firstLine==NO);
 
-	if ( originalSelectedRange.length>1)	// more than one line selected to begin with?
+	if ( originalSelectedRange.length>1)	{// more than one line selected to begin with?
 		originalSelectedRange.length+=sizeAdded;
+	}
 NS_HANDLER
 //	[[mSceneTextView textStorage] endEditing];
 //	[mSceneTextView setSelectedRange:originalSelectedRange];
@@ -1009,7 +1012,7 @@ NS_DURING
 		if ( [str compare:StringToInsert options:NSLiteralSearch range:rangeToRemove] ==NSOrderedSame)
 		{
 			[mSceneTextView setSelectedRange:rangeToRemove];
-			[mSceneTextView insertText:@""];
+			[mSceneTextView insertText:@"" replacementRange:rangeToRemove];
 			sizeRemoved+=lengte;
 			if ( rangeToRemove.location < originalSelectedRange.location)
 				originalSelectedRange.location-=lengte;

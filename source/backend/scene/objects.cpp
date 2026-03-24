@@ -61,7 +61,7 @@ std::string& ObjectDebugHelper::SimpleDesc(std::string& result)
 {
 	char str[256];
 
-	sprintf(str, "%u: ", Index);
+	snprintf(str, sizeof(str), "%u: ", Index);
 	result = str;
 	if(IsCopy)
 		result += "Copy of ";

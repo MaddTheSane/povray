@@ -54,7 +54,7 @@ std::string Exception::lookup_code(int err, const char *file, unsigned int line)
 		case kNoErr:
 			if (file == NULL)
 				return "(Failed to determine error: no code found.)";
-			sprintf(str, "(Failed to determine error: no code in exception thrown at %s line %d.)", file, line);
+			snprintf(str, sizeof(str), "(Failed to determine error: no code in exception thrown at %s line %d.)", file, line);
 			return std::string(str);
 
 		case kParamErr:
@@ -63,7 +63,7 @@ std::string Exception::lookup_code(int err, const char *file, unsigned int line)
 		case kMemFullErr:
 			if (file == NULL)
 				return "Out of memory.";
-			sprintf(str, "Memory allocation failure exception thrown at %s line %d.", file, line);
+			snprintf(str, sizeof(str), "Memory allocation failure exception thrown at %s line %d.", file, line);
 			return std::string(str);
 
 		case kInvalidDataSizeErr:
@@ -165,7 +165,7 @@ std::string Exception::lookup_code(int err, const char *file, unsigned int line)
 		case kUncategorizedError:
 			if (file == NULL)
 				return "Uncategorized error.";
-			sprintf(str, "Uncategorized error thrown at %s line %d.", file, line);
+			snprintf(str, sizeof(str), "Uncategorized error thrown at %s line %d.", file, line);
 			return std::string(str);
 
 		case kNumericalLimitErr:
@@ -173,7 +173,7 @@ std::string Exception::lookup_code(int err, const char *file, unsigned int line)
 	}
 
 	// default
-	sprintf(str, "(Failed to determine error: unidentified code %d in exception thrown at %s line %d. Please report this.)", err, file, line);
+	snprintf(str, sizeof(str), "(Failed to determine error: unidentified code %d in exception thrown at %s line %d. Please report this.)", err, file, line);
 	return std::string(str);
 }
 

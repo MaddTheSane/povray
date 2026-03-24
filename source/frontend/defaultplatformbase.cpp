@@ -74,7 +74,7 @@ UCS2String DefaultPlatformBase::CreateTemporaryFile()
 	char buffer[32];
 
 	cnt++;
-	sprintf(buffer, "/tmp/pov%08x.dat", cnt);
+	snprintf(buffer, sizeof(buffer), "/tmp/pov%08x.dat", cnt);
 
 	FILE *f = fopen(buffer, "wb");
 	if(f != NULL)

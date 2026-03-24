@@ -65,7 +65,7 @@ int POVMSUtil_SetFormatString(POVMSObjectPtr object, POVMSType key, const char *
 	char buffer[1024];
 
 	va_start(marker, format);
-	vsprintf(buffer, format, marker);
+	vsnprintf(buffer, sizeof(buffer), format, marker);
 	va_end(marker);
 
 	return POVMSUtil_SetString(object, key, buffer);

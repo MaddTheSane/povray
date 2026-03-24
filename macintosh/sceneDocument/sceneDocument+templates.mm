@@ -209,9 +209,9 @@
 //---------------------------------------------------------------------
 - (void) runTemplateSheet
 {
-	[[NSApplication sharedApplication] beginSheet:[mFileOwner window]
-				modalForWindow:[self window] modalDelegate:self 
-				didEndSelector:@selector(templateSheetDidEnd:returnCode:contextInfo:) contextInfo:nil];
+	[[self window] beginSheet:[mFileOwner window] completionHandler:^(NSModalResponse returnCode) {
+		[self templateSheetDidEnd:[self->mFileOwner window] returnCode:returnCode contextInfo:NULL];
+	}];
 }
 
 //---------------------------------------------------------------------
@@ -266,7 +266,7 @@
 //---------------------------------------------------------------------
 -(void) templateSheetDidEnd: (NSWindow*)sheet returnCode: (NSModalResponse)returnCode contextInfo: (void*)contextInfo
 {
-	if ( returnCode ==NSOKButton)
+	if (returnCode == NSModalResponseOK)
 	{
 		NSDictionary *dict=[mFileOwner preferences];
 		MutableTabString *ds=[[MutableTabString alloc] initWithTabs:[self findTabsCurrentLine] andCallerType:YES];

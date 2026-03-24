@@ -45,9 +45,6 @@
 // this must be the last file included
 #import "syspovdebug.h"
 
-static NSComparisonResult sortSettingsByName(id first, id last, void*context);
-static NSComparisonResult sortSettingsBySize(id first, id last, void*context);
-
 static PreferencesPanelController* _preferencesPanelController;
 
 @implementation GreenLED
@@ -868,12 +865,12 @@ static PreferencesPanelController* _preferencesPanelController;
 			{
 				if ( resultCode == NSModalResponseOK)
 				 {
-					 [sceneFile setStringValue:[[openPanel URL]path]];
+					 [self->sceneFile setStringValue:[[openPanel URL]path]];
 					 [self setPanelTitle];
 					 // make a full path with scene file but without the extension as an output file.
 					 // example: /volumes/disk1/scene.pov becomes /volumes/disk1/scene.
-					 NSString *temp=[[ sceneFile stringValue] stringByDeletingPathExtension];
-					 [imageFile setStringValue:[temp stringByAppendingString:@"."]];
+					 NSString *temp=[[self->sceneFile stringValue] stringByDeletingPathExtension];
+					 [self->imageFile setStringValue:[temp stringByAppendingString:@"."]];
 				 }
 			}
 		 }
@@ -1937,35 +1934,3 @@ static PreferencesPanelController* _preferencesPanelController;
 }
 
 @end
-
-//---------------------------------------------------------------------
-// sortSettingsBySize
-//---------------------------------------------------------------------
-static NSComparisonResult sortSettingsBySize(id first, id last, void*context)
-{
-	NSString *a, *b;
-	a=[first objectForKey:@"imageSizeX"];
-	b=[last objectForKey:@"imageSizeX"];
-	if ( [a intValue] < [b intValue])
-		return NSOrderedAscending;	//receiver smaler than argument
-	else if ( [a intValue] > [b intValue])
-		return NSOrderedDescending;	//larger
-	
-	return NSOrderedSame;				//same
-}
-//---------------------------------------------------------------------
-// sortSettingsByName
-//---------------------------------------------------------------------
-static NSComparisonResult sortSettingsByName(id first, id last, void*context)
-{
-	NSString *a, *b;
-	NSRange range;
-	a=[first objectForKey:@"dictionaryName"];
-	b=[last objectForKey:@"dictionaryName"];
-	if ( [a length] > [b length])
-		range=NSMakeRange(0,[a length]);
-	else
-		range=NSMakeRange(0,[b length]);
-	
-	return  [a compare:b options:NSCaseInsensitiveSearch range:range];
-}

@@ -701,30 +701,32 @@
 //---------------------------------------------------------------------
 -(void)	acceptsPreferences:(NSDictionary*)dict forKey:(NSString*)key
 {
-
 	NSString *str=[[FunctionTemplate createDescriptionWithDictionary:dict andTabs:0 extraParam:0 mutableTabString:nil]string];
 	if (str==nil)
 		return;
-
-	if( [key isEqualToString:@"cameraUserDefinedDirectionPigment"])
+	
+	if ([key isEqualToString:@"cameraUserDefinedDirectionPigment"]) {
 		[self setCameraUserDefinedDirectionPigment:dict];
-	if( [key isEqualToString:@"cameraNormal"])
+	}
+	if ([key isEqualToString:@"cameraNormal"]) {
 		[self setCameraNormal:dict];
-	else if( [key isEqualToString:@"cameraUserDefinedDirectionFunctionInsertX"])
-		[cameraUserDefinedDirectionFunctionX  insertText:str];
-	else if( [key isEqualToString:@"cameraUserDefinedDirectionFunctionInsertY"])
-		[cameraUserDefinedDirectionFunctionY insertText:str];
-	else if( [key isEqualToString:@"cameraUserDefinedDirectionFunctionInsertZ"])
-		[cameraUserDefinedDirectionFunctionZ insertText:str];
-
-	else if( [key isEqualToString:@"cameraUserDefinedLocationPigment"])
+	} else if([key isEqualToString:@"cameraUserDefinedDirectionFunctionInsertX"]) {
+		[cameraUserDefinedDirectionFunctionX  insertText:str replacementRange:NSMakeRange(cameraUserDefinedDirectionFunctionX.textStorage.length, 0)];
+	} else if([key isEqualToString:@"cameraUserDefinedDirectionFunctionInsertY"]) {
+		[cameraUserDefinedDirectionFunctionY insertText:str replacementRange:NSMakeRange(cameraUserDefinedDirectionFunctionY.textStorage.length, 0)];
+	} else if([key isEqualToString:@"cameraUserDefinedDirectionFunctionInsertZ"]) {
+		[cameraUserDefinedDirectionFunctionZ insertText:str replacementRange:NSMakeRange(cameraUserDefinedDirectionFunctionZ.textStorage.length, 0)];
+	}
+	
+	else if( [key isEqualToString:@"cameraUserDefinedLocationPigment"]) {
 		[self setCameraUserDefinedLocationPigment:dict];
-	else if( [key isEqualToString:@"cameraUserDefinedLocationFunctionInsertX"])
-		[cameraUserDefinedLocationFunctionX insertText:str];
-	else if( [key isEqualToString:@"cameraUserDefinedLocationFunctionInsertY"])
-		[cameraUserDefinedLocationFunctionY insertText:str];
-	else if( [key isEqualToString:@"cameraUserDefinedLocationFunctionInsertZ"])
-		[cameraUserDefinedLocationFunctionZ  insertText:str];
+	} else if([key isEqualToString:@"cameraUserDefinedLocationFunctionInsertX"]) {
+		[cameraUserDefinedLocationFunctionX insertText:str replacementRange:NSMakeRange(cameraUserDefinedLocationFunctionX.textStorage.length, 0)];
+	} else if([key isEqualToString:@"cameraUserDefinedLocationFunctionInsertY"]) {
+		[cameraUserDefinedLocationFunctionY insertText:str replacementRange:NSMakeRange(cameraUserDefinedLocationFunctionY.textStorage.length, 0)];
+	} else if([key isEqualToString:@"cameraUserDefinedLocationFunctionInsertZ"]) {
+		[cameraUserDefinedLocationFunctionZ  insertText:str replacementRange:NSMakeRange(cameraUserDefinedLocationFunctionZ.textStorage.length, 0)];
+	}
 
 	[self setKeyName:nil];	//release key
 }

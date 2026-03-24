@@ -352,13 +352,13 @@ UCS2 *Parser::Parse_VStr(bool pathname)
 	*(p++) = 'f';
 	*p = '\0';
 
-	sprintf(temp4, temp3, Express[X]);
+	snprintf(temp4, sizeof(temp4), temp3, Express[X]);
 	New = String_To_UCS2(temp4, pathname);       // add first component
 
 	for(Terms = 1; Terms < Dim; Terms++)
 	{
 		New = UCS2_strcat(New, str);   // add separator
-		sprintf(temp4, temp3, Express[Terms]);
+		snprintf(temp4, sizeof(temp4), temp3, Express[Terms]);
 		str2 = String_To_UCS2(temp4, pathname);
 		New = UCS2_strcat(New, str2);  // add component
 		POV_FREE(str2);
