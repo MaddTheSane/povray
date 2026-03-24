@@ -12,7 +12,7 @@
 // own semaphore implementation.
 //
 
-#define HAVE_POSIX_SEMAPHORES 1
+#define HAVE_POSIX_SEMAPHORES 0
 
 
 #define HAVE_UCONTEXT_H 1

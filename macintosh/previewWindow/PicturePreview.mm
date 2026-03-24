@@ -101,14 +101,14 @@
 	if (gIsPausing==YES)
 	{
 		[mPauseToolbarItem setImage:[NSImage imageNamed: @"PreviewToolbarContinue"]];
-	[mPauseToolbarItem setToolTip: dPvtbContinueTooltip];
-	[mPauseToolbarItem setLabel: dPvtbContinueLabel];
+	[mPauseToolbarItem setToolTip: NSLocalizedStringFromTable(@"PvtbContinueTooltip", @"previewWindowLocalized", @"")];
+	[mPauseToolbarItem setLabel: NSLocalizedStringFromTable(@"PvtbContinueLabel", @"previewWindowLocalized", @"")];
 	}
 	else
 	{
 		[mPauseToolbarItem setImage:[NSImage imageNamed: @"PreviewToolbarPause"]];
-	[mPauseToolbarItem setToolTip: dPvtbPauseTooltip];
-	[mPauseToolbarItem setLabel: dPvtbPauseLabel];
+	[mPauseToolbarItem setToolTip: NSLocalizedStringFromTable(@"PvtbPauseTooltip", @"previewWindowLocalized", @"")];
+	[mPauseToolbarItem setLabel: NSLocalizedStringFromTable(@"PvtbPauseLabel", @"previewWindowLocalized", @"")];
 	}
 }
 
@@ -568,11 +568,11 @@
 		[self showWindow:self shouldBecomeFront:NO];
 
 		NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-		if ([[defaults objectForKey:@"AlwaysPutPreviewwindowInFrontButton"]intValue] == NSOnState)
+		if ([[defaults objectForKey:@"AlwaysPutPreviewwindowInFrontButton"]integerValue] == NSOnState)
 		{
 			if ( vfe::gVfeSession->RenderingAnimation() == false)	// no animation and option set
 				[[self window] makeKeyAndOrderFront:self];	// move to front and make key window
-			else if ([[defaults objectForKey:@"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton"]intValue] == NSOffState)
+			else if ([[defaults objectForKey:@"OnlyPutPreviewwindowInFrontForFirstFrameOfAnimationButton"]integerValue] == NSOffState)
 				[[self window] makeKeyAndOrderFront:self];	// move to front and make key window
 			else if (vfe::gVfeSession->GetCurrentFrame()==1)
 				[[self window] makeKeyAndOrderFront:self];	// move to front and make key window
@@ -699,25 +699,25 @@
 - (void)initializeToolbar
 {
 	mCutToolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:PvtbCutItemIdentifier];
-	[mCutToolbarItem setLabel: dPvtbCutLabel];
-	[mCutToolbarItem setPaletteLabel: dPvtbCutPaletteLabel];
-	[mCutToolbarItem setToolTip:dPvtbCutTooltip];
+	[mCutToolbarItem setLabel: NSLocalizedStringFromTable(@"PvtbCutLabel", @"previewWindowLocalized", @"")];
+	[mCutToolbarItem setPaletteLabel: NSLocalizedStringFromTable(@"PvtbCutPaletteLabel", @"previewWindowLocalized", @"")];
+	[mCutToolbarItem setToolTip:NSLocalizedStringFromTable(@"PvtbCutTooltip", @"previewWindowLocalized", @"")];
   [mCutToolbarItem setImage:[NSImage imageNamed: @"PreviewToolbarCut"]];
 	[mCutToolbarItem setTarget: self];
 	[mCutToolbarItem setAction: @selector(cutButton:)];
 
 	mStopToolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:PvtbStopItemIdentifier];
-	[mStopToolbarItem setLabel: dPvtbStopLabel];
-	[mStopToolbarItem setPaletteLabel: dPvtbStopLabelPaletteLabel];
-	[mStopToolbarItem setToolTip:dPvtbStopLabelTooltipLabel];
+	[mStopToolbarItem setLabel: NSLocalizedStringFromTable(@"PvtbStopLabel", @"previewWindowLocalized", @"")];
+	[mStopToolbarItem setPaletteLabel: NSLocalizedStringFromTable(@"PvtbStopPaletteLabel", @"previewWindowLocalized", @"")];
+	[mStopToolbarItem setToolTip:NSLocalizedStringFromTable(@"PvtbStopTooltip", @"previewWindowLocalized", @"")];
   [mStopToolbarItem setImage:[NSImage imageNamed: @"PreviewToolbarStop"]];
 	[mStopToolbarItem setTarget: self];
 	[mStopToolbarItem setAction: @selector(stopButton:)];
 
 	mPauseToolbarItem = [[NSToolbarItem alloc] initWithItemIdentifier:PvtbPauseContinueItemIdentifier];
-	[mPauseToolbarItem setLabel: dPvtbPauseLabel];
-	[mPauseToolbarItem setPaletteLabel: dPvtbPauseContinuePaletteLabel];
-	[mPauseToolbarItem setToolTip:dPvtbPauseTooltip];
+	[mPauseToolbarItem setLabel: NSLocalizedStringFromTable(@"PvtbPauseLabel", @"previewWindowLocalized", @"")];
+	[mPauseToolbarItem setPaletteLabel: NSLocalizedStringFromTable(@"PvtbPauseContinuePaletteLabel", @"previewWindowLocalized", @"")];
+	[mPauseToolbarItem setToolTip:NSLocalizedStringFromTable(@"PvtbPauseTooltip", @"previewWindowLocalized", @"")];
   [mPauseToolbarItem setImage:[NSImage imageNamed: @"PreviewToolbarPause"]];
 	[mPauseToolbarItem setTarget: self];
 	[mPauseToolbarItem setAction: @selector(pauseButton:)];

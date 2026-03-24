@@ -1,0 +1,117 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "PvtbContinueLabel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue"
+          }
+        }
+      }
+    },
+    "PvtbContinueTooltip" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continue rendering (after pause)"
+          }
+        }
+      }
+    },
+    "PvtbCutLabel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select"
+          }
+        }
+      }
+    },
+    "PvtbCutPaletteLabel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a section"
+          }
+        }
+      }
+    },
+    "PvtbCutTooltip" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select an area for the next rendering.\nRow and column values are written to the rendering preferences \"Partial Image Size\"\n"
+          }
+        }
+      }
+    },
+    "PvtbPauseContinuePaletteLabel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause/Continue"
+          }
+        }
+      }
+    },
+    "PvtbPauseLabel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause"
+          }
+        }
+      }
+    },
+    "PvtbPauseTooltip" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause rendering.\nThe time-out is 3 seconds. If the renderer is not able to pause in that time, the render continues."
+          }
+        }
+      }
+    },
+    "PvtbStopLabel" : {
+      "comment" : "previewWindowLocalized.strings\n  PovRay 3.7 RC8 x4\n\n  Created by yvo on 18/08/13.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop"
+          }
+        }
+      }
+    },
+    "PvtbStopPaletteLabel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop"
+          }
+        }
+      }
+    },
+    "PvtbStopTooltip" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop the current rendering"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}

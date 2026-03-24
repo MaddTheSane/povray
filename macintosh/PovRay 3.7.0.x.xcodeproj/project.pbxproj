@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		553A62892580C0AA004D15BB /* png.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62842580C0AA004D15BB /* png.h */; };
 		553A628A2580C0AA004D15BB /* pngstruct.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62852580C0AA004D15BB /* pngstruct.h */; };
 		553A628B2580C0AA004D15BB /* pngpriv.h in Headers */ = {isa = PBXBuildFile; fileRef = 553A62862580C0AA004D15BB /* pngpriv.h */; };
-		5553EF6829A538B7007B9534 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5553EF6A29A538B7007B9534 /* InfoPlist.strings */; };
 		5553EF6C29A53B17007B9534 /* IlmThreadNamespace.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF6B29A53B17007B9534 /* IlmThreadNamespace.h */; };
 		5553EF6F29A53B5F007B9534 /* IlmThreadForward.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF6D29A53B5F007B9534 /* IlmThreadForward.h */; };
 		5553EF7029A53B5F007B9534 /* IlmThreadExport.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF6E29A53B5F007B9534 /* IlmThreadExport.h */; };
@@ -29,6 +28,8 @@
 		5553EF8829A56F53007B9534 /* jpegint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5553EF7D29A56F53007B9534 /* jpegint.h */; };
 		55B1735629A4CD9A00FE3F46 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5567B88A211394E2003BFAE4 /* Icons.xcassets */; };
 		55B88C2D21137FDF00AA468A /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B88C2C21137FDF00AA468A /* libz.1.tbd */; };
+		55D4B8812F724DD400BA5066 /* previewWindowLocalized.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 55D4B8802F724DD400BA5066 /* previewWindowLocalized.xcstrings */; };
+		55D4B8832F7251F300BA5066 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 55D4B8822F7251F300BA5066 /* InfoPlist.xcstrings */; };
 		8222236D1D4535F90062FCA5 /* preferencesPanelController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8222236C1D4535F90062FCA5 /* preferencesPanelController.mm */; };
 		822223701D45360D0062FCA5 /* backgroundTemplate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 8222236F1D45360D0062FCA5 /* backgroundTemplate.mm */; };
 		823625BD1D16909B0009612E /* macintoshDisplay.mm in Sources */ = {isa = PBXBuildFile; fileRef = 823625BB1D16909B0009612E /* macintoshDisplay.mm */; };
@@ -810,7 +811,6 @@
 		82E3D1751D450E2C00AE5B03 /* pigmentLocalized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82E3D13A1D450E2C00AE5B03 /* pigmentLocalized.strings */; };
 		82E3D1761D450E2C00AE5B03 /* pigmentTemplate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E3D13C1D450E2C00AE5B03 /* pigmentTemplate.xib */; };
 		82E3D1771D450E2C00AE5B03 /* preferencespanel.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82E3D13E1D450E2C00AE5B03 /* preferencespanel.strings */; };
-		82E3D1781D450E2C00AE5B03 /* previewWindowLocalized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82E3D1401D450E2C00AE5B03 /* previewWindowLocalized.strings */; };
 		82E3D1791D450E2C00AE5B03 /* SceneDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E3D1421D450E2C00AE5B03 /* SceneDocument.xib */; };
 		82E3D17A1D450E2C00AE5B03 /* slopemapLocalized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 82E3D1441D450E2C00AE5B03 /* slopemapLocalized.strings */; };
 		82E3D17B1D450E2C00AE5B03 /* slopemapTemplate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 82E3D1461D450E2C00AE5B03 /* slopemapTemplate.xib */; };
@@ -5710,7 +5710,6 @@
 		553A62842580C0AA004D15BB /* png.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = png.h; sourceTree = "<group>"; };
 		553A62852580C0AA004D15BB /* pngstruct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngstruct.h; sourceTree = "<group>"; };
 		553A62862580C0AA004D15BB /* pngpriv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pngpriv.h; sourceTree = "<group>"; };
-		5553EF6929A538B7007B9534 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5553EF6B29A53B17007B9534 /* IlmThreadNamespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IlmThreadNamespace.h; sourceTree = "<group>"; };
 		5553EF6D29A53B5F007B9534 /* IlmThreadForward.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IlmThreadForward.h; sourceTree = "<group>"; };
 		5553EF6E29A53B5F007B9534 /* IlmThreadExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IlmThreadExport.h; sourceTree = "<group>"; };
@@ -5727,6 +5726,8 @@
 		5553EF7D29A56F53007B9534 /* jpegint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpegint.h; sourceTree = "<group>"; };
 		5567B88A211394E2003BFAE4 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		55B88C2C21137FDF00AA468A /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		55D4B8802F724DD400BA5066 /* previewWindowLocalized.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = previewWindowLocalized.xcstrings; sourceTree = "<group>"; };
+		55D4B8822F7251F300BA5066 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		8207D2E01D04648000A42189 /* eLut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = eLut.h; sourceTree = "<group>"; };
 		8207D2E11D04648000A42189 /* IlmBaseConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IlmBaseConfig.h; sourceTree = "<group>"; };
 		8207D2E21D04648000A42189 /* jconfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
@@ -6594,7 +6595,6 @@
 		82E3D13B1D450E2C00AE5B03 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/pigmentLocalized.strings; sourceTree = "<group>"; };
 		82E3D13D1D450E2C00AE5B03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/pigmentTemplate.xib; sourceTree = "<group>"; };
 		82E3D13F1D450E2C00AE5B03 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/preferencespanel.strings; sourceTree = "<group>"; };
-		82E3D1411D450E2C00AE5B03 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/previewWindowLocalized.strings; sourceTree = "<group>"; };
 		82E3D1431D450E2C00AE5B03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SceneDocument.xib; sourceTree = "<group>"; };
 		82E3D1451D450E2C00AE5B03 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/slopemapLocalized.strings; sourceTree = "<group>"; };
 		82E3D1471D450E2C00AE5B03 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/slopemapTemplate.xib; sourceTree = "<group>"; };
@@ -14146,40 +14146,40 @@
 			isa = PBXGroup;
 			children = (
 				550D584A2114D2510039C3B1 /* algorithm */,
-				550D504C2114D2460039C3B1 /* align */,
 				550D4E112114D2400039C3B1 /* align.hpp */,
+				550D504C2114D2460039C3B1 /* align */,
 				550D4D6B2114D23C0039C3B1 /* aligned_storage.hpp */,
 				550D4D4D2114D23C0039C3B1 /* any.hpp */,
 				550D469E2114D2380039C3B1 /* archive */,
 				550D53E72114D24C0039C3B1 /* array.hpp */,
 				550D4EED2114D2420039C3B1 /* asio.hpp */,
 				550D53FC2114D24D0039C3B1 /* assert.hpp */,
-				550D56452114D2500039C3B1 /* assign */,
 				550D4E122114D2400039C3B1 /* assign.hpp */,
-				550D53952114D24A0039C3B1 /* atomic */,
+				550D56452114D2500039C3B1 /* assign */,
 				550D470F2114D2390039C3B1 /* atomic.hpp */,
+				550D53952114D24A0039C3B1 /* atomic */,
 				550D4E132114D2400039C3B1 /* bimap.hpp */,
-				550D4DDA2114D23E0039C3B1 /* bind */,
 				550D53932114D24A0039C3B1 /* bind.hpp */,
-				550D45DF2114D2370039C3B1 /* blank_fwd.hpp */,
+				550D4DDA2114D23E0039C3B1 /* bind */,
 				550D4EEE2114D2420039C3B1 /* blank.hpp */,
+				550D45DF2114D2370039C3B1 /* blank_fwd.hpp */,
 				550D4E142114D2410039C3B1 /* call_traits.hpp */,
 				550D4EBF2114D2410039C3B1 /* cast.hpp */,
 				550D4F242114D2430039C3B1 /* cerrno.hpp */,
 				550D4FE62114D2460039C3B1 /* checked_delete.hpp */,
-				550D58B72114D2530039C3B1 /* chrono */,
 				550D4F3A2114D2440039C3B1 /* chrono.hpp */,
-				550D490C2114D23A0039C3B1 /* circular_buffer_fwd.hpp */,
+				550D58B72114D2530039C3B1 /* chrono */,
 				550D469B2114D2380039C3B1 /* circular_buffer.hpp */,
+				550D490C2114D23A0039C3B1 /* circular_buffer_fwd.hpp */,
 				550D4DBA2114D23D0039C3B1 /* compatibility */,
 				550D4D6C2114D23D0039C3B1 /* compressed_pair.hpp */,
 				550D4D6D2114D23D0039C3B1 /* compute.hpp */,
 				550D4DF62114D2400039C3B1 /* concept */,
 				550D50832114D2470039C3B1 /* concept_archetype.hpp */,
-				550D45E42114D2370039C3B1 /* concept_check */,
 				550D4EBC2114D2410039C3B1 /* concept_check.hpp */,
-				550D51522114D2480039C3B1 /* config */,
+				550D45E42114D2370039C3B1 /* concept_check */,
 				550D4EBD2114D2410039C3B1 /* config.hpp */,
+				550D51522114D2480039C3B1 /* config */,
 				550D4FE72114D2460039C3B1 /* container */,
 				550D45EA2114D2380039C3B1 /* convert.hpp */,
 				550D54502114D24D0039C3B1 /* core */,
@@ -14190,50 +14190,50 @@
 				550D53C62114D24B0039C3B1 /* cstdlib.hpp */,
 				550D53E22114D24C0039C3B1 /* current_function.hpp */,
 				550D53DF2114D24B0039C3B1 /* cxx11_char_types.hpp */,
-				550D59AF2114D2540039C3B1 /* date_time */,
 				550D4DF22114D23F0039C3B1 /* date_time.hpp */,
+				550D59AF2114D2540039C3B1 /* date_time */,
 				550D51DE2114D2490039C3B1 /* detail */,
 				550D561B2114D24F0039C3B1 /* dll.hpp */,
+				550D589D2114D2520039C3B1 /* dynamic_bitset.hpp */,
 				550D45F12114D2380039C3B1 /* dynamic_bitset */,
 				550D504A2114D2460039C3B1 /* dynamic_bitset_fwd.hpp */,
-				550D589D2114D2520039C3B1 /* dynamic_bitset.hpp */,
 				550D4FCA2114D2450039C3B1 /* enable_shared_from_this.hpp */,
 				550D4ECE2114D2420039C3B1 /* exception */,
 				550D470E2114D2390039C3B1 /* exception_ptr.hpp */,
 				550D4EEB2114D2420039C3B1 /* filesystem.hpp */,
-				550D56562114D2500039C3B1 /* flyweight */,
 				550D4DEB2114D23E0039C3B1 /* flyweight.hpp */,
-				550D4DF02114D23F0039C3B1 /* foreach_fwd.hpp */,
+				550D56562114D2500039C3B1 /* flyweight */,
 				550D45E12114D2370039C3B1 /* foreach.hpp */,
-				550D58A12114D2520039C3B1 /* format */,
+				550D4DF02114D23F0039C3B1 /* foreach_fwd.hpp */,
 				550D4DD62114D23E0039C3B1 /* format.hpp */,
+				550D58A12114D2520039C3B1 /* format */,
+				550D45DC2114D2370039C3B1 /* function.hpp */,
 				550D51A52114D2490039C3B1 /* function */,
 				550D4F392114D2430039C3B1 /* function_equal.hpp */,
 				550D4DD72114D23E0039C3B1 /* function_output_iterator.hpp */,
-				550D45DC2114D2370039C3B1 /* function.hpp */,
-				550D4F992114D2440039C3B1 /* functional */,
 				550D4DF32114D23F0039C3B1 /* functional.hpp */,
+				550D4F992114D2440039C3B1 /* functional */,
 				550D4D702114D23D0039C3B1 /* generator_iterator.hpp */,
 				550D52462114D2490039C3B1 /* geometry.hpp */,
 				550D53C42114D24A0039C3B1 /* get_pointer.hpp */,
 				550D490B2114D23A0039C3B1 /* hana.hpp */,
 				550D4D6E2114D23D0039C3B1 /* implicit_cast.hpp */,
 				550D53E32114D24C0039C3B1 /* indirect_reference.hpp */,
+				550D4FC92114D2450039C3B1 /* integer.hpp */,
 				550D4DCD2114D23D0039C3B1 /* integer */,
 				550D4D592114D23C0039C3B1 /* integer_fwd.hpp */,
 				550D4DEA2114D23E0039C3B1 /* integer_traits.hpp */,
-				550D4FC92114D2450039C3B1 /* integer.hpp */,
 				550D50F12114D2470039C3B1 /* intrusive */,
 				550D4DF42114D2400039C3B1 /* intrusive_ptr.hpp */,
 				550D4D4E2114D23C0039C3B1 /* io */,
 				550D561C2114D24F0039C3B1 /* io_fwd.hpp */,
 				550D54BE2114D24E0039C3B1 /* is_placeholder.hpp */,
+				550D45DD2114D2370039C3B1 /* iterator.hpp */,
 				550D4FCB2114D2450039C3B1 /* iterator */,
 				550D4D522114D23C0039C3B1 /* iterator_adaptors.hpp */,
-				550D45DD2114D2370039C3B1 /* iterator.hpp */,
 				550D4DF12114D23F0039C3B1 /* last_value.hpp */,
-				550D4EC02114D2420039C3B1 /* lexical_cast */,
 				550D507E2114D2460039C3B1 /* lexical_cast.hpp */,
+				550D4EC02114D2420039C3B1 /* lexical_cast */,
 				550D58B52114D2530039C3B1 /* limits.hpp */,
 				550D469C2114D2380039C3B1 /* local_function.hpp */,
 				550D4DF52114D2400039C3B1 /* locale.hpp */,
@@ -14249,24 +14249,24 @@
 				550D561E2114D2500039C3B1 /* move */,
 				550D51A12114D2480039C3B1 /* mpi.hpp */,
 				550D490D2114D23A0039C3B1 /* mpl */,
-				550D4D5A2114D23C0039C3B1 /* multi_array */,
 				550D4FC82114D2450039C3B1 /* multi_array.hpp */,
+				550D4D5A2114D23C0039C3B1 /* multi_array */,
 				550D4D712114D23D0039C3B1 /* multi_index */,
-				550D4EEC2114D2420039C3B1 /* multi_index_container_fwd.hpp */,
 				550D589F2114D2520039C3B1 /* multi_index_container.hpp */,
+				550D4EEC2114D2420039C3B1 /* multi_index_container_fwd.hpp */,
 				550D50812114D2470039C3B1 /* next_prior.hpp */,
 				550D51A32114D2480039C3B1 /* non_type.hpp */,
 				550D54BF2114D24E0039C3B1 /* noncopyable.hpp */,
 				550D51DD2114D2490039C3B1 /* nondet_random.hpp */,
-				550D53E52114D24C0039C3B1 /* none_t.hpp */,
 				550D58B62114D2530039C3B1 /* none.hpp */,
+				550D53E52114D24C0039C3B1 /* none_t.hpp */,
 				550D52482114D24A0039C3B1 /* numeric */,
-				550D53DE2114D24B0039C3B1 /* operators_v1.hpp */,
 				550D4F3B2114D2440039C3B1 /* operators.hpp */,
-				550D4E022114D2400039C3B1 /* optional */,
+				550D53DE2114D24B0039C3B1 /* operators_v1.hpp */,
 				550D4DEF2114D23F0039C3B1 /* optional.hpp */,
-				550D51BB2114D2490039C3B1 /* parameter */,
+				550D4E022114D2400039C3B1 /* optional */,
 				550D51512114D2480039C3B1 /* parameter.hpp */,
+				550D51BB2114D2490039C3B1 /* parameter */,
 				550D53C72114D24B0039C3B1 /* pending */,
 				550D45E32114D2370039C3B1 /* phoenix.hpp */,
 				550D4DEE2114D23F0039C3B1 /* pointee.hpp */,
@@ -14275,25 +14275,25 @@
 				550D48552114D2390039C3B1 /* polymorphic_cast.hpp */,
 				550D53E62114D24C0039C3B1 /* polymorphic_pointer_cast.hpp */,
 				550D53E82114D24D0039C3B1 /* pool */,
-				550D57B72114D2510039C3B1 /* predef */,
 				550D53FB2114D24D0039C3B1 /* predef.h */,
-				550D56812114D2500039C3B1 /* preprocessor */,
+				550D57B72114D2510039C3B1 /* predef */,
 				550D51A02114D2480039C3B1 /* preprocessor.hpp */,
-				550D4F252114D2430039C3B1 /* program_options */,
+				550D56812114D2500039C3B1 /* preprocessor */,
 				550D4DD92114D23E0039C3B1 /* program_options.hpp */,
+				550D4F252114D2430039C3B1 /* program_options */,
 				550D504B2114D2460039C3B1 /* progress.hpp */,
 				550D4D4B2114D23B0039C3B1 /* python.hpp */,
-				550D4F3C2114D2440039C3B1 /* random */,
 				550D53E12114D24C0039C3B1 /* random.hpp */,
-				550D4E162114D2410039C3B1 /* range */,
+				550D4F3C2114D2440039C3B1 /* random */,
 				550D54BD2114D24E0039C3B1 /* range.hpp */,
-				550D4EEF2114D2430039C3B1 /* ratio */,
+				550D4E162114D2410039C3B1 /* range */,
 				550D45E92114D2370039C3B1 /* ratio.hpp */,
+				550D4EEF2114D2430039C3B1 /* ratio */,
 				550D4DEC2114D23F0039C3B1 /* rational.hpp */,
 				550D4D6F2114D23D0039C3B1 /* ref.hpp */,
-				550D45DE2114D2370039C3B1 /* regex_fwd.hpp */,
 				550D4E102114D2400039C3B1 /* regex.h */,
 				550D58492114D2510039C3B1 /* regex.hpp */,
+				550D45DE2114D2370039C3B1 /* regex_fwd.hpp */,
 				550D58482114D2510039C3B1 /* scope_exit.hpp */,
 				550D4EBE2114D2410039C3B1 /* scoped_array.hpp */,
 				550D4FC62114D2450039C3B1 /* scoped_ptr.hpp */,
@@ -14302,18 +14302,18 @@
 				550D4ECD2114D2420039C3B1 /* shared_container_iterator.hpp */,
 				550D52472114D2490039C3B1 /* shared_ptr.hpp */,
 				550D47102114D2390039C3B1 /* signal.hpp */,
-				550D4F822114D2440039C3B1 /* signals */,
 				550D4DD82114D23E0039C3B1 /* signals.hpp */,
+				550D4F822114D2440039C3B1 /* signals */,
 				550D58F32114D2530039C3B1 /* signals2.hpp */,
-				550D54712114D24E0039C3B1 /* smart_ptr */,
 				550D4FC72114D2450039C3B1 /* smart_ptr.hpp */,
+				550D54712114D24E0039C3B1 /* smart_ptr */,
 				550D51A22114D2480039C3B1 /* spirit.hpp */,
 				550D53E42114D24C0039C3B1 /* static_assert.hpp */,
 				550D4F232114D2430039C3B1 /* swap.hpp */,
 				550D59A32114D2540039C3B1 /* system */,
 				550D45F42114D2380039C3B1 /* test */,
-				550D48572114D2390039C3B1 /* thread */,
 				550D45DB2114D2370039C3B1 /* thread.hpp */,
+				550D48572114D2390039C3B1 /* thread */,
 				550D49092114D23A0039C3B1 /* throw_exception.hpp */,
 				550D469A2114D2380039C3B1 /* timer.hpp */,
 				550D45E22114D2370039C3B1 /* token_functions.hpp */,
@@ -14321,17 +14321,17 @@
 				550D45EF2114D2380039C3B1 /* tokenizer.hpp */,
 				550D50842114D2470039C3B1 /* tr1 */,
 				550D4D532114D23C0039C3B1 /* tuple */,
-				550D599B2114D2540039C3B1 /* type_index */,
-				550D54C12114D24E0039C3B1 /* type_index.hpp */,
-				550D58F42114D2530039C3B1 /* type_traits */,
-				550D4D4C2114D23B0039C3B1 /* type_traits.hpp */,
 				550D56802114D2500039C3B1 /* type.hpp */,
+				550D54C12114D24E0039C3B1 /* type_index.hpp */,
+				550D599B2114D2540039C3B1 /* type_index */,
+				550D4D4C2114D23B0039C3B1 /* type_traits.hpp */,
+				550D58F42114D2530039C3B1 /* type_traits */,
 				550D54C22114D24F0039C3B1 /* units */,
 				550D4F132114D2430039C3B1 /* unordered */,
 				550D4FAE2114D2440039C3B1 /* unordered_map.hpp */,
 				550D58A02114D2520039C3B1 /* unordered_set.hpp */,
-				550D4FAF2114D2440039C3B1 /* utility */,
 				550D45E02114D2370039C3B1 /* utility.hpp */,
+				550D4FAF2114D2440039C3B1 /* utility */,
 				550D54622114D24D0039C3B1 /* uuid */,
 				550D4F122114D2430039C3B1 /* variant.hpp */,
 				550D53942114D24A0039C3B1 /* version.hpp */,
@@ -15636,7 +15636,7 @@
 				82E3D10E1D450E2C00AE5B03 /* globalsTemplate.xib */,
 				82E3D1101D450E2C00AE5B03 /* headerIncludeLocalized.strings */,
 				82E3D1121D450E2C00AE5B03 /* headerIncludeTemplate.xib */,
-				5553EF6A29A538B7007B9534 /* InfoPlist.strings */,
+				55D4B8822F7251F300BA5066 /* InfoPlist.xcstrings */,
 				82E3D1141D450E2C00AE5B03 /* interiorLocalized.strings */,
 				82E3D1161D450E2C00AE5B03 /* interiorTemplate.xib */,
 				82E3D1181D450E2C00AE5B03 /* lightLocalized.strings */,
@@ -15659,7 +15659,7 @@
 				82E3D13A1D450E2C00AE5B03 /* pigmentLocalized.strings */,
 				82E3D13C1D450E2C00AE5B03 /* pigmentTemplate.xib */,
 				82E3D13E1D450E2C00AE5B03 /* preferencespanel.strings */,
-				82E3D1401D450E2C00AE5B03 /* previewWindowLocalized.strings */,
+				55D4B8802F724DD400BA5066 /* previewWindowLocalized.xcstrings */,
 				82E3D1421D450E2C00AE5B03 /* SceneDocument.xib */,
 				82E3D1441D450E2C00AE5B03 /* slopemapLocalized.strings */,
 				82E3D1461D450E2C00AE5B03 /* slopemapTemplate.xib */,
@@ -16198,7 +16198,7 @@
 				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "PovRay 3.7.0.x" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -16246,10 +16246,10 @@
 				82E3D17B1D450E2C00AE5B03 /* slopemapTemplate.xib in Resources */,
 				82E3D15A1D450E2C00AE5B03 /* ColorPicker.xib in Resources */,
 				82E3D1701D450E2C00AE5B03 /* objectEditorLocalized.strings in Resources */,
-				82E3D1781D450E2C00AE5B03 /* previewWindowLocalized.strings in Resources */,
 				82E3D1631D450E2C00AE5B03 /* interiorTemplate.xib in Resources */,
 				82E3D1621D450E2C00AE5B03 /* interiorLocalized.strings in Resources */,
 				82E3D15B1D450E2C00AE5B03 /* finishLocalized.strings in Resources */,
+				55D4B8812F724DD400BA5066 /* previewWindowLocalized.xcstrings in Resources */,
 				82E3D14F1D450E2C00AE5B03 /* apppreferencesLocalized.strings in Resources */,
 				82E3D1591D450E2C00AE5B03 /* colormapTemplate.xib in Resources */,
 				82E3D16B1D450E2C00AE5B03 /* mediaLocalized.strings in Resources */,
@@ -16258,7 +16258,6 @@
 				82E3D1671D450E2C00AE5B03 /* materialEditorLocalized.strings in Resources */,
 				82E3D1711D450E2C00AE5B03 /* objectLocalized.strings in Resources */,
 				82E3D1541D450E2C00AE5B03 /* bodymapLocalized.strings in Resources */,
-				5553EF6829A538B7007B9534 /* InfoPlist.strings in Resources */,
 				82BF5BFE1D4536D6006E40D9 /* MainMenu.xib in Resources */,
 				82E3D15C1D450E2C00AE5B03 /* finishTemplate.xib in Resources */,
 				82E3D1521D450E2C00AE5B03 /* batch.xib in Resources */,
@@ -16276,6 +16275,7 @@
 				82E3D1611D450E2C00AE5B03 /* headerIncludeTemplate.xib in Resources */,
 				82E3D1571D450E2C00AE5B03 /* cameraTemplate.xib in Resources */,
 				55B1735629A4CD9A00FE3F46 /* Icons.xcassets in Resources */,
+				55D4B8832F7251F300BA5066 /* InfoPlist.xcstrings in Resources */,
 				82E3D1581D450E2C00AE5B03 /* colormapLocalized.strings in Resources */,
 				82E3D1501D450E2C00AE5B03 /* backgroundLocalized.strings in Resources */,
 				82E3D14E1D450E2C00AE5B03 /* applicationLocalized.strings in Resources */,
@@ -16790,14 +16790,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5553EF6A29A538B7007B9534 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5553EF6929A538B7007B9534 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		826E9EC21DC896B600D3855A /* backgroundTemplate.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -17134,14 +17126,6 @@
 			name = preferencespanel.strings;
 			sourceTree = "<group>";
 		};
-		82E3D1401D450E2C00AE5B03 /* previewWindowLocalized.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				82E3D1411D450E2C00AE5B03 /* en */,
-			);
-			name = previewWindowLocalized.strings;
-			sourceTree = "<group>";
-		};
 		82E3D1421D450E2C00AE5B03 /* SceneDocument.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -17235,7 +17219,10 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = ilmbase;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/libraries/ilmbase\"/** \"$(SRCROOT)/config/libraries_config\"";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/libraries/ilmbase\"/**",
+					"\"$(SRCROOT)/config/libraries_config\"",
+				);
 			};
 			name = Debug;
 		};
@@ -17287,7 +17274,14 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/**";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
+					"\"$(SRCROOT)/../libraries/png\"",
+					"\"$(SRCROOT)/../libraries/boost\"",
+					"\"$(SRCROOT)/../source\"/**",
+				);
 				WARNING_CFLAGS = "-Wno-write-strings";
 			};
 			name = Debug;
@@ -17330,6 +17324,7 @@
 				PRODUCT_NAME = "POVRay 3.7.0.x";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRINGS_FILE_OUTPUT_ENCODING = binary;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -17350,7 +17345,10 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = png;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/config/libraries_config/libpng\"";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/png\"",
+					"\"$(SRCROOT)/config/libraries_config/libpng\"",
+				);
 			};
 			name = Debug;
 		};
@@ -17366,7 +17364,11 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = tiff;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/config/libraries_config\"";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/config/libraries_config\"",
+				);
 			};
 			name = Debug;
 		};
@@ -17382,7 +17384,10 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = jpeg;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/config/libraries_config\"";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/config/libraries_config\"",
+				);
 			};
 			name = Debug;
 		};
@@ -17464,7 +17469,14 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				SDKROOT = macosx;
 				STRIP_INSTALLED_PRODUCT = NO;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/../libraries/boost\" \"$(SRCROOT)/../source\"/**";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
+					"\"$(SRCROOT)/../libraries/png\"",
+					"\"$(SRCROOT)/../libraries/boost\"",
+					"\"$(SRCROOT)/../source\"/**",
+				);
 				WARNING_CFLAGS = "-Wno-write-strings";
 			};
 			name = Release;
@@ -17508,6 +17520,7 @@
 				PRODUCT_NAME = "POVRay 3.7.0.x";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRINGS_FILE_OUTPUT_ENCODING = binary;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -17528,7 +17541,10 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = png;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/png\" \"$(SRCROOT)/config/libraries_config/libpng\"";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/png\"",
+					"\"$(SRCROOT)/config/libraries_config/libpng\"",
+				);
 			};
 			name = Release;
 		};
@@ -17544,7 +17560,11 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = tiff;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/tiff/libtiff\" \"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/config/libraries_config\"";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/tiff/libtiff\"",
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/config/libraries_config\"",
+				);
 			};
 			name = Release;
 		};
@@ -17560,7 +17580,10 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = jpeg;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../libraries/jpeg\" \"$(SRCROOT)/config/libraries_config\"";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/../libraries/jpeg\"",
+					"\"$(SRCROOT)/config/libraries_config\"",
+				);
 			};
 			name = Release;
 		};
@@ -17635,7 +17658,10 @@
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = ilmbase;
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/libraries/ilmbase\"/** \"$(SRCROOT)/config/libraries_config\"";
+				USER_HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/libraries/ilmbase\"/**",
+					"\"$(SRCROOT)/config/libraries_config\"",
+				);
 			};
 			name = Release;
 		};

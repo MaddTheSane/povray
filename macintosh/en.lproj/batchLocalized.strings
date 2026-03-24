@@ -2,7 +2,7 @@
 "BatchError" ="Batch error";
 "Cancelled" ="Cancelled";
 "Done" ="Complete";
-"Processing" ="Waiting...";
+"Processing" ="Waiting…";
 "Queue" ="Queued";
 "RenderError" ="Fatal Error";
 "Rendering" ="Rendering";

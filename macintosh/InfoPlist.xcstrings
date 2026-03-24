@@ -1,0 +1,118 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "POV-Ray 3.7 Unofficial"
+          }
+        }
+      }
+    },
+    "CFBundleGetInfoString" : {
+      "comment" : "Get Info string",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "POV-Ray Unofficial, © 1991-2003 Persistene of Vision Team. © 2003- 2016 Persistence of Vision Raytracer Pty. Ltd.Unofficial Compile by: Yvo and René© Smellenbergh e-mail: yvo.s@gmx.net"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "POVRay 3.7.0.x"
+          }
+        }
+      }
+    },
+    "NSHumanReadableCopyright" : {
+      "comment" : "Copyright (human-readable)",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "POV-Ray Unofficial, © 1991-2003 Persistene of Vision Team. © 2003- 2016 Persistence of Vision Raytracer Pty. Ltd.Unofficial Compile by: Yvo and René© Smellenbergh e-mail: yvo.s@gmx.net"
+          }
+        }
+      }
+    },
+    "org.povray.inc" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "POV-Ray Include"
+          }
+        }
+      }
+    },
+    "org.povray.pov" : {
+      "comment" : "InfoPlist.strings\n  PovRay 3.7.0.x\n\n  Created by C.W. Betts on 2/21/23.",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "POV-Ray Source"
+          }
+        }
+      }
+    },
+    "org.povray.unofficial.mptpl" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "POV-Ray Template"
+          }
+        }
+      }
+    },
+    "POV-Ray Include" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "POV-Ray Include"
+          }
+        }
+      }
+    },
+    "POV-Ray source" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "POV-Ray Source"
+          }
+        }
+      }
+    },
+    "POV-Ray Template" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "POV-Ray Template"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.1"
+}
