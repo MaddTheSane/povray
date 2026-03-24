@@ -389,7 +389,7 @@
 	if ( sender==self)
 		theTag=cMediaAbsorptionGroupOn;
 	else
-		theTag=[sender tag];
+		theTag=(eMediaTags)[sender tag];
 	switch( theTag)
 	{
 		case 	cMediaAbsorptionGroupOn:

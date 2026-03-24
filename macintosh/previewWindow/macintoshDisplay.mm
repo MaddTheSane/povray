@@ -72,12 +72,12 @@ namespace vfe
 				ystart = 0;
 
 			RemoteObject *rm=[[RemoteObject alloc] initWithObjectsAndKeys:
-												[NSNumber numberWithInt:w], @"w",
-												[NSNumber numberWithInt:h], @"h",
-												[NSNumber numberWithInt:xstart], @"xStart",
-												[NSNumber numberWithInt:xend], @"xEnd",
-												[NSNumber numberWithInt:ystart], @"yStart",
-												[NSNumber numberWithInt:yend], @"yEnd",
+												@(w), @"w",
+												@(h), @"h",
+												@(xstart), @"xStart",
+												@(xend), @"xEnd",
+												@(ystart), @"yStart",
+												@(yend), @"yEnd",
 												nil];
 
 			[activeRenderPreview performSelectorOnMainThread:@selector(displayInit:) withObject: rm waitUntilDone:YES];

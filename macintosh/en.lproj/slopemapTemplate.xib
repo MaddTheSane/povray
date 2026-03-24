@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -31,14 +31,14 @@
             <windowStyleMask key="styleMask" titled="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" topStrut="YES"/>
             <rect key="contentRect" x="89" y="60" width="594" height="418"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="875"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1512" height="949"/>
             <value key="minSize" type="size" width="594" height="418"/>
             <view key="contentView" id="6">
                 <rect key="frame" x="0.0" y="0.0" width="594" height="418"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13">
-                        <rect key="frame" x="446" y="13" width="71" height="28"/>
+                        <rect key="frame" x="438" y="13" width="71" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="83">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -50,7 +50,7 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11">
-                        <rect key="frame" x="199" y="12" width="112" height="28"/>
+                        <rect key="frame" x="161" y="12" width="112" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Reset to default" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="81">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -77,7 +77,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8">
-                        <rect key="frame" x="309" y="12" width="72" height="28"/>
+                        <rect key="frame" x="281" y="12" width="72" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Open" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="78">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -88,7 +88,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9">
-                        <rect key="frame" x="379" y="12" width="69" height="28"/>
+                        <rect key="frame" x="361" y="12" width="69" height="28"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="79">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -108,6 +108,13 @@ DQ
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" headerView="95" id="16">
                                     <rect key="frame" x="0.0" y="0.0" width="264" height="295"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <string key="toolTip">Enter the x value of a control point ("location" on the x-axis).
+Enter the y value of a control point ("height"  on the y-axis).
+Specify the slope at a control point.
+0 gives no slope (horizontal).
+1 gives a slope of 45° upwards.
+Negative values specify a downward slope.
+Try to keep values between +3 and -3.</string>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     <tableViewGridLines key="gridStyleMask" vertical="YES" horizontal="YES"/>
@@ -204,7 +211,7 @@ DQ
                             <action selector="addButton:" target="-2" id="56"/>
                         </connections>
                     </button>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34">
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34">
                         <rect key="frame" x="0.0" y="388" width="300" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Preview" drawsBackground="YES" id="86">
@@ -213,7 +220,7 @@ DQ
                             <color key="backgroundColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <button fixedFrame="YES" tag="10" translatesAutoresizingMaskIntoConstraints="NO" id="35">
+                    <button tag="10" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35">
                         <rect key="frame" x="120" y="52" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="bevel" title="Slope" bezelStyle="regularSquare" image="slope" imagePosition="only" alignment="left" borderStyle="border" tag="10" imageScaling="proportionallyDown" inset="2" id="87">
@@ -224,7 +231,7 @@ DQ
                             <action selector="slopemapButtons:" target="-2" id="62"/>
                         </connections>
                     </button>
-                    <button fixedFrame="YES" tag="20" translatesAutoresizingMaskIntoConstraints="NO" id="44">
+                    <button tag="20" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="44">
                         <rect key="frame" x="52" y="52" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="bevel" title="Point" bezelStyle="regularSquare" image="points" imagePosition="only" alignment="left" borderStyle="border" tag="20" imageScaling="proportionallyDown" inset="2" id="88">
@@ -235,7 +242,7 @@ DQ
                             <action selector="slopemapButtons:" target="-2" id="63"/>
                         </connections>
                     </button>
-                    <button fixedFrame="YES" tag="30" translatesAutoresizingMaskIntoConstraints="NO" id="45">
+                    <button tag="30" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="45">
                         <rect key="frame" x="86" y="52" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="bevel" title="Curve" bezelStyle="regularSquare" image="curve" imagePosition="only" alignment="left" borderStyle="border" tag="30" imageScaling="proportionallyDown" inset="2" id="89">
@@ -246,7 +253,7 @@ DQ
                             <action selector="slopemapButtons:" target="-2" id="64"/>
                         </connections>
                     </button>
-                    <button fixedFrame="YES" tag="40" translatesAutoresizingMaskIntoConstraints="NO" id="46">
+                    <button tag="40" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46">
                         <rect key="frame" x="18" y="52" width="32" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <buttonCell key="cell" type="bevel" title="Raster" bezelStyle="regularSquare" image="raster" imagePosition="only" alignment="left" borderStyle="border" tag="40" imageScaling="proportionallyDown" inset="2" id="90">

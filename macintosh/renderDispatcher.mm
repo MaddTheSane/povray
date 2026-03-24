@@ -64,7 +64,7 @@ NSNotificationName const POVRenderNewSelectionInPreferencesPanelSetNotification 
 
 BOOL gOnlyDisplayPart=NO;
 BOOL gDontErasePreveiw=NO;
-static NSInteger compareBatchEntryUsingSelector(id p1, id p2, void *context);
+static NSInteger compareBatchEntryUsingSelector(NSMutableArray *p1, NSMutableArray *p2, void *context);
 
 struct sortStruct {
 	int type;

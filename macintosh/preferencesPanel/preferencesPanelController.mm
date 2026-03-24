@@ -1003,7 +1003,7 @@ static PreferencesPanelController* _preferencesPanelController;
 	static bool inside=false;
 	if ( inside==false)
 	{
-		preferencesTag tag=[[aNotification object]tag];
+		preferencesTag tag=(preferencesTag)[[aNotification object]tag];
 		switch (tag)
 		{
 			case cImageXTag:	//image with
@@ -1734,10 +1734,31 @@ static PreferencesPanelController* _preferencesPanelController;
 	switch( [[sender selectedCell] tag])
 	{
 		case 0: 	//size
-			[mSettingsArray sortUsingFunction:sortSettingsBySize context:nil];
+			[mSettingsArray sortUsingComparator:^NSComparisonResult(id  _Nonnull first, id  _Nonnull last) {
+				NSString *a, *b;
+				a=[first objectForKey:@"imageSizeX"];
+				b=[last objectForKey:@"imageSizeX"];
+				if ( [a intValue] < [b intValue])
+					return NSOrderedAscending;	//receiver smaler than argument
+				else if ( [a intValue] > [b intValue])
+					return NSOrderedDescending;	//larger
+				
+				return NSOrderedSame;				//same
+			}];
 			break;
 		case 1: //name
-			[mSettingsArray sortUsingFunction:sortSettingsByName context:nil];
+			[mSettingsArray sortUsingComparator:^NSComparisonResult(id  _Nonnull first, id  _Nonnull last) {
+				NSString *a, *b;
+				NSRange range;
+				a=[first objectForKey:@"dictionaryName"];
+				b=[last objectForKey:@"dictionaryName"];
+				if ( [a length] > [b length])
+					range=NSMakeRange(0,[a length]);
+				else
+					range=NSMakeRange(0,[b length]);
+				
+				return  [a compare:b options:NSCaseInsensitiveSearch range:range];
+			}];
 			break;
 	}
 	[settingsPanelTableView reloadData];

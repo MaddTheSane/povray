@@ -281,7 +281,7 @@ namespace boost {
 #if defined(_MSC_VER) && (_MSC_VER >= 1400) && !defined(__SGI_STL_PORT) && !defined(_STLPORT_VERSION)
                     sprintf_s(begin, CharacterBufferSize,
 #else
-                    sprintf(begin, 
+                    snprintf(begin, CharacterBufferSize,
 #endif
                     "%.*g", static_cast<int>(boost::detail::lcast_get_precision<float>()), val_as_double);
                 return finish > start;
@@ -293,7 +293,7 @@ namespace boost {
 #if defined(_MSC_VER) && (_MSC_VER >= 1400) && !defined(__SGI_STL_PORT) && !defined(_STLPORT_VERSION)
                     sprintf_s(begin, CharacterBufferSize,
 #else
-                    sprintf(begin, 
+                    snprintf(begin, CharacterBufferSize,
 #endif
                     "%.*g", static_cast<int>(boost::detail::lcast_get_precision<double>()), val);
                 return finish > start;
@@ -306,7 +306,7 @@ namespace boost {
 #if defined(_MSC_VER) && (_MSC_VER >= 1400) && !defined(__SGI_STL_PORT) && !defined(_STLPORT_VERSION)
                     sprintf_s(begin, CharacterBufferSize,
 #else
-                    sprintf(begin, 
+                    snprintf(begin, CharacterBufferSize,
 #endif
                     "%.*Lg", static_cast<int>(boost::detail::lcast_get_precision<long double>()), val );
                 return finish > start;

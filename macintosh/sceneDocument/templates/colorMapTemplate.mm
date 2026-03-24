@@ -236,7 +236,7 @@ enum {
 //---------------------------------------------------------------------
 - (IBAction)colormapUseGrayColor:(id)sender
 {
-	[mMap setButtonState:[sender state] forButton:[sender tag]];
+	[mMap setButtonState:[sender state] forButton:(eColormapButtonsTags)[sender tag]];
 	[mColorCell setIsGrayScale:([sender state]==NSOnState)];
 	[mTableView reloadData];		// redraw the table
 }
@@ -246,7 +246,7 @@ enum {
 //---------------------------------------------------------------------
 - (IBAction)colormapFilterOn:(id)sender
 {
-	[mMap setButtonState:[sender state] forButton:[sender tag]];
+	[mMap setButtonState:[sender state] forButton:(eColormapButtonsTags)[sender tag]];
 	NSTableColumn *t=[mTableView tableColumnWithIdentifier:@"Filter"];
 	[t setEditable:([mMap buttonState:cFilterButton]==NSOnState)];
 	[mTableView reloadData];		// redraw the table
@@ -257,7 +257,7 @@ enum {
 //---------------------------------------------------------------------
 - (IBAction)colormapTransmitOn:(id)sender
 {
-	[mMap setButtonState:[sender state] forButton:[sender tag]];
+	[mMap setButtonState:[sender state] forButton:(eColormapButtonsTags)[sender tag]];
 	NSTableColumn *t=[mTableView tableColumnWithIdentifier:@"Transmit"];
 	[t setEditable:([mMap buttonState:cTransmitButton]==NSOnState)];
 	[mTableView reloadData];		// redraw the table

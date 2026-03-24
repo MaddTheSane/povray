@@ -69,31 +69,31 @@
 	[ds copyTabAndText:@"photons {\n"];
 	[ds addTab];
 
-	if ( [[dict objectForKey:@"photonsTargetOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"photonsTargetOn"] integerValue]==NSOnState)
 		[ds appendTabAndFormat:@"target %@\n",[dict objectForKey:@"photonsSpacingEdit"]];
 		
-	if ( [[dict objectForKey:@"photonsReflectionOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"photonsReflectionOn"] integerValue]==NSOnState)
 	{
-		if ( [[dict objectForKey:@"photonsReflectionMaxtrix"] intValue]==cFirstCell)
+		if ( [[dict objectForKey:@"photonsReflectionMaxtrix"] integerValue]==cFirstCell)
 			[ds copyTabAndText:@"reflection on\n"];
 		else
 			[ds copyTabAndText:@"reflection off\n"];
 	}
-	if ( [[dict objectForKey:@"photonsRefractionOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"photonsRefractionOn"] integerValue]==NSOnState)
 	{
-		if ( [[dict objectForKey:@"photonsRefractionMaxtrix"] intValue]==cFirstCell)
+		if ( [[dict objectForKey:@"photonsRefractionMaxtrix"] integerValue]==cFirstCell)
 			[ds copyTabAndText:@"refraction on\n"];
 		else
 			[ds copyTabAndText:@"reflection off\n"];
 	}
-	if ( [[dict objectForKey:@"photonsCollectOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"photonsCollectOn"] integerValue]==NSOnState)
 	{
-		if ( [[dict objectForKey:@"photonsCollectMaxtrix"] intValue]==cFirstCell)
+		if ( [[dict objectForKey:@"photonsCollectMaxtrix"] integerValue]==cFirstCell)
 			[ds copyTabAndText:@"collect on\n"];
 		else
 			[ds copyTabAndText:@"collect off\n"];
 	}
-	if ( [[dict objectForKey:@"photonsPassThroughOn"] intValue]==NSOnState)
+	if ( [[dict objectForKey:@"photonsPassThroughOn"] integerValue]==NSOnState)
 		[ds copyTabAndText:@"pass_through\n"];
 
 	[ds removeTab];
@@ -186,7 +186,7 @@
 	if ( sender==self)
 		theTag=cPhotonsTargetOn;
 	else
-		theTag=[sender tag];
+		theTag=(ePhotonsTags)[sender tag];
 	switch( theTag)
 	{
 		case 	cPhotonsTargetOn:

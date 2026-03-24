@@ -299,7 +299,7 @@
 	if ( sender==self)
 		theTag=cInteriorDispersionGroupOn;
 	else
-		theTag=[sender tag];
+		theTag=(eInteriorTags)[sender tag];
 	switch( theTag)
 	{
 		case 	cInteriorDispersionGroupOn:
