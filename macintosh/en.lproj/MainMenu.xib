@@ -753,11 +753,11 @@
         <window title="Panel" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" frameAutosaveName="RenderPreferences" animationBehavior="default" id="294" userLabel="Render Preferences">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="548" y="155" width="680" height="422"/>
+            <rect key="contentRect" x="548" y="155" width="680" height="449"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1512" height="949"/>
             <value key="minSize" type="size" width="213" height="25"/>
             <view key="contentView" id="293">
-                <rect key="frame" x="0.0" y="0.0" width="680" height="422"/>
+                <rect key="frame" x="0.0" y="0.0" width="680" height="449"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button tag="2" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="629">
@@ -775,7 +775,7 @@ DQ
                         </connections>
                     </button>
                     <button tag="1" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="631">
-                        <rect key="frame" x="455" y="14" width="129" height="28"/>
+                        <rect key="frame" x="445" y="14" width="129" height="28"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Edit Scene File" bezelStyle="rounded" alignment="center" controlSize="small" borderStyle="border" inset="2" id="4507">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -811,23 +811,23 @@ DQ
                         </textFieldCell>
                     </textField>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1235" customClass="GreenLED">
-                        <rect key="frame" x="537" y="410" width="20" height="5"/>
+                        <rect key="frame" x="537" y="434" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1236" customClass="GreenLED">
-                        <rect key="frame" x="460" y="410" width="20" height="5"/>
+                        <rect key="frame" x="460" y="434" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1412" customClass="GreenLED">
-                        <rect key="frame" x="130" y="410" width="20" height="5"/>
+                        <rect key="frame" x="130" y="434" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1414" customClass="GreenLED">
-                        <rect key="frame" x="225" y="410" width="20" height="5"/>
+                        <rect key="frame" x="225" y="434" width="20" height="5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </customView>
                     <tabView fixedFrame="YES" controlSize="small" translatesAutoresizingMaskIntoConstraints="NO" id="295">
-                        <rect key="frame" x="5" y="28" width="661" height="377"/>
+                        <rect key="frame" x="5" y="52" width="661" height="377"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <tabViewItems>
                             <tabViewItem label="Files &amp; Paths" identifier="1" id="299">
@@ -2638,7 +2638,7 @@ All images, individual and batch renderings, are saved to this folder if this op
             <connections>
                 <outlet property="delegate" destination="666" id="871"/>
             </connections>
-            <point key="canvasLocation" x="415" y="57"/>
+            <point key="canvasLocation" x="415" y="70.5"/>
         </window>
         <customObject id="666" userLabel="PreferencesPanelController" customClass="PreferencesPanelController">
             <connections>
@@ -3279,7 +3279,7 @@ All images, individual and batch renderings, are saved to this folder if this op
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5265">
                         <rect key="frame" x="396" y="12" width="78" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <buttonCell key="cell" type="push" title="Ok" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="5350">
+                        <buttonCell key="cell" type="push" title="Okay" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="5350">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -3291,7 +3291,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5264">
-                        <rect key="frame" x="318" y="12" width="78" height="32"/>
+                        <rect key="frame" x="306" y="12" width="78" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="5351">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -3302,7 +3302,7 @@ DQ
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5263">
-                        <rect key="frame" x="238" y="12" width="82" height="32"/>
+                        <rect key="frame" x="212" y="12" width="82" height="32"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="5352">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
