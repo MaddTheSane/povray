@@ -69,9 +69,9 @@ namespace vfePlatform
 			bool m_ProcessRunning;
 			string m_Command;
 			string m_Params;
-			unsigned long m_ExitCode;
-			unsigned long m_LastError;
-			unsigned long m_ProcessId;
+			int m_ExitCode;
+			int m_LastError;
+			int m_ProcessId;
 
 		private:
 			MacShelloutProcessing();

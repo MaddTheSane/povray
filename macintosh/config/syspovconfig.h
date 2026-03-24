@@ -56,9 +56,6 @@
 	#include <vector>
 	#include <fcntl.h>
 
-	#include <boost/tr1/memory.hpp>
-	#define POV_TR1_NAMESPACE std::tr1
-
 	// from directory "vfe"
 	#include "vfeconf.h"
 	using std::max;

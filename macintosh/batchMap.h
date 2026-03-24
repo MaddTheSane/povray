@@ -82,5 +82,7 @@ typedef NS_ENUM(NSInteger, eBatchButtonsTags) {
 -(BOOL) entryExists:(NSString *)file;
 
 @end
+
 @interface BatchTableView : NSTableView
+
 @end

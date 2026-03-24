@@ -56,7 +56,7 @@
 #define watching 1
 #define aborting 2
 
-enum menuTags {
+typedef NS_ENUM(NSInteger, menuTags) {
 	eTag_renderMenu					=100,
 	eTag_pauseMenu					=101,
 	eTag_abortMenu					=102,
@@ -96,7 +96,7 @@ extern int				tabDistance;
 #define commentAttribute										@"cm"
 #define noneCommentAttribute								@"nc"
 
-extern id	activeRenderPreview;
+extern __kindof PicturePreviewBase	*activeRenderPreview;
 extern bool gApplicationShouldTerminate;
 extern volatile bool gUserWantsToAbortRender;
 extern volatile bool gApplicationAlreadyReceivedStopResquest;
@@ -127,6 +127,7 @@ extern volatile bool	gUserWantsToPauseRenderer;
 }
 
 + (MainController*) sharedInstance;
+@property (class, readonly, strong) MainController *sharedInstance;
 - (void) previewWindowChangedName: (NSString*) newName;
 
 @property (strong) menuFromDirectory *templateMainInsertMenu;

@@ -46,7 +46,7 @@
 typedef NS_ENUM(NSInteger, appPrefsEnum) {
 	cMaintainIndentaion	=1,
 	cAutoIndentBraces		=2,
-	};
+};
 
 typedef NS_ENUM(NSInteger, textStyles) {
 	cBlackStyle		=1,
@@ -58,6 +58,7 @@ typedef NS_ENUM(NSInteger, textStyles) {
 	cMacroStyle,
 	cDeclareStyle
 };
+
 typedef NS_ENUM(NSInteger, windowInFront) {
 		AllwaysInFront = 1,
 		OnlyfirstFrameInFront=2

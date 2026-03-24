@@ -93,7 +93,7 @@ enum {
 	 cCameraAngleTabViewSperical					=1,
 	cCameraUserDefinedFunction						=0,
 	 cCameraUserDefinedPigment						=1
-	};
+};
 
 typedef NS_ENUM(NSInteger, eCameraButtons) {
 	cCameraNormalEditButton														=90,
@@ -108,7 +108,7 @@ typedef NS_ENUM(NSInteger, eCameraButtons) {
 	cCameraUserDefinedLocationFunctionInsertButtonZ	=80
 };
 
-enum {
+NS_ENUM(NSInteger) {
 	cCameraAngleDirectionOn						=1,
 	cCameraVerticalAngleOn						=2,
 	cCameraAngleDirectionPopup				=3,
@@ -125,7 +125,7 @@ enum {
 	cCameraUserDefinedDirectionPopup	=14,
 	cCameraUserDefinedLocationPopup		=15,
 	cCameraAspectRatioAutoOn					=16
-	};
+};
 
 @interface CameraTemplate : BaseTemplate
 {

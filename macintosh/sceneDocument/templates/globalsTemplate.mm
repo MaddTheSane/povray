@@ -688,7 +688,7 @@
 			
 		}
 	};
-	[openPanel beginSheetModalForWindow:[self getWindow] 
+	[openPanel beginSheetModalForWindow:[self window] 
                               completionHandler:importPreferencesOpenSavePanelHandler];
 
 }

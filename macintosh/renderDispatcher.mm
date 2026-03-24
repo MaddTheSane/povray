@@ -2002,7 +2002,7 @@ void *doRender(void* theObject)
 	static const char formatString[]="%s=%s";
 	if ( [string UTF8String])
 	{
-		size_t allocSize = strlen(command) + strlen([string UTF8String]) + strlen(formatString) + 1;
+		size_t allocSize = strlen(command) + strlen([string UTF8String]) + sizeof(formatString) + 1;
 		Argv[++Argc]=(char*)malloc(allocSize);
 		snprintf((char*)Argv[Argc], allocSize, formatString, command, [string UTF8String]);
 	}

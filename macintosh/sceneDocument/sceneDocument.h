@@ -130,10 +130,10 @@ typedef NS_ENUM(unsigned short, styleToBeUsed) {
 	useDeclareStyle=4
 };
 
-enum menuItems {
+typedef NS_ENUM(NSInteger, menuItems) {
 	eTag_ColorSyntaxOn=345,
 	eTag_recolorDocument=346
-	};
+};
 
 typedef struct {
 	char *wordAsCString;
@@ -142,13 +142,13 @@ typedef struct {
 	styleToBeUsed wordStyle;
 	NSUInteger location;
 	BOOL isLocal;
-	} keyWords;
+} keyWords;
  
  typedef struct {
  	long numberOfWords;
  	long reserved;
  	long *pointers;
- }countList;
+ } countList;
 
 extern countList sKeywordsCountList[256];
 extern keyWords *sKeywordsList;

@@ -71,13 +71,13 @@ NSControlStateValue	autoIndentBraces;	// Keep new lines indented at same depth a
 int	tabDistance;
 
 // renderer control
-id						activeRenderPreview=nil;
-bool					gApplicationShouldTerminate = NO;
-volatile bool	gUserWantsToAbortRender = NO;
-volatile bool	gApplicationAlreadyReceivedStopResquest = NO;
-bool					gIsRendering = NO;
-bool					gIsPausing = NO;
-volatile bool	gUserWantsToPauseRenderer = NO;
+__kindof PicturePreviewBase	*	activeRenderPreview=nil;
+bool													gApplicationShouldTerminate = NO;
+volatile bool									gUserWantsToAbortRender = NO;
+volatile bool									gApplicationAlreadyReceivedStopResquest = NO;
+bool													gIsRendering = NO;
+bool													gIsPausing = NO;
+volatile bool									gUserWantsToPauseRenderer = NO;
 
 @implementation MainController
 

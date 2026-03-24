@@ -48,32 +48,29 @@
 
 - (void)sendEvent:(NSEvent *)anEvent
 {
-	if ( numericBlockPoint != 0 && [anEvent type]==NSEventTypeKeyDown && [anEvent keyCode]==65)
-	{
+	if ( numericBlockPoint != 0 && [anEvent type]==NSEventTypeKeyDown && [anEvent keyCode]==65) {
 		NSString *newString;
-
-		if ( numericBlockPoint == 1)	//comma
+		
+		if (numericBlockPoint == 1) { //comma
 			newString=@",";
-		else 
+		} else {
 			newString=@".";
+		}
 		
 		NSEvent *newEvent=[NSEvent keyEventWithType:[anEvent type]
-	
-			location:[anEvent locationInWindow]
-			modifierFlags:[anEvent modifierFlags]
-			timestamp:[anEvent timestamp]
-			windowNumber:[anEvent windowNumber]
-			context:[anEvent context]
-			characters:[NSString stringWithString:newString]
-			charactersIgnoringModifiers:[anEvent charactersIgnoringModifiers]
-			isARepeat:[anEvent isARepeat]
-			keyCode:[anEvent keyCode]
-			];
-			[super sendEvent:newEvent];
-	}
-	else
+																			 location:[anEvent locationInWindow]
+																	modifierFlags:[anEvent modifierFlags]
+																			timestamp:[anEvent timestamp]
+																	 windowNumber:[anEvent windowNumber]
+																				context:[anEvent context]
+																		 characters:[NSString stringWithString:newString]
+										charactersIgnoringModifiers:[anEvent charactersIgnoringModifiers]
+																			isARepeat:[anEvent isARepeat]
+																				keyCode:[anEvent keyCode]];
+		[super sendEvent:newEvent];
+	} else {
 		[super sendEvent:anEvent];
-
+	}
 }
 
 //---------------------------------------------------------------------
@@ -83,16 +80,12 @@
 {
 	// store open documents and position
 	NSDocumentController *ctrl=[NSDocumentController sharedDocumentController];
-	if ( ctrl)
-	{
-		NSArray *documentsArray=[ctrl documents];
-		NSEnumerator *en=[documentsArray objectEnumerator];
-		id doc;
+	if (ctrl) {
+		NSArray<__kindof NSDocument *> *documentsArray=[ctrl documents];
+		NSEnumerator<__kindof NSDocument *> *en=[documentsArray objectEnumerator];
 		NSMutableArray *dict=[[NSMutableArray alloc]init];
-		for ( doc in en )
-		{
-			if ( [doc fileName]!=nil && [doc isDocumentEdited]==NO)
-			{
+		for (__kindof NSDocument *doc in en ) {
+			if ( [doc fileName]!=nil && [doc isDocumentEdited]==NO) {
 				NSWindow *win=[doc window];
 				NSString *winRect=[win stringWithSavedFrame];
 				NSString *winPath=[doc fileName];

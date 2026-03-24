@@ -504,12 +504,13 @@
 	if ( vfe::gVfeSession != NULL)
 	{
 		pov_base::UCS2String t=		vfe::gVfeSession->GetUCS2StringOption("Output_File_Name",POVMS_ASCIItoUCS2String(""));
-		outputName=[NSString stringWithUTF8String:POVMS_UCS2toASCIIString(t).c_str()];
+		NSData *titleData=[NSData dataWithBytes:t.c_str() length:t.length()*2];
+		outputName=[[NSString alloc] initWithData:titleData encoding:NSUTF16LittleEndianStringEncoding];
 		outputName=[outputName lastPathComponent];
 		if ( !(vfe::gVfeSession->GetBoolOption("Output_To_File",false) )) 
 		{
 			outputName=[outputName stringByDeletingPathExtension];
-		outputName=[outputName stringByAppendingString:@" (Not saving)"];
+			outputName=[outputName stringByAppendingString:@" (Not saving)"];
 		}
 	}
 	[[self window] setTitle:outputName];
