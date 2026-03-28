@@ -1,0 +1,420 @@
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "193"; */
+"193.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Built In"; ObjectID = "194"; */
+"194.title" = "Built In";
+
+/* Class = "NSMenuItem"; title = "All"; ObjectID = "195"; */
+"195.title" = "All";
+
+/* Class = "NSMenuItem"; title = "Built In Float"; ObjectID = "196"; */
+"196.title" = "Built In Float";
+
+/* Class = "NSTableColumn"; headerCell.title = "Result"; ObjectID = "199"; */
+"199.headerCell.title" = "Result";
+
+/* Class = "NSTableColumn"; headerCell.title = "Syntax"; ObjectID = "200"; */
+"200.headerCell.title" = "Syntax";
+
+/* Class = "NSMenuItem"; title = "Evaluate"; ObjectID = "202"; */
+"202.title" = "Evaluate";
+
+/* Class = "NSMenuItem"; title = "Math"; ObjectID = "203"; */
+"203.title" = "Math";
+
+/* Class = "NSMenuItem"; title = "String"; ObjectID = "204"; */
+"204.title" = "String";
+
+/* Class = "NSMenuItem"; title = "Trigonometry"; ObjectID = "205"; */
+"205.title" = "Trigonometry";
+
+/* Class = "NSMenuItem"; title = "Pattern"; ObjectID = "206"; */
+"206.title" = "Pattern";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "337"; */
+"337.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "0"; ObjectID = "338"; */
+"338.title" = "0";
+
+/* Class = "NSMenuItem"; title = "1"; ObjectID = "339"; */
+"339.title" = "1";
+
+/* Class = "NSMenuItem"; title = "2"; ObjectID = "340"; */
+"340.title" = "2";
+
+/* Class = "NSMenuItem"; title = "3"; ObjectID = "341"; */
+"341.title" = "3";
+
+/* Class = "NSMenuItem"; title = "4"; ObjectID = "342"; */
+"342.title" = "4";
+
+/* Class = "NSMenuItem"; title = "5"; ObjectID = "343"; */
+"343.title" = "5";
+
+/* Class = "NSMenuItem"; title = "6"; ObjectID = "344"; */
+"344.title" = "6";
+
+/* Class = "NSTabViewItem"; label = "Tab"; ObjectID = "521"; */
+"521.label" = "Tab";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "533"; */
+"533.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "534"; */
+"534.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "535"; */
+"535.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "536"; */
+"536.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "537"; */
+"537.title" = "Save";
+
+/* Class = "NSTextFieldCell"; title = "Types:"; ObjectID = "538"; */
+"538.title" = "Types:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "540"; */
+"540.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "p0:"; ObjectID = "541"; */
+"541.title" = "p0:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "542"; */
+"542.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "p1:"; ObjectID = "543"; */
+"543.title" = "p1:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "544"; */
+"544.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "p2:"; ObjectID = "545"; */
+"545.title" = "p2:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "546"; */
+"546.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "p3:"; ObjectID = "547"; */
+"547.title" = "p3:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "548"; */
+"548.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "p4:"; ObjectID = "549"; */
+"549.title" = "p4:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "550"; */
+"550.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "p5:"; ObjectID = "551"; */
+"551.title" = "p5:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "552"; */
+"552.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "p6:"; ObjectID = "553"; */
+"553.title" = "p6:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "554"; */
+"554.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "p7:"; ObjectID = "555"; */
+"555.title" = "p7:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "556"; */
+"556.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "p8:"; ObjectID = "557"; */
+"557.title" = "p8:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "558"; */
+"558.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "p9:"; ObjectID = "559"; */
+"559.title" = "p9:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "560"; */
+"560.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "x:"; ObjectID = "561"; */
+"561.title" = "x:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "562"; */
+"562.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "y:"; ObjectID = "563"; */
+"563.title" = "y:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "564"; */
+"564.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "z:"; ObjectID = "565"; */
+"565.title" = "z:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "566"; */
+"566.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "A:"; ObjectID = "567"; */
+"567.title" = "A:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "568"; */
+"568.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "B:"; ObjectID = "569"; */
+"569.title" = "B:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "570"; */
+"570.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "S1:"; ObjectID = "571"; */
+"571.title" = "S1:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "572"; */
+"572.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "S2:"; ObjectID = "573"; */
+"573.title" = "S2:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "574"; */
+"574.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "ID:"; ObjectID = "575"; */
+"575.title" = "ID:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "576"; */
+"576.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "A:"; ObjectID = "577"; */
+"577.title" = "A:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "578"; */
+"578.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "ID:"; ObjectID = "579"; */
+"579.title" = "ID:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "580"; */
+"580.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "V: <"; ObjectID = "581"; */
+"581.title" = "V: <";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "582"; */
+"582.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "583"; */
+"583.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "584"; */
+"584.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "585"; */
+"585.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "586"; */
+"586.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "587"; */
+"587.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "A:"; ObjectID = "588"; */
+"588.title" = "A:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "589"; */
+"589.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "B:"; ObjectID = "590"; */
+"590.title" = "B:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "591"; */
+"591.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "C:"; ObjectID = "592"; */
+"592.title" = "C:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "593"; */
+"593.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "D:"; ObjectID = "594"; */
+"594.title" = "D:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "595"; */
+"595.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "L:"; ObjectID = "596"; */
+"596.title" = "L:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "597"; */
+"597.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "A:"; ObjectID = "598"; */
+"598.title" = "A:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "599"; */
+"599.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "P:"; ObjectID = "600"; */
+"600.title" = "P:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "601"; */
+"601.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "S:"; ObjectID = "602"; */
+"602.title" = "S:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "603"; */
+"603.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "P:"; ObjectID = "604"; */
+"604.title" = "P:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "605"; */
+"605.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "L:"; ObjectID = "606"; */
+"606.title" = "L:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "607"; */
+"607.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "V1: <"; ObjectID = "608"; */
+"608.title" = "V1: <";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "609"; */
+"609.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "610"; */
+"610.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "611"; */
+"611.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "612"; */
+"612.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "613"; */
+"613.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "614"; */
+"614.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "V2: <"; ObjectID = "615"; */
+"615.title" = "V2: <";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "616"; */
+"616.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "617"; */
+"617.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "618"; */
+"618.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "619"; */
+"619.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "620"; */
+"620.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "621"; */
+"621.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "A:"; ObjectID = "622"; */
+"622.title" = "A:";
+
+/* Class = "NSTextFieldCell"; title = "N:"; ObjectID = "624"; */
+"624.title" = "N:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "625"; */
+"625.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "V: <"; ObjectID = "626"; */
+"626.title" = "V: <";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "627"; */
+"627.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "628"; */
+"628.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "629"; */
+"629.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "630"; */
+"630.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "631"; */
+"631.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "632"; */
+"632.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "633"; */
+"633.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "634"; */
+"634.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "635"; */
+"635.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "636"; */
+"636.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "S:"; ObjectID = "637"; */
+"637.title" = "S:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "638"; */
+"638.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "P:"; ObjectID = "639"; */
+"639.title" = "P:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "640"; */
+"640.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "L:"; ObjectID = "641"; */
+"641.title" = "L:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "642"; */
+"642.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "V: <"; ObjectID = "643"; */
+"643.title" = "V: <";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "644"; */
+"644.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "645"; */
+"645.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "646"; */
+"646.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "647"; */
+"647.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "648"; */
+"648.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "649"; */
+"649.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "Lambda:"; ObjectID = "650"; */
+"650.title" = "Lambda:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "651"; */
+"651.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "Omega:"; ObjectID = "652"; */
+"652.title" = "Omega:";
+
+/* Class = "NSTextFieldCell"; title = "0,0"; ObjectID = "653"; */
+"653.title" = "0,0";
+
+/* Class = "NSTextFieldCell"; title = "Octaves:\n"; ObjectID = "654"; */
+"654.title" = "Octaves:\n";

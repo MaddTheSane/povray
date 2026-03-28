@@ -1,0 +1,420 @@
+
+/* Class = "NSTabViewItem"; label = "Background"; ObjectID = "13"; */
+"13.label" = "Background";
+
+/* Class = "NSTabViewItem"; label = "sky_sphere"; ObjectID = "50"; */
+"50.label" = "sky_sphere";
+
+/* Class = "NSTabViewItem"; label = "Fog"; ObjectID = "59"; */
+"59.label" = "Fog";
+
+/* Class = "NSTabViewItem"; label = "Rainbow"; ObjectID = "109"; */
+"109.label" = "Rainbow";
+
+/* Class = "NSTabViewItem"; label = "Glow"; ObjectID = "150"; */
+"150.label" = "Glow";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "155"; */
+"155.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "x"; ObjectID = "156"; */
+"156.title" = "x";
+
+/* Class = "NSMenuItem"; title = "y"; ObjectID = "157"; */
+"157.title" = "y";
+
+/* Class = "NSMenuItem"; title = "z"; ObjectID = "158"; */
+"158.title" = "z";
+
+/* Class = "NSMenuItem"; title = "x,y,z"; ObjectID = "159"; */
+"159.title" = "x,y,z";
+
+/* Class = "NSMenuItem"; title = "x=y=z"; ObjectID = "160"; */
+"160.title" = "x=y=z";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "164"; */
+"164.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "165"; */
+"165.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "166"; */
+"166.title" = "-5";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "179"; */
+"179.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "y"; ObjectID = "180"; */
+"180.title" = "y";
+
+/* Class = "NSMenuItem"; title = "z"; ObjectID = "181"; */
+"181.title" = "z";
+
+/* Class = "NSMenuItem"; title = "x"; ObjectID = "182"; */
+"182.title" = "x";
+
+/* Class = "NSMenuItem"; title = "x,y,z"; ObjectID = "183"; */
+"183.title" = "x,y,z";
+
+/* Class = "NSMenuItem"; title = "x=y=z"; ObjectID = "184"; */
+"184.title" = "x=y=z";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "188"; */
+"188.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "189"; */
+"189.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "190"; */
+"190.title" = "-5";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "195"; */
+"195.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "ground fog"; ObjectID = "197"; */
+"197.title" = "ground fog";
+
+/* Class = "NSMenuItem"; title = "constant fog"; ObjectID = "198"; */
+"198.title" = "constant fog";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "247"; */
+"247.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "y"; ObjectID = "248"; */
+"248.title" = "y";
+
+/* Class = "NSMenuItem"; title = "z"; ObjectID = "249"; */
+"249.title" = "z";
+
+/* Class = "NSMenuItem"; title = "x"; ObjectID = "250"; */
+"250.title" = "x";
+
+/* Class = "NSMenuItem"; title = "x,y,z"; ObjectID = "251"; */
+"251.title" = "x,y,z";
+
+/* Class = "NSMenuItem"; title = "x=y=z"; ObjectID = "252"; */
+"252.title" = "x=y=z";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "256"; */
+"256.title" = "-5";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "257"; */
+"257.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "258"; */
+"258.title" = "0.0";
+
+/* Class = "NSTabViewItem"; label = "Grayscale"; ObjectID = "265"; */
+"265.label" = "Grayscale";
+
+/* Class = "NSTabViewItem"; label = "Rainbow"; ObjectID = "268"; */
+"268.label" = "Rainbow";
+
+/* Class = "NSTabViewItem"; label = "Custom"; ObjectID = "271"; */
+"271.label" = "Custom";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "282"; */
+"282.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "x=y=z"; ObjectID = "283"; */
+"283.title" = "x=y=z";
+
+/* Class = "NSMenuItem"; title = "y"; ObjectID = "284"; */
+"284.title" = "y";
+
+/* Class = "NSMenuItem"; title = "x,y,z"; ObjectID = "285"; */
+"285.title" = "x,y,z";
+
+/* Class = "NSMenuItem"; title = "x"; ObjectID = "286"; */
+"286.title" = "x";
+
+/* Class = "NSMenuItem"; title = "z"; ObjectID = "287"; */
+"287.title" = "z";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "291"; */
+"291.title" = "-5";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "292"; */
+"292.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "293"; */
+"293.title" = "0.0";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "307"; */
+"307.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "y"; ObjectID = "308"; */
+"308.title" = "y";
+
+/* Class = "NSMenuItem"; title = "x,y,z"; ObjectID = "309"; */
+"309.title" = "x,y,z";
+
+/* Class = "NSMenuItem"; title = "x"; ObjectID = "310"; */
+"310.title" = "x";
+
+/* Class = "NSMenuItem"; title = "z"; ObjectID = "311"; */
+"311.title" = "z";
+
+/* Class = "NSMenuItem"; title = "x=y=z"; ObjectID = "312"; */
+"312.title" = "x=y=z";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "316"; */
+"316.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "317"; */
+"317.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "318"; */
+"318.title" = "-5";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "330"; */
+"330.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "2"; ObjectID = "331"; */
+"331.title" = "2";
+
+/* Class = "NSMenuItem"; title = "1"; ObjectID = "332"; */
+"332.title" = "1";
+
+/* Class = "NSMenuItem"; title = "0"; ObjectID = "333"; */
+"333.title" = "0";
+
+/* Class = "NSMenuItem"; title = "3"; ObjectID = "341"; */
+"341.title" = "3";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "521"; */
+"521.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "522"; */
+"522.title" = "Save";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "523"; */
+"523.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "524"; */
+"524.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "525"; */
+"525.title" = "Cancel";
+
+/* Class = "NSTextFieldCell"; title = "Scene background color:"; ObjectID = "526"; */
+"526.title" = "Scene background color:";
+
+/* Class = "NSButtonCell"; title = "Edit sky_sphere pigment 1..."; ObjectID = "527"; */
+"527.title" = "Edit sky_sphere pigment 1...";
+
+/* Class = "NSButtonCell"; title = "pigment 2"; ObjectID = "528"; */
+"528.title" = "pigment 2";
+
+/* Class = "NSButtonCell"; title = "Edit sky_sphere pigment 2..."; ObjectID = "529"; */
+"529.title" = "Edit sky_sphere pigment 2...";
+
+/* Class = "NSButtonCell"; title = "pigment 3"; ObjectID = "530"; */
+"530.title" = "pigment 3";
+
+/* Class = "NSButtonCell"; title = "Edit sky_sphere pigment 3..."; ObjectID = "531"; */
+"531.title" = "Edit sky_sphere pigment 3...";
+
+/* Class = "NSButtonCell"; title = "pigment 4"; ObjectID = "532"; */
+"532.title" = "pigment 4";
+
+/* Class = "NSButtonCell"; title = "Edit sky_sphere pigment 4..."; ObjectID = "533"; */
+"533.title" = "Edit sky_sphere pigment 4...";
+
+/* Class = "NSButtonCell"; title = "pigment 5"; ObjectID = "534"; */
+"534.title" = "pigment 5";
+
+/* Class = "NSButtonCell"; title = "Edit sky_sphere pigment 5..."; ObjectID = "535"; */
+"535.title" = "Edit sky_sphere pigment 5...";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "536"; */
+"536.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "538"; */
+"538.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "539"; */
+"539.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "<"; ObjectID = "540"; */
+"540.title" = "<";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "541"; */
+"541.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "octaves:"; ObjectID = "542"; */
+"542.title" = "octaves:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "543"; */
+"543.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "omega:"; ObjectID = "544"; */
+"544.title" = "omega:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "545"; */
+"545.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "lambda:"; ObjectID = "546"; */
+"546.title" = "lambda:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "547"; */
+"547.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "Type:"; ObjectID = "549"; */
+"549.title" = "Type:";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "550"; */
+"550.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "553"; */
+"553.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "554"; */
+"554.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "<"; ObjectID = "555"; */
+"555.title" = "<";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "556"; */
+"556.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "558"; */
+"558.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "fog color:"; ObjectID = "560"; */
+"560.title" = "fog color:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "561"; */
+"561.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "turb_depth:"; ObjectID = "562"; */
+"562.title" = "turb_depth:";
+
+/* Class = "NSButtonCell"; title = "Turbulence:"; ObjectID = "563"; */
+"563.title" = "Turbulence:";
+
+/* Class = "NSTextFieldCell"; title = "distance:"; ObjectID = "564"; */
+"564.title" = "distance:";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "565"; */
+"565.title" = ",";
+
+/* Class = "NSButtonCell"; title = "up:"; ObjectID = "566"; */
+"566.title" = "up:";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "568"; */
+"568.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "569"; */
+"569.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "<"; ObjectID = "570"; */
+"570.title" = "<";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "571"; */
+"571.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "arc_angle:"; ObjectID = "572"; */
+"572.title" = "arc_angle:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "573"; */
+"573.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "falloff_angle:"; ObjectID = "574"; */
+"574.title" = "falloff_angle:";
+
+/* Class = "NSButtonCell"; title = "Edit..."; ObjectID = "575"; */
+"575.title" = "Edit...";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "576"; */
+"576.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "jitter:"; ObjectID = "577"; */
+"577.title" = "jitter:";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "578"; */
+"578.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "580"; */
+"580.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "581"; */
+"581.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "<"; ObjectID = "582"; */
+"582.title" = "<";
+
+/* Class = "NSTextFieldCell"; title = "direction:"; ObjectID = "583"; */
+"583.title" = "direction:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "584"; */
+"584.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "angle:"; ObjectID = "585"; */
+"585.title" = "angle:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "586"; */
+"586.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "width:"; ObjectID = "587"; */
+"587.title" = "width:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "588"; */
+"588.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "distance:"; ObjectID = "589"; */
+"589.title" = "distance:";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "590"; */
+"590.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "592"; */
+"592.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "593"; */
+"593.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "<"; ObjectID = "594"; */
+"594.title" = "<";
+
+/* Class = "NSTextFieldCell"; title = "location:"; ObjectID = "595"; */
+"595.title" = "location:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "596"; */
+"596.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "size:"; ObjectID = "597"; */
+"597.title" = "size:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "598"; */
+"598.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "radius:"; ObjectID = "599"; */
+"599.title" = "radius:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "600"; */
+"600.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "fade_power:"; ObjectID = "601"; */
+"601.title" = "fade_power:";
+
+/* Class = "NSTextFieldCell"; title = "glow color:"; ObjectID = "602"; */
+"602.title" = "glow color:";
+
+/* Class = "NSButtonCell"; title = "Transformations"; ObjectID = "604"; */
+"604.title" = "Transformations";
+
+/* Class = "NSButtonCell"; title = "Edit..."; ObjectID = "605"; */
+"605.title" = "Edit...";
+
+/* Class = "NSTextFieldCell"; title = "Type:"; ObjectID = "606"; */
+"606.title" = "Type:";
+
+/* Class = "NSButtonCell"; title = "Up:"; ObjectID = "eLx-P0-JjV"; */
+"eLx-P0-JjV.title" = "Up:";
+
+/* Class = "NSButtonCell"; title = "fog_offset:"; ObjectID = "gww-lv-pt9"; */
+"gww-lv-pt9.title" = "fog_offset:";
+
+/* Class = "NSButtonCell"; title = "fog_altitude:"; ObjectID = "yfB-Av-m0N"; */
+"yfB-Av-m0N.title" = "fog_altitude:";

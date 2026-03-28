@@ -1,0 +1,27 @@
+
+/* Class = "NSWindow"; title = "Convert v3.1 template file"; ObjectID = "7"; */
+"7.title" = "Convert v3.1 template file";
+
+/* Class = "NSBox"; title = "Target Directory"; ObjectID = "10"; */
+"10.title" = "Target Directory";
+
+/* Class = "NSBox"; title = "Template File"; ObjectID = "12"; */
+"12.title" = "Template File";
+
+/* Class = "NSButtonCell"; title = "Convert"; ObjectID = "35"; */
+"35.title" = "Convert";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "36"; */
+"36.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "Select..."; ObjectID = "37"; */
+"37.title" = "Select...";
+
+/* Class = "NSButtonCell"; title = "Select..."; ObjectID = "38"; */
+"38.title" = "Select...";
+
+/* Class = "NSTextFieldCell"; title = "System Font Text"; ObjectID = "39"; */
+"39.title" = "System Font Text";
+
+/* Class = "NSTextFieldCell"; title = "System Font Text"; ObjectID = "40"; */
+"40.title" = "System Font Text";

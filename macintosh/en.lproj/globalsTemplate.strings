@@ -1,0 +1,321 @@
+
+/* Class = "NSTabViewItem"; label = "Globals"; ObjectID = "8"; */
+"8.label" = "Globals";
+
+/* Class = "NSTabViewItem"; label = "Radiosity"; ObjectID = "126"; */
+"126.label" = "Radiosity";
+
+/* Class = "NSTabViewItem"; label = "Photons"; ObjectID = "189"; */
+"189.label" = "Photons";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "212"; */
+"212.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "utf8"; ObjectID = "213"; */
+"213.title" = "utf8";
+
+/* Class = "NSMenuItem"; title = "ascii"; ObjectID = "214"; */
+"214.title" = "ascii";
+
+/* Class = "NSMenuItem"; title = "sys"; ObjectID = "215"; */
+"215.title" = "sys";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "218"; */
+"218.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "2 (3.1) squeesed"; ObjectID = "219"; */
+"219.title" = "2 (3.1) squeesed";
+
+/* Class = "NSMenuItem"; title = "1 (3.1)"; ObjectID = "220"; */
+"220.title" = "1 (3.1)";
+
+/* Class = "NSMenuItem"; title = "3 (Perlin noise)"; ObjectID = "221"; */
+"221.title" = "3 (Perlin noise)";
+
+/* Class = "NSButtonCell"; title = "Load"; ObjectID = "341"; */
+"341.title" = "Load";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "342"; */
+"342.title" = "Save";
+
+/* Class = "NSButtonCell"; title = "spacing"; ObjectID = "345"; */
+"345.title" = "spacing";
+
+/* Class = "NSButtonCell"; title = "count"; ObjectID = "370"; */
+"370.title" = "count";
+
+/* Class = "NSTabViewItem"; label = "Subsurface"; ObjectID = "647"; */
+"647.label" = "Subsurface";
+
+/* Class = "NSBox"; title = "Title"; ObjectID = "701"; */
+"701.title" = "Title";
+
+/* Class = "NSButtonCell"; title = "Ambient light"; ObjectID = "754"; */
+"754.title" = "Ambient light";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "755"; */
+"755.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "assumed_gamma:"; ObjectID = "756"; */
+"756.title" = "assumed_gamma:";
+
+/* Class = "NSButtonCell"; title = "Irid_wavelength"; ObjectID = "757"; */
+"757.title" = "Irid_wavelength";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "758"; */
+"758.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "adc_bailout:"; ObjectID = "759"; */
+"759.title" = "adc_bailout:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "760"; */
+"760.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "max_trace_level:"; ObjectID = "761"; */
+"761.title" = "max_trace_level:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "762"; */
+"762.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "number_of_waves:"; ObjectID = "763"; */
+"763.title" = "number_of_waves:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "764"; */
+"764.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "max_intersections:"; ObjectID = "765"; */
+"765.title" = "max_intersections:";
+
+/* Class = "NSButtonCell"; title = "charset"; ObjectID = "770"; */
+"770.title" = "charset";
+
+/* Class = "NSButtonCell"; title = "noise_generator"; ObjectID = "772"; */
+"772.title" = "noise_generator";
+
+/* Class = "NSButtonCell"; title = "normal on"; ObjectID = "774"; */
+"774.title" = "normal on";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "775"; */
+"775.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "pretrace_start:"; ObjectID = "776"; */
+"776.title" = "pretrace_start:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "777"; */
+"777.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "pretrace_end:"; ObjectID = "778"; */
+"778.title" = "pretrace_end:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "779"; */
+"779.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "brightness:"; ObjectID = "780"; */
+"780.title" = "brightness:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "781"; */
+"781.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "count:"; ObjectID = "782"; */
+"782.title" = "count:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "783"; */
+"783.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "nearest_count:"; ObjectID = "784"; */
+"784.title" = "nearest_count:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "785"; */
+"785.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "max_sample:"; ObjectID = "786"; */
+"786.title" = "max_sample:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "787"; */
+"787.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "recursion_limit:"; ObjectID = "788"; */
+"788.title" = "recursion_limit:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "792"; */
+"792.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "error_bound:"; ObjectID = "793"; */
+"793.title" = "error_bound:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "794"; */
+"794.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "gray_threshold:"; ObjectID = "795"; */
+"795.title" = "gray_threshold:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "796"; */
+"796.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "low_error_factor:"; ObjectID = "797"; */
+"797.title" = "low_error_factor:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "798"; */
+"798.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "minimum_reuse:"; ObjectID = "799"; */
+"799.title" = "minimum_reuse:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "800"; */
+"800.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "adc_bailout:"; ObjectID = "801"; */
+"801.title" = "adc_bailout:";
+
+/* Class = "NSButtonCell"; title = "media on"; ObjectID = "802"; */
+"802.title" = "media on";
+
+/* Class = "NSButtonCell"; title = "always_sample"; ObjectID = "803"; */
+"803.title" = "always_sample";
+
+/* Class = "NSButtonCell"; title = "Radiosity"; ObjectID = "815"; */
+"815.title" = "Radiosity";
+
+/* Class = "NSTextFieldCell"; title = "thefile"; ObjectID = "816"; */
+"816.title" = "thefile";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "817"; */
+"817.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "818"; */
+"818.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "adc_bailout:"; ObjectID = "819"; */
+"819.title" = "adc_bailout:";
+
+/* Class = "NSButtonCell"; title = "jitter:"; ObjectID = "820"; */
+"820.title" = "jitter:";
+
+/* Class = "NSButtonCell"; title = ", factor"; ObjectID = "821"; */
+"821.title" = ", factor";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "822"; */
+"822.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "823"; */
+"823.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "autostop:"; ObjectID = "824"; */
+"824.title" = "autostop:";
+
+/* Class = "NSButtonCell"; title = "photon file"; ObjectID = "825"; */
+"825.title" = "photon file";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "826"; */
+"826.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "gather min"; ObjectID = "827"; */
+"827.title" = "gather min";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "828"; */
+"828.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "829"; */
+"829.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "830"; */
+"830.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "831"; */
+"831.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "media"; ObjectID = "832"; */
+"832.title" = "media";
+
+/* Class = "NSButtonCell"; title = "max_trace_level:"; ObjectID = "833"; */
+"833.title" = "max_trace_level:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "834"; */
+"834.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "835"; */
+"835.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "expand_thresh."; ObjectID = "836"; */
+"836.title" = "expand_thresh.";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "837"; */
+"837.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "radius:"; ObjectID = "838"; */
+"838.title" = "radius:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "839"; */
+"839.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "max:"; ObjectID = "840"; */
+"840.title" = "max:";
+
+/* Class = "NSTextFieldCell"; title = "min:"; ObjectID = "841"; */
+"841.title" = "min:";
+
+/* Class = "NSButtonCell"; title = "Photons"; ObjectID = "842"; */
+"842.title" = "Photons";
+
+/* Class = "NSButtonCell"; title = "Subsurface Light Transport"; ObjectID = "853"; */
+"853.title" = "Subsurface Light Transport";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "854"; */
+"854.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "855"; */
+"855.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "856"; */
+"856.title" = "Save";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "857"; */
+"857.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "858"; */
+"858.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "don't wrap in global_settings {...}"; ObjectID = "859"; */
+"859.title" = "don't wrap in global_settings {...}";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "862"; */
+"862.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "spacing"; ObjectID = "863"; */
+"863.title" = "spacing";
+
+/* Class = "NSButtonCell"; title = "mm_per_unit:"; ObjectID = "870"; */
+"870.title" = "mm_per_unit:";
+
+/* Class = "NSTextFieldCell"; title = "10"; ObjectID = "872"; */
+"872.title" = "10";
+
+/* Class = "NSButtonCell"; title = "Samples:"; ObjectID = "890"; */
+"890.title" = "Samples:";
+
+/* Class = "NSButtonCell"; title = "Radiosity"; ObjectID = "892"; */
+"892.title" = "Radiosity";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "898"; */
+"898.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = "Warning: Be advised that the subsurface scattering feature is still experimental. These conditions, and possibly others, can apply. Usage and syntax is also subject  to change!\nIncorrect use may result in hard crashes instead of parse warnings.\nPigments having any zero color components currently doesn't play nice with SSLT.  For example use rgb <1,0.01,0.01> instead of rgb <1,0,0> as color literals or when  declaring pigment identifiers.\nA diffuse finish attribute of zero can also cause povray to throw an assertion failure.\nUnions of overlapping objects will probably give unexpected results, however merge  should work.\nMesh objects need to be closed (not perfectly) for realism.\nTo avoid seams between objects, they currently must share a common interior.  It's not sufficient to have interiors with identical parameters, or even instances of the same  defined interior. "; ObjectID = "910"; */
+"910.title" = "Warning: Be advised that the subsurface scattering feature is still experimental. These conditions, and possibly others, can apply. Usage and syntax is also subject  to change!\nIncorrect use may result in hard crashes instead of parse warnings.\nPigments having any zero color components currently doesn't play nice with SSLT.  For example use rgb <1,0.01,0.01> instead of rgb <1,0,0> as color literals or when  declaring pigment identifiers.\nA diffuse finish attribute of zero can also cause povray to throw an assertion failure.\nUnions of overlapping objects will probably give unexpected results, however merge  should work.\nMesh objects need to be closed (not perfectly) for realism.\nTo avoid seams between objects, they currently must share a common interior.  It's not sufficient to have interiors with identical parameters, or even instances of the same  defined interior. ";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "912"; */
+"912.title" = "Radio";
+
+/* Class = "NSButtonCell"; title = "On"; ObjectID = "913"; */
+"913.title" = "On";
+
+/* Class = "NSButtonCell"; title = "Off"; ObjectID = "915"; */
+"915.title" = "Off";
+
+/* Class = "NSButtonCell"; title = "Number of directions:"; ObjectID = "925"; */
+"925.title" = "Number of directions:";
+
+/* Class = "NSButtonCell"; title = "Adaptive prectrace:"; ObjectID = "927"; */
+"927.title" = "Adaptive prectrace:";
+
+/* Class = "NSButtonCell"; title = "subsurface"; ObjectID = "935"; */
+"935.title" = "subsurface";

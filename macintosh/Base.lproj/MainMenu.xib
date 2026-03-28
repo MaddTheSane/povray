@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24765" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24765"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -713,20 +713,30 @@
                             <rect key="frame" x="0.0" y="0.0" width="472" height="378"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5456">
+                                <view translatesAutoresizingMaskIntoConstraints="NO" id="5456">
                                     <rect key="frame" x="0.0" y="0.0" width="502" height="408"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5459" customClass="PicturePreview">
+                                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="5459" customClass="PicturePreview">
                                             <rect key="frame" x="0.0" y="0.0" width="472" height="378"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
                                                 <outlet property="scrollView" destination="5455" id="5460"/>
                                             </connections>
                                         </customView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5459" firstAttribute="leading" secondItem="5456" secondAttribute="leading" id="BG0-cN-mqX"/>
+                                        <constraint firstAttribute="trailing" secondItem="5459" secondAttribute="trailing" constant="30" id="Beb-Je-SB2"/>
+                                        <constraint firstAttribute="bottom" secondItem="5459" secondAttribute="bottom" id="E10-VE-Frz"/>
+                                        <constraint firstItem="5459" firstAttribute="top" secondItem="5456" secondAttribute="top" constant="30" id="o4D-2u-pcz"/>
+                                    </constraints>
                                 </view>
                             </subviews>
+                            <constraints>
+                                <constraint firstItem="5456" firstAttribute="top" secondItem="D8w-D4-p4D" secondAttribute="top" constant="-30" id="30T-uq-ZBj"/>
+                                <constraint firstItem="5456" firstAttribute="leading" secondItem="D8w-D4-p4D" secondAttribute="leading" id="4jd-UB-9ot"/>
+                                <constraint firstAttribute="trailing" secondItem="5456" secondAttribute="trailing" constant="-30" id="N47-pW-bjk"/>
+                                <constraint firstAttribute="bottom" secondItem="5456" secondAttribute="bottom" id="kv7-NK-tY1"/>
+                            </constraints>
                         </clipView>
                         <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="5457">
                             <rect key="frame" x="0.0" y="361" width="472" height="17"/>
@@ -3678,14 +3688,15 @@ DQ
                 <rect key="frame" x="0.0" y="0.0" width="300" height="460"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1256">
+                    <imageView translatesAutoresizingMaskIntoConstraints="NO" id="1256">
                         <rect key="frame" x="-3" y="183" width="306" height="280"/>
-                        <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="274" id="PmS-wQ-HJr"/>
+                        </constraints>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="splash" id="4562"/>
                     </imageView>
-                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="1257">
-                        <rect key="frame" x="-3" y="0.0" width="306" height="185"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsCharacterPickerTouchBarItem="YES" preferredMaxLayoutWidth="302" translatesAutoresizingMaskIntoConstraints="NO" id="1257">
+                        <rect key="frame" x="-3" y="171" width="306" height="14"/>
                         <textFieldCell key="cell" controlSize="small" sendsActionOnEndEditing="YES" alignment="center" title="System Font Text" id="4563">
                             <font key="font" metaFont="smallSystem"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -3693,6 +3704,14 @@ DQ
                         </textFieldCell>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="1256" firstAttribute="leading" secondItem="1255" secondAttribute="leading" id="XBb-7E-ETt"/>
+                    <constraint firstItem="1257" firstAttribute="centerX" secondItem="1256" secondAttribute="centerX" id="XTf-7a-atF"/>
+                    <constraint firstAttribute="trailing" secondItem="1256" secondAttribute="trailing" id="XaB-Vi-csv"/>
+                    <constraint firstItem="1257" firstAttribute="top" secondItem="1256" secondAttribute="bottom" constant="1" id="fv7-P7-1td"/>
+                    <constraint firstItem="1256" firstAttribute="top" secondItem="1255" secondAttribute="top" id="hhl-tI-8MO"/>
+                    <constraint firstItem="1257" firstAttribute="leading" secondItem="1255" secondAttribute="leading" constant="-1" id="oq5-AY-vOa"/>
+                </constraints>
             </view>
             <point key="canvasLocation" x="87" y="-557"/>
         </window>

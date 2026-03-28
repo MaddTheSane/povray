@@ -1,0 +1,33 @@
+
+/* Class = "NSTableColumn"; headerCell.title = "identifier or body content of texture item"; ObjectID = "13"; */
+"13.headerCell.title" = "identifier or body content of texture item";
+
+/* Class = "NSTableColumn"; headerCell.title = "Location"; ObjectID = "16"; */
+"16.headerCell.title" = "Location";
+
+/* Class = "NSButtonCell"; title = "Insert"; ObjectID = "69"; */
+"69.title" = "Insert";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "70"; */
+"70.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "Add"; ObjectID = "71"; */
+"71.title" = "Add";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "72"; */
+"72.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "73"; */
+"73.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Trash"; ObjectID = "74"; */
+"74.title" = "Trash";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "75"; */
+"75.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "76"; */
+"76.title" = "Save";
+
+/* Class = "NSTextFieldCell"; title = "map type:"; ObjectID = "77"; */
+"77.title" = "map type:";

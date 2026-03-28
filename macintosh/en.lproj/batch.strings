@@ -1,0 +1,48 @@
+
+/* Class = "NSWindow"; title = "Batch"; ObjectID = "13"; */
+"13.title" = "Batch";
+
+/* Class = "NSTableColumn"; headerCell.title = "State"; ObjectID = "17"; */
+"17.headerCell.title" = "State";
+
+/* Class = "NSTableColumn"; headerCell.title = "Setting"; ObjectID = "18"; */
+"18.headerCell.title" = "Setting";
+
+/* Class = "NSTableColumn"; headerCell.title = "Status"; ObjectID = "19"; */
+"19.headerCell.title" = "Status";
+
+/* Class = "NSTableColumn"; headerCell.title = "Name"; ObjectID = "28"; */
+"28.headerCell.title" = "Name";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "50"; */
+"50.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Item3"; ObjectID = "52"; */
+"52.title" = "Item3";
+
+/* Class = "NSMenuItem"; title = "Item2"; ObjectID = "53"; */
+"53.title" = "Item2";
+
+/* Class = "NSTableColumn"; headerCell.title = "Comment"; ObjectID = "57"; */
+"57.headerCell.title" = "Comment";
+
+/* Class = "NSButtonCell"; title = "Run"; ObjectID = "74"; */
+"74.title" = "Run";
+
+/* Class = "NSButtonCell"; title = "Run All"; ObjectID = "75"; */
+"75.title" = "Run All";
+
+/* Class = "NSButtonCell"; title = "Abort"; ObjectID = "76"; */
+"76.title" = "Abort";
+
+/* Class = "NSTextFieldCell"; title = "Settings:"; ObjectID = "78"; */
+"78.title" = "Settings:";
+
+/* Class = "NSButtonCell"; title = "Reset"; ObjectID = "79"; */
+"79.title" = "Reset";
+
+/* Class = "NSButtonCell"; title = "Reset All"; ObjectID = "80"; */
+"80.title" = "Reset All";
+
+/* Class = "NSButtonCell"; title = "Skip"; ObjectID = "81"; */
+"81.title" = "Skip";

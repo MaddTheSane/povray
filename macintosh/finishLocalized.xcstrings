@@ -1,0 +1,468 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "finishAmbientColorColorWell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ambient light simulates the light inside a shadowed area, coming off of other objects.\nDefault is 0.1. \nValues range from 0.0 to 1.0"
+          }
+        }
+      }
+    },
+    "finishAmbientColorGroupOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ambient light simulates the light inside a shadowed area, coming off of other objects.\nDefault is 0.1. \nValues range from 0.0 to 1.0"
+          }
+        }
+      }
+    },
+    "finishBacksideEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fixme"
+          }
+        }
+      }
+    },
+    "finishBacksideOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light reflects and is scattered in all directions by the roughness of the surface.\nDiffuse controls how much of the light coming directly from any light sources is reflected via diffuse reflection Default is 0.6"
+          }
+        }
+      }
+    },
+    "finishBrillianceEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The amount of direct light diffusing from objects depends upon the angle at which it hits the surface. Brilliance varies the way light falls off depending upon this angle.\nValues to about 10.0 cause light to fall off less at medium to low angles"
+          }
+        }
+      }
+    },
+    "finishBrillianceOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fixme"
+          }
+        }
+      }
+    },
+    "finishConserveEnergyOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "When conserve_energy is enabled, POV will multiply the amount filtered and transmitted by what is left over from reflection (for example, if reflection is 80%, filter/transmit will be multiplied by 20%)"
+          }
+        }
+      }
+    },
+    "finishCrandEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Very rough surfaces exhibit a dark graininess in their apparent color. The crand keyword causes a minor random darkening in the diffuse reflection.\nTypical values range from 0.01 to 0.5 or higher.\nDefault is 0.0"
+          }
+        }
+      }
+    },
+    "finishCrandOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Very rough surfaces exhibit a dark graininess in their apparent color. The crand keyword causes a minor random darkening in the diffuse reflection.\nTypical values range from 0.01 to 0.5 or higher.\nDefault is 0.0"
+          }
+        }
+      }
+    },
+    "finishDiffuseEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light reflects and is scattered in all directions by the roughness of the surface.\nThe keyword diffuse controls how much of the light coming directly from any light sources is reflected via diffuse reflection. Default is 0.6"
+          }
+        }
+      }
+    },
+    "finishDiffuseOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Light reflects and is scattered in all directions by the roughness of the surface.\nDiffuse controls how much of the light coming directly from any light sources is reflected via diffuse reflection Default is 0.6"
+          }
+        }
+      }
+    },
+    "finishDontWrapInFinish" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Write the body of the finish to the scene file without the “finish {}” statement.\nThis allows to replace one or more selected items of the finish with new ones"
+          }
+        }
+      }
+    },
+    "finishEmissionColorColorWell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "syntax and effect are virtually identicall to \n“ambient”, except that “emission” is\nunaffected by the global “ambient_light” parameter,\n which will now effectively be set to 0\nif radiosity is active (except in legacy scenes having #version set to < 3.70)."
+          }
+        }
+      }
+    },
+    "finishEmissionColorGroupOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "syntax and effect are virtually identicall to \n“ambient”, except that “emission” is\nunaffected by the global “ambient_light” parameter,\n which will now effectively be set to 0\nif radiosity is active (except in legacy scenes having #version set to < 3.70)."
+          }
+        }
+      }
+    },
+    "finishIridescenceAmountEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The amount parameter is the contribution of the iridescence effect to the overall surface color.\nKeep around 0.25 or less.\nIf the surface is coming out too white, try lowering the diffuse and possibly the ambient values of the surface"
+          }
+        }
+      }
+    },
+    "finishIridescenceGroupOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turns iridescence on. This simulates the effect of light on surfaces with a microscopic transparent film overlay.\nThis effect is like the rainbow hues of a soap bubble."
+          }
+        }
+      }
+    },
+    "finishIridescenceThicknessEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The thickness keyword represents the film's thickness, but has no relation to the object's scale.\nA very thin film will have high frequency of color changes while a thick film will have large areas of color"
+          }
+        }
+      }
+    },
+    "finishIridescenceTurbulenceMatrix" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The thickness of the film can be varied with the turbulence keyword.\nEnter the required values for each direction."
+          }
+        }
+      }
+    },
+    "finishIridescenceTurbulencePopUp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choose the kind of vector that is required."
+          }
+        }
+      }
+    },
+    "finishMetallicEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Causes a specular or phong highlight to take on the color of the object's surface. This gives objects a metallic look.\nSpecify the amount of the metallic look.\nDefault is 1.0"
+          }
+        }
+      }
+    },
+    "finishMetallicOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Causes a specular or phong highlight to take on the color of the object's surface. This gives objects a metallic look.\nSpecify the amount of the metallic look.\nDefault is 1.0"
+          }
+        }
+      }
+    },
+    "finishPhongEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The phong keyword controls the amount of highlighting on the object. It causes bright shiny spots on the object that are the color of the light source being reflected.\nDefault is 0.0, giving no highlight.\nValues range from 0.0 to 1.0"
+          }
+        }
+      }
+    },
+    "finishPhongOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The phong keyword controls the amount of highlighting on the object. It causes bright shiny spots on the object that are the color of the light source being reflected.\nDefault is 0.0, giving no highlight.\nValues range from 0.0 to 1.0"
+          }
+        }
+      }
+    },
+    "finishPhongSizeEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The size of the highlight spot is defined by the phong_size value. Larger values give smaller and shinier spots. Smaller values larger and less glossy spots.\nTypical values range from 1.0 (very dull) to 250 (highly polished).\nDefault is 40 (plastic)"
+          }
+        }
+      }
+    },
+    "finishPhongSizeOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The size of the highlight spot is defined by the phong_size value. Larger values give smaller and shinier spots. Smaller values larger and less glossy spots.\nTypical values range from 1.0 (very dull) to 250 (highly polished).\nDefault is 40 (plastic)"
+          }
+        }
+      }
+    },
+    "finishReflectionExponentEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Default value of 1.0 produces a linear curve.\nLower values darken middle and low intensities and keeps high intensity reflections bright."
+          }
+        }
+      }
+    },
+    "finishReflectionExponentOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turns on the reflection_exponent keyword to produce non-linear reflection intensities."
+          }
+        }
+      }
+    },
+    "finishReflectionLightGroupOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mirror-like reflection is controlled by the reflection keyword.\nValues range from 0.0 to 1.0. By default there is no reflection.\nMax reflection creates a perfect mirror"
+          }
+        }
+      }
+    },
+    "finishReflectionMaxColorColorWell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "finishReflectionMetallicEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Specify an optional float value, which is the amount of influence the reflect_metallic keyword has on the reflected color."
+          }
+        }
+      }
+    },
+    "finishReflectionMetallicOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Multiplies the “reflection” color vector by the pigment color at each point where light is reflected to better model the reflectivity of metallic finishes."
+          }
+        }
+      }
+    },
+    "finishReflectionVariableFalloffEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "finishReflectionVariableFalloffOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "finishReflectionVariableFresnelOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "finishReflectionVariableGroupOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select the required refelction type.\n-Standard (Official)\n-Variable reflection according to the viewing angle.\n-Fresnel reflection."
+          }
+        }
+      }
+    },
+    "finishReflectionVariableMinColorColorWell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
+    },
+    "finishRoghnessEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roughness defines the size of the highlight spot.\nTypical values range from 1.0 (large highlight) to 0.0005 (small highlight).\nDefault is 0.05 (plastic)"
+          }
+        }
+      }
+    },
+    "finishRoghnessOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roughness defines the size of the highlight spot.\nTypical values range from 1.0 (large highlight) to 0.0005 (small highlight).\nDefault is 0.05 (plastic)"
+          }
+        }
+      }
+    },
+    "finishSpecularEdit" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Specular controls the amount of highlighting on the object. It resembles more closely real specular reflection.\nValues from 0.0 (default= no highlight) to 1.0, causing complete saturation to the light source's color at the brightest area of the highlight"
+          }
+        }
+      }
+    },
+    "finishSpecularOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Specular controls the amount of highlighting on the object. It resembles more closely real specular reflection.\nValues from 0.0 (default= no highlight) to 1.0, causing complete saturation to the light source's color at the brightest area of the highlight"
+          }
+        }
+      }
+    },
+    "finishSubsurfaceLightTransportColorColorWell" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fixme"
+          }
+        }
+      }
+    },
+    "finishSubsurfaceLightTransportColorGroupOn" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "fixme"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.2"
+}

@@ -1,0 +1,381 @@
+
+/* Class = "NSTabViewItem"; label = "pre-defined"; ObjectID = "47"; */
+"47.label" = "pre-defined";
+
+/* Class = "NSTabViewItem"; label = "user-defined"; ObjectID = "158"; */
+"158.label" = "user-defined";
+
+/* Class = "NSMenuItem"; title = "z"; ObjectID = "170"; */
+"170.title" = "z";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "171"; */
+"171.title" = "-5";
+
+/* Class = "NSMenuItem"; title = "Panoramic"; ObjectID = "172"; */
+"172.title" = "Panoramic";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "175"; */
+"175.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "176"; */
+"176.title" = "0.0";
+
+/* Class = "NSMenuItem"; title = "Fisheye"; ObjectID = "178"; */
+"178.title" = "Fisheye";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "181"; */
+"181.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "omnimax"; ObjectID = "182"; */
+"182.title" = "omnimax";
+
+/* Class = "NSMenuItem"; title = "x=y=z"; ObjectID = "184"; */
+"184.title" = "x=y=z";
+
+/* Class = "NSMenuItem"; title = "Cylinder, horizontal - moving"; ObjectID = "187"; */
+"187.title" = "Cylinder, horizontal - moving";
+
+/* Class = "NSMenuItem"; title = "Cylinder, vertical - fixed"; ObjectID = "188"; */
+"188.title" = "Cylinder, vertical - fixed";
+
+/* Class = "NSMenuItem"; title = "x"; ObjectID = "189"; */
+"189.title" = "x";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "190"; */
+"190.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "191"; */
+"191.title" = "-5";
+
+/* Class = "NSMenuItem"; title = "y"; ObjectID = "192"; */
+"192.title" = "y";
+
+/* Class = "NSMenuItem"; title = "Spherical"; ObjectID = "194"; */
+"194.title" = "Spherical";
+
+/* Class = "NSMenuItem"; title = "x,y,z"; ObjectID = "196"; */
+"196.title" = "x,y,z";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "197"; */
+"197.title" = "0.0";
+
+/* Class = "NSMenuItem"; title = "ultra_wide_angle"; ObjectID = "198"; */
+"198.title" = "ultra_wide_angle";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "201"; */
+"201.title" = "-5";
+
+/* Class = "NSMenuItem"; title = "Cylinder, vertical - moving"; ObjectID = "203"; */
+"203.title" = "Cylinder, vertical - moving";
+
+/* Class = "NSMenuItem"; title = "Orthographic"; ObjectID = "204"; */
+"204.title" = "Orthographic";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "205"; */
+"205.title" = "0.0";
+
+/* Class = "NSMenuItem"; title = "Cylinder, horizontal - fixed"; ObjectID = "207"; */
+"207.title" = "Cylinder, horizontal - fixed";
+
+/* Class = "NSMenuItem"; title = "Perspective"; ObjectID = "210"; */
+"210.title" = "Perspective";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "211"; */
+"211.title" = "OtherViews";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "212"; */
+"212.title" = "0.0";
+
+/* Class = "NSMenuItem"; title = "angle"; ObjectID = "214"; */
+"214.title" = "angle";
+
+/* Class = "NSMenuItem"; title = "direction"; ObjectID = "221"; */
+"221.title" = "direction";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "222"; */
+"222.title" = "OtherViews";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "345"; */
+"345.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "347"; */
+"347.title" = "-5";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "350"; */
+"350.title" = "0.0";
+
+/* Class = "NSBox"; title = "Title"; ObjectID = "353"; */
+"353.title" = "Title";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "381"; */
+"381.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "383"; */
+"383.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "386"; */
+"386.title" = "-5";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "434"; */
+"434.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "x"; ObjectID = "436"; */
+"436.title" = "x";
+
+/* Class = "NSMenuItem"; title = "z"; ObjectID = "437"; */
+"437.title" = "z";
+
+/* Class = "NSMenuItem"; title = "y"; ObjectID = "438"; */
+"438.title" = "y";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "623"; */
+"623.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "function"; ObjectID = "624"; */
+"624.title" = "function";
+
+/* Class = "NSMenuItem"; title = "pigment"; ObjectID = "625"; */
+"625.title" = "pigment";
+
+/* Class = "NSTabViewItem"; label = "pigment"; ObjectID = "633"; */
+"633.label" = "pigment";
+
+/* Class = "NSTabViewItem"; label = "function"; ObjectID = "635"; */
+"635.label" = "function";
+
+/* Class = "NSBox"; title = "Location:"; ObjectID = "637"; */
+"637.title" = "Location:";
+
+/* Class = "NSBox"; title = "Direction:"; ObjectID = "665"; */
+"665.title" = "Direction:";
+
+/* Class = "NSTabViewItem"; label = "function"; ObjectID = "668"; */
+"668.label" = "function";
+
+/* Class = "NSTabViewItem"; label = "pigment"; ObjectID = "680"; */
+"680.label" = "pigment";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "684"; */
+"684.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "pigment"; ObjectID = "685"; */
+"685.title" = "pigment";
+
+/* Class = "NSMenuItem"; title = "function"; ObjectID = "686"; */
+"686.title" = "function";
+
+/* Class = "NSTabViewItem"; label = "Tab"; ObjectID = "708"; */
+"708.label" = "Tab";
+
+/* Class = "NSTabViewItem"; label = "View"; ObjectID = "709"; */
+"709.label" = "View";
+
+/* Class = "NSBox"; title = "Title"; ObjectID = "862"; */
+"862.title" = "Title";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "867"; */
+"867.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "z"; ObjectID = "868"; */
+"868.title" = "z";
+
+/* Class = "NSMenuItem"; title = "x"; ObjectID = "869"; */
+"869.title" = "x";
+
+/* Class = "NSMenuItem"; title = "y"; ObjectID = "870"; */
+"870.title" = "y";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "890"; */
+"890.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "891"; */
+"891.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "892"; */
+"892.title" = "OK";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "893"; */
+"893.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "894"; */
+"894.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "895"; */
+"895.title" = ",";
+
+/* Class = "NSButtonCell"; title = "sky:"; ObjectID = "896"; */
+"896.title" = "sky:";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "897"; */
+"897.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = "look_at: <"; ObjectID = "899"; */
+"899.title" = "look_at: <";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "900"; */
+"900.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "901"; */
+"901.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "902"; */
+"902.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "903"; */
+"903.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "904"; */
+"904.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "Type:\n"; ObjectID = "906"; */
+"906.title" = "Type:\n";
+
+/* Class = "NSTextFieldCell"; title = "Location: <"; ObjectID = "907"; */
+"907.title" = "Location: <";
+
+/* Class = "NSTextFieldCell"; title = "<"; ObjectID = "908"; */
+"908.title" = "<";
+
+/* Class = "NSButtonCell"; title = "Focal blur"; ObjectID = "910"; */
+"910.title" = "Focal blur";
+
+/* Class = "NSTextFieldCell"; title = "blur samples:\n"; ObjectID = "911"; */
+"911.title" = "blur samples:\n";
+
+/* Class = "NSTextFieldCell"; title = "0.3"; ObjectID = "912"; */
+"912.title" = "0.3";
+
+/* Class = "NSTextFieldCell"; title = "3"; ObjectID = "913"; */
+"913.title" = "3";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "914"; */
+"914.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "aperture:\n"; ObjectID = "915"; */
+"915.title" = "aperture:\n";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "916"; */
+"916.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "917"; */
+"917.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "918"; */
+"918.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "focal point: <"; ObjectID = "919"; */
+"919.title" = "focal point: <";
+
+/* Class = "NSButtonCell"; title = "confidence:"; ObjectID = "920"; */
+"920.title" = "confidence:";
+
+/* Class = "NSButtonCell"; title = "variance:"; ObjectID = "921"; */
+"921.title" = "variance:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "922"; */
+"922.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "Aspect ratio"; ObjectID = "923"; */
+"923.title" = "Aspect ratio";
+
+/* Class = "NSButtonCell"; title = "auto"; ObjectID = "924"; */
+"924.title" = "auto";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "925"; */
+"925.title" = "1.0";
+
+/* Class = "NSTextFieldCell"; title = "up:"; ObjectID = "927"; */
+"927.title" = "up:";
+
+/* Class = "NSTextFieldCell"; title = "*"; ObjectID = "928"; */
+"928.title" = "*";
+
+/* Class = "NSTextFieldCell"; title = "right:\n"; ObjectID = "929"; */
+"929.title" = "right:\n";
+
+/* Class = "NSTextFieldCell"; title = "*"; ObjectID = "930"; */
+"930.title" = "*";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "931"; */
+"931.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "Edit..."; ObjectID = "933"; */
+"933.title" = "Edit...";
+
+/* Class = "NSButtonCell"; title = "Normal {...}"; ObjectID = "934"; */
+"934.title" = "Normal {...}";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "936"; */
+"936.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "<"; ObjectID = "937"; */
+"937.title" = "<";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "938"; */
+"938.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "939"; */
+"939.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = "60"; ObjectID = "940"; */
+"940.title" = "60";
+
+/* Class = "NSTextFieldCell"; title = "0.3"; ObjectID = "941"; */
+"941.title" = "0.3";
+
+/* Class = "NSTextFieldCell"; title = "horizontal_angle:"; ObjectID = "942"; */
+"942.title" = "horizontal_angle:";
+
+/* Class = "NSButtonCell"; title = "vertical_angle:"; ObjectID = "943"; */
+"943.title" = "vertical_angle:";
+
+/* Class = "NSTextFieldCell"; title = "1.0"; ObjectID = "944"; */
+"944.title" = "1.0";
+
+/* Class = "NSButtonCell"; title = "Edit pigment ..."; ObjectID = "946"; */
+"946.title" = "Edit pigment ...";
+
+/* Class = "NSTextFieldCell"; title = "function x(y,v):\n"; ObjectID = "947"; */
+"947.title" = "function x(y,v):\n";
+
+/* Class = "NSButtonCell"; title = "Insert"; ObjectID = "948"; */
+"948.title" = "Insert";
+
+/* Class = "NSTextFieldCell"; title = "function y(y,v):\n"; ObjectID = "949"; */
+"949.title" = "function y(y,v):\n";
+
+/* Class = "NSButtonCell"; title = "Insert"; ObjectID = "950"; */
+"950.title" = "Insert";
+
+/* Class = "NSTextFieldCell"; title = "function z(y,v):\n"; ObjectID = "951"; */
+"951.title" = "function z(y,v):\n";
+
+/* Class = "NSButtonCell"; title = "Insert"; ObjectID = "952"; */
+"952.title" = "Insert";
+
+/* Class = "NSButtonCell"; title = "Insert"; ObjectID = "953"; */
+"953.title" = "Insert";
+
+/* Class = "NSTextFieldCell"; title = "function y(y,v):\n"; ObjectID = "954"; */
+"954.title" = "function y(y,v):\n";
+
+/* Class = "NSTextFieldCell"; title = "function x(y,v):\n"; ObjectID = "955"; */
+"955.title" = "function x(y,v):\n";
+
+/* Class = "NSButtonCell"; title = "Insert"; ObjectID = "956"; */
+"956.title" = "Insert";
+
+/* Class = "NSButtonCell"; title = "Insert"; ObjectID = "957"; */
+"957.title" = "Insert";
+
+/* Class = "NSTextFieldCell"; title = "function z(y,v):\n"; ObjectID = "958"; */
+"958.title" = "function z(y,v):\n";
+
+/* Class = "NSButtonCell"; title = "Edit pigment ..."; ObjectID = "959"; */
+"959.title" = "Edit pigment ...";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "961"; */
+"961.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "962"; */
+"962.title" = "Save";

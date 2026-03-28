@@ -1,0 +1,39 @@
+
+/* Class = "NSWindow"; title = "Window"; ObjectID = "5"; */
+"5.title" = "Window";
+
+/* Class = "NSMenuItem"; title = "#macro"; ObjectID = "57"; */
+"57.title" = "#macro";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "59"; */
+"59.title" = "OtherViews";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "63"; */
+"63.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "#declare"; ObjectID = "65"; */
+"65.title" = "#declare";
+
+/* Class = "NSMenuItem"; title = "#include"; ObjectID = "68"; */
+"68.title" = "#include";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "70"; */
+"70.title" = "OtherViews";
+
+/* Class = "NSWindow"; title = "Go to …"; ObjectID = "87"; */
+"87.title" = "Go to …";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "174"; */
+"174.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Templates"; ObjectID = "177"; */
+"177.title" = "Templates";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "196"; */
+"196.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "Go"; ObjectID = "197"; */
+"197.title" = "Go";
+
+/* Class = "NSTextFieldCell"; title = "Go to line:"; ObjectID = "198"; */
+"198.title" = "Go to line:";

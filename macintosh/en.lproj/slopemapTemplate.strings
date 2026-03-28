@@ -1,0 +1,51 @@
+
+/* Class = "NSTableView"; ibShadowedToolTip = "Enter the x value of a control point (\"location\" on the x-axis).\nEnter the y value of a control point (\"height\"  on the y-axis).\nSpecify the slope at a control point.\n0 gives no slope (horizontal).\n1 gives a slope of 45° upwards.\nNegative values specify a downward slope.\nTry to keep values between +3 and -3."; ObjectID = "16"; */
+"16.ibShadowedToolTip" = "Enter the x value of a control point (\"location\" on the x-axis).\nEnter the y value of a control point (\"height\"  on the y-axis).\nSpecify the slope at a control point.\n0 gives no slope (horizontal).\n1 gives a slope of 45° upwards.\nNegative values specify a downward slope.\nTry to keep values between +3 and -3.";
+
+/* Class = "NSTableColumn"; headerCell.title = "Height"; ObjectID = "20"; */
+"20.headerCell.title" = "Height";
+
+/* Class = "NSTableColumn"; headerCell.title = "Slope"; ObjectID = "21"; */
+"21.headerCell.title" = "Slope";
+
+/* Class = "NSTableColumn"; headerCell.title = "Location"; ObjectID = "23"; */
+"23.headerCell.title" = "Location";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "78"; */
+"78.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "79"; */
+"79.title" = "Save";
+
+/* Class = "NSButtonCell"; title = "Insert"; ObjectID = "80"; */
+"80.title" = "Insert";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "81"; */
+"81.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "Add"; ObjectID = "82"; */
+"82.title" = "Add";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "83"; */
+"83.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "84"; */
+"84.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Trash"; ObjectID = "85"; */
+"85.title" = "Trash";
+
+/* Class = "NSTextFieldCell"; title = "Preview"; ObjectID = "86"; */
+"86.title" = "Preview";
+
+/* Class = "NSButtonCell"; title = "Slope"; ObjectID = "87"; */
+"87.title" = "Slope";
+
+/* Class = "NSButtonCell"; title = "Point"; ObjectID = "88"; */
+"88.title" = "Point";
+
+/* Class = "NSButtonCell"; title = "Curve"; ObjectID = "89"; */
+"89.title" = "Curve";
+
+/* Class = "NSButtonCell"; title = "Raster"; ObjectID = "90"; */
+"90.title" = "Raster";

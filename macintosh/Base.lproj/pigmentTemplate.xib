@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="24765" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="24765"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -276,16 +276,6 @@ DQ
                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="193">
                         <rect key="frame" x="0.0" y="86" width="500" height="394"/>
                     </customView>
-                    <button tag="15" translatesAutoresizingMaskIntoConstraints="NO" id="1616">
-                        <rect key="frame" x="340" y="53" width="86" height="14"/>
-                        <buttonCell key="cell" type="check" title="quick_color {" bezelStyle="regularSquare" imagePosition="left" alignment="left" controlSize="small" tag="15" inset="2" id="1712">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="smallSystem"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="pigmentTarget:" target="-2" id="1628"/>
-                        </connections>
-                    </button>
                     <colorWell translatesAutoresizingMaskIntoConstraints="NO" id="1617" customClass="MPFTColorWell">
                         <rect key="frame" x="429" y="46" width="52" height="28"/>
                         <constraints>
@@ -314,15 +304,28 @@ DQ
                             <action selector="setModified:" target="-2" id="1631"/>
                         </connections>
                     </button>
+                    <button tag="15" horizontalHuggingPriority="750" verticalHuggingPriority="752" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="1616">
+                        <rect key="frame" x="323" y="53" width="98" height="14"/>
+                        <buttonCell key="cell" type="check" title="quick_color {" bezelStyle="regularSquare" imagePosition="left" controlSize="small" lineBreakMode="charWrapping" tag="15" inset="2" id="1712">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="98" id="aez-4D-d2R"/>
+                        </constraints>
+                        <connections>
+                            <action selector="pigmentTarget:" target="-2" id="1628"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="179" firstAttribute="baseline" secondItem="178" secondAttribute="baseline" id="0hi-sS-tdw"/>
+                    <constraint firstItem="1617" firstAttribute="leading" secondItem="1616" secondAttribute="trailing" constant="8" symbolic="YES" id="0lU-Ta-mva"/>
                     <constraint firstItem="193" firstAttribute="leading" secondItem="6" secondAttribute="leading" id="2A2-Ud-ZiL"/>
                     <constraint firstItem="180" firstAttribute="top" secondItem="1617" secondAttribute="bottom" constant="8" symbolic="YES" id="2HU-0c-Ue5"/>
                     <constraint firstAttribute="bottom" secondItem="176" secondAttribute="bottom" constant="20" symbolic="YES" id="8Tp-1S-irG"/>
                     <constraint firstItem="176" firstAttribute="baseline" secondItem="179" secondAttribute="baseline" id="8qa-Cn-jAi"/>
                     <constraint firstItem="1621" firstAttribute="firstBaseline" secondItem="1618" secondAttribute="firstBaseline" id="9B3-oQ-hMP"/>
-                    <constraint firstItem="1616" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1621" secondAttribute="trailing" constant="8" symbolic="YES" id="9ti-pf-gl1"/>
                     <constraint firstItem="193" firstAttribute="top" secondItem="6" secondAttribute="top" id="AL9-HF-HSU"/>
                     <constraint firstItem="180" firstAttribute="leading" secondItem="177" secondAttribute="trailing" constant="8" symbolic="YES" id="Djt-vv-sII"/>
                     <constraint firstItem="1618" firstAttribute="leading" secondItem="1617" secondAttribute="trailing" constant="4" id="EVD-KO-SKl"/>
@@ -331,7 +334,6 @@ DQ
                     <constraint firstItem="177" firstAttribute="top" secondItem="1616" secondAttribute="bottom" constant="15" id="Pjp-5M-DZO"/>
                     <constraint firstAttribute="trailing" secondItem="180" secondAttribute="trailing" constant="15" id="Thg-FZ-BJM"/>
                     <constraint firstItem="1617" firstAttribute="top" secondItem="193" secondAttribute="bottom" constant="12" id="Vrt-xi-eBn"/>
-                    <constraint firstItem="1617" firstAttribute="leading" secondItem="1616" secondAttribute="trailing" constant="3" id="Yag-GH-OL0"/>
                     <constraint firstItem="176" firstAttribute="firstBaseline" secondItem="179" secondAttribute="firstBaseline" id="ZAF-JM-1Bw"/>
                     <constraint firstAttribute="trailing" secondItem="193" secondAttribute="trailing" id="a69-nh-V2R"/>
                     <constraint firstItem="1621" firstAttribute="baseline" secondItem="1616" secondAttribute="baseline" id="eSs-AS-wG0"/>
@@ -3779,7 +3781,7 @@ DQ
                     <tabViewItems>
                         <tabViewItem label="Grayscale" identifier="1" id="333">
                             <view key="view" id="334">
-                                <rect key="frame" x="10" y="28" width="414" height="59"/>
+                                <rect key="frame" x="10" y="19" width="414" height="68"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="339" customClass="colormapPreview">

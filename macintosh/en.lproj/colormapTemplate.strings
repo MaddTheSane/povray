@@ -1,0 +1,48 @@
+
+/* Class = "NSTableColumn"; headerCell.title = "Color"; ObjectID = "195"; */
+"195.headerCell.title" = "Color";
+
+/* Class = "NSTableColumn"; headerCell.title = "Location"; ObjectID = "196"; */
+"196.headerCell.title" = "Location";
+
+/* Class = "NSTableColumn"; headerCell.title = "Red"; ObjectID = "197"; */
+"197.headerCell.title" = "Red";
+
+/* Class = "NSTableColumn"; headerCell.title = "Green"; ObjectID = "198"; */
+"198.headerCell.title" = "Green";
+
+/* Class = "NSTableColumn"; headerCell.title = "Blue"; ObjectID = "199"; */
+"199.headerCell.title" = "Blue";
+
+/* Class = "NSTableColumn"; headerCell.title = "Filter"; ObjectID = "200"; */
+"200.headerCell.title" = "Filter";
+
+/* Class = "NSTableColumn"; headerCell.title = "Transmit"; ObjectID = "201"; */
+"201.headerCell.title" = "Transmit";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "255"; */
+"255.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "256"; */
+"256.title" = "Save";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "257"; */
+"257.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "258"; */
+"258.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "259"; */
+"259.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "Trash"; ObjectID = "260"; */
+"260.title" = "Trash";
+
+/* Class = "NSButtonCell"; title = "Insert"; ObjectID = "261"; */
+"261.title" = "Insert";
+
+/* Class = "NSButtonCell"; title = "Add"; ObjectID = "262"; */
+"262.title" = "Add";
+
+/* Class = "NSButtonCell"; title = "Use Gray Color"; ObjectID = "265"; */
+"265.title" = "Use Gray Color";

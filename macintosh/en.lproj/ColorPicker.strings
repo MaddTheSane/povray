@@ -1,0 +1,24 @@
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "100"; */
+"100.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "101"; */
+"101.title" = "Cancel";
+
+/* Class = "NSTextFieldCell"; title = "R:"; ObjectID = "103"; */
+"103.title" = "R:";
+
+/* Class = "NSTextFieldCell"; title = "G:"; ObjectID = "105"; */
+"105.title" = "G:";
+
+/* Class = "NSTextFieldCell"; title = "B:"; ObjectID = "107"; */
+"107.title" = "B:";
+
+/* Class = "NSButtonCell"; title = "="; ObjectID = "108"; */
+"108.title" = "=";
+
+/* Class = "NSButtonCell"; title = "Filter:"; ObjectID = "110"; */
+"110.title" = "Filter:";
+
+/* Class = "NSButtonCell"; title = "Transmit:"; ObjectID = "112"; */
+"112.title" = "Transmit:";

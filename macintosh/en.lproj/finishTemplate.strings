@@ -1,0 +1,159 @@
+
+/* Class = "NSBox"; title = "highlights"; ObjectID = "18"; */
+"18.title" = "highlights";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "26"; */
+"26.title" = "Reflection (Light)";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "42"; */
+"42.title" = "Reflection (Light)";
+
+/* Class = "NSBox"; title = "highlibhts"; ObjectID = "52"; */
+"52.title" = "highlibhts";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "87"; */
+"87.title" = "Reflection (Light)";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "95"; */
+"95.title" = "Reflection (Light)";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "208"; */
+"208.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "x,y,z"; ObjectID = "209"; */
+"209.title" = "x,y,z";
+
+/* Class = "NSMenuItem"; title = "x=y=z"; ObjectID = "210"; */
+"210.title" = "x=y=z";
+
+/* Class = "NSMenuItem"; title = "x"; ObjectID = "211"; */
+"211.title" = "x";
+
+/* Class = "NSMenuItem"; title = "y"; ObjectID = "212"; */
+"212.title" = "y";
+
+/* Class = "NSMenuItem"; title = "z"; ObjectID = "213"; */
+"213.title" = "z";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "217"; */
+"217.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "0.0"; ObjectID = "218"; */
+"218.title" = "0.0";
+
+/* Class = "NSTextFieldCell"; title = "-5"; ObjectID = "219"; */
+"219.title" = "-5";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "252"; */
+"252.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "253"; */
+"253.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "254"; */
+"254.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "255"; */
+"255.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "256"; */
+"256.title" = "Save";
+
+/* Class = "NSButtonCell"; title = "phong:"; ObjectID = "257"; */
+"257.title" = "phong:";
+
+/* Class = "NSButtonCell"; title = "specular:"; ObjectID = "259"; */
+"259.title" = "specular:";
+
+/* Class = "NSButtonCell"; title = "metallic:"; ObjectID = "261"; */
+"261.title" = "metallic:";
+
+/* Class = "NSButtonCell"; title = "phong_size:"; ObjectID = "263"; */
+"263.title" = "phong_size:";
+
+/* Class = "NSButtonCell"; title = "roughness:"; ObjectID = "265"; */
+"265.title" = "roughness:";
+
+/* Class = "NSButtonCell"; title = "brilliance:"; ObjectID = "267"; */
+"267.title" = "brilliance:";
+
+/* Class = "NSButtonCell"; title = "diffuse:"; ObjectID = "270"; */
+"270.title" = "diffuse:";
+
+/* Class = "NSButtonCell"; title = "crand:"; ObjectID = "271"; */
+"271.title" = "crand:";
+
+/* Class = "NSButtonCell"; title = "Ambient light"; ObjectID = "273"; */
+"273.title" = "Ambient light";
+
+/* Class = "NSTextFieldCell"; title = "amount:"; ObjectID = "276"; */
+"276.title" = "amount:";
+
+/* Class = "NSTextFieldCell"; title = "thickness:"; ObjectID = "277"; */
+"277.title" = "thickness:";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "278"; */
+"278.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ","; ObjectID = "280"; */
+"280.title" = ",";
+
+/* Class = "NSTextFieldCell"; title = ">"; ObjectID = "281"; */
+"281.title" = ">";
+
+/* Class = "NSTextFieldCell"; title = "<"; ObjectID = "282"; */
+"282.title" = "<";
+
+/* Class = "NSTextFieldCell"; title = "Turbulence:"; ObjectID = "283"; */
+"283.title" = "Turbulence:";
+
+/* Class = "NSButtonCell"; title = "Iridescence"; ObjectID = "284"; */
+"284.title" = "Iridescence";
+
+/* Class = "NSTextFieldCell"; title = "min:"; ObjectID = "285"; */
+"285.title" = "min:";
+
+/* Class = "NSButtonCell"; title = "fresnel"; ObjectID = "286"; */
+"286.title" = "fresnel";
+
+/* Class = "NSButtonCell"; title = "falloff:"; ObjectID = "287"; */
+"287.title" = "falloff:";
+
+/* Class = "NSButtonCell"; title = "Variable"; ObjectID = "289"; */
+"289.title" = "Variable";
+
+/* Class = "NSTextFieldCell"; title = "max:"; ObjectID = "290"; */
+"290.title" = "max:";
+
+/* Class = "NSButtonCell"; title = "exponent:"; ObjectID = "291"; */
+"291.title" = "exponent:";
+
+/* Class = "NSButtonCell"; title = "metallic:"; ObjectID = "293"; */
+"293.title" = "metallic:";
+
+/* Class = "NSButtonCell"; title = "Reflection (Env.)"; ObjectID = "295"; */
+"295.title" = "Reflection (Env.)";
+
+/* Class = "NSButtonCell"; title = "conserve_energy"; ObjectID = "296"; */
+"296.title" = "conserve_energy";
+
+/* Class = "NSButtonCell"; title = "don't wrap in finish {...}"; ObjectID = "297"; */
+"297.title" = "don't wrap in finish {...}";
+
+/* Class = "NSButtonCell"; title = "backside:"; ObjectID = "302"; */
+"302.title" = "backside:";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "313"; */
+"313.title" = "Reflection (Light)";
+
+/* Class = "NSButtonCell"; title = "Emission"; ObjectID = "315"; */
+"315.title" = "Emission";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "319"; */
+"319.title" = "Reflection (Light)";
+
+/* Class = "NSButtonCell"; title = "Subsurface Light Transport"; ObjectID = "321"; */
+"321.title" = "Subsurface Light Transport";
+
+/* Class = "NSTextFieldCell"; title = "translucency:"; ObjectID = "327"; */
+"327.title" = "translucency:";

@@ -1,0 +1,153 @@
+
+/* Class = "NSTabViewItem"; label = "Pigment"; ObjectID = "18"; */
+"18.label" = "Pigment";
+
+/* Class = "NSTabViewItem"; label = "Normal"; ObjectID = "20"; */
+"20.label" = "Normal";
+
+/* Class = "NSTabViewItem"; label = "Finish"; ObjectID = "22"; */
+"22.label" = "Finish";
+
+/* Class = "NSTabViewItem"; label = "Interior"; ObjectID = "24"; */
+"24.label" = "Interior";
+
+/* Class = "NSTabViewItem"; label = "Preview"; ObjectID = "31"; */
+"31.label" = "Preview";
+
+/* Class = "NSTabViewItem"; label = "Layers"; ObjectID = "33"; */
+"33.label" = "Layers";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "53"; */
+"53.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Box (-0.5, 0.5)"; ObjectID = "54"; */
+"54.title" = "Box (-0.5, 0.5)";
+
+/* Class = "NSMenuItem"; title = "Union (box/sphere)"; ObjectID = "56"; */
+"56.title" = "Union (box/sphere)";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "59"; */
+"59.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "No Background (Black)"; ObjectID = "60"; */
+"60.title" = "No Background (Black)";
+
+/* Class = "NSMenuItem"; title = "White Background"; ObjectID = "62"; */
+"62.title" = "White Background";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "65"; */
+"65.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "Nothing reflected"; ObjectID = "67"; */
+"67.title" = "Nothing reflected";
+
+/* Class = "NSMenuItem"; title = "Sky_sphere clouds"; ObjectID = "68"; */
+"68.title" = "Sky_sphere clouds";
+
+/* Class = "NSTableColumn"; headerCell.title = "Layer Name"; ObjectID = "81"; */
+"81.headerCell.title" = "Layer Name";
+
+/* Class = "NSTableColumn"; headerCell.title = "On"; ObjectID = "82"; */
+"82.headerCell.title" = "On";
+
+/* Class = "NSMenuItem"; title = "Diffrence box/sphere 1/1"; ObjectID = "144"; */
+"144.title" = "Diffrence box/sphere 1/1";
+
+/* Class = "NSMenuItem"; title = "Sphere (0.0, 0.5)"; ObjectID = "145"; */
+"145.title" = "Sphere (0.0, 0.5)";
+
+/* Class = "NSMenuItem"; title = "Box (0.0, 1.0)"; ObjectID = "146"; */
+"146.title" = "Box (0.0, 1.0)";
+
+/* Class = "NSMenuItem"; title = "Sky_sphere clouds"; ObjectID = "147"; */
+"147.title" = "Sky_sphere clouds";
+
+/* Class = "NSMenuItem"; title = "Square grid black"; ObjectID = "148"; */
+"148.title" = "Square grid black";
+
+/* Class = "NSMenuItem"; title = "Square grid white"; ObjectID = "149"; */
+"149.title" = "Square grid white";
+
+/* Class = "NSMenuItem"; title = "Checker B&W"; ObjectID = "150"; */
+"150.title" = "Checker B&W";
+
+/* Class = "NSMenuItem"; title = "Sky_sphere white"; ObjectID = "151"; */
+"151.title" = "Sky_sphere white";
+
+/* Class = "NSMenuItem"; title = "Square grid white"; ObjectID = "152"; */
+"152.title" = "Square grid white";
+
+/* Class = "NSMenuItem"; title = "Square grid black"; ObjectID = "153"; */
+"153.title" = "Square grid black";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "194"; */
+"194.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "195"; */
+"195.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "196"; */
+"196.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "197"; */
+"197.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "198"; */
+"198.title" = "Save";
+
+/* Class = "NSTextFieldCell"; title = "V:"; ObjectID = "202"; */
+"202.title" = "V:";
+
+/* Class = "NSTextFieldCell"; title = "H:"; ObjectID = "204"; */
+"204.title" = "H:";
+
+/* Class = "NSButtonCell"; title = "Fill"; ObjectID = "206"; */
+"206.title" = "Fill";
+
+/* Class = "NSTextFieldCell"; title = "%"; ObjectID = "207"; */
+"207.title" = "%";
+
+/* Class = "NSTextFieldCell"; title = "Object:"; ObjectID = "209"; */
+"209.title" = "Object:";
+
+/* Class = "NSTextFieldCell"; title = "Background:"; ObjectID = "211"; */
+"211.title" = "Background:";
+
+/* Class = "NSTextFieldCell"; title = "Reflect:"; ObjectID = "213"; */
+"213.title" = "Reflect:";
+
+/* Class = "NSButtonCell"; title = "Trash"; ObjectID = "214"; */
+"214.title" = "Trash";
+
+/* Class = "NSButtonCell"; title = "Insert"; ObjectID = "215"; */
+"215.title" = "Insert";
+
+/* Class = "NSButtonCell"; title = "Add"; ObjectID = "216"; */
+"216.title" = "Add";
+
+/* Class = "NSButtonCell"; title = "Pigment"; ObjectID = "217"; */
+"217.title" = "Pigment";
+
+/* Class = "NSButtonCell"; title = "Normal"; ObjectID = "218"; */
+"218.title" = "Normal";
+
+/* Class = "NSButtonCell"; title = "Finish"; ObjectID = "219"; */
+"219.title" = "Finish";
+
+/* Class = "NSButtonCell"; title = "Interior"; ObjectID = "220"; */
+"220.title" = "Interior";
+
+/* Class = "NSButtonCell"; title = "Draw Layer"; ObjectID = "221"; */
+"221.title" = "Draw Layer";
+
+/* Class = "NSButtonCell"; title = "Draw Material"; ObjectID = "222"; */
+"222.title" = "Draw Material";
+
+/* Class = "NSButtonCell"; title = "Transformations"; ObjectID = "223"; */
+"223.title" = "Transformations";
+
+/* Class = "NSButtonCell"; title = "Edit..."; ObjectID = "224"; */
+"224.title" = "Edit...";
+
+/* Class = "NSButtonCell"; title = "don't wrap in material {...}"; ObjectID = "225"; */
+"225.title" = "don't wrap in material {...}";

@@ -1,0 +1,126 @@
+
+/* Class = "NSBox"; title = "Sampling"; ObjectID = "17"; */
+"17.title" = "Sampling";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "39"; */
+"39.title" = "Reflection (Light)";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "85"; */
+"85.title" = "Reflection (Light)";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "89"; */
+"89.title" = "Reflection (Light)";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "98"; */
+"98.title" = "Reflection (Light)";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "112"; */
+"112.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "3-mie_murky_scattering"; ObjectID = "113"; */
+"113.title" = "3-mie_murky_scattering";
+
+/* Class = "NSMenuItem"; title = "2-mie_hazy_scattering"; ObjectID = "114"; */
+"114.title" = "2-mie_hazy_scattering";
+
+/* Class = "NSMenuItem"; title = "1-isotropic_scattering"; ObjectID = "115"; */
+"115.title" = "1-isotropic_scattering";
+
+/* Class = "NSMenuItem"; title = "4-rayleigh_scattering"; ObjectID = "116"; */
+"116.title" = "4-rayleigh_scattering";
+
+/* Class = "NSMenuItem"; title = "5-henyey_greenstein_scattering"; ObjectID = "117"; */
+"117.title" = "5-henyey_greenstein_scattering";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "132"; */
+"132.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "method 3 (adaptive)"; ObjectID = "133"; */
+"133.title" = "method 3 (adaptive)";
+
+/* Class = "NSMenuItem"; title = "method 2 (uniform)"; ObjectID = "134"; */
+"134.title" = "method 2 (uniform)";
+
+/* Class = "NSMenuItem"; title = "method 1 (original)"; ObjectID = "135"; */
+"135.title" = "method 1 (original)";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "244"; */
+"244.title" = "Save";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "245"; */
+"245.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "246"; */
+"246.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "247"; */
+"247.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "248"; */
+"248.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Absorption"; ObjectID = "249"; */
+"249.title" = "Absorption";
+
+/* Class = "NSButtonCell"; title = "ignore photons (collect off)"; ObjectID = "250"; */
+"250.title" = "ignore photons (collect off)";
+
+/* Class = "NSButtonCell"; title = "Emission"; ObjectID = "251"; */
+"251.title" = "Emission";
+
+/* Class = "NSButtonCell"; title = "Density"; ObjectID = "252"; */
+"252.title" = "Density";
+
+/* Class = "NSButtonCell"; title = "Scattering"; ObjectID = "253"; */
+"253.title" = "Scattering";
+
+/* Class = "NSButtonCell"; title = "don't wrap in \"media {...}\""; ObjectID = "254"; */
+"254.title" = "don't wrap in \"media {...}\"";
+
+/* Class = "NSButtonCell"; title = "intervals:"; ObjectID = "255"; */
+"255.title" = "intervals:";
+
+/* Class = "NSButtonCell"; title = "ratio:"; ObjectID = "259"; */
+"259.title" = "ratio:";
+
+/* Class = "NSButtonCell"; title = "variance:"; ObjectID = "261"; */
+"261.title" = "variance:";
+
+/* Class = "NSTextFieldCell"; title = "Max:"; ObjectID = "263"; */
+"263.title" = "Max:";
+
+/* Class = "NSTextFieldCell"; title = "Min:"; ObjectID = "264"; */
+"264.title" = "Min:";
+
+/* Class = "NSTextFieldCell"; title = "Samples:"; ObjectID = "266"; */
+"266.title" = "Samples:";
+
+/* Class = "NSButtonCell"; title = "confidence:"; ObjectID = "268"; */
+"268.title" = "confidence:";
+
+/* Class = "NSButtonCell"; title = "aa_depth:"; ObjectID = "270"; */
+"270.title" = "aa_depth:";
+
+/* Class = "NSButtonCell"; title = "jitter:"; ObjectID = "272"; */
+"272.title" = "jitter:";
+
+/* Class = "NSButtonCell"; title = "aa_threshold:"; ObjectID = "274"; */
+"274.title" = "aa_threshold:";
+
+/* Class = "NSButtonCell"; title = "Edit map..."; ObjectID = "276"; */
+"276.title" = "Edit map...";
+
+/* Class = "NSButtonCell"; title = "Edit Pattern..."; ObjectID = "277"; */
+"277.title" = "Edit Pattern...";
+
+/* Class = "NSButtonCell"; title = "extinction:"; ObjectID = "279"; */
+"279.title" = "extinction:";
+
+/* Class = "NSTextFieldCell"; title = "Type:"; ObjectID = "281"; */
+"281.title" = "Type:";
+
+/* Class = "NSTextFieldCell"; title = "eccentricity:"; ObjectID = "283"; */
+"283.title" = "eccentricity:";
+
+/* Class = "NSButtonCell"; title = "Radio"; ObjectID = "284"; */
+"284.title" = "Radio";

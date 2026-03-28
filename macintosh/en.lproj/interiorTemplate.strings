@@ -1,0 +1,66 @@
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "108"; */
+"108.title" = "Reflection (Light)";
+
+/* Class = "NSBox"; title = "highlibhts"; ObjectID = "112"; */
+"112.title" = "highlibhts";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "135"; */
+"135.title" = "Reflection (Light)";
+
+/* Class = "NSBox"; title = "Reflection (Light)"; ObjectID = "140"; */
+"140.title" = "Reflection (Light)";
+
+/* Class = "NSMenu"; title = "OtherViews"; ObjectID = "165"; */
+"165.title" = "OtherViews";
+
+/* Class = "NSMenuItem"; title = "None (1.0)"; ObjectID = "168"; */
+"168.title" = "None (1.0)";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "247"; */
+"247.title" = "Save";
+
+/* Class = "NSButtonCell"; title = "Open"; ObjectID = "248"; */
+"248.title" = "Open";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "249"; */
+"249.title" = "Cancel";
+
+/* Class = "NSButtonCell"; title = "Reset to default"; ObjectID = "250"; */
+"250.title" = "Reset to default";
+
+/* Class = "NSButtonCell"; title = "OK"; ObjectID = "251"; */
+"251.title" = "OK";
+
+/* Class = "NSButtonCell"; title = "Media"; ObjectID = "252"; */
+"252.title" = "Media";
+
+/* Class = "NSButtonCell"; title = "Dispersion"; ObjectID = "253"; */
+"253.title" = "Dispersion";
+
+/* Class = "NSButtonCell"; title = "Light attenuation"; ObjectID = "254"; */
+"254.title" = "Light attenuation";
+
+/* Class = "NSButtonCell"; title = "caustics:"; ObjectID = "255"; */
+"255.title" = "caustics:";
+
+/* Class = "NSTextFieldCell"; title = "Ior Index:"; ObjectID = "257"; */
+"257.title" = "Ior Index:";
+
+/* Class = "NSButtonCell"; title = "Edit media..."; ObjectID = "260"; */
+"260.title" = "Edit media...";
+
+/* Class = "NSTextFieldCell"; title = "dispersion value:"; ObjectID = "262"; */
+"262.title" = "dispersion value:";
+
+/* Class = "NSButtonCell"; title = "dispersion_samples:"; ObjectID = "263"; */
+"263.title" = "dispersion_samples:";
+
+/* Class = "NSButtonCell"; title = "Fade Color"; ObjectID = "265"; */
+"265.title" = "Fade Color";
+
+/* Class = "NSTextFieldCell"; title = "fade_distance:"; ObjectID = "268"; */
+"268.title" = "fade_distance:";
+
+/* Class = "NSTextFieldCell"; title = "fade_power:"; ObjectID = "269"; */
+"269.title" = "fade_power:";
